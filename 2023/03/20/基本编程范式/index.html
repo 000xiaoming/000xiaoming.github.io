@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>基本编程范式 | Hongcheng&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="#基本编程范式大家好~我是小明，这是我的第一篇文章，如果有不好的地方，请批评指正。在文章中，我会使用c或者c++的代码，当能用c来描述时，我会尽可能用c，而不是c++，因为c++使用者是可以向下兼容c的，有些c的新手是不懂c++的代码的。我会谈谈#include，宏定义，inline，函数const，传参，return，缩进，new和delete，内存，9种方式，类的初始化我们直接进入正题，在很多">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基本编程范式">
+<meta property="og:url" content="https://000xiaoming.github.io/2023/03/20/%E5%9F%BA%E6%9C%AC%E7%BC%96%E7%A8%8B%E8%8C%83%E5%BC%8F/index.html">
+<meta property="og:site_name" content="Hongcheng&#39;s Blog">
+<meta property="og:description" content="#基本编程范式大家好~我是小明，这是我的第一篇文章，如果有不好的地方，请批评指正。在文章中，我会使用c或者c++的代码，当能用c来描述时，我会尽可能用c，而不是c++，因为c++使用者是可以向下兼容c的，有些c的新手是不懂c++的代码的。我会谈谈#include，宏定义，inline，函数const，传参，return，缩进，new和delete，内存，9种方式，类的初始化我们直接进入正题，在很多">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-03-19T16:40:27.000Z">
+<meta property="article:modified_time" content="2023-03-24T13:48:51.747Z">
+<meta property="article:author" content="Li Hongcheng">
+<meta property="article:tag" content="编程 友好 规范">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hongcheng's Blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hongcheng&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">xiaoming</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://000xiaoming.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-基本编程范式" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/03/20/%E5%9F%BA%E6%9C%AC%E7%BC%96%E7%A8%8B%E8%8C%83%E5%BC%8F/" class="article-date">
+  <time class="dt-published" datetime="2023-03-19T16:40:27.000Z" itemprop="datePublished">2023-03-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      基本编程范式
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>#基本编程范式<br>大家好~我是小明，这是我的第一篇文章，如果有不好的地方，请批评指正。<br>在文章中，我会使用c或者c++的代码，当能用c来描述时，我会尽可能用c，而不是c++，因为c++使用者是可以向下兼容c的，有些c的新手是不懂c++的代码的。我会谈谈#include，宏定义，inline，函数const，传参，return，缩进，new和delete，内存，9种方式，类的初始化<br>我们直接进入正题，在很多新手刚接触编程的时候，在自由的编译环境下，喜欢创造着自己喜欢的格式，我当初是喜欢极简风格的代码，每一个功能代码块都放在一行，用极其缩减的方式，来表达思想，每多出来的一行代码，都是心中多出来的一份懊恼。<br>这样的结果就是，过了一段时间，我就会忘记自己写的是什么，再想对照代码来向别人（经常是舍友）自叙自己的算法思想，就会费老大的劲儿来回忆当初是怎么犯病写这些不是人看的代码的。<br>接下来，我会从一个c&#x2F;c++程序从创建到结束的时间顺序来谈谈应该注意什么，这个“什么”应该怎么写是最符合业界人士的认可的。我想说的是，即使你是新手，写的经常只是几十行的小程序，我也要你一出手就是大家风范，很大气的程序。<br>###关于#include的一些东西</p>
+<h4 id="inlcude出现的位置"><a href="#inlcude出现的位置" class="headerlink" title="#inlcude出现的位置"></a>#inlcude出现的位置</h4><p>现在c&#x2F;c++编译器是允许在我们需要的时候，#include相关头文件的，比如我现在需要malloc一个内存地址，那么我只需要在malloc语句前加上<br><code>#include &lt;malloc.h&gt;</code><br>就可以了，但是呢这样就会导致#include语句可能会出现在程序的任意位置，比较幸运的是，很少有人是这样做的，大家都有一个比较好的习惯就是所有的#include都放在程序的最前面。<br>这样做的人，他写程序很随意，很洒脱，他知道每一个#include的含义，以及出现的位置的方便性，所以会有这种行为。有很大一部分新手是看很多教材都是一开始就#include，那么我也这样写，虽然我不知道有什么更深处的含义，但是这样写肯定不会错的。<br>我们可以这样约定：一切的#include头文件预编译指令，都放在程序文件的最前面（感觉像是一句多余的约定，因为以及有很大一部分人是这样做的）  </p>
+<h4 id="include头文件最好不要嵌套“包含”，最多嵌套两层"><a href="#include头文件最好不要嵌套“包含”，最多嵌套两层" class="headerlink" title="#include头文件最好不要嵌套“包含”，最多嵌套两层"></a>#include头文件最好不要嵌套“包含”，最多嵌套两层</h4><p>在我们的.h文件中（c程序总是要包含stdio.h文件，一些类似的文件，我简称为.h文件）（我们的.h 表示自己写的头文件），如果出现了别的头文件的内容，比如我有以下文件：<br><code>myClass.h</code><br><code>myClass.c</code><br><code>Complex.h</code><br><code>Complex.c</code><br><code>main.c</code><br>在我的<code>myClass.h</code>中，需要用到复数的结构（c++话来说就是类），那么就需要包含<code>Complex.h</code>，而我们在设计复数结构的时候是用到了printf函数和scanf函数，这些函数是需要使用<code>stdio.h</code>文件的，那么现在的格局就是<br>在myClass.h中包含了Complex.h，在Complex.h中包含了stdio.h，然后我们在写主程序main.c时，经常习惯性的写下<code>#include &lt;stdio.h&gt;</code>，好，这样混乱的嵌套包含，第一个导致的问题就是代码数量增长，在编译器和链接器完成操作后，形成的可执行目标代码是相对很大，很乱的，因为我们在头文件中，总是嵌套包含了另一个头文件。第二个导致的问题就是编译错误，为什么会编译错误，是我接下来要讲的一个好的编程习惯导致的。所以我们在设计程序的时候，一定要思考，头文件之间的联系，一定要越淡越好，这也是模块化编程的思想，模块就是要功能独立，几乎不依赖别的代码模块。<br>如果出现了前面说的这种嵌套包含，我们应该如何纠正呢，不好意思，我也不会这个，本着宁可不说，也不误导别人的想法，对于这种我自身也不会很好处理的问题，我是不会在这种开源的，类似科普的文章中说的，同时，如果读者有什么好的处理措施，希望可以教教我，给我发送私信，微信：cs000vn<br>文章是保持动态更新的，并不是发布了就一层不变了，我也是在慢慢成长的，如果我发现了一些新的东西，想法，符合这篇文章的主题，我也是会继续在这篇文章中更新的。<br>我们得出的约定是：所有的头文件，最好都在main.c中展开。 </p>
+<h3 id="关于宏定义"><a href="#关于宏定义" class="headerlink" title="关于宏定义"></a>关于宏定义</h3><h4 id="头文件预防性编程"><a href="#头文件预防性编程" class="headerlink" title="头文件预防性编程"></a>头文件预防性编程</h4><p>我们经常写自己的结构，自己的类，自己的函数，拥有自己的.h文件，假如我们有自己写的头文件myClass.h，那么该头文件就可以用这样格式写：<br><code>#ifndef __MYCLASS__</code><br><code>#define __MYCLASS__</code><br><code>//写自己的内容...</code><br><code>#endif</code><br>第一行的意思是告诉编译器：我们先判断程序中是否已经定义了宏__MYCLASS__<br>如果没有定义宏__MYCLASS__,那么我们就执行以下的内容，然后就可以进入第二行，第二行是告诉编译器：好吧，既然没有定义过这个宏，那么我们就定义它吧，然后进入第三行，我们可以在这个时候乘机声明我们自己的东西，声明完后，就是结束这个判断语句。ifndef意思是if not define ，endif 就是结束这个if判断。<br>有些读者可能疑惑，这种宏定义的模式好奇怪呀，__MYCLASS__是什么意思呢，其实这个就是我们自己定义的宏，这个名字就是我们头文件的名字的全部大写，前后各加两个下划线，有些人喜欢这样写宏名，如_MYCLASS_H_,MYCLASS_H,这些都是可以的，因为我们在编写程序的时候，是不可能写出这样的宏名的，而这些宏名在这里只是起到标识作用，其实写全是这样的：<br><code>#ifndef __MYCLASS__ 0</code><br><code>#define __MYCLASS__ 0</code><br><code>//写自己的内容...</code><br><code>#endif</code><br>我们省略了后面的0，这样子是不是跟我们经常用到的宏定义很像啦，我们经常这样子用：<br><code>#define myValue 100</code><br>其实不写后面的值，编译器就默认是0啦。<br>声明的内容是和宏__MYCLASS__绑定在一起的，宏存在，我们的声明就存在，宏还未存在时，我们的声明也就还未声明，宏只能定义一次，相应的，我们的声明也就只能声明一次，这样子就避免了多次声明，重复定义的危险。<br>这是一种防御性编程，我们在所有的.h头文件中，都应该应用这种格式去写代码，这是一个好的习惯。<br>刚才我们讲过，在两个相互嵌套包含的头文件中，如果一个头文件A在另一个头文件B中已经展开了，那么这个A就不会再别的地方展开（因为我们写头文件是用来防御性编程范式），由于一些顺序的问题，可能需要头文件A的地方，在头文件A展开之前，那么就会出现编译错误，因为编译是从上自下的，这就好比：<br><code>str=&quot;i_like_you&quot;;</code><br><code>string str;</code><br>定义和使用的顺序反了，会出现编译错误。</p>
+<h4 id="关于宏定义类的函数"><a href="#关于宏定义类的函数" class="headerlink" title="关于宏定义类的函数"></a>关于宏定义类的函数</h4><p>在调用函数的时候，我们知道这种行为是需要一些代价的，时间代价和空间代价。同一个功能代码，比如求和函数sum（），我们可以设计成函数：<br><code>int sum(int a,int b)</code><br><code>&#123;</code><br><code>return a+b;</code><br><code>&#125;</code><br>我们在main函数中有如下代码：<br><code>int main ()</code><br><code>&#123;</code><br><code>int a,b;</code><br><code>scanf(&quot;%d %d&quot;,&amp;a,&amp;b);</code><br><code>int sum_ab=sum(a,b);</code><br><code>printf(&quot;sum(a,b)=%d&quot;,sum_ab);</code><br><code>return 0;</code><br><code>&#125;</code><br>在main函数中还有一种写法，是这样的，把sum（）函数展开：<br><code>int main ()</code><br><code>&#123;</code><br><code>int a,b;</code><br><code>scanf(&quot;%d %d&quot;,&amp;a,&amp;b);</code><br><code>int sum_ab=a+b;</code><br><code>printf(&quot;sum(a,b)=%d&quot;,sum_ab);</code><br><code>return 0;</code><br><code>&#125;</code><br>前者与后者的区别是，在求和的地方，前者用了sum（）求和函数，后者是直接用了sum（）求和函数里的代码。在时间和空间上，两个程序的差别是不大的，为了让读者有一个清晰的了解，我们假定需要读入两百个数，对这两百个数分别求和。那么我们应该先设计一个循环，然后每次读入两个数，求和之后存储起来，再次读入两个数。像这种很多次运用sum（）函数的程序，我们最好的是把该函数展开，使用其内部代码。经过多次循环，前者程序的时间是明显大于后者所需要的时间。在空间上，调用一个函数，我们是需要额外的空间：函数的地址，返回地址，拷贝变量。额外的时间开销：多个调用指令，变量的拷贝时间<br>我们不仅面临时间效率的降低，还面临堆栈空间的溢出，堆栈满了，程序崩溃。<br>同理，如果类似的函数，比如getchar函数，putchar函数，我们每一次执行的时候，都需要使用函数调用，这样导致的效率下降是无法容忍的，读者应该大部分都是c&#x2F;c++使用者，我们使用c&#x2F;c++的原因就是因为高效率。但是由于函数式编程，模块化编程，是我们编程的思考方向，我们又有需求把一些功能代码做成函数的样子，而又不要调用函数的那些开销。于是，我们可以使用宏函数。<br>注意，宏函数并不是函数，只是样子上像函数，比如：<br><code>#define sum(a,b) ((a)+(b))</code><br>如果我们有这行代码：<br><code>int sum_ab=sum(a,b);</code><br>在编译器作用之后，预编译阶段完成就形成：<br><code>int sum_ab=((a)+(b));</code><br>看，我们在使用的时候，就像在调用函数sum。<br>类似的有函数：<br><code>#define abs(x) ((x)&gt;=0)?(x):-(x))</code><br><code>#define max(a,b) ((a)&gt;(b)?(a):(b))</code><br>标准库中，有很多函数是用宏定义来实现的，为了最高的效率，这是值得的。但是，同时，宏定义也并不是总是好的，宏定义稍有不注意就会出现梦魇般的错误，并且极其不易察觉。详细且高深的内容请读者移步至《c陷阱与缺陷》的预编译器章节，里面有详细分析。书籍链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1Nw6QQ0p6oJ9SYRpM5x3Jzw">https://pan.baidu.com/s/1Nw6QQ0p6oJ9SYRpM5x3Jzw</a><br>提取码：0000<br>这里给两个约定：<br>当用宏来定义函数时，我们需要给每一个最细小的变量加上括号，然后给整体加上括号。如上述的max宏定义。<br>当调用宏定义函数时，我们的变量最好不要使用自增，自减运算符。<br>###关于inline<br>这是关于c++的内容，之前已经讲了关于宏定义函数的部分，其中的方便，高效之处，想必读者心中都有一些认识，我现在顺着这个话题，继续讲在c++中，有一个特性——inline函数（内联函数），这个特性我觉得跟宏定义函数很相像。如果我想写一个inline函数，格式是怎么样的呢？<br><code>inline int sum(int a,int b);</code><br>这就是inline函数的声明，只需要在函数的最前面加上inline关键字就可以了。<br>这样做的作用是什么呢？当编译器看到这个inline时，编译器便会在调用这个函数的地方，优化代码。<br>对，你没有看错，编译器是会帮我们优化代码的，我们在调用inline函数，编译器帮我们把这个inline函数展开，就想宏定义函数一样，在调用函数的地方，把函数内部代码直接拿出来，省略掉调用函数这个环节，直接执行函数内部代码。<br>当然了，什么时候应该inline呢，如果代码量不大，并且频繁调用的函数，是可以inline的，如果我们把一个代码量很大，并且调用次数很少的函数做成inline函数，会导致什么严重结果吗？好像是不会的，我也说不准，但是如果你真的这么做，编译器是会拒绝这种行为的。也就是说，你即使在函数前面加上inline，编译器在编译阶段，也不会把这个函数展开的。因为它认为，这种函数不适宜做inline函数，效率不高，且大量的代码插入调用函数的地方会很容易出问题。<br>如果我们在写小型，频繁调用的函数的时候，忘记做成inline了，编译器会帮我们优化函数，生成inline函数吗？会的，现在很多编译器支持性是很高的。<br>我们可以说，在所有时候，我们都应该把函数写成inline，因为，不管代码量的函数，还是小的函数，最终是否展开的决定权在于编译器。当我们写下inline时，就好像在说：嗨，编译器，帮我把这个函数做成inline吧。<br>注意，为了展示inline的用法，我在前面是这样写的：<br><code>inline int sum(int a,int b);</code><br>这是一条声明，我们在实际编程的时候，不应该在函数声明前面加上inline，而是在函数定义的时候加inline。<br>c++在写类的时候，如果类里面的函数的具体实现，直接写在类的定义里面，那么默认是inline的，即使没有说明inline。<br>###关于const<br>我们在学c的时候，就知道，如果一个变量在定义了之后不会改变值的，我们应该把这个变量声明成const，这个一个好的行为，同样的，我们在写函数时，应该保持相同的行为。<br>比如求最大值函数：<br><code>int max(int a,int b); </code><br>我们知道，a变量在函数内部的值，是不会变化的，b也一样，所以我们应该写成：<br><code>int max(const int a,const int b);</code><br>我们知道，max函数，其内部不会改变传入的参数，所以应该写成：<br><code>int max(const int a,const int b) const; </code><br>下一节，我们重点将一下传参的使用，这个是重点关于c++的。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://000xiaoming.github.io/2023/03/20/%E5%9F%BA%E6%9C%AC%E7%BC%96%E7%A8%8B%E8%8C%83%E5%BC%8F/" data-id="clfmmoofm0000g8vpbygrbpqd" data-title="基本编程范式" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B-%E5%8F%8B%E5%A5%BD-%E8%A7%84%E8%8C%83/" rel="tag">编程 友好 规范</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B-%E5%8F%8B%E5%A5%BD-%E8%A7%84%E8%8C%83/" rel="tag">编程 友好 规范</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/%E7%BC%96%E7%A8%8B-%E5%8F%8B%E5%A5%BD-%E8%A7%84%E8%8C%83/" style="font-size: 10px;">编程 友好 规范</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/03/20/%E5%9F%BA%E6%9C%AC%E7%BC%96%E7%A8%8B%E8%8C%83%E5%BC%8F/">基本编程范式</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 Li Hongcheng<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
