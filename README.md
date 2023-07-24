@@ -2,7 +2,7 @@
 
 🏫Lanzhou University:Undergraduate student
 
-🌻Major：Computer Science And Technology
+🌻Major：Computer Science and Technology
 
 💕Hobby：Running，Building，Soccer
 
