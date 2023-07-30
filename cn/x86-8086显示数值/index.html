@@ -244,6 +244,8 @@
 
           
           
+          
+          
           <li>
             <a href="/about/">
               
@@ -255,12 +257,10 @@
           
           
           
-          
-          
           <li>
-            <a href="/categories/">
+            <a href="/archive/">
               
-              分类
+              归档
               
               
             </a>
@@ -269,9 +269,9 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/categories/">
               
-              归档
+              分类
               
               
             </a>
@@ -451,25 +451,23 @@
         <p>我们在开始这个实验的时候，先来回顾一下在学习高级语言的时候（比如c语言），我们是如何将一个数值显示到屏幕上的呢？</p>
 <pre><code>bool print_data (int a)
 &#123;
-	printf(&quot;%d&quot;,a);
-	return true;
+    printf(&quot;%d&quot;,a);
+    return true;
 &#125;
-</code></pre>
-<p>我们在c语言中，写出这个函数，这个函数的功能想必大家一眼就可以看出来，就是将一个int型数据传入print_data函数,这个函数将int型数据打印出来，显示到屏幕上。</p>
+</code></pre><p>我们在c语言中，写出这个函数，这个函数的功能想必大家一眼就可以看出来，就是将一个int型数据传入print_data函数,这个函数将int型数据打印出来，显示到屏幕上。</p>
 <pre><code>template &lt;class T&gt;
 bool print_data(T a)
 &#123;
-	std::cout &lt;&lt; a;
-	return true;
+    std::cout &lt;&lt; a;
+    return true;
 &#125;
-</code></pre>
-<p>这是c++语言中，这个函数实现了真正的print_data函数的功能（打印数据），所有的数据都可以通过调用这个函数来显示到屏幕上，上面c语言实现的函数，只能打印int型数据。</p>
+</code></pre><p>这是c++语言中，这个函数实现了真正的print_data函数的功能（打印数据），所有的数据都可以通过调用这个函数来显示到屏幕上，上面c语言实现的函数，只能打印int型数据。</p>
 <p>好了，看了这两个函数，我们大致知道了应该具体干些什么——用汇编语言实现将数值打印到屏幕上的功能。</p>
 <p>用高级语言写出这个功能，不过区区几行而已，因为已经有很多底层技术细节被屏蔽掉了，我们无需操心底层是怎么样的。但是在汇编语言中，我们需要考虑很多，就这个功能，我们至少需要知道两点：</p>
 <p>第一点：</p>
 <p>我们的显示设备（显示屏）属于外设，cpu无法直接控制外设，而是通过扩展插槽中的芯片（独立显卡），一般来说显卡都是在插槽里面，不过一些集成显卡可能是集成在主板上或处理器内部的。</p>
 <p>cpu和显卡的互动在于，cpu必须要将想打印的数据传送给逻辑内存空间中显存所占据的位置，（关于这个逻辑内存空间，这个很简单，大家可以去百度自行理解）</p>
-<p>MS-DOS系统，x86-8086架构中，内存单元0B800：0000起始，到0B900：0000，中间一共32KB大小的内存空间是显存空间，在这32KB中，只要将数据写进这个范围，显卡都会将其显示到屏幕上。但是屏幕的一页，是无法一次性将32KB的数据量全部显示出来，于是将其分为了8页，每一页可以显示25（行）* 80（列）个字符，每个字符占据两个字节，一行就是80* 2=160个字节，一共有25行，这样子的页，一共有8页，每一页占据4KB的大小，显卡每次只将第一页的内容显示到屏幕上。我们这次任务就是将数值，打印到1页8行3列的位置。</p>
+<p>MS-DOS系统，x86-8086架构中，内存单元0B800：0000起始，到0B900：0000，中间一共32KB大小的内存空间是显存空间，在这32KB中，只要将数据写进这个范围，显卡都会将其显示到屏幕上。但是屏幕的一页，是无法一次性将32KB的数据量全部显示出来，于是将其分为了8页，每一页可以显示25（行）<em> 80（列）个字符，每个字符占据两个字节，一行就是80</em> 2=160个字节，一共有25行，这样子的页，一共有8页，每一页占据4KB的大小，显卡每次只将第一页的内容显示到屏幕上。我们这次任务就是将数值，打印到1页8行3列的位置。</p>
 <p>第二点：</p>
 <p>我们的屏幕上显示出来的图型，都是用ASCLL码来标识的，例如c函数print_data中的语句<code>printf(&quot;%d&quot;,a);</code> 这句话里面，%d的意思是有一个参数，是整型数据，调用printf函数，将这个整型数据打印出来。但是其底层真是将这个数值传送给显存，然后显卡将显存中的值显示到屏幕中吗？</p>
 <p>我们需要记住：一切在显示屏上显示出来的数字，都是字符，字符底层的编码遵循ASCLL码规范，比如屏幕上有一个1，这个数字1，我们需要将其转化为Ox31（这是16进制形式，便于后续理解），显卡在处理Ox31时，就会在屏幕中我们所选择的位置上，显示1这个字符。</p>
@@ -493,8 +491,7 @@ bool print_data(T a)
 <p>这个除法运算存储方案，其实很容易出错：</p>
 <p>假如我们在进行除法的时候，很有可能会出现溢出，我们打个比方：cl寄存器存储1作为除数，进行8位除法运算，我们在ax寄存器中存储0100H（H后缀表示这是个16进制数），运算指令</p>
 <pre><code>div cx
-</code></pre>
-<p>运算完之后，根据理想中，0100H除以1，所得的商应该是原数0100H，但是呢，这个商占据了9位bit，而我们在进行8位除法运算时所得的商是保存在al寄存器中，al寄存器是8位bit，不能存储9位的数值，故发生了溢出。我们在进行除法运算的时候，这种情况是很容易发生的。</p>
+</code></pre><p>运算完之后，根据理想中，0100H除以1，所得的商应该是原数0100H，但是呢，这个商占据了9位bit，而我们在进行8位除法运算时所得的商是保存在al寄存器中，al寄存器是8位bit，不能存储9位的数值，故发生了溢出。我们在进行除法运算的时候，这种情况是很容易发生的。</p>
 <p>所以，第三个问题就是，我们在进行除法的时候，怎样解决除法溢出问题。</p>
 <p>通过对以上的问题的思考，我们就可以知道，在实现这个显示数值功能程序中，我们需要写三个子程序。写出三个子程序分别来处理这三个问题。</p>
 <p>这是典型的模块化编程，模块化编程是所有程序中，都需要遵守的规则，可以利于我们对不同的问题进行独立的思考。在汇编中，模块化编程更为重要。</p>
@@ -514,115 +511,112 @@ bool print_data(T a)
 <p>show_str子程序的测试与编写：</p>
 <pre><code>assume cs:code
 data segment
-	db 'Hello,i am Bruce Lee',0
+    db &#39;Hello,i am Bruce Lee&#39;,0
 data ends
 
 code segment
-start:	mov dh,8
-		mov dl,3
-		moc cl,2
-		mov ax,data
-		mov ds,ax
-		mov si,0
-		call show_str
+start:    mov dh,8
+        mov dl,3
+        moc cl,2
+        mov ax,data
+        mov ds,ax
+        mov si,0
+        call show_str
 
-		mov ah,4ch
-		mov al,00h
-		int 21h
+        mov ah,4ch
+        mov al,00h
+        int 21h
 show_str:
-		.
-		.
-		.
+        .
+        .
+        .
 code ends
 end start
-</code></pre>
-<p>我们在写show_str时，可以不用这么规范，非要在开始的时候，就将这个功能程序成型，我们可以不要call指令，直接这样编程：</p>
+</code></pre><p>我们在写show_str时，可以不用这么规范，非要在开始的时候，就将这个功能程序成型，我们可以不要call指令，直接这样编程：</p>
 <pre><code>assume cs:code
 data segment
-	db 'Hello,i am Bruce Lee',0
+    db &#39;Hello,i am Bruce Lee&#39;,0
 data ends
 
 code segment
-start:	mov dh,8
-		mov dl,3
-		mov cl,2
-		mov ax,data
-		mov ds,ax
-		mov si,0
-		;从这里开始写show_str程序的核心代码，不用call指令
-		;等将核心代码写出来后，再整合，形成子函数，然后用call指令来调用
+start:    mov dh,8
+        mov dl,3
+        mov cl,2
+        mov ax,data
+        mov ds,ax
+        mov si,0
+        ;从这里开始写show_str程序的核心代码，不用call指令
+        ;等将核心代码写出来后，再整合，形成子函数，然后用call指令来调用
 
-		.
-		.
-		.
-		mov ah,4ch
-		mov al,00h
-		int 21h
+        .
+        .
+        .
+        mov ah,4ch
+        mov al,00h
+        int 21h
 code ends
 end start
-</code></pre>
-<p>具体的讲解就不用了，这个程序不是很难，想必大家通过思考，编写，调试，一定可以写出来，现在来看一下我写的程序吧：</p>
+</code></pre><p>具体的讲解就不用了，这个程序不是很难，想必大家通过思考，编写，调试，一定可以写出来，现在来看一下我写的程序吧：</p>
 <pre><code>assume cs:code
 data segment
-	db 'Welcome to masm!',0
+    db &#39;Welcome to masm!&#39;,0
 data ends
 
 code segment
 start:  mov dh,8
-		mov dl,3
-	    mov cl,2
-		mov ax,data
-		mov ds,ax
-		mov si,0	；设置参数
-		call show_str
+        mov dl,3
+        mov cl,2
+        mov ax,data
+        mov ds,ax
+        mov si,0    ；设置参数
+        call show_str
 
-		mov ah,4ch	；程序返回，使用4ch功能号
-		mov al,00h	；程序返回值为0
-		int 21h		；调用21h号中断例程
+        mov ah,4ch    ；程序返回，使用4ch功能号
+        mov al,00h    ；程序返回值为0
+        int 21h        ；调用21h号中断例程
 
 show_str:
-		push dx	；将用到的所有寄存器保留入栈
-    	push cx
-   		push ax
-    	push es
-    	push si
-    	push di
+        push dx    ；将用到的所有寄存器保留入栈
+        push cx
+           push ax
+        push es
+        push si
+        push di
 
-    	push cx      ；尽量用较少的寄存器，所以将cx入栈，在后面还有出栈
-    	mov al,dh
-    	mov ah,0
-    	mov cl,160
-    	mul cl    ;ax=dh*160
-    	mov di,ax  ;di=dh*160
-    	mov cl,2	
-    	mov al,dl
-    	mov ah,0
-    	mul cl   ;ax=dl*2
-    	add di,ax  ;di=dh*160+dl*2
-    	pop cx		；在这里出栈，这样，cx又存储的是原来应该存储的颜色值
+        push cx      ；尽量用较少的寄存器，所以将cx入栈，在后面还有出栈
+        mov al,dh
+        mov ah,0
+        mov cl,160
+        mul cl    ;ax=dh*160
+        mov di,ax  ;di=dh*160
+        mov cl,2    
+        mov al,dl
+        mov ah,0
+        mul cl   ;ax=dl*2
+        add di,ax  ;di=dh*160+dl*2
+        pop cx        ；在这里出栈，这样，cx又存储的是原来应该存储的颜色值
 
-    	mov ax,0b800h	；设置显存地址
-    	mov es,ax
+        mov ax,0b800h    ；设置显存地址
+        mov es,ax
 show:   mov al,ds:[si]    ；注意是al，不是ax，是8位的内存单元
-    	cmp al,0
-    	je show_ret		；相等就表示结束了，可以return了，否者一直进行跳转指令来覆写显存内容
-    	mov es:[di],al
-    	mov es:[di+1],cl   ；每一个偶数内存单元后面的奇数内存单元就是该偶数单元的属性单元
-    	inc si 
-    	add di,2	；注意si，di的增长值不一样 
-    	jmp show
+        cmp al,0
+        je show_ret        ；相等就表示结束了，可以return了，否者一直进行跳转指令来覆写显存内容
+        mov es:[di],al
+        mov es:[di+1],cl   ；每一个偶数内存单元后面的奇数内存单元就是该偶数单元的属性单元
+        inc si 
+        add di,2    ；注意si，di的增长值不一样 
+        jmp show
 show_ret:
-    	pop di	；对应出栈
-    	pop si
-    	pop es
-    	pop ax
-    	pop cx
-    	pop dx
-    	ret
+        pop di    ；对应出栈
+        pop si
+        pop es
+        pop ax
+        pop cx
+        pop dx
+        ret
 code ends
 end start
-</code></pre>
-<p>在显存中，偶数内存单元存储的是ASCLL码，奇数存储单元存储的是字符的属性值，程序中，；后面是注释，这个；是我后续加的，大家在拷贝代码的时候，注意要将注释消除掉，符号肯定不对。</p>
+</code></pre><p>在显存中，偶数内存单元存储的是ASCLL码，奇数存储单元存储的是字符的属性值，程序中，；后面是注释，这个；是我后续加的，大家在拷贝代码的时候，注意要将注释消除掉，符号肯定不对。</p>
 <p>属性值是这样的：</p>
 <p><img src="zijie.shuxing.png" alt="cn"></p>
 
