@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite-url/tags/index.html</loc>
+    <loc>http://yoursite-url/categories/index.html</loc>
     
     <lastmod>2023-07-30</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite-url/categories/index.html</loc>
+    <loc>http://yoursite-url/tags/index.html</loc>
     
     <lastmod>2023-07-30</lastmod>
     
@@ -23,9 +23,9 @@
   </url>
   
   <url>
-    <loc>http://yoursite-url/cn/Hexo-Theme-LiveMyLife/</loc>
+    <loc>http://yoursite-url/about/index.html</loc>
     
-    <lastmod>2020-04-16</lastmod>
+    <lastmod>2023-07-29</lastmod>
     
   </url>
   
@@ -37,16 +37,16 @@
   </url>
   
   <url>
-    <loc>http://yoursite-url/archive/index.html</loc>
+    <loc>http://yoursite-url/cn/Hexo-Theme-LiveMyLife/</loc>
     
-    <lastmod>2017-03-20</lastmod>
+    <lastmod>2020-04-16</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite-url/about/index.html</loc>
+    <loc>http://yoursite-url/archive/index.html</loc>
     
-    <lastmod>2016-04-20</lastmod>
+    <lastmod>2017-07-30</lastmod>
     
   </url>
   
