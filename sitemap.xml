@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite-url/cn/AI%E5%8F%91%E5%B1%95%E8%A7%81%E8%A7%A3/</loc>
+    
+    <lastmod>2023-07-30</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite-url/categories/index.html</loc>
     
     <lastmod>2023-07-30</lastmod>
@@ -10,6 +17,13 @@
   
   <url>
     <loc>http://yoursite-url/tags/index.html</loc>
+    
+    <lastmod>2023-07-30</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite-url/en/Hexo-Theme-LiveMyLife/</loc>
     
     <lastmod>2023-07-30</lastmod>
     
@@ -30,9 +44,9 @@
   </url>
   
   <url>
-    <loc>http://yoursite-url/en/Hexo-Theme-LiveMyLife/</loc>
+    <loc>http://yoursite-url/cn/x86-8086%E6%98%BE%E7%A4%BA%E6%95%B0%E5%80%BC/</loc>
     
-    <lastmod>2020-04-16</lastmod>
+    <lastmod>2023-07-29</lastmod>
     
   </url>
   
@@ -60,6 +74,20 @@
 
   
   <url>
+    <loc>http://yoursite-url/tags/x86-8086-%E6%B1%87%E7%BC%96/</loc>
+    <lastmod>2023-07-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite-url/tags/IT/</loc>
+    <lastmod>2023-07-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://yoursite-url/tags/Hexo-Theme-LiveMyLife/</loc>
     <lastmod>2023-07-30</lastmod>
     <changefreq>daily</changefreq>
@@ -67,6 +95,20 @@
   </url>
   
 
+  
+  <url>
+    <loc>http://yoursite-url/categories/x86-8086%E6%B1%87%E7%BC%96%E5%AE%9E%E9%AA%8C/</loc>
+    <lastmod>2023-07-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite-url/categories/Programer/</loc>
+    <lastmod>2023-07-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
   
   <url>
     <loc>http://yoursite-url/categories/Hexo-Theme-LiveMyLife/</loc>

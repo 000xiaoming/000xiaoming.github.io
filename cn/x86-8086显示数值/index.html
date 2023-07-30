@@ -139,10 +139,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://yoursite-url/tags/Hexo-Theme-LiveMyLife/">
+  <link rel="canonical" href="http://yoursite-url/cn/x86-8086显示数值/">
   <title>
     
-      I&#39;m Bruce Lee
+      01-比较简单的x86-8086汇编实验：将数值显示到屏幕上 - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -239,7 +239,7 @@
       <div class="navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <a href="/">HOME</a>
+            <a href="/">首页</a>
           </li>
 
           
@@ -247,7 +247,7 @@
           <li>
             <a href="/categories/">
               
-              CATEGORIES
+              分类
               
               
             </a>
@@ -260,7 +260,7 @@
           <li>
             <a href="/archive/">
               
-              ARCHIVES
+              归档
               
               
             </a>
@@ -271,7 +271,7 @@
           <li>
             <a href="/tags/">
               
-              TAGS
+              标签
               
               
             </a>
@@ -282,7 +282,7 @@
           <li>
             <a href="/about/">
               
-              ABOUT
+              关于
               
               
             </a>
@@ -293,36 +293,14 @@
           
           <li>
             <a class="popup-trigger">
-              <span class="search-icon"></span>SEARCH</a>
+              <span class="search-icon"></span>搜索</a>
           </li>
           
 
           <!-- LangSelect -->
           
           
-          <!-- LangSelect start -->
-          <!-- LangSelect -->
-<li>
-  <a id="lang-select-label"><i class="fa fa-globe"></i>
-    <span>
-      English
-    </span>
-    <select id="lang-select" data-canonical="tags/Hexo-Theme-LiveMyLife/index.html">
-      
-      
-      <option value="en"  selected >
-        English
-      </option>
-      
-      <option value="cn" >
-        简体中文
-      </option>
-      
-    </select>
-  </a>
-</li>
-
-          <!-- LangSelect end -->
+          
           
           
         </ul>
@@ -374,19 +352,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: url('');
-      --intro-header-background-image-url-page: url('/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: url('/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: url('//img/header_img/lml_bg.jpg');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/lml_bg.jpg');
     }
 
     header.intro-header {
-       /*page*/
-        background-image: var(--intro-header-background-image-url-page);
-        /* background-image: url('/img/header_img/archive_bg2.jpg'); */
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('/img/header_img/lml_bg.jpg'); */
       
     }
 
@@ -404,10 +382,24 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>经年治世</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">Bruce LEE</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#x86-8086-汇编" title="x86-8086-汇编">x86-8086-汇编</a>
+              
+            </div>
+            <h1>01-比较简单的x86-8086汇编实验：将数值显示到屏幕上</h1>
+            <h2 class="subheading">一个简单的汇编实验...</h2>
+            <span class="meta">
+              Posted by Bruce LEE on
+              2023-07-30
+            </span>
+
+
+            
+            
+
+
           </div>
           
         </div>
@@ -448,281 +440,446 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Main Content -->
-<div class="container">
-  <div class="row">
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <p>我们在开始这个实验的时候，先来回顾一下在学习高级语言的时候（比如c语言），我们是如何将一个数值显示到屏幕上的呢？</p>
+<pre><code>bool print_data (int a)
+&#123;
+	printf(&quot;%d&quot;,a);
+	return true;
+&#125;
+</code></pre>
+<p>我们在c语言中，写出这个函数，这个函数的功能想必大家一眼就可以看出来，就是将一个int型数据传入print_data函数,这个函数将int型数据打印出来，显示到屏幕上。</p>
+<pre><code>template &lt;class T&gt;
+bool print_data(T a)
+&#123;
+	std::cout &lt;&lt; a;
+	return true;
+&#125;
+</code></pre>
+<p>这是c++语言中，这个函数实现了真正的print_data函数的功能（打印数据），所有的数据都可以通过调用这个函数来显示到屏幕上，上面c语言实现的函数，只能打印int型数据。</p>
+<p>好了，看了这两个函数，我们大致知道了应该具体干些什么——用汇编语言实现将数值打印到屏幕上的功能。</p>
+<p>用高级语言写出这个功能，不过区区几行而已，因为已经有很多底层技术细节被屏蔽掉了，我们无需操心底层是怎么样的。但是在汇编语言中，我们需要考虑很多，就这个功能，我们至少需要知道两点：</p>
+<p>第一点：</p>
+<p>我们的显示设备（显示屏）属于外设，cpu无法直接控制外设，而是通过扩展插槽中的芯片（独立显卡），一般来说显卡都是在插槽里面，不过一些集成显卡可能是集成在主板上或处理器内部的。</p>
+<p>cpu和显卡的互动在于，cpu必须要将想打印的数据传送给逻辑内存空间中显存所占据的位置，（关于这个逻辑内存空间，这个很简单，大家可以去百度自行理解）</p>
+<p>MS-DOS系统，x86-8086架构中，内存单元0B800：0000起始，到0B900：0000，中间一共32KB大小的内存空间是显存空间，在这32KB中，只要将数据写进这个范围，显卡都会将其显示到屏幕上。但是屏幕的一页，是无法一次性将32KB的数据量全部显示出来，于是将其分为了8页，每一页可以显示25（行）* 80（列）个字符，每个字符占据两个字节，一行就是80* 2=160个字节，一共有25行，这样子的页，一共有8页，每一页占据4KB的大小，显卡每次只将第一页的内容显示到屏幕上。我们这次任务就是将数值，打印到1页8行3列的位置。</p>
+<p>第二点：</p>
+<p>我们的屏幕上显示出来的图型，都是用ASCLL码来标识的，例如c函数print_data中的语句<code>printf(&quot;%d&quot;,a);</code> 这句话里面，%d的意思是有一个参数，是整型数据，调用printf函数，将这个整型数据打印出来。但是其底层真是将这个数值传送给显存，然后显卡将显存中的值显示到屏幕中吗？</p>
+<p>我们需要记住：一切在显示屏上显示出来的数字，都是字符，字符底层的编码遵循ASCLL码规范，比如屏幕上有一个1，这个数字1，我们需要将其转化为Ox31（这是16进制形式，便于后续理解），显卡在处理Ox31时，就会在屏幕中我们所选择的位置上，显示1这个字符。</p>
+<p>知道了这些，我们就会遇到问题，要想实现整个功能，需要回答三个问题：</p>
+<p>第一个问题：我们在什么位置来存储想要显示的数据，并且怎么将数据传输进显存1页8行3列中，怎么定位数据显示的位置。</p>
+<p>第二个问题：我们原始数据是一个整数（比如取一个整数12666），12666在存储的时候是一个占据两个字节空间（一个字空间）大小，在这个字空间中，是这样分布的：11000101110010</p>
+<p>这个二进制码对应的16进制码是这样的：317A，我们要想将12666这5个字符显示到屏幕上，就需要在显存中某个连续的空间中，写入31H,32H,36H,36H,36H。</p>
+<p>那么，我们如何将一个数值转化为这些分开的ASCLL码呢</p>
+<p>我们先来想一下第二个问题，通过观察，你一定能发现，1，对应的ASCLL码就是31H，2对应的ASCLL码就是32H，所有的数字，其ASCLL码就是在原来的值上加上30H，（H是一个后缀，代表16进制，比如32H，表示16进制的32，Ox32也表示16进制的32）</p>
+<p>那么好了，我们只需要将12666，分成1，2，6，6，6，然后将每个数值加上30H，就成了对应的ASCLL码，我们怎么处理这个数值，将其每位都分开呢。</p>
+<p>采用下面的方法：</p>
+<p><img src="duan.chu.png" alt="cn"></p>
+<p>将12666除以10，每次得出的余数，将余数加上30H，然后就成了对应的字符，这种计算一共需要5次，我们可以使用循环。</p>
+<p><img src="shuzhi.zifuchuan.png" alt="cn"></p>
+<p>我们知道针对12666，肯定是5次，如果下一次数值变了呢，我们是不能事先知道循环次数的。</p>
+<p>图中，我们可以看出来，当最后得数为0的时候，我们就得停止除法了。</p>
+<p>当我们不知道具体的循环次数，但是可以根据某一个值来判断循环是否结束，我们就不能使用loop汇编指令，而是使用标记+条件跳转指令。因为loop指令，是根据cx中的值来判断的，cx中的值是稳定的，只能被loop相关指令修改（每次跳转后，cx寄存器中的值减1），而我们判断循环是否结束的标记是，商是否为0，商每次的变化是不定的，并不是每次减1。所以我们要使用标记+条件跳转指令。</p>
+<p>可以看出来，数值转化为字符串中最重要的步骤就是每次的除法。在汇编中除法指令是div。</p>
+<p>MS-DOS系统x86-8086架构中，可以进行8位除法和16位除法。当进行8位除法时，我们的被除数（被除数必须是16位）必须保存在ax寄存器中（ax寄存器是16位的），除数（除数必须是8位）可以在内存单元中，也可以在别的可用寄存器中。当进行16位除法时，我们的被除数（被除数是32位）必须保存在bx寄存器和ax寄存器中（被除数高16位保存在bx寄存器，低16位保存在ax寄存器），除数（除数必须是16位）可以在内存单元中，也可以在别的可用寄存器中。</p>
+<p>在所得的结果中，进行8位除法运算的商保存在al寄存器中，其余数保存在ah寄存器中。进行16位除法运算的商保存在ax寄存器中，其余数保存在bx寄存器中。</p>
+<p>这个除法运算存储方案，其实很容易出错：</p>
+<p>假如我们在进行除法的时候，很有可能会出现溢出，我们打个比方：cl寄存器存储1作为除数，进行8位除法运算，我们在ax寄存器中存储0100H（H后缀表示这是个16进制数），运算指令</p>
+<pre><code>div cx
+</code></pre>
+<p>运算完之后，根据理想中，0100H除以1，所得的商应该是原数0100H，但是呢，这个商占据了9位bit，而我们在进行8位除法运算时所得的商是保存在al寄存器中，al寄存器是8位bit，不能存储9位的数值，故发生了溢出。我们在进行除法运算的时候，这种情况是很容易发生的。</p>
+<p>所以，第三个问题就是，我们在进行除法的时候，怎样解决除法溢出问题。</p>
+<p>通过对以上的问题的思考，我们就可以知道，在实现这个显示数值功能程序中，我们需要写三个子程序。写出三个子程序分别来处理这三个问题。</p>
+<p>这是典型的模块化编程，模块化编程是所有程序中，都需要遵守的规则，可以利于我们对不同的问题进行独立的思考。在汇编中，模块化编程更为重要。</p>
+<p>我们需要编写dtos程序（data to string的缩写），用来将数值转化为字符串。</p>
+<p>传参：ds:si所指向的内存空间，内存空间大小为10字节，以0初始化，字符串的最大长度为9字节。</p>
+<p>返回结果：ds:si所指向的内存空间是数值的字符串表示。</p>
+<p>我们需要编写divdw程序（divide——double words的缩写），用来做16位除法（做16位除法的程序，肯定能做8位除法，功能更强大），这个程序用来解决除法溢出问题。</p>
+<p>传参：用bx寄存器来存储被除数的高16位，ax寄存器来存储被除数的低16位，cx寄存器来存储除数。</p>
+<p>返回结果：商的高16位保存在bx寄存器中，低16位保存在ax寄存器中，余数保存在cx寄存器中，</p>
+<p>（注意，原来的存储结果是，bx寄存器来存储余数，ax寄存器来存储商，现在扩展了，我们使用两个寄存器来存储商，这样更能扩大我们运算对象的取值范围，并且取值范围内不会产生除法溢出）</p>
+<p>我们需要编写show_str程序（show string的缩写），来将内存空间中的字符串，转移到显存中。</p>
+<p>传参：dh寄存器存储行号，dl寄存器存储列号（行号0~24，列号0~79），cl寄存器来存储颜色，ds:si存储的是字符串的首地址</p>
+<p>返回结果：无返回，其结果就是在屏幕上显示出字符串。</p>
+<p>根据利害关系，我们可以先单独编写show_str子程序，也可以放后面再编写。我们在写dtos子程序的时候，必须先编写完divdw子程序。因为在dtos子程序中，我们要将数值转化为字符串，需要做大量的除法，就需要不停的调用divdw子程序来防止除法溢出。</p>
+<p>所以，现在可以确定，先编写show_str子程序，然后编写divdw子程序，最后编写dtos子程序。在dtos子程序中，需要调用divw子程序，这就需要一定的契合，但是我们已经将各种参数的传递和返回都明确了，子程序之间尽量做到依赖性低，独立性强。现在放开手脚来编程吧。</p>
+<p>在编写程序的时候，我们一定要不停的测试，在show_str子程序中，我们可以伪造一个字符串，用来测试这个程序的健壮性。</p>
+<p>show_str子程序的测试与编写：</p>
+<pre><code>assume cs:code
+data segment
+	db 'Hello,i am Bruce Lee',0
+data ends
+
+code segment
+start:	mov dh,8
+		mov dl,3
+		moc cl,2
+		mov ax,data
+		mov ds,ax
+		mov si,0
+		call show_str
+
+		mov ah,4ch
+		mov al,00h
+		int 21h
+show_str:
+		.
+		.
+		.
+code ends
+end start
+</code></pre>
+<p>我们在写show_str时，可以不用这么规范，非要在开始的时候，就将这个功能程序成型，我们可以不要call指令，直接这样编程：</p>
+<pre><code>assume cs:code
+data segment
+	db 'Hello,i am Bruce Lee',0
+data ends
+
+code segment
+start:	mov dh,8
+		mov dl,3
+		mov cl,2
+		mov ax,data
+		mov ds,ax
+		mov si,0
+		;从这里开始写show_str程序的核心代码，不用call指令
+		;等将核心代码写出来后，再整合，形成子函数，然后用call指令来调用
+
+		.
+		.
+		.
+		mov ah,4ch
+		mov al,00h
+		int 21h
+code ends
+end start
+</code></pre>
+<p>具体的讲解就不用了，这个程序不是很难，想必大家通过思考，编写，调试，一定可以写出来，现在来看一下我写的程序吧：</p>
+<pre><code>assume cs:code
+data segment
+	db 'Welcome to masm!',0
+data ends
+
+code segment
+start:  mov dh,8
+		mov dl,3
+	    mov cl,2
+		mov ax,data
+		mov ds,ax
+		mov si,0	；设置参数
+		call show_str
+
+		mov ah,4ch	；程序返回，使用4ch功能号
+		mov al,00h	；程序返回值为0
+		int 21h		；调用21h号中断例程
+
+show_str:
+		push dx	；将用到的所有寄存器保留入栈
+    	push cx
+   		push ax
+    	push es
+    	push si
+    	push di
+
+    	push cx      ；尽量用较少的寄存器，所以将cx入栈，在后面还有出栈
+    	mov al,dh
+    	mov ah,0
+    	mov cl,160
+    	mul cl    ;ax=dh*160
+    	mov di,ax  ;di=dh*160
+    	mov cl,2	
+    	mov al,dl
+    	mov ah,0
+    	mul cl   ;ax=dl*2
+    	add di,ax  ;di=dh*160+dl*2
+    	pop cx		；在这里出栈，这样，cx又存储的是原来应该存储的颜色值
+
+    	mov ax,0b800h	；设置显存地址
+    	mov es,ax
+show:   mov al,ds:[si]    ；注意是al，不是ax，是8位的内存单元
+    	cmp al,0
+    	je show_ret		；相等就表示结束了，可以return了，否者一直进行跳转指令来覆写显存内容
+    	mov es:[di],al
+    	mov es:[di+1],cl   ；每一个偶数内存单元后面的奇数内存单元就是该偶数单元的属性单元
+    	inc si 
+    	add di,2	；注意si，di的增长值不一样 
+    	jmp show
+show_ret:
+    	pop di	；对应出栈
+    	pop si
+    	pop es
+    	pop ax
+    	pop cx
+    	pop dx
+    	ret
+code ends
+end start
+</code></pre>
+<p>在显存中，偶数内存单元存储的是ASCLL码，奇数存储单元存储的是字符的属性值，程序中，；后面是注释，这个；是我后续加的，大家在拷贝代码的时候，注意要将注释消除掉，符号肯定不对。</p>
+<p>属性值是这样的：</p>
+<p><img src="zijie.shuxing.png" alt="cn"></p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/en/Hexo-Theme-LiveMyLife/" data-toggle="tooltip" data-placement="top" title="">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/cn/Hexo-Theme-LiveMyLife/" data-toggle="tooltip" data-placement="top" title="Hexo-Theme-LiveMyLife">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=01-比较简单的x86-8086汇编实验：将数值显示到屏幕上&body=Hi,I found this website and thought you might like it http://yoursite-url/cn/x86-8086显示数值/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Sun Jul 30 2023 02:34:17 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="nav">none</ol>
+        
+        </div>
+      </aside>
     
 
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
+
+
+      <!-- Sidebar Container -->
+      <div class="
                 col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
+                col-md-10 col-md-offset-1
+                sidebar-container">
 
-      <!-- Main Content -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
-      <!-- 归档列表 -->
-
-      
-
-      <!-- 归档列表 -->
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2023">
-          <span class="tag-text">2023</span>
-        </span>
-        <ul>
-          
-          <li>
-            07-30
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/AI发展见解/" style="color: #0085a1">
-              <span>
-                AI，我们应该知道什么，未来，我们应该怎么发展
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-30
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/Hexo-Theme-LiveMyLife/" style="color: #0085a1">
-              <span>
-                Untitled
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-30
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/x86-8086显示数值/" style="color: #0085a1">
-              <span>
-                01-比较简单的x86-8086汇编实验：将数值显示到屏幕上
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2020">
-          <span class="tag-text">2020</span>
-        </span>
-        <ul>
-          
-          <li>
-            04-17
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Hexo-Theme-LiveMyLife/" style="color: #0085a1">
-              <span>
-                Hexo-Theme-LiveMyLife
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-      </div>
-      
-    </div>
-  </div>
-</div>
-
-
-      <!-- 如果开启评论功能 -->
-      
-    </div>
-
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-        <!-- Visitors -->
-<h5><a href="/">VISITORS</a></h5>
-
-
-        <hr>
-    
         <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#x86-8086-汇编" title="x86-8086-汇编">x86-8086-汇编</a>
+            
+          </div>
+        </section>
+        
 
-<section>
-  <h5><a href="/tags/">FEATURED TAGS</a></h5>
-  <div class="tags">
-    
-    
-    <a href="/tags/#x86-8086-汇编" title="x86-8086-汇编" rel="1">x86-8086-汇编</a>
-    
-    
-    
-    <a href="/tags/#IT" title="IT" rel="1">IT</a>
-    
-    
-    
-    <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife" rel="1">Hexo-Theme-LiveMyLife</a>
-    
-    
-  </div>
-</section>
-
-
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-  <h5><a href="/about/">ABOUT ME</a></h5>
-  <div class="short-about">
-
-    
-    <img id="avatar_pic" src="/img/avatar/fatpeople.jpg" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
-    
-
-    
-    <p>Don&#39;t wait Don&#39;t wait Don&#39;t wait for anything...</p>
-    
-
-    <!-- SNS Link -->
-    <ul class="list-inline">
-      
-
-      
-      <li>
-        <a target="_blank" href="https://github.com/000xiaoming">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-    </ul>
-  </div>
-</section>
-
-        <hr>
-    
-        <!-- RECENT POSTS -->
-
-<h5><a href="/">RECENT POSTS</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="../../cn/AI%E5%8F%91%E5%B1%95%E8%A7%81%E8%A7%A3/">
-      <li>AI，我们应该知道什么，未来，我们应该怎么发展</li>
-    </a>
-    
-    <a href="../../en/Hexo-Theme-LiveMyLife/">
-      <li>(no title)</li>
-    </a>
-    
-    <a href="../../cn/x86-8086%E6%98%BE%E7%A4%BA%E6%95%B0%E5%80%BC/">
-      <li>01-比较简单的x86-8086汇编实验：将数值显示到屏幕上</li>
-    </a>
-    
-    <a href="../../cn/Hexo-Theme-LiveMyLife/">
-      <li>Hexo-Theme-LiveMyLife</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
         <!-- Friends Blog -->
-
-<h5><a href="/">FRIENDS</a></h5>
-<ul class="list-inline">
-  
-  <li><a href="https://v-vincen.life/" target="_blank">V_Vincen</a></li>
-  
-  <li><a href="http://beantech.org" target="_blank">Bean Tech</a></li>
-  
-  <li><a href="http://huangxuan.me" target="_blank">Hux Blog</a></li>
-  
-  <li><a href="https://hexo.io/" target="_blank">Hexo</a></li>
-  
-</ul>
-
-
+        
         <hr>
-    
-        <!-- Archives -->
+        <h5>链友</h5>
+        <ul class="list-inline">
 
-<h5><a href="/archives/">archives</a></h5>
-<div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2023/07/">July 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/04/">April 2020</a><span class="archive-list-count">1</span></li></ul>
-</div>
-
-
-        <hr>
-    
-        <!-- Categories -->
-
-<h5><a href="/categories/">categories</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="/categories/#x86-8086汇编实验">
-      <li>x86-8086汇编实验</li>
-    </a>
-    
-    <a href="/categories/#Programer">
-      <li>Programer</li>
-    </a>
-    
-    <a href="/categories/#Hexo-Theme-LiveMyLife">
-      <li>Hexo-Theme-LiveMyLife</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-</div>
-
-
-    
+          
+          <li>
+            <a href="https://v-vincen.life/" target="_blank">V_Vincen</a>
+          </li>
+          
+          <li>
+            <a href="http://beantech.org" target="_blank">Bean Tech</a>
+          </li>
+          
+          <li>
+            <a href="http://huangxuan.me" target="_blank">Hux Blog</a>
+          </li>
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
   </div>
-</div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->
@@ -881,7 +1038,7 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
             <span class="search-icon">
               <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
             </span>
-            <input autocomplete="off" placeholder="SEARCH..." type="text" id="local-search-input">
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
           </div>
         </div>
         <div id="local-search-result"></div>
