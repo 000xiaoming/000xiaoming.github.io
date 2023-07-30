@@ -139,10 +139,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://yoursite-url/tags/Hexo-Theme-LiveMyLife/">
+  <link rel="canonical" href="http://yoursite-url/cn/lab4/">
   <title>
     
-      I&#39;m Bruce Lee
+      超级无敌简单入门x86-8086汇编实验：移送程序代码-最简化安装 - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -239,15 +239,15 @@
       <div class="navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <a href="/">HOME</a>
+            <a href="/">首页</a>
           </li>
 
           
           
           <li>
-            <a href="/categories/">
+            <a href="/archive/">
               
-              CATEGORIES
+              归档
               
               
             </a>
@@ -258,9 +258,9 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/categories/">
               
-              ARCHIVES
+              分类
               
               
             </a>
@@ -271,7 +271,7 @@
           <li>
             <a href="/tags/">
               
-              TAGS
+              标签
               
               
             </a>
@@ -282,7 +282,7 @@
           <li>
             <a href="/about/">
               
-              ABOUT
+              关于
               
               
             </a>
@@ -293,36 +293,14 @@
           
           <li>
             <a class="popup-trigger">
-              <span class="search-icon"></span>SEARCH</a>
+              <span class="search-icon"></span>搜索</a>
           </li>
           
 
           <!-- LangSelect -->
           
           
-          <!-- LangSelect start -->
-          <!-- LangSelect -->
-<li>
-  <a id="lang-select-label"><i class="fa fa-globe"></i>
-    <span>
-      English
-    </span>
-    <select id="lang-select" data-canonical="tags/Hexo-Theme-LiveMyLife/index.html">
-      
-      
-      <option value="en"  selected >
-        English
-      </option>
-      
-      <option value="cn" >
-        简体中文
-      </option>
-      
-    </select>
-  </a>
-</li>
-
-          <!-- LangSelect end -->
+          
           
           
         </ul>
@@ -374,19 +352,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: url('');
-      --intro-header-background-image-url-page: url('/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: url('/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: url('//img/header_img/lml_bg.jpg');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/lml_bg.jpg');
     }
 
     header.intro-header {
-       /*page*/
-        background-image: var(--intro-header-background-image-url-page);
-        /* background-image: url('/img/header_img/archive_bg2.jpg'); */
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('/img/header_img/lml_bg.jpg'); */
       
     }
 
@@ -404,10 +382,24 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>经年治世</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">Bruce LEE</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#x86-8086-汇编" title="x86-8086-汇编">x86-8086-汇编</a>
+              
+            </div>
+            <h1>超级无敌简单入门x86-8086汇编实验：移送程序代码-最简化安装</h1>
+            <h2 class="subheading">最简单的汇编实验...</h2>
+            <span class="meta">
+              Posted by Bruce LEE on
+              2023-07-15
+            </span>
+
+
+            
+            
+
+
           </div>
           
         </div>
@@ -448,281 +440,427 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Main Content -->
-<div class="container">
-  <div class="row">
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <p>本实验目的：这是一个入门实验，但是可以为了以后理解中断处理程序那篇打下基础，程序代码的移送，换句话说就是安装！</p>
+<p>我想写一个程序，程序的功能呢就是将自己的机器码(<code>mov ax,4c00h</code>之前的代码）移送出去，移送到哪先不管，假定就移送到0200：0000这个起始地址吧。请你实现这个程序。（假设系统分配内存空间时，程序地址是cs：0000）</p>
+<p>（关于0200：0000这个地址，在以后的中断程序设计实验中会讲，这里简单提一下，cpu一个非常重要的能力：执行完当前指令后会转而去执行别的地方的指令。这个能力我们叫中断（interrupt），x86-8086架构中，内存地址的开始处，就是0位置处，就是存放关于中断的信息，大小为1KB）</p>
+<p>乍一想，可能没有什么头绪吧，我先给出一段汇编代码，用于提示，你来补充空缺的代码。你先想，然后待会儿，我娓娓道来，这个程序应该怎么实现。</p>
+<p>提示代码：</p>
+<pre><code>1 assume cs:code
+2 code segment
+3
+4	mov
+5	mov
+6
+7	mov ax,0020h
+8	mov es,ax
+9	mov bx,0
+10	mov cx,
+11	
+12	s:mov al,ds:[bx]
+13	mov es:[bx],al
+14	inc bx
+15	loop s
+16
+17	mov ax,4c00h
+18	int 21h
+19 code ends
+20 end
+</code></pre>
+<p>好好想想，其逻辑并不难，想好了后，看看我下面的分析啦，如果还没想好，请你坚持下去，动手实践一下，一定可以想出来哒，这个实验真的很简单。</p>
+<p>首先呢，代码功能是将本程序中<code>mov ax,4c00h</code>之前的代码移送出去，移送这个动作，一定是<em>mov</em> 指令啦，只有<em>mov</em> 指令可以将一个地方的内容完整的复制到另一个地方。</p>
+<p>光有<em>mov</em> 指令也不行呀，就像我们要移送货物，就得先知道货物原先存放在哪呀，哎呀，这不是笨蛋嘛，我们移送本程序代码，那货物就是本程序呀，存放的位置自然就是程序的位置！</p>
+<p>我们怎么获得程序的位置呢，当然是通过<em>cs</em> 段寄存器（别忘了，我以前可是讲过，<em>cs</em> 意味着<em>code segment</em> ，是代码段的意思啦）来获取啦，每一个程序，从可执行文件中加载到内存后，其<em>cpu</em> 的cs段寄存器就指向了程序所在的段内存，ip寄存器和cs段寄存器组合在一起，cs：ip也就一定指向程序的第一条指令地址！</p>
+<p>好啦，我们知道货物的地址了，就是cs段寄存器里面存储的值，我们将cs段寄存器里的值移送到ds段寄存器中（忘了吗，<em>data segment</em> 呀，就是数据段，来保存数据的，其可以看成我们要搬运的货物）。</p>
+<p>到目前为止，我们只知道程序的段地址，偏移地址我们是不知道哒，我们的偏移地址存储在<em>ip</em> 寄存器中（<em>instruction pointer</em> 指令指针寄存器），通常来说<em>ip</em> 的值，应该是0100H，也就是说，我们程序的第一条指令的地址通常是cs：0100，根据我的经验，有时候会是cs：0000。所以，我们并不知道真正的地址，这就是开头处题目后面的括弧里面的意思，假设系统分配内存时，程序地址是cs：0000。</p>
+<p>关于具体的，系统在加载可执行程序时的内存分配细节，我在汇编基础系列里面讲到了，可以去看看，这里就一笔带过啦。</p>
+<p>好了，既然货物的地址就是cs：0000，那就好办啦，我们直接将<em>cs</em> 段寄存器的值移送到<em>ds</em> 段寄存器里面啦，那么我们就确定代码：</p>
+<pre><code>mov ds,cs
+</code></pre>
+<p>接下来，根据功能的假设，那么我们就可以直接进行货物目的地的确认了，我们用<em>es</em> 段寄存器来标识目的地（再提醒一下，<em>es</em> 意思是<em>extra segment</em> )。</p>
+<pre><code>mov ax,0020h
+mov es,ax
+
+mov bx,0      ;bx寄存器通常用来指定内存地址的偏移地址如 ds:[bx]
+</code></pre>
+<p>好了，现在的代码组合一下，就是这样啦</p>
+<pre><code>；现在分析出来的代码				提示代码：
+1 assume cs:code                           assume cs:code
+2 code segment                             code segment
+3
+4	mov ds,cs                            	mov 
+5	            							mov
+6                       
+7	mov ax,0020h                            mov ax,0020h
+8	mov es,ax								mov es,ax
+9	mov bx,0								mov bx,0
+10
+11											mov cx,
+</code></pre>
+<p>我们接下来就缺的是<code>mov cx,</code>这条指令后面的值了，但是你看，4行和5行的代码是和提示代码不一样的，可是那一句代码（4行，5行代码）的作用就是要实现的功能就是移送<em>cs</em> 到<em>ds</em> 呀，功能我们已经实现了，可是对比下来，我们少了一行<em>mov</em> 指令的代码，真是奇了怪了。算啦，先不管了，等全写完了，试一下编译程序和连接程序能不能过，如果能过，那么我们写的就没问题啦。</p>
+<p>剩下的<code>mov cx，</code>代码就是确定要移送的代码量大小，我们要从第一行代码<code>mov ds,cs</code>，一直到<code>mov ax,4c00h</code>这行代码，这中间的一切都要移送出去，我们做一个循环结构，将移送的内存大小确定下来，依次循环n次，就大功告成啦。可是我们怎么确定这些代码占据的内存空间大小呢。</p>
+<pre><code>s:mov al,ds:[bx]
+mov es:[bx],al
+inc bx
+loop s
+</code></pre>
+<p>这段循环结构就是提示代码里面已经给我们的了，但是循环多少次，我们现在并没有确定下来，我们知道，loop循环结构的循环次数跟<em>cx</em> 寄存器里面的值有关，当<em>cx</em> 寄存器里面的值为0的时候，就退出循环，否则就将<em>cx</em> 寄存器里面的值减一（相当于执行了一句<code>dec cx</code>这段代码）。可以确定的说，在cs：ip指针指向<code>loop s</code>指令，cpu讲这条指令从内存中取出来，放到指令缓存器中，然后<em>ip</em> 寄存器里面的值增加loop指令所占据的内存空间量，当cpu将指令缓存器里面的<code>loop s</code>执行时，先进行<em>cs</em> 寄存器的值减一，然后判断其值是否为0，如果为0，则退出循环，不为零，继续循环。</p>
+<p>所以，我们就可以知道，假如我们要执行5次循环，那么我们就事先在<em>cx</em> 寄存器里面寄存数值5，若要执行8次，就事先在<em>cx</em> 寄存器里面寄存数值8。</p>
+<p>现在，我们开始想如何确定从代码1到代码15的内存大小，在汇编基础系列中，我讲到，mov指令的大小不是一成不变的，而是由不同的操作数和自身的大小而决定的。我们可以分析，每行代码的指令是什么，操作数是什么，然后推断出这行代码对应的内存空间大小是多少，比如<code>mov ax,0006h</code>，这行代码的内存空间就占据3个字节，再比如<code>mov ax,[0020]</code>，这行代码的内存空间就占据3个字节，像这个代码<code>mov ax,bx</code>,就占据2个字节。哎呀，好累，每条代码，不同的指令，不同的操作数类型，都一条条算，很麻烦啦。</p>
+<p>我们可以这样，既然，我们在11行代码<code>mov cx,</code>填写一个数，这个数代表了转移的代码空间大小，那么就好办了。这个数，用汇编的话术来说，叫立即数，是一种操作数的类型。</p>
+<p>我们可以假设这个数是0010H大小，这个数在合理的范围内（什么是合理？该指令的操作对象是<em>ax</em> 寄存器，其在x86-8086架构中是16位，所以这个立即数的合理范围是0000-ffffH），只要是立即数，不管大小，所占据的空间是一定的。我们这么做的目的就是，先假设一个数，添加代码中，然后使用<em>masm</em> 编译，<em>link</em> 连接，生成exe文件，然后使用debug程序，对生成的exe文件进行调试，在调试过程中，使用u（unassumble）反汇编指令，观察其占据空间的大小。</p>
+<p>（这个过程有点麻烦，但是没办法，谁让这个程序属于入门级别的呢，就要逻辑最简单，最直接的方式去探索，在以后的学习中，我们会有更好，更简洁的方式来确定代码内存大小的，现在就先这样，慢慢进步，提示：offset）</p>
+<p>代码如下：</p>
+<pre><code>assume cs:code
+code segment
+
+	mov ds,cs
+	
+	mov ax,0020h
+	mov es,ax
+	mov bx,0
+	mov cx,0010h
+
+	s:mov al,ds:[bx]
+	mov es:[bx],al
+	inc bx
+	loop s
+
+	mov ax,4c00h
+	int 21h
+code ends
+end
+</code></pre>
+<blockquote>
+<p>C:&gt;masm code.asm;</p>
+</blockquote>
+<p>输入编译指令发现，DOS系统弹出错误</p>
+<blockquote>
+<p>code.asm(4):error A2019:Wrong type of register</p>
+</blockquote>
+<p>意思是，在第4行，出现了寄存器类型错误，我们的第4行代码是</p>
+<pre><code>mov ds，cs
+</code></pre>
+<p>说明这行代码的寄存器转移出错了，首先，寄存器的特点就是存取速度快，我们寄存器的位置都是在cpu的内部，是cpu重要的组成部分，既然速度快，存取方便，为何这两个寄存器之间的存取就发生问题了呢。我们仔细分析，ds寄存器，cs寄存器，都是属于段寄存器类型，存储的是段地址（在访问数据的时候，cs寄存器存储代码段的起始地址，ds寄存器存储数据段的起始地址）。通过这次实验我们发现，在x86-8086架构中，是不允许通过一个‘mov’指令将段寄存器的值直接赋值给另一个段寄存器。原因是什么呢？</p>
+<p>原因就是：保持内存分段机制的稳定性和安全性</p>
+<p>这个话题我们放在内存篇去讲，在内存篇，我会讲解中断区，显存区等，c语言角度的内存分配机制，c++语言角度的内存分配机制。现在，我们只需要记住这个结论就行啦。</p>
+<p>记住，在x86-8086架构中，不允许通过一个‘mov’指令将段寄存器的值直接赋值给另一个段寄存器。</p>
+<p>好，这下我们回过头来看，我们就明白了提示程序中，为何会有两条mov指令来做这一个动作（这个动作是将程序地址设置为搬运的源地址）</p>
+<p>所以，我们需要另一个通用寄存器作为中间转移站点，用来暂时保存一下cs寄存器的内容，然后再将这个中间转移站点的内容送入ds寄存器中，于是代码变成：</p>
+<pre><code>mov ax，cs
+mov ds，ax
+</code></pre>
+<p>我使用ax通用寄存器来做这个中间转移站点（你可以选择别的通用寄存器），这样就和提示代码一样了。</p>
+<p>改完之后，我们继续进行编译</p>
+<blockquote>
+<p>C:&gt;masm code.asm;</p>
+</blockquote>
+<p>编译成功。</p>
+<p>然后连接程序</p>
+<blockquote>
+<p>C:&gt;link code.obj;</p>
+</blockquote>
+<p>注意，我们在连接的时候，文件名后缀是obj，因为编译的结果就是生成对应的obj文件</p>
+<p>连接成功，好了我们运行一下</p>
+<blockquote>
+<p>C:&gt;code.exe</p>
+</blockquote>
+<p>我们在运行的时候，文件后缀是exe，因为连接的结果就是生成对应的exe文件</p>
+<p>输入这个指令后，DOS没有什么反应，当然啦，这个实验程序很简单，没有任何输入输出的，只是在尝试改变内存地址中的值。</p>
+<p>我们再使用debug程序来观察这个程序的动作。</p>
+<blockquote>
+<p>C:&gt;debug code.exe</p>
+</blockquote>
+<p>进入debug模式，输入</p>
+<blockquote>
+<p>-r</p>
+</blockquote>
+<p>查看寄存器命令</p>
+<blockquote>
+<p>AX=FFFF BX=0000 CX=001C DX=0000 SP=0000 BP=0000 SI=0000 DI=0000</p>
+<p>DS=075A ES=075A SS=0769 CS=076A IP=0000 NU UP EI PL NZ NA PD NC</p>
+</blockquote>
+<p>这是我的电脑寄存器中的值，现在刚进入debug模式，cs：ip指向了程序的内存第一条指令地址，我们使用u命令</p>
+<blockquote>
+<p>-u cs:0000</p>
+</blockquote>
+<p>这句指令是将cs:0000地址处（就是程序地址）的机器码，反汇编成我可以看懂的汇编代码。</p>
+<blockquote>
+<p>076A:0000 8CC8 MOV AX,CS</p>
+<p>076A:0002 8ED8 MOV DS,AX</p>
+<p>076A:0004 BB2000 MOV AX,0020</p>
+<p>076A:0007 8EC0 MOV ES,AX</p>
+<p>076A:0009 BB0000 MOV BX,0000</p>
+<p>076A:000C B91000 MOV CX,0010</p>
+<p>076A:000F 8A07 MOV MOV AL,[BX]</p>
+<p>076A:0011 26 ES:</p>
+<p>076A:0012 8807 MOV [BX],AL</p>
+<p>076A:0014 43 INC BX</p>
+<p>076A:0015 E2F8 LOOP 000F</p>
+<p>076A:0017 B8004C MOV AX,4C00</p>
+<p>076A:001A CD21 INT 21</p>
+</blockquote>
+<p>可以看出来，从第一条指令<em>mov ax,cs</em> 到<em>mov ax,4c00</em> 这中间，从076A:0000到076A:0017,一共有0018H个内存单元，所以我们可以知道，接下来要做的就是将指令<em>mov cx,0010</em> 改为指令<em>mov cx,0018</em>。</p>
+<p>有一个地方需要注意，我们在编写源代码的时候，在立即数后面都是要加上H这个符号，标识着这个数是一个十六进制数，而在debug中的反汇编程序中，debug将内存中的机器码翻译成汇编代码时，汇编代码中的立即数后面是没有H这个标识符的。注意这个小细节。</p>
+<p>好啦，返回程序编译器，我们将程序改回正确的值，到此就结束了。还有一点要提醒，使用debug，注意看程序单步执行到最后的时候，t命令要换成p命令，不然就会一直执行到程序后面存储的其他不相干指令了（在debug中，t指令和p指令到底有什么区别，见汇编基础篇）。</p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/cn/AI发展见解/" data-toggle="tooltip" data-placement="top" title="AI，我们应该知道什么，未来，我们应该怎么发展">&larr; Previous Post</a>
+          </li>
+          
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=超级无敌简单入门x86-8086汇编实验：移送程序代码-最简化安装&body=Hi,I found this website and thought you might like it http://yoursite-url/cn/lab4/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Sat Jul 15 2023 01:08:33 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="nav">none</ol>
+        
+        </div>
+      </aside>
     
 
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
+
+
+      <!-- Sidebar Container -->
+      <div class="
                 col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
+                col-md-10 col-md-offset-1
+                sidebar-container">
 
-      <!-- Main Content -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
-      <!-- 归档列表 -->
-
-      
-
-      <!-- 归档列表 -->
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2023">
-          <span class="tag-text">2023</span>
-        </span>
-        <ul>
-          
-          <li>
-            07-30
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/AI发展见解/" style="color: #0085a1">
-              <span>
-                AI，我们应该知道什么，未来，我们应该怎么发展
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-30
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/Hexo-Theme-LiveMyLife/" style="color: #0085a1">
-              <span>
-                Untitled
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-30
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/x86-8086显示数值/" style="color: #0085a1">
-              <span>
-                01-比较简单的x86-8086汇编实验：将数值显示到屏幕上
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2020">
-          <span class="tag-text">2020</span>
-        </span>
-        <ul>
-          
-          <li>
-            04-17
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Hexo-Theme-LiveMyLife/" style="color: #0085a1">
-              <span>
-                Hexo-Theme-LiveMyLife
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-      </div>
-      
-    </div>
-  </div>
-</div>
-
-
-      <!-- 如果开启评论功能 -->
-      
-    </div>
-
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-        <!-- Visitors -->
-<h5><a href="/">VISITORS</a></h5>
-
-
-        <hr>
-    
         <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#x86-8086-汇编" title="x86-8086-汇编">x86-8086-汇编</a>
+            
+          </div>
+        </section>
+        
 
-<section>
-  <h5><a href="/tags/">FEATURED TAGS</a></h5>
-  <div class="tags">
-    
-    
-    <a href="/tags/#x86-8086-汇编" title="x86-8086-汇编" rel="1">x86-8086-汇编</a>
-    
-    
-    
-    <a href="/tags/#IT" title="IT" rel="1">IT</a>
-    
-    
-    
-    <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife" rel="1">Hexo-Theme-LiveMyLife</a>
-    
-    
-  </div>
-</section>
-
-
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-  <h5><a href="/about/">ABOUT ME</a></h5>
-  <div class="short-about">
-
-    
-    <img id="avatar_pic" src="/img/avatar/fatpeople.jpg" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
-    
-
-    
-    <p>Don&#39;t wait Don&#39;t wait Don&#39;t wait for anything...</p>
-    
-
-    <!-- SNS Link -->
-    <ul class="list-inline">
-      
-
-      
-      <li>
-        <a target="_blank" href="https://github.com/000xiaoming">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-    </ul>
-  </div>
-</section>
-
-        <hr>
-    
-        <!-- RECENT POSTS -->
-
-<h5><a href="/">RECENT POSTS</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="../../cn/AI%E5%8F%91%E5%B1%95%E8%A7%81%E8%A7%A3/">
-      <li>AI，我们应该知道什么，未来，我们应该怎么发展</li>
-    </a>
-    
-    <a href="../../en/Hexo-Theme-LiveMyLife/">
-      <li>(no title)</li>
-    </a>
-    
-    <a href="../../cn/x86-8086%E6%98%BE%E7%A4%BA%E6%95%B0%E5%80%BC/">
-      <li>01-比较简单的x86-8086汇编实验：将数值显示到屏幕上</li>
-    </a>
-    
-    <a href="../../cn/Hexo-Theme-LiveMyLife/">
-      <li>Hexo-Theme-LiveMyLife</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
         <!-- Friends Blog -->
-
-<h5><a href="/">FRIENDS</a></h5>
-<ul class="list-inline">
-  
-  <li><a href="https://v-vincen.life/" target="_blank">V_Vincen</a></li>
-  
-  <li><a href="http://beantech.org" target="_blank">Bean Tech</a></li>
-  
-  <li><a href="http://huangxuan.me" target="_blank">Hux Blog</a></li>
-  
-  <li><a href="https://hexo.io/" target="_blank">Hexo</a></li>
-  
-</ul>
-
-
+        
         <hr>
-    
-        <!-- Archives -->
+        <h5>链友</h5>
+        <ul class="list-inline">
 
-<h5><a href="/archives/">archives</a></h5>
-<div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2023/07/">July 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/04/">April 2020</a><span class="archive-list-count">1</span></li></ul>
-</div>
-
-
-        <hr>
-    
-        <!-- Categories -->
-
-<h5><a href="/categories/">categories</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="/categories/#x86-8086汇编实验">
-      <li>x86-8086汇编实验</li>
-    </a>
-    
-    <a href="/categories/#Programer">
-      <li>Programer</li>
-    </a>
-    
-    <a href="/categories/#Hexo-Theme-LiveMyLife">
-      <li>Hexo-Theme-LiveMyLife</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-</div>
-
-
-    
+          
+          <li>
+            <a href="https://v-vincen.life/" target="_blank">V_Vincen</a>
+          </li>
+          
+          <li>
+            <a href="http://beantech.org" target="_blank">Bean Tech</a>
+          </li>
+          
+          <li>
+            <a href="http://huangxuan.me" target="_blank">Hux Blog</a>
+          </li>
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
   </div>
-</div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->
@@ -881,7 +1019,7 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
             <span class="search-icon">
               <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
             </span>
-            <input autocomplete="off" placeholder="SEARCH..." type="text" id="local-search-input">
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
           </div>
         </div>
         <div id="local-search-result"></div>
