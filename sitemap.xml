@@ -67,7 +67,7 @@
 
   <url>
     <loc>http://yoursite-url/</loc>
-    <lastmod>2023-07-30</lastmod>
+    <lastmod>2023-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -75,14 +75,14 @@
   
   <url>
     <loc>http://yoursite-url/tags/IT/</loc>
-    <lastmod>2023-07-30</lastmod>
+    <lastmod>2023-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite-url/tags/x86-8086-%E6%B1%87%E7%BC%96/</loc>
-    <lastmod>2023-07-30</lastmod>
+    <lastmod>2023-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -91,14 +91,14 @@
   
   <url>
     <loc>http://yoursite-url/categories/Programer/</loc>
-    <lastmod>2023-07-30</lastmod>
+    <lastmod>2023-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite-url/categories/x86-8086%E6%B1%87%E7%BC%96%E5%AE%9E%E9%AA%8C/</loc>
-    <lastmod>2023-07-30</lastmod>
+    <lastmod>2023-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
