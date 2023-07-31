@@ -2,71 +2,89 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite-url/categories/index.html</loc>
+    <loc>https://000xiaoming.github.io/categories/index.html</loc>
     
     <lastmod>2023-07-30</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite-url/tags/index.html</loc>
+    <loc>https://000xiaoming.github.io/tags/index.html</loc>
     
     <lastmod>2023-07-30</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite-url/en/Hexo-Theme-LiveMyLife/</loc>
+    <loc>https://000xiaoming.github.io/en/Hexo-Theme-LiveMyLife/</loc>
     
     <lastmod>2023-07-30</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite-url/404.html</loc>
+    <loc>https://000xiaoming.github.io/404.html</loc>
     
     <lastmod>2023-07-30</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite-url/about/index.html</loc>
+    <loc>https://000xiaoming.github.io/about/index.html</loc>
     
     <lastmod>2023-07-29</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite-url/cn/x86-8086%E6%98%BE%E7%A4%BA%E6%95%B0%E5%80%BC/</loc>
+    <loc>https://000xiaoming.github.io/cn/x86-8086%E6%98%BE%E7%A4%BA%E6%95%B0%E5%80%BC/</loc>
     
     <lastmod>2023-07-29</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite-url/cn/AI%E5%8F%91%E5%B1%95%E8%A7%81%E8%A7%A3/</loc>
+    <loc>https://000xiaoming.github.io/cn/AI%E5%8F%91%E5%B1%95%E8%A7%81%E8%A7%A3/</loc>
     
     <lastmod>2023-07-25</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite-url/cn/lab4/</loc>
+    <loc>https://000xiaoming.github.io/cn/lab4/</loc>
     
     <lastmod>2023-07-14</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite-url/archive/index.html</loc>
+    <loc>https://000xiaoming.github.io/archive/index.html</loc>
     
     <lastmod>2017-07-30</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
 
   <url>
-    <loc>http://yoursite-url/</loc>
+    <loc>https://000xiaoming.github.io/</loc>
     <lastmod>2023-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -74,33 +92,33 @@
 
   
   <url>
-    <loc>http://yoursite-url/tags/x86-8086-%E6%B1%87%E7%BC%96/</loc>
+    <loc>https://000xiaoming.github.io/tags/x86-8086-%E6%B1%87%E7%BC%96/</loc>
     <lastmod>2023-07-31</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://yoursite-url/tags/IT/</loc>
+    <loc>https://000xiaoming.github.io/tags/IT/</loc>
     <lastmod>2023-07-31</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
   </url>
   
 
   
   <url>
-    <loc>http://yoursite-url/categories/x86-8086%E6%B1%87%E7%BC%96%E5%AE%9E%E9%AA%8C/</loc>
+    <loc>https://000xiaoming.github.io/categories/x86-8086%E6%B1%87%E7%BC%96%E5%AE%9E%E9%AA%8C/</loc>
     <lastmod>2023-07-31</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://yoursite-url/categories/Programer/</loc>
+    <loc>https://000xiaoming.github.io/categories/Programer/</loc>
     <lastmod>2023-07-31</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
   </url>
   
 </urlset>
