@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://000xiaoming.github.io/cn/%E4%B8%AD%E6%96%AD%E6%A6%82%E8%A7%88/</loc>
+    
+    <lastmod>2023-07-31</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://000xiaoming.github.io/categories/index.html</loc>
     
     <lastmod>2023-07-30</lastmod>
@@ -65,7 +74,7 @@
   </url>
   
   <url>
-    <loc>https://000xiaoming.github.io/archive/index.html</loc>
+    <loc>https://000xiaoming.github.io/archives/index.html</loc>
     
     <lastmod>2017-07-30</lastmod>
     
@@ -76,7 +85,7 @@
 
   <url>
     <loc>https://000xiaoming.github.io/</loc>
-    <lastmod>2023-07-31</lastmod>
+    <lastmod>2023-08-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -84,14 +93,14 @@
   
   <url>
     <loc>https://000xiaoming.github.io/tags/IT/</loc>
-    <lastmod>2023-07-31</lastmod>
+    <lastmod>2023-08-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/tags/x86-8086-%E6%B1%87%E7%BC%96/</loc>
-    <lastmod>2023-07-31</lastmod>
+    <lastmod>2023-08-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -100,14 +109,21 @@
   
   <url>
     <loc>https://000xiaoming.github.io/categories/Programer/</loc>
-    <lastmod>2023-07-31</lastmod>
+    <lastmod>2023-08-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/categories/x86-8086%E6%B1%87%E7%BC%96%E5%AE%9E%E9%AA%8C/</loc>
-    <lastmod>2023-07-31</lastmod>
+    <lastmod>2023-08-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/categories/x86-8086%E6%B1%87%E7%BC%96%E9%9D%9E%E5%AE%9E%E9%AA%8C/</loc>
+    <lastmod>2023-08-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

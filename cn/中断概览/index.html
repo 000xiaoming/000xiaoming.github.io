@@ -1,0 +1,1591 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <meta name="baidu-site-verification" content="codeva-OySZDT59RD" />
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-Y95F7Y9NT1"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-Y95F7Y9NT1');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?9b08ea589f23fb1f5e2be85b8ca26b60";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="It&#39;s an IT blog..."/>
+  <meta name="keyword" content="v-vincen,v-vincen,livemylife,IT  blog,Blog"/>
+  <link rel="shortcut icon" href="/img/avatar/roguerabbit.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/highlight.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/widget.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/rocket.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/signature.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/catalog.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+      <!-- gitalk start -->
+      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/gitalk.css"/>
+      <!-- gitalk end -->
+    
+
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://000xiaoming.github.io/cn/中断概览/">
+  <title>
+    
+      x86-8086汇编：该架构的中断信息引发，中断向量表的配置，中断例程的执行 - I&#39;m Bruce Lee
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--dark">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'dark';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+		<!-- Gitter -->
+<!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'your-community/your-room'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">经年治世</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">首页</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archives/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>搜索</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <!-- CDN: jsdelivr start -->
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png');
+      --intro-header-background-image-url-page: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io//img/header_img/lml_bg1.png');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io//img/header_img/lml_bg1.png');
+    }
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png'); */
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('/img/signature/vincent-white.png');
+      }
+    
+  </style>
+  <!-- CDN: jsdelivr end -->
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#x86-8086-汇编" title="x86-8086-汇编">x86-8086-汇编</a>
+              
+            </div>
+            <h1>x86-8086汇编：该架构的中断信息引发，中断向量表的配置，中断例程的执行</h1>
+            <h2 class="subheading">细剖x86-8086中断...</h2>
+            <span class="meta">
+              Posted by Bruce LEE on
+              2023-08-01
+            </span>
+
+
+            
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <p>cpu具备一种能力就是：执行完当前指令后能转而去执行别处的指令</p>
+<p>这种能力我们叫中断（interrupt），中断有不同的类型：内中断和外中断</p>
+<p>cpu具备中断能力，cpu在执行中断的时候其底层是怎么运作的，什么样子的内存分布来支撑这种能力呢？</p>
+<h2 id="x86-8086架构中断的整体情况">x86-8086架构中断的整体情况</h2>
+<p>当发生内中断时，中断信息由cpu内部提供，cpu每执行完一条指令，就会检查是否由中断产生，此时，内中断发生，cpu便会去转而处理这个中断信息。</p>
+<p>当发生外中断的时候，中断信息有外部芯片提供。大部分的外中断，cpu会根据标志寄存器的状态来决定是否要去处理中断信息。</p>
+<h3 id="中断信息是什么？">中断信息是什么？</h3>
+<p>比如当我们写出来的程序出现除法操作，除数是0的时候，就会引发内中断，cpu必须去处理这个中断。中断信息就是cpu内部或者外部发生了一些我们必须要去处理的事件。除法错误就是其中一种。</p>
+<h3 id="中断信息怎么发出？">中断信息怎么发出？</h3>
+<p>内中断发生时，cpu内部会产生中断信息，要求cpu去处理一下紧急情况，但是这个中断信息是怎么发出的呢？</p>
+<p>这个问题我也不懂，我所了解到的是：CPU执行指令时，如果发生异常情况（例如除零错误），CPU会自动产生一个异常中断。</p>
+<p>cpu是怎么就自动产生了一个异常中断，根据什么机制来标识一个中断类型，我不得而知。</p>
+<p>cpu在接受中断信息的时候，是由中断控制器来接受的。</p>
+<p>我们目前只局限在上层，最底层是芯片设计，操作系统是必须根据芯片的特点来编写的，感兴趣的同学可以自学一些关于芯片如何产生，处理中断信息。有兴趣的同学，可以私信我，与我沟通，共同进步。</p>
+<h3 id="cpu怎么处理中断？">cpu怎么处理中断？</h3>
+<p>cpu在拿到中断信息的时候，就会把CS：IP指向中断向量表中的某个位置。所谓的处理中断，就是去执行另外一处的程序，这个“另外一处的程序” 是由BIOS系统提供的，也可以是由DOS系统提供的，也可以是由我们自己写的。</p>
+<p>中断信息中包含了我们要去执行的程序的入口地址。</p>
+<p>比如除零错误发生时，引发的中断类型码是0，其实就是</p>
+<p><code>int 0</code></p>
+<p>我们之前写</p>
+<pre><code>mov ax,4chh
+int 21h
+</code></pre>
+<p>就是引发21h号中断，作用就是返回程序。</p>
+<h3 id="int-0-包含了什么信息"><code>int 0</code> 包含了什么信息</h3>
+<p>int是汇编指令，表示中断指令，后面的0，表示中断类型码，这个0中断类型码表示地址0000：0000处的中断处理程序的入口地址。</p>
+<p>我们所有的中断处理程序的入口地址，都是打包放在一块的，在0000：0000地址起始处，一直到0000：03FF处，一共有1KB大小的空间，全部用来存储中断处理程序的入口地址，每个中断处理程序的入口地址都是由4个字节来存储，低位两字节存储入口地址的IP，高位两字节存储入口地址的CS。</p>
+<p>地址0000：0000到0000：0003，这中间存储的就是我们0号中断处理程序的入口地址。</p>
+<p>cpu通过中断类型码n，经过ip=n<em>4,cs=n</em>4+2的运算，就可以定位中断处理程序了。</p>
+<p>之前说了，中断处理程序可以有系统，程序员，软件等来提供，‘int 21h’，表示21h中断类型码，其中的中断处理程序就是由DOS系统提供的，我们一会可以编写一个简单的中断处理程序——0号中断</p>
+<h3 id="中断向量表">中断向量表</h3>
+<p>刚才提到的，所有的中断处理程序的入口地址都是打包在一块的，全部存储在0000：0000地址起始的位置，这块内存我们就叫中断向量表。</p>
+<p><img src="interrupt.png" alt="cn"></p>
+<h3 id="外中断与端口（比如60h端口）">外中断与端口（比如60h端口）</h3>
+<p>各种寄存器，存储设备都与CPU的地址总线，控制总线和数据总线连接，在cpu运作的时候，把它们都当作内存看待，把它们总地看成一个由若干存储单元组成的逻辑存储器-内存地址空间</p>
+<p>cpu通过总线连接的芯片处理各种寄存器，还有以下三种：</p>
+<p>1）各种接口卡上的接口芯片（网卡，显卡）</p>
+<p>2）主板上的接口芯片，cpu通过控制它们来间接对外设进行控制</p>
+<p>3）其他芯片，用来存储相关的系统信息，或者进行相关的输入输出处理（CMOS芯片）</p>
+<p>这些芯片内部都有内存单元和寄存器。站在cpu的角度，这些寄存器就是各种芯片的端口，也是通过统一的编址，来确定一个统一的端口地址空间，cpu通过读/写端口，来与外设芯片进行交流。</p>
+<p>外中断就是由外设芯片引发的，由外设芯片向cpu发送的中断信息，如我们最常使用到的键盘中断，就是由键盘控制芯片产生的，这个芯片被称为“键盘控制器8042”。</p>
+<p>键盘控制器通过中断请求线（IRQ1）将键盘中断信号发送给cpu的中断控制器。</p>
+<p>cpu是可以直接对端口进行读写的。</p>
+<p>使用in指令和out指令，in指令表示从端口读取数据，out指令表示从端口写数据。</p>
+<p>我们站在cpu的角度来看，in代表进入：从端口的数据进入到cpu中，表示从端口读。out表示出：从cpu传送出去的数据，写进端口。</p>
+<p>这个指令和我们常用的mov指令是一样的，mov指令中，比如：</p>
+<pre><code>mov ax，bx
+</code></pre>
+<p>表示将bx的数据移到ax中，这个顺序是从右到左。</p>
+<p>假如我们要向60h端口写数据，就需要这样写：</p>
+<pre><code>out 60h，al
+</code></pre>
+<p>如果要从60h端口读数据，就需要这样写：</p>
+<pre><code>in al，60h
+</code></pre>
+<p>注意，端口的读写指令不仅不一样，而且操作对象的顺序也是不一样的。</p>
+<p>记住，我们只能在ax或者al中存放读/取端口的数据。</p>
+<p>对0~255以内的端口使用al。</p>
+<p>对256~65535的端口使用ax。</p>
+<h3 id="可屏蔽中断与IF标志位">可屏蔽中断与IF标志位</h3>
+<p>大部分外设芯片发出的中断信息都是属于可屏蔽中断，可屏蔽中断的意思就是cpu可以根据实际情况来屏蔽这个中断信息（所谓的屏蔽，不是不接受这个信息了，而是接受了这个信息，但是我不管你，不按照你的要求去执行你的中断处理程序）</p>
+<p>既然是中断信息，就说明了发生了一些需要立马去处理的事情，为何cpu还要设计出可屏蔽中断的机制呢？</p>
+<p>主要是基于以下几个情况：</p>
+<p>1）在特定任务执行的过程中，不能被中断打断，必须暂时屏蔽中断，等任务完成后再重新打开中断。</p>
+<p>2）保护关键区域，在一些关键的临界区域中，需要确保操作的原子性，避免在执行过程中由中断的干扰而产生错误。其实这个不难理解，我们经常在编写子程序的时候需要设置SS：SP的值，这是一个指向栈顶的存储机制，当我们设置SS的值和SP的值的时候，是需要将这两条指令放在一块写的。</p>
+<pre><code>mov ax，0200h
+mov ss，ax
+mov sp，0
+</code></pre>
+<p>我们的cpu在执行第二条和第三条指令的时候，就是不允许有任何中断来干扰，这是设置栈顶的原子操作，虽然这是两条独立的指令，但是这是原子操作，不能分割。所以，我们在编程的时候，设置栈顶的两条语句必须放在一起写，切记不可分开，以免在某时某刻程序运行的时候发生了不可定位的错误。</p>
+<p>3）优化性能：在某些情况下，特定任务可能需要保持高优先级，而其他中断请求可能是低优先级的。通过屏蔽中断，可以暂时忽略低优先级的中断，确保高优先级任务的连续执行，从而提高系统性能和响应时间。</p>
+<p>4）避免中断嵌套，如果我们写的中断处理程序，出现了错误，错误导致芯片发送本中断类型码，这个中断类型码指向的还是我们的中断处理程序，那么就会产生中断嵌套。</p>
+<p>键盘中断就是一个典型的可屏蔽中断。</p>
+<p>不可屏蔽中断很少，无法被IF标志位屏蔽，一般来说，当不可屏蔽中断发生时，意味着严重的系统故障和紧急事件。这个中断信息是由特殊的信号线来传输（NMI信号线）</p>
+<p>中断类型是分优先级的，谁的优先级最高就执行谁的中断处理程序，不可屏蔽中断的优先级非常高。</p>
+<h3 id="IF标志寄存器和sti，cli指令">IF标志寄存器和sti，cli指令</h3>
+<p>cpu是怎么通过什么来控制是否处理可屏蔽中断的？</p>
+<p><img src="flag.png" alt="cn"></p>
+<p>cpu内部的标志寄存器（flag），是用来存储程序状态的，每执行完一条指令，其标志寄存器里面相关的值都会根据实际情况发生改变。我们这次谈及的是IF标志位，其全称是interrupt Flag，中断允许标志，是用来控制外部中断请求的。</p>
+<p>当IF标志位为1时，表示外部中断请求被允许，CPU会响应可屏蔽中断。也就是说，当有外部中断请求到达时（例如来自外设的硬件中断），CPU会检查IF标志位是否为1，如果是，就会响应该中断，并跳转到相应的中断处理程序。反之，如果IF标志位为0，CPU会忽略外部中断请求，不进行中断处理。</p>
+<p>通过设置和清除IF标志位，我们可以在特定的时刻允许或禁止外部中断的响应，这在实现临界区保护和处理特定任务时非常有用。</p>
+<p>使用sti指令（Set interrupt Flag），该指令会将标志寄存器IF标志位设置为1，从而允许cpu响应外部可屏蔽中断。</p>
+<p>语句写法就是这样：</p>
+<pre><code>sti
+</code></pre>
+<p>就可以了，相反的cli指令（clean interrupt Flag）就是将标志寄存器IF标志位设置为0，从而使得cpu不响应外部可屏蔽中断。</p>
+<pre><code>cli
+</code></pre>
+<h2 id="中断类型码">中断类型码</h2>
+<p>中断类型码是一个8位的值，取值范围是0到255，它用于查找中断向量表（Interrupt Vector Table）中对应的中断处理程序的入口地址。</p>
+<p>整个占据的空间是1KB，但是这255个中断类型码，DOS系统并没有用完，还有好多是空着的。</p>
+<p>0000：0200到0000：02FF这段空间就是空着的，BIOS系统，DOS系统，任何的软件都不会去使用这段空间。</p>
+<p>中断类型码0号到31号是由cpu(x86-8086)保留的，用于处理cpu内部的异常。而中断类型码32号到255号通常用于外部中断，如硬件中断和软件中断。</p>
+<h3 id="常见的内中断类型码">常见的内中断类型码</h3>
+<p>1）除法错误，产生中断类型码0。</p>
+<p>2）单步执行，产生中断类型码1。我们使用的debug程序，为何其能控制cpu一条挨着一条的执行指令，所依仗的就是cpu的1号中断。</p>
+<p>3）断点中断（Breakpoint Interrupt）是由中断类型码3来控制的。断点中断通常是用于调试目的。当CPU执行到一条带有调试断点（breakpoint）的指令时，会触发中断类型码为3的异常，即断点中断。断点中断的作用是暂停程序的执行，以便程序员可以检查程序的状态、变量值、执行流程等，进行调试和错误排查。我们经常写c程序的时候经常使用断点调试，其底层机理就是这个中断类型码3。</p>
+<p>4）执行汇编指令into，可以产生中断类型码4，这条指令是Interrupt on Overflow的缩写，其主要是命令cpu去检查OF标志位（Overflow），如果标志为1，表示上一条指令发生了溢出，那么就触发中断，去执行中断处理程序。</p>
+<p>这条指令在现代x86体系结构中已经被弃用，它在现代处理器中可能会引起性能问题。现代的操作系统和应用程序中，通常会采用更灵活，更高级的异常处理机制来处理溢出问题。</p>
+<p>5）int指令本身所触发的中断，其处理程序就是去调用别的中断处理程序，int指令的作用是触发软中断（软件中断）。</p>
+<h3 id="软中断">软中断</h3>
+<p>软中断是一种通过软件方式触发中断的机制。来个对比吧：硬件中断是由外部设备发出的中断请求，而软中断则是由程序员通过软件方式触发的中断请求。</p>
+<p>软中断与硬件中断的触发方式不同，软中断是通过执行指令而触发的，而硬件中断是由硬件设备发出的中断请求</p>
+<p>我们编写的程序中，使用的就是软中断，编写让cpu执行特定的汇编指令来触发中断。</p>
+<p>我们常这样写：</p>
+<pre><code>mov ax，4c00h
+int 21h
+</code></pre>
+<p>第二条指令就是引发21h号中断，程序停止，扫描中断向量表，根据中断类型码所指向的处理程序入口地址，来执行21号中断类型处理程序。</p>
+<h3 id="BIOS的开机启动与DOS中断例程的安装过程">BIOS的开机启动与DOS中断例程的安装过程</h3>
+<p>BIOS的开机启动过程：</p>
+<p>1）当计算机通电或重启时，CPU从预定义的启动地址（通常是ROM BIOS芯片的起始地址）开始执行代码。DOS系统中是FFFF：0000处的代码，通常，这处的指令是一处跳转指令。</p>
+<p>2）跳转指令执行后，就去执行硬件系统检测和初始化。初始化就是将BIOS提供的中断例程登记到中断向量表中。</p>
+<p>（BIOS是固化在主板上的一组底层软件程序，它负责初始化硬件设备（如内存、硬盘、键盘、显示器等），并加载操作系统引导程序。）</p>
+<p>3）初始化完成后，就调用int 19h中断例程去进行操作系统的引导。</p>
+<p>4）BIOS根据设定的启动顺序（通常为先从软盘、硬盘或光盘加载），尝试从这些设备上寻找可引导的介质。如果找到可引导的介质（比如硬盘上的主引导记录），BIOS会将引导扇区加载到内存的指定位置，并跳转到该位置执行引导程序。</p>
+<p>5）引导程序（通常是操作系统的引导加载程序）负责加载完整的操作系统内核，并将控制权转交给操作系统，使其继续执行。</p>
+<p>注意，我们是可以通过编程来改变FFFF：0处的指令，使其执行我们的程序，通过我们的程序来间接进行后续的硬件检测和初始化。</p>
+<h4 id="BIOS提供的中断例程">BIOS提供的中断例程</h4>
+<h5 id="int-19h中断例程">int 19h中断例程</h5>
+<p>BIOS执行的第一个中断例程就是19h号中断，这个中断是进行操作系统的引导</p>
+<h5 id="int-10h中断例程及其功能号">int 10h中断例程及其功能号</h5>
+<p>BIOS提供的int 10h中断例程中，有很多和屏幕输出相关的子程序。</p>
+<p>我们可以调用int 10h中断例程，选择想要的功能号（子程序），来达到想实现的目的：</p>
+<p>int 10h中断，2功能号的作用就是设置光标位置。</p>
+<pre><code>mov ah,2   ;选择2功能号
+mov bh,0   ;选择在第0页放置光标
+mov dh,5   ;选择在第5行放置光标
+mov dl,12  ;选择在第12列放置光标
+int 10h    ;引发中断，执行功能号
+</code></pre>
+<p>int 10h中断，还有显示字符的9功能号：</p>
+<pre><code>mov ah,9	；选择9功能号
+mov al,'L'	；选择字符
+mov bl,7	；选择颜色属性
+mov bh,0	；选择第0页
+mov cx,3	；设置字符重复个数
+int 10h		；引发中断，执行功能号
+</code></pre>
+<p>不管是BIOS提供的，还是DOS提供的中断例程，选择的功能号必须放在ah寄存器中。</p>
+<p>其颜色属性：</p>
+<p><img src="zijie.shuxing.png" alt="cn"></p>
+<h5 id="int-13h中断例程：对磁盘读写">int 13h中断例程：对磁盘读写</h5>
+<p>我们通过控制磁盘控制器来访问磁盘，以扇区为单位对磁盘进行读写。当读写扇区，我们使用的是BIOS提供的对扇区进行读写的中断例程。</p>
+<p>我们需要给出面号，磁道号，扇区号。面号有两个，0面和1面（从0开始），磁道号也是从0开始，而扇区号是从1开始的。</p>
+<pre><code>；es：bx已经指向接受从扇区读入数据的内存区
+mov ah,2	；选择功能号（读扇区）
+mov ch,0	；选择磁道号
+mov cl,1	；选择扇区号
+mov dl,0	；选择驱动器号
+mov dh,0	；选择磁头号（面号）
+mov al,1	；选择读取的扇区数目
+int 13h
+</code></pre>
+<p>同理，当我们将ah的参数换成3，即表示写扇区，而此时es：bx指向的就是将要写进扇区的数据首地址，其他的没有变化。</p>
+<h5 id="int-9h中断例程">int 9h中断例程</h5>
+<p>刚才提到了60h端口和键盘控制器。</p>
+<p>键盘控制器用来接受键盘的中断信息，60h端口是用来存储键盘的键值。</p>
+<p>BIOS提供的int 9h中断例程就是处理这个键盘中断的。</p>
+<p>中断信息是由键盘的控制芯片发出，cpu如果此时的IF标志为1，那么就执行键盘中断。</p>
+<h4 id="键盘原理">键盘原理</h4>
+<p>先再看一遍文章前面的这个标题内容，点击右边目录跳转：</p>
+<p><em>外中断与端口（比如60h端口）</em></p>
+<p>键盘中每一个键都是一个开关，键盘中有一个芯片不停地对键盘上的开关进行扫描。</p>
+<p>当我们按下一个键时，开关接通，芯片会产生一个扫描码，记住，我们此时是按下去了，键还没有松开。</p>
+<p>这个扫描码就叫通码，记录了键在键盘的位置，然后将这个码送到主板上的相关接口芯片的寄存器中，该寄存器的端口地址就是60h。</p>
+<p>我们松开键，此时也会产生一个扫描码，这个码叫做断码。</p>
+<p>断码与通码之间的差别就是：断码=通码+80h</p>
+<table>
+<thead>
+<tr>
+<th>键</th>
+<th>扫描码</th>
+<th>键</th>
+<th>扫描码</th>
+<th>键</th>
+<th>扫描码</th>
+<th>键</th>
+<th>扫描码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Esc</td>
+<td>01</td>
+<td>U</td>
+<td>16</td>
+<td>H</td>
+<td>23</td>
+<td>B</td>
+<td>30</td>
+</tr>
+<tr>
+<td>1~9</td>
+<td>02~0A</td>
+<td>I</td>
+<td>17</td>
+<td>J</td>
+<td>24</td>
+<td>N</td>
+<td>31</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0B</td>
+<td>O</td>
+<td>18</td>
+<td>K</td>
+<td>25</td>
+<td>M</td>
+<td>32</td>
+</tr>
+<tr>
+<td>-</td>
+<td>0C</td>
+<td>P</td>
+<td>19</td>
+<td>L</td>
+<td>26</td>
+<td>，</td>
+<td>33</td>
+</tr>
+<tr>
+<td>=</td>
+<td>0D</td>
+<td>[</td>
+<td>1A</td>
+<td>；</td>
+<td>27</td>
+<td>.</td>
+<td>34</td>
+</tr>
+<tr>
+<td>Backspace</td>
+<td>0E</td>
+<td>]</td>
+<td>1B</td>
+<td>,</td>
+<td>28</td>
+<td>/</td>
+<td>35</td>
+</tr>
+<tr>
+<td>Tab</td>
+<td>0F</td>
+<td>Enter</td>
+<td>1C</td>
+<td>、</td>
+<td>29</td>
+<td>Shift(右)</td>
+<td>36</td>
+</tr>
+<tr>
+<td>Q</td>
+<td>10</td>
+<td>Ctrl</td>
+<td>1D</td>
+<td>Shift(左）</td>
+<td>2A</td>
+<td>PrtSc</td>
+<td>37</td>
+</tr>
+<tr>
+<td>W</td>
+<td>11</td>
+<td>A</td>
+<td>1E</td>
+<td>|2B</td>
+<td>Alt</td>
+<td>38</td>
+<td></td>
+</tr>
+<tr>
+<td>E</td>
+<td>12</td>
+<td>S</td>
+<td>1F</td>
+<td>Z</td>
+<td>2C</td>
+<td>Space</td>
+<td>39</td>
+</tr>
+<tr>
+<td>R</td>
+<td>13</td>
+<td>D</td>
+<td>20</td>
+<td>X</td>
+<td>2D</td>
+<td>CapsLock</td>
+<td>3A</td>
+</tr>
+<tr>
+<td>T</td>
+<td>14</td>
+<td>F</td>
+<td>21</td>
+<td>C</td>
+<td>2E</td>
+<td>F1~F10</td>
+<td>3B~44</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>15</td>
+<td>G</td>
+<td>22</td>
+<td>V</td>
+<td>2F</td>
+<td>NumLock</td>
+<td>45</td>
+</tr>
+<tr>
+<td>ScrollLock</td>
+<td>46</td>
+<td>_</td>
+<td>4A</td>
+<td>End</td>
+<td>4F</td>
+<td>Del</td>
+<td>53</td>
+</tr>
+<tr>
+<td>Home</td>
+<td>47</td>
+<td>(左箭头）</td>
+<td>4B</td>
+<td>(下箭头)</td>
+<td>50</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>(上箭头）</td>
+<td>48</td>
+<td>(右箭头)</td>
+<td>4D</td>
+<td>PgDn</td>
+<td>51</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PgUp</td>
+<td>49</td>
+<td>+</td>
+<td>4E</td>
+<td>Ins</td>
+<td>52</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>这个是通码表，断码表在通码表的基础上加上80H。</p>
+<p>扫描码是先发送到60h端口。记住，扫描码的产生是由键盘控制芯片贡献的，而键盘控制芯片在键盘内部，键盘是独立在电脑外面的，不在主机里面。</p>
+<p>扫描码送到键盘控制器里面的60h端口。键盘控制器在主板上，当键盘控制器收到扫描码后，就向cpu发送中断请求（9h号中断），cpu收到中断请求后，便跟之前说的那样分情况处理。</p>
+<p>（键盘控制器和键盘控制芯片别弄混了，一个在主板上，一个在键盘里。）</p>
+<p>如果执行了int 9h中断，cpu便会处理这个端口的扫描码：</p>
+<p>cpu从60h端口读出扫描码，判断该码是字符码还是控制码，如果是字符码，就将其和对应的ASCLL码一块放进内存的BIOS键盘缓冲区。</p>
+<p>如果是控制码（Ctrl）或者切换键码（CapsLock），就将其转变为状态字节，存入内存中存储状态字节的单元（这个内存单元是0040:17。</p>
+<p>这个int 9h中断处理程序，我们也是可以自己编写来代替的。</p>
+<h4 id="DOS提供的中断例程">DOS提供的中断例程</h4>
+<h5 id="int-21h中断例程及其功能号">int 21h中断例程及其功能号</h5>
+<p>我们编写的程序后面都会有两行汇编指令：</p>
+<pre><code>mov ax,4c00h
+int 21h
+</code></pre>
+<p>其中调用21h号中断例程，选中的是4ch功能号，这个作用就是实现程序返回。</p>
+<p>将语句拆分就是：</p>
+<pre><code>mov ah,4ch	；选择功能号
+mov al,00h	；设置返回值
+int 21h		；引发中断，执行功能号
+</code></pre>
+<p>int 21h中断中，还有9功能号，其作用是在光标处显示字符串，要求呢，就是这个字符串必须以&quot;$&quot; 结尾，字符串的源地址必须用ds：dx来指向：</p>
+<pre><code>;ds:dx 已经指向字符串
+mov ah,9	;选择功能号
+int 21h		引发中断，执行功能号
+</code></pre>
+<p>我们以后显示字符串，就可以直接调用DOS系统提供的中断例程来实现，不需要自己编写了。</p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/cn/x86-8086显示数值/" data-toggle="tooltip" data-placement="top" title="01-比较简单的x86-8086汇编实验：将数值显示到屏幕上">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=x86-8086汇编：该架构的中断信息引发，中断向量表的配置，中断例程的执行&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/中断概览/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <script src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Tue Aug 01 2023 00:39:00 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#x86-8086%E6%9E%B6%E6%9E%84%E4%B8%AD%E6%96%AD%E7%9A%84%E6%95%B4%E4%BD%93%E6%83%85%E5%86%B5"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">x86-8086架构中断的整体情况</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%AD%E6%96%AD%E4%BF%A1%E6%81%AF%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">中断信息是什么？</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%AD%E6%96%AD%E4%BF%A1%E6%81%AF%E6%80%8E%E4%B9%88%E5%8F%91%E5%87%BA%EF%BC%9F"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">中断信息怎么发出？</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#cpu%E6%80%8E%E4%B9%88%E5%A4%84%E7%90%86%E4%B8%AD%E6%96%AD%EF%BC%9F"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">cpu怎么处理中断？</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#int-0-%E5%8C%85%E5%90%AB%E4%BA%86%E4%BB%80%E4%B9%88%E4%BF%A1%E6%81%AF"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">int 0 包含了什么信息</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%AD%E6%96%AD%E5%90%91%E9%87%8F%E8%A1%A8"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">中断向量表</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%A4%96%E4%B8%AD%E6%96%AD%E4%B8%8E%E7%AB%AF%E5%8F%A3%EF%BC%88%E6%AF%94%E5%A6%8260h%E7%AB%AF%E5%8F%A3%EF%BC%89"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">外中断与端口（比如60h端口）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%8F%AF%E5%B1%8F%E8%94%BD%E4%B8%AD%E6%96%AD%E4%B8%8EIF%E6%A0%87%E5%BF%97%E4%BD%8D"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">可屏蔽中断与IF标志位</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#IF%E6%A0%87%E5%BF%97%E5%AF%84%E5%AD%98%E5%99%A8%E5%92%8Csti%EF%BC%8Ccli%E6%8C%87%E4%BB%A4"><span class="toc-nav-number">1.8.</span> <span class="toc-nav-text">IF标志寄存器和sti，cli指令</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%AD%E6%96%AD%E7%B1%BB%E5%9E%8B%E7%A0%81"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">中断类型码</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E5%86%85%E4%B8%AD%E6%96%AD%E7%B1%BB%E5%9E%8B%E7%A0%81"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">常见的内中断类型码</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%BD%AF%E4%B8%AD%E6%96%AD"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">软中断</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#BIOS%E7%9A%84%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8%E4%B8%8EDOS%E4%B8%AD%E6%96%AD%E4%BE%8B%E7%A8%8B%E7%9A%84%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">BIOS的开机启动与DOS中断例程的安装过程</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#BIOS%E6%8F%90%E4%BE%9B%E7%9A%84%E4%B8%AD%E6%96%AD%E4%BE%8B%E7%A8%8B"><span class="toc-nav-number">2.3.1.</span> <span class="toc-nav-text">BIOS提供的中断例程</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#int-19h%E4%B8%AD%E6%96%AD%E4%BE%8B%E7%A8%8B"><span class="toc-nav-number">2.3.1.1.</span> <span class="toc-nav-text">int 19h中断例程</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#int-10h%E4%B8%AD%E6%96%AD%E4%BE%8B%E7%A8%8B%E5%8F%8A%E5%85%B6%E5%8A%9F%E8%83%BD%E5%8F%B7"><span class="toc-nav-number">2.3.1.2.</span> <span class="toc-nav-text">int 10h中断例程及其功能号</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#int-13h%E4%B8%AD%E6%96%AD%E4%BE%8B%E7%A8%8B%EF%BC%9A%E5%AF%B9%E7%A3%81%E7%9B%98%E8%AF%BB%E5%86%99"><span class="toc-nav-number">2.3.1.3.</span> <span class="toc-nav-text">int 13h中断例程：对磁盘读写</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#int-9h%E4%B8%AD%E6%96%AD%E4%BE%8B%E7%A8%8B"><span class="toc-nav-number">2.3.1.4.</span> <span class="toc-nav-text">int 9h中断例程</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E9%94%AE%E7%9B%98%E5%8E%9F%E7%90%86"><span class="toc-nav-number">2.3.2.</span> <span class="toc-nav-text">键盘原理</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#DOS%E6%8F%90%E4%BE%9B%E7%9A%84%E4%B8%AD%E6%96%AD%E4%BE%8B%E7%A8%8B"><span class="toc-nav-number">2.3.3.</span> <span class="toc-nav-text">DOS提供的中断例程</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#int-21h%E4%B8%AD%E6%96%AD%E4%BE%8B%E7%A8%8B%E5%8F%8A%E5%85%B6%E5%8A%9F%E8%83%BD%E5%8F%B7"><span class="toc-nav-number">2.3.3.1.</span> <span class="toc-nav-text">int 21h中断例程及其功能号</span></a></li></ol></li></ol></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#x86-8086-汇编" title="x86-8086-汇编">x86-8086-汇编</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>链友</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://v-vincen.life/" target="_blank">V_Vincen</a>
+          </li>
+          
+          <li>
+            <a href="http://beantech.org" target="_blank">Bean Tech</a>
+          </li>
+          
+          <li>
+            <a href="http://huangxuan.me" target="_blank">Hux Blog</a>
+          </li>
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/000xiaoming">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Bruce LEE
+          2023
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/jquery.min.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/bootstrap.min.js"></script>
+
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/hux-blog.min.js"></script>
+
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/catalog.js"></script>
+
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/totop.js"></script>
+
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/mouseclick.js"  content='I am Bruce...,It&#39;s happy to see you...,Hi...,My friend...,What can i do for you...,Wait for one minute...,Cease to struggle and you cease to live...,A friend in need is a friend indeed...,Faith can move mountains...' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033' ></script>
+    <!-- Mouseclick -->
+  
+
+  
+
+  
+
+
+
+
+  <!-- CDN: jsdelivr start -->
+  <script async="async" type="text/javascript">
+    let imgsUrl = document.getElementsByTagName("img");
+    let imgUrl = Array.from(imgsUrl);
+
+    let jsdelivr = "https://cdn.jsdelivr.net/gh/";
+    let gh = "000xiaoming";
+    let ghPages = gh + ".github.io";
+    let pagePath = "cn/中断概览/";
+    let jsdelivrurl;
+    if (pagePath.indexOf("index.html") != -1) {
+      jsdelivrurl = jsdelivr + gh + "/" + ghPages;
+    } else {
+      jsdelivrurl = jsdelivr + gh + "/" + ghPages + "/" + pagePath;
+    }
+    imgUrl.forEach(item => {
+      let oldUrl = item.getAttribute("src");
+      let newUrl = oldUrl.replace(oldUrl, jsdelivrurl + oldUrl).replace("..", "");
+      item.setAttribute("src", newUrl);
+    });
+  </script>
+  <!-- CDN: jsdelivr end -->
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://000xiaoming.github.io/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+              imgUrl = 'https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io' + imgUrl;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
