@@ -92,27 +92,20 @@
 
   
   <url>
-    <loc>https://000xiaoming.github.io/tags/IT/</loc>
-    <lastmod>2023-08-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://000xiaoming.github.io/tags/x86-8086-%E6%B1%87%E7%BC%96/</loc>
     <lastmod>2023-08-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
-
-  
   <url>
-    <loc>https://000xiaoming.github.io/categories/Programer/</loc>
+    <loc>https://000xiaoming.github.io/tags/IT/</loc>
     <lastmod>2023-08-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
+  
+
   
   <url>
     <loc>https://000xiaoming.github.io/categories/x86-8086%E6%B1%87%E7%BC%96%E5%AE%9E%E9%AA%8C/</loc>
@@ -123,6 +116,13 @@
   
   <url>
     <loc>https://000xiaoming.github.io/categories/x86-8086%E6%B1%87%E7%BC%96%E9%9D%9E%E5%AE%9E%E9%AA%8C/</loc>
+    <lastmod>2023-08-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/categories/Programer/</loc>
     <lastmod>2023-08-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
