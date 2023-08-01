@@ -232,15 +232,6 @@
 
           
           
-          <li>
-            <a href="/about/">
-              
-              关于
-              
-              
-            </a>
-          </li>
-          
           
           
           <li>
@@ -254,12 +245,21 @@
           
           
           
-          
-          
           <li>
             <a href="/archives/">
               
               归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于
               
               
             </a>
@@ -445,16 +445,16 @@
 <p>这种能力我们叫中断（interrupt），中断有不同的类型：内中断和外中断</p>
 <p>cpu具备中断能力，cpu在执行中断的时候其底层是怎么运作的，什么样子的内存分布来支撑这种能力呢？</p>
 <h2 id="x86-8086架构中断的整体情况">x86-8086架构中断的整体情况</h2>
-<p>当发生内中断时，中断信息由cpu内部提供，cpu每执行完一条指令，就会检查是否由中断产生，此时，内中断发生，cpu便会去转而处理这个中断信息。</p>
+<p>当发生内中断时，中断信息由cpu内部提供，cpu每执行完一条指令，就会检查是否有中断产生。如果此时，有内中断发生，cpu便会转而去处理这个中断信息。</p>
 <p>当发生外中断的时候，中断信息有外部芯片提供。大部分的外中断，cpu会根据标志寄存器的状态来决定是否要去处理中断信息。</p>
 <h3 id="中断信息是什么？">中断信息是什么？</h3>
-<p>比如当我们写出来的程序出现除法操作，除数是0的时候，就会引发内中断，cpu必须去处理这个中断。中断信息就是cpu内部或者外部发生了一些我们必须要去处理的事件。除法错误就是其中一种。</p>
+<p>比如当我们写出来的程序出现除法操作，除数是0的时候，就会引发中断，cpu必须去处理这个中断。所以，中断信息就是cpu的内部或外部，发生了需要cpu去处理的紧急的任务或事件。除法错误就是其中一种。</p>
 <h3 id="中断信息怎么发出？">中断信息怎么发出？</h3>
 <p>内中断发生时，cpu内部会产生中断信息，要求cpu去处理一下紧急情况，但是这个中断信息是怎么发出的呢？</p>
 <p>这个问题我也不懂，我所了解到的是：CPU执行指令时，如果发生异常情况（例如除零错误），CPU会自动产生一个异常中断。</p>
-<p>cpu是怎么就自动产生了一个异常中断，根据什么机制来标识一个中断类型，我不得而知。</p>
-<p>cpu在接受中断信息的时候，是由中断控制器来接受的。</p>
-<p>我们目前只局限在上层，最底层是芯片设计，操作系统是必须根据芯片的特点来编写的，感兴趣的同学可以自学一些关于芯片如何产生，处理中断信息。有兴趣的同学，可以私信我，与我沟通，共同进步。</p>
+<p>cpu是怎么就自动产生了一个异常中断，我不得而知。</p>
+<p>​但是cpu在接受中断信息的时候，是由中断控制器来接受的。</p>
+<p>我们目前只局限在上层，最底层是芯片设计，操作系统是必须根据芯片的特点来编写的，感兴趣的同学可以自学一些关于芯片如何产生，处理中断信息的相关知识。有兴趣的同学，可以私信我，与我沟通，共同进步。</p>
 <h3 id="cpu怎么处理中断？">cpu怎么处理中断？</h3>
 <p>cpu在拿到中断信息的时候，就会把CS：IP指向中断向量表中的某个位置。所谓的处理中断，就是去执行另外一处的程序，这个“另外一处的程序” 是由BIOS系统提供的，也可以是由DOS系统提供的，也可以是由我们自己写的。</p>
 <p>中断信息中包含了我们要去执行的程序的入口地址。</p>
@@ -467,10 +467,10 @@ int 21h
 <p>就是引发21h号中断，作用就是返回程序。</p>
 <h3 id="int-0-包含了什么信息"><code>int 0</code> 包含了什么信息</h3>
 <p>int是汇编指令，表示中断指令，后面的0，表示中断类型码，这个0中断类型码表示地址0000：0000处的中断处理程序的入口地址。</p>
-<p>我们所有的中断处理程序的入口地址，都是打包放在一块的，在0000：0000地址起始处，一直到0000：03FF处，一共有1KB大小的空间，全部用来存储中断处理程序的入口地址，每个中断处理程序的入口地址都是由4个字节来存储，低位两字节存储入口地址的IP，高位两字节存储入口地址的CS。</p>
+<p>我们所有的中断处理程序的入口地址，都是打包放在一块的。在0000：0000地址起始处，一直到0000：03FF处，一共有1KB大小的空间，全部用来存储中断处理程序的入口地址，每个中断处理程序的入口地址都是由4个字节来存储，低位两字节存储入口地址的IP，高位两字节存储入口地址的CS。</p>
 <p>地址0000：0000到0000：0003，这中间存储的就是我们0号中断处理程序的入口地址。</p>
-<p>cpu通过中断类型码n，经过ip=n<em>4,cs=n</em>4+2的运算，就可以定位中断处理程序了。</p>
-<p>之前说了，中断处理程序可以有系统，程序员，软件等来提供，‘int 21h’，表示21h中断类型码，其中的中断处理程序就是由DOS系统提供的，我们一会可以编写一个简单的中断处理程序——0号中断</p>
+<p>cpu通过中断类型码n，经过ip=n**4,cs=n**4+2的运算，就可以定位中断处理程序了。</p>
+<p>之前说了，中断处理程序可以由系统，程序员，软件等来提供，‘int 21h’，表示21h中断类型码，其中的中断处理程序就是由DOS系统提供的，我们可以编写一个简单的中断处理程序——0号中断</p>
 <h3 id="中断向量表">中断向量表</h3>
 <p>刚才提到的，所有的中断处理程序的入口地址都是打包在一块的，全部存储在0000：0000地址起始的位置，这块内存我们就叫中断向量表。</p>
 <p><img src="interrupt.png" alt="cn"></p>
@@ -480,13 +480,14 @@ int 21h
 <p>1）各种接口卡上的接口芯片（网卡，显卡）</p>
 <p>2）主板上的接口芯片，cpu通过控制它们来间接对外设进行控制</p>
 <p>3）其他芯片，用来存储相关的系统信息，或者进行相关的输入输出处理（CMOS芯片）</p>
-<p>这些芯片内部都有内存单元和寄存器。站在cpu的角度，这些寄存器就是各种芯片的端口，也是通过统一的编址，来确定一个统一的端口地址空间，cpu通过读/写端口，来与外设芯片进行交流。</p>
-<p>外中断就是由外设芯片引发的，由外设芯片向cpu发送的中断信息，如我们最常使用到的键盘中断，就是由键盘控制芯片产生的，这个芯片被称为“键盘控制器8042”。</p>
+<p>这些芯片内部都有内存单元和寄存器。站在cpu的角度，这些寄存器就是各种芯片的端口，也是通过统一的编址，来确定一个统一的端口地址空间，cpu通过读/写端口与外设芯片进行交流。</p>
+<p>外中断就是由外设芯片引发的，由外设芯片向cpu发送的中断信息。如我们最常使用到的键盘中断，就是由键盘控制芯片产生的，这个芯片被称为“键盘控制器8042”。</p>
 <p>键盘控制器通过中断请求线（IRQ1）将键盘中断信号发送给cpu的中断控制器。</p>
+<h4 id="端口的读写">端口的读写</h4>
 <p>cpu是可以直接对端口进行读写的。</p>
 <p>使用in指令和out指令，in指令表示从端口读取数据，out指令表示从端口写数据。</p>
 <p>我们站在cpu的角度来看，in代表进入：从端口的数据进入到cpu中，表示从端口读。out表示出：从cpu传送出去的数据，写进端口。</p>
-<p>这个指令和我们常用的mov指令是一样的，mov指令中，比如：</p>
+<p>这个指令和我们常用的mov指令做个对比。​mov指令中，比如：</p>
 <pre><code>mov ax，bx
 </code></pre>
 <p>表示将bx的数据移到ax中，这个顺序是从右到左。</p>
@@ -531,7 +532,7 @@ mov sp，0
 </code></pre>
 <h2 id="中断类型码">中断类型码</h2>
 <p>中断类型码是一个8位的值，取值范围是0到255，它用于查找中断向量表（Interrupt Vector Table）中对应的中断处理程序的入口地址。</p>
-<p>整个占据的空间是1KB，但是这255个中断类型码，DOS系统并没有用完，还有好多是空着的。</p>
+<p>整个中断向量表占据的空间是1KB，但是这255个中断类型码，DOS系统并没有用完，还有好多是空着的。</p>
 <p>0000：0200到0000：02FF这段空间就是空着的，BIOS系统，DOS系统，任何的软件都不会去使用这段空间。</p>
 <p>中断类型码0号到31号是由cpu(x86-8086)保留的，用于处理cpu内部的异常。而中断类型码32号到255号通常用于外部中断，如硬件中断和软件中断。</p>
 <h3 id="常见的内中断类型码">常见的内中断类型码</h3>
@@ -540,10 +541,12 @@ mov sp，0
 <p>3）断点中断（Breakpoint Interrupt）是由中断类型码3来控制的。断点中断通常是用于调试目的。当CPU执行到一条带有调试断点（breakpoint）的指令时，会触发中断类型码为3的异常，即断点中断。断点中断的作用是暂停程序的执行，以便程序员可以检查程序的状态、变量值、执行流程等，进行调试和错误排查。我们经常写c程序的时候经常使用断点调试，其底层机理就是这个中断类型码3。</p>
 <p>4）执行汇编指令into，可以产生中断类型码4，这条指令是Interrupt on Overflow的缩写，其主要是命令cpu去检查OF标志位（Overflow），如果标志为1，表示上一条指令发生了溢出，那么就触发中断，去执行中断处理程序。</p>
 <p>这条指令在现代x86体系结构中已经被弃用，它在现代处理器中可能会引起性能问题。现代的操作系统和应用程序中，通常会采用更灵活，更高级的异常处理机制来处理溢出问题。</p>
-<p>5）int指令本身所触发的中断，其处理程序就是去调用别的中断处理程序，int指令的作用是触发软中断（软件中断）。</p>
-<h3 id="软中断">软中断</h3>
-<p>软中断是一种通过软件方式触发中断的机制。来个对比吧：硬件中断是由外部设备发出的中断请求，而软中断则是由程序员通过软件方式触发的中断请求。</p>
-<p>软中断与硬件中断的触发方式不同，软中断是通过执行指令而触发的，而硬件中断是由硬件设备发出的中断请求</p>
+<p>5）int指令本身所触发的中断。​其作用就是去调用别的中断处理程序，由int指令所触发的中断属于软中断（软件中断）。</p>
+<h3 id="软中断与硬件中断">软中断与硬件中断</h3>
+<p>软中断是一种通过软件方式触发中断的机制。这个机制便可以让程序员来根据需求触发中断。</p>
+<p>​那硬中断呢？</p>
+<p>硬件中断是由外部设备发出的中断请求。</p>
+<p>软中断与硬件中断的触发方式不同，软中断是通过执行指令而触发的，而硬件中断是由硬件设备发出的中断请求。</p>
 <p>我们编写的程序中，使用的就是软中断，编写让cpu执行特定的汇编指令来触发中断。</p>
 <p>我们常这样写：</p>
 <pre><code>mov ax，4c00h
@@ -552,7 +555,7 @@ int 21h
 <p>第二条指令就是引发21h号中断，程序停止，扫描中断向量表，根据中断类型码所指向的处理程序入口地址，来执行21号中断类型处理程序。</p>
 <h3 id="BIOS的开机启动与DOS中断例程的安装过程">BIOS的开机启动与DOS中断例程的安装过程</h3>
 <p>BIOS的开机启动过程：</p>
-<p>1）当计算机通电或重启时，CPU从预定义的启动地址（通常是ROM BIOS芯片的起始地址）开始执行代码。DOS系统中是FFFF：0000处的代码，通常，这处的指令是一处跳转指令。</p>
+<p>1）当计算机通电或重启时，CPU从预定义的启动地址（通常是ROM BIOS芯片的起始地址）开始执行代码。DOS系统中就是FFFF：0000处的代码，通常，这处的指令是一个跳转指令。</p>
 <p>2）跳转指令执行后，就去执行硬件系统检测和初始化。初始化就是将BIOS提供的中断例程登记到中断向量表中。</p>
 <p>（BIOS是固化在主板上的一组底层软件程序，它负责初始化硬件设备（如内存、硬盘、键盘、显示器等），并加载操作系统引导程序。）</p>
 <p>3）初始化完成后，就调用int 19h中断例程去进行操作系统的引导。</p>
@@ -581,7 +584,7 @@ mov cx,3	；设置字符重复个数
 int 10h		；引发中断，执行功能号
 </code></pre>
 <p>不管是BIOS提供的，还是DOS提供的中断例程，选择的功能号必须放在ah寄存器中。</p>
-<p>其颜色属性：</p>
+<p>上述汇编指令中，其颜色属性：</p>
 <p><img src="zijie.shuxing.png" alt="cn"></p>
 <h5 id="int-13h中断例程：对磁盘读写">int 13h中断例程：对磁盘读写</h5>
 <p>我们通过控制磁盘控制器来访问磁盘，以扇区为单位对磁盘进行读写。当读写扇区，我们使用的是BIOS提供的对扇区进行读写的中断例程。</p>
@@ -604,7 +607,7 @@ int 13h
 <h4 id="键盘原理">键盘原理</h4>
 <p>先再看一遍文章前面的这个标题内容，点击右边目录跳转：</p>
 <p><em>外中断与端口（比如60h端口）</em></p>
-<p>键盘中每一个键都是一个开关，键盘中有一个芯片不停地对键盘上的开关进行扫描。</p>
+<p>键盘中每一个键都是一个开关，键盘中有一个芯片（这个芯片就是键盘控制芯片）对键盘上的开关进行扫描。</p>
 <p>当我们按下一个键时，开关接通，芯片会产生一个扫描码，记住，我们此时是按下去了，键还没有松开。</p>
 <p>这个扫描码就叫通码，记录了键在键盘的位置，然后将这个码送到主板上的相关接口芯片的寄存器中，该寄存器的端口地址就是60h。</p>
 <p>我们松开键，此时也会产生一个扫描码，这个码叫做断码。</p>
@@ -803,9 +806,33 @@ int 13h
 <p>cpu从60h端口读出扫描码，判断该码是字符码还是控制码，如果是字符码，就将其和对应的ASCLL码一块放进内存的BIOS键盘缓冲区。</p>
 <p>如果是控制码（Ctrl）或者切换键码（CapsLock），就将其转变为状态字节，存入内存中存储状态字节的单元（这个内存单元是0040:17。</p>
 <p>这个int 9h中断处理程序，我们也是可以自己编写来代替的。</p>
+<h5 id="int-16h中断例程">int 16h中断例程</h5>
+<p>还记得吗，我们按下一个字符键的时候，cpu通过IF标志位来确定是否执行int 9h中断例程。我们假设IF标志位为1，执行int 9h中断例程，此时，cpu所做的不过是将键盘数据写进BIOS键盘缓冲区。</p>
+<p>记住哦，到这一步，只是进了内存里面，还没有任何作用。</p>
+<p>BIOS提供了另一个中断例程-int 16h中断例程，这个中断例程的0功能号就是从BIOS键盘缓冲区里面读取数据。</p>
+<pre><code>mov ah,0	;选择0功能号
+int 16h		;执行中断
+</code></pre>
+<p>返回的结果呢就是ah寄存器存储的是扫描码，al寄存器存储的是ASCLL码。我们在编写程序的时候，如果需要键盘输入，就可以调用这个中断例程。</p>
+<p>int 16h中断在读取缓冲区的具体流程是这样的：</p>
+<p>1）检测键盘缓冲区是否有数据</p>
+<p>2）如果没有数据，就继续做第1步</p>
+<p>3）读取缓冲区第一个子单元中的数据，送入ah，al寄存器中</p>
+<p>4）将读取的键盘输入从缓冲区中删除</p>
+<p>这个键盘缓冲区不大，有16个字单元，但最多只能装15个按键数据。键盘缓冲区的内存区管理机理是数据结构中的环形队列。</p>
+<h5 id="键盘状态字节">键盘状态字节</h5>
+<p>如果我们按下的不是字符键，那么其键值就不会进入到键盘缓冲区，而是通过键盘状态字节来存储。前面提到了，这个键盘状态字节的内存单元是0040：17。</p>
+<p><img src="status.png" alt="cn"></p>
+<p>4号位里面的ScrollLock大家可能用的不多，现在有些键盘都没有这个键，那这个键的具体运用是什么呢？我帮大家问了一下ChatGPT，下面是ChatGPT的回答，给大家看一下：</p>
+<hr>
+<p>Scroll Lock键是计算机键盘上的一个特殊功能键，通常位于键盘的顶部区域。然而，它的功能并不像其他常见的功能键（例如Shift、Ctrl、Alt等）那样常用，因此很多用户可能对它的作用并不熟悉。</p>
+<p>在早期的计算机时代，Scroll Lock键的作用主要是控制屏幕滚动（scrolling）功能。在文本模式下，这个键可以用来决定光标是否会随着文本内容的滚动而移动。然而，随着计算机技术的发展和图形界面的普及，这个功能逐渐变得不常使用，并且在很多现代操作系统和应用程序中，Scroll Lock键已经没有了具体的功能。</p>
+<p>目前，Scroll Lock键的主要用途是在某些特定的情况下，比如在电子表格程序（例如Microsoft Excel）中，可以用来控制光标的移动。当Scroll Lock键处于开启状态时，按上下左右箭头键不会导致选中单元格的变化，而是使得整个工作表随着光标的移动而滚动。当Scroll Lock键处于关闭状态时，按上下左右箭头键会导致选中单元格的变化而不影响工作表的滚动。</p>
+<p>需要注意的是，Scroll Lock键的功能在不同的操作系统和应用程序中可能会有所不同。因此，在大多数情况下，用户无需特别关心或使用Scroll Lock键。如果你不确定某个程序或系统中Scroll Lock键的具体功能，可以查阅相关文档或使用说明来了解其用途。</p>
+<hr>
 <h4 id="DOS提供的中断例程">DOS提供的中断例程</h4>
 <h5 id="int-21h中断例程及其功能号">int 21h中断例程及其功能号</h5>
-<p>我们编写的程序后面都会有两行汇编指令：</p>
+<p>我们编写的程序在最后面都会有两行汇编指令：</p>
 <pre><code>mov ax,4c00h
 int 21h
 </code></pre>
@@ -815,12 +842,13 @@ int 21h
 mov al,00h	；设置返回值
 int 21h		；引发中断，执行功能号
 </code></pre>
-<p>int 21h中断中，还有9功能号，其作用是在光标处显示字符串，要求呢，就是这个字符串必须以&quot;$&quot; 结尾，字符串的源地址必须用ds：dx来指向：</p>
+<p>int 21h中断例程中，还有9功能号，其作用是在光标处显示字符串，要求呢，就是这个字符串必须以&quot;$&quot; 结尾，字符串的源地址必须用ds：dx来指向：</p>
 <pre><code>;ds:dx 已经指向字符串
 mov ah,9	;选择功能号
 int 21h		引发中断，执行功能号
 </code></pre>
 <p>我们以后显示字符串，就可以直接调用DOS系统提供的中断例程来实现，不需要自己编写了。</p>
+<p>好了，大致就这些，有任何问题的可以与我沟通，点击”关于我“，便可以找到我的联系方式。</p>
 
 
         <hr>
@@ -965,7 +993,7 @@ int 21h		引发中断，执行功能号
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#x86-8086%E6%9E%B6%E6%9E%84%E4%B8%AD%E6%96%AD%E7%9A%84%E6%95%B4%E4%BD%93%E6%83%85%E5%86%B5"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">x86-8086架构中断的整体情况</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%AD%E6%96%AD%E4%BF%A1%E6%81%AF%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">中断信息是什么？</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%AD%E6%96%AD%E4%BF%A1%E6%81%AF%E6%80%8E%E4%B9%88%E5%8F%91%E5%87%BA%EF%BC%9F"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">中断信息怎么发出？</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#cpu%E6%80%8E%E4%B9%88%E5%A4%84%E7%90%86%E4%B8%AD%E6%96%AD%EF%BC%9F"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">cpu怎么处理中断？</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#int-0-%E5%8C%85%E5%90%AB%E4%BA%86%E4%BB%80%E4%B9%88%E4%BF%A1%E6%81%AF"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">int 0 包含了什么信息</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%AD%E6%96%AD%E5%90%91%E9%87%8F%E8%A1%A8"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">中断向量表</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%A4%96%E4%B8%AD%E6%96%AD%E4%B8%8E%E7%AB%AF%E5%8F%A3%EF%BC%88%E6%AF%94%E5%A6%8260h%E7%AB%AF%E5%8F%A3%EF%BC%89"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">外中断与端口（比如60h端口）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%8F%AF%E5%B1%8F%E8%94%BD%E4%B8%AD%E6%96%AD%E4%B8%8EIF%E6%A0%87%E5%BF%97%E4%BD%8D"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">可屏蔽中断与IF标志位</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#IF%E6%A0%87%E5%BF%97%E5%AF%84%E5%AD%98%E5%99%A8%E5%92%8Csti%EF%BC%8Ccli%E6%8C%87%E4%BB%A4"><span class="toc-nav-number">1.8.</span> <span class="toc-nav-text">IF标志寄存器和sti，cli指令</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%AD%E6%96%AD%E7%B1%BB%E5%9E%8B%E7%A0%81"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">中断类型码</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E5%86%85%E4%B8%AD%E6%96%AD%E7%B1%BB%E5%9E%8B%E7%A0%81"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">常见的内中断类型码</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%BD%AF%E4%B8%AD%E6%96%AD"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">软中断</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#BIOS%E7%9A%84%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8%E4%B8%8EDOS%E4%B8%AD%E6%96%AD%E4%BE%8B%E7%A8%8B%E7%9A%84%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">BIOS的开机启动与DOS中断例程的安装过程</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#BIOS%E6%8F%90%E4%BE%9B%E7%9A%84%E4%B8%AD%E6%96%AD%E4%BE%8B%E7%A8%8B"><span class="toc-nav-number">2.3.1.</span> <span class="toc-nav-text">BIOS提供的中断例程</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#int-19h%E4%B8%AD%E6%96%AD%E4%BE%8B%E7%A8%8B"><span class="toc-nav-number">2.3.1.1.</span> <span class="toc-nav-text">int 19h中断例程</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#int-10h%E4%B8%AD%E6%96%AD%E4%BE%8B%E7%A8%8B%E5%8F%8A%E5%85%B6%E5%8A%9F%E8%83%BD%E5%8F%B7"><span class="toc-nav-number">2.3.1.2.</span> <span class="toc-nav-text">int 10h中断例程及其功能号</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#int-13h%E4%B8%AD%E6%96%AD%E4%BE%8B%E7%A8%8B%EF%BC%9A%E5%AF%B9%E7%A3%81%E7%9B%98%E8%AF%BB%E5%86%99"><span class="toc-nav-number">2.3.1.3.</span> <span class="toc-nav-text">int 13h中断例程：对磁盘读写</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#int-9h%E4%B8%AD%E6%96%AD%E4%BE%8B%E7%A8%8B"><span class="toc-nav-number">2.3.1.4.</span> <span class="toc-nav-text">int 9h中断例程</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E9%94%AE%E7%9B%98%E5%8E%9F%E7%90%86"><span class="toc-nav-number">2.3.2.</span> <span class="toc-nav-text">键盘原理</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#DOS%E6%8F%90%E4%BE%9B%E7%9A%84%E4%B8%AD%E6%96%AD%E4%BE%8B%E7%A8%8B"><span class="toc-nav-number">2.3.3.</span> <span class="toc-nav-text">DOS提供的中断例程</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#int-21h%E4%B8%AD%E6%96%AD%E4%BE%8B%E7%A8%8B%E5%8F%8A%E5%85%B6%E5%8A%9F%E8%83%BD%E5%8F%B7"><span class="toc-nav-number">2.3.3.1.</span> <span class="toc-nav-text">int 21h中断例程及其功能号</span></a></li></ol></li></ol></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#x86-8086%E6%9E%B6%E6%9E%84%E4%B8%AD%E6%96%AD%E7%9A%84%E6%95%B4%E4%BD%93%E6%83%85%E5%86%B5"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">x86-8086架构中断的整体情况</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%AD%E6%96%AD%E4%BF%A1%E6%81%AF%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">中断信息是什么？</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%AD%E6%96%AD%E4%BF%A1%E6%81%AF%E6%80%8E%E4%B9%88%E5%8F%91%E5%87%BA%EF%BC%9F"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">中断信息怎么发出？</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#cpu%E6%80%8E%E4%B9%88%E5%A4%84%E7%90%86%E4%B8%AD%E6%96%AD%EF%BC%9F"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">cpu怎么处理中断？</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#int-0-%E5%8C%85%E5%90%AB%E4%BA%86%E4%BB%80%E4%B9%88%E4%BF%A1%E6%81%AF"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">int 0 包含了什么信息</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%AD%E6%96%AD%E5%90%91%E9%87%8F%E8%A1%A8"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">中断向量表</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%A4%96%E4%B8%AD%E6%96%AD%E4%B8%8E%E7%AB%AF%E5%8F%A3%EF%BC%88%E6%AF%94%E5%A6%8260h%E7%AB%AF%E5%8F%A3%EF%BC%89"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">外中断与端口（比如60h端口）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%AB%AF%E5%8F%A3%E7%9A%84%E8%AF%BB%E5%86%99"><span class="toc-nav-number">1.6.1.</span> <span class="toc-nav-text">端口的读写</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%8F%AF%E5%B1%8F%E8%94%BD%E4%B8%AD%E6%96%AD%E4%B8%8EIF%E6%A0%87%E5%BF%97%E4%BD%8D"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">可屏蔽中断与IF标志位</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#IF%E6%A0%87%E5%BF%97%E5%AF%84%E5%AD%98%E5%99%A8%E5%92%8Csti%EF%BC%8Ccli%E6%8C%87%E4%BB%A4"><span class="toc-nav-number">1.8.</span> <span class="toc-nav-text">IF标志寄存器和sti，cli指令</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%AD%E6%96%AD%E7%B1%BB%E5%9E%8B%E7%A0%81"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">中断类型码</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E5%86%85%E4%B8%AD%E6%96%AD%E7%B1%BB%E5%9E%8B%E7%A0%81"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">常见的内中断类型码</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%BD%AF%E4%B8%AD%E6%96%AD%E4%B8%8E%E7%A1%AC%E4%BB%B6%E4%B8%AD%E6%96%AD"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">软中断与硬件中断</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#BIOS%E7%9A%84%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8%E4%B8%8EDOS%E4%B8%AD%E6%96%AD%E4%BE%8B%E7%A8%8B%E7%9A%84%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">BIOS的开机启动与DOS中断例程的安装过程</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#BIOS%E6%8F%90%E4%BE%9B%E7%9A%84%E4%B8%AD%E6%96%AD%E4%BE%8B%E7%A8%8B"><span class="toc-nav-number">2.3.1.</span> <span class="toc-nav-text">BIOS提供的中断例程</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#int-19h%E4%B8%AD%E6%96%AD%E4%BE%8B%E7%A8%8B"><span class="toc-nav-number">2.3.1.1.</span> <span class="toc-nav-text">int 19h中断例程</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#int-10h%E4%B8%AD%E6%96%AD%E4%BE%8B%E7%A8%8B%E5%8F%8A%E5%85%B6%E5%8A%9F%E8%83%BD%E5%8F%B7"><span class="toc-nav-number">2.3.1.2.</span> <span class="toc-nav-text">int 10h中断例程及其功能号</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#int-13h%E4%B8%AD%E6%96%AD%E4%BE%8B%E7%A8%8B%EF%BC%9A%E5%AF%B9%E7%A3%81%E7%9B%98%E8%AF%BB%E5%86%99"><span class="toc-nav-number">2.3.1.3.</span> <span class="toc-nav-text">int 13h中断例程：对磁盘读写</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#int-9h%E4%B8%AD%E6%96%AD%E4%BE%8B%E7%A8%8B"><span class="toc-nav-number">2.3.1.4.</span> <span class="toc-nav-text">int 9h中断例程</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E9%94%AE%E7%9B%98%E5%8E%9F%E7%90%86"><span class="toc-nav-number">2.3.2.</span> <span class="toc-nav-text">键盘原理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#int-16h%E4%B8%AD%E6%96%AD%E4%BE%8B%E7%A8%8B"><span class="toc-nav-number">2.3.2.1.</span> <span class="toc-nav-text">int 16h中断例程</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E9%94%AE%E7%9B%98%E7%8A%B6%E6%80%81%E5%AD%97%E8%8A%82"><span class="toc-nav-number">2.3.2.2.</span> <span class="toc-nav-text">键盘状态字节</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#DOS%E6%8F%90%E4%BE%9B%E7%9A%84%E4%B8%AD%E6%96%AD%E4%BE%8B%E7%A8%8B"><span class="toc-nav-number">2.3.3.</span> <span class="toc-nav-text">DOS提供的中断例程</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#int-21h%E4%B8%AD%E6%96%AD%E4%BE%8B%E7%A8%8B%E5%8F%8A%E5%85%B6%E5%8A%9F%E8%83%BD%E5%8F%B7"><span class="toc-nav-number">2.3.3.1.</span> <span class="toc-nav-text">int 21h中断例程及其功能号</span></a></li></ol></li></ol></li></ol></li></ol>
         
         </div>
       </aside>
