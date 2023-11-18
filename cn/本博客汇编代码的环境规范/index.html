@@ -443,9 +443,10 @@
 
         <h1>本博客的汇编代码的环境规范</h1>
 <h2 id="MASM和NASM">MASM和NASM</h2>
+<p>test here:</p>
 <p>最近在完成x86-32架构的一些代码和要点的时候，对整个编译环境做了一些整理，我要讲一些关于在以后的博客中一些环境规范。</p>
 <p>之前的汇编代码是在MASM编译器格式的要求下写成的，就如每个程序开头都要有：</p>
-<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">assume</span> <span class="built_in">cs</span>:code <span class="built_in">ds</span>:date</span><br><span class="line">date <span class="meta">segment</span></span><br><span class="line">	...</span><br><span class="line">date ends</span><br><span class="line">code <span class="meta">segment</span></span><br><span class="line"><span class="symbol">start:</span></span><br><span class="line">	...</span><br><span class="line">    <span class="keyword">mov</span> <span class="built_in">ax</span>,<span class="number">4c00h</span></span><br><span class="line">    <span class="keyword">int</span> <span class="number">21h</span></span><br><span class="line">code ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
+<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">assume</span> <span class="built_in">cs</span>:code <span class="built_in">ds</span>:data</span><br><span class="line">data <span class="meta">segment</span></span><br><span class="line">	...</span><br><span class="line">data ends</span><br><span class="line">code <span class="meta">segment</span></span><br><span class="line"><span class="symbol">start:</span></span><br><span class="line">	...</span><br><span class="line">    <span class="keyword">mov</span> <span class="built_in">ax</span>,<span class="number">4c00h</span></span><br><span class="line">    <span class="keyword">int</span> <span class="number">21h</span></span><br><span class="line">code ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
 <p>这是要想通过MASM编译，程序必须要有的结构。注意，这不是所有的汇编程序都要有的结构，只是MASM编译器所要求的结构。如果你想通过别的编译器，就是写出对应编译器所要求的程序结构。</p>
 <p>我先后在MS-DOS中使用MASM编译器，在DOSBOX中使用MASM编译器，在Oracle VM VirtualBox中使用NASM编译器，后来不管是在CentOS，还是Debian系列的Ubuntu，Kali和debian，都使用的是NASM编译器。</p>
 <p>同时呢，NASM编译器是linux系统自带的汇编编译器，而MASA编译器是微软的编译器，点到为止。</p>
@@ -484,6 +485,10 @@
         <hr>
         <!-- Pager -->
         <ul class="pager">
+          
+          <li class="previous">
+            <a href="/cn/git——windows中的访问权限问题/" data-toggle="tooltip" data-placement="top" title="git——windos中不同控制台下造成的访问权限问题">&larr; Previous Post</a>
+          </li>
           
           
           <li class="next">
