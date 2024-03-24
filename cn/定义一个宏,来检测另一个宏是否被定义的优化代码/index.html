@@ -127,10 +127,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://000xiaoming.github.io/cn/">
+  <link rel="canonical" href="https://000xiaoming.github.io/cn/定义一个宏,来检测另一个宏是否被定义的优化代码/">
   <title>
     
-      I&#39;m Bruce Lee
+      定义一个宏,来检测另一个宏是否被定义的优化代码 - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -288,29 +288,7 @@
           <!-- LangSelect -->
           
           
-          <!-- LangSelect start -->
-          <!-- LangSelect -->
-<li>
-  <a id="lang-select-label"><i class="fa fa-globe"></i>
-    <span>
-      简体中文
-    </span>
-    <select id="lang-select" data-canonical="cn/index.html">
-      
-      
-      <option value="en" >
-        English
-      </option>
-      
-      <option value="cn"  selected >
-        简体中文
-      </option>
-      
-    </select>
-  </a>
-</li>
-
-          <!-- LangSelect end -->
+          
           
           
         </ul>
@@ -363,18 +341,18 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io');
-      --intro-header-background-image-url-page: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png');
+      --intro-header-background-image-url-page: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io//img/header_img/lml_bg1.png');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io//img/header_img/lml_bg1.png');
     }
     header.intro-header {
-       /*config*/
-        background-image: var(--intro-header-background-image-url-home);
-        /* background-image: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg'); */
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png'); */
       
     }
 
@@ -397,10 +375,24 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>经年治世</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">Bruce LEE</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#C/C++" title="C/C++">C/C++</a>
+              
+            </div>
+            <h1>定义一个宏,来检测另一个宏是否被定义的优化代码</h1>
+            <h2 class="subheading">风景如画</h2>
+            <span class="meta">
+              Posted by Bruce LEE on
+              2024-03-23
+            </span>
+
+
+            
+            
+
+
           </div>
           
         </div>
@@ -441,482 +433,320 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Main Content -->
-<div class="container">
-  <div class="row">
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h1>定义一个宏,来检测另一个宏是否被定义的优化代码</h1>
+<p>该问题的原提出者见stackoverflow:</p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/26099745/test-if-preprocessor-symbol-is-defined-inside-macro">https://stackoverflow.com/questions/26099745/test-if-preprocessor-symbol-is-defined-inside-macro</a></p>
+<p>关于这个宏定义:</p>
+<figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#<span class="keyword">define</span> TRACE(<span class="keyword">x</span>) <span class="string">&quot;&quot;</span> #<span class="keyword">x</span></span><br></pre></td></tr></table></figure>
+<p>#x是c预处理器的一个操作符,将操作数转换位一个字符串字面量.</p>
+<p>即有如此代码</p>
+<figure class="highlight isbl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">printf</span>(<span class="title">TRACE</span>(<span class="variable">this_macro</span>));</span></span><br></pre></td></tr></table></figure>
+<p>便会输出<em><strong>this_macro</strong></em></p>
+<h2 id="这里的问题就是为何在-x前面加一个空字符串">这里的问题就是为何在#x前面加一个空字符串&quot;&quot;</h2>
+<p>对于</p>
+<figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#<span class="keyword">define</span> TRACE<span class="number">2</span>(<span class="keyword">x</span>) #<span class="keyword">x</span></span><br><span class="line">#<span class="keyword">define</span> TRACE<span class="number">3</span>(<span class="keyword">x</span>) <span class="string">&quot;&quot;</span> #<span class="keyword">x</span></span><br></pre></td></tr></table></figure>
+<p>这两种不同的宏定义,具体表示如何,甩给AI试试.</p>
+<p>AI结论:在大多数的时候,这两个都是相同的效果.只有在极少数情况下会出现差别.</p>
+<hr>
+<p>claude表示:TRACE3(x)会更安全,因为它会拼接多个宏参数于一个字符串.而TRACE2(x)不会拼接字符串.</p>
+<hr>
+<p>google Gemini 1.5 Pro表示:</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">printf(<span class="constructor">TRACE3(<span class="params">hello</span>)</span> <span class="constructor">TRACE3(<span class="params">world</span>)</span>);</span><br></pre></td></tr></table></figure>
+<p>TRACE3会连接这两个字符串,而TRACE2不行.</p>
+<hr>
+<p>chatgpt4 表示TRACE3会在非法情况下仍然生成空字符串,更加安全.</p>
+<hr>
+<p>理论上,我相信了AI给出的解答,但是我仍然编写测试集macro1.c,用于测试所有的情况.</p>
+<p>macro1.c代码:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="comment">//#x会将操作数转变为字符串字面量</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> TRACE(x) printf(<span class="meta-string">&quot;Value of &quot;</span> #x <span class="meta-string">&quot; is %d\n&quot;</span>, x)</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> TRACE2(x) #x</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> TRACE3(x) <span class="meta-string">&quot;&quot;</span> #x</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a = <span class="number">32</span>;</span><br><span class="line">	<span class="comment">//测试#x确实可以将x转变为字符串</span></span><br><span class="line">	<span class="built_in">TRACE</span>(a);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="built_in">TRACE2</span>(sd));</span><br><span class="line">	<span class="built_in">printf</span>(<span class="built_in">TRACE3</span>(TT3));</span><br><span class="line">	<span class="comment">//测试2对于x本身就是字符串的处理情况</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="built_in">TRACE2</span>(HELLO));</span><br><span class="line">	<span class="built_in">printf</span>(<span class="built_in">TRACE2</span>(<span class="string">&quot;WORLD&quot;</span>));</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">	<span class="comment">//测试在统一printf函数中连续的两个宏参数连接情况</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="built_in">TRACE2</span>(HELLO) <span class="built_in">TRACE2</span>(WORLD));</span><br><span class="line">	<span class="built_in">printf</span>(<span class="built_in">TRACE3</span>(HELLO) <span class="built_in">TRACE3</span>(WORLD));</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">	<span class="comment">//测试3对于x本身就是字符串的处理情况</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="built_in">TRACE3</span>(HELLO));</span><br><span class="line">	<span class="built_in">printf</span>(<span class="built_in">TRACE3</span>(<span class="string">&quot;WORLD&quot;</span>));</span><br><span class="line">	<span class="comment">//测试非法x参数</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="built_in">TRACE2</span>());</span><br><span class="line">	<span class="built_in">printf</span>(<span class="built_in">TRACE3</span>());</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>其他的情况,这两者并没有表示出不一样.于是我尝试了一种非法情况:</p>
+<p>即使在对于TRACE2和TRACE3传入非法的参数x(x表示没有传入任何东西),理论上:TRACE2显然是没有任何字符串生成,这会导致ERROR,TRACE3会生成一个空字符串,显然TRACE3更安全.</p>
+<p>但是在编译的时候,这两者都出现了一样的WARING:</p>
+<figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">macro<span class="number">1</span>.<span class="keyword">c</span>: In function ‘main’:</span><br><span class="line">macro<span class="number">1</span>.<span class="keyword">c</span>:<span class="number">26</span>:<span class="number">23</span>: warning: zero-length gnu_printf format string [-Wformat-zero-length]</span><br><span class="line">   <span class="number">26</span> |         printf(TRACE<span class="number">2</span>())<span class="comment">;</span></span><br><span class="line">      |                       ^</span><br><span class="line">macro<span class="number">1</span>.<span class="keyword">c</span>:<span class="number">4</span>:<span class="number">20</span>: note: in definition of macro ‘TRACE<span class="number">2</span>’</span><br><span class="line">    <span class="number">4</span> | #<span class="keyword">define</span> TRACE<span class="number">2</span>(<span class="keyword">x</span>) #<span class="keyword">x</span></span><br><span class="line">      |                    ^</span><br><span class="line">macro<span class="number">1</span>.<span class="keyword">c</span>:<span class="number">6</span>:<span class="number">19</span>: warning: zero-length gnu_printf format string [-Wformat-zero-length]</span><br><span class="line">    <span class="number">6</span> | #<span class="keyword">define</span> TRACE<span class="number">3</span>(<span class="keyword">x</span>) <span class="string">&quot;&quot;</span> #<span class="keyword">x</span></span><br><span class="line">      |                   ^~</span><br><span class="line">macro<span class="number">1</span>.<span class="keyword">c</span>:<span class="number">27</span>:<span class="number">16</span>: note: in expansion of macro ‘TRACE<span class="number">3</span>’</span><br><span class="line">   <span class="number">27</span> |         printf(TRACE<span class="number">3</span>())<span class="comment">;</span></span><br><span class="line">      |</span><br></pre></td></tr></table></figure>
+<p>可能是编译器的优化导致的,于是我传入CFLAGS=-O0取消优化</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">gcc</span> macro<span class="number">1</span>.c CFLAGS=-O<span class="number">0</span></span><br></pre></td></tr></table></figure>
+<p>结果仍然相同.</p>
+<p>目前没有好的解释,不过问题不大,好,这个问题过.</p>
+<p>但是显然,这个宏的功能很强大.</p>
+<h2 id="对于定义一个检测宏是否被定义的宏">对于定义一个检测宏是否被定义的宏</h2>
+<p>Stackoverflow中(上述提到),第一个回答中定义了:</p>
+<figure class="highlight hsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> &lt;iostream&gt;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> &lt;cstring&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> TRACE_STRINGIFY(item) <span class="meta-string">&quot;&quot;</span> #item</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> TRACE(macro, message)                          \</span></span><br><span class="line">    <span class="keyword">do</span> &#123;                                               \</span><br><span class="line">        <span class="keyword">if</span> (strcmp(<span class="string">&quot;&quot;</span> <span class="meta">#macro, TRACE_STRINGIFY(macro))) \</span></span><br><span class="line">            std::cout &lt;&lt; message &lt;&lt; <span class="string">&quot;\n&quot;</span><span class="comment">;              \</span></span><br><span class="line">    &#125; <span class="keyword">while</span> (<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<p>对上述代码描述:</p>
+<p>如果一个宏被定义了,那么该宏会在TRACE_STRINGIFY宏中被展开,在&quot;&quot; #macro中不会被展开,保持原有的字符信息.</p>
+<p>此时strcmp函数返回非0值,执行打印函数,表示该宏被定义.</p>
+<p>反之,该宏不会在TRACE_STRINGIFY宏中被展开,而是被转换为原字符串字面值,这与&quot;&quot; #macro的作用一致,此时strcmp函数返回0,则if语句不会执行,打印函数不会被执行,没有任何的输出.</p>
+<p>通过描述信息可以看出来,这个宏定义对于这种宏是无效的:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> myself myself</span></span><br></pre></td></tr></table></figure>
+<p>上述是c++版本,我在macro2.c程序中给出c版本</p>
+<h3 id="并且给出了另一种优化">并且给出了另一种优化</h3>
+<p>macro2.c代码:</p>
+<figure class="highlight hsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> &lt;stdio.h&gt;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> &lt;string.h&gt;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> TRACE_STRINGIFY(item) <span class="meta-string">&quot;&quot;</span> #item</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> TRACE(macro, error_message, ...)                \</span></span><br><span class="line">    <span class="keyword">do</span> &#123;                                               	\</span><br><span class="line">        <span class="keyword">if</span> (!strcmp(<span class="string">&quot;&quot;</span> <span class="meta">#macro, TRACE_STRINGIFY(macro)))	\</span></span><br><span class="line">		fprintf(stderr, <span class="string">&quot;[ERROR]:[TRACE] (%s:%d) &quot;</span> error_message <span class="string">&quot;\n&quot;</span>, <span class="keyword">__FILE__</span>, <span class="keyword">__LINE__</span>, <span class="meta">##__VA_ARGS__);	\</span></span><br><span class="line">    &#125; <span class="keyword">while</span> (<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> dont_know_exist <span class="number">52</span></span></span><br><span class="line"><span class="comment">//real_dont_exist</span></span><br><span class="line"><span class="keyword">int</span> main()</span><br><span class="line">&#123;</span><br><span class="line">	</span><br><span class="line">	TRACE(dont_know_exist, <span class="string">&quot;This \&quot;%s\&quot; macro don&#x27;t exist&quot;</span>, <span class="string">&quot;dont_know_exist&quot;</span>)<span class="comment">;</span></span><br><span class="line">	TRACE(real_dont_exist, <span class="string">&quot;This \&quot;%s\&quot; macro don&#x27;t exist&quot;</span>, <span class="string">&quot;real_dont_exist&quot;</span>)<span class="comment">;</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span><span class="comment">;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在macro2.c代码中,我将TRACE宏定义为:检查某一个宏,如果该宏没有被定义,则打印出错误信息,唯一的逻辑改动就是在strcmp函数前加非</p>
+<p>根据上述原理,则可以实现定义一个宏,来检测另一个宏是否被定义,如果没有被定义,则输出错误信息.</p>
+<p>打印错误信息的实现,是为TRACE宏添加c语言的变参系统,调用fprintf函数,将错误信息传入stderr,以及使用预定义宏__FILE__,__LINE__来标记错误位置.</p>
+<p>添加错误信息的TRACE宏,适用于一些非配置选项类项目构建,用于检测某些需要的宏,如果没有该宏则输出错误信息.而没有添加错误信息的TRACE宏,适用于需要kconfig工具来配合进行需要配置选项类项目的构建,用于检测用户的配置选项,来有选择地编译某些文件或者不编译某些文件.</p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/cn/本博客汇编代码的环境规范/" data-toggle="tooltip" data-placement="top" title="本博客的汇编代码的环境规范">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. All the images used in the blog are my original works or AI works, if you want to take it,don't hesitate. Thank you !
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=定义一个宏,来检测另一个宏是否被定义的优化代码&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/定义一个宏,来检测另一个宏是否被定义的优化代码/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <script src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Sat Mar 23 2024 20:00:00 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">定义一个宏,来检测另一个宏是否被定义的优化代码</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%BF%99%E9%87%8C%E7%9A%84%E9%97%AE%E9%A2%98%E5%B0%B1%E6%98%AF%E4%B8%BA%E4%BD%95%E5%9C%A8-x%E5%89%8D%E9%9D%A2%E5%8A%A0%E4%B8%80%E4%B8%AA%E7%A9%BA%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">这里的问题就是为何在#x前面加一个空字符串&quot;&quot;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%AF%B9%E4%BA%8E%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E6%A3%80%E6%B5%8B%E5%AE%8F%E6%98%AF%E5%90%A6%E8%A2%AB%E5%AE%9A%E4%B9%89%E7%9A%84%E5%AE%8F"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">对于定义一个检测宏是否被定义的宏</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%B9%B6%E4%B8%94%E7%BB%99%E5%87%BA%E4%BA%86%E5%8F%A6%E4%B8%80%E7%A7%8D%E4%BC%98%E5%8C%96"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">并且给出了另一种优化</span></a></li></ol></li></ol></li></ol>
+        
+        </div>
+      </aside>
     
 
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
+
+
+      <!-- Sidebar Container -->
+      <div class="
                 col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
+                col-md-10 col-md-offset-1
+                sidebar-container">
 
-      <!-- Main Content -->
-
-
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/定义一个宏,来检测另一个宏是否被定义的优化代码/">
-    <h2 class="post-title">
-      定义一个宏,来检测另一个宏是否被定义的优化代码
-    </h2>
-    <h3 class="post-subtitle">
-      风景如画
-    </h3>
-    <div class="post-content-preview">
-      定义一个宏,来检测另一个宏是否被定义的优化代码
-该问题的原提出者见stackoverflow:
-https://stackoverflow.com/questions/26099745/test-if-preprocessor-symbol-is-defined-inside-macro
-关于这个宏定义:
-1#define TRACE(x) &quot;&quot; #x
-#x是c预处理器的......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce LEE on
-    2024-03-23
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#C/C++" title="C/C++">C/C++</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/本博客汇编代码的环境规范/">
-    <h2 class="post-title">
-      本博客的汇编代码的环境规范
-    </h2>
-    <h3 class="post-subtitle">
-      大不了，从头来过...
-    </h3>
-    <div class="post-content-preview">
-      本博客的汇编代码的环境规范
-MASM和NASM
-test here:
-最近在完成x86-32架构的一些代码和要点的时候，对整个编译环境做了一些整理，我要讲一些关于在以后的博客中一些环境规范。
-之前的汇编代码是在MASM编译器格式的要求下写成的，就如每个程序开头都要有：
-1234567891011assume cs:code ds:datadata segment	...data endsco......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce LEE on
-    2023-09-14
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#x86-8086-汇编" title="x86-8086-汇编">x86-8086-汇编</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/论持久战/">
-    <h2 class="post-title">
-      论持久战
-    </h2>
-    <h3 class="post-subtitle">
-      持久战斗，更好生活...
-    </h3>
-    <div class="post-content-preview">
-      每个人对自己的人生有不同的理念，对世界有不同的理解。
-活着，就是在追求，实践自己的人生理念，论证一种人生思想。也许有些人心里并没有明确的这样想，但其行动上，已经是在实践他自己的人生理念。
-但是不管怎么样，我们都有一个同样重要的基本盘——健康的身体。
-为了大家，能更好的去实践自己的思想，我写了这篇论持久战。
-论持久战，说白了就是怎么尽最大的可能去多活几年，怎么使学习工作效率最高。
-针对那些有理......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce LEE on
-    2023-08-10
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#IT" title="IT">IT</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/中断概览/">
-    <h2 class="post-title">
-      x86-8086汇编：该架构的中断信息引发，中断向量表的配置，中断例程的执行
-    </h2>
-    <h3 class="post-subtitle">
-      细剖x86-8086中断...
-    </h3>
-    <div class="post-content-preview">
-      cpu具备一种能力就是：执行完当前指令后能转而去执行别处的指令
-这种能力我们叫中断（interrupt），中断有不同的类型：内中断和外中断
-cpu具备中断能力，cpu在执行中断的时候其底层是怎么运作的，什么样子的内存分布来支撑这种能力呢？
-x86-8086架构中断的整体情况
-当发生内中断时，中断信息由cpu内部提供，cpu每执行完一条指令，就会检查是否有中断产生。如果此时，有内中断发生，cp......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce LEE on
-    2023-08-01
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#x86-8086-汇编" title="x86-8086-汇编">x86-8086-汇编</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/x86-8086显示数值/">
-    <h2 class="post-title">
-      01-比较简单的x86-8086汇编实验：将数值显示到屏幕上
-    </h2>
-    <h3 class="post-subtitle">
-      一个简单的汇编实验...
-    </h3>
-    <div class="post-content-preview">
-      我们在开始这个实验的时候，先来回顾一下在学习高级语言的时候（比如c语言），我们是如何将一个数值显示到屏幕上的呢？
-bool print_data (int a)
-&#123;
-	printf(&quot;%d&quot;,a);
-	return true;
-&#125;
-
-我们在c语言中，写出这个函数，这个函数的功能想必大家一眼就可以看出来，就是将一个int型数据传入print_data函数......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce LEE on
-    2023-07-30
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#x86-8086-汇编" title="x86-8086-汇编">x86-8086-汇编</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/AI发展见解/">
-    <h2 class="post-title">
-      AI，我们应该知道什么，未来，我们应该怎么发展
-    </h2>
-    <h3 class="post-subtitle">
-      认清现实，奔向未来...
-    </h3>
-    <div class="post-content-preview">
-      
-在过去，我们所熟知的是，国内的IT业的野蛮生长，互联网公司的巨大营收，巨大的程序员岗位需求。
-过去的生意和业务特点：业务规模大，我们通常是需要十几个程序来合作完成。有做数据库的，接口的，第三方API的，支付系统的，还有搞小程序等等，这些程序员组成一个小团队。
-现在的玩法：业务规模小，只需要几个算法工程师，或者公司里请一个AI科学家，就可以把这些事全干完了，一般的程序员的薪资肯定是要降低的，......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce LEE on
-    2023-07-25
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#IT" title="IT">IT</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/lab4/">
-    <h2 class="post-title">
-      超级无敌简单入门x86-8086汇编实验：移送程序代码-最简化安装
-    </h2>
-    <h3 class="post-subtitle">
-      最简单的汇编实验...
-    </h3>
-    <div class="post-content-preview">
-      本实验目的：这是一个入门实验，但是可以为了以后理解中断处理程序那篇打下基础，程序代码的移送，换句话说就是安装！
-我想写一个程序，程序的功能呢就是将自己的机器码(mov ax,4c00h之前的代码）移送出去，移送到哪先不管，假定就移送到0200：0000这个起始地址吧。请你实现这个程序。（假设系统分配内存空间时，程序地址是cs：0000）
-（关于0200：0000这个地址，在以后的中断程序设计......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce LEE on
-    2023-07-15
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#x86-8086-汇编" title="x86-8086-汇编">x86-8086-汇编</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-
-  <!-- Pager -->
-  <ul class="pager">
-    
-    
-  </ul>
-
-
-      <!-- 如果开启评论功能 -->
-      
-    </div>
-
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-        <!-- Visitors -->
-<h5><a href="/">来访者</a></h5>
-
-
-        <hr>
-    
         <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#C/C++" title="C/C++">C/C++</a>
+            
+          </div>
+        </section>
+        
 
-<section>
-  <h5><a href="/tags/">特色标签</a></h5>
-  <div class="tags">
-    
-    
-    <a href="/tags/#IT" title="IT" rel="2">IT</a>
-    
-    
-    
-    <a href="/tags/#x86-8086-汇编" title="x86-8086-汇编" rel="4">x86-8086-汇编</a>
-    
-    
-    
-    <a href="/tags/#C/C++" title="C/C++" rel="1">C/C++</a>
-    
-    
-  </div>
-</section>
-
-
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-  <h5><a href="/about/">关于自己</a></h5>
-  <div class="short-about">
-
-    
-    <img id="avatar_pic" src="/img/avatar/fatpeople.png" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
-    
-
-    
-    <p>Don&#39;t wait Don&#39;t wait Don&#39;t wait for anything...</p>
-    
-
-    <!-- SNS Link -->
-    <ul class="list-inline">
-      
-
-      
-      <li>
-        <a target="_blank" href="https://github.com/000xiaoming">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-    </ul>
-  </div>
-</section>
-
-        <hr>
-    
-        <!-- RECENT POSTS -->
-
-<h5><a href="/">最近博文</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E5%AE%8F,%E6%9D%A5%E6%A3%80%E6%B5%8B%E5%8F%A6%E4%B8%80%E4%B8%AA%E5%AE%8F%E6%98%AF%E5%90%A6%E8%A2%AB%E5%AE%9A%E4%B9%89%E7%9A%84%E4%BC%98%E5%8C%96%E4%BB%A3%E7%A0%81/">
-      <li>定义一个宏,来检测另一个宏是否被定义的优化代码</li>
-    </a>
-    
-    <a href="%E6%9C%AC%E5%8D%9A%E5%AE%A2%E6%B1%87%E7%BC%96%E4%BB%A3%E7%A0%81%E7%9A%84%E7%8E%AF%E5%A2%83%E8%A7%84%E8%8C%83/">
-      <li>本博客的汇编代码的环境规范</li>
-    </a>
-    
-    <a href="%E8%AE%BA%E6%8C%81%E4%B9%85%E6%88%98/">
-      <li>论持久战</li>
-    </a>
-    
-    <a href="%E4%B8%AD%E6%96%AD%E6%A6%82%E8%A7%88/">
-      <li>x86-8086汇编：该架构的中断信息引发，中断向量表的配置，中断例程的执行</li>
-    </a>
-    
-    <a href="x86-8086%E6%98%BE%E7%A4%BA%E6%95%B0%E5%80%BC/">
-      <li>01-比较简单的x86-8086汇编实验：将数值显示到屏幕上</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
         <!-- Friends Blog -->
-
-<h5><a href="/">链友</a></h5>
-<ul class="list-inline">
-  
-  <li><a href="https://v-vincen.life/" target="_blank">V_Vincen</a></li>
-  
-  <li><a href="http://beantech.org" target="_blank">Bean Tech</a></li>
-  
-  <li><a href="http://huangxuan.me" target="_blank">Hux Blog</a></li>
-  
-  <li><a href="https://hexo.io/" target="_blank">Hexo</a></li>
-  
-  <li><a href="https://fe32.top/" target="_blank">Ethan.Tzy</a></li>
-  
-</ul>
-
-
+        
         <hr>
-    
-        <!-- Archives -->
+        <h5>链友</h5>
+        <ul class="list-inline">
 
-<h5><a href="/archives/">archives</a></h5>
-<div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/03/">March 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/09/">September 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/08/">August 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/07/">July 2023</a><span class="archive-list-count">3</span></li></ul>
-</div>
-
-
-        <hr>
-    
-        <!-- Categories -->
-
-<h5><a href="/categories/">categories</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="/categories/#Programer">
-      <li>Programer</li>
-    </a>
-    
-    <a href="/categories/#x86-8086汇编实验">
-      <li>x86-8086汇编实验</li>
-    </a>
-    
-    <a href="/categories/#C/C++">
-      <li>C/C++</li>
-    </a>
-    
-    <a href="/categories/#x86-8086汇编非实验">
-      <li>x86-8086汇编非实验</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-</div>
-
-
-    
+          
+          <li>
+            <a href="https://v-vincen.life/" target="_blank">V_Vincen</a>
+          </li>
+          
+          <li>
+            <a href="http://beantech.org" target="_blank">Bean Tech</a>
+          </li>
+          
+          <li>
+            <a href="http://huangxuan.me" target="_blank">Hux Blog</a>
+          </li>
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+          <li>
+            <a href="https://fe32.top/" target="_blank">Ethan.Tzy</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
   </div>
-</div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->
@@ -1025,7 +855,7 @@ bool print_data (int a)
     let jsdelivr = "https://cdn.jsdelivr.net/gh/";
     let gh = "000xiaoming";
     let ghPages = gh + ".github.io";
-    let pagePath = "cn/index.html";
+    let pagePath = "cn/定义一个宏,来检测另一个宏是否被定义的优化代码/";
     let jsdelivrurl;
     if (pagePath.indexOf("index.html") != -1) {
       jsdelivrurl = jsdelivr + gh + "/" + ghPages;
