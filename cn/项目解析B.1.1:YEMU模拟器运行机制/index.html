@@ -127,10 +127,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://000xiaoming.github.io/archive/2023/07/">
+  <link rel="canonical" href="https://000xiaoming.github.io/cn/项目解析B.1.1:YEMU模拟器运行机制/">
   <title>
     
-      I&#39;m Bruce Lee
+      项目解析B.1.1:YEMU模拟器运行机制 - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -227,7 +227,7 @@
       <div class="navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <a href="/">HOME</a>
+            <a href="/">首页</a>
           </li>
 
           
@@ -237,7 +237,7 @@
           <li>
             <a href="/about/">
               
-              ABOUT
+              关于
               
               
             </a>
@@ -248,7 +248,7 @@
           <li>
             <a href="/archives/">
               
-              ARCHIVES
+              归档
               
               
             </a>
@@ -259,7 +259,7 @@
           <li>
             <a href="/categories/">
               
-              CATEGORIES
+              分类
               
               
             </a>
@@ -270,7 +270,7 @@
           <li>
             <a href="/tags/">
               
-              TAGS
+              标签
               
               
             </a>
@@ -281,36 +281,14 @@
           
           <li>
             <a class="popup-trigger">
-              <span class="search-icon"></span>SEARCH</a>
+              <span class="search-icon"></span>搜索</a>
           </li>
           
 
           <!-- LangSelect -->
           
           
-          <!-- LangSelect start -->
-          <!-- LangSelect -->
-<li>
-  <a id="lang-select-label"><i class="fa fa-globe"></i>
-    <span>
-      English
-    </span>
-    <select id="lang-select" data-canonical="archive/2023/07/index.html">
-      
-      
-      <option value="en"  selected >
-        English
-      </option>
-      
-      <option value="cn" >
-        简体中文
-      </option>
-      
-    </select>
-  </a>
-</li>
-
-          <!-- LangSelect end -->
+          
           
           
         </ul>
@@ -363,18 +341,18 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io');
-      --intro-header-background-image-url-page: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png');
+      --intro-header-background-image-url-page: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io//img/header_img/lml_bg1.png');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io//img/header_img/lml_bg1.png');
     }
     header.intro-header {
-       /*page*/
-        background-image: var(--intro-header-background-image-url-page);
-        /* background-image: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/archive_bg2.jpg'); */
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png'); */
       
     }
 
@@ -397,10 +375,24 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>经年治世</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">Bruce LEE</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#项目工程" title="项目工程">项目工程</a>
+              
+            </div>
+            <h1>项目解析B.1.1:YEMU模拟器运行机制</h1>
+            <h2 class="subheading">项目工程</h2>
+            <span class="meta">
+              Posted by Bruce LEE on
+              2024-05-08
+            </span>
+
+
+            
+            
+
+
           </div>
           
         </div>
@@ -441,362 +433,340 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Main Content -->
-<div class="container">
-  <div class="row">
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h1>项目解析B.1.1:YEMU模拟器运行机制</h1>
+<hr>
+<p>#include &lt;stdint.h&gt;<br>
+#include &lt;stdio.h&gt;</p>
+<p>//------------4个寄存器,16字节地址<br>
+#define NREG 4<br>
+#define NMEM 16</p>
+<p>// define the instruction format<br>
+//-----------------联合体用法,总长是8bit,可以引用不同的位域<br>
+typedef union {<br>
+struct { uint8_t rs : 2, rt : 2, op : 4; } rtype;<br>
+struct { uint8_t addr : 4      , op : 4; } mtype;<br>
+uint8_t inst;<br>
+} inst_t;<br>
+//-------------------宏,解码声明定义<br>
+#define DECODE_R(inst) uint8_t rt = (inst).rtype.rt, rs = (inst).rtype.rs<br>
+#define DECODE_M(inst) uint8_t addr = (inst).mtype.addr</p>
+<p>uint8_t pc = 0;       // PC, There is no 4-bit data type in C, we use 8-bit type to represent it<br>
+uint8_t R[NREG] = {}; // registers<br>
+uint8_t M[NMEM] = {   // memory, which contains a program that calculates z = x + y<br>
+0b11100110,  // load  6#     | R[0] &lt;- M[y]//加载33<br>
+0b00000100,  // mov   r1, r0 | R[1] &lt;- R[0]//移动到r1寄存器<br>
+0b11100101,  // load  5#     | R[0] &lt;- M[x]//加载16<br>
+0b00010001,  // add   r0, r1 | R[0] &lt;- R[0] + R[1]//相加存储在r0<br>
+0b11110111,  // store 7#     | M[z] &lt;- R[0]//存放内存中<br>
+0b00010000,  // x = 16<br>
+0b00100001,  // y = 33<br>
+0b00000000,  // z = 0<br>
+};</p>
+<p>int halt = 0; // end marker</p>
+<p>// Execute an instruction<br>
+void exec_once() {<br>
+inst_t this;<br>
+this.inst = M[pc]; // instruction fetch<br>
+switch (this.rtype.op) {<br>
+//  op decode    operand decode  execution<br>
+//局部作用域,声明定义解码中的不同域<br>
+case 0b0000: { DECODE_R(this); R[rt]   = R[rs];   break; }<br>
+case 0b0001: { DECODE_R(this); R[rt]  += R[rs];   break; }<br>
+case 0b1110: { DECODE_M(this); R[0]    = M[addr]; break; }<br>
+case 0b1111: { DECODE_M(this); M[addr] = R[0];    break; }<br>
+default:<br>
+printf(“Invalid instruction with opcode = %x, halting…\n”, this.rtype.op);<br>
+halt = 1;<br>
+break;<br>
+}<br>
+pc ++; // Update PC<br>
+}</p>
+<p>int main() {<br>
+while (1) {<br>
+exec_once();<br>
+if (halt) break;<br>
+}<br>
+printf(“The result of 16 + 33 is %d\n”, M[7]);<br>
+return 0;<br>
+}</p>
+<hr>
+<h3 id="状态模型">状态模型</h3>
+<p>项目助解由于只用到了PC, R0, R1, M[7],所以这里的状态机这样表示:<br>
+(PC, R0, R1, M[7])<br>
+(0, 0, 0, 0) -&gt; (1, 33, 0, 0) -&gt; (2, 33, 33, 0) -&gt; (3, 16, 33, 0) -&gt; (4, 49, 33, 0) -&gt; (5, 49, 33, 49)<br>
+注意由于M[6]存储着0b00010000,所以下一个状态是<br>
+-&gt; (6, 98, 33, 49) -&gt; RETURN</p>
+<h3 id="通过使用union定义指令格式">通过使用union定义指令格式</h3>
+<p>在该微小模拟器中.根据PC从内存(数组)中取出一个字节,对其opcode进行译码,这里不管是this.rtype.op还是this.mtype.op都是可以的,因为两个指令的op位域是相同的(高4位),然后通过case语句(Look-up Table), 进行不同的译码(使用不同的宏来声明不同指令格式的引用),<br>
+然后对齐进行算术操作或者赋值操作.<br>
+如果opcode译码阶段错误,则会置halt为1.然后退出.<br>
+最后退出,等待下一次调用.</p>
+<h3 id="联系-最后">联系/最后</h3>
+<p>这里体现了,从内存读取指令,执行指令(访问寄存器/访问内存/ALU).</p>
+<p>状态模型掩盖了译码阶段,只关注存储器中的值(状态).<br>
+后者更加关注过程,行为过程</p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/cn/C-Preprocessor-Token-Pasting-Operator/" data-toggle="tooltip" data-placement="top" title="C-Preprocessor-Token-Pasting-Operator">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. All the images used in the blog are my original works or AI works, if you want to take it,don't hesitate. Thank you !
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=项目解析B.1.1:YEMU模拟器运行机制&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/项目解析B.1.1:YEMU模拟器运行机制/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <script src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Wed May 08 2024 14:08:00 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">项目解析B.1.1:YEMU模拟器运行机制</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%8A%B6%E6%80%81%E6%A8%A1%E5%9E%8B"><span class="toc-nav-number">1.0.1.</span> <span class="toc-nav-text">状态模型</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E9%80%9A%E8%BF%87%E4%BD%BF%E7%94%A8union%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4%E6%A0%BC%E5%BC%8F"><span class="toc-nav-number">1.0.2.</span> <span class="toc-nav-text">通过使用union定义指令格式</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%81%94%E7%B3%BB-%E6%9C%80%E5%90%8E"><span class="toc-nav-number">1.0.3.</span> <span class="toc-nav-text">联系&#x2F;最后</span></a></li></ol></li></ol></li></ol>
+        
+        </div>
+      </aside>
     
 
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
+
+
+      <!-- Sidebar Container -->
+      <div class="
                 col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
+                col-md-10 col-md-offset-1
+                sidebar-container">
 
-      <!-- Main Content -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
-      <!-- 归档列表 -->
-
-      
-
-      <!-- 归档列表 -->
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2024">
-          <span class="tag-text">2024</span>
-        </span>
-        <ul>
-          
-          <li>
-            05-08
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/项目解析B.1.1:YEMU模拟器运行机制/" style="color: #0085a1">
-              <span>
-                项目解析B.1.1:YEMU模拟器运行机制
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            05-08
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/C-Preprocessor-Token-Pasting-Operator/" style="color: #0085a1">
-              <span>
-                C-Preprocessor-Token-Pasting-Operator
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            03-23
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/定义一个宏,来检测另一个宏是否被定义的优化代码/" style="color: #0085a1">
-              <span>
-                定义一个宏,来检测另一个宏是否被定义的优化代码
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2023">
-          <span class="tag-text">2023</span>
-        </span>
-        <ul>
-          
-          <li>
-            09-14
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/本博客汇编代码的环境规范/" style="color: #0085a1">
-              <span>
-                本博客的汇编代码的环境规范
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-10
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/论持久战/" style="color: #0085a1">
-              <span>
-                论持久战
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-01
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/中断概览/" style="color: #0085a1">
-              <span>
-                x86-8086汇编：该架构的中断信息引发，中断向量表的配置，中断例程的执行
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-30
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/x86-8086显示数值/" style="color: #0085a1">
-              <span>
-                01-比较简单的x86-8086汇编实验：将数值显示到屏幕上
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-25
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/AI发展见解/" style="color: #0085a1">
-              <span>
-                AI，我们应该知道什么，未来，我们应该怎么发展
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-15
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/lab4/" style="color: #0085a1">
-              <span>
-                超级无敌简单入门x86-8086汇编实验：移送程序代码-最简化安装
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-      </div>
-      
-    </div>
-  </div>
-</div>
-
-
-      <!-- 如果开启评论功能 -->
-      
-    </div>
-
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-        <!-- Visitors -->
-<h5><a href="/">VISITORS</a></h5>
-
-
-        <hr>
-    
         <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#项目工程" title="项目工程">项目工程</a>
+            
+          </div>
+        </section>
+        
 
-<section>
-  <h5><a href="/tags/">FEATURED TAGS</a></h5>
-  <div class="tags">
-    
-    
-    <a href="/tags/#IT" title="IT" rel="2">IT</a>
-    
-    
-    
-    <a href="/tags/#C/C++" title="C/C++" rel="2">C/C++</a>
-    
-    
-    
-    <a href="/tags/#x86" title="x86" rel="4">x86</a>
-    
-    
-    
-    <a href="/tags/#项目工程" title="项目工程" rel="1">项目工程</a>
-    
-    
-  </div>
-</section>
-
-
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-  <h5><a href="/about/">ABOUT ME</a></h5>
-  <div class="short-about">
-
-    
-    <img id="avatar_pic" src="/img/avatar/fatpeople.png" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
-    
-
-    
-    <p>Don&#39;t wait Don&#39;t wait Don&#39;t wait for anything...</p>
-    
-
-    <!-- SNS Link -->
-    <ul class="list-inline">
-      
-
-      
-      <li>
-        <a target="_blank" href="https://github.com/000xiaoming">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-    </ul>
-  </div>
-</section>
-
-        <hr>
-    
-        <!-- RECENT POSTS -->
-
-<h5><a href="/">RECENT POSTS</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="../../../cn/%E9%A1%B9%E7%9B%AE%E8%A7%A3%E6%9E%90B.1.1:YEMU%E6%A8%A1%E6%8B%9F%E5%99%A8%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/">
-      <li>项目解析B.1.1:YEMU模拟器运行机制</li>
-    </a>
-    
-    <a href="../../../cn/C-Preprocessor-Token-Pasting-Operator/">
-      <li>C-Preprocessor-Token-Pasting-Operator</li>
-    </a>
-    
-    <a href="../../../cn/%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E5%AE%8F,%E6%9D%A5%E6%A3%80%E6%B5%8B%E5%8F%A6%E4%B8%80%E4%B8%AA%E5%AE%8F%E6%98%AF%E5%90%A6%E8%A2%AB%E5%AE%9A%E4%B9%89%E7%9A%84%E4%BC%98%E5%8C%96%E4%BB%A3%E7%A0%81/">
-      <li>定义一个宏,来检测另一个宏是否被定义的优化代码</li>
-    </a>
-    
-    <a href="../../../cn/%E6%9C%AC%E5%8D%9A%E5%AE%A2%E6%B1%87%E7%BC%96%E4%BB%A3%E7%A0%81%E7%9A%84%E7%8E%AF%E5%A2%83%E8%A7%84%E8%8C%83/">
-      <li>本博客的汇编代码的环境规范</li>
-    </a>
-    
-    <a href="../../../cn/%E8%AE%BA%E6%8C%81%E4%B9%85%E6%88%98/">
-      <li>论持久战</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
         <!-- Friends Blog -->
-
-<h5><a href="/">FRIENDS</a></h5>
-<ul class="list-inline">
-  
-  <li><a href="https://v-vincen.life/" target="_blank">V_Vincen</a></li>
-  
-  <li><a href="http://beantech.org" target="_blank">Bean Tech</a></li>
-  
-  <li><a href="http://huangxuan.me" target="_blank">Hux Blog</a></li>
-  
-  <li><a href="https://hexo.io/" target="_blank">Hexo</a></li>
-  
-  <li><a href="https://fe32.top/" target="_blank">Ethan.Tzy</a></li>
-  
-</ul>
-
-
+        
         <hr>
-    
-        <!-- Archives -->
+        <h5>链友</h5>
+        <ul class="list-inline">
 
-<h5><a href="/archives/">archives</a></h5>
-<div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../2024/05/">May 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../2024/03/">March 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../09/">September 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../08/">August 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="">July 2023</a><span class="archive-list-count">3</span></li></ul>
-</div>
-
-
-        <hr>
-    
-        <!-- Categories -->
-
-<h5><a href="/categories/">categories</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="/categories/#Programer">
-      <li>Programer</li>
-    </a>
-    
-    <a href="/categories/#C/C++">
-      <li>C/C++</li>
-    </a>
-    
-    <a href="/categories/#x86">
-      <li>x86</li>
-    </a>
-    
-    <a href="/categories/#项目工程">
-      <li>项目工程</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-</div>
-
-
-    
+          
+          <li>
+            <a href="https://v-vincen.life/" target="_blank">V_Vincen</a>
+          </li>
+          
+          <li>
+            <a href="http://beantech.org" target="_blank">Bean Tech</a>
+          </li>
+          
+          <li>
+            <a href="http://huangxuan.me" target="_blank">Hux Blog</a>
+          </li>
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+          <li>
+            <a href="https://fe32.top/" target="_blank">Ethan.Tzy</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
   </div>
-</div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->
@@ -905,7 +875,7 @@
     let jsdelivr = "https://cdn.jsdelivr.net/gh/";
     let gh = "000xiaoming";
     let ghPages = gh + ".github.io";
-    let pagePath = "archive/2023/07/index.html";
+    let pagePath = "cn/项目解析B.1.1:YEMU模拟器运行机制/";
     let jsdelivrurl;
     if (pagePath.indexOf("index.html") != -1) {
       jsdelivrurl = jsdelivr + gh + "/" + ghPages;
@@ -983,7 +953,7 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
             <span class="search-icon">
               <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
             </span>
-            <input autocomplete="off" placeholder="SEARCH..." type="text" id="local-search-input">
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
           </div>
         </div>
         <div id="local-search-result"></div>
