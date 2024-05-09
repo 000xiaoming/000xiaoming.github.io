@@ -467,6 +467,41 @@
   <!-- top end -->
   
 
+  <a href="/cn/Multi-Macro-with-Annotation/">
+    <h2 class="post-title">
+      多行宏添加注释的错误(如果不想因为脑子局部性注意力而导致浪费一下午+一晚上时间,请好好看)
+    </h2>
+    <h3 class="post-subtitle">
+      C/C++
+    </h3>
+    <div class="post-content-preview">
+      多行宏添加注释的错误(如果不想因为脑子局部性注意力而导致浪费一下午时间,请好好看)
+正确的示例用法
+12345678910#include &lt;stdio.h&gt;#define some_macro(x, y) \	((x) + \	(y) )int main(int argc, char** argv)&#123;	printf(&quot;use some_macro: %d\n......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Bruce LEE on
+    2024-05-09
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#C/C++" title="C/C++">C/C++</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
   <a href="/cn/YEMU模拟器运行机制/">
     <h2 class="post-title">
       YEMU模拟器运行机制
@@ -581,28 +616,28 @@ https://stackoverflow.com/questions/26099745/test-if-preprocessor-symbol-is-defi
   <!-- top end -->
   
 
-  <a href="/cn/RISCV指令设计和使用问题/">
+  <a href="/cn/RISCV存储方面/">
     <h2 class="post-title">
-      RISCV指令设计和使用问题
+      RISCVcache数据块容量权衡问题/大数据块导致的失效损失长延迟问题/cache容量大小与命中率问题/多路组相联策略减低失效率/组相联组内选择数据块策略
     </h2>
     <h3 class="post-subtitle">
       RISC-V
     </h3>
     <div class="post-content-preview">
-      RISCV指令设计和使用问题
-使用最高有效位来减低边界检查的开销
-我们可以至少保证对于数组的边界的值,一定是一个正确的合理的数y(指代y是一个有符号正数).
-我们需要检查下标x是否满足0 &lt;= x &lt; y
-则仅使用:
-1bgeu x, y, error //伪代码
-就可以完成两项检查.
-这里利用了最高有效位的双重含义:在有符号整数中,最高有效位为1,表示一个负数,但是在无符号整数......
+      层次化存储的根据:局部性原理
+由时间局部性和空间局部性
+层次化存储
+这意味着所有的上层次的数据都是下层次数据的子集:只有数据先在第i+1层出现,才会在第i层出现.
+SRAM与DRAM的价格差主要体现
+S和D的实现面积有很大差别,在相同面积的硅上D能实现更多的存储容量,S的每比特占用面积要大很多.
+S的每比特需要6到8个晶体管,过去是使用S芯片来作为一级或二级高速缓存
+由于摩尔定律,现在所有的......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Bruce LEE on
-    2024-01-03
+    2024-02-26
   </p>
   <div class="tags">
     
@@ -621,24 +656,26 @@ https://stackoverflow.com/questions/26099745/test-if-preprocessor-symbol-is-defi
   <!-- top end -->
   
 
-  <a href="/cn/RISCV设计中跳转和同步系列问题和x86/">
+  <a href="/cn/RISCV乱弹琴_1/">
     <h2 class="post-title">
-      RISCV设计中跳转和同步系列问题和x86
+      RISCV直接模式处理例外的实现问题与解决方案/PC的变化与SEPC的存储精确性问题/反相关代码导致的被迫按序执行的问题/内存别名问题
     </h2>
     <h3 class="post-subtitle">
       RISC-V
     </h3>
     <div class="post-content-preview">
-      RISCV设计中跳转和同步系列问题和x86
-关于超出条件分支的12位立即数字段的跳转问题
-在少有的可能下,条件跳转会跳到很远的地址空间(超过12位地址表示的半字范围),我们不选择在硬件方面而是在汇编程序方面作出解答:在分支目标中插入无条件跳转指令,并将条件取反,以便条件分支决定是否跳过该无条件跳转.
-SB型条件分支指令的立即数字段是12位,UJ型无条件跳转指令的立即数字段是20位.支持正负2......
+      RISC-V世界的严格区分例外和中断
+我们实现例外处理机制,使用的是RISC-V中的多个处理模式之一的直接模式.
+就是所有的例外处理,都使用统一的例外处理入口地址,跳转到这个地址后,由这个地址里面的指令通过读取mcause寄存器的值,来选择跳转的不同的处理程序.
+这是普遍例外的处理,中断也是一样的.
+在RISC-V中,中断指处理器外部事件,例外指代所有事件
+RISC-V直接模式处理例外的实现......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Bruce LEE on
-    2024-01-03
+    2024-02-14
   </p>
   <div class="tags">
     
@@ -657,27 +694,25 @@ SB型条件分支指令的立即数字段是12位,UJ型无条件跳转指令的�
   <!-- top end -->
   
 
-  <a href="/cn/RISCV基本设计理念/">
+  <a href="/cn/RISCV不同阶段冒险问题和分支/">
     <h2 class="post-title">
-      RISCV基本设计理念
+      RISCV不同阶段前递问题/load-use冒险的停顿技术/优化控制冒险发生时浪费的时钟周期问题分析/ID计算加速的专用前递通路问题/PC清理-预测加速问题/流水线清理问题
     </h2>
     <h3 class="post-subtitle">
       RISC-V
     </h3>
     <div class="post-content-preview">
-      RISCV基本设计理念
-并行性的重要性
-未来程序员必须要成功切换到显式并行编程上面.所以我们应该要清晰的认识到并行编程的重要性.并行涉及到多个层面:指令级并行,数据级并行,线程级并行.
-同时也分为硬件方面,编译方面,操作系统方面.
-功耗:跟负载电容,电压平方,时钟频率有关
-近30年每一次技术更新换代主要是通过减低电压,来减低功耗,同时提高时钟频率来增加性能.
-由于目前功耗墙的限制,现在很难进......
+      load-use冒险的不同阶段前递问题
+穷举了load指令后跟算术运算指令和存储指令的所有冒险类型.
+load指令后跟随算术指令,会发生load-use冒险中的EX冒险,即后指令在进行EX阶段就需要ld指令中RD存储的值.此时由于晚了一个周期,当后指令执行EX阶段时,ld指令还在执行MEM阶段.所以我们需要流水线停顿和前递
+load指令后跟存储指令时分为两种情况:
+1.当ld指令的rd和sd......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Bruce LEE on
-    2024-01-01
+    2024-02-03
   </p>
   <div class="tags">
     
@@ -696,30 +731,29 @@ SB型条件分支指令的立即数字段是12位,UJ型无条件跳转指令的�
   <!-- top end -->
   
 
-  <a href="/cn/本博客汇编代码的环境规范/">
+  <a href="/cn/RISCV各类冒险问题/">
     <h2 class="post-title">
-      本博客的汇编代码的环境规范
+      RISCV停顿与非停顿冒险/x0寄存器的数据冒险处理陷阱/寄存器同周期读写的解决方法/解决EX/MEM冒险
     </h2>
     <h3 class="post-subtitle">
-      大不了，从头来过...
+      RISC-V
     </h3>
     <div class="post-content-preview">
-      本博客的汇编代码的环境规范
-MASM和NASM
-test here:
-最近在完成x86-32架构的一些代码和要点的时候，对整个编译环境做了一些整理，我要讲一些关于在以后的博客中一些环境规范。
-之前的汇编代码是在MASM编译器格式的要求下写成的，就如每个程序开头都要有：
-1234567891011assume cs:code ds:datadata segment	...data endsco......
+      结构冒险的避免
+这种硬件结构上的缺陷,导致流水线上的不同指令执行,对于数据通路单元的使用产生了矛盾.
+加入处理器只有一种存储器,将指令存储器和数据存储器合并.
+如果第一条指令的第4步骤是读数据,需要读存储器,第4条指令需要取指令,读存储器.这就是在硬件使用上的冲突.
+所以在设计流水线时,从单周期处理器指令入手,避免在一条指令中使用重复的数据通路单元.避免不同指令的工序出现颠倒,如果出现工序减......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Bruce LEE on
-    2023-09-14
+    2024-01-26
   </p>
   <div class="tags">
     
-    <a href="/tags/#x86" title="x86">x86</a>
+    <a href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象">RISC-V问题和解决方案以及现象</a>
     
   </div>
   
@@ -734,30 +768,28 @@ test here:
   <!-- top end -->
   
 
-  <a href="/cn/论持久战/">
+  <a href="/cn/RISCV运算中间结果系列问题/">
     <h2 class="post-title">
-      论持久战
+      RISCV舍入问题和中间结果存储问题/浮点并行加速的不稳定性问题以及传统并行算法研究步骤
     </h2>
     <h3 class="post-subtitle">
-      持久战斗，更好生活...
+      RISC-V
     </h3>
     <div class="post-content-preview">
-      每个人对自己的人生有不同的理念，对世界有不同的理解。
-活着，就是在追求，实践自己的人生理念，论证一种人生思想。也许有些人心里并没有明确的这样想，但其行动上，已经是在实践他自己的人生理念。
-但是不管怎么样，我们都有一个同样重要的基本盘——健康的身体。
-为了大家，能更好的去实践自己的思想，我写了这篇论持久战。
-论持久战，说白了就是怎么尽最大的可能去多活几年，怎么使学习工作效率最高。
-针对那些有理......
+      先前处理算术运算时舍入问题和中间结果存储的存储问题
+IEEE 754标准提供多种舍入方法,这是因为在连续整数之间的小数,浮点数所能精确表示的个数是有限的,单精度浮点所能精确表达的小数的有效位必须小于23位,双精度则是53位(包含隐藏位)
+为了得到所能有的寄存器位数能表示的位,采取了额外添加两个位数来存储中间计算结果,分别是保护位/舍入位
+IEEE754标准有四种舍入模式:向上舍入/向下舍入/......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Bruce LEE on
-    2023-08-10
+    2024-01-14
   </p>
   <div class="tags">
     
-    <a href="/tags/#IT" title="IT">IT</a>
+    <a href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象">RISC-V问题和解决方案以及现象</a>
     
   </div>
   
@@ -772,69 +804,28 @@ test here:
   <!-- top end -->
   
 
-  <a href="/cn/中断概览/">
+  <a href="/cn/RISCV非规格化浮点系列问题/">
     <h2 class="post-title">
-      x86-8086汇编：该架构的中断信息引发，中断向量表的配置，中断例程的执行
+      RISCV乘法硬件加速算法原理/单精度规格化与非规格化最小正数问题/F/D标准扩展与I问题
     </h2>
     <h3 class="post-subtitle">
-      细剖x86-8086中断...
+      RISC-V
     </h3>
     <div class="post-content-preview">
-      cpu具备一种能力就是：执行完当前指令后能转而去执行别处的指令
-这种能力我们叫中断（interrupt），中断有不同的类型：内中断和外中断
-cpu具备中断能力，cpu在执行中断的时候其底层是怎么运作的，什么样子的内存分布来支撑这种能力呢？
-x86-8086架构中断的整体情况
-当发生内中断时，中断信息由cpu内部提供，cpu每执行完一条指令，就会检查是否有中断产生。如果此时，有内中断发生，cp......
+      乘法算法的一般算法的演变和使用硬件加速算法原理分析
+乘法算法与纸笔算法是一样的.二进制乘法,由于二进制的特殊型(只有1或0),当乘数的某一位是1时,就将被乘数复制到合适的位置,如果是0时,就将0复制到合适的位置,然后全部加起来.计算机的乘法算法与之同源.
+一般算法就是上述算法,只不过在&quot;复制到合适的位置&quot;这里,就是将每一次的被乘数左移一位,使其扩大2的幂.
+进制由什么定义......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Bruce LEE on
-    2023-08-01
+    2024-01-06
   </p>
   <div class="tags">
     
-    <a href="/tags/#x86" title="x86">x86</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/x86-8086显示数值/">
-    <h2 class="post-title">
-      01-比较简单的x86-8086汇编实验：将数值显示到屏幕上
-    </h2>
-    <h3 class="post-subtitle">
-      一个简单的汇编实验...
-    </h3>
-    <div class="post-content-preview">
-      我们在开始这个实验的时候，先来回顾一下在学习高级语言的时候（比如c语言），我们是如何将一个数值显示到屏幕上的呢？
-bool print_data (int a)
-&#123;
-	printf(&quot;%d&quot;,a);
-	return true;
-&#125;
-
-我们在c语言中，写出这个函数，这个函数的功能想必大家一眼就可以看出来，就是将一个int型数据传入print_data函数......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce LEE on
-    2023-07-30
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#x86" title="x86">x86</a>
+    <a href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象">RISC-V问题和解决方案以及现象</a>
     
   </div>
   
@@ -884,11 +875,11 @@ bool print_data (int a)
     
     
     
-    <a href="/tags/#C/C++" title="C/C++" rel="2">C/C++</a>
+    <a href="/tags/#C/C++" title="C/C++" rel="3">C/C++</a>
     
     
     
-    <a href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象" rel="3">RISC-V问题和解决方案以及现象</a>
+    <a href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象" rel="9">RISC-V问题和解决方案以及现象</a>
     
     
     
@@ -896,7 +887,7 @@ bool print_data (int a)
     
     
     
-    <a href="/tags/#x86" title="x86" rel="4">x86</a>
+    <a href="/tags/#x86" title="x86" rel="9">x86</a>
     
     
   </div>
@@ -959,6 +950,10 @@ bool print_data (int a)
 <div class="widget">
   <ul>
     
+    <a href="Multi-Macro-with-Annotation/">
+      <li>多行宏添加注释的错误(如果不想因为脑子局部性注意力而导致浪费一下午+一晚上时间,请好好看)</li>
+    </a>
+    
     <a href="YEMU%E6%A8%A1%E6%8B%9F%E5%99%A8%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/">
       <li>YEMU模拟器运行机制</li>
     </a>
@@ -971,12 +966,8 @@ bool print_data (int a)
       <li>定义一个宏,来检测另一个宏是否被定义的优化代码</li>
     </a>
     
-    <a href="RISCV%E6%8C%87%E4%BB%A4%E8%AE%BE%E8%AE%A1%E5%92%8C%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98/">
-      <li>RISCV指令设计和使用问题</li>
-    </a>
-    
-    <a href="RISCV%E8%AE%BE%E8%AE%A1%E4%B8%AD%E8%B7%B3%E8%BD%AC%E5%92%8C%E5%90%8C%E6%AD%A5%E7%B3%BB%E5%88%97%E9%97%AE%E9%A2%98%E5%92%8Cx86/">
-      <li>RISCV设计中跳转和同步系列问题和x86</li>
+    <a href="RISCV%E5%AD%98%E5%82%A8%E6%96%B9%E9%9D%A2/">
+      <li>RISCVcache数据块容量权衡问题/大数据块导致的失效损失长延迟问题/cache容量大小与命中率问题/多路组相联策略减低失效率/组相联组内选择数据块策略</li>
     </a>
     
   </ul>
@@ -1009,7 +1000,7 @@ bool print_data (int a)
 
 <h5><a href="/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/05/">May 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/03/">March 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/01/">January 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/09/">September 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/08/">August 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/07/">July 2023</a><span class="archive-list-count">3</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/05/">May 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/03/">March 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/01/">January 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/12/">December 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/10/">October 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/09/">September 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/08/">August 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/07/">July 2023</a><span class="archive-list-count">4</span></li></ul>
 </div>
 
 

@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <meta name="baidu-site-verification" content="codeva-OySZDT59RD" />
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-Y95F7Y9NT1"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-Y95F7Y9NT1');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?9b08ea589f23fb1f5e2be85b8ca26b60";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="It&#39;s an IT blog..."/>
+  <meta name="keyword" content="v-vincen,v-vincen,livemylife,IT  blog,Blog"/>
+  <link rel="shortcut icon" href="/img/avatar/roguerabbit.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/highlight.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/widget.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/rocket.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/signature.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/catalog.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+      <!-- gitalk start -->
+      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/gitalk.css"/>
+      <!-- gitalk end -->
+    
+
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://000xiaoming.github.io/cn/RISCV不同阶段冒险问题和分支/">
+  <title>
+    
+      RISCV不同阶段前递问题/load-use冒险的停顿技术/优化控制冒险发生时浪费的时钟周期问题分析/ID计算加速的专用前递通路问题/PC清理-预测加速问题/流水线清理问题 - I&#39;m Bruce Lee
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--dark">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'dark';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+		<!-- Gitter -->
+<!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'your-community/your-room'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">经年治世</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">首页</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/archives/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>搜索</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <!-- CDN: jsdelivr start -->
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png');
+      --intro-header-background-image-url-page: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io//img/header_img/lml_bg1.png');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io//img/header_img/lml_bg1.png');
+    }
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png'); */
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('/img/signature/vincent-white.png');
+      }
+    
+  </style>
+  <!-- CDN: jsdelivr end -->
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象">RISC-V问题和解决方案以及现象</a>
+              
+            </div>
+            <h1>RISCV不同阶段前递问题/load-use冒险的停顿技术/优化控制冒险发生时浪费的时钟周期问题分析/ID计算加速的专用前递通路问题/PC清理-预测加速问题/流水线清理问题</h1>
+            <h2 class="subheading">RISC-V</h2>
+            <span class="meta">
+              Posted by Bruce LEE on
+              2024-02-03
+            </span>
+
+
+            
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h2 id="load-use冒险的不同阶段前递问题">load-use冒险的不同阶段前递问题</h2>
+<p>穷举了load指令后跟算术运算指令和存储指令的所有冒险类型.<br>
+load指令后跟随算术指令,会发生load-use冒险中的EX冒险,即后指令在进行EX阶段就需要ld指令中RD存储的值.此时由于晚了一个周期,当后指令执行EX阶段时,ld指令还在执行MEM阶段.所以我们需要流水线停顿和前递<br>
+load指令后跟存储指令时分为两种情况:<br>
+1.当ld指令的rd和sd的rs2一致时,发生的是上诉的冒险类型,用相同的处理.<br>
+2.当ld指令的rd和sd的rs1一致时,发生的是在MEM阶段的数据冒险,只需要前递就可以了,具体分析:<br>
+ld指令的要加载的值在MEM阶段结束后,存储在MEM/WB寄存器中,sd指令的写入值,在MEM阶段的开始时,需要被数据寄存器读取.</p>
+<h3 id="存储指令后跟加载指令不会产生任何冒险">存储指令后跟加载指令不会产生任何冒险</h3>
+<h2 id="load-use冒险的停顿技术">load-use冒险的停顿技术</h2>
+<p>只有在ld指令后的指令是在EX阶段就出现数据冒险时,才会发生停顿.<br>
+处理器中,有很多数据通路单元都是空执行的,就是所谓的执行后的数据被抛弃,不被使用.<br>
+在之前就叙述过,整个指令内部是无法停顿的,只有指令与指令之间是可以停顿的(现在想来,这句话其实是废话)<br>
+我们只要让流水线的某一个周期内,在某一个阶段是空执行的就新.但是空执行之后产生的废弃数据并没有被抛弃,而是随着流水线被写入流水线寄存器,甚至是写入了寄存器堆中.所以我们需要一个手段就是使其不可写入.<br>
+最简单直接的就是将这个空阶段的控制信号全部写0,这样就没有权限写入任何寄存器堆了.写入流水线寄存器是无所谓的,因为流水线寄存器总是可以被写入的,只是我们需要将流水线寄存器中的写入信号失效就可以了.<br>
+我们还需要将后续已经上了流水线的指令暂停,这些指令保存在流水线寄存器中,我们只需要使这个流水线寄存器不可写就行了.<br>
+流水线停顿,不仅是消耗了时钟周期,而且在实现上,也需要资源.所以我们应该尽早的发现load-use+EX冒险</p>
+<h3 id="应该尽早发现-IF-ID寄存器发现load-use-EX冒险">应该尽早发现:IF/ID寄存器发现load-use+EX冒险</h3>
+<p>当后指令在IF/ID寄存器时,ld指令此时在ID/EX寄存器中,我们需要检测ID/EX寄存器的MemRead信号,和ID/EX.RegisterRd于IF/ID.RegisterRs1和2的比较值,然后决定是否让PC寄存器和IF/ID寄存器冻结.<br>
+当后续指令已经流水在IF/ID寄存器中时,PC寄存器已经指向了下一条地址.<br>
+我们应该将PC寄存器不可更改,然后将IF/ID寄存器不可更改.同时在下一个周期时,将0写入ID/EX寄存器的控制字段.</p>
+<h3 id="PC寄存器和IF-ID流水线寄存器的不可更改的实现方法">PC寄存器和IF/ID流水线寄存器的不可更改的实现方法</h3>
+<p>根据217的示意图,应该是实现将控制信号传入PC,ID/EX寄存器,让其不可被更改.</p>
+<h2 id="PC寄存器被改写的两种情况和时机">PC寄存器被改写的两种情况和时机</h2>
+<p>在流水线中,每一个时钟周期,都会使PC改写.<br>
+每一条指令,被读取放入IF/ID寄存器中时,PC+4已经被计算出来,送入了二选一多选器,这个多选器在默认的时候应该是选择PC+4选项.<br>
+当分支指令在计算偏移地址和条件时,结果存储在EX/MEM阶段,此时才能决定是否跳转.<br>
+同时呢,控制ID阶段多选器的branch信号也是在MEM阶段被计算出来:branch信号被赋予有效时意味着这是跳转指令,同时条件为真.</p>
+<h2 id="优化控制冒险发生时浪费的时钟周期问题分析">优化控制冒险发生时浪费的时钟周期问题分析</h2>
+<p>分支条件指令,如果按照正常的指令执行步骤走,在一个5级流水线中,当指令在MEM阶段才能得出PC的更改值.<br>
+当遇见分支指令时,暂停流水线,等到MEM阶段后,得出跳转结果,然后再将指令送上流水线.<br>
+这里遇见的问题是,每遇见一次分支指令,都会浪费3个周期.<br>
+从两个方面来优化计算:</p>
+<h2 id="分支指令EX阶段提前至ID阶段">分支指令EX阶段提前至ID阶段</h2>
+<h3 id="地址计算加速">地址计算加速</h3>
+<p>分支指令的地址计算是由当前PC值和立即数扩展相加得出的,立即数需要扩展,然后与PC相加.<br>
+为了使用更少的硬件资源:<br>
+PC值是保存在IF/ID寄存器中,可以直接取出来,不浪费时间.<br>
+立即数保存在IF/ID寄存器中也可以直接取出来,但是需要对其进行符号位扩展为64位,所以这里需要有一个立即数生成器,立即数生成器本来就在ID阶段.所以并没有添加任何的额外硬件.<br>
+使用专用的加法器更好,而不是使用ALU.<br>
+因此需要添加一个加法器.</p>
+<h3 id="条件计算加速">条件计算加速</h3>
+<p>读出两个寄存器,然后将这两个寄存器进行比较运算,得出结果</p>
+<h4 id="用于ID计算加速的专用前递通路问题">用于ID计算加速的专用前递通路问题</h4>
+<p>因为分支指令需要使用到寄存器中的值,所有同样会面临数据冒险问题.<br>
+由以上的所有分析,所以我们需要为了分支条件指令在ID计算加速设计一个专用的用于ID阶段的前递数据通路单元.<br>
+这个前递单元同样需要接入来自ID/EX寄存器,EX/MEM寄存器阶段前递数据.<br>
+由寄存器堆取出,寄存器很快,不浪费时间,<br>
+同样有前递取出的数值,也是从流水线寄存器取出的,速度很快,不浪费时间.</p>
+<h4 id="对于比较值的计算加速">对于比较值的计算加速</h4>
+<p>当得到两个源操作数后,比较是否相等,我们可以添加一个异或单元,然后接入一个位或单元,就可以得出结果.<br>
+这两个单元很快,不需要很多的时间,所以可以接受.</p>
+<h3 id="IF阶段的PC清理问题">IF阶段的PC清理问题</h3>
+<p>我们知道,当ID阶段结束时,我们得出了跳转地址,此时已经有一条预测指令上了流水线,并且存储在IF/ID流水线寄存器中.<br>
+如果预测错误,我们需要对其进行清理,原文中提到,不仅需要让该指令的控制信号为0,还不能让其有任何操作动作.<br>
+在IF/ID寄存器的指令,并没有通过ID阶段计算出控制值.<br>
+我们可以使用IF.Flush信号,直接对IF/ID流水线寄存器清理.</p>
+<h3 id="加速之后的分支跳转指令在EX阶段执行问题">加速之后的分支跳转指令在EX阶段执行问题</h3>
+<p>我们将分支指令提前到了ID阶段,但是此时它依然会按照正常的流水线行走,来到EX阶段,此时会重新计算比较结果和地址位置,然后在MEM阶段更改PC值.<br>
+这是一个很大的问题,因为分支指令执行了两次!<br>
+我们在PC清理问题中,使用了IF.Flush信号,对IF/ID流水线寄存器进行了清理.<br>
+同样为了避免重复执行分支指令,我们同样需要对ID/EX流水线寄存器进行清理,同时避免影响到分支指令之前的指令.</p>
+<h3 id="静态分支预测">静态分支预测</h3>
+<p>一般采用总是预测不跳转或者总是预测跳转.<br>
+这是最简单的预测,但是遇见一个总是跳转代码段或者总是不跳转代码段,性能损失也是很大.<br>
+所以一般不采用静态分支预测,起码使用最简单的动态分支预测都要好很多.</p>
+<h3 id="动态分支预测">动态分支预测</h3>
+<h4 id="最简单的动态预测">最简单的动态预测</h4>
+<p>使用一个分支预测缓存,这个缓存是一个比特位.记录上一次跳转结果.<br>
+由于局部原理,当上一次跳转了,这一次大概率也是要跳转的.<br>
+当比特位为1时,表示上一次跳转过了,那么这一次就预先加载目标地址.<br>
+为0时,表示上一次没跳转,那么这一次就加载默认的下一条指令.</p>
+<h4 id="其他的动态预测">其他的动态预测</h4>
+<p>都是基于上面的简单原理进行额外扩展的.<br>
+比如使用两个比特位来预测跳转,同时使用多个分支预测器,来预测,同时选择预测结果最好的<br>
+相关预测器和锦标赛分支预测器都是这些变体.</p>
+<h2 id="遇见分支指令时-PC预测加载提速问题">遇见分支指令时,PC预测加载提速问题</h2>
+<p>我们知道,只有想分析了该指令是否是分支指令,我们才能进行一系列的ID加速计算,和PC的预测加载.<br>
+如果我们需要在ID阶段才能得出这是分支指令,那么此时已经过去了一个周期,预测已经来不及了.<br>
+如果不能解决提前识别分支指令,那么动态预测就是笑话.<br>
+那么静态预测的总是跳转预测也是笑话.<br>
+识别分支指令,可能需要在指令寄存器那里添加额外的硬件检测对应字段.</p>
+<h3 id="预测时-加载的目标地址问题">预测时,加载的目标地址问题</h3>
+<p>使用分支目标缓存,用于存储上一次目标地址.<br>
+这样在决定预测跳转时,直接将上一次目标地址放在PC中.</p>
+<h3 id="在ARMv8中应用的减少条件分支指令的方法">在ARMv8中应用的减少条件分支指令的方法</h3>
+<p>使用条件移动指令<br>
+这里的条件分支指令的减少,在与将一种条件分支指令的功能类型进行了包装.<br>
+当这一类型就是条件移动指令这个功能类型.如果使用条件分支指令来实现这种功能,那么会造成很大的开销,但是得到的却很少(仅仅是将一个寄存器赋值了)</p>
+<h2 id="当动态预测错误时-清洗流水线问题">当动态预测错误时,清洗流水线问题</h2>
+<p>对于静态预测,所有的结果都是写死的,出现了错误,直接清洗就行了.<br>
+但是对于动态预测,我们如何知道流水线上加载的指令是错误的呢?<br>
+动态预测使用了分支预测缓存,当分支指令结果出来时,会首先与分支预测缓存的值进行逻辑运算,用于判断现在加载在流水线上的指令是否预测正确.如果不正确,才执行清理.</p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/cn/RISCV乱弹琴_1/" data-toggle="tooltip" data-placement="top" title="RISCV直接模式处理例外的实现问题与解决方案/PC的变化与SEPC的存储精确性问题/反相关代码导致的被迫按序执行的问题/内存别名问题">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/cn/RISCV各类冒险问题/" data-toggle="tooltip" data-placement="top" title="RISCV停顿与非停顿冒险/x0寄存器的数据冒险处理陷阱/寄存器同周期读写的解决方法/解决EX/MEM冒险">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. All the images used in the blog are my original works or AI works, if you want to take it,don't hesitate. Thank you !
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=RISCV不同阶段前递问题/load-use冒险的停顿技术/优化控制冒险发生时浪费的时钟周期问题分析/ID计算加速的专用前递通路问题/PC清理-预测加速问题/流水线清理问题&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/RISCV不同阶段冒险问题和分支/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <script src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Sat Feb 03 2024 12:00:00 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#load-use%E5%86%92%E9%99%A9%E7%9A%84%E4%B8%8D%E5%90%8C%E9%98%B6%E6%AE%B5%E5%89%8D%E9%80%92%E9%97%AE%E9%A2%98"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">load-use冒险的不同阶段前递问题</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%AD%98%E5%82%A8%E6%8C%87%E4%BB%A4%E5%90%8E%E8%B7%9F%E5%8A%A0%E8%BD%BD%E6%8C%87%E4%BB%A4%E4%B8%8D%E4%BC%9A%E4%BA%A7%E7%94%9F%E4%BB%BB%E4%BD%95%E5%86%92%E9%99%A9"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">存储指令后跟加载指令不会产生任何冒险</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#load-use%E5%86%92%E9%99%A9%E7%9A%84%E5%81%9C%E9%A1%BF%E6%8A%80%E6%9C%AF"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">load-use冒险的停顿技术</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%BA%94%E8%AF%A5%E5%B0%BD%E6%97%A9%E5%8F%91%E7%8E%B0-IF-ID%E5%AF%84%E5%AD%98%E5%99%A8%E5%8F%91%E7%8E%B0load-use-EX%E5%86%92%E9%99%A9"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">应该尽早发现:IF&#x2F;ID寄存器发现load-use+EX冒险</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#PC%E5%AF%84%E5%AD%98%E5%99%A8%E5%92%8CIF-ID%E6%B5%81%E6%B0%B4%E7%BA%BF%E5%AF%84%E5%AD%98%E5%99%A8%E7%9A%84%E4%B8%8D%E5%8F%AF%E6%9B%B4%E6%94%B9%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">PC寄存器和IF&#x2F;ID流水线寄存器的不可更改的实现方法</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#PC%E5%AF%84%E5%AD%98%E5%99%A8%E8%A2%AB%E6%94%B9%E5%86%99%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%83%85%E5%86%B5%E5%92%8C%E6%97%B6%E6%9C%BA"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">PC寄存器被改写的两种情况和时机</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BC%98%E5%8C%96%E6%8E%A7%E5%88%B6%E5%86%92%E9%99%A9%E5%8F%91%E7%94%9F%E6%97%B6%E6%B5%AA%E8%B4%B9%E7%9A%84%E6%97%B6%E9%92%9F%E5%91%A8%E6%9C%9F%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">优化控制冒险发生时浪费的时钟周期问题分析</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%88%86%E6%94%AF%E6%8C%87%E4%BB%A4EX%E9%98%B6%E6%AE%B5%E6%8F%90%E5%89%8D%E8%87%B3ID%E9%98%B6%E6%AE%B5"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">分支指令EX阶段提前至ID阶段</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%9C%B0%E5%9D%80%E8%AE%A1%E7%AE%97%E5%8A%A0%E9%80%9F"><span class="toc-nav-number">5.1.</span> <span class="toc-nav-text">地址计算加速</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%9D%A1%E4%BB%B6%E8%AE%A1%E7%AE%97%E5%8A%A0%E9%80%9F"><span class="toc-nav-number">5.2.</span> <span class="toc-nav-text">条件计算加速</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%94%A8%E4%BA%8EID%E8%AE%A1%E7%AE%97%E5%8A%A0%E9%80%9F%E7%9A%84%E4%B8%93%E7%94%A8%E5%89%8D%E9%80%92%E9%80%9A%E8%B7%AF%E9%97%AE%E9%A2%98"><span class="toc-nav-number">5.2.1.</span> <span class="toc-nav-text">用于ID计算加速的专用前递通路问题</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%AF%B9%E4%BA%8E%E6%AF%94%E8%BE%83%E5%80%BC%E7%9A%84%E8%AE%A1%E7%AE%97%E5%8A%A0%E9%80%9F"><span class="toc-nav-number">5.2.2.</span> <span class="toc-nav-text">对于比较值的计算加速</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#IF%E9%98%B6%E6%AE%B5%E7%9A%84PC%E6%B8%85%E7%90%86%E9%97%AE%E9%A2%98"><span class="toc-nav-number">5.3.</span> <span class="toc-nav-text">IF阶段的PC清理问题</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%8A%A0%E9%80%9F%E4%B9%8B%E5%90%8E%E7%9A%84%E5%88%86%E6%94%AF%E8%B7%B3%E8%BD%AC%E6%8C%87%E4%BB%A4%E5%9C%A8EX%E9%98%B6%E6%AE%B5%E6%89%A7%E8%A1%8C%E9%97%AE%E9%A2%98"><span class="toc-nav-number">5.4.</span> <span class="toc-nav-text">加速之后的分支跳转指令在EX阶段执行问题</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E9%9D%99%E6%80%81%E5%88%86%E6%94%AF%E9%A2%84%E6%B5%8B"><span class="toc-nav-number">5.5.</span> <span class="toc-nav-text">静态分支预测</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%8A%A8%E6%80%81%E5%88%86%E6%94%AF%E9%A2%84%E6%B5%8B"><span class="toc-nav-number">5.6.</span> <span class="toc-nav-text">动态分支预测</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E5%8A%A8%E6%80%81%E9%A2%84%E6%B5%8B"><span class="toc-nav-number">5.6.1.</span> <span class="toc-nav-text">最简单的动态预测</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%85%B6%E4%BB%96%E7%9A%84%E5%8A%A8%E6%80%81%E9%A2%84%E6%B5%8B"><span class="toc-nav-number">5.6.2.</span> <span class="toc-nav-text">其他的动态预测</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%81%87%E8%A7%81%E5%88%86%E6%94%AF%E6%8C%87%E4%BB%A4%E6%97%B6-PC%E9%A2%84%E6%B5%8B%E5%8A%A0%E8%BD%BD%E6%8F%90%E9%80%9F%E9%97%AE%E9%A2%98"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">遇见分支指令时,PC预测加载提速问题</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E9%A2%84%E6%B5%8B%E6%97%B6-%E5%8A%A0%E8%BD%BD%E7%9A%84%E7%9B%AE%E6%A0%87%E5%9C%B0%E5%9D%80%E9%97%AE%E9%A2%98"><span class="toc-nav-number">6.1.</span> <span class="toc-nav-text">预测时,加载的目标地址问题</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%9C%A8ARMv8%E4%B8%AD%E5%BA%94%E7%94%A8%E7%9A%84%E5%87%8F%E5%B0%91%E6%9D%A1%E4%BB%B6%E5%88%86%E6%94%AF%E6%8C%87%E4%BB%A4%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-nav-number">6.2.</span> <span class="toc-nav-text">在ARMv8中应用的减少条件分支指令的方法</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%BD%93%E5%8A%A8%E6%80%81%E9%A2%84%E6%B5%8B%E9%94%99%E8%AF%AF%E6%97%B6-%E6%B8%85%E6%B4%97%E6%B5%81%E6%B0%B4%E7%BA%BF%E9%97%AE%E9%A2%98"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">当动态预测错误时,清洗流水线问题</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象">RISC-V问题和解决方案以及现象</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>链友</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://v-vincen.life/" target="_blank">V_Vincen</a>
+          </li>
+          
+          <li>
+            <a href="http://beantech.org" target="_blank">Bean Tech</a>
+          </li>
+          
+          <li>
+            <a href="http://huangxuan.me" target="_blank">Hux Blog</a>
+          </li>
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+          <li>
+            <a href="https://fe32.top/" target="_blank">Ethan.Tzy</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/000xiaoming">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Bruce LEE
+          2024
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/jquery.min.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/bootstrap.min.js"></script>
+
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/hux-blog.min.js"></script>
+
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/catalog.js"></script>
+
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/totop.js"></script>
+
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/mouseclick.js"  content='I am Bruce...,It&#39;s happy to see you...,Hi...,My friend...,What can i do for you...,Wait for one minute...,Cease to struggle and you cease to live...,A friend in need is a friend indeed...,Faith can move mountains...' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033' ></script>
+    <!-- Mouseclick -->
+  
+
+  
+
+  
+
+
+
+
+  <!-- CDN: jsdelivr start -->
+  <script async="async" type="text/javascript">
+    let imgsUrl = document.getElementsByTagName("img");
+    let imgUrl = Array.from(imgsUrl);
+
+    let jsdelivr = "https://cdn.jsdelivr.net/gh/";
+    let gh = "000xiaoming";
+    let ghPages = gh + ".github.io";
+    let pagePath = "cn/RISCV不同阶段冒险问题和分支/";
+    let jsdelivrurl;
+    if (pagePath.indexOf("index.html") != -1) {
+      jsdelivrurl = jsdelivr + gh + "/" + ghPages;
+    } else {
+      jsdelivrurl = jsdelivr + gh + "/" + ghPages + "/" + pagePath;
+    }
+    imgUrl.forEach(item => {
+      let oldUrl = item.getAttribute("src");
+      let newUrl = oldUrl.replace(oldUrl, jsdelivrurl + oldUrl).replace("..", "");
+      item.setAttribute("src", newUrl);
+    });
+  </script>
+  <!-- CDN: jsdelivr end -->
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://000xiaoming.github.io/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+              imgUrl = 'https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io' + imgUrl;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

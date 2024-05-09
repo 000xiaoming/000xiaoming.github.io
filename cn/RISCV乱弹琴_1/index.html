@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <meta name="baidu-site-verification" content="codeva-OySZDT59RD" />
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-Y95F7Y9NT1"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-Y95F7Y9NT1');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?9b08ea589f23fb1f5e2be85b8ca26b60";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="It&#39;s an IT blog..."/>
+  <meta name="keyword" content="v-vincen,v-vincen,livemylife,IT  blog,Blog"/>
+  <link rel="shortcut icon" href="/img/avatar/roguerabbit.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/highlight.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/widget.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/rocket.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/signature.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/catalog.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+      <!-- gitalk start -->
+      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/gitalk.css"/>
+      <!-- gitalk end -->
+    
+
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://000xiaoming.github.io/cn/RISCV乱弹琴_1/">
+  <title>
+    
+      RISCV直接模式处理例外的实现问题与解决方案/PC的变化与SEPC的存储精确性问题/反相关代码导致的被迫按序执行的问题/内存别名问题 - I&#39;m Bruce Lee
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--dark">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'dark';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+		<!-- Gitter -->
+<!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'your-community/your-room'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">经年治世</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">首页</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/archives/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>搜索</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <!-- CDN: jsdelivr start -->
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png');
+      --intro-header-background-image-url-page: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io//img/header_img/lml_bg1.png');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io//img/header_img/lml_bg1.png');
+    }
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png'); */
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('/img/signature/vincent-white.png');
+      }
+    
+  </style>
+  <!-- CDN: jsdelivr end -->
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象">RISC-V问题和解决方案以及现象</a>
+              
+            </div>
+            <h1>RISCV直接模式处理例外的实现问题与解决方案/PC的变化与SEPC的存储精确性问题/反相关代码导致的被迫按序执行的问题/内存别名问题</h1>
+            <h2 class="subheading">RISC-V</h2>
+            <span class="meta">
+              Posted by Bruce LEE on
+              2024-02-14
+            </span>
+
+
+            
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h3 id="RISC-V世界的严格区分例外和中断">RISC-V世界的严格区分例外和中断</h3>
+<p>我们实现例外处理机制,使用的是RISC-V中的多个处理模式之一的直接模式.<br>
+就是所有的例外处理,都使用统一的例外处理入口地址,跳转到这个地址后,由这个地址里面的指令通过读取mcause寄存器的值,来选择跳转的不同的处理程序.<br>
+这是普遍例外的处理,中断也是一样的.<br>
+在RISC-V中,中断指处理器外部事件,例外指代所有事件</p>
+<h3 id="RISC-V直接模式处理例外的实现问题与解决方案">RISC-V直接模式处理例外的实现问题与解决方案</h3>
+<h4 id="使用mcause和sepc全局寄存器">使用mcause和sepc全局寄存器</h4>
+<p>mcause寄存器是用来记录例外原因,例外原因是由别的地方设置的.这是一个全局变量.<br>
+sepc寄存器是记录发生例外的指令地址,这是为了在执行完例外处理后,能够返回指令地址重新加载指令运行.<br>
+毕竟我们尽量使计算机不要崩溃.<br>
+mcause和sepc设置在哪里,以及如何记录不同阶段发生的例外?<br>
+其实这里有限制,我们只检查发生在执行阶段的例外.同时,mcause和sepc就只记录执行阶段的地址.</p>
+<h4 id="在何处何时检查例外问题">在何处何时检查例外问题</h4>
+<p>通常情况下,是设计为在执行阶段中执行检查例外电路.这里衍生出另一个问题就是为何不再别的地方检查?<br>
+也可以在译码阶段检查,甚至是可以在全阶段检查,为每一个流水线上的指令提供例外发生的检查.但是这里是内部寄存器,硬件实现成本很高,所以针对每一条指令,我们只在这条指令的执行阶段执行例外检查.<br>
+细分下去,是在执行阶段中检查还是在执行阶段结束,指令到达了EX/MEM流水线寄存器后执行检查吗.我们一般选择在执行阶段中进行检查.因为这样,当出现了例外后,我们需要对之前的流水线指令清理,同时也需要对该指令进行清理.所以对IF/ID,ID/EX,EX/MEM流水线寄存器进行flush操作.此时流水线上出现了3个气泡.</p>
+<h4 id="硬件和操作系统协同">硬件和操作系统协同</h4>
+<p>硬件主要体现在流水线上,接受例外原因,然后保存执行地址和例外原因,清理流水线,保存寄存器,然后跳转到给定的内存地址空间中,执行给定的例外处理程序.<br>
+操作系统是为了给定这些固定的程序流程,负责具体的处理不同的例外情况,要么直接中断程序的运行,或者最后返回程序重新执行.</p>
+<h3 id="在EX阶段中-PC的变化与SEPC的存储精确性问题">在EX阶段中,PC的变化与SEPC的存储精确性问题</h3>
+<p>当指令达到ID/EX流水线寄存器中时,此时就已经开始执行EX流程的计算了.<br>
+与此同时,PC也从下一条指令取出地址,并且将地址数据变量保持了稳定!(放在IF/ID流水线寄存器前面!)<br>
+PC的值当然是PC+4!<br>
+此时发生了例外.PC不再是当初的PC,而是PC+4了.<br>
+如果我们不做处理,任由其走,将PC+4存储在SEPC中,那么这就是非精确中断(imprecise interrupts/exception),让操作系统去判断哪条指令引发例外.<br>
+RISC-V支持精确中断.</p>
+<h3 id="RISC-V支持精确中断的未来考虑">RISC-V支持精确中断的未来考虑</h3>
+<p>当流水线的深度加深之后,如果使用非精确例外会增加操作系统处理的难度和复杂度.<br>
+支持虚拟内存</p>
+<h3 id="指令并行的两种探究模式">指令并行的两种探究模式</h3>
+<p>第一种就是加深流水线,提高流水线的级数,正如当初引入流水线一眼,让更多的指令的在流水线的不同阶段同时被执行.<br>
+第二种就是提高隐藏的指令间并行.使用多发射技术.<br>
+可以看成使用了多条流水线,依据指令之间的关系,使得这个程序中的代码被送上多条流水线.但是这个逻辑上的多条流水线在实现上是被综合在一块的.</p>
+<p><em><strong>静态多发射和静态按序流水线调度中,编译器完成静态分支预测和代码调度</strong></em><br>
+<em><strong>编译器帮助处理器尽可能减少或者消除冒险.</strong></em></p>
+<h3 id="由多发射技术衍生出来的研究方法">由多发射技术衍生出来的研究方法</h3>
+<p>第一个方向:指令调度<br>
+让本应该按序执行的程序代码,被送上了并行的执行逻辑.之前流水线上的并行,没有真正意义上的并行,本质上依然有一种前后关系.<br>
+关于如何让这些指令能够并行执行,那一定是需要指令之间具有并行性.<br>
+扩展指令的并行性:使用指令调度<br>
+指令调度在两个层面执行:编译器层面和硬件层面<br>
+如果指令调度只由编译器完成:静态按序流水线调度<br>
+如果只由硬件层面:动态乱序流水线调度</p>
+<p>第二个:流水线<br>
+前面文章已经讲的很多了</p>
+<h4 id="编译层面的指令调度解决的是哪种类型并行方法">编译层面的指令调度解决的是哪种类型并行方法</h4>
+<p>编译器常用的技术使用循环展开,寻找能够并行执行的指令.因为流水线经常遇见这种情况,前面停顿了,后面有一个独立的指令也会被停顿.<br>
+纯粹的静态发射技术,就是由编译器来决定哪些指令需要打包,发送到并行流水线上的同时执行.编译器对指令进行调度,重新排序.<br>
+加入一个双发射处理器,编译器在编译时,并不是全部的指令都能两两结合被打包发送到流水线上.所以编译器在面对无法同时执行的指令时,会在中间插入nop指令.使其顺序执行.<br>
+在包与包之间,如果遇见了冒险,处理器就会和之前描述的那样使用相同的技术去处理这个&quot;单条大指令&quot;之间的冒险</p>
+<h3 id="动态乱序流水线调度技术中-指令真正意义上的并行执行在哪些阶段">动态乱序流水线调度技术中,指令真正意义上的并行执行在哪些阶段?</h3>
+<p>编写程序是按照逻辑顺序进行执行的,但是代码中有些操作确实可以并行执行.<br>
+但是硬件或者编译器无法看出所有能够并行执行的或者无法识别并且抛弃出那些表面并行但是并不能并行执行的指令.<br>
+但是编译器还是要尽可能的消除的所有的冒险(我们显而已知或者简单的)</p>
+<p>综上,我们的在动态多发射处理器中,在硬件层面进行并行分析的原理和真正并行时,指令的哪些部分是并行的.</p>
+<p>我们的指令译码解码阶段是告诉硬件如何去理解该指令,也只有让硬件理解了该指令,才能作出判断.(当然了,也有通过添加硬件单元,来是处理器更加快速的识别指令类型)<br>
+所以我们的指令不管是并行的还是按序执行的,都必须按序解码和译码.</p>
+<p>处理器在按序解码和译码之后,开始通过一系列的判断,将这些指令发送到对应的功能单元.</p>
+<h4 id="并行的真实性">并行的真实性:</h4>
+<p>指令在功能单元中是真正能够得到并行操作的一个环节.这必须是基于能够并行操作的指令在所有的源操作数或者其他条件符合时,就会被执行.</p>
+<p>如果没有达到执行标准,会被放入保留站等待.</p>
+<h4 id="重排序缓冲的存在意义">重排序缓冲的存在意义</h4>
+<p>当执行完成后,依然需要依次写回.这是程序顺序指令和顺序思考的结果.我们并不能也不应该改写程序顺序执行的逻辑.<br>
+所以每一条指令在执行完成后,我们应该按序提交.</p>
+<p>这种保守的处理方法也可以预防例外</p>
+<h4 id="RISC-V指令系统体系结构的真正强大之处">RISC-V指令系统体系结构的真正强大之处</h4>
+<p>所有的指令的写回操作都是在最后一步完成,通过这个动态多发射处理器的实现来看,其RISC-V所提供的便利是非常大的,致使硬件实现上得到了很大的简洁性.</p>
+<h3 id="与动态多发射不同的是-静态多发射与传统的非发射和动态多发射的区别">与动态多发射不同的是,静态多发射与传统的非发射和动态多发射的区别</h3>
+<p>非发射处理器的流水线设计,依然是IF-&gt;ID-&gt;EX-&gt;MEM-&gt;WB阶段,每一个阶段只有一个完整对应的功能单元<br>
+一条指令被流水线式的执行.</p>
+<p>静态多发射不同的是,在ID阶段添加多个存储指令或者读写寄存器的端口,在EX阶段添加了多个功能单元.用于支持多条指令的同时执行.</p>
+<p>这里的多条指令会首先由编译器进行分支预测和代码调度.将那些能够并行执行的指令打包成&quot;单条大指令&quot;,一并送上流水线.<br>
+如果没有能够并行执行的指令,由编译器插入nop指令来替代.</p>
+<p>静态多发射流水线处理单条大指令时,依然和非发射流水线是一样的:如果遇上&quot;单条大指令&quot;之间的控制冒险或者数据冒险,依然采用逻辑上的冒险检测,停顿,前递.</p>
+<h4 id="超长指令字设计思路在RISC-V的静态多发射体现">超长指令字设计思路在RISC-V的静态多发射体现</h4>
+<p>正如上面所说的,将发射指令包看成一条预先定义好,需要进行多种操作的指令,是符合超长指令字的设计思路.</p>
+<h3 id="反相关代码导致的被迫按序执行的问题">反相关代码导致的被迫按序执行的问题</h3>
+<p>编程时,会想应该尽可能使用少的变量去完成更多的工作.但是这个其实是错误的.<br>
+其根源是流水线在执行时,多个连续的指令都用到了这个变量.数据冒险造成的停顿,nop指令都会影响处理器的效率.<br>
+如果这个变量在多个指令中被重复使用,但是有些是没有依赖的.这是反相关:名字复用(典型的就是寄存器),被迫导致的顺序排列执行,这并不是一种指令间真实的数据相关.<br>
+解决方法是在编译器层面作出动作:编译器会使用额外的寄存器,这个过程称为寄存器重命名.其目标是,除了真数据相关,消除指令间存在的其他数据相关.</p>
+<p>为了能够得到等多的指令,进行数据冒险分析,编译器通常会将循环展开,以获得更多能够分析的代码.</p>
+<h3 id="指针的大量使用导致的内存别名问题">指针的大量使用导致的内存别名问题</h3>
+<p>程序的代码中常使用指针,这种数据结构特别容易产生存储器别名,这会导致潜在的数据相关</p>
+<p>上述中寄存重命名解决的就是使用了同一个变量完成多个不依赖的任务,但是也有一种可能,使用不同的指针去完成依赖/不依赖的任务,但是这里的特点是指针指向的内存地址都一样,这样子编译器很难使用额外的寄存器去提高性能.</p>
+<h3 id="推测式执行思想和流水线思想推动的处理器发展同时也引来的减低能效的问题">推测式执行思想和流水线思想推动的处理器发展同时也引来的减低能效的问题</h3>
+<p>推测式执行思想就是一个挖掘程序的指令并行性,流水线就是将指令分而执行值,可以提高硬件资源的利用率.</p>
+<p>技术发展,提供了更多的晶体管,产生新的结构,提高了性能,但是同时也减低了能效.</p>
+<p>我们撞上了能耗墙,因此转向单芯片多处理器架构.所以我们无需设计更深的流水线或者采用更激进的推测机制<br>
+如果一味的设计更深流水线和采用更激进的推测机制,这会反而带来低效.</p>
+<h4 id="简单处理器和复杂处理器在考虑性能和能耗的情况下的设计需求">简单处理器和复杂处理器在考虑性能和能耗的情况下的设计需求</h4>
+<p>虽然复杂处理器的性能比简单处理器的性能高.但在相同的性能下,简单处理器比复杂处理器的能耗低.<br>
+在有能耗限制下,那么简单处理器所拥有的性能就比复杂处理器高.</p>
+<h3 id="静态多发射和静态按序流水线组合-动态多发设和静态按序流水线-动态多发射和动态调度流水线">静态多发射和静态按序流水线组合,动态多发设和静态按序流水线,动态多发射和动态调度流水线</h3>
+<p>静态多发射的指令发射包是由编译器来完成的,硬件不进行任何调度.<br>
+静态按序流水线中的每一个指令都严格按照先后顺序执行.<br>
+动态多发射的指令是在程序执行时,由硬件来完成指令调度,这样有更高效的执行方式.<br>
+动态调度流水线,可以单周期内承载多个并行指令的执行阶段,指令的执行没有严格的先后顺序,只要满足条件就可以执行.<br>
+静态多发射和静态按序流水线的组合能够组成一个静态多发射处理器<br>
+动态多发射和静态按序,动态调度流水线都可以进行组合设计处理器</p>
+<p><em><strong>流水线与指令系统的深度绑定</strong></em></p>
+<h4 id="流水线是简单的-X">流水线是简单的 (X)</h4>
+<p>通过对流水线的级数,对指令本质的分析,加上预测技术,冒险检测技术,前递技术,逻辑控制单元设计等等,这些都需要非常细致.</p>
+<h4 id="对于流水线等结构设计-可以与工艺无关-X">对于流水线等结构设计,可以与工艺无关 (X)</h4>
+<p>工艺的进步,也促使了流水线的多个功能单元和动态流水线技术的发展.<br>
+延迟转移技术就是随着工艺的进步而显得多余了.</p>
+<h4 id="缺乏对指令系统设计的考虑反过来会影响流水线的实现">缺乏对指令系统设计的考虑反过来会影响流水线的实现</h4>
+<p>流水线设计的难度由指令系统的复杂性引起的.<br>
+可变的指令长度和不确定的执行时间会造成流水线各级不均衡,从而使得设计中的冒险检测逻辑变得特别复杂.该问题已经由intel的微操作和微流水线技术解决.<br>
+复杂的寻址模式会引起不同类型的问题:更新寄存器的寻址模式让冒险检测更加复杂.一些多次访问内存的寻址模式让流水线控制更加复杂.</p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/cn/RISCV存储方面/" data-toggle="tooltip" data-placement="top" title="RISCVcache数据块容量权衡问题/大数据块导致的失效损失长延迟问题/cache容量大小与命中率问题/多路组相联策略减低失效率/组相联组内选择数据块策略">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/cn/RISCV不同阶段冒险问题和分支/" data-toggle="tooltip" data-placement="top" title="RISCV不同阶段前递问题/load-use冒险的停顿技术/优化控制冒险发生时浪费的时钟周期问题分析/ID计算加速的专用前递通路问题/PC清理-预测加速问题/流水线清理问题">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. All the images used in the blog are my original works or AI works, if you want to take it,don't hesitate. Thank you !
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=RISCV直接模式处理例外的实现问题与解决方案/PC的变化与SEPC的存储精确性问题/反相关代码导致的被迫按序执行的问题/内存别名问题&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/RISCV乱弹琴_1/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <script src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Wed Feb 14 2024 12:00:00 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#RISC-V%E4%B8%96%E7%95%8C%E7%9A%84%E4%B8%A5%E6%A0%BC%E5%8C%BA%E5%88%86%E4%BE%8B%E5%A4%96%E5%92%8C%E4%B8%AD%E6%96%AD"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">RISC-V世界的严格区分例外和中断</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#RISC-V%E7%9B%B4%E6%8E%A5%E6%A8%A1%E5%BC%8F%E5%A4%84%E7%90%86%E4%BE%8B%E5%A4%96%E7%9A%84%E5%AE%9E%E7%8E%B0%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">RISC-V直接模式处理例外的实现问题与解决方案</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E4%BD%BF%E7%94%A8mcause%E5%92%8Csepc%E5%85%A8%E5%B1%80%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">使用mcause和sepc全局寄存器</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%9C%A8%E4%BD%95%E5%A4%84%E4%BD%95%E6%97%B6%E6%A3%80%E6%9F%A5%E4%BE%8B%E5%A4%96%E9%97%AE%E9%A2%98"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">在何处何时检查例外问题</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%A1%AC%E4%BB%B6%E5%92%8C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8D%8F%E5%90%8C"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">硬件和操作系统协同</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%9C%A8EX%E9%98%B6%E6%AE%B5%E4%B8%AD-PC%E7%9A%84%E5%8F%98%E5%8C%96%E4%B8%8ESEPC%E7%9A%84%E5%AD%98%E5%82%A8%E7%B2%BE%E7%A1%AE%E6%80%A7%E9%97%AE%E9%A2%98"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">在EX阶段中,PC的变化与SEPC的存储精确性问题</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#RISC-V%E6%94%AF%E6%8C%81%E7%B2%BE%E7%A1%AE%E4%B8%AD%E6%96%AD%E7%9A%84%E6%9C%AA%E6%9D%A5%E8%80%83%E8%99%91"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">RISC-V支持精确中断的未来考虑</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%8C%87%E4%BB%A4%E5%B9%B6%E8%A1%8C%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%8E%A2%E7%A9%B6%E6%A8%A1%E5%BC%8F"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">指令并行的两种探究模式</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%94%B1%E5%A4%9A%E5%8F%91%E5%B0%84%E6%8A%80%E6%9C%AF%E8%A1%8D%E7%94%9F%E5%87%BA%E6%9D%A5%E7%9A%84%E7%A0%94%E7%A9%B6%E6%96%B9%E6%B3%95"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">由多发射技术衍生出来的研究方法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%BC%96%E8%AF%91%E5%B1%82%E9%9D%A2%E7%9A%84%E6%8C%87%E4%BB%A4%E8%B0%83%E5%BA%A6%E8%A7%A3%E5%86%B3%E7%9A%84%E6%98%AF%E5%93%AA%E7%A7%8D%E7%B1%BB%E5%9E%8B%E5%B9%B6%E8%A1%8C%E6%96%B9%E6%B3%95"><span class="toc-nav-number">6.1.</span> <span class="toc-nav-text">编译层面的指令调度解决的是哪种类型并行方法</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%8A%A8%E6%80%81%E4%B9%B1%E5%BA%8F%E6%B5%81%E6%B0%B4%E7%BA%BF%E8%B0%83%E5%BA%A6%E6%8A%80%E6%9C%AF%E4%B8%AD-%E6%8C%87%E4%BB%A4%E7%9C%9F%E6%AD%A3%E6%84%8F%E4%B9%89%E4%B8%8A%E7%9A%84%E5%B9%B6%E8%A1%8C%E6%89%A7%E8%A1%8C%E5%9C%A8%E5%93%AA%E4%BA%9B%E9%98%B6%E6%AE%B5"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">动态乱序流水线调度技术中,指令真正意义上的并行执行在哪些阶段?</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%B9%B6%E8%A1%8C%E7%9A%84%E7%9C%9F%E5%AE%9E%E6%80%A7"><span class="toc-nav-number">7.1.</span> <span class="toc-nav-text">并行的真实性:</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E9%87%8D%E6%8E%92%E5%BA%8F%E7%BC%93%E5%86%B2%E7%9A%84%E5%AD%98%E5%9C%A8%E6%84%8F%E4%B9%89"><span class="toc-nav-number">7.2.</span> <span class="toc-nav-text">重排序缓冲的存在意义</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#RISC-V%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%9A%84%E7%9C%9F%E6%AD%A3%E5%BC%BA%E5%A4%A7%E4%B9%8B%E5%A4%84"><span class="toc-nav-number">7.3.</span> <span class="toc-nav-text">RISC-V指令系统体系结构的真正强大之处</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%8E%E5%8A%A8%E6%80%81%E5%A4%9A%E5%8F%91%E5%B0%84%E4%B8%8D%E5%90%8C%E7%9A%84%E6%98%AF-%E9%9D%99%E6%80%81%E5%A4%9A%E5%8F%91%E5%B0%84%E4%B8%8E%E4%BC%A0%E7%BB%9F%E7%9A%84%E9%9D%9E%E5%8F%91%E5%B0%84%E5%92%8C%E5%8A%A8%E6%80%81%E5%A4%9A%E5%8F%91%E5%B0%84%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-nav-number">8.</span> <span class="toc-nav-text">与动态多发射不同的是,静态多发射与传统的非发射和动态多发射的区别</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E8%B6%85%E9%95%BF%E6%8C%87%E4%BB%A4%E5%AD%97%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF%E5%9C%A8RISC-V%E7%9A%84%E9%9D%99%E6%80%81%E5%A4%9A%E5%8F%91%E5%B0%84%E4%BD%93%E7%8E%B0"><span class="toc-nav-number">8.1.</span> <span class="toc-nav-text">超长指令字设计思路在RISC-V的静态多发射体现</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%8F%8D%E7%9B%B8%E5%85%B3%E4%BB%A3%E7%A0%81%E5%AF%BC%E8%87%B4%E7%9A%84%E8%A2%AB%E8%BF%AB%E6%8C%89%E5%BA%8F%E6%89%A7%E8%A1%8C%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-nav-number">9.</span> <span class="toc-nav-text">反相关代码导致的被迫按序执行的问题</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%8C%87%E9%92%88%E7%9A%84%E5%A4%A7%E9%87%8F%E4%BD%BF%E7%94%A8%E5%AF%BC%E8%87%B4%E7%9A%84%E5%86%85%E5%AD%98%E5%88%AB%E5%90%8D%E9%97%AE%E9%A2%98"><span class="toc-nav-number">10.</span> <span class="toc-nav-text">指针的大量使用导致的内存别名问题</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%8E%A8%E6%B5%8B%E5%BC%8F%E6%89%A7%E8%A1%8C%E6%80%9D%E6%83%B3%E5%92%8C%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%80%9D%E6%83%B3%E6%8E%A8%E5%8A%A8%E7%9A%84%E5%A4%84%E7%90%86%E5%99%A8%E5%8F%91%E5%B1%95%E5%90%8C%E6%97%B6%E4%B9%9F%E5%BC%95%E6%9D%A5%E7%9A%84%E5%87%8F%E4%BD%8E%E8%83%BD%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-nav-number">11.</span> <span class="toc-nav-text">推测式执行思想和流水线思想推动的处理器发展同时也引来的减低能效的问题</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%AE%80%E5%8D%95%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E5%A4%8D%E6%9D%82%E5%A4%84%E7%90%86%E5%99%A8%E5%9C%A8%E8%80%83%E8%99%91%E6%80%A7%E8%83%BD%E5%92%8C%E8%83%BD%E8%80%97%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E7%9A%84%E8%AE%BE%E8%AE%A1%E9%9C%80%E6%B1%82"><span class="toc-nav-number">11.1.</span> <span class="toc-nav-text">简单处理器和复杂处理器在考虑性能和能耗的情况下的设计需求</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E9%9D%99%E6%80%81%E5%A4%9A%E5%8F%91%E5%B0%84%E5%92%8C%E9%9D%99%E6%80%81%E6%8C%89%E5%BA%8F%E6%B5%81%E6%B0%B4%E7%BA%BF%E7%BB%84%E5%90%88-%E5%8A%A8%E6%80%81%E5%A4%9A%E5%8F%91%E8%AE%BE%E5%92%8C%E9%9D%99%E6%80%81%E6%8C%89%E5%BA%8F%E6%B5%81%E6%B0%B4%E7%BA%BF-%E5%8A%A8%E6%80%81%E5%A4%9A%E5%8F%91%E5%B0%84%E5%92%8C%E5%8A%A8%E6%80%81%E8%B0%83%E5%BA%A6%E6%B5%81%E6%B0%B4%E7%BA%BF"><span class="toc-nav-number">12.</span> <span class="toc-nav-text">静态多发射和静态按序流水线组合,动态多发设和静态按序流水线,动态多发射和动态调度流水线</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%98%AF%E7%AE%80%E5%8D%95%E7%9A%84-X"><span class="toc-nav-number">12.1.</span> <span class="toc-nav-text">流水线是简单的 (X)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%AF%B9%E4%BA%8E%E6%B5%81%E6%B0%B4%E7%BA%BF%E7%AD%89%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1-%E5%8F%AF%E4%BB%A5%E4%B8%8E%E5%B7%A5%E8%89%BA%E6%97%A0%E5%85%B3-X"><span class="toc-nav-number">12.2.</span> <span class="toc-nav-text">对于流水线等结构设计,可以与工艺无关 (X)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%BC%BA%E4%B9%8F%E5%AF%B9%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E7%9A%84%E8%80%83%E8%99%91%E5%8F%8D%E8%BF%87%E6%9D%A5%E4%BC%9A%E5%BD%B1%E5%93%8D%E6%B5%81%E6%B0%B4%E7%BA%BF%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-nav-number">12.3.</span> <span class="toc-nav-text">缺乏对指令系统设计的考虑反过来会影响流水线的实现</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象">RISC-V问题和解决方案以及现象</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>链友</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://v-vincen.life/" target="_blank">V_Vincen</a>
+          </li>
+          
+          <li>
+            <a href="http://beantech.org" target="_blank">Bean Tech</a>
+          </li>
+          
+          <li>
+            <a href="http://huangxuan.me" target="_blank">Hux Blog</a>
+          </li>
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+          <li>
+            <a href="https://fe32.top/" target="_blank">Ethan.Tzy</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/000xiaoming">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Bruce LEE
+          2024
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/jquery.min.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/bootstrap.min.js"></script>
+
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/hux-blog.min.js"></script>
+
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/catalog.js"></script>
+
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/totop.js"></script>
+
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/mouseclick.js"  content='I am Bruce...,It&#39;s happy to see you...,Hi...,My friend...,What can i do for you...,Wait for one minute...,Cease to struggle and you cease to live...,A friend in need is a friend indeed...,Faith can move mountains...' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033' ></script>
+    <!-- Mouseclick -->
+  
+
+  
+
+  
+
+
+
+
+  <!-- CDN: jsdelivr start -->
+  <script async="async" type="text/javascript">
+    let imgsUrl = document.getElementsByTagName("img");
+    let imgUrl = Array.from(imgsUrl);
+
+    let jsdelivr = "https://cdn.jsdelivr.net/gh/";
+    let gh = "000xiaoming";
+    let ghPages = gh + ".github.io";
+    let pagePath = "cn/RISCV乱弹琴_1/";
+    let jsdelivrurl;
+    if (pagePath.indexOf("index.html") != -1) {
+      jsdelivrurl = jsdelivr + gh + "/" + ghPages;
+    } else {
+      jsdelivrurl = jsdelivr + gh + "/" + ghPages + "/" + pagePath;
+    }
+    imgUrl.forEach(item => {
+      let oldUrl = item.getAttribute("src");
+      let newUrl = oldUrl.replace(oldUrl, jsdelivrurl + oldUrl).replace("..", "");
+      item.setAttribute("src", newUrl);
+    });
+  </script>
+  <!-- CDN: jsdelivr end -->
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://000xiaoming.github.io/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+              imgUrl = 'https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io' + imgUrl;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

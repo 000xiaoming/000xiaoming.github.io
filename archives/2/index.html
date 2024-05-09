@@ -467,24 +467,331 @@
   <!-- top end -->
   
 
-  <a href="/cn/AI发展见解/">
+  <a href="/cn/RISCV指令设计和使用问题/">
     <h2 class="post-title">
-      AI，我们应该知道什么，未来，我们应该怎么发展
+      RISCV减低边界检查的开销方法/硬连线为零的可能实现方式/大立即数的RISC-V编址和寻址问题/分支和跳转指令中立即数字段的PC相对偏移表示问题
     </h2>
     <h3 class="post-subtitle">
-      认清现实，奔向未来...
+      RISC-V
     </h3>
     <div class="post-content-preview">
-      
-在过去，我们所熟知的是，国内的IT业的野蛮生长，互联网公司的巨大营收，巨大的程序员岗位需求。
-过去的生意和业务特点：业务规模大，我们通常是需要十几个程序来合作完成。有做数据库的，接口的，第三方API的，支付系统的，还有搞小程序等等，这些程序员组成一个小团队。
-现在的玩法：业务规模小，只需要几个算法工程师，或者公司里请一个AI科学家，就可以把这些事全干完了，一般的程序员的薪资肯定是要降低的，......
+      使用最高有效位来减低边界检查的开销
+我们可以至少保证对于数组的边界的值,一定是一个正确的合理的数y(指代y是一个有符号正数).
+我们需要检查下标x是否满足0 &lt;= x &lt; y
+则仅使用:
+1bgeu x, y, error //伪代码
+就可以完成两项检查.
+这里利用了最高有效位的双重含义:在有符号整数中,最高有效位为1,表示一个负数,但是在无符号整数中,表示这是一个很大的数.
+c......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Bruce LEE on
-    2023-07-25
+    2024-01-03
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象">RISC-V问题和解决方案以及现象</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/RISCV设计中跳转和同步系列问题和x86/">
+    <h2 class="post-title">
+      RISCV超12位立即数字段的跳转问题/解决数据竞争问题的底层支持/数组索引访问与指针访问/常见优化/x86的复杂性缺陷
+    </h2>
+    <h3 class="post-subtitle">
+      RISC-V
+    </h3>
+    <div class="post-content-preview">
+      关于超出条件分支的12位立即数字段的跳转问题
+在少有的可能下,条件跳转会跳到很远的地址空间(超过12位地址表示的半字范围),我们不选择在硬件方面而是在汇编程序方面作出解答:在分支目标中插入无条件跳转指令,并将条件取反,以便条件分支决定是否跳过该无条件跳转.
+SB型条件分支指令的立即数字段是12位,UJ型无条件跳转指令的立即数字段是20位.支持正负2^19个半字范围的寻址.
+关于逆向工程将机器......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Bruce LEE on
+    2024-01-03
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象">RISC-V问题和解决方案以及现象</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/RISCV基本设计理念/">
+    <h2 class="post-title">
+      RISCV基本设计理念
+    </h2>
+    <h3 class="post-subtitle">
+      RISC-V
+    </h3>
+    <div class="post-content-preview">
+      RISCV基本设计理念
+并行性的重要性
+未来程序员必须要成功切换到显式并行编程上面.所以我们应该要清晰的认识到并行编程的重要性.并行涉及到多个层面:指令级并行,数据级并行,线程级并行.
+同时也分为硬件方面,编译方面,操作系统方面.
+功耗:跟负载电容,电压平方,时钟频率有关
+近30年每一次技术更新换代主要是通过减低电压,来减低功耗,同时提高时钟频率来增加性能.
+由于目前功耗墙的限制,现在很难进......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Bruce LEE on
+    2024-01-01
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象">RISC-V问题和解决方案以及现象</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/last/">
+    <h2 class="post-title">
+      x86汇编搁置的地方
+    </h2>
+    <h3 class="post-subtitle">
+      x86
+    </h3>
+    <div class="post-content-preview">
+      强调
+在安装程序中，要注意安装的目标程序和目标地址的安全空间大小，使用movsb类似的指令时，要注意cx寄存器的存储大小和转移目标程序的大小
+在编写中断例程中，要注意处理程序里面的jmp指令，必须全部是相对跳转指令，所有的标号，都要注意，其使用的时候，只有相对跳转指令里面使用标号才合法，其他的使用，都有漏洞
+关于，调用别的处理程序的时候（中断例程），可以看情况，是否还需要将寄存器保留入栈，有......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Bruce LEE on
+    2023-12-12
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#x86" title="x86">x86</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/x86_3/">
+    <h2 class="post-title">
+      x86编程思考过程片段(3)关于编程技巧,注意事项,指令细节
+    </h2>
+    <h3 class="post-subtitle">
+      x86
+    </h3>
+    <div class="post-content-preview">
+      -每个任务都有4GB的虚拟内存空间（线性，平坦）
+-流水线技术-分解指令任务，同时差别执行（减少时钟周期个数）
+-静态存储器（SRAM）是用寄存器的材料做的内存（反馈原理制作的存储电路，使用触发器）
+动态存储器（DRAM），因其电容需要定时刷新，故得名动态
+高速缓存采用的程序的局部性原理
+-乱序执行的本质不是胡乱取指令，而是在更微小层面上的流水线技术
+将指令拆分成若干细小操作，在执行该指令中......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Bruce LEE on
+    2023-10-11
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#x86" title="x86">x86</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/x86_2/">
+    <h2 class="post-title">
+      x86编程思考过程片段(2)关于编程技巧,注意事项,指令细节
+    </h2>
+    <h3 class="post-subtitle">
+      x86
+    </h3>
+    <div class="post-content-preview">
+      -它仅仅是编译阶段确定的汇编地址，在用户程序加载到内存后，需要根据加载的实际位置重新计算（浮动）。
+-，因为主引导程序的实际加载地址是0x0000:0x7c00，当我们引用一个标号时，还得手工加上那个落差 0x7c00使用vstart子句
+-不管是什么设备，都必须通过它自己的 I/O 接口电路同 ICH相连
+-端口的数据宽度又设备商决定
+-端口访问采取映射或M/IO#总线电路（独立编制）
+-......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Bruce LEE on
+    2023-09-23
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#x86" title="x86">x86</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/本博客汇编代码的环境规范/">
+    <h2 class="post-title">
+      本博客的汇编代码的环境规范
+    </h2>
+    <h3 class="post-subtitle">
+      大不了，从头来过...
+    </h3>
+    <div class="post-content-preview">
+      本博客的汇编代码的环境规范
+MASM和NASM
+test here:
+最近在完成x86-32架构的一些代码和要点的时候，对整个编译环境做了一些整理，我要讲一些关于在以后的博客中一些环境规范。
+之前的汇编代码是在MASM编译器格式的要求下写成的，就如每个程序开头都要有：
+1234567891011assume cs:code ds:datadata segment	...data endsco......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Bruce LEE on
+    2023-09-14
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#x86" title="x86">x86</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/x86_1/">
+    <h2 class="post-title">
+      x86编程思考过程片段(1)关于编程技巧,注意事项,指令细节
+    </h2>
+    <h3 class="post-subtitle">
+      x86
+    </h3>
+    <div class="post-content-preview">
+      x86编程思考过程片段(1)关于编程技巧,注意事项,指令细节
+-标号之后的冒号是可选的。所以下面的写法也是正确的：
+1infi jmp near infi
+-把数据声明在所有指令之后，在这个地方，处理器的执行流程无法到达
+-尽管在指令中访问这些数据可以使用段超越前缀“CS:”，但习惯上，通过数据段来访问它们更自然一些
+-用了一个新的指令 xor 来将 DX 寄存器的内容清零
+1xor  dx......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Bruce LEE on
+    2023-09-11
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#x86" title="x86">x86</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/论持久战/">
+    <h2 class="post-title">
+      论持久战
+    </h2>
+    <h3 class="post-subtitle">
+      持久战斗，更好生活...
+    </h3>
+    <div class="post-content-preview">
+      每个人对自己的人生有不同的理念，对世界有不同的理解。
+活着，就是在追求，实践自己的人生理念，论证一种人生思想。也许有些人心里并没有明确的这样想，但其行动上，已经是在实践他自己的人生理念。
+但是不管怎么样，我们都有一个同样重要的基本盘——健康的身体。
+为了大家，能更好的去实践自己的思想，我写了这篇论持久战。
+论持久战，说白了就是怎么尽最大的可能去多活几年，怎么使学习工作效率最高。
+针对那些有理......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Bruce LEE on
+    2023-08-10
   </p>
   <div class="tags">
     
@@ -503,23 +810,25 @@
   <!-- top end -->
   
 
-  <a href="/cn/lab4/">
+  <a href="/cn/中断概览/">
     <h2 class="post-title">
-      超级无敌简单入门x86-8086汇编实验：移送程序代码-最简化安装
+      x86-8086汇编：该架构的中断信息引发，中断向量表的配置，中断例程的执行
     </h2>
     <h3 class="post-subtitle">
-      最简单的汇编实验...
+      细剖x86-8086中断...
     </h3>
     <div class="post-content-preview">
-      本实验目的：这是一个入门实验，但是可以为了以后理解中断处理程序那篇打下基础，程序代码的移送，换句话说就是安装！
-我想写一个程序，程序的功能呢就是将自己的机器码(mov ax,4c00h之前的代码）移送出去，移送到哪先不管，假定就移送到0200：0000这个起始地址吧。请你实现这个程序。（假设系统分配内存空间时，程序地址是cs：0000）
-（关于0200：0000这个地址，在以后的中断程序设计......
+      cpu具备一种能力就是：执行完当前指令后能转而去执行别处的指令
+这种能力我们叫中断（interrupt），中断有不同的类型：内中断和外中断
+cpu具备中断能力，cpu在执行中断的时候其底层是怎么运作的，什么样子的内存分布来支撑这种能力呢？
+x86-8086架构中断的整体情况
+当发生内中断时，中断信息由cpu内部提供，cpu每执行完一条指令，就会检查是否有中断产生。如果此时，有内中断发生，cp......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Bruce LEE on
-    2023-07-15
+    2023-08-01
   </p>
   <div class="tags">
     
@@ -539,6 +848,10 @@
       <a href="/">&larr; Older Posts</a>
     </li>
     
+    
+    <li class="next">
+      <a href="/archives/3/">Newer Posts &rarr;</a>
+    </li>
     
   </ul>
 
@@ -573,11 +886,11 @@
     
     
     
-    <a href="/tags/#C/C++" title="C/C++" rel="2">C/C++</a>
+    <a href="/tags/#C/C++" title="C/C++" rel="3">C/C++</a>
     
     
     
-    <a href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象" rel="3">RISC-V问题和解决方案以及现象</a>
+    <a href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象" rel="9">RISC-V问题和解决方案以及现象</a>
     
     
     
@@ -585,7 +898,7 @@
     
     
     
-    <a href="/tags/#x86" title="x86" rel="4">x86</a>
+    <a href="/tags/#x86" title="x86" rel="9">x86</a>
     
     
   </div>
@@ -648,6 +961,10 @@
 <div class="widget">
   <ul>
     
+    <a href="../../cn/Multi-Macro-with-Annotation/">
+      <li>多行宏添加注释的错误(如果不想因为脑子局部性注意力而导致浪费一下午+一晚上时间,请好好看)</li>
+    </a>
+    
     <a href="../../cn/YEMU%E6%A8%A1%E6%8B%9F%E5%99%A8%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/">
       <li>YEMU模拟器运行机制</li>
     </a>
@@ -660,12 +977,8 @@
       <li>定义一个宏,来检测另一个宏是否被定义的优化代码</li>
     </a>
     
-    <a href="../../cn/RISCV%E6%8C%87%E4%BB%A4%E8%AE%BE%E8%AE%A1%E5%92%8C%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98/">
-      <li>RISCV指令设计和使用问题</li>
-    </a>
-    
-    <a href="../../cn/RISCV%E8%AE%BE%E8%AE%A1%E4%B8%AD%E8%B7%B3%E8%BD%AC%E5%92%8C%E5%90%8C%E6%AD%A5%E7%B3%BB%E5%88%97%E9%97%AE%E9%A2%98%E5%92%8Cx86/">
-      <li>RISCV设计中跳转和同步系列问题和x86</li>
+    <a href="../../cn/RISCV%E5%AD%98%E5%82%A8%E6%96%B9%E9%9D%A2/">
+      <li>RISCVcache数据块容量权衡问题/大数据块导致的失效损失长延迟问题/cache容量大小与命中率问题/多路组相联策略减低失效率/组相联组内选择数据块策略</li>
     </a>
     
   </ul>
@@ -698,7 +1011,7 @@
 
 <h5><a href="/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2024/05/">May 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2024/03/">March 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2024/01/">January 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2023/09/">September 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2023/08/">August 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2023/07/">July 2023</a><span class="archive-list-count">3</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2024/05/">May 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2024/03/">March 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2024/01/">January 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2023/12/">December 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2023/10/">October 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2023/09/">September 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2023/08/">August 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2023/07/">July 2023</a><span class="archive-list-count">4</span></li></ul>
 </div>
 
 
