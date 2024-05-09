@@ -127,10 +127,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://000xiaoming.github.io/cn/项目解析B.1.1:YEMU模拟器运行机制/">
+  <link rel="canonical" href="https://000xiaoming.github.io/cn/YEMU模拟器运行机制/">
   <title>
     
-      项目解析B.1.1:YEMU模拟器运行机制 - I&#39;m Bruce Lee
+      YEMU模拟器运行机制 - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -235,17 +235,6 @@
           
           
           <li>
-            <a href="/about/">
-              
-              关于
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
             <a href="/archives/">
               
               归档
@@ -257,9 +246,9 @@
           
           
           <li>
-            <a href="/categories/">
+            <a href="/about/">
               
-              分类
+              关于
               
               
             </a>
@@ -271,6 +260,17 @@
             <a href="/tags/">
               
               标签
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              分类
               
               
             </a>
@@ -381,7 +381,7 @@
               <a class="tag" href="/tags/#项目工程" title="项目工程">项目工程</a>
               
             </div>
-            <h1>项目解析B.1.1:YEMU模拟器运行机制</h1>
+            <h1>YEMU模拟器运行机制</h1>
             <h2 class="subheading">项目工程</h2>
             <span class="meta">
               Posted by Bruce LEE on
@@ -441,7 +441,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1>项目解析B.1.1:YEMU模拟器运行机制</h1>
+        <h1>YEMU模拟器运行机制</h1>
 <hr>
 <p>#include &lt;stdint.h&gt;<br>
 #include &lt;stdio.h&gt;</p>
@@ -570,7 +570,7 @@ return 0;<br>
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=项目解析B.1.1:YEMU模拟器运行机制&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/项目解析B.1.1:YEMU模拟器运行机制/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=YEMU模拟器运行机制&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/YEMU模拟器运行机制/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -657,7 +657,7 @@ return 0;<br>
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">项目解析B.1.1:YEMU模拟器运行机制</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%8A%B6%E6%80%81%E6%A8%A1%E5%9E%8B"><span class="toc-nav-number">1.0.1.</span> <span class="toc-nav-text">状态模型</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E9%80%9A%E8%BF%87%E4%BD%BF%E7%94%A8union%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4%E6%A0%BC%E5%BC%8F"><span class="toc-nav-number">1.0.2.</span> <span class="toc-nav-text">通过使用union定义指令格式</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%81%94%E7%B3%BB-%E6%9C%80%E5%90%8E"><span class="toc-nav-number">1.0.3.</span> <span class="toc-nav-text">联系&#x2F;最后</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">YEMU模拟器运行机制</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%8A%B6%E6%80%81%E6%A8%A1%E5%9E%8B"><span class="toc-nav-number">1.0.1.</span> <span class="toc-nav-text">状态模型</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E9%80%9A%E8%BF%87%E4%BD%BF%E7%94%A8union%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4%E6%A0%BC%E5%BC%8F"><span class="toc-nav-number">1.0.2.</span> <span class="toc-nav-text">通过使用union定义指令格式</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%81%94%E7%B3%BB-%E6%9C%80%E5%90%8E"><span class="toc-nav-number">1.0.3.</span> <span class="toc-nav-text">联系&#x2F;最后</span></a></li></ol></li></ol></li></ol>
         
         </div>
       </aside>
@@ -875,7 +875,7 @@ return 0;<br>
     let jsdelivr = "https://cdn.jsdelivr.net/gh/";
     let gh = "000xiaoming";
     let ghPages = gh + ".github.io";
-    let pagePath = "cn/项目解析B.1.1:YEMU模拟器运行机制/";
+    let pagePath = "cn/YEMU模拟器运行机制/";
     let jsdelivrurl;
     if (pagePath.indexOf("index.html") != -1) {
       jsdelivrurl = jsdelivr + gh + "/" + ghPages;
