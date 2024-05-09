@@ -127,10 +127,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://000xiaoming.github.io/tags/x86/">
+  <link rel="canonical" href="https://000xiaoming.github.io/cn/RISCV设计中跳转和同步系列问题和x86/">
   <title>
     
-      I&#39;m Bruce Lee
+      RISCV设计中跳转和同步系列问题和x86 - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -227,7 +227,7 @@
       <div class="navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <a href="/">HOME</a>
+            <a href="/">首页</a>
           </li>
 
           
@@ -237,7 +237,7 @@
           <li>
             <a href="/archives/">
               
-              ARCHIVES
+              归档
               
               
             </a>
@@ -248,7 +248,7 @@
           <li>
             <a href="/about/">
               
-              ABOUT
+              关于
               
               
             </a>
@@ -259,7 +259,7 @@
           <li>
             <a href="/tags/">
               
-              TAGS
+              标签
               
               
             </a>
@@ -270,7 +270,7 @@
           <li>
             <a href="/categories/">
               
-              CATEGORIES
+              分类
               
               
             </a>
@@ -281,36 +281,14 @@
           
           <li>
             <a class="popup-trigger">
-              <span class="search-icon"></span>SEARCH</a>
+              <span class="search-icon"></span>搜索</a>
           </li>
           
 
           <!-- LangSelect -->
           
           
-          <!-- LangSelect start -->
-          <!-- LangSelect -->
-<li>
-  <a id="lang-select-label"><i class="fa fa-globe"></i>
-    <span>
-      English
-    </span>
-    <select id="lang-select" data-canonical="tags/x86/index.html">
-      
-      
-      <option value="en"  selected >
-        English
-      </option>
-      
-      <option value="cn" >
-        简体中文
-      </option>
-      
-    </select>
-  </a>
-</li>
-
-          <!-- LangSelect end -->
+          
           
           
         </ul>
@@ -363,18 +341,18 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io');
-      --intro-header-background-image-url-page: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png');
+      --intro-header-background-image-url-page: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io//img/header_img/lml_bg1.png');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io//img/header_img/lml_bg1.png');
     }
     header.intro-header {
-       /*page*/
-        background-image: var(--intro-header-background-image-url-page);
-        /* background-image: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/archive_bg2.jpg'); */
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png'); */
       
     }
 
@@ -397,10 +375,24 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>经年治世</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">Bruce LEE</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象">RISC-V问题和解决方案以及现象</a>
+              
+            </div>
+            <h1>RISCV设计中跳转和同步系列问题和x86</h1>
+            <h2 class="subheading">RISC-V</h2>
+            <span class="meta">
+              Posted by Bruce LEE on
+              2024-01-03
+            </span>
+
+
+            
+            
+
+
           </div>
           
         </div>
@@ -441,409 +433,329 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Main Content -->
-<div class="container">
-  <div class="row">
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h1>RISCV设计中跳转和同步系列问题和x86</h1>
+<h2 id="关于超出条件分支的12位立即数字段的跳转问题">关于超出条件分支的12位立即数字段的跳转问题</h2>
+<p>在少有的可能下,条件跳转会跳到很远的地址空间(超过12位地址表示的半字范围),我们不选择在硬件方面而是在汇编程序方面作出解答:在分支目标中插入无条件跳转指令,并将条件取反,以便条件分支决定是否跳过该无条件跳转.</p>
+<p>SB型条件分支指令的立即数字段是12位,UJ型无条件跳转指令的立即数字段是20位.支持正负2^19个半字范围的寻址.</p>
+<h2 id="关于逆向工程将机器码恢复到汇编语言">关于逆向工程将机器码恢复到汇编语言</h2>
+<p>当发生&quot;内存转储&quot;(core dump)时,需要逆向.</p>
+<h2 id="RISC-V世界的同步原语的构建-解决数据竞争问题的底层支持">RISC-V世界的同步原语的构建-解决数据竞争问题的底层支持</h2>
+<p>构建一个对内存执行原子性的读取和写入操作,RISC-V采用了指令对的实现方式:保留加载/条件存储机制<br>
+使用lr.d/sc.d指令对来实现最基本的同步支持</p>
+<figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">again:</span>  lr.d <span class="keyword">x</span><span class="number">10</span><span class="punctuation">,</span> (<span class="keyword">x</span><span class="number">20</span>) //<span class="keyword">load</span>-reserved</span><br><span class="line">        sc.d <span class="keyword">x</span><span class="number">11</span><span class="punctuation">,</span> <span class="keyword">x</span><span class="number">23</span><span class="punctuation">,</span> (<span class="keyword">x</span><span class="number">20</span>) //<span class="keyword">store</span>-conditional</span><br><span class="line">        bne <span class="keyword">x</span><span class="number">11</span><span class="punctuation">,</span> <span class="keyword">x</span><span class="number">0</span><span class="punctuation">,</span> again //branch if <span class="keyword">store</span> fails</span><br><span class="line">        addi <span class="keyword">x</span><span class="number">23</span><span class="punctuation">,</span> <span class="keyword">x</span><span class="number">10</span><span class="punctuation">,</span> <span class="number">0</span> //put loaded value in <span class="keyword">x</span><span class="number">23</span></span><br></pre></td></tr></table></figure>
+<p>构建支持编程语言中的加锁/解锁机制,例如c++中的锁变量,对于锁变量的作用,使其对某一个代码块中的内存地址保持唯一的线程控制权,这是可以在代码层面实现的.<br>
+而对于锁变量本身,需要一个同步原语来支持:当其他处理器访问锁变量时,会由于其他处理器已经进行读取而导致失败.</p>
+<figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">    addi <span class="keyword">x</span><span class="number">12</span><span class="punctuation">,</span> <span class="keyword">x</span><span class="number">0</span><span class="punctuation">,</span> <span class="number">1</span> //copy locked value</span><br><span class="line"><span class="symbol">again:</span> lr.d <span class="keyword">x</span><span class="number">10</span><span class="punctuation">,</span> (<span class="keyword">x</span><span class="number">20</span>) //<span class="keyword">load</span>-reserved <span class="keyword">to</span> read lock</span><br><span class="line">    bne <span class="keyword">x</span><span class="number">10</span><span class="punctuation">,</span> <span class="keyword">x</span><span class="number">0</span><span class="punctuation">,</span> again //check if it is <span class="number">0</span> yet</span><br><span class="line">    sc.d <span class="keyword">x</span><span class="number">11</span><span class="punctuation">,</span> <span class="keyword">x</span><span class="number">12</span><span class="punctuation">,</span> (<span class="keyword">x</span><span class="number">20</span>) //attempt <span class="keyword">to</span> <span class="keyword">store</span> new value</span><br><span class="line">    bne <span class="keyword">x</span><span class="number">11</span><span class="punctuation">,</span> <span class="keyword">x</span><span class="number">0</span><span class="punctuation">,</span> again //branch if <span class="keyword">store</span> fails</span><br></pre></td></tr></table></figure>
+<p>当需要释放锁变量时:</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">sd</span> x<span class="number">0</span>, <span class="number">0</span>(x<span class="number">20</span>) /free lock by writing <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<h2 id="计算机解决问题的一般方法">计算机解决问题的一般方法</h2>
+<p>事实上,计算机科学中的每一个问题都可以通过增加一个间接的中间层来解决</p>
+<h2 id="迭代时-使用数组索引访问与指针访问在汇编上的区别">迭代时,使用数组索引访问与指针访问在汇编上的区别</h2>
+<p>数组访问迭代中,需要频繁使用下标来计算地址,尽管数组的首地址也是存放在寄存器中用来访问,但是由于下标计算,会消耗性能.<br>
+使用指针,是直接使用存储了内存地址的寄存器进行访问,不需要计算下标来定位.</p>
+<p>在c编程中,应该尽可能的使用指针来获取更高的性能,但是现在的优化编译器已经可以帮助我们做到这些,即使我们是用数组下标来访问.</p>
+<h2 id="RISC-V编译器的3种常见优化">RISC-V编译器的3种常见优化</h2>
+<h3 id="过程内联">过程内联</h3>
+<p>将过程的核心代码直接改写在调用过程的地方,可以少执行一些调用,保存,返回等指令.但是同样,当对该过程的调用来自于很多地方的时候,会导致代码量的迅速增加,这种代码扩展也可能导致性能降低.</p>
+<h3 id="分配寄存器">分配寄存器</h3>
+<p>RISC-V编译器会尽可能的耗尽临时寄存器,进而去使用保护寄存器或者内存单元(或在堆栈中分配局部变量)</p>
+<h3 id="强度削弱">强度削弱</h3>
+<p>使用移位来代替乘法</p>
+<h3 id="循环变量消除">循环变量消除</h3>
+<p>尽可能的消除循环内的数组地址计算,使用指针来代替.<br>
+<em><strong>技巧:编译器在编译的时候就会将一些浮点/整点运算进行计算,避免在程序运行时进行除法运算</strong></em></p>
+<h2 id="对于面向对象的另一种术语">对于面向对象的另一种术语</h2>
+<p>可以这么说:这是一种面向对象而非动作,面向数据而非逻辑的编程方式</p>
+<h2 id="RISC-V的一些特点">RISC-V的一些特点</h2>
+<p>1.访问内存的唯一方式是通过加载和存储指令<br>
+2.没有将多个寄存器加载和存储的指令<br>
+3.比较两个寄存器的大小时,只有分支指令</p>
+<h2 id="复杂性的陷阱-x86指令系统体系结构">复杂性的陷阱-x86指令系统体系结构</h2>
+<p>1.保持了二进制兼容性,这在商业上可能是成功的,但是在学术上并不是如此,导致了&quot;冗余&quot;.<br>
+2.寄存器全部是专用寄存器,所以并不认为8086是通用寄存器(GPR)体系结构.即使到了现代,x86中的通用寄存器并不完全通用,有一些指令会进行限制,而RISC-V所有的32个寄存器都是通用寄存器,可以成为任何指令中的地址或者数据.<br>
+3.x86和AMD64都使用了同样的遗产模式<br>
+4.汇编指令中,涉及的所有操作数都是内嵌到二进制码里面的,RISC-V的指令长度是固定的32位,尽管在涉及到立即数的范围有一些立即数字段长度的限制,但这并没有什么影响.相反,x86指令长度是变化很大的,这对与构建硬件有很大的难度,虽然其指令功能更加强大,但是这并不意味着高效.x86有很多寻址方式,反而RISC-V有很少的寻址方式,但是在x86中一些复杂的寻址方式中,使用RISC-V指令不会超过3行就可以实现其寻址功能.由于x86中庞大的指令数量,其中很多部分实现了一些复杂的功能,但是这些功能并不高效,比如字符串指令,在大多数程序中通常不执行,这些指令比等效的软件程序要慢.<br>
+5.由于这些复杂,庞大的指令功能,所以x86指令的编码是极其的复杂.<br>
+6.由于早期的x86微处理器比其竞争对手的下一代体系结构早两年,所以在商业上获得了成功,大量的市场也为x86的工程师提供更多资源来克服额外的复杂性.<br>
+综上,x86在未来并不具备竞争力,即使现在x86已经占据了大部分的市场和相当多的体系结构和制造专业知识.<br>
+7.RISC-V的基本体系结构及其扩展共有184条指令以及13条系统指令</p>
+<h2 id="更强大的指令意味着更高的性能-X">更强大的指令意味着更高的性能 (X)</h2>
+<p>强大的指令可能是将简单的指令进行组合来完成某一个功能,但是组合简单指令完成功能有很多不同的方法(或者交叉方法),并且技术和算法一直是在发展的,已经形成的强大指令可能并不高效(比如x86中的添加前缀的move指令)</p>
+<h2 id="用汇编语言编程以获得最大性能-X">用汇编语言编程以获得最大性能 (X)</h2>
+<p>我现在始终认为,编译器是最早成熟的功能强大的超过人的人工智能,不管是在分配变量以寄存器的选择还是在任何其他方面,做的比汇编专家还要好.<br>
+最重要的是,汇编需要更长时间的编码和调试,以及维护性差和可移植性查.<br>
+<em><strong>问题:什么是人工智能?仔细思考,想想市面上人工智能的应用是如何做出来的</strong></em><br>
+<em><strong>现象:商用计算机二进制兼容的重要性意味着成功的指令系统无须改变 (X)</strong></em><br>
+<em><strong>技巧:忘记在字节寻址的机器中,连续的字或者双字地址相差不为1</strong></em><br>
+<em><strong>技巧:在变量的定义过程外,使用一个指针指向该变量</strong></em><br>
+<em><strong>现象:RISC-V指令都与编程语言中出现的结构相关</strong></em><br>
+<em><strong>知识:标准指令系统体系结构的多媒体扩展通常提供饱和计算</strong></em></p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/cn/RISCV指令设计和使用问题/" data-toggle="tooltip" data-placement="top" title="RISCV指令设计和使用问题">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/cn/RISCV基本设计理念/" data-toggle="tooltip" data-placement="top" title="RISCV基本设计理念">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. All the images used in the blog are my original works or AI works, if you want to take it,don't hesitate. Thank you !
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=RISCV设计中跳转和同步系列问题和x86&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/RISCV设计中跳转和同步系列问题和x86/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <script src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Wed Jan 03 2024 12:00:00 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">RISCV设计中跳转和同步系列问题和x86</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%85%B3%E4%BA%8E%E8%B6%85%E5%87%BA%E6%9D%A1%E4%BB%B6%E5%88%86%E6%94%AF%E7%9A%8412%E4%BD%8D%E7%AB%8B%E5%8D%B3%E6%95%B0%E5%AD%97%E6%AE%B5%E7%9A%84%E8%B7%B3%E8%BD%AC%E9%97%AE%E9%A2%98"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">关于超出条件分支的12位立即数字段的跳转问题</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%85%B3%E4%BA%8E%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B%E5%B0%86%E6%9C%BA%E5%99%A8%E7%A0%81%E6%81%A2%E5%A4%8D%E5%88%B0%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">关于逆向工程将机器码恢复到汇编语言</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#RISC-V%E4%B8%96%E7%95%8C%E7%9A%84%E5%90%8C%E6%AD%A5%E5%8E%9F%E8%AF%AD%E7%9A%84%E6%9E%84%E5%BB%BA-%E8%A7%A3%E5%86%B3%E6%95%B0%E6%8D%AE%E7%AB%9E%E4%BA%89%E9%97%AE%E9%A2%98%E7%9A%84%E5%BA%95%E5%B1%82%E6%94%AF%E6%8C%81"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">RISC-V世界的同步原语的构建-解决数据竞争问题的底层支持</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98%E7%9A%84%E4%B8%80%E8%88%AC%E6%96%B9%E6%B3%95"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">计算机解决问题的一般方法</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%BF%AD%E4%BB%A3%E6%97%B6-%E4%BD%BF%E7%94%A8%E6%95%B0%E7%BB%84%E7%B4%A2%E5%BC%95%E8%AE%BF%E9%97%AE%E4%B8%8E%E6%8C%87%E9%92%88%E8%AE%BF%E9%97%AE%E5%9C%A8%E6%B1%87%E7%BC%96%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">迭代时,使用数组索引访问与指针访问在汇编上的区别</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#RISC-V%E7%BC%96%E8%AF%91%E5%99%A8%E7%9A%843%E7%A7%8D%E5%B8%B8%E8%A7%81%E4%BC%98%E5%8C%96"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">RISC-V编译器的3种常见优化</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%BF%87%E7%A8%8B%E5%86%85%E8%81%94"><span class="toc-nav-number">1.6.1.</span> <span class="toc-nav-text">过程内联</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%88%86%E9%85%8D%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-nav-number">1.6.2.</span> <span class="toc-nav-text">分配寄存器</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%BC%BA%E5%BA%A6%E5%89%8A%E5%BC%B1"><span class="toc-nav-number">1.6.3.</span> <span class="toc-nav-text">强度削弱</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%BE%AA%E7%8E%AF%E5%8F%98%E9%87%8F%E6%B6%88%E9%99%A4"><span class="toc-nav-number">1.6.4.</span> <span class="toc-nav-text">循环变量消除</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%AF%B9%E4%BA%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%8F%A6%E4%B8%80%E7%A7%8D%E6%9C%AF%E8%AF%AD"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">对于面向对象的另一种术语</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#RISC-V%E7%9A%84%E4%B8%80%E4%BA%9B%E7%89%B9%E7%82%B9"><span class="toc-nav-number">1.8.</span> <span class="toc-nav-text">RISC-V的一些特点</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%A4%8D%E6%9D%82%E6%80%A7%E7%9A%84%E9%99%B7%E9%98%B1-x86%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-nav-number">1.9.</span> <span class="toc-nav-text">复杂性的陷阱-x86指令系统体系结构</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%9B%B4%E5%BC%BA%E5%A4%A7%E7%9A%84%E6%8C%87%E4%BB%A4%E6%84%8F%E5%91%B3%E7%9D%80%E6%9B%B4%E9%AB%98%E7%9A%84%E6%80%A7%E8%83%BD-X"><span class="toc-nav-number">1.10.</span> <span class="toc-nav-text">更强大的指令意味着更高的性能 (X)</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%94%A8%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%BC%96%E7%A8%8B%E4%BB%A5%E8%8E%B7%E5%BE%97%E6%9C%80%E5%A4%A7%E6%80%A7%E8%83%BD-X"><span class="toc-nav-number">1.11.</span> <span class="toc-nav-text">用汇编语言编程以获得最大性能 (X)</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
     
 
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
+
+
+      <!-- Sidebar Container -->
+      <div class="
                 col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
+                col-md-10 col-md-offset-1
+                sidebar-container">
 
-      <!-- Main Content -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
-      <!-- 归档列表 -->
-
-      
-
-      <!-- 归档列表 -->
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2024">
-          <span class="tag-text">2024</span>
-        </span>
-        <ul>
-          
-          <li>
-            05-08
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/YEMU模拟器运行机制/" style="color: #0085a1">
-              <span>
-                YEMU模拟器运行机制
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            05-08
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/C-Preprocessor-Token-Pasting-Operator/" style="color: #0085a1">
-              <span>
-                C-Preprocessor-Token-Pasting-Operator
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            03-23
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/定义一个宏,来检测另一个宏是否被定义的优化代码/" style="color: #0085a1">
-              <span>
-                定义一个宏,来检测另一个宏是否被定义的优化代码
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            01-03
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/RISCV设计中跳转和同步系列问题和x86/" style="color: #0085a1">
-              <span>
-                RISCV设计中跳转和同步系列问题和x86
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            01-03
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/RISCV指令设计和使用问题/" style="color: #0085a1">
-              <span>
-                RISCV指令设计和使用问题
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            01-01
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/RISCV基本设计理念/" style="color: #0085a1">
-              <span>
-                RISCV基本设计理念
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2023">
-          <span class="tag-text">2023</span>
-        </span>
-        <ul>
-          
-          <li>
-            09-14
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/本博客汇编代码的环境规范/" style="color: #0085a1">
-              <span>
-                本博客的汇编代码的环境规范
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-10
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/论持久战/" style="color: #0085a1">
-              <span>
-                论持久战
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-01
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/中断概览/" style="color: #0085a1">
-              <span>
-                x86-8086汇编：该架构的中断信息引发，中断向量表的配置，中断例程的执行
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-30
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/x86-8086显示数值/" style="color: #0085a1">
-              <span>
-                01-比较简单的x86-8086汇编实验：将数值显示到屏幕上
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-25
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/AI发展见解/" style="color: #0085a1">
-              <span>
-                AI，我们应该知道什么，未来，我们应该怎么发展
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-15
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/lab4/" style="color: #0085a1">
-              <span>
-                超级无敌简单入门x86-8086汇编实验：移送程序代码-最简化安装
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-      </div>
-      
-    </div>
-  </div>
-</div>
-
-
-      <!-- 如果开启评论功能 -->
-      
-    </div>
-
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-        <!-- Visitors -->
-<h5><a href="/">VISITORS</a></h5>
-
-
-        <hr>
-    
         <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象">RISC-V问题和解决方案以及现象</a>
+            
+          </div>
+        </section>
+        
 
-<section>
-  <h5><a href="/tags/">FEATURED TAGS</a></h5>
-  <div class="tags">
-    
-    
-    <a href="/tags/#IT" title="IT" rel="2">IT</a>
-    
-    
-    
-    <a href="/tags/#C/C++" title="C/C++" rel="2">C/C++</a>
-    
-    
-    
-    <a href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象" rel="3">RISC-V问题和解决方案以及现象</a>
-    
-    
-    
-    <a href="/tags/#项目工程" title="项目工程" rel="1">项目工程</a>
-    
-    
-    
-    <a href="/tags/#x86" title="x86" rel="4">x86</a>
-    
-    
-  </div>
-</section>
-
-
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-  <h5><a href="/about/">ABOUT ME</a></h5>
-  <div class="short-about">
-
-    
-    <img id="avatar_pic" src="/img/avatar/fatpeople.png" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
-    
-
-    
-    <p>Don&#39;t wait Don&#39;t wait Don&#39;t wait for anything...</p>
-    
-
-    <!-- SNS Link -->
-    <ul class="list-inline">
-      
-
-      
-      <li>
-        <a target="_blank" href="https://github.com/000xiaoming">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-    </ul>
-  </div>
-</section>
-
-        <hr>
-    
-        <!-- RECENT POSTS -->
-
-<h5><a href="/">RECENT POSTS</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="../../cn/YEMU%E6%A8%A1%E6%8B%9F%E5%99%A8%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/">
-      <li>YEMU模拟器运行机制</li>
-    </a>
-    
-    <a href="../../cn/C-Preprocessor-Token-Pasting-Operator/">
-      <li>C-Preprocessor-Token-Pasting-Operator</li>
-    </a>
-    
-    <a href="../../cn/%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E5%AE%8F,%E6%9D%A5%E6%A3%80%E6%B5%8B%E5%8F%A6%E4%B8%80%E4%B8%AA%E5%AE%8F%E6%98%AF%E5%90%A6%E8%A2%AB%E5%AE%9A%E4%B9%89%E7%9A%84%E4%BC%98%E5%8C%96%E4%BB%A3%E7%A0%81/">
-      <li>定义一个宏,来检测另一个宏是否被定义的优化代码</li>
-    </a>
-    
-    <a href="../../cn/RISCV%E6%8C%87%E4%BB%A4%E8%AE%BE%E8%AE%A1%E5%92%8C%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98/">
-      <li>RISCV指令设计和使用问题</li>
-    </a>
-    
-    <a href="../../cn/RISCV%E8%AE%BE%E8%AE%A1%E4%B8%AD%E8%B7%B3%E8%BD%AC%E5%92%8C%E5%90%8C%E6%AD%A5%E7%B3%BB%E5%88%97%E9%97%AE%E9%A2%98%E5%92%8Cx86/">
-      <li>RISCV设计中跳转和同步系列问题和x86</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
         <!-- Friends Blog -->
-
-<h5><a href="/">FRIENDS</a></h5>
-<ul class="list-inline">
-  
-  <li><a href="https://v-vincen.life/" target="_blank">V_Vincen</a></li>
-  
-  <li><a href="http://beantech.org" target="_blank">Bean Tech</a></li>
-  
-  <li><a href="http://huangxuan.me" target="_blank">Hux Blog</a></li>
-  
-  <li><a href="https://hexo.io/" target="_blank">Hexo</a></li>
-  
-  <li><a href="https://fe32.top/" target="_blank">Ethan.Tzy</a></li>
-  
-</ul>
-
-
+        
         <hr>
-    
-        <!-- Archives -->
+        <h5>链友</h5>
+        <ul class="list-inline">
 
-<h5><a href="/archives/">archives</a></h5>
-<div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2024/05/">May 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2024/03/">March 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2024/01/">January 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2023/09/">September 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2023/08/">August 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2023/07/">July 2023</a><span class="archive-list-count">3</span></li></ul>
-</div>
-
-
-        <hr>
-    
-        <!-- Categories -->
-
-<h5><a href="/categories/">categories</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="/categories/#Programer">
-      <li>Programer</li>
-    </a>
-    
-    <a href="/categories/#C/C++">
-      <li>C/C++</li>
-    </a>
-    
-    <a href="/categories/#RISC-V问题和解决方案以及现象">
-      <li>RISC-V问题和解决方案以及现象</li>
-    </a>
-    
-    <a href="/categories/#项目工程">
-      <li>项目工程</li>
-    </a>
-    
-    <a href="/categories/#x86">
-      <li>x86</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-</div>
-
-
-    
+          
+          <li>
+            <a href="https://v-vincen.life/" target="_blank">V_Vincen</a>
+          </li>
+          
+          <li>
+            <a href="http://beantech.org" target="_blank">Bean Tech</a>
+          </li>
+          
+          <li>
+            <a href="http://huangxuan.me" target="_blank">Hux Blog</a>
+          </li>
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+          <li>
+            <a href="https://fe32.top/" target="_blank">Ethan.Tzy</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
   </div>
-</div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->
@@ -952,7 +864,7 @@
     let jsdelivr = "https://cdn.jsdelivr.net/gh/";
     let gh = "000xiaoming";
     let ghPages = gh + ".github.io";
-    let pagePath = "tags/x86/index.html";
+    let pagePath = "cn/RISCV设计中跳转和同步系列问题和x86/";
     let jsdelivrurl;
     if (pagePath.indexOf("index.html") != -1) {
       jsdelivrurl = jsdelivr + gh + "/" + ghPages;
@@ -1030,7 +942,7 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
             <span class="search-icon">
               <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
             </span>
-            <input autocomplete="off" placeholder="SEARCH..." type="text" id="local-search-input">
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
           </div>
         </div>
         <div id="local-search-result"></div>

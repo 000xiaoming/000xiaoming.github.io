@@ -581,6 +581,82 @@ https://stackoverflow.com/questions/26099745/test-if-preprocessor-symbol-is-defi
   <!-- top end -->
   
 
+  <a href="/cn/RISCV指令设计和使用问题/">
+    <h2 class="post-title">
+      RISCV指令设计和使用问题
+    </h2>
+    <h3 class="post-subtitle">
+      RISC-V
+    </h3>
+    <div class="post-content-preview">
+      RISCV指令设计和使用问题
+使用最高有效位来减低边界检查的开销
+我们可以至少保证对于数组的边界的值,一定是一个正确的合理的数y(指代y是一个有符号正数).
+我们需要检查下标x是否满足0 &lt;= x &lt; y
+则仅使用:
+1bgeu x, y, error //伪代码
+就可以完成两项检查.
+这里利用了最高有效位的双重含义:在有符号整数中,最高有效位为1,表示一个负数,但是在无符号整数......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Bruce LEE on
+    2024-01-03
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象">RISC-V问题和解决方案以及现象</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/RISCV设计中跳转和同步系列问题和x86/">
+    <h2 class="post-title">
+      RISCV设计中跳转和同步系列问题和x86
+    </h2>
+    <h3 class="post-subtitle">
+      RISC-V
+    </h3>
+    <div class="post-content-preview">
+      RISCV设计中跳转和同步系列问题和x86
+关于超出条件分支的12位立即数字段的跳转问题
+在少有的可能下,条件跳转会跳到很远的地址空间(超过12位地址表示的半字范围),我们不选择在硬件方面而是在汇编程序方面作出解答:在分支目标中插入无条件跳转指令,并将条件取反,以便条件分支决定是否跳过该无条件跳转.
+SB型条件分支指令的立即数字段是12位,UJ型无条件跳转指令的立即数字段是20位.支持正负2......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Bruce LEE on
+    2024-01-03
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象">RISC-V问题和解决方案以及现象</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
   <a href="/cn/RISCV基本设计理念/">
     <h2 class="post-title">
       RISCV基本设计理念
@@ -766,81 +842,14 @@ bool print_data (int a)
 </div>
 <hr>
 
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/AI发展见解/">
-    <h2 class="post-title">
-      AI，我们应该知道什么，未来，我们应该怎么发展
-    </h2>
-    <h3 class="post-subtitle">
-      认清现实，奔向未来...
-    </h3>
-    <div class="post-content-preview">
-      
-在过去，我们所熟知的是，国内的IT业的野蛮生长，互联网公司的巨大营收，巨大的程序员岗位需求。
-过去的生意和业务特点：业务规模大，我们通常是需要十几个程序来合作完成。有做数据库的，接口的，第三方API的，支付系统的，还有搞小程序等等，这些程序员组成一个小团队。
-现在的玩法：业务规模小，只需要几个算法工程师，或者公司里请一个AI科学家，就可以把这些事全干完了，一般的程序员的薪资肯定是要降低的，......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce LEE on
-    2023-07-25
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#IT" title="IT">IT</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/lab4/">
-    <h2 class="post-title">
-      超级无敌简单入门x86-8086汇编实验：移送程序代码-最简化安装
-    </h2>
-    <h3 class="post-subtitle">
-      最简单的汇编实验...
-    </h3>
-    <div class="post-content-preview">
-      本实验目的：这是一个入门实验，但是可以为了以后理解中断处理程序那篇打下基础，程序代码的移送，换句话说就是安装！
-我想写一个程序，程序的功能呢就是将自己的机器码(mov ax,4c00h之前的代码）移送出去，移送到哪先不管，假定就移送到0200：0000这个起始地址吧。请你实现这个程序。（假设系统分配内存空间时，程序地址是cs：0000）
-（关于0200：0000这个地址，在以后的中断程序设计......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce LEE on
-    2023-07-15
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#x86" title="x86">x86</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
 
   <!-- Pager -->
   <ul class="pager">
     
+    
+    <li class="next">
+      <a href="/cn/archives/2/">下一页 &rarr;</a>
+    </li>
     
   </ul>
 
@@ -879,7 +888,7 @@ bool print_data (int a)
     
     
     
-    <a href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象" rel="1">RISC-V问题和解决方案以及现象</a>
+    <a href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象" rel="3">RISC-V问题和解决方案以及现象</a>
     
     
     
@@ -962,12 +971,12 @@ bool print_data (int a)
       <li>定义一个宏,来检测另一个宏是否被定义的优化代码</li>
     </a>
     
-    <a href="RISCV%E5%9F%BA%E6%9C%AC%E8%AE%BE%E8%AE%A1%E7%90%86%E5%BF%B5/">
-      <li>RISCV基本设计理念</li>
+    <a href="RISCV%E6%8C%87%E4%BB%A4%E8%AE%BE%E8%AE%A1%E5%92%8C%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98/">
+      <li>RISCV指令设计和使用问题</li>
     </a>
     
-    <a href="%E6%9C%AC%E5%8D%9A%E5%AE%A2%E6%B1%87%E7%BC%96%E4%BB%A3%E7%A0%81%E7%9A%84%E7%8E%AF%E5%A2%83%E8%A7%84%E8%8C%83/">
-      <li>本博客的汇编代码的环境规范</li>
+    <a href="RISCV%E8%AE%BE%E8%AE%A1%E4%B8%AD%E8%B7%B3%E8%BD%AC%E5%92%8C%E5%90%8C%E6%AD%A5%E7%B3%BB%E5%88%97%E9%97%AE%E9%A2%98%E5%92%8Cx86/">
+      <li>RISCV设计中跳转和同步系列问题和x86</li>
     </a>
     
   </ul>
@@ -1000,7 +1009,7 @@ bool print_data (int a)
 
 <h5><a href="/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/05/">May 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/03/">March 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/01/">January 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/09/">September 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/08/">August 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/07/">July 2023</a><span class="archive-list-count">3</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/05/">May 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/03/">March 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/01/">January 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/09/">September 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/08/">August 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/07/">July 2023</a><span class="archive-list-count">3</span></li></ul>
 </div>
 
 
