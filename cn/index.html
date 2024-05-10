@@ -467,6 +467,44 @@
   <!-- top end -->
   
 
+  <a href="/cn/Deep-understanding-of-variable-parameter-systems/">
+    <h2 class="post-title">
+      预编译变参系统与预编译器粘结运算符以及"回调宏"的应用
+    </h2>
+    <h3 class="post-subtitle">
+      C/C++
+    </h3>
+    <div class="post-content-preview">
+      预编译变参系统与预编译器粘结运算符以及&quot;回调宏&quot;的应用
+使用变参系统时,无预编译器粘结运算符的情况
+这里提到的变参系统不是stdarg文件中声明的那些系列函数与变量系统.而是针对用于宏定义中的变参系统
+在有些情况下,我们在使用__VA_ARGS__时,是不需要添加前缀##.
+关于前缀##(预编译器粘结运算符),见这篇C编译器名称粘结运算符
+__VA_ARGS__是预编译器......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Bruce LEE on
+    2024-05-10
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#C/C++" title="C/C++">C/C++</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
   <a href="/cn/Multi-Macro-with-Annotation/">
     <h2 class="post-title">
       多行宏添加注释的错误(如果不想因为脑子局部性注意力而导致浪费一下午+一晚上时间,请好好看)
@@ -797,42 +835,6 @@ IEEE754标准有四种舍入模式:向上舍入/向下舍入/......
 </div>
 <hr>
 
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/RISCV非规格化浮点系列问题/">
-    <h2 class="post-title">
-      RISCV乘法硬件加速算法原理/单精度规格化与非规格化最小正数问题/F/D标准扩展与I问题
-    </h2>
-    <h3 class="post-subtitle">
-      RISC-V
-    </h3>
-    <div class="post-content-preview">
-      乘法算法的一般算法的演变和使用硬件加速算法原理分析
-乘法算法与纸笔算法是一样的.二进制乘法,由于二进制的特殊型(只有1或0),当乘数的某一位是1时,就将被乘数复制到合适的位置,如果是0时,就将0复制到合适的位置,然后全部加起来.计算机的乘法算法与之同源.
-一般算法就是上述算法,只不过在&quot;复制到合适的位置&quot;这里,就是将每一次的被乘数左移一位,使其扩大2的幂.
-进制由什么定义......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce LEE on
-    2024-01-06
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象">RISC-V问题和解决方案以及现象</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
 
   <!-- Pager -->
   <ul class="pager">
@@ -875,7 +877,7 @@ IEEE754标准有四种舍入模式:向上舍入/向下舍入/......
     
     
     
-    <a href="/tags/#C/C++" title="C/C++" rel="3">C/C++</a>
+    <a href="/tags/#C/C++" title="C/C++" rel="4">C/C++</a>
     
     
     
@@ -950,6 +952,10 @@ IEEE754标准有四种舍入模式:向上舍入/向下舍入/......
 <div class="widget">
   <ul>
     
+    <a href="Deep-understanding-of-variable-parameter-systems/">
+      <li>预编译变参系统与预编译器粘结运算符以及&#34;回调宏&#34;的应用</li>
+    </a>
+    
     <a href="Multi-Macro-with-Annotation/">
       <li>多行宏添加注释的错误(如果不想因为脑子局部性注意力而导致浪费一下午+一晚上时间,请好好看)</li>
     </a>
@@ -964,10 +970,6 @@ IEEE754标准有四种舍入模式:向上舍入/向下舍入/......
     
     <a href="%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E5%AE%8F,%E6%9D%A5%E6%A3%80%E6%B5%8B%E5%8F%A6%E4%B8%80%E4%B8%AA%E5%AE%8F%E6%98%AF%E5%90%A6%E8%A2%AB%E5%AE%9A%E4%B9%89%E7%9A%84%E4%BC%98%E5%8C%96%E4%BB%A3%E7%A0%81/">
       <li>定义一个宏,来检测另一个宏是否被定义的优化代码</li>
-    </a>
-    
-    <a href="RISCV%E5%AD%98%E5%82%A8%E6%96%B9%E9%9D%A2/">
-      <li>RISCVcache数据块容量权衡问题/大数据块导致的失效损失长延迟问题/cache容量大小与命中率问题/多路组相联策略减低失效率/组相联组内选择数据块策略</li>
     </a>
     
   </ul>
@@ -1000,7 +1002,7 @@ IEEE754标准有四种舍入模式:向上舍入/向下舍入/......
 
 <h5><a href="/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/05/">May 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/03/">March 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/01/">January 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/12/">December 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/10/">October 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/09/">September 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/08/">August 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/07/">July 2023</a><span class="archive-list-count">4</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/05/">May 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/03/">March 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/01/">January 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/12/">December 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/10/">October 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/09/">September 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/08/">August 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/07/">July 2023</a><span class="archive-list-count">4</span></li></ul>
 </div>
 
 
