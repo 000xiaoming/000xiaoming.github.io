@@ -127,10 +127,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://000xiaoming.github.io/cn/archives/3/">
+  <link rel="canonical" href="https://000xiaoming.github.io/cn/instruction/">
   <title>
     
-      I&#39;m Bruce Lee
+      instruction - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -288,29 +288,7 @@
           <!-- LangSelect -->
           
           
-          <!-- LangSelect start -->
-          <!-- LangSelect -->
-<li>
-  <a id="lang-select-label"><i class="fa fa-globe"></i>
-    <span>
-      简体中文
-    </span>
-    <select id="lang-select" data-canonical="cn/archives/3/index.html">
-      
-      
-      <option value="en" >
-        English
-      </option>
-      
-      <option value="cn"  selected >
-        简体中文
-      </option>
-      
-    </select>
-  </a>
-</li>
-
-          <!-- LangSelect end -->
+          
           
           
         </ul>
@@ -363,18 +341,18 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io');
-      --intro-header-background-image-url-page: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png');
+      --intro-header-background-image-url-page: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io//img/header_img/lml_bg1.png');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io//img/header_img/lml_bg1.png');
     }
     header.intro-header {
-       /*config*/
-        background-image: var(--intro-header-background-image-url-home);
-        /* background-image: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg'); */
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png'); */
       
     }
 
@@ -397,10 +375,24 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>经年治世</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">Bruce LEE</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#项目工程" title="项目工程">项目工程</a>
+              
+            </div>
+            <h1>instruction</h1>
+            <h2 class="subheading">项目工程</h2>
+            <span class="meta">
+              Posted by Bruce LEE on
+              2024-05-08
+            </span>
+
+
+            
+            
+
+
           </div>
           
         </div>
@@ -441,540 +433,306 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Main Content -->
-<div class="container">
-  <div class="row">
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <p><a id="decode_operand"></a></p>
+<h3 id="decode-operand函数">decode_operand函数</h3>
+<p>使用BITS宏,从s中的指令二进制串抓取rs1,rs2以及rd的二进制值.</p>
+<p>然后根据传入的type类型进行switch跳转,然后执行流水线中的各个操作:<br>
+src1R宏,这个宏就是读取rs1存储的寄存器值.<br>
+src2R宏,读取rs2存储的寄存器值.<br>
+关于src(x)R宏中,调用R宏来做最底层的读取操作.</p>
+<p>或调用immI宏:读取I型指令立即数字段.<br>
+immU宏:读取U型指令立即数字段.<br>
+immS宏:读取S型指令立即数字段.<br>
+关于imm(X)宏中调用SEXT宏以及BITS宏来做最底层的操作.</p>
+<p>decode_operand函数结束.</p>
+<h5 id="关于imm-X-宏和SEXT宏-BITS宏">关于imm(X)宏和SEXT宏,BITS宏</h5>
+<p>这些系列宏全部定义在include/macro.h文件中</p>
+<p>BITS宏接受三个输入:x表示32位指令二进制串,hi表示高位,lo表示低位.<br>
+通过<code>(x) &gt;&gt; (lo)</code>,将读取的字段放置最右端<br>
+通过<code>&amp; BITMASK((hi) - (lo) + 1)</code>, 将比hi还要高的所有二进制位全部置零.</p>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">(hi)</span> - <span class="comment">(lo)</span> + <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>表示要读取的字段的长度.<br>
+BITMASK是掩码,接受读取的字段长度,可以制造出一个该长度的&quot;依靠&quot;低位的掩码.</p>
+<p>BITMASK中:</p>
+<figure class="highlight plain"><figcaption><span><< (bits)```表示将无符号1,类型是unsigned long long,是一个64位.</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line">我们只需要一个32位的指令二进制串进行操作,为何要使用一个64位呢?</span><br><span class="line">扩展性:使用INSTPAT宏定义指令模板时,我们也是用的64位来定义指令,这是给后续留出足够的扩展余地.</span><br><span class="line">1ull &lt;&lt; (bits) - 1 会生成一个低于bits位,全为1,其他全为0的掩码.</span><br><span class="line"></span><br><span class="line">SEXT宏解析:</span><br><span class="line">用于抓取立即数字段</span><br><span class="line">定义了一个内嵌int64_t空间的结构体变量__x,其中包含len长度的n字段.其中将x赋值给n字段.</span><br><span class="line">传参x是一个抓取完成的指令字段值.len是这个字段的长度.然后通过&#96;&#96;&#96;.n &#x3D; x&#96;&#96;&#96;, 将这个32位有符号数x赋值给len位的有符号数n,然后n会被有符号扩展为__x,最后将__x.n无符号扩展为64位传出去.</span><br><span class="line">***这里为何进行的是无符号扩展,据我所知,所有的立即数字段都是有符号数,如果抓取出来进行的是无符号扩展,会导致出错.故应该将&#96;&#96;&#96;(uint64_t)__x.n;&#96;&#96;&#96;修改为:&#96;&#96;&#96;(int64_t)__x.n;&#96;&#96;&#96;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### g_nr_guest_inst变量的解析</span><br><span class="line">表示匹配&#x2F;执行的指令数</span><br><span class="line"></span><br><span class="line">### 关于pc递增</span><br><span class="line">src&#x2F;cpu文件定义的execute函数声明了Decode变量s,然后传给了exec_once.</span><br><span class="line">src&#x2F;cpu文件定义的exec_once函数将全局变量pc初始化s-&gt;pc,s-&gt;snpc,然后调用isa_exec_once函数.</span><br><span class="line">定义在src&#x2F;isa&#x2F;riscv32&#x2F;instc文件的isa_exec_once函数接受这个s,然后读取指令二进制串(调用inst_fetch函数)</span><br><span class="line">在inst_fetch函数中,s-&gt;snpc默认递增到下一条指令</span><br><span class="line">然后调用decode_exec函数执行,然后就返回.</span><br><span class="line">在decode_exec函数中,s-&gt;snpc赋值给s-&gt;dnpc.</span><br><span class="line">然后isa_exec_once函数返回后,就是***cpu.pc &#x3D; s-&gt;dnpc***,s-&gt;dnpc是下一条要执行的指令.</span><br><span class="line"></span><br><span class="line">#### 关于snpc和dnpc实际差异地方</span><br><span class="line">在src&#x2F;isa&#x2F;riscv32&#x2F;inst.c文件的decode_exec函数中</span><br><span class="line">先是将***s-&gt;dnpc &#x3D; s-&gt;snpc***</span><br><span class="line">这是默认,但前执行的指令没有任何跳转,那么下一条真实执行指令默认就是snpc(snpc损失当前指令的下一条物理地址指令)</span><br><span class="line"></span><br><span class="line">如果有跳转,那么会在指令exe阶段进行处理,此时dnpc会发生改变,其值自然会到正确的指令地址处.</span><br><span class="line"></span><br><span class="line">最后在isa_exec_once退出,来到exec_once函数中,将***cpu.pc &#x3D; s-&gt;dnpc***</span><br><span class="line"></span><br><span class="line">### 关于如何添加指令</span><br><span class="line">在src&#x2F;isa&#x2F;riscv32&#x2F;inst.c文件中:</span><br><span class="line">定义&quot;do&quot;宏</span><br><span class="line"></span><br><span class="line">在enum枚举中,检查是否是扩展指令类型</span><br><span class="line"></span><br><span class="line">添加新指令的立即数抓取宏,源寄存器读取宏(这个应该是不用的)</span><br><span class="line"></span><br><span class="line">在decode_operand函数中,进行添加switch跳转条件.</span><br><span class="line"></span><br><span class="line">在INSTPAT_START-INSTPAT_END代码块中添加指令模式</span><br><span class="line"></span><br><span class="line">### 添加I(ADDi)型指令</span><br><span class="line">检查:enum中,有TYPE_I型</span><br><span class="line">确认:在immI宏中,读取的立即数字段通过查表,是ADDi中的立即数</span><br><span class="line">检查:在decode_operand函数中TYPE_I操作正确</span><br><span class="line"></span><br><span class="line">只需要在INSTPAT系列宏代码中添加关于opcode是0010011,funct3是000的指令模式</span><br><span class="line"></span><br><span class="line">  INSTPAT(&quot;??????? ????? ????? 000 ????? 00100 11&quot;, addi   , I, R(rd) &#x3D; src1 + imm);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### 关于li隐藏的可能bug</span><br><span class="line">伪指令li,是加载立即数,关于立即数的大小.在12位有符号立即数范围内,那么这个指令会被进一步转换为addi指令,如果超过这个范围的立即数,该伪指令会进而转换为lui+addi指令.</span><br><span class="line"></span><br><span class="line">所有对于li伪指令,我们需要对lui指令的实现作出及时的考虑.</span><br><span class="line"></span><br><span class="line">### 关于实现jal指令</span><br><span class="line">enum枚举中添加TYPE_J类型</span><br><span class="line"></span><br><span class="line">定义immJ宏:</span><br><span class="line">imm[20|10:1|11|19:12]</span><br><span class="line">#define immJ() do &#123;*imm &#x3D; (SEXT(BITS(i, 31, 31), 1) &lt;&lt; 19) | BITS(i, 19, 12) &lt;&lt; 11 | BITS(i, 20, 20) &lt;&lt; 10 | BITS(i, 30, 21);&#125; while(0)</span><br><span class="line"></span><br><span class="line">在decode_operand函数中添加对应的switch选项:</span><br><span class="line">case TYPT_J: 		immJ();break;</span><br><span class="line"></span><br><span class="line">在INSTPAT代码块中实现指令模式:由于jal指令的&quot;do&quot;操作有多个部分,所以需要一个代码块来实现:</span><br><span class="line">&#123;</span><br><span class="line">R(rd) &#x3D; s-&gt;snpc;</span><br><span class="line">s-&gt;dnpc &#x3D; s-&gt;pc + (imm &lt;&lt; 1);</span><br><span class="line">&#125;</span><br><span class="line">这里的imm &lt;&lt; 1;表示将立即数左移一位,这是指令体系结构中的设计,目的是为了节省存储不必要的低位0(地址是4对齐的,低位是0)</span><br><span class="line"></span><br><span class="line">### 关于ret伪指令</span><br><span class="line">ret指令是编译器指令,会被展开为jalr x0, 0(x1)</span><br><span class="line"></span><br><span class="line">所以,需要实现jalr指令.</span><br><span class="line"></span><br><span class="line">jalr是I型指令,太好实现了.</span><br><span class="line"></span><br><span class="line">其&quot;do&quot;部分,第一步,将物理地址下一条指令存储在rd中,然后将立即数与src1相加,跳转.</span><br><span class="line"></span><br><span class="line">###关于jal中的立即数抓取和左移问题</span><br><span class="line">立即数在进行符号扩展,然后左移一位,为何要左移,原因已经说过.</span><br><span class="line"></span><br><span class="line">但是4字节对齐的地址,为何是左移1位而不是2位.GPT4解释:因为指令在编码的时候,已经被左移了一位,剩下的需要移动的一位是在cpu内部进行移动.</span><br><span class="line"></span><br><span class="line">### 从行为角度解释为何jal中立即数要左移,jalr中立即数不需要移动</span><br><span class="line">定义中,很清楚,jal中的pc值是&quot;干净&quot;的,而立即数是不干净的,所以需要处理立即数.</span><br><span class="line"></span><br><span class="line">jalr中的寄存器值,不一定是&quot;干净&quot;的,哪怕将立即数处理&quot;干净&quot;了.</span><br><span class="line">所有没必要处理立即数.</span><br><span class="line"></span><br><span class="line">直接将jalr中的立即数将寄存器值相加,得到跳转地址.</span><br><span class="line"></span><br><span class="line">### INSTPAT宏的do传参修改以及INSTPAT\_MATCH中的_\_VA_ARGS_\_宏的修改</span><br><span class="line">在编写jal指令的&quot;do&quot;的时候,我需要将代码以代码块的形式编写.</span><br><span class="line"></span><br><span class="line">但是在INSTPAT_MATCH中的变参:</span><br></pre></td></tr></table></figure>
+<p><em>_VA_ARGS</em>_;</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">这里的分号会和代码块冲突.</span><br><span class="line">于是我将所有的指令的动作代码都使用&#123;&#125;,包含起来,并且其中的每一句动作都是一个语句(添加分号)</span><br><span class="line">然后将<span class="keyword">INSTPAT_MATCH中的_\_VA_ARGS_\_这里,去掉分号.</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line"><span class="keyword">### </span>实现R型指令</span><br><span class="line">对比S型指令,R型指令无需抓取立即数;</span><br><span class="line"></span><br><span class="line">在enum枚举中添加TYPE_R型;</span><br><span class="line"></span><br><span class="line">无immR宏;</span><br><span class="line"></span><br><span class="line">在decode_operand函数中添加<span class="keyword">switch选项;</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line"><span class="keyword">在INSTPAT代码块中添加add指令模式;</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line"><span class="keyword">### </span>关于<span class="keyword">add.c程序对应的汇编中地址0x80000098中的指令seqz</span></span><br><span class="line"><span class="keyword">seqz是伪指令,需要实现其对应的真实cpu指令sltiu指令:</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line"><span class="keyword">### </span>关于<span class="keyword">add.c程序对应的汇编地址0x80000010中的指令beqz</span></span><br><span class="line"><span class="keyword">伪指令,被展开为:beq </span>rs1, x0, offset</span><br><span class="line"></span><br><span class="line">如果rs1与x0相等,则pc = pc + sext(offset)</span><br><span class="line">这里的offset处理与<span class="keyword">jal处理一致,原因也是一样的.</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line"><span class="keyword">添加beq指令步骤:</span></span><br><span class="line"><span class="keyword">在enum枚举中添加TYPE_B型;</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line"><span class="keyword">编写immB型宏;</span></span><br></pre></td></tr></table></figure>
+<p>#define immB() do { *imm = (SEXT(BITS(i, 31, 31), 1) &lt;&lt; 11) | <br>
+(BITS(i, 7, 7)) &lt;&lt; 10 | <br>
+(BITS(i, 30, 25)) &lt;&lt; 4 | <br>
+(BITS(i, 11, 8));} while(0)</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">在decode_operand函数中添加对应的<span class="keyword">switch</span>选项;</span><br><span class="line"></span><br><span class="line">在INSTPAT代码块中添加指令模式:</span><br></pre></td></tr></table></figure>
+<p>INSTPAT(“??? ??? ??? 000 ??? 11000 11”, beq    , B, {s-&gt;dnpc = (src1 == src2)? (s-&gt;pc + (imm &lt;&lt; 1)) : <br>
+s-&gt;dnpc;});</p>
+<figure class="highlight erlang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### fact程序中,添加<span class="number">0</span>x80000094处mul指令</span><br><span class="line">R型指令;</span><br><span class="line"></span><br><span class="line">只需要在INSTPAT代码块中写对应的指令模式和<span class="string">&quot;do&quot;</span>代码块</span><br><span class="line"></span><br><span class="line">### prime程序中,<span class="keyword">rem</span>指令的添加</span><br><span class="line">这是R型指令,非常简单,但是在取余的过程中,如果除数是<span class="number">0</span>,如何处理.</span><br><span class="line"></span><br><span class="line">这个问题是硬件定义的?在这个riscv计算机中,应该如何定义这个行为,并且如何处理</span><br><span class="line"></span><br><span class="line">硬件如何处理,还没有确定,也不知如何实现.姑且信赖编译器,让编译器做第一层简易保护.</span><br><span class="line"></span><br><span class="line">指令定义中:将x[rs1]和x[rs2]视为补码并相除,向<span class="number">0</span>舍入,将余数写入x[rd]</span><br><span class="line"></span><br><span class="line">c语言中已经自动处理了向<span class="number">0</span>舍入的情况.</span><br><span class="line">### slli指令的添加</span><br><span class="line">这个一个I型指令.</span><br><span class="line"></span><br><span class="line">但是这个指令的立即数字段,是移位字段.</span><br><span class="line"></span><br><span class="line">该字段在<span class="number">32</span>中是<span class="number">5</span>位,在<span class="number">64</span>中是<span class="number">6</span>位.</span><br><span class="line"></span><br><span class="line">但是在<span class="number">32</span>中,其shamt[<span class="number">5</span>]必须是<span class="number">0</span>,就也就是func7字段最后一位必须是<span class="number">0</span>.</span><br><span class="line"></span><br><span class="line">与其他I型指令不同的是,这里的shamt是指令<span class="number">24</span>:<span class="number">20</span>字段,如果是<span class="number">64</span>就是<span class="number">25</span>:<span class="number">20</span>字段.</span><br><span class="line"></span><br><span class="line">其他的都是<span class="number">31</span>:<span class="number">20</span>字段.</span><br><span class="line"></span><br><span class="line">可以这样:</span><br><span class="line"></span><br><span class="line">和其他I型指令一样读取<span class="number">31</span>:<span class="number">20</span>立即数字段.然后与<span class="number">0000001</span> <span class="number">11111</span>&#x27;b(<span class="number">64</span>)与运算,</span><br><span class="line"></span><br><span class="line">这样不仅保留了funct7字段最低位(为 <span class="number">64</span>考虑),还能做到</span><br><span class="line"></span><br><span class="line">### srai指令的实现</span><br><span class="line">和slli指令一样,但是在实现算术右移的时,依赖与编译器的默认功能:</span><br><span class="line"></span><br><span class="line">当进行的是有符号数右移操作<span class="string">&quot;&gt;&gt;&quot;</span>, 那么就是算术右移</span><br><span class="line"></span><br><span class="line">如果进行的是无符号数右移操作<span class="string">&quot;&gt;&gt;&quot;</span>,那么就是逻辑右移.</span><br><span class="line"></span><br><span class="line">### 关于实现mulh指令</span><br><span class="line">这个指令需要寄存器数(补码)相乘,取高<span class="number">32</span>位.</span><br><span class="line"></span><br><span class="line">可以实现为:</span><br></pre></td></tr></table></figure>
+<p>{R(rd) = ((int64_t)src1 * src2) &gt;&gt; 32);}</p>
+<pre><code></code></pre>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/cn/YEMU模拟器运行机制/" data-toggle="tooltip" data-placement="top" title="YEMU模拟器运行机制">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/cn/C-Preprocessor-Token-Pasting-Operator/" data-toggle="tooltip" data-placement="top" title="C-Preprocessor-Token-Pasting-Operator">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
     
-
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
-
-      <!-- Main Content -->
-
-
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/本博客汇编代码的环境规范/">
-    <h2 class="post-title">
-      本博客的汇编代码的环境规范
-    </h2>
-    <h3 class="post-subtitle">
-      大不了，从头来过...
-    </h3>
-    <div class="post-content-preview">
-      本博客的汇编代码的环境规范
-MASM和NASM
-test here:
-最近在完成x86-32架构的一些代码和要点的时候，对整个编译环境做了一些整理，我要讲一些关于在以后的博客中一些环境规范。
-之前的汇编代码是在MASM编译器格式的要求下写成的，就如每个程序开头都要有：
-1234567891011assume cs:code ds:datadata segment	...data endsco......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce LEE on
-    2023-09-14
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. All the images used in the blog are my original works or AI works, if you want to take it,don't hesitate. Thank you !
+    
   </p>
-  <div class="tags">
-    
-    <a href="/tags/#x86" title="x86">x86</a>
-    
-  </div>
-  
-
 </div>
-<hr>
+<!-- tip end -->
 
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
+        <!-- tip end -->
+        
 
-  <a href="/cn/x86_1/">
-    <h2 class="post-title">
-      x86编程思考过程片段(1)关于编程技巧,注意事项,指令细节
-    </h2>
-    <h3 class="post-subtitle">
-      x86
-    </h3>
-    <div class="post-content-preview">
-      x86编程思考过程片段(1)关于编程技巧,注意事项,指令细节
--标号之后的冒号是可选的。所以下面的写法也是正确的：
-1infi jmp near infi
--把数据声明在所有指令之后，在这个地方，处理器的执行流程无法到达
--尽管在指令中访问这些数据可以使用段超越前缀“CS:”，但习惯上，通过数据段来访问它们更自然一些
--用了一个新的指令 xor 来将 DX 寄存器的内容清零
-1xor  dx......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce LEE on
-    2023-09-11
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#x86" title="x86">x86</a>
-    
-  </div>
-  
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
 
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/论持久战/">
-    <h2 class="post-title">
-      论持久战
-    </h2>
-    <h3 class="post-subtitle">
-      持久战斗，更好生活...
-    </h3>
-    <div class="post-content-preview">
-      每个人对自己的人生有不同的理念，对世界有不同的理解。
-活着，就是在追求，实践自己的人生理念，论证一种人生思想。也许有些人心里并没有明确的这样想，但其行动上，已经是在实践他自己的人生理念。
-但是不管怎么样，我们都有一个同样重要的基本盘——健康的身体。
-为了大家，能更好的去实践自己的思想，我写了这篇论持久战。
-论持久战，说白了就是怎么尽最大的可能去多活几年，怎么使学习工作效率最高。
-针对那些有理......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce LEE on
-    2023-08-10
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#IT" title="IT">IT</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/中断概览/">
-    <h2 class="post-title">
-      x86-8086汇编：该架构的中断信息引发，中断向量表的配置，中断例程的执行
-    </h2>
-    <h3 class="post-subtitle">
-      细剖x86-8086中断...
-    </h3>
-    <div class="post-content-preview">
-      cpu具备一种能力就是：执行完当前指令后能转而去执行别处的指令
-这种能力我们叫中断（interrupt），中断有不同的类型：内中断和外中断
-cpu具备中断能力，cpu在执行中断的时候其底层是怎么运作的，什么样子的内存分布来支撑这种能力呢？
-x86-8086架构中断的整体情况
-当发生内中断时，中断信息由cpu内部提供，cpu每执行完一条指令，就会检查是否有中断产生。如果此时，有内中断发生，cp......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce LEE on
-    2023-08-01
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#x86" title="x86">x86</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/x86-8086显示数值/">
-    <h2 class="post-title">
-      01-比较简单的x86-8086汇编实验：将数值显示到屏幕上
-    </h2>
-    <h3 class="post-subtitle">
-      一个简单的汇编实验...
-    </h3>
-    <div class="post-content-preview">
-      我们在开始这个实验的时候，先来回顾一下在学习高级语言的时候（比如c语言），我们是如何将一个数值显示到屏幕上的呢？
-bool print_data (int a)
-&#123;
-	printf(&quot;%d&quot;,a);
-	return true;
-&#125;
-
-我们在c语言中，写出这个函数，这个函数的功能想必大家一眼就可以看出来，就是将一个int型数据传入print_data函数......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce LEE on
-    2023-07-30
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#x86" title="x86">x86</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/AI发展见解/">
-    <h2 class="post-title">
-      AI，我们应该知道什么，未来，我们应该怎么发展
-    </h2>
-    <h3 class="post-subtitle">
-      认清现实，奔向未来...
-    </h3>
-    <div class="post-content-preview">
-      
-在过去，我们所熟知的是，国内的IT业的野蛮生长，互联网公司的巨大营收，巨大的程序员岗位需求。
-过去的生意和业务特点：业务规模大，我们通常是需要十几个程序来合作完成。有做数据库的，接口的，第三方API的，支付系统的，还有搞小程序等等，这些程序员组成一个小团队。
-现在的玩法：业务规模小，只需要几个算法工程师，或者公司里请一个AI科学家，就可以把这些事全干完了，一般的程序员的薪资肯定是要降低的，......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce LEE on
-    2023-07-25
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#IT" title="IT">IT</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/lab4/">
-    <h2 class="post-title">
-      超级无敌简单入门x86-8086汇编实验：移送程序代码-最简化安装
-    </h2>
-    <h3 class="post-subtitle">
-      最简单的汇编实验...
-    </h3>
-    <div class="post-content-preview">
-      本实验目的：这是一个入门实验，但是可以为了以后理解中断处理程序那篇打下基础，程序代码的移送，换句话说就是安装！
-我想写一个程序，程序的功能呢就是将自己的机器码(mov ax,4c00h之前的代码）移送出去，移送到哪先不管，假定就移送到0200：0000这个起始地址吧。请你实现这个程序。（假设系统分配内存空间时，程序地址是cs：0000）
-（关于0200：0000这个地址，在以后的中断程序设计......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce LEE on
-    2023-07-15
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#x86" title="x86">x86</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/assembly_start/">
-    <h2 class="post-title">
-      DOS基础与汇编
-    </h2>
-    <h3 class="post-subtitle">
-      x86
-    </h3>
-    <div class="post-content-preview">
-      汇编开始的地方(至稚嫩的自己)
-DOSBox上编程
-MOUNT命令，挂载c盘，将源地址挂载出去
-使用C:命令，切换目录
-使用masm命令来编译asm文件，生成obj文件
-使用link命令来链接obj文件，生成exe文件
-源文件必须放在MASM文件目录下，减少冗余的文件目录
-进入挂载masm后的c盘中，使用edit文本编辑器经行asm文件代码编写
-（masm后面加入当前目录下的文件，可以省略扩......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce LEE on
-    2023-07-14
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#x86" title="x86">x86</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-
-  <!-- Pager -->
-  <ul class="pager">
-    
-    <li class="previous">
-      <a href="/cn/archives/2/">&larr; 上一页</a>
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
     </li>
-    
-    
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=instruction&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/instruction/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
   </ul>
+</div>
 
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
 
-      <!-- 如果开启评论功能 -->
-      
-    </div>
-
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-        <!-- Visitors -->
-<h5><a href="/">来访者</a></h5>
-
-
+        <!-- Sharing End -->
+        
         <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <script src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Wed May 08 2024 14:08:00 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
     
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#decode-operand%E5%87%BD%E6%95%B0"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">decode_operand函数</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E5%85%B3%E4%BA%8Eimm-X-%E5%AE%8F%E5%92%8CSEXT%E5%AE%8F-BITS%E5%AE%8F"><span class="toc-nav-number">1.0.1.</span> <span class="toc-nav-text">关于imm(X)宏和SEXT宏,BITS宏</span></a></li></ol></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
         <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#项目工程" title="项目工程">项目工程</a>
+            
+          </div>
+        </section>
+        
 
-<section>
-  <h5><a href="/tags/">特色标签</a></h5>
-  <div class="tags">
-    
-    
-    <a href="/tags/#IT" title="IT" rel="2">IT</a>
-    
-    
-    
-    <a href="/tags/#C/C++" title="C/C++" rel="4">C/C++</a>
-    
-    
-    
-    <a href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象" rel="9">RISC-V问题和解决方案以及现象</a>
-    
-    
-    
-    <a href="/tags/#项目工程" title="项目工程" rel="4">项目工程</a>
-    
-    
-    
-    <a href="/tags/#x86" title="x86" rel="9">x86</a>
-    
-    
-  </div>
-</section>
-
-
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-  <h5><a href="/about/">关于自己</a></h5>
-  <div class="short-about">
-
-    
-    <img id="avatar_pic" src="/img/avatar/fatpeople.png" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
-    
-
-    
-    <p>Don&#39;t wait Don&#39;t wait Don&#39;t wait for anything...</p>
-    
-
-    <!-- SNS Link -->
-    <ul class="list-inline">
-      
-
-      
-      <li>
-        <a target="_blank" href="https://github.com/000xiaoming">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-    </ul>
-  </div>
-</section>
-
-        <hr>
-    
-        <!-- RECENT POSTS -->
-
-<h5><a href="/">最近博文</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="../../Deep-understanding-of-variable-parameter-systems/">
-      <li>预编译变参系统与预编译器粘结运算符以及&#34;回调宏&#34;的应用</li>
-    </a>
-    
-    <a href="../../Multi-Macro-with-Annotation/">
-      <li>多行宏添加注释的错误(如果不想因为脑子局部性注意力而导致浪费一下午+一晚上时间,请好好看)</li>
-    </a>
-    
-    <a href="../../YEMU%E6%A8%A1%E6%8B%9F%E5%99%A8%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/">
-      <li>YEMU模拟器运行机制</li>
-    </a>
-    
-    <a href="../../instruction/">
-      <li>instruction</li>
-    </a>
-    
-    <a href="../../C-Preprocessor-Token-Pasting-Operator/">
-      <li>C-Preprocessor-Token-Pasting-Operator</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
         <!-- Friends Blog -->
-
-<h5><a href="/">链友</a></h5>
-<ul class="list-inline">
-  
-  <li><a href="https://v-vincen.life/" target="_blank">V_Vincen</a></li>
-  
-  <li><a href="http://beantech.org" target="_blank">Bean Tech</a></li>
-  
-  <li><a href="http://huangxuan.me" target="_blank">Hux Blog</a></li>
-  
-  <li><a href="https://hexo.io/" target="_blank">Hexo</a></li>
-  
-  <li><a href="https://fe32.top/" target="_blank">Ethan.Tzy</a></li>
-  
-</ul>
-
-
+        
         <hr>
-    
-        <!-- Archives -->
+        <h5>链友</h5>
+        <ul class="list-inline">
 
-<h5><a href="/archives/">archives</a></h5>
-<div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/05/">May 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/04/">April 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/03/">March 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/01/">January 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2023/12/">December 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2023/10/">October 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2023/09/">September 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2023/08/">August 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2023/07/">July 2023</a><span class="archive-list-count">4</span></li></ul>
-</div>
-
-
-        <hr>
-    
-        <!-- Categories -->
-
-<h5><a href="/categories/">categories</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="/categories/#Programer">
-      <li>Programer</li>
-    </a>
-    
-    <a href="/categories/#C/C++">
-      <li>C/C++</li>
-    </a>
-    
-    <a href="/categories/#RISC-V问题和解决方案以及现象">
-      <li>RISC-V问题和解决方案以及现象</li>
-    </a>
-    
-    <a href="/categories/#项目工程">
-      <li>项目工程</li>
-    </a>
-    
-    <a href="/categories/#x86">
-      <li>x86</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-</div>
-
-
-    
+          
+          <li>
+            <a href="https://v-vincen.life/" target="_blank">V_Vincen</a>
+          </li>
+          
+          <li>
+            <a href="http://beantech.org" target="_blank">Bean Tech</a>
+          </li>
+          
+          <li>
+            <a href="http://huangxuan.me" target="_blank">Hux Blog</a>
+          </li>
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+          <li>
+            <a href="https://fe32.top/" target="_blank">Ethan.Tzy</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
   </div>
-</div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->
@@ -1083,7 +841,7 @@ MOUNT命令，挂载c盘，将源地址挂载出去
     let jsdelivr = "https://cdn.jsdelivr.net/gh/";
     let gh = "000xiaoming";
     let ghPages = gh + ".github.io";
-    let pagePath = "cn/archives/3/index.html";
+    let pagePath = "cn/instruction/";
     let jsdelivrurl;
     if (pagePath.indexOf("index.html") != -1) {
       jsdelivrurl = jsdelivr + gh + "/" + ghPages;

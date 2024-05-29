@@ -581,6 +581,47 @@ __VA_ARGS__是预编译器......
   <!-- top end -->
   
 
+  <a href="/cn/instruction/">
+    <h2 class="post-title">
+      instruction
+    </h2>
+    <h3 class="post-subtitle">
+      项目工程
+    </h3>
+    <div class="post-content-preview">
+      
+decode_operand函数
+使用BITS宏,从s中的指令二进制串抓取rs1,rs2以及rd的二进制值.
+然后根据传入的type类型进行switch跳转,然后执行流水线中的各个操作:
+src1R宏,这个宏就是读取rs1存储的寄存器值.
+src2R宏,读取rs2存储的寄存器值.
+关于src(x)R宏中,调用R宏来做最底层的读取操作.
+或调用immI宏:读取I型指令立即数字段.
+immU宏......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Bruce LEE on
+    2024-05-08
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#项目工程" title="项目工程">项目工程</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
   <a href="/cn/C-Preprocessor-Token-Pasting-Operator/">
     <h2 class="post-title">
       C-Preprocessor-Token-Pasting-Operator
@@ -630,6 +671,42 @@ cpu_exec参数:调用一次该函数要执行的指令数
 execute函数(详解)
 execute函数会调用exec_once函数传入Decode s变量和cpu.pc变量
 调用execute的cpu_exec函数的n值,在execute中用于for循环,多次调用exec_......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Bruce LEE on
+    2024-04-08
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#项目工程" title="项目工程">项目工程</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/系列宏以及函数/">
+    <h2 class="post-title">
+      系列宏以及函数
+    </h2>
+    <h3 class="post-subtitle">
+      项目工程
+    </h3>
+    <div class="post-content-preview">
+      INSTPAT_INST宏是怎么起作用的?
+只引用了Decode类型变量s,引用s中的isa内部变量,引用内部变量isa的inst联合体,引用inst联合体中的val字段.
+该宏在INSTPAT宏的定义中使用,用于在pattern_decode函数之后,检测当前执行指令是否与当前执行的模式匹配中的指令格式匹配.这里的发挥的作用就是使用但前指令的二进制串.
+INSTPAT_MATCH宏是怎么其......
     </div>
   </a>
   
@@ -763,80 +840,6 @@ RISC-V直接模式处理例外的实现......
 </div>
 <hr>
 
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/RISCV不同阶段冒险问题和分支/">
-    <h2 class="post-title">
-      RISCV不同阶段前递问题/load-use冒险的停顿技术/优化控制冒险发生时浪费的时钟周期问题分析/ID计算加速的专用前递通路问题/PC清理-预测加速问题/流水线清理问题
-    </h2>
-    <h3 class="post-subtitle">
-      RISC-V
-    </h3>
-    <div class="post-content-preview">
-      load-use冒险的不同阶段前递问题
-穷举了load指令后跟算术运算指令和存储指令的所有冒险类型.
-load指令后跟随算术指令,会发生load-use冒险中的EX冒险,即后指令在进行EX阶段就需要ld指令中RD存储的值.此时由于晚了一个周期,当后指令执行EX阶段时,ld指令还在执行MEM阶段.所以我们需要流水线停顿和前递
-load指令后跟存储指令时分为两种情况:
-1.当ld指令的rd和sd......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce LEE on
-    2024-02-03
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象">RISC-V问题和解决方案以及现象</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/RISCV各类冒险问题/">
-    <h2 class="post-title">
-      RISCV停顿与非停顿冒险/x0寄存器的数据冒险处理陷阱/寄存器同周期读写的解决方法/解决EX/MEM冒险
-    </h2>
-    <h3 class="post-subtitle">
-      RISC-V
-    </h3>
-    <div class="post-content-preview">
-      结构冒险的避免
-这种硬件结构上的缺陷,导致流水线上的不同指令执行,对于数据通路单元的使用产生了矛盾.
-加入处理器只有一种存储器,将指令存储器和数据存储器合并.
-如果第一条指令的第4步骤是读数据,需要读存储器,第4条指令需要取指令,读存储器.这就是在硬件使用上的冲突.
-所以在设计流水线时,从单周期处理器指令入手,避免在一条指令中使用重复的数据通路单元.避免不同指令的工序出现颠倒,如果出现工序减......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce LEE on
-    2024-01-26
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象">RISC-V问题和解决方案以及现象</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
 
   <!-- Pager -->
   <ul class="pager">
@@ -887,7 +890,7 @@ load指令后跟存储指令时分为两种情况:
     
     
     
-    <a href="/tags/#项目工程" title="项目工程" rel="2">项目工程</a>
+    <a href="/tags/#项目工程" title="项目工程" rel="4">项目工程</a>
     
     
     
@@ -966,12 +969,12 @@ load指令后跟存储指令时分为两种情况:
       <li>YEMU模拟器运行机制</li>
     </a>
     
-    <a href="cn/C-Preprocessor-Token-Pasting-Operator/">
-      <li>C-Preprocessor-Token-Pasting-Operator</li>
+    <a href="cn/instruction/">
+      <li>instruction</li>
     </a>
     
-    <a href="cn/cmd_c%E5%B5%8C%E5%A5%97%E8%B0%83%E7%94%A8/">
-      <li>cmd_c嵌套调用</li>
+    <a href="cn/C-Preprocessor-Token-Pasting-Operator/">
+      <li>C-Preprocessor-Token-Pasting-Operator</li>
     </a>
     
   </ul>
@@ -1004,7 +1007,7 @@ load指令后跟存储指令时分为两种情况:
 
 <h5><a href="/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archive/2024/05/">May 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2024/04/">April 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2024/03/">March 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2024/01/">January 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2023/12/">December 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2023/10/">October 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2023/09/">September 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2023/08/">August 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2023/07/">July 2023</a><span class="archive-list-count">4</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archive/2024/05/">May 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2024/04/">April 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2024/03/">March 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2024/01/">January 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2023/12/">December 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2023/10/">October 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2023/09/">September 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2023/08/">August 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2023/07/">July 2023</a><span class="archive-list-count">4</span></li></ul>
 </div>
 
 

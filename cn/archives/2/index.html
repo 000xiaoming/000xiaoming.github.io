@@ -467,6 +467,80 @@
   <!-- top end -->
   
 
+  <a href="/cn/RISCV不同阶段冒险问题和分支/">
+    <h2 class="post-title">
+      RISCV不同阶段前递问题/load-use冒险的停顿技术/优化控制冒险发生时浪费的时钟周期问题分析/ID计算加速的专用前递通路问题/PC清理-预测加速问题/流水线清理问题
+    </h2>
+    <h3 class="post-subtitle">
+      RISC-V
+    </h3>
+    <div class="post-content-preview">
+      load-use冒险的不同阶段前递问题
+穷举了load指令后跟算术运算指令和存储指令的所有冒险类型.
+load指令后跟随算术指令,会发生load-use冒险中的EX冒险,即后指令在进行EX阶段就需要ld指令中RD存储的值.此时由于晚了一个周期,当后指令执行EX阶段时,ld指令还在执行MEM阶段.所以我们需要流水线停顿和前递
+load指令后跟存储指令时分为两种情况:
+1.当ld指令的rd和sd......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Bruce LEE on
+    2024-02-03
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象">RISC-V问题和解决方案以及现象</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/RISCV各类冒险问题/">
+    <h2 class="post-title">
+      RISCV停顿与非停顿冒险/x0寄存器的数据冒险处理陷阱/寄存器同周期读写的解决方法/解决EX/MEM冒险
+    </h2>
+    <h3 class="post-subtitle">
+      RISC-V
+    </h3>
+    <div class="post-content-preview">
+      结构冒险的避免
+这种硬件结构上的缺陷,导致流水线上的不同指令执行,对于数据通路单元的使用产生了矛盾.
+加入处理器只有一种存储器,将指令存储器和数据存储器合并.
+如果第一条指令的第4步骤是读数据,需要读存储器,第4条指令需要取指令,读存储器.这就是在硬件使用上的冲突.
+所以在设计流水线时,从单周期处理器指令入手,避免在一条指令中使用重复的数据通路单元.避免不同指令的工序出现颠倒,如果出现工序减......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Bruce LEE on
+    2024-01-26
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象">RISC-V问题和解决方案以及现象</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
   <a href="/cn/RISCV运算中间结果系列问题/">
     <h2 class="post-title">
       RISCV舍入问题和中间结果存储问题/浮点并行加速的不稳定性问题以及传统并行算法研究步骤
@@ -760,83 +834,6 @@ SB型条件分支指令的立即数字段是12位,UJ型无条件跳转指令的�
 </div>
 <hr>
 
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/本博客汇编代码的环境规范/">
-    <h2 class="post-title">
-      本博客的汇编代码的环境规范
-    </h2>
-    <h3 class="post-subtitle">
-      大不了，从头来过...
-    </h3>
-    <div class="post-content-preview">
-      本博客的汇编代码的环境规范
-MASM和NASM
-test here:
-最近在完成x86-32架构的一些代码和要点的时候，对整个编译环境做了一些整理，我要讲一些关于在以后的博客中一些环境规范。
-之前的汇编代码是在MASM编译器格式的要求下写成的，就如每个程序开头都要有：
-1234567891011assume cs:code ds:datadata segment	...data endsco......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce LEE on
-    2023-09-14
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#x86" title="x86">x86</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/x86_1/">
-    <h2 class="post-title">
-      x86编程思考过程片段(1)关于编程技巧,注意事项,指令细节
-    </h2>
-    <h3 class="post-subtitle">
-      x86
-    </h3>
-    <div class="post-content-preview">
-      x86编程思考过程片段(1)关于编程技巧,注意事项,指令细节
--标号之后的冒号是可选的。所以下面的写法也是正确的：
-1infi jmp near infi
--把数据声明在所有指令之后，在这个地方，处理器的执行流程无法到达
--尽管在指令中访问这些数据可以使用段超越前缀“CS:”，但习惯上，通过数据段来访问它们更自然一些
--用了一个新的指令 xor 来将 DX 寄存器的内容清零
-1xor  dx......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce LEE on
-    2023-09-11
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#x86" title="x86">x86</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
 
   <!-- Pager -->
   <ul class="pager">
@@ -891,7 +888,7 @@ test here:
     
     
     
-    <a href="/tags/#项目工程" title="项目工程" rel="2">项目工程</a>
+    <a href="/tags/#项目工程" title="项目工程" rel="4">项目工程</a>
     
     
     
@@ -970,12 +967,12 @@ test here:
       <li>YEMU模拟器运行机制</li>
     </a>
     
-    <a href="../../C-Preprocessor-Token-Pasting-Operator/">
-      <li>C-Preprocessor-Token-Pasting-Operator</li>
+    <a href="../../instruction/">
+      <li>instruction</li>
     </a>
     
-    <a href="../../cmd_c%E5%B5%8C%E5%A5%97%E8%B0%83%E7%94%A8/">
-      <li>cmd_c嵌套调用</li>
+    <a href="../../C-Preprocessor-Token-Pasting-Operator/">
+      <li>C-Preprocessor-Token-Pasting-Operator</li>
     </a>
     
   </ul>
@@ -1008,7 +1005,7 @@ test here:
 
 <h5><a href="/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/05/">May 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/04/">April 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/03/">March 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/01/">January 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2023/12/">December 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2023/10/">October 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2023/09/">September 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2023/08/">August 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2023/07/">July 2023</a><span class="archive-list-count">4</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/05/">May 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/04/">April 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/03/">March 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/01/">January 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2023/12/">December 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2023/10/">October 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2023/09/">September 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2023/08/">August 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2023/07/">July 2023</a><span class="archive-list-count">4</span></li></ul>
 </div>
 
 

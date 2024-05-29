@@ -127,10 +127,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://000xiaoming.github.io/archive/archives/2/">
+  <link rel="canonical" href="https://000xiaoming.github.io/cn/系列宏以及函数/">
   <title>
     
-      I&#39;m Bruce Lee
+      系列宏以及函数 - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -227,7 +227,7 @@
       <div class="navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <a href="/">HOME</a>
+            <a href="/">首页</a>
           </li>
 
           
@@ -237,7 +237,7 @@
           <li>
             <a href="/about/">
               
-              ABOUT
+              关于
               
               
             </a>
@@ -248,7 +248,7 @@
           <li>
             <a href="/archives/">
               
-              ARCHIVES
+              归档
               
               
             </a>
@@ -259,7 +259,7 @@
           <li>
             <a href="/categories/">
               
-              CATEGORIES
+              分类
               
               
             </a>
@@ -270,7 +270,7 @@
           <li>
             <a href="/tags/">
               
-              TAGS
+              标签
               
               
             </a>
@@ -281,36 +281,14 @@
           
           <li>
             <a class="popup-trigger">
-              <span class="search-icon"></span>SEARCH</a>
+              <span class="search-icon"></span>搜索</a>
           </li>
           
 
           <!-- LangSelect -->
           
           
-          <!-- LangSelect start -->
-          <!-- LangSelect -->
-<li>
-  <a id="lang-select-label"><i class="fa fa-globe"></i>
-    <span>
-      English
-    </span>
-    <select id="lang-select" data-canonical="archive/archives/2/index.html">
-      
-      
-      <option value="en"  selected >
-        English
-      </option>
-      
-      <option value="cn" >
-        简体中文
-      </option>
-      
-    </select>
-  </a>
-</li>
-
-          <!-- LangSelect end -->
+          
           
           
         </ul>
@@ -363,18 +341,18 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io');
-      --intro-header-background-image-url-page: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png');
+      --intro-header-background-image-url-page: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io//img/header_img/lml_bg1.png');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io//img/header_img/lml_bg1.png');
     }
     header.intro-header {
-       /*page*/
-        background-image: var(--intro-header-background-image-url-page);
-        /* background-image: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/archive_bg2.jpg'); */
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png'); */
       
     }
 
@@ -397,10 +375,24 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>经年治世</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">Bruce LEE</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#项目工程" title="项目工程">项目工程</a>
+              
+            </div>
+            <h1>系列宏以及函数</h1>
+            <h2 class="subheading">项目工程</h2>
+            <span class="meta">
+              Posted by Bruce LEE on
+              2024-04-08
+            </span>
+
+
+            
+            
+
+
           </div>
           
         </div>
@@ -441,617 +433,327 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Main Content -->
-<div class="container">
-  <div class="row">
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h5 id="INSTPAT-INST宏是怎么起作用的">INSTPAT_INST宏是怎么起作用的?</h5>
+<p>只引用了Decode类型变量s,引用s中的isa内部变量,引用内部变量isa的inst联合体,引用inst联合体中的val字段.</p>
+<p>该宏在INSTPAT宏的定义中使用,用于在pattern_decode函数之后,检测当前执行指令是否与当前执行的模式匹配中的指令格式匹配.这里的发挥的作用就是使用但前指令的二进制串.</p>
+<h5 id="INSTPAT-MATCH宏是怎么其作用的">INSTPAT_MATCH宏是怎么其作用的?</h5>
+<p>使用变参系统.</p>
+<p>其内部只调用了一个变参系统函数decode_operand.<br>
+decode_operand函数就是最深处的指令匹配函数,调用对应的do函数</p>
+<p>该宏在INSTPAT宏中被调用:主要是在pattern_decode函数之后,进行匹配成功检查,如果检查通过,则表示但前指令的模式与这个INSTPAT宏定义的模式一致<br>
+那么就执行INSTPAT_MATCH宏.</p>
+<p>从这个表象就可以说明:INSTPAT_MATCH是最深处的指令字段内模式匹配函数,调用该函数时可以明确:指令格式已经确定;指令正确;马上执行该指令;</p>
+<h5 id="INSTPAT-STAPT宏是怎么起作用的">INSTPAT_STAPT宏是怎么起作用的?</h5>
+<p>在项目中首先标识了模式匹配的开始位置.这是最浅显的意思.</p>
+<p>同时记录了跳转标签的地址(使用一个const void类型的双重指针来记录地址)</p>
+<h5 id="INSTPAT-STAPT宏的技术原理是什么">INSTPAT_STAPT宏的技术原理是什么?</h5>
+<p>使用宏定义,其中最重要的就是使用了concat宏.concat宏的技术原理见另篇:C-PreProcessor-Token-Pasting-Operator.md</p>
+<p>const void ** <em>_instpat_end声明了一个参数双重指针</em>_instpat_end, 用于记录跳转标签的地址.</p>
+<p>在INSTPAT中,if语句块里最后使用了:</p>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">goto</span> *<span class="comment">(__instpat_end)</span>; \</span><br></pre></td></tr></table></figure>
+<p>这里就是对应的跳转语句.访问了__instpat_end_标签的地址.</p>
+<h5 id="INSTPAT-END宏是怎么起作用的">INSTPAT_END宏是怎么起作用的?</h5>
+<p>就是一个将concat宏包装的一个外层宏.</p>
+<p>但是在concat宏的后面添加了冒号.</p>
+<p>这里就是起到标签地址的作用.</p>
+<p>使用goto-标签的语法,目的就是为了避免冗余的模板指令模式匹配.在匹配成功之后,及时跳转基本语句块,增加能效.</p>
+<h5 id="INSTPAT-END宏的技术原理是什么">INSTPAT_END宏的技术原理是什么?</h5>
+<p>INSTPAT_END宏的技术原理同concat宏的技术原理一样,见另篇:C-Preprocessor-Token-Pasting-Operator.md</p>
+<p>使用的INSTPAT_START和INSTPAT_END宏,都是需要一个参数的,但是在inst.c文件decode_exec函数中使用的时候没有传入任何的参数.这里应该是一个留出来的扩展</p>
+<h5 id="concat宏的技术原理">concat宏的技术原理</h5>
+<p>另见篇:C-preprocessor-token-pasting-operator.md</p>
+<h3 id="INSTPAT宏详解">INSTPAT宏详解</h3>
+<p>在inst.c中使用多个INSTPAT宏来定义不同的指令类型(当前指令会随着inst.c文件中的decode_exec函数中定义的序列指令模式挨个执行(匹配))</p>
+<p>INSTPAT宏中首先定义了key,mask,shift.至今,我发现没有使shift结果不为0的指令.这里可能是一个扩展.</p>
+<p>INSTPAT宏使用了变参系统,在使用INSTPAT宏时,传入了指令模式串,指令名称,指令类型,指令的动作.</p>
+<p>INSTPAT调用pattern_decode函数,传入指令模式串和指令模式串长度,已经key,mask,shift地址.</p>
+<p>对于pattern_decode和macro宏的讲解,现在回到了if基本块.<br>
+在这里对Decode类型s变量进行shift然后和掩码&amp;一下,和键码对比.为了检测该指令是否就是这个指令模式.</p>
+<p>如果是,那么就太好了,直接进入if语句块,指令INSTPAT_MATCH宏,执行完INSTPAT_MATCH宏之后,执行goto语句,goto语句我已经讲解过,在关于INSTPAT_START,INSTPAT_END宏中就是的.</p>
+<h4 id="pattern-decode函数是干嘛的-技术原理是什么">pattern_decode函数是干嘛的?技术原理是什么?</h4>
+<p>pattern_decode定义在include/cpu/decode.h函数中,是由INSTPAT宏调用的.其作用就是为了检查但前的指令和但前正在执行的指令模式是否匹配.然后用于下一步的INSTPAT宏的if语句基本块.</p>
+<p>pattern_decode的定义是一个内联函数,在预编辑器处理的过程中,会在INSTPAT宏中直接展开.</p>
+<p>接受指令模式串和指令模式串长度,以及key,mask,shift的地址.</p>
+<p>在pattern_decode在处理指令模板和指令是否匹配时,是使用了macro宏,使用该宏做了一个&quot;检测单字符是否匹配&quot;的过程.</p>
+<h4 id="macro-i-的作用和技术原理">macro(i)的作用和技术原理?</h4>
+<p>将指令模板串中进行一个处理(将不影响指令功能的无关位置,使用掩码(置为0)来处理,将关键位置,记录在键码变量中(置为1).对于shift,Manual中有讲(Read the fxxking manual)可以得出,和我目前的活应该不相干,这是编译器的活儿</p>
+<p>在使用时,是直接使用的是macro64(0);</p>
+<p>这里使用二分分开来检测一个64位指令的每一个位.</p>
+<p>最后退出.</p>
+<p>回到了INSTPAT宏的if语句.</p>
+<h4 id="关于INSTPAT-MATCH宏">关于INSTPAT_MATCH宏</h4>
+<p>定义在src/isa/riscv32/inst.c文件中的INSTPAT_MATCH宏.这是深层次的指令匹配宏.</p>
+<p>直接调用decode_operand函数.</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">static void decode<span class="constructor">_operand(Decode <span class="operator">*</span><span class="params">s</span>, <span class="params">int</span> <span class="operator">*</span><span class="params">rd</span>, <span class="params">word_t</span> <span class="operator">*</span><span class="params">src1</span>, <span class="params">word_t</span> <span class="operator">*</span><span class="params">src2</span>, <span class="params">word_t</span> <span class="operator">*</span><span class="params">imm</span>, <span class="params">int</span> <span class="params">type</span>)</span></span><br></pre></td></tr></table></figure>
+<p>decode_operand函数讲解:见<a href="#decode_operand">decode_operand</a>了解细节</p>
+<p>使用__VA_ARGS__来做指令实际计算操作</p>
+<p>关于__VA_ARGS__,参考另外一篇文章:<a href="https://000xiaoming.github.io/cn/Deep-understanding-of-variable-parameter-systems/">预编译变参系统与预编译器粘结运算符以及&quot;回调宏&quot;的应用</a></p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/cn/cmd_c嵌套调用/" data-toggle="tooltip" data-placement="top" title="cmd_c嵌套调用">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/cn/定义一个宏,来检测另一个宏是否被定义的优化代码/" data-toggle="tooltip" data-placement="top" title="定义一个宏,来检测另一个宏是否被定义的优化代码">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. All the images used in the blog are my original works or AI works, if you want to take it,don't hesitate. Thank you !
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=系列宏以及函数&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/系列宏以及函数/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <script src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Mon Apr 08 2024 14:08:00 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#INSTPAT-INST%E5%AE%8F%E6%98%AF%E6%80%8E%E4%B9%88%E8%B5%B7%E4%BD%9C%E7%94%A8%E7%9A%84"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">INSTPAT_INST宏是怎么起作用的?</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#INSTPAT-MATCH%E5%AE%8F%E6%98%AF%E6%80%8E%E4%B9%88%E5%85%B6%E4%BD%9C%E7%94%A8%E7%9A%84"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">INSTPAT_MATCH宏是怎么其作用的?</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#INSTPAT-STAPT%E5%AE%8F%E6%98%AF%E6%80%8E%E4%B9%88%E8%B5%B7%E4%BD%9C%E7%94%A8%E7%9A%84"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">INSTPAT_STAPT宏是怎么起作用的?</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#INSTPAT-STAPT%E5%AE%8F%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">INSTPAT_STAPT宏的技术原理是什么?</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#INSTPAT-END%E5%AE%8F%E6%98%AF%E6%80%8E%E4%B9%88%E8%B5%B7%E4%BD%9C%E7%94%A8%E7%9A%84"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">INSTPAT_END宏是怎么起作用的?</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#INSTPAT-END%E5%AE%8F%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">INSTPAT_END宏的技术原理是什么?</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#concat%E5%AE%8F%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">concat宏的技术原理</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#INSTPAT%E5%AE%8F%E8%AF%A6%E8%A7%A3"><span class="toc-nav-number"></span> <span class="toc-nav-text">INSTPAT宏详解</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#pattern-decode%E5%87%BD%E6%95%B0%E6%98%AF%E5%B9%B2%E5%98%9B%E7%9A%84-%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-nav-number"></span> <span class="toc-nav-text">pattern_decode函数是干嘛的?技术原理是什么?</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#macro-i-%E7%9A%84%E4%BD%9C%E7%94%A8%E5%92%8C%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86"><span class="toc-nav-number"></span> <span class="toc-nav-text">macro(i)的作用和技术原理?</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%85%B3%E4%BA%8EINSTPAT-MATCH%E5%AE%8F"><span class="toc-nav-number"></span> <span class="toc-nav-text">关于INSTPAT_MATCH宏</span></a>
+        
+        </div>
+      </aside>
     
 
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
+
+
+      <!-- Sidebar Container -->
+      <div class="
                 col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
+                col-md-10 col-md-offset-1
+                sidebar-container">
 
-      <!-- Main Content -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
-      <!-- 归档列表 -->
-
-      
-
-      <!-- 归档列表 -->
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2024">
-          <span class="tag-text">2024</span>
-        </span>
-        <ul>
-          
-          <li>
-            05-10
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Deep-understanding-of-variable-parameter-systems/" style="color: #0085a1">
-              <span>
-                预编译变参系统与预编译器粘结运算符以及"回调宏"的应用
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            05-09
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Multi-Macro-with-Annotation/" style="color: #0085a1">
-              <span>
-                多行宏添加注释的错误(如果不想因为脑子局部性注意力而导致浪费一下午+一晚上时间,请好好看)
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            05-08
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/instruction/" style="color: #0085a1">
-              <span>
-                instruction
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            05-08
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/YEMU模拟器运行机制/" style="color: #0085a1">
-              <span>
-                YEMU模拟器运行机制
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            05-08
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/C-Preprocessor-Token-Pasting-Operator/" style="color: #0085a1">
-              <span>
-                C-Preprocessor-Token-Pasting-Operator
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            04-08
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/系列宏以及函数/" style="color: #0085a1">
-              <span>
-                系列宏以及函数
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            04-08
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/cmd_c嵌套调用/" style="color: #0085a1">
-              <span>
-                cmd_c嵌套调用
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            03-23
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/定义一个宏,来检测另一个宏是否被定义的优化代码/" style="color: #0085a1">
-              <span>
-                定义一个宏,来检测另一个宏是否被定义的优化代码
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            02-26
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/RISCV存储方面/" style="color: #0085a1">
-              <span>
-                RISCVcache数据块容量权衡问题/大数据块导致的失效损失长延迟问题/cache容量大小与命中率问题/多路组相联策略减低失效率/组相联组内选择数据块策略
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            02-14
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/RISCV乱弹琴_1/" style="color: #0085a1">
-              <span>
-                RISCV直接模式处理例外的实现问题与解决方案/PC的变化与SEPC的存储精确性问题/反相关代码导致的被迫按序执行的问题/内存别名问题
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            02-03
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/RISCV不同阶段冒险问题和分支/" style="color: #0085a1">
-              <span>
-                RISCV不同阶段前递问题/load-use冒险的停顿技术/优化控制冒险发生时浪费的时钟周期问题分析/ID计算加速的专用前递通路问题/PC清理-预测加速问题/流水线清理问题
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            01-26
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/RISCV各类冒险问题/" style="color: #0085a1">
-              <span>
-                RISCV停顿与非停顿冒险/x0寄存器的数据冒险处理陷阱/寄存器同周期读写的解决方法/解决EX/MEM冒险
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            01-14
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/RISCV运算中间结果系列问题/" style="color: #0085a1">
-              <span>
-                RISCV舍入问题和中间结果存储问题/浮点并行加速的不稳定性问题以及传统并行算法研究步骤
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            01-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/RISCV非规格化浮点系列问题/" style="color: #0085a1">
-              <span>
-                RISCV乘法硬件加速算法原理/单精度规格化与非规格化最小正数问题/F/D标准扩展与I问题
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            01-03
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/RISCV设计中跳转和同步系列问题和x86/" style="color: #0085a1">
-              <span>
-                RISCV超12位立即数字段的跳转问题/解决数据竞争问题的底层支持/数组索引访问与指针访问/常见优化/x86的复杂性缺陷
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            01-03
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/RISCV指令设计和使用问题/" style="color: #0085a1">
-              <span>
-                RISCV减低边界检查的开销方法/硬连线为零的可能实现方式/大立即数的RISC-V编址和寻址问题/分支和跳转指令中立即数字段的PC相对偏移表示问题
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            01-01
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/RISCV基本设计理念/" style="color: #0085a1">
-              <span>
-                RISCV基本设计理念
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2023">
-          <span class="tag-text">2023</span>
-        </span>
-        <ul>
-          
-          <li>
-            12-12
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/last/" style="color: #0085a1">
-              <span>
-                x86汇编搁置的地方
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            10-11
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/x86_3/" style="color: #0085a1">
-              <span>
-                x86编程思考过程片段(3)关于编程技巧,注意事项,指令细节
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            09-23
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/x86_2/" style="color: #0085a1">
-              <span>
-                x86编程思考过程片段(2)关于编程技巧,注意事项,指令细节
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            09-14
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/本博客汇编代码的环境规范/" style="color: #0085a1">
-              <span>
-                本博客的汇编代码的环境规范
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            09-11
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/x86_1/" style="color: #0085a1">
-              <span>
-                x86编程思考过程片段(1)关于编程技巧,注意事项,指令细节
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-10
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/论持久战/" style="color: #0085a1">
-              <span>
-                论持久战
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-01
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/中断概览/" style="color: #0085a1">
-              <span>
-                x86-8086汇编：该架构的中断信息引发，中断向量表的配置，中断例程的执行
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-30
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/x86-8086显示数值/" style="color: #0085a1">
-              <span>
-                01-比较简单的x86-8086汇编实验：将数值显示到屏幕上
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-25
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/AI发展见解/" style="color: #0085a1">
-              <span>
-                AI，我们应该知道什么，未来，我们应该怎么发展
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-15
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/lab4/" style="color: #0085a1">
-              <span>
-                超级无敌简单入门x86-8086汇编实验：移送程序代码-最简化安装
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-14
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/assembly_start/" style="color: #0085a1">
-              <span>
-                DOS基础与汇编
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-      </div>
-      
-    </div>
-  </div>
-</div>
-
-
-      <!-- 如果开启评论功能 -->
-      
-    </div>
-
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-        <!-- Visitors -->
-<h5><a href="/">VISITORS</a></h5>
-
-
-        <hr>
-    
         <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#项目工程" title="项目工程">项目工程</a>
+            
+          </div>
+        </section>
+        
 
-<section>
-  <h5><a href="/tags/">FEATURED TAGS</a></h5>
-  <div class="tags">
-    
-    
-    <a href="/tags/#IT" title="IT" rel="2">IT</a>
-    
-    
-    
-    <a href="/tags/#C/C++" title="C/C++" rel="4">C/C++</a>
-    
-    
-    
-    <a href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象" rel="9">RISC-V问题和解决方案以及现象</a>
-    
-    
-    
-    <a href="/tags/#项目工程" title="项目工程" rel="4">项目工程</a>
-    
-    
-    
-    <a href="/tags/#x86" title="x86" rel="9">x86</a>
-    
-    
-  </div>
-</section>
-
-
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-  <h5><a href="/about/">ABOUT ME</a></h5>
-  <div class="short-about">
-
-    
-    <img id="avatar_pic" src="/img/avatar/fatpeople.png" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
-    
-
-    
-    <p>Don&#39;t wait Don&#39;t wait Don&#39;t wait for anything...</p>
-    
-
-    <!-- SNS Link -->
-    <ul class="list-inline">
-      
-
-      
-      <li>
-        <a target="_blank" href="https://github.com/000xiaoming">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-    </ul>
-  </div>
-</section>
-
-        <hr>
-    
-        <!-- RECENT POSTS -->
-
-<h5><a href="/">RECENT POSTS</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="../../../cn/Deep-understanding-of-variable-parameter-systems/">
-      <li>预编译变参系统与预编译器粘结运算符以及&#34;回调宏&#34;的应用</li>
-    </a>
-    
-    <a href="../../../cn/Multi-Macro-with-Annotation/">
-      <li>多行宏添加注释的错误(如果不想因为脑子局部性注意力而导致浪费一下午+一晚上时间,请好好看)</li>
-    </a>
-    
-    <a href="../../../cn/YEMU%E6%A8%A1%E6%8B%9F%E5%99%A8%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/">
-      <li>YEMU模拟器运行机制</li>
-    </a>
-    
-    <a href="../../../cn/instruction/">
-      <li>instruction</li>
-    </a>
-    
-    <a href="../../../cn/C-Preprocessor-Token-Pasting-Operator/">
-      <li>C-Preprocessor-Token-Pasting-Operator</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
         <!-- Friends Blog -->
-
-<h5><a href="/">FRIENDS</a></h5>
-<ul class="list-inline">
-  
-  <li><a href="https://v-vincen.life/" target="_blank">V_Vincen</a></li>
-  
-  <li><a href="http://beantech.org" target="_blank">Bean Tech</a></li>
-  
-  <li><a href="http://huangxuan.me" target="_blank">Hux Blog</a></li>
-  
-  <li><a href="https://hexo.io/" target="_blank">Hexo</a></li>
-  
-  <li><a href="https://fe32.top/" target="_blank">Ethan.Tzy</a></li>
-  
-</ul>
-
-
+        
         <hr>
-    
-        <!-- Archives -->
+        <h5>链友</h5>
+        <ul class="list-inline">
 
-<h5><a href="/archives/">archives</a></h5>
-<div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../2024/05/">May 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../2024/04/">April 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../2024/03/">March 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../2024/01/">January 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../2023/12/">December 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../2023/10/">October 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../2023/09/">September 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../2023/08/">August 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../2023/07/">July 2023</a><span class="archive-list-count">4</span></li></ul>
-</div>
-
-
-        <hr>
-    
-        <!-- Categories -->
-
-<h5><a href="/categories/">categories</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="/categories/#Programer">
-      <li>Programer</li>
-    </a>
-    
-    <a href="/categories/#C/C++">
-      <li>C/C++</li>
-    </a>
-    
-    <a href="/categories/#RISC-V问题和解决方案以及现象">
-      <li>RISC-V问题和解决方案以及现象</li>
-    </a>
-    
-    <a href="/categories/#项目工程">
-      <li>项目工程</li>
-    </a>
-    
-    <a href="/categories/#x86">
-      <li>x86</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-</div>
-
-
-    
+          
+          <li>
+            <a href="https://v-vincen.life/" target="_blank">V_Vincen</a>
+          </li>
+          
+          <li>
+            <a href="http://beantech.org" target="_blank">Bean Tech</a>
+          </li>
+          
+          <li>
+            <a href="http://huangxuan.me" target="_blank">Hux Blog</a>
+          </li>
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+          <li>
+            <a href="https://fe32.top/" target="_blank">Ethan.Tzy</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
   </div>
-</div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->
@@ -1160,7 +862,7 @@
     let jsdelivr = "https://cdn.jsdelivr.net/gh/";
     let gh = "000xiaoming";
     let ghPages = gh + ".github.io";
-    let pagePath = "archive/archives/2/index.html";
+    let pagePath = "cn/系列宏以及函数/";
     let jsdelivrurl;
     if (pagePath.indexOf("index.html") != -1) {
       jsdelivrurl = jsdelivr + gh + "/" + ghPages;
@@ -1238,7 +940,7 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
             <span class="search-icon">
               <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
             </span>
-            <input autocomplete="off" placeholder="SEARCH..." type="text" id="local-search-input">
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
           </div>
         </div>
         <div id="local-search-result"></div>
