@@ -127,10 +127,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://000xiaoming.github.io/cn/">
+  <link rel="canonical" href="https://000xiaoming.github.io/cn/cmd_c嵌套调用/">
   <title>
     
-      I&#39;m Bruce Lee
+      cmd_c嵌套调用 - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -288,29 +288,7 @@
           <!-- LangSelect -->
           
           
-          <!-- LangSelect start -->
-          <!-- LangSelect -->
-<li>
-  <a id="lang-select-label"><i class="fa fa-globe"></i>
-    <span>
-      简体中文
-    </span>
-    <select id="lang-select" data-canonical="cn/index.html">
-      
-      
-      <option value="en" >
-        English
-      </option>
-      
-      <option value="cn"  selected >
-        简体中文
-      </option>
-      
-    </select>
-  </a>
-</li>
-
-          <!-- LangSelect end -->
+          
           
           
         </ul>
@@ -363,18 +341,18 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io');
-      --intro-header-background-image-url-page: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png');
+      --intro-header-background-image-url-page: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io//img/header_img/lml_bg1.png');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io//img/header_img/lml_bg1.png');
     }
     header.intro-header {
-       /*config*/
-        background-image: var(--intro-header-background-image-url-home);
-        /* background-image: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg'); */
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png'); */
       
     }
 
@@ -397,10 +375,24 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>经年治世</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">Bruce LEE</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#项目工程" title="项目工程">项目工程</a>
+              
+            </div>
+            <h1>cmd_c嵌套调用</h1>
+            <h2 class="subheading">项目工程</h2>
+            <span class="meta">
+              Posted by Bruce LEE on
+              2024-04-08
+            </span>
+
+
+            
+            
+
+
           </div>
           
         </div>
@@ -441,613 +433,323 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Main Content -->
-<div class="container">
-  <div class="row">
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h2 id="cmd-c等一系列执行函数CALL-cpu-exec函数">cmd_c等一系列执行函数CALL cpu_exec函数</h2>
+<p>cpu_exec参数:调用一次该函数要执行的指令数</p>
+<p>然后cpu_exec带着指令数CALL execute(n)函数</p>
+<h2 id="execute函数-详解">execute函数(详解)</h2>
+<p>execute函数会调用exec_once函数传入Decode s变量和cpu.pc变量</p>
+<p>调用execute的cpu_exec函数的n值,在execute中用于for循环,多次调用exec_once函数.</p>
+<p>对于execute函数的解析:</p>
+<h3 id="Decode类型解析">Decode类型解析?</h3>
+<p>Decode定义<br>
+其中含有:<br>
+变量:<br>
+pc<br>
+snpc<br>
+dnpc<br>
+ISADecodeInfo isa变量<br>
+IFDEF宏展开</p>
+<p>这里就是含有,关于指令地址的pc类变量,一个承载指令二进制串的isa变量,一个用于调试的logbuf变量</p>
+<h3 id="关于Decode结构体-其中的ISADecodeInfo变量类型解析">关于Decode结构体,其中的ISADecodeInfo变量类型解析?</h3>
+<p>ISADecodeInfo结构体</p>
+<p>结构体内部就是一个名为inst的union,内含一个uint32_t类型的val.就是承载执行的指令的二进制串值.</p>
+<h3 id="关于Decode结构体的宏IFDEF的大致分析">关于Decode结构体的宏IFDEF的大致分析?</h3>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="constructor">IFDEF(CONFIG_ITRACE, <span class="params">char</span> <span class="params">logbuf</span>[128])</span>;</span><br></pre></td></tr></table></figure>
+<p>当定义了CONFIG_ITRACH宏后,就展开为char logbuf[128];<br>
+这个应该是调试功能的代码,所以这里先不追究</p>
+<h2 id="exec-once函数的解析">exec_once函数的解析?</h2>
+<p>exec_once(&amp;s, cpu.pc);</p>
+<p>将临时变量Decode类型s,和cpu.pc这个全局变量接收</p>
+<p>在exec_once函数内部,使用cpu.pc来初始化s变量的s-&gt;pc, s-&gt;snpc<br>
+并且调用isa_exec_once(s)函数<br>
+然后将s-&gt;dnpc的值,重新赋值给cpu.pc</p>
+<p>//由此可见,cpu这个全局变量始终都是指向下一个执行指令<br>
+//临时变量用于在分析的过程中起作用,其中的pc,snpc和dnpc都是关键成员</p>
+<h3 id="对于exec-once函数中的isa-exec-once-s-函数解析">对于exec_once函数中的isa_exec_once(s)函数解析?</h3>
+<p>只有两行代码:</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s-&gt;isa.inst.<span class="keyword">val</span> = inst<span class="constructor">_fetch(&amp;<span class="params">s</span>-&gt;<span class="params">snpc</span>, 4)</span>;</span><br><span class="line">return decode<span class="constructor">_exec(<span class="params">s</span>)</span>;</span><br></pre></td></tr></table></figure>
+<p>要想知道Decode 类型的s变量的ISADecodeInfo类型的isa变量的val是什么含义,还需要分析inst_fetch函数的返回值.</p>
+<p>根据分析inst_fetch函数的返回值,这个s-&gt;isa.inst.val就是要执行的指令的二进制串.</p>
+<p>也就是ISADecodeInfo,上述;</p>
+<p>然后获取了指令的二进制码,然后调用decode_exec(s)函数,返回这个函数的返回值.</p>
+<h4 id="inst-fetch-s-snpc-4-的作用是什么">inst_fetch(&amp;s-&gt;snpc, 4);的作用是什么?</h4>
+<p>传入的pc是下一条指令的地址.</p>
+<p>然后调用vaddr_ifetch(*pc, len);函数,返回该地址的指令二进制串,是32位.因为传入的4,表示4字节.</p>
+<p>然后将s-&gt;snpc递增len长度,指向下一条静态指令地址.</p>
+<p>然后返回取出的指令.</p>
+<h4 id="分析isa-exec-once-Decode-s-函数调用的decode-exec函数">分析isa_exec_once(Decode *s)函数调用的decode_exec函数</h4>
+<p>首先定义了src1,src2,imm字段<br>
+然后将s-&gt;snpc赋值给s-&gt;dnpc</p>
+<p>定义INSTPAT_INST宏,INSTPAT_MATCH宏</p>
+<p>调用INSTPAT_START,一系列的INSTPAT,以及INSTPAT_END宏</p>
+<p>调用R(0)将x0寄存器赋值为0;</p>
+<p>然后返回;</p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/cn/C-Preprocessor-Token-Pasting-Operator/" data-toggle="tooltip" data-placement="top" title="C-Preprocessor-Token-Pasting-Operator">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/cn/定义一个宏,来检测另一个宏是否被定义的优化代码/" data-toggle="tooltip" data-placement="top" title="定义一个宏,来检测另一个宏是否被定义的优化代码">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
     
-
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
-
-      <!-- Main Content -->
-
-
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/Deep-understanding-of-variable-parameter-systems/">
-    <h2 class="post-title">
-      预编译变参系统与预编译器粘结运算符以及"回调宏"的应用
-    </h2>
-    <h3 class="post-subtitle">
-      C/C++
-    </h3>
-    <div class="post-content-preview">
-      预编译变参系统与预编译器粘结运算符以及&quot;回调宏&quot;的应用
-使用变参系统时,无预编译器粘结运算符的情况
-这里提到的变参系统不是stdarg文件中声明的那些系列函数与变量系统.而是针对用于宏定义中的变参系统
-在有些情况下,我们在使用__VA_ARGS__时,是不需要添加前缀##.
-关于前缀##(预编译器粘结运算符),见这篇C编译器名称粘结运算符
-__VA_ARGS__是预编译器......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce LEE on
-    2024-05-10
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. All the images used in the blog are my original works or AI works, if you want to take it,don't hesitate. Thank you !
+    
   </p>
-  <div class="tags">
-    
-    <a href="/tags/#C/C++" title="C/C++">C/C++</a>
-    
-  </div>
-  
-
 </div>
-<hr>
+<!-- tip end -->
 
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
+        <!-- tip end -->
+        
 
-  <a href="/cn/Multi-Macro-with-Annotation/">
-    <h2 class="post-title">
-      多行宏添加注释的错误(如果不想因为脑子局部性注意力而导致浪费一下午+一晚上时间,请好好看)
-    </h2>
-    <h3 class="post-subtitle">
-      C/C++
-    </h3>
-    <div class="post-content-preview">
-      多行宏添加注释的错误(如果不想因为脑子局部性注意力而导致浪费一下午时间,请好好看)
-正确的示例用法
-12345678910#include &lt;stdio.h&gt;#define some_macro(x, y) \	((x) + \	(y) )int main(int argc, char** argv)&#123;	printf(&quot;use some_macro: %d\n......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce LEE on
-    2024-05-09
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#C/C++" title="C/C++">C/C++</a>
-    
-  </div>
-  
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
 
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/YEMU模拟器运行机制/">
-    <h2 class="post-title">
-      YEMU模拟器运行机制
-    </h2>
-    <h3 class="post-subtitle">
-      项目工程
-    </h3>
-    <div class="post-content-preview">
-      YEMU模拟器运行机制
-
-#include &lt;stdint.h&gt;
-#include &lt;stdio.h&gt;
-//------------4个寄存器,16字节地址
-#define NREG 4
-#define NMEM 16
-// define the instruction format
-//-----------------联合体用法,总长是8bit,可以引用不同的位域......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce LEE on
-    2024-05-08
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#项目工程" title="项目工程">项目工程</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/C-Preprocessor-Token-Pasting-Operator/">
-    <h2 class="post-title">
-      C-Preprocessor-Token-Pasting-Operator
-    </h2>
-    <h3 class="post-subtitle">
-      小酒小菜
-    </h3>
-    <div class="post-content-preview">
-      c编译器名称粘结运算符(C Preprocessor Token Pasting Operator)
-使用示例
-12345678910#include &lt;stdio.h&gt;#define concat(x, y) x ## yint main(int argc, char** argv)&#123;	int concat(x, y) = 32;	printf(&quot;%d\n&......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce LEE on
-    2024-05-08
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#C/C++" title="C/C++">C/C++</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/cmd_c嵌套调用/">
-    <h2 class="post-title">
-      cmd_c嵌套调用
-    </h2>
-    <h3 class="post-subtitle">
-      项目工程
-    </h3>
-    <div class="post-content-preview">
-      cmd_c等一系列执行函数CALL cpu_exec函数
-cpu_exec参数:调用一次该函数要执行的指令数
-然后cpu_exec带着指令数CALL execute(n)函数
-execute函数(详解)
-execute函数会调用exec_once函数传入Decode s变量和cpu.pc变量
-调用execute的cpu_exec函数的n值,在execute中用于for循环,多次调用exec_......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce LEE on
-    2024-04-08
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#项目工程" title="项目工程">项目工程</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/定义一个宏,来检测另一个宏是否被定义的优化代码/">
-    <h2 class="post-title">
-      定义一个宏,来检测另一个宏是否被定义的优化代码
-    </h2>
-    <h3 class="post-subtitle">
-      风景如画
-    </h3>
-    <div class="post-content-preview">
-      定义一个宏,来检测另一个宏是否被定义的优化代码
-该问题的原提出者见stackoverflow:
-https://stackoverflow.com/questions/26099745/test-if-preprocessor-symbol-is-defined-inside-macro
-关于这个宏定义:
-1#define TRACE(x) &quot;&quot; #x
-#x是c预处理器的......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce LEE on
-    2024-03-23
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#C/C++" title="C/C++">C/C++</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/RISCV存储方面/">
-    <h2 class="post-title">
-      RISCVcache数据块容量权衡问题/大数据块导致的失效损失长延迟问题/cache容量大小与命中率问题/多路组相联策略减低失效率/组相联组内选择数据块策略
-    </h2>
-    <h3 class="post-subtitle">
-      RISC-V
-    </h3>
-    <div class="post-content-preview">
-      层次化存储的根据:局部性原理
-由时间局部性和空间局部性
-层次化存储
-这意味着所有的上层次的数据都是下层次数据的子集:只有数据先在第i+1层出现,才会在第i层出现.
-SRAM与DRAM的价格差主要体现
-S和D的实现面积有很大差别,在相同面积的硅上D能实现更多的存储容量,S的每比特占用面积要大很多.
-S的每比特需要6到8个晶体管,过去是使用S芯片来作为一级或二级高速缓存
-由于摩尔定律,现在所有的......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce LEE on
-    2024-02-26
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象">RISC-V问题和解决方案以及现象</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/RISCV乱弹琴_1/">
-    <h2 class="post-title">
-      RISCV直接模式处理例外的实现问题与解决方案/PC的变化与SEPC的存储精确性问题/反相关代码导致的被迫按序执行的问题/内存别名问题
-    </h2>
-    <h3 class="post-subtitle">
-      RISC-V
-    </h3>
-    <div class="post-content-preview">
-      RISC-V世界的严格区分例外和中断
-我们实现例外处理机制,使用的是RISC-V中的多个处理模式之一的直接模式.
-就是所有的例外处理,都使用统一的例外处理入口地址,跳转到这个地址后,由这个地址里面的指令通过读取mcause寄存器的值,来选择跳转的不同的处理程序.
-这是普遍例外的处理,中断也是一样的.
-在RISC-V中,中断指处理器外部事件,例外指代所有事件
-RISC-V直接模式处理例外的实现......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce LEE on
-    2024-02-14
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象">RISC-V问题和解决方案以及现象</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/RISCV不同阶段冒险问题和分支/">
-    <h2 class="post-title">
-      RISCV不同阶段前递问题/load-use冒险的停顿技术/优化控制冒险发生时浪费的时钟周期问题分析/ID计算加速的专用前递通路问题/PC清理-预测加速问题/流水线清理问题
-    </h2>
-    <h3 class="post-subtitle">
-      RISC-V
-    </h3>
-    <div class="post-content-preview">
-      load-use冒险的不同阶段前递问题
-穷举了load指令后跟算术运算指令和存储指令的所有冒险类型.
-load指令后跟随算术指令,会发生load-use冒险中的EX冒险,即后指令在进行EX阶段就需要ld指令中RD存储的值.此时由于晚了一个周期,当后指令执行EX阶段时,ld指令还在执行MEM阶段.所以我们需要流水线停顿和前递
-load指令后跟存储指令时分为两种情况:
-1.当ld指令的rd和sd......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce LEE on
-    2024-02-03
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象">RISC-V问题和解决方案以及现象</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/RISCV各类冒险问题/">
-    <h2 class="post-title">
-      RISCV停顿与非停顿冒险/x0寄存器的数据冒险处理陷阱/寄存器同周期读写的解决方法/解决EX/MEM冒险
-    </h2>
-    <h3 class="post-subtitle">
-      RISC-V
-    </h3>
-    <div class="post-content-preview">
-      结构冒险的避免
-这种硬件结构上的缺陷,导致流水线上的不同指令执行,对于数据通路单元的使用产生了矛盾.
-加入处理器只有一种存储器,将指令存储器和数据存储器合并.
-如果第一条指令的第4步骤是读数据,需要读存储器,第4条指令需要取指令,读存储器.这就是在硬件使用上的冲突.
-所以在设计流水线时,从单周期处理器指令入手,避免在一条指令中使用重复的数据通路单元.避免不同指令的工序出现颠倒,如果出现工序减......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce LEE on
-    2024-01-26
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象">RISC-V问题和解决方案以及现象</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-
-  <!-- Pager -->
-  <ul class="pager">
-    
-    
-    <li class="next">
-      <a href="/cn/archives/2/">下一页 &rarr;</a>
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
     </li>
-    
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=cmd_c嵌套调用&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/cmd_c嵌套调用/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
   </ul>
+</div>
 
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
 
-      <!-- 如果开启评论功能 -->
-      
-    </div>
-
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-        <!-- Visitors -->
-<h5><a href="/">来访者</a></h5>
-
-
+        <!-- Sharing End -->
+        
         <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <script src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Mon Apr 08 2024 14:08:00 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
     
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#cmd-c%E7%AD%89%E4%B8%80%E7%B3%BB%E5%88%97%E6%89%A7%E8%A1%8C%E5%87%BD%E6%95%B0CALL-cpu-exec%E5%87%BD%E6%95%B0"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">cmd_c等一系列执行函数CALL cpu_exec函数</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#execute%E5%87%BD%E6%95%B0-%E8%AF%A6%E8%A7%A3"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">execute函数(详解)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Decode%E7%B1%BB%E5%9E%8B%E8%A7%A3%E6%9E%90"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">Decode类型解析?</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%B3%E4%BA%8EDecode%E7%BB%93%E6%9E%84%E4%BD%93-%E5%85%B6%E4%B8%AD%E7%9A%84ISADecodeInfo%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B%E8%A7%A3%E6%9E%90"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">关于Decode结构体,其中的ISADecodeInfo变量类型解析?</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%B3%E4%BA%8EDecode%E7%BB%93%E6%9E%84%E4%BD%93%E7%9A%84%E5%AE%8FIFDEF%E7%9A%84%E5%A4%A7%E8%87%B4%E5%88%86%E6%9E%90"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">关于Decode结构体的宏IFDEF的大致分析?</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#exec-once%E5%87%BD%E6%95%B0%E7%9A%84%E8%A7%A3%E6%9E%90"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">exec_once函数的解析?</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%AF%B9%E4%BA%8Eexec-once%E5%87%BD%E6%95%B0%E4%B8%AD%E7%9A%84isa-exec-once-s-%E5%87%BD%E6%95%B0%E8%A7%A3%E6%9E%90"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">对于exec_once函数中的isa_exec_once(s)函数解析?</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#inst-fetch-s-snpc-4-%E7%9A%84%E4%BD%9C%E7%94%A8%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-nav-number">3.1.1.</span> <span class="toc-nav-text">inst_fetch(&amp;s-&gt;snpc, 4);的作用是什么?</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%88%86%E6%9E%90isa-exec-once-Decode-s-%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E7%9A%84decode-exec%E5%87%BD%E6%95%B0"><span class="toc-nav-number">3.1.2.</span> <span class="toc-nav-text">分析isa_exec_once(Decode *s)函数调用的decode_exec函数</span></a></li></ol></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
         <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#项目工程" title="项目工程">项目工程</a>
+            
+          </div>
+        </section>
+        
 
-<section>
-  <h5><a href="/tags/">特色标签</a></h5>
-  <div class="tags">
-    
-    
-    <a href="/tags/#IT" title="IT" rel="2">IT</a>
-    
-    
-    
-    <a href="/tags/#C/C++" title="C/C++" rel="4">C/C++</a>
-    
-    
-    
-    <a href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象" rel="9">RISC-V问题和解决方案以及现象</a>
-    
-    
-    
-    <a href="/tags/#项目工程" title="项目工程" rel="2">项目工程</a>
-    
-    
-    
-    <a href="/tags/#x86" title="x86" rel="9">x86</a>
-    
-    
-  </div>
-</section>
-
-
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-  <h5><a href="/about/">关于自己</a></h5>
-  <div class="short-about">
-
-    
-    <img id="avatar_pic" src="/img/avatar/fatpeople.png" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
-    
-
-    
-    <p>Don&#39;t wait Don&#39;t wait Don&#39;t wait for anything...</p>
-    
-
-    <!-- SNS Link -->
-    <ul class="list-inline">
-      
-
-      
-      <li>
-        <a target="_blank" href="https://github.com/000xiaoming">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-    </ul>
-  </div>
-</section>
-
-        <hr>
-    
-        <!-- RECENT POSTS -->
-
-<h5><a href="/">最近博文</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="Deep-understanding-of-variable-parameter-systems/">
-      <li>预编译变参系统与预编译器粘结运算符以及&#34;回调宏&#34;的应用</li>
-    </a>
-    
-    <a href="Multi-Macro-with-Annotation/">
-      <li>多行宏添加注释的错误(如果不想因为脑子局部性注意力而导致浪费一下午+一晚上时间,请好好看)</li>
-    </a>
-    
-    <a href="YEMU%E6%A8%A1%E6%8B%9F%E5%99%A8%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/">
-      <li>YEMU模拟器运行机制</li>
-    </a>
-    
-    <a href="C-Preprocessor-Token-Pasting-Operator/">
-      <li>C-Preprocessor-Token-Pasting-Operator</li>
-    </a>
-    
-    <a href="cmd_c%E5%B5%8C%E5%A5%97%E8%B0%83%E7%94%A8/">
-      <li>cmd_c嵌套调用</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
         <!-- Friends Blog -->
-
-<h5><a href="/">链友</a></h5>
-<ul class="list-inline">
-  
-  <li><a href="https://v-vincen.life/" target="_blank">V_Vincen</a></li>
-  
-  <li><a href="http://beantech.org" target="_blank">Bean Tech</a></li>
-  
-  <li><a href="http://huangxuan.me" target="_blank">Hux Blog</a></li>
-  
-  <li><a href="https://hexo.io/" target="_blank">Hexo</a></li>
-  
-  <li><a href="https://fe32.top/" target="_blank">Ethan.Tzy</a></li>
-  
-</ul>
-
-
+        
         <hr>
-    
-        <!-- Archives -->
+        <h5>链友</h5>
+        <ul class="list-inline">
 
-<h5><a href="/archives/">archives</a></h5>
-<div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/05/">May 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/04/">April 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/03/">March 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/01/">January 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/12/">December 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/10/">October 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/09/">September 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/08/">August 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/07/">July 2023</a><span class="archive-list-count">4</span></li></ul>
-</div>
-
-
-        <hr>
-    
-        <!-- Categories -->
-
-<h5><a href="/categories/">categories</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="/categories/#Programer">
-      <li>Programer</li>
-    </a>
-    
-    <a href="/categories/#C/C++">
-      <li>C/C++</li>
-    </a>
-    
-    <a href="/categories/#RISC-V问题和解决方案以及现象">
-      <li>RISC-V问题和解决方案以及现象</li>
-    </a>
-    
-    <a href="/categories/#项目工程">
-      <li>项目工程</li>
-    </a>
-    
-    <a href="/categories/#x86">
-      <li>x86</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-</div>
-
-
-    
+          
+          <li>
+            <a href="https://v-vincen.life/" target="_blank">V_Vincen</a>
+          </li>
+          
+          <li>
+            <a href="http://beantech.org" target="_blank">Bean Tech</a>
+          </li>
+          
+          <li>
+            <a href="http://huangxuan.me" target="_blank">Hux Blog</a>
+          </li>
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+          <li>
+            <a href="https://fe32.top/" target="_blank">Ethan.Tzy</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
   </div>
-</div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->
@@ -1156,7 +858,7 @@ load指令后跟存储指令时分为两种情况:
     let jsdelivr = "https://cdn.jsdelivr.net/gh/";
     let gh = "000xiaoming";
     let ghPages = gh + ".github.io";
-    let pagePath = "cn/index.html";
+    let pagePath = "cn/cmd_c嵌套调用/";
     let jsdelivrurl;
     if (pagePath.indexOf("index.html") != -1) {
       jsdelivrurl = jsdelivr + gh + "/" + ghPages;
