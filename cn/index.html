@@ -257,9 +257,9 @@
           
           
           <li>
-            <a href="/categories/">
+            <a href="/tags/">
               
-              分类
+              标签
               
               
             </a>
@@ -268,9 +268,9 @@
           
           
           <li>
-            <a href="/tags/">
+            <a href="/categories/">
               
-              标签
+              分类
               
               
             </a>
@@ -459,6 +459,41 @@
       <!-- Main Content -->
 
 
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/debug/">
+    <h2 class="post-title">
+      工程debug经验
+    </h2>
+    <h3 class="post-subtitle">
+      工程项目
+    </h3>
+    <div class="post-content-preview">
+      关于实现指令过程中的debug
+1.加载/存储指令调用Mr/Mw宏,Mr/Mw宏是对vaddr_read/vaddr_write函数的封装
+注意,关于vaddr_read/vaddr_write函数其中封装的paddr系列函数,以及更深的guest_to_host函数,以及更深的pmem系列函数,以及更深的位于host.h文件中的host_read函数.返回的都是uint32_t.如果读取1......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Bruce LEE on
+    2024-05-31
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#工程项目" title="工程项目">工程项目</a>
+    
+  </div>
+  
+
+</div>
+<hr>
 
 <div class="post-preview">
   
@@ -802,44 +837,6 @@ S的每比特需要6到8个晶体管,过去是使用S芯片来作为一级或二
 </div>
 <hr>
 
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/RISCV乱弹琴_1/">
-    <h2 class="post-title">
-      RISCV直接模式处理例外的实现问题与解决方案/PC的变化与SEPC的存储精确性问题/反相关代码导致的被迫按序执行的问题/内存别名问题
-    </h2>
-    <h3 class="post-subtitle">
-      RISC-V
-    </h3>
-    <div class="post-content-preview">
-      RISC-V世界的严格区分例外和中断
-我们实现例外处理机制,使用的是RISC-V中的多个处理模式之一的直接模式.
-就是所有的例外处理,都使用统一的例外处理入口地址,跳转到这个地址后,由这个地址里面的指令通过读取mcause寄存器的值,来选择跳转的不同的处理程序.
-这是普遍例外的处理,中断也是一样的.
-在RISC-V中,中断指处理器外部事件,例外指代所有事件
-RISC-V直接模式处理例外的实现......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce LEE on
-    2024-02-14
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象">RISC-V问题和解决方案以及现象</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
 
   <!-- Pager -->
   <ul class="pager">
@@ -895,6 +892,10 @@ RISC-V直接模式处理例外的实现......
     
     
     <a href="/tags/#x86" title="x86" rel="9">x86</a>
+    
+    
+    
+    <a href="/tags/#工程项目" title="工程项目" rel="1">工程项目</a>
     
     
   </div>
@@ -957,6 +958,10 @@ RISC-V直接模式处理例外的实现......
 <div class="widget">
   <ul>
     
+    <a href="debug/">
+      <li>工程debug经验</li>
+    </a>
+    
     <a href="Deep-understanding-of-variable-parameter-systems/">
       <li>预编译变参系统与预编译器粘结运算符以及&#34;回调宏&#34;的应用</li>
     </a>
@@ -971,10 +976,6 @@ RISC-V直接模式处理例外的实现......
     
     <a href="instruction/">
       <li>instruction</li>
-    </a>
-    
-    <a href="C-Preprocessor-Token-Pasting-Operator/">
-      <li>C-Preprocessor-Token-Pasting-Operator</li>
     </a>
     
   </ul>
@@ -1007,7 +1008,7 @@ RISC-V直接模式处理例外的实现......
 
 <h5><a href="/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/05/">May 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/04/">April 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/03/">March 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/01/">January 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/12/">December 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/10/">October 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/09/">September 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/08/">August 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/07/">July 2023</a><span class="archive-list-count">4</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/05/">May 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/04/">April 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/03/">March 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/01/">January 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/12/">December 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/10/">October 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/09/">September 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/08/">August 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/07/">July 2023</a><span class="archive-list-count">4</span></li></ul>
 </div>
 
 
@@ -1037,6 +1038,10 @@ RISC-V直接模式处理例外的实现......
     
     <a href="/categories/#x86">
       <li>x86</li>
+    </a>
+    
+    <a href="/categories/#工程项目">
+      <li>工程项目</li>
     </a>
     
   </ul>
