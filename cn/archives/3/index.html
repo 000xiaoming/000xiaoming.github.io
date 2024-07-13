@@ -246,6 +246,17 @@
           
           
           <li>
+            <a href="/tags/">
+              
+              标签
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
             <a href="/archives/">
               
               归档
@@ -260,17 +271,6 @@
             <a href="/categories/">
               
               分类
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/tags/">
-              
-              标签
               
               
             </a>
@@ -459,6 +459,120 @@
       <!-- Main Content -->
 
 
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/RISCV基本设计理念/">
+    <h2 class="post-title">
+      RISCV基本设计理念
+    </h2>
+    <h3 class="post-subtitle">
+      RISC-V
+    </h3>
+    <div class="post-content-preview">
+      RISCV基本设计理念
+并行性的重要性
+未来程序员必须要成功切换到显式并行编程上面.所以我们应该要清晰的认识到并行编程的重要性.并行涉及到多个层面:指令级并行,数据级并行,线程级并行.
+同时也分为硬件方面,编译方面,操作系统方面.
+功耗:跟负载电容,电压平方,时钟频率有关
+近30年每一次技术更新换代主要是通过减低电压,来减低功耗,同时提高时钟频率来增加性能.
+由于目前功耗墙的限制,现在很难进......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Bruce Lee on
+    2024-01-01
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象">RISC-V问题和解决方案以及现象</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/last/">
+    <h2 class="post-title">
+      x86汇编搁置的地方
+    </h2>
+    <h3 class="post-subtitle">
+      x86
+    </h3>
+    <div class="post-content-preview">
+      强调
+在安装程序中，要注意安装的目标程序和目标地址的安全空间大小，使用movsb类似的指令时，要注意cx寄存器的存储大小和转移目标程序的大小
+在编写中断例程中，要注意处理程序里面的jmp指令，必须全部是相对跳转指令，所有的标号，都要注意，其使用的时候，只有相对跳转指令里面使用标号才合法，其他的使用，都有漏洞
+关于，调用别的处理程序的时候（中断例程），可以看情况，是否还需要将寄存器保留入栈，有......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Bruce Lee on
+    2023-12-12
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#x86" title="x86">x86</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/x86_3/">
+    <h2 class="post-title">
+      x86编程思考过程片段(3)关于编程技巧,注意事项,指令细节
+    </h2>
+    <h3 class="post-subtitle">
+      x86
+    </h3>
+    <div class="post-content-preview">
+      -每个任务都有4GB的虚拟内存空间（线性，平坦）
+-流水线技术-分解指令任务，同时差别执行（减少时钟周期个数）
+-静态存储器（SRAM）是用寄存器的材料做的内存（反馈原理制作的存储电路，使用触发器）
+动态存储器（DRAM），因其电容需要定时刷新，故得名动态
+高速缓存采用的程序的局部性原理
+-乱序执行的本质不是胡乱取指令，而是在更微小层面上的流水线技术
+将指令拆分成若干细小操作，在执行该指令中......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Bruce Lee on
+    2023-10-11
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#x86" title="x86">x86</a>
+    
+  </div>
+  
+
+</div>
+<hr>
 
 <div class="post-preview">
   
@@ -726,82 +840,6 @@ bool print_data (int a)
 </div>
 <hr>
 
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/lab4/">
-    <h2 class="post-title">
-      超级无敌简单入门x86-8086汇编实验：移送程序代码-最简化安装
-    </h2>
-    <h3 class="post-subtitle">
-      最简单的汇编实验...
-    </h3>
-    <div class="post-content-preview">
-      本实验目的：这是一个入门实验，但是可以为了以后理解中断处理程序那篇打下基础，程序代码的移送，换句话说就是安装！
-我想写一个程序，程序的功能呢就是将自己的机器码(mov ax,4c00h之前的代码）移送出去，移送到哪先不管，假定就移送到0200：0000这个起始地址吧。请你实现这个程序。（假设系统分配内存空间时，程序地址是cs：0000）
-（关于0200：0000这个地址，在以后的中断程序设计......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2023-07-15
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#x86" title="x86">x86</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/assembly_start/">
-    <h2 class="post-title">
-      DOS基础与汇编
-    </h2>
-    <h3 class="post-subtitle">
-      x86
-    </h3>
-    <div class="post-content-preview">
-      汇编开始的地方(至稚嫩的自己)
-DOSBox上编程
-MOUNT命令，挂载c盘，将源地址挂载出去
-使用C:命令，切换目录
-使用masm命令来编译asm文件，生成obj文件
-使用link命令来链接obj文件，生成exe文件
-源文件必须放在MASM文件目录下，减少冗余的文件目录
-进入挂载masm后的c盘中，使用edit文本编辑器经行asm文件代码编写
-（masm后面加入当前目录下的文件，可以省略扩......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2023-07-14
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#x86" title="x86">x86</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
 
   <!-- Pager -->
   <ul class="pager">
@@ -810,6 +848,10 @@ MOUNT命令，挂载c盘，将源地址挂载出去
       <a href="/cn/archives/2/">&larr; 上一页</a>
     </li>
     
+    
+    <li class="next">
+      <a href="/cn/archives/4/">下一页 &rarr;</a>
+    </li>
     
   </ul>
 
@@ -844,7 +886,7 @@ MOUNT命令，挂载c盘，将源地址挂载出去
     
     
     
-    <a href="/tags/#C/C++" title="C/C++" rel="4">C/C++</a>
+    <a href="/tags/#C/C++" title="C/C++" rel="7">C/C++</a>
     
     
     
@@ -923,24 +965,24 @@ MOUNT命令，挂载c盘，将源地址挂载出去
 <div class="widget">
   <ul>
     
+    <a href="../../stdarg-sprintf-implementation/">
+      <li>sprintf的实现与stdarg的可能实现</li>
+    </a>
+    
+    <a href="../../batch-mode-RTFSC-makefile/">
+      <li>Makefile工程代码以及batch模式</li>
+    </a>
+    
+    <a href="../../PA2-RTFSC/">
+      <li>PA2-RTFSC</li>
+    </a>
+    
     <a href="../../debug/">
       <li>工程debug经验</li>
     </a>
     
     <a href="../../Deep-understanding-of-variable-parameter-systems/">
       <li>预编译变参系统与预编译器粘结运算符以及&#34;回调宏&#34;的应用</li>
-    </a>
-    
-    <a href="../../Multi-Macro-with-Annotation/">
-      <li>多行宏添加注释的错误(如果不想因为脑子局部性注意力而导致浪费一下午+一晚上时间,请好好看)</li>
-    </a>
-    
-    <a href="../../YEMU%E6%A8%A1%E6%8B%9F%E5%99%A8%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/">
-      <li>YEMU模拟器运行机制</li>
-    </a>
-    
-    <a href="../../instruction/">
-      <li>instruction</li>
     </a>
     
   </ul>
@@ -973,7 +1015,7 @@ MOUNT命令，挂载c盘，将源地址挂载出去
 
 <h5><a href="/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/05/">May 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/04/">April 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/03/">March 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/01/">January 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2023/12/">December 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2023/10/">October 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2023/09/">September 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2023/08/">August 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2023/07/">July 2023</a><span class="archive-list-count">4</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/07/">July 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/05/">May 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/04/">April 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/03/">March 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/01/">January 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2023/12/">December 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2023/10/">October 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2023/09/">September 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2023/08/">August 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2023/07/">July 2023</a><span class="archive-list-count">4</span></li></ul>
 </div>
 
 

@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://000xiaoming.github.io/cn/stdarg-sprintf-implementation/</loc>
+    <lastmod>2024-07-13</lastmod>
+  </url>
+  <url>
+    <loc>https://000xiaoming.github.io/cn/batch-mode-RTFSC-makefile/</loc>
+    <lastmod>2024-07-13</lastmod>
+  </url>
+  <url>
+    <loc>https://000xiaoming.github.io/cn/PA2-RTFSC/</loc>
+    <lastmod>2024-07-13</lastmod>
+  </url>
+  <url>
     <loc>https://000xiaoming.github.io/cn/debug/</loc>
     <lastmod>2024-05-31</lastmod>
   </url>

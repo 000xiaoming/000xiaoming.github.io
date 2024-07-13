@@ -246,6 +246,17 @@
           
           
           <li>
+            <a href="/tags/">
+              
+              TAGS
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
             <a href="/archives/">
               
               ARCHIVES
@@ -260,17 +271,6 @@
             <a href="/categories/">
               
               CATEGORIES
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/tags/">
-              
-              TAGS
               
               
             </a>
@@ -459,6 +459,122 @@
       <!-- Main Content -->
 
 
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/stdarg-sprintf-implementation/">
+    <h2 class="post-title">
+      sprintf的实现与stdarg的可能实现
+    </h2>
+    <h3 class="post-subtitle">
+      C/C++
+    </h3>
+    <div class="post-content-preview">
+      sprintf的实现与stdarg的可能实现
+使用stdarg来实现函数的变参.
+stdarg可能实现
+对于va_list, 这必然是一个指针,用于指示下一个变量的地址.
+va_start这个宏,传入了两个参数,一个是args,一个是最后一个固定参数.
+知道了最后一个固定参数,便可以根据固定参数的位置和其大小,使args指向下一个参数位置.
+va_arg宏也是传入两个参数,一个是args,一......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Bruce Lee on
+    2024-07-13
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#C/C++" title="C/C++">C/C++</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/batch-mode-RTFSC-makefile/">
+    <h2 class="post-title">
+      Makefile工程代码以及batch模式
+    </h2>
+    <h3 class="post-subtitle">
+      C/C++
+    </h3>
+    <div class="post-content-preview">
+      Makefile and batch mode运行nemu
+之前的分析getopt_long的文档中,便学习了这里的参数传递.
+monitor.c文件中关于parse_args函数,对于不同的参数传递的处理.
+这里就有一个batch参数,经过测试:
+将swtich的参数直接改为’b’,在运行nemu的时候,确实是直接进行batch mode.
+那么理论正确后,可以在make run之后加上A......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Bruce Lee on
+    2024-07-13
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#C/C++" title="C/C++">C/C++</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/PA2-RTFSC/">
+    <h2 class="post-title">
+      PA2-RTFSC
+    </h2>
+    <h3 class="post-subtitle">
+      C/C++
+    </h3>
+    <div class="post-content-preview">
+      模拟器中关于指令ebreak的原理
+ebreak指令是用于debugging.
+转移控制给debugger或者monitor
+其指令格式与其他指令格式不同:确实是其指令位都是0.
+另一个作用:
+作为断点点(breakpoint),可以由程序员或者debugger在程序中插入ebreak作为暂停处理器,使处理器的状态为stop.
+这个ebreak指令是debugging,monite. 或者e......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Bruce Lee on
+    2024-07-13
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#C/C++" title="C/C++">C/C++</a>
+    
+  </div>
+  
+
+</div>
+<hr>
 
 <div class="post-preview">
   
@@ -723,120 +839,6 @@ execute函数会调用exec_once函数传入Decode s变量和cpu.pc变量
 </div>
 <hr>
 
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/系列宏以及函数/">
-    <h2 class="post-title">
-      系列宏以及函数
-    </h2>
-    <h3 class="post-subtitle">
-      项目工程
-    </h3>
-    <div class="post-content-preview">
-      INSTPAT_INST宏是怎么起作用的?
-只引用了Decode类型变量s,引用s中的isa内部变量,引用内部变量isa的inst联合体,引用inst联合体中的val字段.
-该宏在INSTPAT宏的定义中使用,用于在pattern_decode函数之后,检测当前执行指令是否与当前执行的模式匹配中的指令格式匹配.这里的发挥的作用就是使用但前指令的二进制串.
-INSTPAT_MATCH宏是怎么其......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2024-04-08
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#项目工程" title="项目工程">项目工程</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/定义一个宏,来检测另一个宏是否被定义的优化代码/">
-    <h2 class="post-title">
-      定义一个宏,来检测另一个宏是否被定义的优化代码
-    </h2>
-    <h3 class="post-subtitle">
-      风景如画
-    </h3>
-    <div class="post-content-preview">
-      定义一个宏,来检测另一个宏是否被定义的优化代码
-该问题的原提出者见stackoverflow:
-https://stackoverflow.com/questions/26099745/test-if-preprocessor-symbol-is-defined-inside-macro
-关于这个宏定义:
-1#define TRACE(x) &quot;&quot; #x
-#x是c预处理器的......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2024-03-23
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#C/C++" title="C/C++">C/C++</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/RISCV存储方面/">
-    <h2 class="post-title">
-      RISCVcache数据块容量权衡问题/大数据块导致的失效损失长延迟问题/cache容量大小与命中率问题/多路组相联策略减低失效率/组相联组内选择数据块策略
-    </h2>
-    <h3 class="post-subtitle">
-      RISC-V
-    </h3>
-    <div class="post-content-preview">
-      层次化存储的根据:局部性原理
-由时间局部性和空间局部性
-层次化存储
-这意味着所有的上层次的数据都是下层次数据的子集:只有数据先在第i+1层出现,才会在第i层出现.
-SRAM与DRAM的价格差主要体现
-S和D的实现面积有很大差别,在相同面积的硅上D能实现更多的存储容量,S的每比特占用面积要大很多.
-S的每比特需要6到8个晶体管,过去是使用S芯片来作为一级或二级高速缓存
-由于摩尔定律,现在所有的......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2024-02-26
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象">RISC-V问题和解决方案以及现象</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
 
   <!-- Pager -->
   <ul class="pager">
@@ -879,7 +881,7 @@ S的每比特需要6到8个晶体管,过去是使用S芯片来作为一级或二
     
     
     
-    <a href="/tags/#C/C++" title="C/C++" rel="4">C/C++</a>
+    <a href="/tags/#C/C++" title="C/C++" rel="7">C/C++</a>
     
     
     
@@ -958,24 +960,24 @@ S的每比特需要6到8个晶体管,过去是使用S芯片来作为一级或二
 <div class="widget">
   <ul>
     
+    <a href="cn/stdarg-sprintf-implementation/">
+      <li>sprintf的实现与stdarg的可能实现</li>
+    </a>
+    
+    <a href="cn/batch-mode-RTFSC-makefile/">
+      <li>Makefile工程代码以及batch模式</li>
+    </a>
+    
+    <a href="cn/PA2-RTFSC/">
+      <li>PA2-RTFSC</li>
+    </a>
+    
     <a href="cn/debug/">
       <li>工程debug经验</li>
     </a>
     
     <a href="cn/Deep-understanding-of-variable-parameter-systems/">
       <li>预编译变参系统与预编译器粘结运算符以及&#34;回调宏&#34;的应用</li>
-    </a>
-    
-    <a href="cn/Multi-Macro-with-Annotation/">
-      <li>多行宏添加注释的错误(如果不想因为脑子局部性注意力而导致浪费一下午+一晚上时间,请好好看)</li>
-    </a>
-    
-    <a href="cn/YEMU%E6%A8%A1%E6%8B%9F%E5%99%A8%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/">
-      <li>YEMU模拟器运行机制</li>
-    </a>
-    
-    <a href="cn/instruction/">
-      <li>instruction</li>
     </a>
     
   </ul>
@@ -1008,7 +1010,7 @@ S的每比特需要6到8个晶体管,过去是使用S芯片来作为一级或二
 
 <h5><a href="/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archive/2024/05/">May 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2024/04/">April 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2024/03/">March 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2024/01/">January 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2023/12/">December 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2023/10/">October 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2023/09/">September 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2023/08/">August 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2023/07/">July 2023</a><span class="archive-list-count">4</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archive/2024/07/">July 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2024/05/">May 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2024/04/">April 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2024/03/">March 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2024/01/">January 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2023/12/">December 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2023/10/">October 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2023/09/">September 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2023/08/">August 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2023/07/">July 2023</a><span class="archive-list-count">4</span></li></ul>
 </div>
 
 
