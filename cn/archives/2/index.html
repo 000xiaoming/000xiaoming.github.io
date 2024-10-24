@@ -467,6 +467,161 @@
   <!-- top end -->
   
 
+  <a href="/cn/YEMU模拟器运行机制/">
+    <h2 class="post-title">
+      YEMU模拟器运行机制
+    </h2>
+    <h3 class="post-subtitle">
+      项目工程
+    </h3>
+    <div class="post-content-preview">
+      YEMU模拟器运行机制
+
+#include &lt;stdint.h&gt;
+#include &lt;stdio.h&gt;
+//------------4个寄存器,16字节地址
+#define NREG 4
+#define NMEM 16
+// define the instruction format
+//-----------------联合体用法,总长是8bit,可以引用不同的位域......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Bruce Lee on
+    2024-05-08
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#项目工程" title="项目工程">项目工程</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/instruction/">
+    <h2 class="post-title">
+      instruction
+    </h2>
+    <h3 class="post-subtitle">
+      项目工程
+    </h3>
+    <div class="post-content-preview">
+      
+decode_operand函数
+使用BITS宏,从s中的指令二进制串抓取rs1,rs2以及rd的二进制值.
+然后根据传入的type类型进行switch跳转,然后执行流水线中的各个操作:
+src1R宏,这个宏就是读取rs1存储的寄存器值.
+src2R宏,读取rs2存储的寄存器值.
+关于src(x)R宏中,调用R宏来做最底层的读取操作.
+或调用immI宏:读取I型指令立即数字段.
+immU宏......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Bruce Lee on
+    2024-05-08
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#项目工程" title="项目工程">项目工程</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/C-Preprocessor-Token-Pasting-Operator/">
+    <h2 class="post-title">
+      C-Preprocessor-Token-Pasting-Operator
+    </h2>
+    <h3 class="post-subtitle">
+      小酒小菜
+    </h3>
+    <div class="post-content-preview">
+      c编译器名称粘结运算符(C Preprocessor Token Pasting Operator)
+使用示例
+12345678910#include &lt;stdio.h&gt;#define concat(x, y) x ## yint main(int argc, char** argv)&#123;	int concat(x, y) = 32;	printf(&quot;%d\n&......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Bruce Lee on
+    2024-05-08
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#C/C++" title="C/C++">C/C++</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/cmd_c嵌套调用/">
+    <h2 class="post-title">
+      cmd_c嵌套调用
+    </h2>
+    <h3 class="post-subtitle">
+      项目工程
+    </h3>
+    <div class="post-content-preview">
+      cmd_c等一系列执行函数CALL cpu_exec函数
+cpu_exec参数:调用一次该函数要执行的指令数
+然后cpu_exec带着指令数CALL execute(n)函数
+execute函数(详解)
+execute函数会调用exec_once函数传入Decode s变量和cpu.pc变量
+调用execute的cpu_exec函数的n值,在execute中用于for循环,多次调用exec_......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Bruce Lee on
+    2024-04-08
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#项目工程" title="项目工程">项目工程</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
   <a href="/cn/系列宏以及函数/">
     <h2 class="post-title">
       系列宏以及函数
@@ -686,154 +841,6 @@ load指令后跟存储指令时分为两种情况:
 </div>
 <hr>
 
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/RISCV运算中间结果系列问题/">
-    <h2 class="post-title">
-      RISCV舍入问题和中间结果存储问题/浮点并行加速的不稳定性问题以及传统并行算法研究步骤
-    </h2>
-    <h3 class="post-subtitle">
-      RISC-V
-    </h3>
-    <div class="post-content-preview">
-      先前处理算术运算时舍入问题和中间结果存储的存储问题
-IEEE 754标准提供多种舍入方法,这是因为在连续整数之间的小数,浮点数所能精确表示的个数是有限的,单精度浮点所能精确表达的小数的有效位必须小于23位,双精度则是53位(包含隐藏位)
-为了得到所能有的寄存器位数能表示的位,采取了额外添加两个位数来存储中间计算结果,分别是保护位/舍入位
-IEEE754标准有四种舍入模式:向上舍入/向下舍入/......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2024-01-14
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象">RISC-V问题和解决方案以及现象</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/RISCV非规格化浮点系列问题/">
-    <h2 class="post-title">
-      RISCV乘法硬件加速算法原理/单精度规格化与非规格化最小正数问题/F/D标准扩展与I问题
-    </h2>
-    <h3 class="post-subtitle">
-      RISC-V
-    </h3>
-    <div class="post-content-preview">
-      乘法算法的一般算法的演变和使用硬件加速算法原理分析
-乘法算法与纸笔算法是一样的.二进制乘法,由于二进制的特殊型(只有1或0),当乘数的某一位是1时,就将被乘数复制到合适的位置,如果是0时,就将0复制到合适的位置,然后全部加起来.计算机的乘法算法与之同源.
-一般算法就是上述算法,只不过在&quot;复制到合适的位置&quot;这里,就是将每一次的被乘数左移一位,使其扩大2的幂.
-进制由什么定义......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2024-01-06
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象">RISC-V问题和解决方案以及现象</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/RISCV指令设计和使用问题/">
-    <h2 class="post-title">
-      RISCV减低边界检查的开销方法/硬连线为零的可能实现方式/大立即数的RISC-V编址和寻址问题/分支和跳转指令中立即数字段的PC相对偏移表示问题
-    </h2>
-    <h3 class="post-subtitle">
-      RISC-V
-    </h3>
-    <div class="post-content-preview">
-      使用最高有效位来减低边界检查的开销
-我们可以至少保证对于数组的边界的值,一定是一个正确的合理的数y(指代y是一个有符号正数).
-我们需要检查下标x是否满足0 &lt;= x &lt; y
-则仅使用:
-1bgeu x, y, error //伪代码
-就可以完成两项检查.
-这里利用了最高有效位的双重含义:在有符号整数中,最高有效位为1,表示一个负数,但是在无符号整数中,表示这是一个很大的数.
-c......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2024-01-03
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象">RISC-V问题和解决方案以及现象</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/RISCV设计中跳转和同步系列问题和x86/">
-    <h2 class="post-title">
-      RISCV超12位立即数字段的跳转问题/解决数据竞争问题的底层支持/数组索引访问与指针访问/常见优化/x86的复杂性缺陷
-    </h2>
-    <h3 class="post-subtitle">
-      RISC-V
-    </h3>
-    <div class="post-content-preview">
-      关于超出条件分支的12位立即数字段的跳转问题
-在少有的可能下,条件跳转会跳到很远的地址空间(超过12位地址表示的半字范围),我们不选择在硬件方面而是在汇编程序方面作出解答:在分支目标中插入无条件跳转指令,并将条件取反,以便条件分支决定是否跳过该无条件跳转.
-SB型条件分支指令的立即数字段是12位,UJ型无条件跳转指令的立即数字段是20位.支持正负2^19个半字范围的寻址.
-关于逆向工程将机器......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2024-01-03
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象">RISC-V问题和解决方案以及现象</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
 
   <!-- Pager -->
   <ul class="pager">
@@ -888,7 +895,7 @@ SB型条件分支指令的立即数字段是12位,UJ型无条件跳转指令的�
     
     
     
-    <a href="/tags/#项目工程" title="项目工程" rel="4">项目工程</a>
+    <a href="/tags/#项目工程" title="项目工程" rel="8">项目工程</a>
     
     
     
@@ -959,24 +966,24 @@ SB型条件分支指令的立即数字段是12位,UJ型无条件跳转指令的�
 <div class="widget">
   <ul>
     
+    <a href="../../elf_handle_and_am_facility/">
+      <li>elf处理原理和相关基础设施</li>
+    </a>
+    
+    <a href="../../trace_implement/">
+      <li>trace实现原理与应用</li>
+    </a>
+    
+    <a href="../../tracing_based_iringbuf/">
+      <li>跟踪设施与iringbuf的建立</li>
+    </a>
+    
+    <a href="../../parameter_and_makefile_code/">
+      <li>时间/log/参数传递和makefile全自动编译</li>
+    </a>
+    
     <a href="../../stdarg-sprintf-implementation/">
       <li>sprintf的实现与stdarg的可能实现</li>
-    </a>
-    
-    <a href="../../batch-mode-RTFSC-makefile/">
-      <li>Makefile工程代码以及batch模式</li>
-    </a>
-    
-    <a href="../../RTFSC_2/">
-      <li>RTFSC_2</li>
-    </a>
-    
-    <a href="../../debug/">
-      <li>工程debug经验</li>
-    </a>
-    
-    <a href="../../Deep-understanding-of-variable-parameter-systems/">
-      <li>预编译变参系统与预编译器粘结运算符以及&#34;回调宏&#34;的应用</li>
     </a>
     
   </ul>
@@ -1009,7 +1016,7 @@ SB型条件分支指令的立即数字段是12位,UJ型无条件跳转指令的�
 
 <h5><a href="/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/07/">July 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/05/">May 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/04/">April 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/03/">March 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/01/">January 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2023/12/">December 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2023/10/">October 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2023/09/">September 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2023/08/">August 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2023/07/">July 2023</a><span class="archive-list-count">4</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/08/">August 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/07/">July 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/05/">May 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/04/">April 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/03/">March 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/01/">January 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2023/12/">December 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2023/10/">October 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2023/09/">September 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2023/08/">August 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2023/07/">July 2023</a><span class="archive-list-count">4</span></li></ul>
 </div>
 
 

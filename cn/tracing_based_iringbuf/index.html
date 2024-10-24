@@ -127,10 +127,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://000xiaoming.github.io/archive/2023/12/">
+  <link rel="canonical" href="https://000xiaoming.github.io/cn/tracing_based_iringbuf/">
   <title>
     
-      I&#39;m Bruce Lee
+      跟踪设施与iringbuf的建立 - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -227,7 +227,7 @@
       <div class="navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <a href="/">HOME</a>
+            <a href="/">首页</a>
           </li>
 
           
@@ -237,7 +237,7 @@
           <li>
             <a href="/about/">
               
-              ABOUT
+              关于
               
               
             </a>
@@ -248,7 +248,7 @@
           <li>
             <a href="/archives/">
               
-              ARCHIVES
+              归档
               
               
             </a>
@@ -259,7 +259,7 @@
           <li>
             <a href="/categories/">
               
-              CATEGORIES
+              分类
               
               
             </a>
@@ -270,7 +270,7 @@
           <li>
             <a href="/tags/">
               
-              TAGS
+              标签
               
               
             </a>
@@ -281,36 +281,14 @@
           
           <li>
             <a class="popup-trigger">
-              <span class="search-icon"></span>SEARCH</a>
+              <span class="search-icon"></span>搜索</a>
           </li>
           
 
           <!-- LangSelect -->
           
           
-          <!-- LangSelect start -->
-          <!-- LangSelect -->
-<li>
-  <a id="lang-select-label"><i class="fa fa-globe"></i>
-    <span>
-      English
-    </span>
-    <select id="lang-select" data-canonical="archive/2023/12/index.html">
-      
-      
-      <option value="en"  selected >
-        English
-      </option>
-      
-      <option value="cn" >
-        简体中文
-      </option>
-      
-    </select>
-  </a>
-</li>
-
-          <!-- LangSelect end -->
+          
           
           
         </ul>
@@ -363,18 +341,18 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io');
-      --intro-header-background-image-url-page: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png');
+      --intro-header-background-image-url-page: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io//img/header_img/lml_bg1.png');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io//img/header_img/lml_bg1.png');
     }
     header.intro-header {
-       /*page*/
-        background-image: var(--intro-header-background-image-url-page);
-        /* background-image: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/archive_bg2.jpg'); */
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png'); */
       
     }
 
@@ -397,10 +375,24 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>经年治世</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">西风烈,长空雁叫霜晨月</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#项目工程" title="项目工程">项目工程</a>
+              
+            </div>
+            <h1>跟踪设施与iringbuf的建立</h1>
+            <h2 class="subheading">项目工程</h2>
+            <span class="meta">
+              Posted by Bruce Lee on
+              2024-08-18
+            </span>
+
+
+            
+            
+
+
           </div>
           
         </div>
@@ -441,729 +433,335 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Main Content -->
-<div class="container">
-  <div class="row">
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h1>从单步执行指令的实现原理到iringbuf实现细节</h1>
+<p>在cpu_exec函数和execute函数中有那么几个变量不是很起眼:g_nr_guest_inst和g_print_step,这两个都是全局变量.</p>
+<p>g_nr_guest_inst很简单,就是记录执行的客户程序的指令数量.</p>
+<p>关于单步执行的关键变量就是这个g_print_step变量.</p>
+<p>cmd_c指令就是单步执行指令的传参n为无穷大,执行无穷多的指令.</p>
+<p>所以如果如果si指令的参数n,如果小于10,那么就是符合程序员的想法,要单步执行10(及以下),如果大于10条,我们认为,就不是要单步执行了,而是直接执行完毕所有的指令.(10可以改变,更改MAX_INST_TO_PRINT).</p>
+<p>如果n &lt; MAX_INST_TO_PRINT,那么g_print_step就是true.</p>
+<h2 id="在execute函数中-进行for循环">在execute函数中,进行for循环</h2>
+<p>这里的for循环的迭代次数就是传入的上述参数.</p>
+<p>先是调用exec_once函数,这个函数用于进一步调用执行cpu的函数,以及进行条件定义CONFIG_ITRACE,进行一系列的信息存储.</p>
+<h2 id="进一步了解nemu的双线记录以及panic的输出">进一步了解nemu的双线记录以及panic的输出</h2>
+<p>第一线记录就是记录到nemu-log.txt文件中:</p>
+<p>init_log中log_file的指向,被赋值给log_fp</p>
+<p>然后在utils.h文件还中定义了log_write宏对这一系列的写入文件和便利哪个log_fp进行包装.</p>
+<p>对log_write进行进一步的包装就是_Log宏.</p>
+<p>对于log_write函数以及另一条记录线在trace_and_difftest函数中运用.</p>
+<p>这里,调用trace_and_difftest函数</p>
+<h2 id="trace-and-difftest函数">trace_and_difftest函数</h2>
+<p>在第一个条件执行命令中,ITRACE_COND(默认是被定义的)</p>
+<p>那么调用log_write宏(trace_and_difftest宏是在execute的for循环中每一条指令被执行之后就被调用.</p>
+<p>这里就是默认就是把每一条指令执行的信息记录到nemu-log.txt文件中.</p>
+<p>那么接下来就是另一个if语句,根据g_print_step bool变量判断是否在执行si指令,然后按照指令的规则,进行打印指令信息.</p>
+<p>而_Log宏,进行了更加规范化的格式打印,关于FILE,LINE,func以及一些宏的变参系统.</p>
+<p>Log宏又是对_Log宏进行的封装.</p>
+<p>其他的信息的记录,都是通过Log宏进行的,一般在statistic函数,cpu_exec函数的后续执行中.</p>
+<h2 id="具体指令的执行信息的来源">具体指令的执行信息的来源.</h2>
+<p>指令信息的来源,是一定要深入的执行指令的函数中.</p>
+<p>execute不够深,而是在exec_once函数中</p>
+<p>先明确一下,对于Decode结构体分析(之前分析过),那么里面是有一个128字节长的logbuf.</p>
+<p>这个logbuf变量也是根据条件IFDEF中的CONFIG_ITRACE宏来决定是否会被定义.</p>
+<p>根据CONFIG_ITRACE进行条件编译代码.</p>
+<p>在exec_once中,logbuf变量被赋值给了p.</p>
+<p>由p来进行处理指令地址(s-&gt;pc)</p>
+<p>然后指令二进制码(isa.inst.val)</p>
+<p>获取指令定义中的指令符号</p>
+<p>然后进行反汇编.</p>
+<p>这些全部被记录到了p变量中的地址(logbuf)</p>
+<h1>panic宏</h1>
+<p>panic宏是对Assert宏的包装,这个panic的使用是在一些未实现的函数,和内存地址溢出的时候调用.</p>
+<p>关于Assert函数,是直接调用assert函数,程序直接退出,不会是nemu的正常清理程序.</p>
+<p>而是直接输出尽可能多且有用的信息,然后调用assert,并不走会cpu_exec函数的那一套.</p>
+<h1>额外的错误出现信息的逻辑路径:</h1>
+<p>execute函数的for循环中,每一次循环都会检查nemu的状态.</p>
+<p>也就是说在exec_once函数中存在设置nemu状态的代码</p>
+<p>exec_once call isa_exec_once, isa_exec_once调用decode_exec</p>
+<p>在decode_exec中如果匹配到了ebreak指令,会调用NEMUTRAP宏.</p>
+<p>NEMUTRAP宏会调用set_nemu_state函数,传入NEMU_END参数,这样表示程序是完全执行完毕了.</p>
+<p>如果decode_exec中匹配到了inv指令,那么就说明这是一条未知指令,会调用invalid_inst函数,直接传入thispc参数.</p>
+<p>invalid_inst函数会打印出当前pc,然后告诉你,这条pc上的指令,你没有实现/指令的操作码写的不对.然后直接调用set_nemu_state函数,传入NEMU_ABORT参数.</p>
+<h1>不熟悉的综合程序错误情况</h1>
+<p>指令二进制码实现正确,但是操作出错,那么会在测试程序的check函数中出现错误,check函数会调用…</p>
+<p>指令二进制吗实现错误,那么直接调用invalid_inst,告诉你好玩的消息,然后退出你的程序.</p>
+<p>程序出错,出现了内存访问溢出,那么会直接输出相关消息,然后调用assert函数.</p>
+<p>大致的信息输出和输出通道以及状态变换的几条不熟悉的路径</p>
+<h1>iringbuf实现原理</h1>
+<p>首先,在程序明显已经指示错误并且已经要退出的地方,根据上述的分析,我们可以知道不同的错误出现,都会及时的回到cpu_exec函数的switch代码块中或者回到out_of_bound函数代码中,在这两个地方进行输出buf非常合理</p>
+<p>指令信息的来源:指令信息是采用循环结构,iringbuf,填写这个buf的时候是在trace_and_difftest函数中添加:因为根据上述的指令信息采集和处理的代码分析,我们理应该多复用已经存在的代码,并且添加更少的代码来达到合理且高效的目的.同时,这个iringbuf功能应该是和CONFIG_ITRACE_COND宏绑定在一起,这个可以在编译的时候,选择性添加的功能.</p>
+<h1>check函数的检查错误</h1>
+<p>check函数的检查,对于调试几乎没有帮助</p>
+<p>因为check函数定义在trap.h文件中,这里调用的check函数在交叉编译的时候,会被编译成对应的跳转地址代码块.</p>
+<p>当出现错误的时候,会跳转到check代码块,然后结束程序,并且出现bad trap.itrace会给出最后10条指令.</p>
+<p>这里几乎不会出现有价值的调试信息.</p>
+<p>check函数唯一给的信息,就是不对,是指令的操作码对的,但是操作不对.</p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/cn/trace_implement/" data-toggle="tooltip" data-placement="top" title="trace实现原理与应用">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/cn/parameter_and_makefile_code/" data-toggle="tooltip" data-placement="top" title="时间/log/参数传递和makefile全自动编译">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. All the images used in the blog are my original works or AI works, if you want to take it,don't hesitate. Thank you !
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=跟踪设施与iringbuf的建立&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/tracing_based_iringbuf/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <script src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Sun Aug 18 2024 12:00:00 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">从单步执行指令的实现原理到iringbuf实现细节</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%9C%A8execute%E5%87%BD%E6%95%B0%E4%B8%AD-%E8%BF%9B%E8%A1%8Cfor%E5%BE%AA%E7%8E%AF"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">在execute函数中,进行for循环</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%BF%9B%E4%B8%80%E6%AD%A5%E4%BA%86%E8%A7%A3nemu%E7%9A%84%E5%8F%8C%E7%BA%BF%E8%AE%B0%E5%BD%95%E4%BB%A5%E5%8F%8Apanic%E7%9A%84%E8%BE%93%E5%87%BA"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">进一步了解nemu的双线记录以及panic的输出</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#trace-and-difftest%E5%87%BD%E6%95%B0"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">trace_and_difftest函数</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%85%B7%E4%BD%93%E6%8C%87%E4%BB%A4%E7%9A%84%E6%89%A7%E8%A1%8C%E4%BF%A1%E6%81%AF%E7%9A%84%E6%9D%A5%E6%BA%90"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">具体指令的执行信息的来源.</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">panic宏</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">额外的错误出现信息的逻辑路径:</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">不熟悉的综合程序错误情况</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">iringbuf实现原理</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">check函数的检查错误</span></a></li></ol>
+        
+        </div>
+      </aside>
     
 
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
+
+
+      <!-- Sidebar Container -->
+      <div class="
                 col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
+                col-md-10 col-md-offset-1
+                sidebar-container">
 
-      <!-- Main Content -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
-      <!-- 归档列表 -->
-
-      
-
-      <!-- 归档列表 -->
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2024">
-          <span class="tag-text">2024</span>
-        </span>
-        <ul>
-          
-          <li>
-            08-20
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/trace_implement/" style="color: #0085a1">
-              <span>
-                trace实现原理与应用
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-20
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/elf_handle_and_am_facility/" style="color: #0085a1">
-              <span>
-                elf处理原理和相关基础设施
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-18
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/tracing_based_iringbuf/" style="color: #0085a1">
-              <span>
-                跟踪设施与iringbuf的建立
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-08
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/parameter_and_makefile_code/" style="color: #0085a1">
-              <span>
-                时间/log/参数传递和makefile全自动编译
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-13
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/stdarg-sprintf-implementation/" style="color: #0085a1">
-              <span>
-                sprintf的实现与stdarg的可能实现
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-13
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/batch-mode-RTFSC-makefile/" style="color: #0085a1">
-              <span>
-                Makefile工程代码以及batch模式
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-13
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/RTFSC_2/" style="color: #0085a1">
-              <span>
-                RTFSC_2
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            05-31
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/debug/" style="color: #0085a1">
-              <span>
-                工程debug经验
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            05-10
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Deep-understanding-of-variable-parameter-systems/" style="color: #0085a1">
-              <span>
-                预编译变参系统与预编译器粘结运算符以及"回调宏"的应用
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            05-09
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Multi-Macro-with-Annotation/" style="color: #0085a1">
-              <span>
-                多行宏添加注释的错误(如果不想因为脑子局部性注意力而导致浪费一下午+一晚上时间,请好好看)
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            05-08
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/instruction/" style="color: #0085a1">
-              <span>
-                instruction
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            05-08
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/YEMU模拟器运行机制/" style="color: #0085a1">
-              <span>
-                YEMU模拟器运行机制
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            05-08
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/C-Preprocessor-Token-Pasting-Operator/" style="color: #0085a1">
-              <span>
-                C-Preprocessor-Token-Pasting-Operator
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            04-08
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/系列宏以及函数/" style="color: #0085a1">
-              <span>
-                系列宏以及函数
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            04-08
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/cmd_c嵌套调用/" style="color: #0085a1">
-              <span>
-                cmd_c嵌套调用
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            03-23
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/定义一个宏,来检测另一个宏是否被定义的优化代码/" style="color: #0085a1">
-              <span>
-                定义一个宏,来检测另一个宏是否被定义的优化代码
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            02-26
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/RISCV存储方面/" style="color: #0085a1">
-              <span>
-                RISCVcache数据块容量权衡问题/大数据块导致的失效损失长延迟问题/cache容量大小与命中率问题/多路组相联策略减低失效率/组相联组内选择数据块策略
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            02-14
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/RISCV乱弹琴_1/" style="color: #0085a1">
-              <span>
-                RISCV直接模式处理例外的实现问题与解决方案/PC的变化与SEPC的存储精确性问题/反相关代码导致的被迫按序执行的问题/内存别名问题
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            02-03
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/RISCV不同阶段冒险问题和分支/" style="color: #0085a1">
-              <span>
-                RISCV不同阶段前递问题/load-use冒险的停顿技术/优化控制冒险发生时浪费的时钟周期问题分析/ID计算加速的专用前递通路问题/PC清理-预测加速问题/流水线清理问题
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            01-26
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/RISCV各类冒险问题/" style="color: #0085a1">
-              <span>
-                RISCV停顿与非停顿冒险/x0寄存器的数据冒险处理陷阱/寄存器同周期读写的解决方法/解决EX/MEM冒险
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            01-14
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/RISCV运算中间结果系列问题/" style="color: #0085a1">
-              <span>
-                RISCV舍入问题和中间结果存储问题/浮点并行加速的不稳定性问题以及传统并行算法研究步骤
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            01-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/RISCV非规格化浮点系列问题/" style="color: #0085a1">
-              <span>
-                RISCV乘法硬件加速算法原理/单精度规格化与非规格化最小正数问题/F/D标准扩展与I问题
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            01-03
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/RISCV设计中跳转和同步系列问题和x86/" style="color: #0085a1">
-              <span>
-                RISCV超12位立即数字段的跳转问题/解决数据竞争问题的底层支持/数组索引访问与指针访问/常见优化/x86的复杂性缺陷
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            01-03
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/RISCV指令设计和使用问题/" style="color: #0085a1">
-              <span>
-                RISCV减低边界检查的开销方法/硬连线为零的可能实现方式/大立即数的RISC-V编址和寻址问题/分支和跳转指令中立即数字段的PC相对偏移表示问题
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            01-01
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/RISCV基本设计理念/" style="color: #0085a1">
-              <span>
-                RISCV基本设计理念
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2023">
-          <span class="tag-text">2023</span>
-        </span>
-        <ul>
-          
-          <li>
-            12-12
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/last/" style="color: #0085a1">
-              <span>
-                x86汇编搁置的地方
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            10-11
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/x86_3/" style="color: #0085a1">
-              <span>
-                x86编程思考过程片段(3)关于编程技巧,注意事项,指令细节
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            09-23
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/x86_2/" style="color: #0085a1">
-              <span>
-                x86编程思考过程片段(2)关于编程技巧,注意事项,指令细节
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            09-14
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/本博客汇编代码的环境规范/" style="color: #0085a1">
-              <span>
-                本博客的汇编代码的环境规范
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            09-11
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/x86_1/" style="color: #0085a1">
-              <span>
-                x86编程思考过程片段(1)关于编程技巧,注意事项,指令细节
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-10
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/论持久战/" style="color: #0085a1">
-              <span>
-                论持久战
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-01
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/中断概览/" style="color: #0085a1">
-              <span>
-                x86-8086汇编：该架构的中断信息引发，中断向量表的配置，中断例程的执行
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-30
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/x86-8086显示数值/" style="color: #0085a1">
-              <span>
-                01-比较简单的x86-8086汇编实验：将数值显示到屏幕上
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-25
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/AI发展见解/" style="color: #0085a1">
-              <span>
-                AI，我们应该知道什么，未来，我们应该怎么发展
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-15
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/lab4/" style="color: #0085a1">
-              <span>
-                超级无敌简单入门x86-8086汇编实验：移送程序代码-最简化安装
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-14
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/assembly_start/" style="color: #0085a1">
-              <span>
-                DOS基础与汇编
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-      </div>
-      
-    </div>
-  </div>
-</div>
-
-
-      <!-- 如果开启评论功能 -->
-      
-    </div>
-
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-        <!-- Visitors -->
-<h5><a href="/">VISITORS</a></h5>
-
-
-        <hr>
-    
         <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#项目工程" title="项目工程">项目工程</a>
+            
+          </div>
+        </section>
+        
 
-<section>
-  <h5><a href="/tags/">FEATURED TAGS</a></h5>
-  <div class="tags">
-    
-    
-    <a href="/tags/#IT" title="IT" rel="2">IT</a>
-    
-    
-    
-    <a href="/tags/#C/C++" title="C/C++" rel="7">C/C++</a>
-    
-    
-    
-    <a href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象" rel="9">RISC-V问题和解决方案以及现象</a>
-    
-    
-    
-    <a href="/tags/#项目工程" title="项目工程" rel="8">项目工程</a>
-    
-    
-    
-    <a href="/tags/#x86" title="x86" rel="9">x86</a>
-    
-    
-    
-    <a href="/tags/#工程项目" title="工程项目" rel="1">工程项目</a>
-    
-    
-  </div>
-</section>
-
-
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-  <h5><a href="/about/">ABOUT ME</a></h5>
-  <div class="short-about">
-
-    
-    <img id="avatar_pic" src="/img/avatar/fatpeople.png" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
-    
-
-    
-    <p>Don&#39;t wait Don&#39;t wait Don&#39;t wait for anything...</p>
-    
-
-    <!-- SNS Link -->
-    <ul class="list-inline">
-      
-
-      
-      <li>
-        <a target="_blank" href="https://github.com/000xiaoming">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-    </ul>
-  </div>
-</section>
-
-        <hr>
-    
-        <!-- RECENT POSTS -->
-
-<h5><a href="/">RECENT POSTS</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="../../../cn/elf_handle_and_am_facility/">
-      <li>elf处理原理和相关基础设施</li>
-    </a>
-    
-    <a href="../../../cn/trace_implement/">
-      <li>trace实现原理与应用</li>
-    </a>
-    
-    <a href="../../../cn/tracing_based_iringbuf/">
-      <li>跟踪设施与iringbuf的建立</li>
-    </a>
-    
-    <a href="../../../cn/parameter_and_makefile_code/">
-      <li>时间/log/参数传递和makefile全自动编译</li>
-    </a>
-    
-    <a href="../../../cn/stdarg-sprintf-implementation/">
-      <li>sprintf的实现与stdarg的可能实现</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
         <!-- Friends Blog -->
-
-<h5><a href="/">FRIENDS</a></h5>
-<ul class="list-inline">
-  
-  <li><a href="https://v-vincen.life/" target="_blank">V_Vincen</a></li>
-  
-  <li><a href="http://beantech.org" target="_blank">Bean Tech</a></li>
-  
-  <li><a href="http://huangxuan.me" target="_blank">Hux Blog</a></li>
-  
-  <li><a href="https://hexo.io/" target="_blank">Hexo</a></li>
-  
-  <li><a href="https://fe32.top/" target="_blank">Ethan.Tzy</a></li>
-  
-</ul>
-
-
+        
         <hr>
-    
-        <!-- Archives -->
+        <h5>链友</h5>
+        <ul class="list-inline">
 
-<h5><a href="/archives/">archives</a></h5>
-<div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../2024/08/">August 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../2024/07/">July 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../2024/05/">May 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../2024/04/">April 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../2024/03/">March 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../2024/01/">January 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="">December 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../10/">October 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../09/">September 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../08/">August 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../07/">July 2023</a><span class="archive-list-count">4</span></li></ul>
-</div>
-
-
-        <hr>
-    
-        <!-- Categories -->
-
-<h5><a href="/categories/">categories</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="/categories/#Programer">
-      <li>Programer</li>
-    </a>
-    
-    <a href="/categories/#C/C++">
-      <li>C/C++</li>
-    </a>
-    
-    <a href="/categories/#RISC-V问题和解决方案以及现象">
-      <li>RISC-V问题和解决方案以及现象</li>
-    </a>
-    
-    <a href="/categories/#项目工程">
-      <li>项目工程</li>
-    </a>
-    
-    <a href="/categories/#x86">
-      <li>x86</li>
-    </a>
-    
-    <a href="/categories/#工程项目">
-      <li>工程项目</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-</div>
-
-
-    
+          
+          <li>
+            <a href="https://v-vincen.life/" target="_blank">V_Vincen</a>
+          </li>
+          
+          <li>
+            <a href="http://beantech.org" target="_blank">Bean Tech</a>
+          </li>
+          
+          <li>
+            <a href="http://huangxuan.me" target="_blank">Hux Blog</a>
+          </li>
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+          <li>
+            <a href="https://fe32.top/" target="_blank">Ethan.Tzy</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
   </div>
-</div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->
@@ -1272,7 +870,7 @@
     let jsdelivr = "https://cdn.jsdelivr.net/gh/";
     let gh = "000xiaoming";
     let ghPages = gh + ".github.io";
-    let pagePath = "archive/2023/12/index.html";
+    let pagePath = "cn/tracing_based_iringbuf/";
     let jsdelivrurl;
     if (pagePath.indexOf("index.html") != -1) {
       jsdelivrurl = jsdelivr + gh + "/" + ghPages;
@@ -1350,7 +948,7 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
             <span class="search-icon">
               <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
             </span>
-            <input autocomplete="off" placeholder="SEARCH..." type="text" id="local-search-input">
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
           </div>
         </div>
         <div id="local-search-result"></div>

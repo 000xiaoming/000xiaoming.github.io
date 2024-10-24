@@ -127,10 +127,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://000xiaoming.github.io/archive/2023/12/">
+  <link rel="canonical" href="https://000xiaoming.github.io/cn/elf_handle_and_am_facility/">
   <title>
     
-      I&#39;m Bruce Lee
+      elf处理原理和相关基础设施 - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -227,7 +227,7 @@
       <div class="navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <a href="/">HOME</a>
+            <a href="/">首页</a>
           </li>
 
           
@@ -237,7 +237,7 @@
           <li>
             <a href="/about/">
               
-              ABOUT
+              关于
               
               
             </a>
@@ -248,7 +248,7 @@
           <li>
             <a href="/archives/">
               
-              ARCHIVES
+              归档
               
               
             </a>
@@ -259,7 +259,7 @@
           <li>
             <a href="/categories/">
               
-              CATEGORIES
+              分类
               
               
             </a>
@@ -270,7 +270,7 @@
           <li>
             <a href="/tags/">
               
-              TAGS
+              标签
               
               
             </a>
@@ -281,36 +281,14 @@
           
           <li>
             <a class="popup-trigger">
-              <span class="search-icon"></span>SEARCH</a>
+              <span class="search-icon"></span>搜索</a>
           </li>
           
 
           <!-- LangSelect -->
           
           
-          <!-- LangSelect start -->
-          <!-- LangSelect -->
-<li>
-  <a id="lang-select-label"><i class="fa fa-globe"></i>
-    <span>
-      English
-    </span>
-    <select id="lang-select" data-canonical="archive/2023/12/index.html">
-      
-      
-      <option value="en"  selected >
-        English
-      </option>
-      
-      <option value="cn" >
-        简体中文
-      </option>
-      
-    </select>
-  </a>
-</li>
-
-          <!-- LangSelect end -->
+          
           
           
         </ul>
@@ -363,18 +341,18 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io');
-      --intro-header-background-image-url-page: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png');
+      --intro-header-background-image-url-page: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io//img/header_img/lml_bg1.png');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io//img/header_img/lml_bg1.png');
     }
     header.intro-header {
-       /*page*/
-        background-image: var(--intro-header-background-image-url-page);
-        /* background-image: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/archive_bg2.jpg'); */
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png'); */
       
     }
 
@@ -397,10 +375,24 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>经年治世</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">西风烈,长空雁叫霜晨月</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#项目工程" title="项目工程">项目工程</a>
+              
+            </div>
+            <h1>elf处理原理和相关基础设施</h1>
+            <h2 class="subheading">项目工程</h2>
+            <span class="meta">
+              Posted by Bruce Lee on
+              2024-08-20
+            </span>
+
+
+            
+            
+
+
           </div>
           
         </div>
@@ -441,729 +433,364 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Main Content -->
-<div class="container">
-  <div class="row">
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h1>elf处理原理</h1>
+<p>后续会详细讲解如何在加载器中直接作用elf文件结构来处理可执行程序文件.</p>
+<p>libelf.h头文件,这个对应的库中,有关于读取,修改,写入elf文件的函数和数据结构.可以用来加载elf文件,来获取段和符号的信息.</p>
+<p>gelf.h是libelf库的一部分,提供的通用接口,无视底层架构的差异(32位或者64位)</p>
+<p>首先需要Elf对象,用于对整个elf文件进行引用.指向这个elf文件.<br>
+然后定义一个Elf_Scn对象scn,用于对elf文件中的每一个节进行引用.<br>
+然后定义一个GElf_Shdr对象shdr,描述elf中的节头信息.<br>
+然后定义一个Elf_Data对象data,用于获取节中的数据信息.<br>
+然后定义一个fd的int型变量,用于获取文件描述符,用于打开文件.</p>
+<p>传入elf文件信息,然后调用open函数打开,返回fd参数.调用open函数中,传入filename和O_RDONLY宏(在fcntl.h头文件中定义)</p>
+<p>然后调用elf_version函数用于初始化检查,确保elf库是最新的,并且能用.该函数用于设置libelf库所使用的ELF版本,并检查库的兼容性.</p>
+<p>EV_CURRENT宏定义在libelf文件中,表示其最新版本.如果elf_version函数返回EV_NONE,表示错误.</p>
+<p>然后调用elf_begin函数,传入fd,ELF_C_READ参数,用于关联elf文件,并且返回一个Elf对象elf,用于引用整个elf文件.</p>
+<p>ELF_C_READ表示只读.</p>
+<p>如果错误,调用了elf_errmsg函数传入(-1),用于打印具体的错误信息,-1表示最新的.</p>
+<p>然后准备好了之后,开始进入while循环,调用elf_nextscn函数,来以节为单位进行索引.循环遍历所有的节,来查找是否含有符号表节.</p>
+<p>传入elf对象,和scn去承载节的信息.</p>
+<p>如果返回值scn不等于NULL,说明获取了一个有效节.</p>
+<p>然后调用gelf_getshdr函数,传入scn对象,和shdr来承载节头信息.</p>
+<p>然后调用shdr中的sh_type变量与SHT_SYMTAB宏进行比较.表示符号表,在libelf中定义的.</p>
+<p>如果这是一个符号表,那么就进入数据处理代码块.</p>
+<p>使用Elf_Data对象的data变量来通过调用elf_getdata函数(传入scn节对象)来获取整个节的数据信息.</p>
+<p>然后这里就是获取了所有的符号表条目信息.</p>
+<p>通过使用shdr.sh_size和shdr.sh_entsize变量,获取了条目数量.</p>
+<p>然后使用动态申请内存,获得了symtable_value变量指向的uint32_t [2]单元空间,数量为count个.symtable_name指向了const char*单元空间,数量也是count个.</p>
+<p>然后进入count次数循环.</p>
+<p>定义一个GElf_Sym类型sym变量,用于调用gelf_getsym去获取符号表条目信息.</p>
+<p>然后通过sym中的st_info变量来获取符号信息.通过调用GELF_ST_TYPE来从st_info中提取信息,然后与STT_FUNC进行比较,为了获取func类型的符号条目.</p>
+<p>找到了FUNC类型的符号表条目,然后就是通过elf_strptr函数去获取字符串表中的对应的符号表的字符串名称等信息.</p>
+<p>需要传入shdr.sh_link,这个节头信息,指示了符号表的名称在字符串表中的偏移位置,传入sym.st_name表示这个条目在整个符号表名称中的偏移位置.</p>
+<p>然后获取name.</p>
+<p>其条目的地址和大小,是通过sym.st_value和sym.st_size变量来获取.</p>
+<p>综上,然后处理这些信息,存储在symtable_name和symtable_value变量中.</p>
+<p>用于在cpu-exec文件中进行使用.</p>
+<p>首先需要在cpu-exec.c文件中extern那几个在monitor中定义的变量.</p>
+<p>然后根据自己的喜好,排版输出格式,我是直接定义了ANSI_GREEN和ANSI_BLUE宏,用于输出CALL和RET关键字的不同颜色.</p>
+<p>定义了ftrace_exec函数,用于比较.为何要传入old_pc.因为在s-&gt;dnpc是下一条实际执行指令.在程序启动的时候,pc指向的是当前要执行的指令,这个指令是函数首地址,可以不漏掉任何初始函数.</p>
+<p>ftrace_exec中的逻辑上述分析过了.</p>
+<p>在exec_once中调用ftrace_exec函数.</p>
+<p>bug:在symtable_value/name中出现的过多的不相关数据,原因是count的计数与func的计数混合了.</p>
+<p>重新来一个for循环,用symtable_count来技术func,用count来计数全部条目</p>
+<p>这里没有应用链表来动态申请内存.</p>
+<p>在monitor中,对一系列的变量定义,函数定义,以及头文件进行条件宏定义.<br>
+在init_monitor函数中,对init_ftrace函数的调用也同样处理.</p>
+<p>在cpu-exec中,对extern,ftrace_exec,以及对其的调用也同样处理</p>
+<p>在nemu中进行make menuconfig之后,需要在am中的nemu.md中进行同样的手动操作,进行定义FTRACE,只需要注释掉CONFIG_FTRACE的定义就行了</p>
+<h3 id="消失的符号以及字符串表">消失的符号以及字符串表</h3>
+<p>首先宏名称是不可能出现符号表中,在预编译阶段,宏已经被展开消失了.</p>
+<p>局部变量在编译器优化的过程一部分是消失了,或者在堆栈中,没有名字.符号表中存储的是全局变量,函数,文件的名字.</p>
+<p>一个符号,是一个对物理内存地址的映射,这个内存地址一般是不会发生变化的.这样的实体才有符号.</p>
+<p>如果编写</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;hey %d&quot;</span>, a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>经过多层编译:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$gcc</span> -S <span class="selector-tag">main</span><span class="selector-class">.c</span> -o <span class="selector-tag">main</span>.s</span><br><span class="line"><span class="variable">$gcc</span> -c <span class="selector-tag">main</span><span class="selector-class">.s</span> -o <span class="selector-tag">main</span>.o</span><br><span class="line"><span class="variable">$gcc</span> <span class="selector-tag">main</span><span class="selector-class">.o</span> -o <span class="selector-tag">main</span>.elf</span><br></pre></td></tr></table></figure>
+<p>然后</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">readelf -<span class="selector-tag">a</span> <span class="selector-tag">main</span><span class="selector-class">.elf</span></span><br></pre></td></tr></table></figure>
+<p>或者对比:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">readelf -<span class="selector-tag">p</span> <span class="selector-class">.strtab</span> <span class="selector-tag">main</span>.elf</span><br></pre></td></tr></table></figure>
+<p>可以看到在符号表中与字符串表中的文件名位置,不在同一个偏移位置的.</p>
+<h3 id="关于符号表在不同阶段的作用">关于符号表在不同阶段的作用</h3>
+<p>符号表是在词法分析阶段生成的,然后在语法分析阶段,是用不上的,语法分析是建立语法树.符号表是在语义分析阶段用的上,然后在中间代码生成,然后与静态/动态库进行链接的过程是可以用的上的,在最后的执行阶段是用不上的.</p>
+<p>所以如果将elf文件中的符号表使用strip -s main.elf命令删除,是不影响运行./main.elf的</p>
+<p>如果将main.o目标文件中的符号表删除,那么在链接的时候,就会出错,找不到符号.</p>
+<h3 id="AM基础设施">AM基础设施</h3>
+<p>AM的思想确实保证了klib(我们针对nemu中编写的运行时环境)都是运行在AM之上的代码,也是架构无关的.因为在klib中,我们并没有体现什么关于RISCV32中的具体信息.</p>
+<p>对于make[1]: *** [run] Error 1错误信息来源</p>
+<p>其实make工具通过子程序去编译其他目录下的makefile文件,这是在主程序中,运行run命令,发生了错误,错误码是1,可能是操作系统返回的.</p>
+<p>在klib.h中定义__NATIVE_USE_KLIB__,然后呢,在klib的实现代码中,进行的__NATIVE_USE_KLIB__的条件包含代码.</p>
+<p>如果定义了,那么就会包含这些代码.</p>
+<p>然后在am的makefile中有:</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LIBS := <span class="variable">$(<span class="built_in">sort</span> <span class="variable">$(LIBS)</span> am klib)</span></span><br></pre></td></tr></table></figure>
+<p>这里klib中有代码,自然就会被编译进去.</p>
+<p>文档中,允许使用putch,我看到了在am.h中,是申明了putch函数,</p>
+<h2 id="nemu中的遗留问题">nemu中的遗留问题</h2>
+<p>mul-longlong测试文件出bad<br>
+am-kernels/kernels/hello在运行在nemu中,出现out of bound</p>
+<h3 id="目前测试的目标平台">目前测试的目标平台</h3>
+<p>根据上述的分析.<br>
+如果在ARCH中传入native,那么就是直接运行在真机上,并且链接的是glibc库,这个功能就是测试我们的测试文件是否正确.</p>
+<p>如果一切不变,知识在klib.h文件中将__NATIVE_USE_KLIB__宏定义,那么就不是链接glibc库,而是连接klib库,这样子就是运行我们的测试程序,并且测试程序链接的库就是自己编写的klibc.如果保证了测试程序的正确性,那么这个行为就是验证klibc库的正确性.</p>
+<p>如果上述一切不变,ARCH参数改为riscv32-nemu,就会直接运行在我们的nemu上,如果保证了我们的上层程序和实现的klib库是正确的,那么就可以验证我们nemu实现是否正确.</p>
+<h3 id="bug排除完毕">bug排除完毕</h3>
+<p>首先就是关于mul-longlong测试程序的bug,在完成difftest之后,重点就是投放到了指令实现的问题上,关于这个执行过程,difftest指向了mulh指令.</p>
+<p>在经过返回验证,返回编写c代码原则mulh指令的扩展问题后,感觉没有任何问题之后.还是向乐桐请教,关于符号扩展,我的实现其实还是真有问题,但是具体问题,下次分析,主要解决方法就是使用了框架代码中给定的SEXT宏.</p>
+<p>关于klib库,和klib-test中的测试程序,主要就是strlen函数的实现有问题,导致了后续的连环错误.其次就是测试程序本身的错误.但是现在都排除了.</p>
+<p>mul-longlong的错误,在表现上,是a5的值,写进了a4中.但是本身问题是mulh指令中的两个源操作数在扩展问题上的错误.</p>
+<h2 id="关于diff-test">关于diff-test</h2>
+<p>最后写下关于difftest的实现,这个过程比较顺利,按照regs中的顺序,比较代码是按照isa_reg_display的for循环来实现的.</p>
+<p>其中,也是调用了difftest_check_reg函数进行的内部比较和返回.</p>
+<h3 id="在函数检查过程中">在函数检查过程中</h3>
+<p>主要是运用__attribute__((optimize(“O0”)))来禁止优化函数.</p>
+<p>其中使用__attribute__((aligned(4)))来进行4对齐.</p>
+<p>同时,使用嵌入汇编代码来验证mulh的实现.</p>
+<p>主要是如下这样:</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">uint32_t</span> a = <span class="number">0</span>xaeb<span class="number">1</span>c<span class="number">2</span>aa;</span><br><span class="line"><span class="attribute">uint32_t</span> b = <span class="number">0</span>x<span class="number">4500</span>ff<span class="number">2</span>b;</span><br><span class="line"><span class="attribute">uint32_t</span> result;</span><br><span class="line"><span class="attribute">asm</span>(<span class="string">&quot;mulh %0, %1, %2&quot;</span> : <span class="string">&quot;=r&quot;</span>(result) : <span class="string">&quot;r&quot;</span>(a), <span class="string">&quot;r&quot;</span>(b));</span><br></pre></td></tr></table></figure>
+<p>用于指定源操作数和目的操作数.</p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/cn/trace_implement/" data-toggle="tooltip" data-placement="top" title="trace实现原理与应用">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. All the images used in the blog are my original works or AI works, if you want to take it,don't hesitate. Thank you !
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=elf处理原理和相关基础设施&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/elf_handle_and_am_facility/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <script src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Tue Aug 20 2024 12:00:00 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">elf处理原理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%B6%88%E5%A4%B1%E7%9A%84%E7%AC%A6%E5%8F%B7%E4%BB%A5%E5%8F%8A%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%A1%A8"><span class="toc-nav-number">1.0.1.</span> <span class="toc-nav-text">消失的符号以及字符串表</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%B3%E4%BA%8E%E7%AC%A6%E5%8F%B7%E8%A1%A8%E5%9C%A8%E4%B8%8D%E5%90%8C%E9%98%B6%E6%AE%B5%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-nav-number">1.0.2.</span> <span class="toc-nav-text">关于符号表在不同阶段的作用</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#AM%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD"><span class="toc-nav-number">1.0.3.</span> <span class="toc-nav-text">AM基础设施</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#nemu%E4%B8%AD%E7%9A%84%E9%81%97%E7%95%99%E9%97%AE%E9%A2%98"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">nemu中的遗留问题</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%9B%AE%E5%89%8D%E6%B5%8B%E8%AF%95%E7%9A%84%E7%9B%AE%E6%A0%87%E5%B9%B3%E5%8F%B0"><span class="toc-nav-number">1.1.1.</span> <span class="toc-nav-text">目前测试的目标平台</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#bug%E6%8E%92%E9%99%A4%E5%AE%8C%E6%AF%95"><span class="toc-nav-number">1.1.2.</span> <span class="toc-nav-text">bug排除完毕</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%85%B3%E4%BA%8Ediff-test"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">关于diff-test</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%9C%A8%E5%87%BD%E6%95%B0%E6%A3%80%E6%9F%A5%E8%BF%87%E7%A8%8B%E4%B8%AD"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">在函数检查过程中</span></a></li></ol></li></ol></li></ol>
+        
+        </div>
+      </aside>
     
 
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
+
+
+      <!-- Sidebar Container -->
+      <div class="
                 col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
+                col-md-10 col-md-offset-1
+                sidebar-container">
 
-      <!-- Main Content -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
-      <!-- 归档列表 -->
-
-      
-
-      <!-- 归档列表 -->
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2024">
-          <span class="tag-text">2024</span>
-        </span>
-        <ul>
-          
-          <li>
-            08-20
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/trace_implement/" style="color: #0085a1">
-              <span>
-                trace实现原理与应用
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-20
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/elf_handle_and_am_facility/" style="color: #0085a1">
-              <span>
-                elf处理原理和相关基础设施
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-18
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/tracing_based_iringbuf/" style="color: #0085a1">
-              <span>
-                跟踪设施与iringbuf的建立
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-08
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/parameter_and_makefile_code/" style="color: #0085a1">
-              <span>
-                时间/log/参数传递和makefile全自动编译
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-13
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/stdarg-sprintf-implementation/" style="color: #0085a1">
-              <span>
-                sprintf的实现与stdarg的可能实现
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-13
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/batch-mode-RTFSC-makefile/" style="color: #0085a1">
-              <span>
-                Makefile工程代码以及batch模式
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-13
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/RTFSC_2/" style="color: #0085a1">
-              <span>
-                RTFSC_2
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            05-31
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/debug/" style="color: #0085a1">
-              <span>
-                工程debug经验
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            05-10
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Deep-understanding-of-variable-parameter-systems/" style="color: #0085a1">
-              <span>
-                预编译变参系统与预编译器粘结运算符以及"回调宏"的应用
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            05-09
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Multi-Macro-with-Annotation/" style="color: #0085a1">
-              <span>
-                多行宏添加注释的错误(如果不想因为脑子局部性注意力而导致浪费一下午+一晚上时间,请好好看)
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            05-08
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/instruction/" style="color: #0085a1">
-              <span>
-                instruction
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            05-08
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/YEMU模拟器运行机制/" style="color: #0085a1">
-              <span>
-                YEMU模拟器运行机制
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            05-08
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/C-Preprocessor-Token-Pasting-Operator/" style="color: #0085a1">
-              <span>
-                C-Preprocessor-Token-Pasting-Operator
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            04-08
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/系列宏以及函数/" style="color: #0085a1">
-              <span>
-                系列宏以及函数
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            04-08
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/cmd_c嵌套调用/" style="color: #0085a1">
-              <span>
-                cmd_c嵌套调用
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            03-23
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/定义一个宏,来检测另一个宏是否被定义的优化代码/" style="color: #0085a1">
-              <span>
-                定义一个宏,来检测另一个宏是否被定义的优化代码
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            02-26
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/RISCV存储方面/" style="color: #0085a1">
-              <span>
-                RISCVcache数据块容量权衡问题/大数据块导致的失效损失长延迟问题/cache容量大小与命中率问题/多路组相联策略减低失效率/组相联组内选择数据块策略
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            02-14
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/RISCV乱弹琴_1/" style="color: #0085a1">
-              <span>
-                RISCV直接模式处理例外的实现问题与解决方案/PC的变化与SEPC的存储精确性问题/反相关代码导致的被迫按序执行的问题/内存别名问题
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            02-03
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/RISCV不同阶段冒险问题和分支/" style="color: #0085a1">
-              <span>
-                RISCV不同阶段前递问题/load-use冒险的停顿技术/优化控制冒险发生时浪费的时钟周期问题分析/ID计算加速的专用前递通路问题/PC清理-预测加速问题/流水线清理问题
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            01-26
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/RISCV各类冒险问题/" style="color: #0085a1">
-              <span>
-                RISCV停顿与非停顿冒险/x0寄存器的数据冒险处理陷阱/寄存器同周期读写的解决方法/解决EX/MEM冒险
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            01-14
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/RISCV运算中间结果系列问题/" style="color: #0085a1">
-              <span>
-                RISCV舍入问题和中间结果存储问题/浮点并行加速的不稳定性问题以及传统并行算法研究步骤
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            01-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/RISCV非规格化浮点系列问题/" style="color: #0085a1">
-              <span>
-                RISCV乘法硬件加速算法原理/单精度规格化与非规格化最小正数问题/F/D标准扩展与I问题
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            01-03
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/RISCV设计中跳转和同步系列问题和x86/" style="color: #0085a1">
-              <span>
-                RISCV超12位立即数字段的跳转问题/解决数据竞争问题的底层支持/数组索引访问与指针访问/常见优化/x86的复杂性缺陷
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            01-03
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/RISCV指令设计和使用问题/" style="color: #0085a1">
-              <span>
-                RISCV减低边界检查的开销方法/硬连线为零的可能实现方式/大立即数的RISC-V编址和寻址问题/分支和跳转指令中立即数字段的PC相对偏移表示问题
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            01-01
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/RISCV基本设计理念/" style="color: #0085a1">
-              <span>
-                RISCV基本设计理念
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2023">
-          <span class="tag-text">2023</span>
-        </span>
-        <ul>
-          
-          <li>
-            12-12
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/last/" style="color: #0085a1">
-              <span>
-                x86汇编搁置的地方
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            10-11
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/x86_3/" style="color: #0085a1">
-              <span>
-                x86编程思考过程片段(3)关于编程技巧,注意事项,指令细节
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            09-23
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/x86_2/" style="color: #0085a1">
-              <span>
-                x86编程思考过程片段(2)关于编程技巧,注意事项,指令细节
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            09-14
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/本博客汇编代码的环境规范/" style="color: #0085a1">
-              <span>
-                本博客的汇编代码的环境规范
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            09-11
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/x86_1/" style="color: #0085a1">
-              <span>
-                x86编程思考过程片段(1)关于编程技巧,注意事项,指令细节
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-10
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/论持久战/" style="color: #0085a1">
-              <span>
-                论持久战
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-01
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/中断概览/" style="color: #0085a1">
-              <span>
-                x86-8086汇编：该架构的中断信息引发，中断向量表的配置，中断例程的执行
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-30
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/x86-8086显示数值/" style="color: #0085a1">
-              <span>
-                01-比较简单的x86-8086汇编实验：将数值显示到屏幕上
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-25
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/AI发展见解/" style="color: #0085a1">
-              <span>
-                AI，我们应该知道什么，未来，我们应该怎么发展
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-15
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/lab4/" style="color: #0085a1">
-              <span>
-                超级无敌简单入门x86-8086汇编实验：移送程序代码-最简化安装
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-14
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/assembly_start/" style="color: #0085a1">
-              <span>
-                DOS基础与汇编
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-      </div>
-      
-    </div>
-  </div>
-</div>
-
-
-      <!-- 如果开启评论功能 -->
-      
-    </div>
-
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-        <!-- Visitors -->
-<h5><a href="/">VISITORS</a></h5>
-
-
-        <hr>
-    
         <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#项目工程" title="项目工程">项目工程</a>
+            
+          </div>
+        </section>
+        
 
-<section>
-  <h5><a href="/tags/">FEATURED TAGS</a></h5>
-  <div class="tags">
-    
-    
-    <a href="/tags/#IT" title="IT" rel="2">IT</a>
-    
-    
-    
-    <a href="/tags/#C/C++" title="C/C++" rel="7">C/C++</a>
-    
-    
-    
-    <a href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象" rel="9">RISC-V问题和解决方案以及现象</a>
-    
-    
-    
-    <a href="/tags/#项目工程" title="项目工程" rel="8">项目工程</a>
-    
-    
-    
-    <a href="/tags/#x86" title="x86" rel="9">x86</a>
-    
-    
-    
-    <a href="/tags/#工程项目" title="工程项目" rel="1">工程项目</a>
-    
-    
-  </div>
-</section>
-
-
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-  <h5><a href="/about/">ABOUT ME</a></h5>
-  <div class="short-about">
-
-    
-    <img id="avatar_pic" src="/img/avatar/fatpeople.png" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
-    
-
-    
-    <p>Don&#39;t wait Don&#39;t wait Don&#39;t wait for anything...</p>
-    
-
-    <!-- SNS Link -->
-    <ul class="list-inline">
-      
-
-      
-      <li>
-        <a target="_blank" href="https://github.com/000xiaoming">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-    </ul>
-  </div>
-</section>
-
-        <hr>
-    
-        <!-- RECENT POSTS -->
-
-<h5><a href="/">RECENT POSTS</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="../../../cn/elf_handle_and_am_facility/">
-      <li>elf处理原理和相关基础设施</li>
-    </a>
-    
-    <a href="../../../cn/trace_implement/">
-      <li>trace实现原理与应用</li>
-    </a>
-    
-    <a href="../../../cn/tracing_based_iringbuf/">
-      <li>跟踪设施与iringbuf的建立</li>
-    </a>
-    
-    <a href="../../../cn/parameter_and_makefile_code/">
-      <li>时间/log/参数传递和makefile全自动编译</li>
-    </a>
-    
-    <a href="../../../cn/stdarg-sprintf-implementation/">
-      <li>sprintf的实现与stdarg的可能实现</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
         <!-- Friends Blog -->
-
-<h5><a href="/">FRIENDS</a></h5>
-<ul class="list-inline">
-  
-  <li><a href="https://v-vincen.life/" target="_blank">V_Vincen</a></li>
-  
-  <li><a href="http://beantech.org" target="_blank">Bean Tech</a></li>
-  
-  <li><a href="http://huangxuan.me" target="_blank">Hux Blog</a></li>
-  
-  <li><a href="https://hexo.io/" target="_blank">Hexo</a></li>
-  
-  <li><a href="https://fe32.top/" target="_blank">Ethan.Tzy</a></li>
-  
-</ul>
-
-
+        
         <hr>
-    
-        <!-- Archives -->
+        <h5>链友</h5>
+        <ul class="list-inline">
 
-<h5><a href="/archives/">archives</a></h5>
-<div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../2024/08/">August 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../2024/07/">July 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../2024/05/">May 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../2024/04/">April 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../2024/03/">March 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../2024/01/">January 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="">December 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../10/">October 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../09/">September 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../08/">August 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../07/">July 2023</a><span class="archive-list-count">4</span></li></ul>
-</div>
-
-
-        <hr>
-    
-        <!-- Categories -->
-
-<h5><a href="/categories/">categories</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="/categories/#Programer">
-      <li>Programer</li>
-    </a>
-    
-    <a href="/categories/#C/C++">
-      <li>C/C++</li>
-    </a>
-    
-    <a href="/categories/#RISC-V问题和解决方案以及现象">
-      <li>RISC-V问题和解决方案以及现象</li>
-    </a>
-    
-    <a href="/categories/#项目工程">
-      <li>项目工程</li>
-    </a>
-    
-    <a href="/categories/#x86">
-      <li>x86</li>
-    </a>
-    
-    <a href="/categories/#工程项目">
-      <li>工程项目</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-</div>
-
-
-    
+          
+          <li>
+            <a href="https://v-vincen.life/" target="_blank">V_Vincen</a>
+          </li>
+          
+          <li>
+            <a href="http://beantech.org" target="_blank">Bean Tech</a>
+          </li>
+          
+          <li>
+            <a href="http://huangxuan.me" target="_blank">Hux Blog</a>
+          </li>
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+          <li>
+            <a href="https://fe32.top/" target="_blank">Ethan.Tzy</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
   </div>
-</div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->
@@ -1272,7 +899,7 @@
     let jsdelivr = "https://cdn.jsdelivr.net/gh/";
     let gh = "000xiaoming";
     let ghPages = gh + ".github.io";
-    let pagePath = "archive/2023/12/index.html";
+    let pagePath = "cn/elf_handle_and_am_facility/";
     let jsdelivrurl;
     if (pagePath.indexOf("index.html") != -1) {
       jsdelivrurl = jsdelivr + gh + "/" + ghPages;
@@ -1350,7 +977,7 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
             <span class="search-icon">
               <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
             </span>
-            <input autocomplete="off" placeholder="SEARCH..." type="text" id="local-search-input">
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
           </div>
         </div>
         <div id="local-search-result"></div>

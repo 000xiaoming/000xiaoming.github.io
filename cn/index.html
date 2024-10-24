@@ -467,6 +467,158 @@
   <!-- top end -->
   
 
+  <a href="/cn/elf_handle_and_am_facility/">
+    <h2 class="post-title">
+      elf处理原理和相关基础设施
+    </h2>
+    <h3 class="post-subtitle">
+      项目工程
+    </h3>
+    <div class="post-content-preview">
+      elf处理原理
+后续会详细讲解如何在加载器中直接作用elf文件结构来处理可执行程序文件.
+libelf.h头文件,这个对应的库中,有关于读取,修改,写入elf文件的函数和数据结构.可以用来加载elf文件,来获取段和符号的信息.
+gelf.h是libelf库的一部分,提供的通用接口,无视底层架构的差异(32位或者64位)
+首先需要Elf对象,用于对整个elf文件进行引用.指向这个elf文件.
+......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Bruce Lee on
+    2024-08-20
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#项目工程" title="项目工程">项目工程</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/trace_implement/">
+    <h2 class="post-title">
+      trace实现原理与应用
+    </h2>
+    <h3 class="post-subtitle">
+      项目工程
+    </h3>
+    <div class="post-content-preview">
+      mtrace实现原理
+所有的访存指令,都要输出其访问的地址.文档中给出在paddr_read和paddr_write中写代码,进行记录.
+其实不然,我认为无需进行这样的多余操作:只需要在in_pmem函数中实现即可:
+原因:首先所有的访问内存的指令都会调用paddr_read和paddr_write函数,这两个函数都会调用in_pmem函数进行安全边界检查,只需要在in_pmem函数中实现相......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Bruce Lee on
+    2024-08-20
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#项目工程" title="项目工程">项目工程</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/tracing_based_iringbuf/">
+    <h2 class="post-title">
+      跟踪设施与iringbuf的建立
+    </h2>
+    <h3 class="post-subtitle">
+      项目工程
+    </h3>
+    <div class="post-content-preview">
+      从单步执行指令的实现原理到iringbuf实现细节
+在cpu_exec函数和execute函数中有那么几个变量不是很起眼:g_nr_guest_inst和g_print_step,这两个都是全局变量.
+g_nr_guest_inst很简单,就是记录执行的客户程序的指令数量.
+关于单步执行的关键变量就是这个g_print_step变量.
+cmd_c指令就是单步执行指令的传参n为无穷大,执行无穷......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Bruce Lee on
+    2024-08-18
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#项目工程" title="项目工程">项目工程</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/parameter_and_makefile_code/">
+    <h2 class="post-title">
+      时间/log/参数传递和makefile全自动编译
+    </h2>
+    <h3 class="post-subtitle">
+      项目工程
+    </h3>
+    <div class="post-content-preview">
+      总体概览
+init_rand()
+该函数定义在timer.c文件中,条件包含了sys/time.h和time.h头文件
+前者用于获取精确时间的获取和计算
+timeval用来表示秒,gettimeofday函数获取当前时间
+get_time函数返回了now - boot_time的时间,应该是一个间隔时间
+后者主要是获取处理器时间,计算时间差.
+这个文件对于评估程序的运行很重要
+init_lo......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Bruce Lee on
+    2024-08-08
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#项目工程" title="项目工程">项目工程</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
   <a href="/cn/stdarg-sprintf-implementation/">
     <h2 class="post-title">
       sprintf的实现与stdarg的可能实现
@@ -684,161 +836,6 @@ __VA_ARGS__是预编译器......
 </div>
 <hr>
 
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/YEMU模拟器运行机制/">
-    <h2 class="post-title">
-      YEMU模拟器运行机制
-    </h2>
-    <h3 class="post-subtitle">
-      项目工程
-    </h3>
-    <div class="post-content-preview">
-      YEMU模拟器运行机制
-
-#include &lt;stdint.h&gt;
-#include &lt;stdio.h&gt;
-//------------4个寄存器,16字节地址
-#define NREG 4
-#define NMEM 16
-// define the instruction format
-//-----------------联合体用法,总长是8bit,可以引用不同的位域......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2024-05-08
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#项目工程" title="项目工程">项目工程</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/instruction/">
-    <h2 class="post-title">
-      instruction
-    </h2>
-    <h3 class="post-subtitle">
-      项目工程
-    </h3>
-    <div class="post-content-preview">
-      
-decode_operand函数
-使用BITS宏,从s中的指令二进制串抓取rs1,rs2以及rd的二进制值.
-然后根据传入的type类型进行switch跳转,然后执行流水线中的各个操作:
-src1R宏,这个宏就是读取rs1存储的寄存器值.
-src2R宏,读取rs2存储的寄存器值.
-关于src(x)R宏中,调用R宏来做最底层的读取操作.
-或调用immI宏:读取I型指令立即数字段.
-immU宏......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2024-05-08
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#项目工程" title="项目工程">项目工程</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/C-Preprocessor-Token-Pasting-Operator/">
-    <h2 class="post-title">
-      C-Preprocessor-Token-Pasting-Operator
-    </h2>
-    <h3 class="post-subtitle">
-      小酒小菜
-    </h3>
-    <div class="post-content-preview">
-      c编译器名称粘结运算符(C Preprocessor Token Pasting Operator)
-使用示例
-12345678910#include &lt;stdio.h&gt;#define concat(x, y) x ## yint main(int argc, char** argv)&#123;	int concat(x, y) = 32;	printf(&quot;%d\n&......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2024-05-08
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#C/C++" title="C/C++">C/C++</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/cmd_c嵌套调用/">
-    <h2 class="post-title">
-      cmd_c嵌套调用
-    </h2>
-    <h3 class="post-subtitle">
-      项目工程
-    </h3>
-    <div class="post-content-preview">
-      cmd_c等一系列执行函数CALL cpu_exec函数
-cpu_exec参数:调用一次该函数要执行的指令数
-然后cpu_exec带着指令数CALL execute(n)函数
-execute函数(详解)
-execute函数会调用exec_once函数传入Decode s变量和cpu.pc变量
-调用execute的cpu_exec函数的n值,在execute中用于for循环,多次调用exec_......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2024-04-08
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#项目工程" title="项目工程">项目工程</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
 
   <!-- Pager -->
   <ul class="pager">
@@ -889,7 +886,7 @@ execute函数会调用exec_once函数传入Decode s变量和cpu.pc变量
     
     
     
-    <a href="/tags/#项目工程" title="项目工程" rel="4">项目工程</a>
+    <a href="/tags/#项目工程" title="项目工程" rel="8">项目工程</a>
     
     
     
@@ -960,24 +957,24 @@ execute函数会调用exec_once函数传入Decode s变量和cpu.pc变量
 <div class="widget">
   <ul>
     
+    <a href="elf_handle_and_am_facility/">
+      <li>elf处理原理和相关基础设施</li>
+    </a>
+    
+    <a href="trace_implement/">
+      <li>trace实现原理与应用</li>
+    </a>
+    
+    <a href="tracing_based_iringbuf/">
+      <li>跟踪设施与iringbuf的建立</li>
+    </a>
+    
+    <a href="parameter_and_makefile_code/">
+      <li>时间/log/参数传递和makefile全自动编译</li>
+    </a>
+    
     <a href="stdarg-sprintf-implementation/">
       <li>sprintf的实现与stdarg的可能实现</li>
-    </a>
-    
-    <a href="batch-mode-RTFSC-makefile/">
-      <li>Makefile工程代码以及batch模式</li>
-    </a>
-    
-    <a href="RTFSC_2/">
-      <li>RTFSC_2</li>
-    </a>
-    
-    <a href="debug/">
-      <li>工程debug经验</li>
-    </a>
-    
-    <a href="Deep-understanding-of-variable-parameter-systems/">
-      <li>预编译变参系统与预编译器粘结运算符以及&#34;回调宏&#34;的应用</li>
     </a>
     
   </ul>
@@ -1010,7 +1007,7 @@ execute函数会调用exec_once函数传入Decode s变量和cpu.pc变量
 
 <h5><a href="/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/07/">July 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/05/">May 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/04/">April 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/03/">March 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/01/">January 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/12/">December 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/10/">October 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/09/">September 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/08/">August 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/07/">July 2023</a><span class="archive-list-count">4</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/08/">August 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/07/">July 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/05/">May 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/04/">April 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/03/">March 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/01/">January 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/12/">December 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/10/">October 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/09/">September 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/08/">August 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/07/">July 2023</a><span class="archive-list-count">4</span></li></ul>
 </div>
 
 
