@@ -441,12 +441,28 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>文档描述了用户程序的编译、加载、和执行过程。起始于libos库中的_start函数，通过call_main跳转到主函数，最终通过exit系统调用结束。用户程序被编译后放置于ramdisk.img中，相关信息记录在files.h中。加载过程中，naive_uload函数调用loader加载程序至指定内存位置。系统调用通过ecall后由AM层的异常处理到操作系统的do_event函数处理，支持文件系统的交互和更复杂的输入输出操作</p>
-<h2 id="用户程序"><a href="#用户程序" class="headerlink" title="用户程序"></a>用户程序</h2><p>从libos库中的,start.S中,开始编译,_start是.text的首地址,位于我们链接的0x83000000处,生成的是位置相关代码.</p>
+        <h2 id="关于我">关于我</h2>
+<p>欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。</p>
+<h3 id="主要内容分类">主要内容分类</h3>
+<ul>
+<li><strong>项目工程</strong>：深入探讨技术的实现细节和理解。</li>
+<li><strong>C/C++</strong>：围绕C/C++语言的技术点和编程技巧进行详细总结。</li>
+<li><strong>程序员哲学</strong>：分享程序员在职业生涯中应该具备的哲学理念和思考方式。</li>
+</ul>
+<p>想要了解更多具体内容，您可以访问<a href="https://000xiaoming.github.io/categories/">文章分类</a>页面。</p>
+<h3 id="联系我">联系我</h3>
+<p>如果您有任何问题或想要交流，欢迎通过<a href="https://000xiaoming.github.io/about/">关于页面</a>与我联系。</p>
+<p>感谢您的阅读和支持，希望我的博客能为您的技术旅程带来帮助！</p>
+<hr>
+<h2 id="概述">概述</h2>
+<p>文档描述了用户程序的编译、加载、和执行过程。起始于libos库中的_start函数，通过call_main跳转到主函数，最终通过exit系统调用结束。用户程序被编译后放置于ramdisk.img中，相关信息记录在files.h中。加载过程中，naive_uload函数调用loader加载程序至指定内存位置。系统调用通过ecall后由AM层的异常处理到操作系统的do_event函数处理，支持文件系统的交互和更复杂的输入输出操作</p>
+<h2 id="用户程序">用户程序</h2>
+<p>从libos库中的,start.S中,开始编译,_start是.text的首地址,位于我们链接的0x83000000处,生成的是位置相关代码.</p>
 <p>这里的汇编程序,跳转到了call_main函数,然后在call_main函数内部调用了main函数.从此,开始了用户程序的代码执行.</p>
 <p>从main函数返回之后,调用了exit系统调用,退出程序.</p>
 <p>我们的用户程序经过make工程的编译,被放置在了ramdisk.img文件中,ramdisk中的信息被放置在files.h头文件中.</p>
-<h2 id="加载"><a href="#加载" class="headerlink" title="加载"></a>加载</h2><p>init_proc函数,做了初始化.调用了naive_uload函数.</p>
+<h2 id="加载">加载</h2>
+<p>init_proc函数,做了初始化.调用了naive_uload函数.</p>
 <p>在这个函数内部,我们传入一个文件参数filename,比如是/bin/bmp-test.</p>
 <p>然后naive_uload会调用loader函数.并且根据loader函数的返回值,跳转过去.这些在pa3.2文档中分析过.</p>
 <p>现在,是加了文件系统的loader实现.</p>
@@ -464,7 +480,8 @@
 <p>然后依次根据elf32的标准,获取了文件偏移,目标地址,文件占用空间大小,内存占用空间大小.</p>
 <p>然后继续开始读取,buf改成我们的目标加载地址接可以了.</p>
 <p>然后再调用memset函数置多余位置0.</p>
-<h3 id="系统调用"><a href="#系统调用" class="headerlink" title="系统调用"></a>系统调用</h3><p>在am中的异常处理中,执行了ecall之后,调用的一系列函数,做第一步的事件分发.其中,根据a7寄存器的值,来判断这是一个yield函数一个syscall.</p>
+<h3 id="系统调用">系统调用</h3>
+<p>在am中的异常处理中,执行了ecall之后,调用的一系列函数,做第一步的事件分发.其中,根据a7寄存器的值,来判断这是一个yield函数一个syscall.</p>
 <p>如果是syscall,那么就将其event设置为syscall,其他,同理.</p>
 <p>此时我们的操作系统,在调用cte_init函数,注册的操作系统处理函数do_event,就是处理syscall和yield的.</p>
 <p>可以说,cte_init中的注册函数,是我们实现的文件系统和系统调用与am底层的运行时环境的唯一授权点.</p>
@@ -475,7 +492,8 @@
 <p>该函数内部,根据a7进行事件识别,然后跳转到对应的事件处理函数.这里的策略和x86中一样.</p>
 <p>引发中断,根据中断号,判断这是什么中断(这一步可以不要),然后根据中断号计算偏移地址,获取中断处理程序入口地址,然后跳转.</p>
 <p>这里也是,根据a7寄存器的调用号,调用了不同的处理函数.</p>
-<h3 id="虚拟文件系统和系统调用"><a href="#虚拟文件系统和系统调用" class="headerlink" title="虚拟文件系统和系统调用"></a>虚拟文件系统和系统调用</h3><p>为何要把一切都抽象成为文件?</p>
+<h3 id="虚拟文件系统和系统调用">虚拟文件系统和系统调用</h3>
+<p>为何要把一切都抽象成为文件?</p>
 <p>计算机的所有操作归根接地,就是计算和字节流的流动,这些数据都保存在内存中,无非就是根据逻辑计算,将一些字节流从一个内存到另一个内存罢了.</p>
 <p>从最简单的现象进行抽象,那么我们就把每一块相关数据的内存视为一个块,这个块有自己的定义,展示自己的属性,数据类型,数据布局.其实这就是一个内存中的文件.或者说,这就是磁盘中的文件.</p>
 <p>我们输入输出,是把字节流从内存移动到输入输出设备中,也是同样的原理,那么我们同样也可以抽象成文件.</p>
@@ -483,7 +501,7 @@
 <p>所有的文件,都记录到了文件记录表中,这里记载了文件的位置,文件大小,磁盘的偏移地址,以及维护读写文件的读写头.</p>
 <p>前面分析过这里的文件记录表.</p>
 <p>哪怕是在navy中包装的printf函数,到低就是调用了write系统调用,write函数会直接传入1文件描述符,用于对stdout写.</p>
-<p><em>_syscall</em>是navy中,唯一与操作系通的接触点.</p>
+<p>__syscall_是navy中,唯一与操作系通的接触点.</p>
 <p>前面分析的系统调用,如果是write系统调用,那么就会到sys_write的处理函数中.</p>
 <p>不同的文件,有不同的读写方式,比如普通磁盘文件,就直接写读,如果是流文件,设备文件,那么写读就会有所不同.</p>
 <p>所以在记录表中维护了每一个文件的写读方式.所以我们需要根据对不同文件的访问,来决定是否要调用其专有的读写函数.</p>
@@ -493,7 +511,8 @@
 <p>有一些,关于vga的fb进行抽象,是直接抽象成为了文件,然后对这个文件的写,就是对在nemu中的注册的映射内存空间写.</p>
 <p>在这里需要做好相关的函数,对映射做好处理.</p>
 <p>同时也要做好每一个系统调用的返回值的处理,如果没有处理好,那么libc中的一些安全性高的函数封装,就会产生一些难以理解的错误.</p>
-<h3 id="关于bmp"><a href="#关于bmp" class="headerlink" title="关于bmp"></a>关于bmp</h3><p>对于BMP_Load函数中的fopen和fread和flseek函数,我做了替换,换成了open,read,lseek函数.</p>
+<h3 id="关于bmp">关于bmp</h3>
+<p>对于BMP_Load函数中的fopen和fread和flseek函数,我做了替换,换成了open,read,lseek函数.</p>
 <p>相比较前者,后者行为我非常了解,因为出现了bug,我需要更好的定位,后来解决了,是关于磁盘访问边界处理的情况.</p>
 <p>也没有改过来,能跑,就没改了.</p>
 <p>NDL,就是对底层的包装,对系统调用的封装.没什么别的了.</p>
@@ -648,7 +667,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">概述</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%94%A8%E6%88%B7%E7%A8%8B%E5%BA%8F"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">用户程序</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%8A%A0%E8%BD%BD"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">加载</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">系统调用</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%99%9A%E6%8B%9F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">虚拟文件系统和系统调用</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%B3%E4%BA%8Ebmp"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">关于bmp</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%85%B3%E4%BA%8E%E6%88%91"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">关于我</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%BB%E8%A6%81%E5%86%85%E5%AE%B9%E5%88%86%E7%B1%BB"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">主要内容分类</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%81%94%E7%B3%BB%E6%88%91"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">联系我</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">概述</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%94%A8%E6%88%B7%E7%A8%8B%E5%BA%8F"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">用户程序</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%8A%A0%E8%BD%BD"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">加载</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">系统调用</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%99%9A%E6%8B%9F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">虚拟文件系统和系统调用</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%B3%E4%BA%8Ebmp"><span class="toc-nav-number">4.3.</span> <span class="toc-nav-text">关于bmp</span></a></li></ol></li></ol>
         
         </div>
       </aside>

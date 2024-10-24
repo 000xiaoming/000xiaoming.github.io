@@ -467,6 +467,49 @@
   <!-- top end -->
   
 
+  <a href="/cn/trace_implement/">
+    <h2 class="post-title">
+      trace实现原理与应用
+    </h2>
+    <h3 class="post-subtitle">
+      项目工程
+    </h3>
+    <div class="post-content-preview">
+      关于我
+欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
+主要内容分类
+
+项目工程：深入探讨技术的实现细节和理解。
+C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
+程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
+
+想要了解更多具体内容，您可以访问文章分类页面。
+联系我
+如果您有任何问题......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Bruce Lee on
+    2024-08-20
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#项目工程" title="项目工程">项目工程</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
   <a href="/cn/tracing_based_iringbuf/">
     <h2 class="post-title">
       跟踪设施与iringbuf的建立
@@ -475,11 +518,17 @@
       项目工程
     </h3>
     <div class="post-content-preview">
-      从单步执行指令的实现原理到iringbuf实现细节
-在cpu_exec函数和execute函数中有那么几个变量不是很起眼:g_nr_guest_inst和g_print_step,这两个都是全局变量.
-g_nr_guest_inst很简单,就是记录执行的客户程序的指令数量.
-关于单步执行的关键变量就是这个g_print_step变量.
-cmd_c指令就是单步执行指令的传参n为无穷大,执行无穷......
+      关于我
+欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
+主要内容分类
+
+项目工程：深入探讨技术的实现细节和理解。
+C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
+程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
+
+想要了解更多具体内容，您可以访问文章分类页面。
+联系我
+如果您有任何问题......
     </div>
   </a>
   
@@ -512,15 +561,17 @@ cmd_c指令就是单步执行指令的传参n为无穷大,执行无穷......
       项目工程
     </h3>
     <div class="post-content-preview">
-      总体概览
-init_rand()
-该函数定义在timer.c文件中,条件包含了sys/time.h和time.h头文件
-前者用于获取精确时间的获取和计算
-timeval用来表示秒,gettimeofday函数获取当前时间
-get_time函数返回了now - boot_time的时间,应该是一个间隔时间
-后者主要是获取处理器时间,计算时间差.
-这个文件对于评估程序的运行很重要
-init_lo......
+      关于我
+欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
+主要内容分类
+
+项目工程：深入探讨技术的实现细节和理解。
+C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
+程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
+
+想要了解更多具体内容，您可以访问文章分类页面。
+联系我
+如果您有任何问题......
     </div>
   </a>
   
@@ -553,13 +604,17 @@ init_lo......
       C/C++
     </h3>
     <div class="post-content-preview">
-      sprintf的实现与stdarg的可能实现
-使用stdarg来实现函数的变参.
-stdarg可能实现
-对于va_list, 这必然是一个指针,用于指示下一个变量的地址.
-va_start这个宏,传入了两个参数,一个是args,一个是最后一个固定参数.
-知道了最后一个固定参数,便可以根据固定参数的位置和其大小,使args指向下一个参数位置.
-va_arg宏也是传入两个参数,一个是args,一......
+      关于我
+欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
+主要内容分类
+
+项目工程：深入探讨技术的实现细节和理解。
+C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
+程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
+
+想要了解更多具体内容，您可以访问文章分类页面。
+联系我
+如果您有任何问题......
     </div>
   </a>
   
@@ -592,12 +647,17 @@ va_arg宏也是传入两个参数,一个是args,一......
       C/C++
     </h3>
     <div class="post-content-preview">
-      Makefile and batch mode运行nemu
-之前的分析getopt_long的文档中,便学习了这里的参数传递.
-monitor.c文件中关于parse_args函数,对于不同的参数传递的处理.
-这里就有一个batch参数,经过测试:
-将swtich的参数直接改为’b’,在运行nemu的时候,确实是直接进行batch mode.
-那么理论正确后,可以在make run之后加上A......
+      关于我
+欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
+主要内容分类
+
+项目工程：深入探讨技术的实现细节和理解。
+C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
+程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
+
+想要了解更多具体内容，您可以访问文章分类页面。
+联系我
+如果您有任何问题......
     </div>
   </a>
   
@@ -630,13 +690,17 @@ monitor.c文件中关于parse_args函数,对于不同的参数传递的处理.
       C/C++
     </h3>
     <div class="post-content-preview">
-      模拟器中关于指令ebreak的原理
-ebreak指令是用于debugging.
-转移控制给debugger或者monitor
-其指令格式与其他指令格式不同:确实是其指令位都是0.
-另一个作用:
-作为断点点(breakpoint),可以由程序员或者debugger在程序中插入ebreak作为暂停处理器,使处理器的状态为stop.
-这个ebreak指令是debugging,monite. 或者e......
+      关于我
+欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
+主要内容分类
+
+项目工程：深入探讨技术的实现细节和理解。
+C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
+程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
+
+想要了解更多具体内容，您可以访问文章分类页面。
+联系我
+如果您有任何问题......
     </div>
   </a>
   
@@ -669,9 +733,17 @@ ebreak指令是用于debugging.
       项目工程
     </h3>
     <div class="post-content-preview">
-      关于实现指令过程中的debug
-1.加载/存储指令调用Mr/Mw宏,Mr/Mw宏是对vaddr_read/vaddr_write函数的封装
-注意,关于vaddr_read/vaddr_write函数其中封装的paddr系列函数,以及更深的guest_to_host函数,以及更深的pmem系列函数,以及更深的位于host.h文件中的host_read函数.返回的都是uint32_t.如果读取1......
+      关于我
+欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
+主要内容分类
+
+项目工程：深入探讨技术的实现细节和理解。
+C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
+程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
+
+想要了解更多具体内容，您可以访问文章分类页面。
+联系我
+如果您有任何问题......
     </div>
   </a>
   
@@ -704,12 +776,17 @@ ebreak指令是用于debugging.
       C/C++
     </h3>
     <div class="post-content-preview">
-      预编译变参系统与预编译器粘结运算符以及&quot;回调宏&quot;的应用
-使用变参系统时,无预编译器粘结运算符的情况
-这里提到的变参系统不是stdarg文件中声明的那些系列函数与变量系统.而是针对用于宏定义中的变参系统
-在有些情况下,我们在使用__VA_ARGS__时,是不需要添加前缀##.
-关于前缀##(预编译器粘结运算符),见这篇C编译器名称粘结运算符
-__VA_ARGS__是预编译器......
+      关于我
+欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
+主要内容分类
+
+项目工程：深入探讨技术的实现细节和理解。
+C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
+程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
+
+想要了解更多具体内容，您可以访问文章分类页面。
+联系我
+如果您有任何问题......
     </div>
   </a>
   
@@ -742,9 +819,17 @@ __VA_ARGS__是预编译器......
       C/C++
     </h3>
     <div class="post-content-preview">
-      多行宏添加注释的错误(如果不想因为脑子局部性注意力而导致浪费一下午时间,请好好看)
-正确的示例用法
-12345678910#include &lt;stdio.h&gt;#define some_macro(x, y) \	((x) + \	(y) )int main(int argc, char** argv)&#123;	printf(&quot;use some_macro: %d\n......
+      关于我
+欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
+主要内容分类
+
+项目工程：深入探讨技术的实现细节和理解。
+C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
+程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
+
+想要了解更多具体内容，您可以访问文章分类页面。
+联系我
+如果您有任何问题......
     </div>
   </a>
   
@@ -777,56 +862,17 @@ __VA_ARGS__是预编译器......
       项目工程
     </h3>
     <div class="post-content-preview">
-      YEMU模拟器运行机制
+      关于我
+欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
+主要内容分类
 
-#include &lt;stdint.h&gt;
-#include &lt;stdio.h&gt;
-//------------4个寄存器,16字节地址
-#define NREG 4
-#define NMEM 16
-// define the instruction format
-//-----------------联合体用法,总长是8bit,可以引用不同的位域......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2024-05-08
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#项目工程" title="项目工程">项目工程</a>
-    
-  </div>
-  
+项目工程：深入探讨技术的实现细节和理解。
+C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
+程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
 
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/instruction/">
-    <h2 class="post-title">
-      instruction
-    </h2>
-    <h3 class="post-subtitle">
-      项目工程
-    </h3>
-    <div class="post-content-preview">
-      
-decode_operand函数
-使用BITS宏,从s中的指令二进制串抓取rs1,rs2以及rd的二进制值.
-然后根据传入的type类型进行switch跳转,然后执行流水线中的各个操作:
-src1R宏,这个宏就是读取rs1存储的寄存器值.
-src2R宏,读取rs2存储的寄存器值.
-关于src(x)R宏中,调用R宏来做最底层的读取操作.
-或调用immI宏:读取I型指令立即数字段.
-immU宏......
+想要了解更多具体内容，您可以访问文章分类页面。
+联系我
+如果您有任何问题......
     </div>
   </a>
   
@@ -886,7 +932,7 @@ immU宏......
   <div class="tags">
     
     
-    <a href="/tags/#IT" title="IT" rel="2">IT</a>
+    <a href="/tags/#IT" title="IT" rel="3">IT</a>
     
     
     
@@ -965,6 +1011,10 @@ immU宏......
 <div class="widget">
   <ul>
     
+    <a href="../../cn/engineering_cultivation/">
+      <li>作为一个合格的工程师,除了技术/学识深度外,你还应该具备什么素养?</li>
+    </a>
+    
     <a href="../../cn/multitasking-management-and-stack-operation/">
       <li>多任务管理及栈操作技术详解</li>
     </a>
@@ -979,10 +1029,6 @@ immU宏......
     
     <a href="../../cn/RISCV-exception-system-call-implementation/">
       <li>异常处理与系统调用实现细节</li>
-    </a>
-    
-    <a href="../../cn/from-compilation-to-execution/">
-      <li>从编译到执行：navy-apps中程序加载与运行的全过程</li>
     </a>
     
   </ul>
@@ -1015,7 +1061,7 @@ immU宏......
 
 <h5><a href="/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2024/10/">October 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2024/09/">September 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2024/08/">August 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2024/07/">July 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2024/05/">May 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2024/04/">April 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2024/03/">March 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2024/01/">January 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2023/12/">December 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2023/10/">October 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2023/09/">September 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2023/08/">August 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2023/07/">July 2023</a><span class="archive-list-count">4</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2024/10/">October 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2024/09/">September 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2024/08/">August 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2024/07/">July 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2024/05/">May 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2024/04/">April 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2024/03/">March 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2024/01/">January 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2023/12/">December 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2023/10/">October 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2023/09/">September 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2023/08/">August 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archive/2023/07/">July 2023</a><span class="archive-list-count">4</span></li></ul>
 </div>
 
 

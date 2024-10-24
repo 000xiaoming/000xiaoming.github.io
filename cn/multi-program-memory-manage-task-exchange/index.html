@@ -441,24 +441,43 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>在操作多程序环境中，确保程序不会互相干扰的关键是合理安排它们的内存空间。利用位置无关代码和动态链接，可以在运行时动态确定程序的加载地址，避免冲突。多任务操作系统应支持上下文切换，允许每个进程有独立的栈空间以保存其状态。在切换任务时，操作系统需要更新程序计数器（PC）和栈指针（SP），确保程序正确执行。此外，虚拟内存技术是解决地址空间隔离的有效手段</p>
-<h1 id="在内存中加载多个程序问题"><a href="#在内存中加载多个程序问题" class="headerlink" title="在内存中加载多个程序问题"></a>在内存中加载多个程序问题</h1><p>首先就是,多个程序的链接问题,如何确保第二的程序的链接地址,不会干扰第一个程序的内存空间.</p>
+        <h1>关于我</h1>
+<p>欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。</p>
+<h2 id="主要内容分类">主要内容分类</h2>
+<ul>
+<li><strong>项目工程</strong>：深入探讨技术的实现细节和理解。</li>
+<li><strong>C/C++</strong>：围绕C/C++语言的技术点和编程技巧进行详细总结。</li>
+<li><strong>程序员哲学</strong>：分享程序员在职业生涯中应该具备的哲学理念和思考方式。</li>
+</ul>
+<p>想要了解更多具体内容，您可以访问<a href="https://000xiaoming.github.io/categories/">文章分类</a>页面。</p>
+<h2 id="联系我">联系我</h2>
+<p>如果您有任何问题或想要交流，欢迎通过<a href="https://000xiaoming.github.io/about/">关于页面</a>与我联系。</p>
+<p>感谢您的阅读和支持，希望我的博客能为您的技术旅程带来帮助！</p>
+<hr>
+<h1>概述</h1>
+<p>在操作多程序环境中，确保程序不会互相干扰的关键是合理安排它们的内存空间。利用位置无关代码和动态链接，可以在运行时动态确定程序的加载地址，避免冲突。多任务操作系统应支持上下文切换，允许每个进程有独立的栈空间以保存其状态。在切换任务时，操作系统需要更新程序计数器（PC）和栈指针（SP），确保程序正确执行。此外，虚拟内存技术是解决地址空间隔离的有效手段</p>
+<h1>在内存中加载多个程序问题</h1>
+<p>首先就是,多个程序的链接问题,如何确保第二的程序的链接地址,不会干扰第一个程序的内存空间.</p>
 <p>要解决这个问题,就需要知道第一个程序的链接地址和空间大小.依次类推后续的程序.</p>
 <p>编译的时候,是无从得知前一个程序的信息的.</p>
 <p>可以使用位置无关代码来生成这些程序对应的elf文件,并且在加载的时候,动态分析每一个程序的地址和大小.并且记录这些信息.</p>
 <p>在执行的时候,就可以切换了.注意,此时,我们在执行这些程序,需要有多任务切换的操作系统能力,并且,这里执行的程序的pc值都是真实的值(站在模拟器角度上)</p>
 <p>使用虚拟页内存技术,来实现程序占用内存相互干扰的解决方案.</p>
-<h1 id="何时切换执行流"><a href="#何时切换执行流" class="headerlink" title="何时切换执行流"></a>何时切换执行流</h1><h2 id="多个栈空间"><a href="#多个栈空间" class="headerlink" title="多个栈空间"></a>多个栈空间</h2><p>每一个进程都有属于自己的栈空间,这样子是否必要,是否可以使用一个栈空间,抽象出多个栈空间?</p>
-<p>首先不同进程的上下文是保存的栈中的,如果我们要切换执行流,就是在<em>_am</em>*_trap中,切换sp指针,然后使用出栈操作获取上下文信息.</p>
+<h1>何时切换执行流</h1>
+<h2 id="多个栈空间">多个栈空间</h2>
+<p>每一个进程都有属于自己的栈空间,这样子是否必要,是否可以使用一个栈空间,抽象出多个栈空间?</p>
+<p>首先不同进程的上下文是保存的栈中的,如果我们要切换执行流,就是在__am_*_trap中,切换sp指针,然后使用出栈操作获取上下文信息.</p>
 <p>如果sp指针只在一个栈中,上下文保存在不同的位置,如果从下切换到上,执行了另一个进程,并且另一个进程有压栈和出栈操作,sp指针的移动很可能会覆盖下面的上下文信息(这里的上下就是从栈的角度出发,栈是从上(高低值)向下(低地址)增长的).</p>
 <p>所以需要不同的栈空间.</p>
-<h2 id="如何利用多个栈空间"><a href="#如何利用多个栈空间" class="headerlink" title="如何利用多个栈空间."></a>如何利用多个栈空间.</h2><p>回想代码,发现,之前在执行那些程序的时候,并没有设置sp指针的初始值.在nemu中,sp指针的值默认是0.</p>
+<h2 id="如何利用多个栈空间">如何利用多个栈空间.</h2>
+<p>回想代码,发现,之前在执行那些程序的时候,并没有设置sp指针的初始值.在nemu中,sp指针的值默认是0.</p>
 <p>对nemu中的默认程序进行了sdb,全称sp是0.对nanos中加载的程序进行gdb,发现在最开始的时候出现了对sp的赋值操作.</p>
 <p>然后我查阅了程序代码的编译部分发现.</p>
 <p>在am中的start汇编代码中,出现了对sp的赋值,使用了_stack_pointer标号.,这个标号在am中的linker中被定义.</p>
 <p>这里就是一个操作系统程序的整个堆栈的设置.</p>
 <p>所以,这里就不必操心sp的初始化了,而是在上下文初始化的时候,进行sp的初始化吧,将sp初始化为为不同执行流分配的栈空间.</p>
-<h2 id="初始化上下文"><a href="#初始化上下文" class="headerlink" title="初始化上下文"></a>初始化上下文</h2><p>一个进程,在第一次进入的时候,要切换到这个进程的上下文环境,那么在被执行之前,他的上下文环境是什么.</p>
+<h2 id="初始化上下文">初始化上下文</h2>
+<p>一个进程,在第一次进入的时候,要切换到这个进程的上下文环境,那么在被执行之前,他的上下文环境是什么.</p>
 <p>首先就是这个上下文环境的sp指针,用于指示该进程栈空间位置.</p>
 <p>其次就是mepc值,我们在获得sp,通过出栈可以获得整个上下文信息,然后通过mepc跳转.</p>
 <p>然后就是mstatus中的特权级,以及mcause中的原因值.</p>
@@ -467,7 +486,8 @@
 <p>入口地址,一般就是函数地址,通常要调用函数时,需要传入参数.</p>
 <p>现在arg就是参数指针,所以,应该将arg传入a0寄存器中.</p>
 <p>对于Context和stack的联合.Context的位置,可以参考trap.S中对于上下文保存顺序.</p>
-<h2 id="工作机制"><a href="#工作机制" class="headerlink" title="工作机制"></a>工作机制</h2><p>kcontext函数初始化了上下文环境,相当于给一个线程做好了铺垫(注意,这里是函数的上下文切换,可以参考c编程ucontext.h)</p>
+<h2 id="工作机制">工作机制</h2>
+<p>kcontext函数初始化了上下文环境,相当于给一个线程做好了铺垫(注意,这里是函数的上下文切换,可以参考c编程ucontext.h)</p>
 <p>通过自陷(就是自陷,自己放弃cpu执行权,这是执行流自己决定的操作,为了更好执行操作逻辑流畅,因为不同进程执行,其一定是自己通过自陷来放弃执行权)</p>
 <p>schedule返回了上下文指针.</p>
 <p>最后会回到trap.S汇编中,61行汇编.</p>
@@ -476,13 +496,15 @@
 <p>然后就会切换到对应的执行流了.</p>
 <p>schedule是通过cte_init注册的处理函数,只要发生自陷,就会调用这个调度函数.</p>
 <p>在后续的处理中,我们需要将schedule放置到对于的系统调用中.</p>
-<h2 id="sp切换"><a href="#sp切换" class="headerlink" title="sp切换"></a>sp切换</h2><p>关于在切换sp时,首先我们是在kcontext中初始化了sp值,放在了上下文缓存中的sp寄存器.</p>
+<h2 id="sp切换">sp切换</h2>
+<p>关于在切换sp时,首先我们是在kcontext中初始化了sp值,放在了上下文缓存中的sp寄存器.</p>
 <p>然后在汇编中,通过索引sp上下文寄存器来获得sp的值.</p>
 <p>当执行流执行完毕,或者自陷.需要保存这个执行流的上下文,并且是sp指针.</p>
 <p>但是在源代码中,并没有sp的入栈操作.</p>
 <p>所以我添加了sp的入栈操作宏(准确来说是补充)</p>
 <p>否则就是造成,在反复切换执行流的过程中,sp混乱(因为sp没有保存)</p>
-<h2 id="何时-4"><a href="#何时-4" class="headerlink" title="何时+4"></a>何时+4</h2><p>在riscv中,mepc保存的是ecall指令的位置,在执行具体的处理程序的时候,要看程序的执行结果来决定是否要跳转会ecall指令,还是直接执行下一条指令.</p>
+<h2 id="何时-4">何时+4</h2>
+<p>在riscv中,mepc保存的是ecall指令的位置,在执行具体的处理程序的时候,要看程序的执行结果来决定是否要跳转会ecall指令,还是直接执行下一条指令.</p>
 <p>所以我们应该在回调函数结束的时候,给mepc+4.</p>
 <p>但是这里还没有设计到要依据什么,来决定还有重复执行ecall指令,所以我就在trap.S中,直接给epc+4.</p>
 
@@ -633,7 +655,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">概述</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E5%8A%A0%E8%BD%BD%E5%A4%9A%E4%B8%AA%E7%A8%8B%E5%BA%8F%E9%97%AE%E9%A2%98"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">在内存中加载多个程序问题</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E4%BD%95%E6%97%B6%E5%88%87%E6%8D%A2%E6%89%A7%E8%A1%8C%E6%B5%81"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">何时切换执行流</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%A4%9A%E4%B8%AA%E6%A0%88%E7%A9%BA%E9%97%B4"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">多个栈空间</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8%E5%A4%9A%E4%B8%AA%E6%A0%88%E7%A9%BA%E9%97%B4"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">如何利用多个栈空间.</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%8A%E4%B8%8B%E6%96%87"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">初始化上下文</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%B7%A5%E4%BD%9C%E6%9C%BA%E5%88%B6"><span class="toc-nav-number">3.4.</span> <span class="toc-nav-text">工作机制</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#sp%E5%88%87%E6%8D%A2"><span class="toc-nav-number">3.5.</span> <span class="toc-nav-text">sp切换</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BD%95%E6%97%B6-4"><span class="toc-nav-number">3.6.</span> <span class="toc-nav-text">何时+4</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">关于我</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%BB%E8%A6%81%E5%86%85%E5%AE%B9%E5%88%86%E7%B1%BB"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">主要内容分类</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%81%94%E7%B3%BB%E6%88%91"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">联系我</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">概述</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">在内存中加载多个程序问题</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">何时切换执行流</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%A4%9A%E4%B8%AA%E6%A0%88%E7%A9%BA%E9%97%B4"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">多个栈空间</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8%E5%A4%9A%E4%B8%AA%E6%A0%88%E7%A9%BA%E9%97%B4"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">如何利用多个栈空间.</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%8A%E4%B8%8B%E6%96%87"><span class="toc-nav-number">4.3.</span> <span class="toc-nav-text">初始化上下文</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%B7%A5%E4%BD%9C%E6%9C%BA%E5%88%B6"><span class="toc-nav-number">4.4.</span> <span class="toc-nav-text">工作机制</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#sp%E5%88%87%E6%8D%A2"><span class="toc-nav-number">4.5.</span> <span class="toc-nav-text">sp切换</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BD%95%E6%97%B6-4"><span class="toc-nav-number">4.6.</span> <span class="toc-nav-text">何时+4</span></a></li></ol></li></ol>
         
         </div>
       </aside>

@@ -441,7 +441,20 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h3 id="关于实现指令过程中的debug">关于实现指令过程中的debug</h3>
+        <h3 id="关于我">关于我</h3>
+<p>欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。</p>
+<h4 id="主要内容分类">主要内容分类</h4>
+<ul>
+<li><strong>项目工程</strong>：深入探讨技术的实现细节和理解。</li>
+<li><strong>C/C++</strong>：围绕C/C++语言的技术点和编程技巧进行详细总结。</li>
+<li><strong>程序员哲学</strong>：分享程序员在职业生涯中应该具备的哲学理念和思考方式。</li>
+</ul>
+<p>想要了解更多具体内容，您可以访问<a href="https://000xiaoming.github.io/categories/">文章分类</a>页面。</p>
+<h4 id="联系我">联系我</h4>
+<p>如果您有任何问题或想要交流，欢迎通过<a href="https://000xiaoming.github.io/about/">关于页面</a>与我联系。</p>
+<p>感谢您的阅读和支持，希望我的博客能为您的技术旅程带来帮助！</p>
+<hr>
+<h3 id="关于实现指令过程中的debug">关于实现指令过程中的debug</h3>
 <p>1.加载/存储指令调用Mr/Mw宏,Mr/Mw宏是对vaddr_read/vaddr_write函数的封装<br>
 注意,关于vaddr_read/vaddr_write函数其中封装的paddr系列函数,以及更深的guest_to_host函数,以及更深的pmem系列函数,以及更深的位于host.h文件中的host_read函数.返回的都是uint32_t.如果读取1/2字节,则自动进行的是无符号扩展.读取4字节,无碍(仅限在32位架构中.(经过2过程,意识到的).关于解决这个bug,第一想法就是写一个新的访寸系列函数,用于返回符号扩展值,其只需要修改的代码处不超过4行,大部分代码是源代码的复制.但是这会大量增加整个程序的代码量.后来使用了在指令模式的&quot;do&quot;代码块中,重新将无符号扩展的值进行剪切,然后有符号扩展.不需要修改其他代码,并且改动处集中.</p>
 <p>2.在指令的&quot;do&quot;代码块中,src1/src2/imm默认是无符号运算,而指令的动作默认是有符号运算.(在调试max程序中发现的)</p>
@@ -611,7 +624,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%B3%E4%BA%8E%E5%AE%9E%E7%8E%B0%E6%8C%87%E4%BB%A4%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84debug"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">关于实现指令过程中的debug</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%89%A7%E8%A1%8C%E4%BA%86%E6%9C%AA%E5%AE%9E%E7%8E%B0%E7%9A%84%E6%8C%87%E4%BB%A4%E4%BC%9A%E5%87%BA%E7%8E%B0%E4%B8%8A%E8%BF%B0%E6%8A%A5%E9%94%99%E4%BF%A1%E6%81%AF"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">为什么执行了未实现的指令会出现上述报错信息</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%B3%E4%BA%8Emips%E6%9E%B6%E6%9E%84%E7%9A%84%E5%88%86%E6%94%AF%E5%BB%B6%E8%BF%9F%E6%A7%BD%E6%8A%80%E6%9C%AF%E7%9A%84%E7%BC%96%E8%AF%91%E5%99%A8%E5%BA%94%E7%94%A8"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">关于mips架构的分支延迟槽技术的编译器应用</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%B3%E4%BA%8E%E6%8C%87%E4%BB%A4%E5%90%8D%E5%AF%B9%E7%85%A7"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">关于指令名对照</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%B3%E4%BA%8E%E6%88%91"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">关于我</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E4%B8%BB%E8%A6%81%E5%86%85%E5%AE%B9%E5%88%86%E7%B1%BB"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">主要内容分类</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E8%81%94%E7%B3%BB%E6%88%91"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">联系我</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%B3%E4%BA%8E%E5%AE%9E%E7%8E%B0%E6%8C%87%E4%BB%A4%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84debug"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">关于实现指令过程中的debug</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%89%A7%E8%A1%8C%E4%BA%86%E6%9C%AA%E5%AE%9E%E7%8E%B0%E7%9A%84%E6%8C%87%E4%BB%A4%E4%BC%9A%E5%87%BA%E7%8E%B0%E4%B8%8A%E8%BF%B0%E6%8A%A5%E9%94%99%E4%BF%A1%E6%81%AF"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">为什么执行了未实现的指令会出现上述报错信息</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%B3%E4%BA%8Emips%E6%9E%B6%E6%9E%84%E7%9A%84%E5%88%86%E6%94%AF%E5%BB%B6%E8%BF%9F%E6%A7%BD%E6%8A%80%E6%9C%AF%E7%9A%84%E7%BC%96%E8%AF%91%E5%99%A8%E5%BA%94%E7%94%A8"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">关于mips架构的分支延迟槽技术的编译器应用</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%B3%E4%BA%8E%E6%8C%87%E4%BB%A4%E5%90%8D%E5%AF%B9%E7%85%A7"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">关于指令名对照</span></a></li></ol>
         
         </div>
       </aside>

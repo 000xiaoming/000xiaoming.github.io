@@ -441,7 +441,20 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h2 id="sprintf的实现与stdarg的可能实现">sprintf的实现与stdarg的可能实现</h2>
+        <h2 id="关于我">关于我</h2>
+<p>欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。</p>
+<h3 id="主要内容分类">主要内容分类</h3>
+<ul>
+<li><strong>项目工程</strong>：深入探讨技术的实现细节和理解。</li>
+<li><strong>C/C++</strong>：围绕C/C++语言的技术点和编程技巧进行详细总结。</li>
+<li><strong>程序员哲学</strong>：分享程序员在职业生涯中应该具备的哲学理念和思考方式。</li>
+</ul>
+<p>想要了解更多具体内容，您可以访问<a href="https://000xiaoming.github.io/categories/">文章分类</a>页面。</p>
+<h3 id="联系我">联系我</h3>
+<p>如果您有任何问题或想要交流，欢迎通过<a href="https://000xiaoming.github.io/about/">关于页面</a>与我联系。</p>
+<p>感谢您的阅读和支持，希望我的博客能为您的技术旅程带来帮助！</p>
+<hr>
+<h2 id="sprintf的实现与stdarg的可能实现">sprintf的实现与stdarg的可能实现</h2>
 <p>使用stdarg来实现函数的变参.</p>
 <h3 id="stdarg可能实现">stdarg可能实现</h3>
 <p>对于va_list, 这必然是一个指针,用于指示下一个变量的地址.</p>
@@ -618,7 +631,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#sprintf%E7%9A%84%E5%AE%9E%E7%8E%B0%E4%B8%8Estdarg%E7%9A%84%E5%8F%AF%E8%83%BD%E5%AE%9E%E7%8E%B0"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">sprintf的实现与stdarg的可能实现</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#stdarg%E5%8F%AF%E8%83%BD%E5%AE%9E%E7%8E%B0"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">stdarg可能实现</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BC%A0%E5%8F%82%E7%9A%84%E6%97%B6%E5%80%99-%E5%A6%82%E4%BD%95%E5%81%9A%E5%88%B0%E7%BB%93%E6%9D%9F"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">传参的时候,如何做到结束.</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%9C%A8-d%E4%B8%AD%E7%9A%84%E6%95%B0%E5%AD%97%E8%BD%AC%E6%8D%A2"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">在%d中的数字转换</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#sprintf%E7%9A%84%E5%89%A9%E4%BD%99%E6%83%85%E5%86%B5"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">sprintf的剩余情况</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%85%B3%E4%BA%8E%E6%88%91"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">关于我</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%BB%E8%A6%81%E5%86%85%E5%AE%B9%E5%88%86%E7%B1%BB"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">主要内容分类</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%81%94%E7%B3%BB%E6%88%91"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">联系我</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#sprintf%E7%9A%84%E5%AE%9E%E7%8E%B0%E4%B8%8Estdarg%E7%9A%84%E5%8F%AF%E8%83%BD%E5%AE%9E%E7%8E%B0"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">sprintf的实现与stdarg的可能实现</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#stdarg%E5%8F%AF%E8%83%BD%E5%AE%9E%E7%8E%B0"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">stdarg可能实现</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BC%A0%E5%8F%82%E7%9A%84%E6%97%B6%E5%80%99-%E5%A6%82%E4%BD%95%E5%81%9A%E5%88%B0%E7%BB%93%E6%9D%9F"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">传参的时候,如何做到结束.</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%9C%A8-d%E4%B8%AD%E7%9A%84%E6%95%B0%E5%AD%97%E8%BD%AC%E6%8D%A2"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">在%d中的数字转换</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#sprintf%E7%9A%84%E5%89%A9%E4%BD%99%E6%83%85%E5%86%B5"><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">sprintf的剩余情况</span></a></li></ol></li></ol>
         
         </div>
       </aside>

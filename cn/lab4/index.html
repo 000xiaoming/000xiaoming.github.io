@@ -441,7 +441,21 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p>本实验目的：这是一个入门实验，但是可以为了以后理解中断处理程序那篇打下基础，程序代码的移送，换句话说就是安装！</p>
+        <h2 id="关于我">关于我</h2>
+<p>欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。</p>
+<h3 id="主要内容分类">主要内容分类</h3>
+<ul>
+<li><strong>项目工程</strong>：深入探讨技术的实现细节和理解。</li>
+<li><strong>C/C++</strong>：围绕C/C++语言的技术点和编程技巧进行详细总结。</li>
+<li><strong>程序员哲学</strong>：分享程序员在职业生涯中应该具备的哲学理念和思考方式。</li>
+</ul>
+<p>想要了解更多具体内容，您可以访问<a href="https://000xiaoming.github.io/categories/">文章分类</a>页面。</p>
+<h3 id="联系我">联系我</h3>
+<p>如果您有任何问题或想要交流，欢迎通过<a href="https://000xiaoming.github.io/about/">关于页面</a>与我联系。</p>
+<p>感谢您的阅读和支持，希望我的博客能为您的技术旅程带来帮助！</p>
+<hr>
+<h2 id="开始">开始</h2>
+<p>本实验目的：这是一个入门实验，但是可以为了以后理解中断处理程序那篇打下基础，程序代码的移送，换句话说就是安装！</p>
 <p>我想写一个程序，程序的功能呢就是将自己的机器码(<code>mov ax,4c00h</code>之前的代码）移送出去，移送到哪先不管，假定就移送到0200：0000这个起始地址吧。请你实现这个程序。（假设系统分配内存空间时，程序地址是cs：0000）</p>
 <p>（关于0200：0000这个地址，在以后的中断程序设计实验中会讲，这里简单提一下，cpu一个非常重要的能力：执行完当前指令后会转而去执行别的地方的指令。这个能力我们叫中断（interrupt），x86-8086架构中，内存地址的开始处，就是0位置处，就是存放关于中断的信息，大小为1KB）</p>
 <p>乍一想，可能没有什么头绪吧，我先给出一段汇编代码，用于提示，你来补充空缺的代码。你先想，然后待会儿，我娓娓道来，这个程序应该怎么实现。</p>
@@ -751,7 +765,7 @@ mov ds，ax
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="nav">none</ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%85%B3%E4%BA%8E%E6%88%91"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">关于我</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%BB%E8%A6%81%E5%86%85%E5%AE%B9%E5%88%86%E7%B1%BB"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">主要内容分类</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%81%94%E7%B3%BB%E6%88%91"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">联系我</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%BC%80%E5%A7%8B"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">开始</span></a></li></ol>
         
         </div>
       </aside>
