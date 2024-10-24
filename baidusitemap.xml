@@ -1,8 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://000xiaoming.github.io/cn/multitasking-management-and-stack-operation/</loc>
+    <lastmod>2024-10-01</lastmod>
+  </url>
+  <url>
+    <loc>https://000xiaoming.github.io/cn/multi-program-memory-manage-task-exchange/</loc>
+    <lastmod>2024-09-30</lastmod>
+  </url>
+  <url>
+    <loc>https://000xiaoming.github.io/cn/build-and-manage-multi-file/</loc>
+    <lastmod>2024-09-20</lastmod>
+  </url>
+  <url>
+    <loc>https://000xiaoming.github.io/cn/RISCV-exception-system-call-implementation/</loc>
+    <lastmod>2024-09-15</lastmod>
+  </url>
+  <url>
+    <loc>https://000xiaoming.github.io/cn/from-compilation-to-execution/</loc>
+    <lastmod>2024-09-15</lastmod>
+  </url>
+  <url>
+    <loc>https://000xiaoming.github.io/cn/detailed-explanation-compilation-loading-execution/</loc>
+    <lastmod>2024-09-15</lastmod>
+  </url>
+  <url>
+    <loc>https://000xiaoming.github.io/cn/device_function_and_mechanism/</loc>
+    <lastmod>2024-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://000xiaoming.github.io/cn/setup_process_and_printf/</loc>
+    <lastmod>2024-08-30</lastmod>
+  </url>
+  <url>
     <loc>https://000xiaoming.github.io/cn/elf_handle_and_am_facility/</loc>
-    <lastmod>2024-08-20</lastmod>
+    <lastmod>2024-08-25</lastmod>
   </url>
   <url>
     <loc>https://000xiaoming.github.io/cn/trace_implement/</loc>

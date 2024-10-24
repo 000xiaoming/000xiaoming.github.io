@@ -467,6 +467,287 @@
   <!-- top end -->
   
 
+  <a href="/cn/multitasking-management-and-stack-operation/">
+    <h2 class="post-title">
+      多任务管理及栈操作技术详解
+    </h2>
+    <h3 class="post-subtitle">
+      项目工程
+    </h3>
+    <div class="post-content-preview">
+      概述文档中描述的内容涉及操作系统中多任务管理的关键技术，包括任务的上下文初始化、任务切换、栈的管理以及用户栈与内核栈的处理。每个任务维护独立的栈空间以隔离执行状态，内核与用户模式间切换需谨慎处理栈指针，确保安全。初始任务切换通常在系统启动时进行，而后续的任务调度则通过系统调用或中断触发。这些机制共同支持了操作系统的并发执行和资源管理功能
+rt_hw_stack_init和kcontext机制......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Bruce Lee on
+    2024-10-01
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#项目工程" title="项目工程">项目工程</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/multi-program-memory-manage-task-exchange/">
+    <h2 class="post-title">
+      多程序操作环境中的内存管理与任务切换
+    </h2>
+    <h3 class="post-subtitle">
+      项目工程
+    </h3>
+    <div class="post-content-preview">
+      概述在操作多程序环境中，确保程序不会互相干扰的关键是合理安排它们的内存空间。利用位置无关代码和动态链接，可以在运行时动态确定程序的加载地址，避免冲突。多任务操作系统应支持上下文切换，允许每个进程有独立的栈空间以保存其状态。在切换任务时，操作系统需要更新程序计数器（PC）和栈指针（SP），确保程序正确执行。此外，虚拟内存技术是解决地址空间隔离的有效手段
+在内存中加载多个程序问题首先就是,多个程......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Bruce Lee on
+    2024-09-30
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#项目工程" title="项目工程">项目工程</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/build-and-manage-multi-file/">
+    <h2 class="post-title">
+      构建和管理多文件以及编译流程
+    </h2>
+    <h3 class="post-subtitle">
+      项目工程
+    </h3>
+    <div class="post-content-preview">
+      概括文档详细描述了在navy-apps项目中如何进行多文件布局和编译，创建一个集成的ramdisk.img。说明了navy-apps与nanos-lite操作系统之间文件和编译依赖关系的配置，特别是如何通过Makefile来管理和编译资源。强调了NAVY框架的角色，它作为库支持应用程序使用操作系统的功能，同时也提供了必要的封装来简化应用程序对操作系统底层接口的访问
+多文件布局编译执行了文档提......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Bruce Lee on
+    2024-09-20
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#项目工程" title="项目工程">项目工程</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/RISCV-exception-system-call-implementation/">
+    <h2 class="post-title">
+      异常处理与系统调用实现细节
+    </h2>
+    <h3 class="post-subtitle">
+      项目工程
+    </h3>
+    <div class="post-content-preview">
+      概述
+文档详细描述了一个基于RISC-V指令集的异常处理流程，包括自陷（trap）与中断处理机制。文档首先介绍了通过一个示例程序test的intr.c实现中，如何初始化并模拟操作系统回调的过程。接着解释了CSR寄存器（如mstatus、mtvec）的处理，强调了逻辑地址与物理地址的区分和映射的必要性。另外，描述了yield函数如何触发系统调用并处理中断。最后，讨论了ecall指令、中断返回指......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Bruce Lee on
+    2024-09-15
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#项目工程" title="项目工程">项目工程</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/from-compilation-to-execution/">
+    <h2 class="post-title">
+      从编译到执行：navy-apps中程序加载与运行的全过程
+    </h2>
+    <h3 class="post-subtitle">
+      项目工程
+    </h3>
+    <div class="post-content-preview">
+      概括
+该文档详细描述了在navy-apps中编译并执行客户程序的整个流程，特别是如何将程序编译到目标操作系统nanos-lite上。文档解释了如何通过ramdisk.img加载程序，以及操作系统如何初始化设备、设置异常处理、处理系统调用等。此外，还涉及了如何通过硬件抽象层进行设备初始化和异常处理回调函数的设置，以及如何通过加载器(loader)处理和执行ELF文件
+执行程序角度
+在navy-......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Bruce Lee on
+    2024-09-15
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#项目工程" title="项目工程">项目工程</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/detailed-explanation-compilation-loading-execution/">
+    <h2 class="post-title">
+      用户程序的编译、加载及执行流程详解
+    </h2>
+    <h3 class="post-subtitle">
+      项目工程
+    </h3>
+    <div class="post-content-preview">
+      概述文档描述了用户程序的编译、加载、和执行过程。起始于libos库中的_start函数，通过call_main跳转到主函数，最终通过exit系统调用结束。用户程序被编译后放置于ramdisk.img中，相关信息记录在files.h中。加载过程中，naive_uload函数调用loader加载程序至指定内存位置。系统调用通过ecall后由AM层的异常处理到操作系统的do_event函数处理，支......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Bruce Lee on
+    2024-09-15
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#项目工程" title="项目工程">项目工程</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/device_function_and_mechanism/">
+    <h2 class="post-title">
+      外设功能函数/跟踪函数与机制分析
+    </h2>
+    <h3 class="post-subtitle">
+      项目工程
+    </h3>
+    <div class="post-content-preview">
+      时钟
+关于实现__am_timer_uptime函数的时候,并没有机会去获得系统启动时间.
+应该将__am_timer_init函数实现,并且声明一个全局的AM_TIMER_UPTIME变量用于存储启动时间.
+RTC_ADDR地址处的8字节,是关于时间的信息.依次读取出来.
+但是关于i8253计时器的模拟代码中,
+关于offset偏移,应该要加上为0的时候,应该也要将端口刷新时间信息.
+我们......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Bruce Lee on
+    2024-09-01
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#项目工程" title="项目工程">项目工程</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/setup_process_and_printf/">
+    <h2 class="post-title">
+      启动过程汇编与printf的有趣想法
+    </h2>
+    <h3 class="post-subtitle">
+      项目工程
+    </h3>
+    <div class="post-content-preview">
+      volatile在访存的作用
+volatile作用的变量,会在访问的时候,直接读取/写入对于内存,在对于现代计算机来说是一件缓慢的事.一般都是存储在cache中,并且采取一定的策略进行写回内存.
+如果不使用volatile,如果变量指向的是一个IO设备的寄存器,如果这个变量被映射到cache并且cache策略是写回策略.
+那么我们就无法及时的控制IO设备.
+关于fce…中的mario和ker......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Bruce Lee on
+    2024-08-30
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#项目工程" title="项目工程">项目工程</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
   <a href="/cn/elf_handle_and_am_facility/">
     <h2 class="post-title">
       elf处理原理和相关基础设施
@@ -486,7 +767,7 @@ gelf.h是libelf库的一部分,提供的通用接口,无视底层架构的差异
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Bruce Lee on
-    2024-08-20
+    2024-08-25
   </p>
   <div class="tags">
     
@@ -527,308 +808,6 @@ gelf.h是libelf库的一部分,提供的通用接口,无视底层架构的差异
   <div class="tags">
     
     <a href="/tags/#项目工程" title="项目工程">项目工程</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/tracing_based_iringbuf/">
-    <h2 class="post-title">
-      跟踪设施与iringbuf的建立
-    </h2>
-    <h3 class="post-subtitle">
-      项目工程
-    </h3>
-    <div class="post-content-preview">
-      从单步执行指令的实现原理到iringbuf实现细节
-在cpu_exec函数和execute函数中有那么几个变量不是很起眼:g_nr_guest_inst和g_print_step,这两个都是全局变量.
-g_nr_guest_inst很简单,就是记录执行的客户程序的指令数量.
-关于单步执行的关键变量就是这个g_print_step变量.
-cmd_c指令就是单步执行指令的传参n为无穷大,执行无穷......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2024-08-18
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#项目工程" title="项目工程">项目工程</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/parameter_and_makefile_code/">
-    <h2 class="post-title">
-      时间/log/参数传递和makefile全自动编译
-    </h2>
-    <h3 class="post-subtitle">
-      项目工程
-    </h3>
-    <div class="post-content-preview">
-      总体概览
-init_rand()
-该函数定义在timer.c文件中,条件包含了sys/time.h和time.h头文件
-前者用于获取精确时间的获取和计算
-timeval用来表示秒,gettimeofday函数获取当前时间
-get_time函数返回了now - boot_time的时间,应该是一个间隔时间
-后者主要是获取处理器时间,计算时间差.
-这个文件对于评估程序的运行很重要
-init_lo......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2024-08-08
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#项目工程" title="项目工程">项目工程</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/stdarg-sprintf-implementation/">
-    <h2 class="post-title">
-      sprintf的实现与stdarg的可能实现
-    </h2>
-    <h3 class="post-subtitle">
-      C/C++
-    </h3>
-    <div class="post-content-preview">
-      sprintf的实现与stdarg的可能实现
-使用stdarg来实现函数的变参.
-stdarg可能实现
-对于va_list, 这必然是一个指针,用于指示下一个变量的地址.
-va_start这个宏,传入了两个参数,一个是args,一个是最后一个固定参数.
-知道了最后一个固定参数,便可以根据固定参数的位置和其大小,使args指向下一个参数位置.
-va_arg宏也是传入两个参数,一个是args,一......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2024-07-13
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#C/C++" title="C/C++">C/C++</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/batch-mode-RTFSC-makefile/">
-    <h2 class="post-title">
-      Makefile工程代码以及batch模式
-    </h2>
-    <h3 class="post-subtitle">
-      C/C++
-    </h3>
-    <div class="post-content-preview">
-      Makefile and batch mode运行nemu
-之前的分析getopt_long的文档中,便学习了这里的参数传递.
-monitor.c文件中关于parse_args函数,对于不同的参数传递的处理.
-这里就有一个batch参数,经过测试:
-将swtich的参数直接改为’b’,在运行nemu的时候,确实是直接进行batch mode.
-那么理论正确后,可以在make run之后加上A......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2024-07-13
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#C/C++" title="C/C++">C/C++</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/RTFSC_2/">
-    <h2 class="post-title">
-      RTFSC_2
-    </h2>
-    <h3 class="post-subtitle">
-      C/C++
-    </h3>
-    <div class="post-content-preview">
-      模拟器中关于指令ebreak的原理
-ebreak指令是用于debugging.
-转移控制给debugger或者monitor
-其指令格式与其他指令格式不同:确实是其指令位都是0.
-另一个作用:
-作为断点点(breakpoint),可以由程序员或者debugger在程序中插入ebreak作为暂停处理器,使处理器的状态为stop.
-这个ebreak指令是debugging,monite. 或者e......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2024-07-13
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#C/C++" title="C/C++">C/C++</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/debug/">
-    <h2 class="post-title">
-      工程debug经验
-    </h2>
-    <h3 class="post-subtitle">
-      工程项目
-    </h3>
-    <div class="post-content-preview">
-      关于实现指令过程中的debug
-1.加载/存储指令调用Mr/Mw宏,Mr/Mw宏是对vaddr_read/vaddr_write函数的封装
-注意,关于vaddr_read/vaddr_write函数其中封装的paddr系列函数,以及更深的guest_to_host函数,以及更深的pmem系列函数,以及更深的位于host.h文件中的host_read函数.返回的都是uint32_t.如果读取1......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2024-05-31
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#工程项目" title="工程项目">工程项目</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/Deep-understanding-of-variable-parameter-systems/">
-    <h2 class="post-title">
-      预编译变参系统与预编译器粘结运算符以及"回调宏"的应用
-    </h2>
-    <h3 class="post-subtitle">
-      C/C++
-    </h3>
-    <div class="post-content-preview">
-      预编译变参系统与预编译器粘结运算符以及&quot;回调宏&quot;的应用
-使用变参系统时,无预编译器粘结运算符的情况
-这里提到的变参系统不是stdarg文件中声明的那些系列函数与变量系统.而是针对用于宏定义中的变参系统
-在有些情况下,我们在使用__VA_ARGS__时,是不需要添加前缀##.
-关于前缀##(预编译器粘结运算符),见这篇C编译器名称粘结运算符
-__VA_ARGS__是预编译器......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2024-05-10
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#C/C++" title="C/C++">C/C++</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/Multi-Macro-with-Annotation/">
-    <h2 class="post-title">
-      多行宏添加注释的错误(如果不想因为脑子局部性注意力而导致浪费一下午+一晚上时间,请好好看)
-    </h2>
-    <h3 class="post-subtitle">
-      C/C++
-    </h3>
-    <div class="post-content-preview">
-      多行宏添加注释的错误(如果不想因为脑子局部性注意力而导致浪费一下午时间,请好好看)
-正确的示例用法
-12345678910#include &lt;stdio.h&gt;#define some_macro(x, y) \	((x) + \	(y) )int main(int argc, char** argv)&#123;	printf(&quot;use some_macro: %d\n......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2024-05-09
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#C/C++" title="C/C++">C/C++</a>
     
   </div>
   
@@ -886,15 +865,11 @@ __VA_ARGS__是预编译器......
     
     
     
-    <a href="/tags/#项目工程" title="项目工程" rel="8">项目工程</a>
+    <a href="/tags/#项目工程" title="项目工程" rel="17">项目工程</a>
     
     
     
     <a href="/tags/#x86" title="x86" rel="9">x86</a>
-    
-    
-    
-    <a href="/tags/#工程项目" title="工程项目" rel="1">工程项目</a>
     
     
   </div>
@@ -957,24 +932,24 @@ __VA_ARGS__是预编译器......
 <div class="widget">
   <ul>
     
-    <a href="cn/elf_handle_and_am_facility/">
-      <li>elf处理原理和相关基础设施</li>
+    <a href="cn/multitasking-management-and-stack-operation/">
+      <li>多任务管理及栈操作技术详解</li>
     </a>
     
-    <a href="cn/trace_implement/">
-      <li>trace实现原理与应用</li>
+    <a href="cn/multi-program-memory-manage-task-exchange/">
+      <li>多程序操作环境中的内存管理与任务切换</li>
     </a>
     
-    <a href="cn/tracing_based_iringbuf/">
-      <li>跟踪设施与iringbuf的建立</li>
+    <a href="cn/build-and-manage-multi-file/">
+      <li>构建和管理多文件以及编译流程</li>
     </a>
     
-    <a href="cn/parameter_and_makefile_code/">
-      <li>时间/log/参数传递和makefile全自动编译</li>
+    <a href="cn/RISCV-exception-system-call-implementation/">
+      <li>异常处理与系统调用实现细节</li>
     </a>
     
-    <a href="cn/stdarg-sprintf-implementation/">
-      <li>sprintf的实现与stdarg的可能实现</li>
+    <a href="cn/from-compilation-to-execution/">
+      <li>从编译到执行：navy-apps中程序加载与运行的全过程</li>
     </a>
     
   </ul>
@@ -1007,7 +982,7 @@ __VA_ARGS__是预编译器......
 
 <h5><a href="/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archive/2024/08/">August 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2024/07/">July 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2024/05/">May 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2024/04/">April 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2024/03/">March 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2024/01/">January 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2023/12/">December 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2023/10/">October 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2023/09/">September 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2023/08/">August 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2023/07/">July 2023</a><span class="archive-list-count">4</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archive/2024/10/">October 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2024/09/">September 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2024/08/">August 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2024/07/">July 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2024/05/">May 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2024/04/">April 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2024/03/">March 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2024/01/">January 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2023/12/">December 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2023/10/">October 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2023/09/">September 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2023/08/">August 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archive/2023/07/">July 2023</a><span class="archive-list-count">4</span></li></ul>
 </div>
 
 
@@ -1037,10 +1012,6 @@ __VA_ARGS__是预编译器......
     
     <a href="/categories/#x86">
       <li>x86</li>
-    </a>
-    
-    <a href="/categories/#工程项目">
-      <li>工程项目</li>
     </a>
     
   </ul>
