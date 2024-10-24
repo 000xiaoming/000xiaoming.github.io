@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://000xiaoming.github.io/cn/active-multiobject-exploration-and-recognition-via-tactile-whiskers/</loc>
+    
+    <lastmod>2024-10-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://000xiaoming.github.io/cn/engineering_cultivation/</loc>
     
     <lastmod>2024-10-10</lastmod>
@@ -495,6 +504,13 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Paper/</loc>
+    <lastmod>2024-10-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -527,6 +543,13 @@
   
   <url>
     <loc>https://000xiaoming.github.io/categories/x86/</loc>
+    <lastmod>2024-10-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/categories/Paper/</loc>
     <lastmod>2024-10-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
