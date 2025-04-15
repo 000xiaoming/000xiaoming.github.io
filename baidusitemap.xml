@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://000xiaoming.github.io/cn/continuous_discrete_time_unit_impulse_and_step/</loc>
+    <lastmod>2025-01-08</lastmod>
+  </url>
+  <url>
     <loc>https://000xiaoming.github.io/cn/engineering_cultivation/</loc>
     <lastmod>2024-10-10</lastmod>
   </url>
@@ -21,11 +25,11 @@
     <lastmod>2024-09-15</lastmod>
   </url>
   <url>
-    <loc>https://000xiaoming.github.io/cn/from-compilation-to-execution/</loc>
+    <loc>https://000xiaoming.github.io/cn/detailed-explanation-compilation-loading-execution/</loc>
     <lastmod>2024-09-15</lastmod>
   </url>
   <url>
-    <loc>https://000xiaoming.github.io/cn/detailed-explanation-compilation-loading-execution/</loc>
+    <loc>https://000xiaoming.github.io/cn/from-compilation-to-execution/</loc>
     <lastmod>2024-09-15</lastmod>
   </url>
   <url>
