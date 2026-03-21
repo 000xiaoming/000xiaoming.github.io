@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <meta name="baidu-site-verification" content="codeva-OySZDT59RD" />
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-Y95F7Y9NT1"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-Y95F7Y9NT1');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?9b08ea589f23fb1f5e2be85b8ca26b60";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="It&#39;s an IT blog..."/>
+  <meta name="keyword" content="v-vincen,v-vincen,livemylife,IT  blog,Blog"/>
+  <link rel="shortcut icon" href="/img/avatar/roguerabbit.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/highlight.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/widget.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/rocket.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/signature.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/catalog.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+      <!-- gitalk start -->
+      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/gitalk.css"/>
+      <!-- gitalk end -->
+    
+
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://000xiaoming.github.io/cn/项目专题解析_fleet_manager的任务队列_planner依赖和assignment状态保持/">
+  <title>
+    
+      fleet_manager的任务队列,planner依赖和assignment状态保持 - I&#39;m Bruce Lee
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--dark">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'dark';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+		<!-- Gitter -->
+<!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'your-community/your-room'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">经年治世</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">首页</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archives/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>搜索</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <!-- CDN: jsdelivr start -->
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png');
+      --intro-header-background-image-url-page: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io//img/header_img/lml_bg1.png');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io//img/header_img/lml_bg1.png');
+    }
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png'); */
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('/img/signature/vincent-white.png');
+      }
+    
+  </style>
+  <!-- CDN: jsdelivr end -->
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#ROS2" title="ROS2">ROS2</a>
+              
+              <a class="tag" href="/tags/#多机器人系统" title="多机器人系统">多机器人系统</a>
+              
+            </div>
+            <h1>fleet_manager的任务队列,planner依赖和assignment状态保持</h1>
+            <h2 class="subheading">ROS2</h2>
+            <span class="meta">
+              Posted by Bruce Lee on
+              2025-03-10
+            </span>
+
+
+            
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h1>fleet_manager的任务队列,planner依赖和assignment状态保持</h1>
+<p>在当前阶段,fleet_namager并不是一个&quot;高级调度器&quot;,但是它承担了整个闭环里面最关键的中间环节:</p>
+<ol>
+<li>接任务</li>
+<li>看机器人状态</li>
+<li>选一个当前可用机器人</li>
+<li>向planner要路径</li>
+<li>发布assignment</li>
+<li>等待执行状态和完成状态回来</li>
+</ol>
+<p>所以如果说<code>robot_agent</code>是在模拟执行,<code>path_planner</code>是在给路线,那么<code>fleet_manager</code>做的事情其实是把静态任务,变成可以流入系统的动态分配过程</p>
+<p>就fleet_manager而言,有三个问题:</p>
+<ol>
+<li>任务是怎么进入队列的</li>
+<li>为什么manager当前必须依赖planner</li>
+<li>为什么manager要主动维持assignment状态,不能只被动相信topic回传</li>
+</ol>
+<hr>
+<h3 id="当前阶段目标">当前阶段目标</h3>
+<p>当前这个节点的目标,并不是求最优调度,而是先保证下面这条链条真的成立:</p>
+<p><code>SubmitTask -&gt; pending queue -&gt; 选空闲robot -&gt; 请求PlanRoute -&gt; 发布TaskAssignment -&gt; robot执行 -&gt; completed回传</code></p>
+<p>注意这里最重要的不是算法强弱,而是中间状态不能断</p>
+<p>只要中间某一环没有接上,整个系统就会退化成下面几种假象:</p>
+<ol>
+<li>任务只是被登记了,并没有真正被分发</li>
+<li>manager以为已经分配了,robot并没有真正收到</li>
+<li>robot执行结束了,manager却没有正确把资源释放出来</li>
+</ol>
+<p>所以现在要关心的是状态流,而不是配置项本身.</p>
+<hr>
+<h3 id="从接口定义开始看-manager到底在处理什么数据">从接口定义开始看: manager到底在处理什么数据</h3>
+<p>如果只看接口层,<code>fleet_manager</code>当前围绕三组核心数据工作.</p>
+<h4 id="1-输入任务-Task">1. 输入任务 <code>Task</code></h4>
+<p><code>Task.msg</code>当前只有4个字段:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">string task_id</span><br><span class="line">string pickup_waypoint</span><br><span class="line">string dropoff_waypoint</span><br><span class="line">uint8 priority</span><br></pre></td></tr></table></figure>
+<p>这说明当前任务模型非常克制. 它不是泛化工作流任务,不是复杂调度对象,而是一个非常明确的transport task:</p>
+<ol>
+<li>有任务ID</li>
+<li>有取货点</li>
+<li>有放货点</li>
+<li>有一个优先级字段,虽然当前调度逻辑还没有真正用起来</li>
+</ol>
+<p>这里有一个值得注意的现象:接口层已经为后续调度升级留了入口,但当前实现并没有过早引入复杂策略</p>
+<p>这类做法比较稳. 因为字段可以先保留,但调度逻辑先维持最小正确性.</p>
+<h4 id="2-机器人状态-RobotState">2. 机器人状态 <code>RobotState</code></h4>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">string robot_id</span><br><span class="line">geometry_msgs/Pose pose</span><br><span class="line">string current_waypoint</span><br><span class="line">string status</span><br><span class="line">float32 battery_percent</span><br><span class="line">string current_task_id</span><br></pre></td></tr></table></figure>
+<p>这里真正对manager有意义的不是pose本身,而是下面三个域:</p>
+<ol>
+<li><code>status</code></li>
+<li><code>current_waypoint</code></li>
+<li><code>current_task_id</code></li>
+</ol>
+<p>因为manager当前要回答的不是&quot;机器人绝对坐标是多少&quot;,而是:</p>
+<ol>
+<li>它现在闲不闲</li>
+<li>它当前在图上的哪个waypoint</li>
+<li>它身上现在有没有任务没结束</li>
+</ol>
+<p>所以从系统语义看,<code>RobotState</code>既是状态广播,也是manager做分配决策的输入缓存.</p>
+<h4 id="3-分配结果-TaskAssignment">3. 分配结果 <code>TaskAssignment</code></h4>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string robot_id</span><br><span class="line">fleet_msgs/Task task</span><br><span class="line">string[] route_waypoints</span><br></pre></td></tr></table></figure>
+<p>这个消息很关键. 它说明当前manager并不是只告诉robot:“你去做task_x”.</p>
+<p>它实际上在告诉robot两层东西:</p>
+<ol>
+<li>任务是什么</li>
+<li>这个任务对应的离散执行路径是什么</li>
+</ol>
+<p>也就是说,当前系统里manager输出的不是抽象意图,而是带route的执行指令.这会直接把planner拉进manager的关键路径里.</p>
+<hr>
+<h3 id="任务是怎么进入pending-queue的">任务是怎么进入pending queue的</h3>
+<p><code>fleet_manager</code>通过<code>submit_task</code>服务接收任务:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fleet_msgs/Task task</span><br><span class="line">---</span><br><span class="line">bool accepted</span><br><span class="line">string message</span><br></pre></td></tr></table></figure>
+<p>当前实现非常直接: 收到请求后把<code>request-&gt;task</code>压入<code>pending_tasks_</code>, 然后返回<code>accepted = true</code>, <code>message = &quot;task queued&quot;</code>.</p>
+<p>这里看起来很简单,但这个&quot;简单&quot;有它的意义.</p>
+<h4 id="第一层意义-先把任务接入和任务执行解耦">第一层意义: 先把任务接入和任务执行解耦</h4>
+<p>也就是说,客户端提交任务时,manager并不承诺&quot;立刻就派出去&quot;,而只是承诺:任务先被系统接住,进入待处理状态</p>
+<p>这一步把外部请求和内部调度解耦开了. 否则客户端提交时就必须同步等待robot可用,planner可用,整个系统耦合会立刻变重.</p>
+<h4 id="第二层意义-manager获得了自己的节奏控制权">第二层意义: manager获得了自己的节奏控制权</h4>
+<p>任务不是在service callback里直接分配,而是在后续定时器里由<code>assign_pending_tasks()</code>统一尝试分配.</p>
+<p>这意味着:</p>
+<ol>
+<li>task intake和task dispatch是分阶段的</li>
+<li>manager可以在统一时机检查当前robot状态</li>
+<li>manager可以在同一逻辑入口里处理planner是否在线,robot是否有current_waypoint等条件</li>
+</ol>
+<p>这种写法虽然不复杂,但结构上是对的.</p>
+<h4 id="遗留问题和现象1-当前pending-queue只是简单vector-默认FIFO">遗留问题和现象1: 当前pending queue只是简单vector,默认FIFO</h4>
+<p>这说明目前虽然<code>Task</code>里有<code>priority</code>,但是并没有真正参与排序和抢占.</p>
+<p>也就是说,现在的队列更接近&quot;先来先处理&quot;,不是优先级驱动调度.</p>
+<hr>
+<h3 id="为什么manager不能跳过planner">为什么manager不能跳过planner</h3>
+<p>从代码看,<code>assign_pending_tasks()</code>在真的发布assignment之前,会先做几件事:</p>
+<ol>
+<li>没有pending task就返回</li>
+<li>如果已有planning request in flight就返回</li>
+<li>选择一个idle robot</li>
+<li>检查该robot有没有<code>current_waypoint</code></li>
+<li>检查<code>plan_route</code>服务当前是否可用</li>
+<li>构造<code>PlanRoute::Request</code></li>
+<li>异步请求planner</li>
+<li>拿到route以后才真正publish assignment</li>
+</ol>
+<p>这条路径说明一个很关键的事实:当前manager的分配动作,在逻辑上依赖planner成功返回route</p>
+<p>为什么会这样? 因为当前robot_agent接收的不是裸任务,而是<code>TaskAssignment</code>,里面包含<code>route_waypoints</code>.</p>
+<p>如果manager不先拿到route,它就只能做两种事情:</p>
+<ol>
+<li>发布一个不完整assignment</li>
+<li>把规划逻辑重新塞回manager内部</li>
+</ol>
+<p>前者会让agent端协议变得模糊,后者会破坏当前分层. 所以V1阶段用service把planner放在dispatch关键路径上,其实是个非常合理的决定.</p>
+<h4 id="这个依赖关系意味着什么">这个依赖关系意味着什么</h4>
+<p>它意味着manager当前不是纯粹的队列管理器,而是一个有前置条件的dispatcher.</p>
+<p>这个前置条件包括:</p>
+<ol>
+<li>planner必须在线</li>
+<li>planner必须能在当前图上给出路径</li>
+<li>robot必须知道自己的当前waypoint</li>
+</ol>
+<p>这也解释了为什么代码里会出现这种推迟分配的情况:</p>
+<ol>
+<li>robot没有<code>current_waypoint</code>,先不派</li>
+<li>planner服务还没起来,先不派</li>
+<li>planner返回失败,该task暂时留在队列头部</li>
+</ol>
+<p>这类逻辑的本质不是保守,而是:manager宁可延迟,也不发布一个语义不完整的assignment</p>
+<p>从工程上看,这是正确的.</p>
+<hr>
+<h3 id="为什么要有-planning-request-in-flight">为什么要有 <code>planning_request_in_flight_</code></h3>
+<p>当前实现里有一个很小但很关键的布尔量:<code>planning_request_in_flight_</code></p>
+<p>它的作用是避免manager在planner结果还没回来时,重复发起新的规划请求.</p>
+<p>别小看这个开关. 如果没有它,在定时器周期性触发下,manager可能会对同一个队首任务不断请求planner,从而产生:</p>
+<ol>
+<li>重复规划</li>
+<li>重复assignment风险</li>
+<li>队列状态和回调结果之间的错位</li>
+</ol>
+<p>所以这个变量本质上是在做一件事:把&quot;队列头任务正在等待planner结果&quot;这个中间态显式建模出来</p>
+<p>这很像有限状态机里补了一个过渡状态. 没有这个状态,系统虽然也能写,但边界会很模糊.</p>
+<hr>
+<h3 id="manager选择robot为什么现在只做first-idle">manager选择robot为什么现在只做first-idle</h3>
+<p><code>select_idle_robot()</code>当前的逻辑非常直接:</p>
+<ol>
+<li>遍历<code>robot_states_</code></li>
+<li>谁的<code>status == &quot;idle&quot;</code>,就返回谁</li>
+<li>找不到就返回空字符串</li>
+</ol>
+<p>如果从算法视角看,这个策略很弱. 但从当前项目阶段看,它的作用不是最优,而是稳定.因为当前系统真正先要确认的是:</p>
+<ol>
+<li>robot状态有没有持续上报</li>
+<li>manager能不能稳定缓存这些状态</li>
+<li>task有没有真的被分出去</li>
+<li>分出去后robot会不会进入执行态</li>
+<li>完成后manager会不会重新认为它空闲</li>
+</ol>
+<p>在这些问题还没有全部稳定之前,过早引入距离代价,电量代价,优先级竞争,只会让故障源增加.</p>
+<p>所以这里体现出来的是一个很典型的工程节奏:先保证分配链路成立,再追求分配质量</p>
+<hr>
+<h3 id="assignment状态保持问题-其实是这个节点最值得写的一点">assignment状态保持问题,其实是这个节点最值得写的一点</h3>
+<p><code>fleet_manager</code>里最有意思的一段逻辑,不是push队列,也不是call planner,而是它在接收<code>robot_states</code>时对状态做的修正.</p>
+<p>大意是这样:</p>
+<ol>
+<li>如果之前记录里这个robot已经带有<code>current_task_id</code></li>
+<li>但这次新收到的消息却是<code>status == idle</code>并且<code>current_task_id</code>为空</li>
+<li>那么manager不会立刻相信这条新消息,而是保留之前那个assignment相关状态</li>
+</ol>
+<p>以及另一种情况:</p>
+<ol>
+<li>如果新消息是<code>completed</code></li>
+<li>并且<code>current_task_id</code>和之前记录中的任务一致</li>
+<li>那么manager会把内部缓存状态改写成<code>idle + 空task_id</code></li>
+</ol>
+<p>这个行为非常值得单独分析.</p>
+<h4 id="为什么不能只做-收到什么就信什么">为什么不能只做&quot;收到什么就信什么&quot;</h4>
+<p>因为topic系统里的状态传播不是原子的.manager在发布assignment后,agent并不会在同一个瞬间立刻切到<code>executing</code>并回传回来. 中间存在一个时间缝隙.</p>
+<p>如果manager在这个缝隙里又收到agent按旧节奏发出的<code>idle</code>状态,并且完全照单全收,就会出现一个很危险的现象:同一个robot明明刚被分配出去,却在manager看来又重新空闲了</p>
+<p>这会导致什么?</p>
+<ol>
+<li>同一个robot可能被重复分配</li>
+<li>manager内部的task ownership失真</li>
+<li>整个assignment生命周期被topic时序打穿</li>
+</ol>
+<p>所以manager这里做的不是&quot;修饰日志&quot;,而是在做状态一致性兜底.</p>
+<h4 id="这段逻辑本质上在弥补什么">这段逻辑本质上在弥补什么</h4>
+<p>它弥补的是这个事实:dispatch状态和执行状态属于两个不同节点产生的事件,它们之间天然存在传播延迟</p>
+<p>manager自己知道:“我刚刚给robot_x分配了task_y”.<br>
+agent自己知道:“我下一拍才会把执行状态发出来”.</p>
+<p>如果中间没有一个节点负责记住这个过渡事实,系统就会在短时间窗口里自相矛盾.而当前manager正是在承担这个责任.所以从分析角度看,这不是简单的缓存,而更像是:manager内部维护了一份比topic表面值更强的assignment真相</p>
+<p>这个点实际上非常适合后续继续扩展成更正式的状态机设计.</p>
+<hr>
+<h3 id="从这里可以看到当前V1的边界">从这里可以看到当前V1的边界</h3>
+<p>虽然<code>fleet_manager</code>已经把最小闭环接起来了,但它的边界也很明显.</p>
+<h4 id="1-还没有真正使用priority">1. 还没有真正使用<code>priority</code></h4>
+<p>所以任务调度语义目前并不完整.</p>
+<h4 id="2-还没有冲突检测-预约">2. 还没有冲突检测/预约</h4>
+<p>也就是说,manager现在只回答&quot;谁闲着可以接&quot;,还没有回答&quot;谁接了以后不会和别人撞路&quot;.</p>
+<h4 id="3-robot选择没有代价模型">3. robot选择没有代价模型</h4>
+<p>当前没有考虑:</p>
+<ol>
+<li>谁离pickup更近</li>
+<li>谁电量更合适</li>
+<li>谁整体任务完成时间更优</li>
+</ol>
+<h4 id="4-planner失败后的重试-降级策略还比较朴素">4. planner失败后的重试/降级策略还比较朴素</h4>
+<p>现在更接近&quot;这次不行就先挂着&quot;,还没有更复杂的故障恢复行为.</p>
+<h4 id="5-状态保持逻辑还是局部补丁式的">5. 状态保持逻辑还是局部补丁式的</h4>
+<p>它已经解决了当前最直接的问题,但如果后面任务生命周期变复杂,就会需要更正式的状态模型.</p>
+<p>遗留问题和现象2: 当前manager已经不是简单消息转发器,它正在逐步演化成一个显式维护任务生命周期的中心状态节点</p>
+<hr>
+<h3 id="最后">最后</h3>
+<p>如果只用一句话总结当前这个<code>fleet_manager</code>专题,那就是:</p>
+<p>它当前最重要的价值,不是实现了多聪明的调度,而是把任务受理,路径依赖,分配发布和状态保持这几件事放在了同一个可控节点里,从而把V1系统的主链路真正拧成了一条线</p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/cn/项目专题解析_path_planner的图模型_BFS和route拼接/" data-toggle="tooltip" data-placement="top" title="path_planner的图模型,BFS和route拼接">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/cn/continuous_discrete_time_unit_impulse_and_step/" data-toggle="tooltip" data-placement="top" title="连续/离散时间的单位冲激/阶跃关系及其表示意义">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. All the images used in the blog are my original works or AI works, if you want to take it,don't hesitate. Thank you !
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=fleet_manager的任务队列,planner依赖和assignment状态保持&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/项目专题解析_fleet_manager的任务队列_planner依赖和assignment状态保持/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <script src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Mon Mar 10 2025 19:15:00 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">fleet_manager的任务队列,planner依赖和assignment状态保持</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%BD%93%E5%89%8D%E9%98%B6%E6%AE%B5%E7%9B%AE%E6%A0%87"><span class="toc-nav-number">1.0.1.</span> <span class="toc-nav-text">当前阶段目标</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BB%8E%E6%8E%A5%E5%8F%A3%E5%AE%9A%E4%B9%89%E5%BC%80%E5%A7%8B%E7%9C%8B-manager%E5%88%B0%E5%BA%95%E5%9C%A8%E5%A4%84%E7%90%86%E4%BB%80%E4%B9%88%E6%95%B0%E6%8D%AE"><span class="toc-nav-number">1.0.2.</span> <span class="toc-nav-text">从接口定义开始看: manager到底在处理什么数据</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-%E8%BE%93%E5%85%A5%E4%BB%BB%E5%8A%A1-Task"><span class="toc-nav-number">1.0.2.1.</span> <span class="toc-nav-text">1. 输入任务 Task</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%8A%B6%E6%80%81-RobotState"><span class="toc-nav-number">1.0.2.2.</span> <span class="toc-nav-text">2. 机器人状态 RobotState</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#3-%E5%88%86%E9%85%8D%E7%BB%93%E6%9E%9C-TaskAssignment"><span class="toc-nav-number">1.0.2.3.</span> <span class="toc-nav-text">3. 分配结果 TaskAssignment</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BB%BB%E5%8A%A1%E6%98%AF%E6%80%8E%E4%B9%88%E8%BF%9B%E5%85%A5pending-queue%E7%9A%84"><span class="toc-nav-number">1.0.3.</span> <span class="toc-nav-text">任务是怎么进入pending queue的</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%AC%AC%E4%B8%80%E5%B1%82%E6%84%8F%E4%B9%89-%E5%85%88%E6%8A%8A%E4%BB%BB%E5%8A%A1%E6%8E%A5%E5%85%A5%E5%92%8C%E4%BB%BB%E5%8A%A1%E6%89%A7%E8%A1%8C%E8%A7%A3%E8%80%A6"><span class="toc-nav-number">1.0.3.1.</span> <span class="toc-nav-text">第一层意义: 先把任务接入和任务执行解耦</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%AC%AC%E4%BA%8C%E5%B1%82%E6%84%8F%E4%B9%89-manager%E8%8E%B7%E5%BE%97%E4%BA%86%E8%87%AA%E5%B7%B1%E7%9A%84%E8%8A%82%E5%A5%8F%E6%8E%A7%E5%88%B6%E6%9D%83"><span class="toc-nav-number">1.0.3.2.</span> <span class="toc-nav-text">第二层意义: manager获得了自己的节奏控制权</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E9%81%97%E7%95%99%E9%97%AE%E9%A2%98%E5%92%8C%E7%8E%B0%E8%B1%A11-%E5%BD%93%E5%89%8Dpending-queue%E5%8F%AA%E6%98%AF%E7%AE%80%E5%8D%95vector-%E9%BB%98%E8%AE%A4FIFO"><span class="toc-nav-number">1.0.3.3.</span> <span class="toc-nav-text">遗留问题和现象1: 当前pending queue只是简单vector,默认FIFO</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88manager%E4%B8%8D%E8%83%BD%E8%B7%B3%E8%BF%87planner"><span class="toc-nav-number">1.0.4.</span> <span class="toc-nav-text">为什么manager不能跳过planner</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E8%BF%99%E4%B8%AA%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB%E6%84%8F%E5%91%B3%E7%9D%80%E4%BB%80%E4%B9%88"><span class="toc-nav-number">1.0.4.1.</span> <span class="toc-nav-text">这个依赖关系意味着什么</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%9C%89-planning-request-in-flight"><span class="toc-nav-number">1.0.5.</span> <span class="toc-nav-text">为什么要有 planning_request_in_flight_</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#manager%E9%80%89%E6%8B%A9robot%E4%B8%BA%E4%BB%80%E4%B9%88%E7%8E%B0%E5%9C%A8%E5%8F%AA%E5%81%9Afirst-idle"><span class="toc-nav-number">1.0.6.</span> <span class="toc-nav-text">manager选择robot为什么现在只做first-idle</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#assignment%E7%8A%B6%E6%80%81%E4%BF%9D%E6%8C%81%E9%97%AE%E9%A2%98-%E5%85%B6%E5%AE%9E%E6%98%AF%E8%BF%99%E4%B8%AA%E8%8A%82%E7%82%B9%E6%9C%80%E5%80%BC%E5%BE%97%E5%86%99%E7%9A%84%E4%B8%80%E7%82%B9"><span class="toc-nav-number">1.0.7.</span> <span class="toc-nav-text">assignment状态保持问题,其实是这个节点最值得写的一点</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E8%83%BD%E5%8F%AA%E5%81%9A-%E6%94%B6%E5%88%B0%E4%BB%80%E4%B9%88%E5%B0%B1%E4%BF%A1%E4%BB%80%E4%B9%88"><span class="toc-nav-number">1.0.7.1.</span> <span class="toc-nav-text">为什么不能只做&quot;收到什么就信什么&quot;</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E8%BF%99%E6%AE%B5%E9%80%BB%E8%BE%91%E6%9C%AC%E8%B4%A8%E4%B8%8A%E5%9C%A8%E5%BC%A5%E8%A1%A5%E4%BB%80%E4%B9%88"><span class="toc-nav-number">1.0.7.2.</span> <span class="toc-nav-text">这段逻辑本质上在弥补什么</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BB%8E%E8%BF%99%E9%87%8C%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0%E5%BD%93%E5%89%8DV1%E7%9A%84%E8%BE%B9%E7%95%8C"><span class="toc-nav-number">1.0.8.</span> <span class="toc-nav-text">从这里可以看到当前V1的边界</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-%E8%BF%98%E6%B2%A1%E6%9C%89%E7%9C%9F%E6%AD%A3%E4%BD%BF%E7%94%A8priority"><span class="toc-nav-number">1.0.8.1.</span> <span class="toc-nav-text">1. 还没有真正使用priority</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-%E8%BF%98%E6%B2%A1%E6%9C%89%E5%86%B2%E7%AA%81%E6%A3%80%E6%B5%8B-%E9%A2%84%E7%BA%A6"><span class="toc-nav-number">1.0.8.2.</span> <span class="toc-nav-text">2. 还没有冲突检测&#x2F;预约</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#3-robot%E9%80%89%E6%8B%A9%E6%B2%A1%E6%9C%89%E4%BB%A3%E4%BB%B7%E6%A8%A1%E5%9E%8B"><span class="toc-nav-number">1.0.8.3.</span> <span class="toc-nav-text">3. robot选择没有代价模型</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#4-planner%E5%A4%B1%E8%B4%A5%E5%90%8E%E7%9A%84%E9%87%8D%E8%AF%95-%E9%99%8D%E7%BA%A7%E7%AD%96%E7%95%A5%E8%BF%98%E6%AF%94%E8%BE%83%E6%9C%B4%E7%B4%A0"><span class="toc-nav-number">1.0.8.4.</span> <span class="toc-nav-text">4. planner失败后的重试&#x2F;降级策略还比较朴素</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#5-%E7%8A%B6%E6%80%81%E4%BF%9D%E6%8C%81%E9%80%BB%E8%BE%91%E8%BF%98%E6%98%AF%E5%B1%80%E9%83%A8%E8%A1%A5%E4%B8%81%E5%BC%8F%E7%9A%84"><span class="toc-nav-number">1.0.8.5.</span> <span class="toc-nav-text">5. 状态保持逻辑还是局部补丁式的</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%9C%80%E5%90%8E"><span class="toc-nav-number">1.0.9.</span> <span class="toc-nav-text">最后</span></a></li></ol></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#ROS2" title="ROS2">ROS2</a>
+            
+            <a class="tag" href="/tags/#多机器人系统" title="多机器人系统">多机器人系统</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>链友</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://v-vincen.life/" target="_blank">V_Vincen</a>
+          </li>
+          
+          <li>
+            <a href="http://beantech.org" target="_blank">Bean Tech</a>
+          </li>
+          
+          <li>
+            <a href="http://huangxuan.me" target="_blank">Hux Blog</a>
+          </li>
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+          <li>
+            <a href="https://fe32.top/" target="_blank">Ethan.Tzy</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/000xiaoming">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Bruce Lee
+          2026
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/jquery.min.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/bootstrap.min.js"></script>
+
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/hux-blog.min.js"></script>
+
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/catalog.js"></script>
+
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/totop.js"></script>
+
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/mouseclick.js"  content='西风烈,长空雁叫霜晨月,霜晨月,马蹄声碎,喇叭声咽,雄关漫道真如铁,而今迈步从头越,从头越,苍山如海,残阳如血' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033' ></script>
+    <!-- Mouseclick -->
+  
+
+  
+
+  
+
+
+
+
+  <!-- CDN: jsdelivr start -->
+  <script async="async" type="text/javascript">
+    let imgsUrl = document.getElementsByTagName("img");
+    let imgUrl = Array.from(imgsUrl);
+
+    let jsdelivr = "https://cdn.jsdelivr.net/gh/";
+    let gh = "000xiaoming";
+    let ghPages = gh + ".github.io";
+    let pagePath = "cn/项目专题解析_fleet_manager的任务队列_planner依赖和assignment状态保持/";
+    let jsdelivrurl;
+    if (pagePath.indexOf("index.html") != -1) {
+      jsdelivrurl = jsdelivr + gh + "/" + ghPages;
+    } else {
+      jsdelivrurl = jsdelivr + gh + "/" + ghPages + "/" + pagePath;
+    }
+    imgUrl.forEach(item => {
+      let oldUrl = item.getAttribute("src");
+      let newUrl = oldUrl.replace(oldUrl, jsdelivrurl + oldUrl).replace("..", "");
+      item.setAttribute("src", newUrl);
+    });
+  </script>
+  <!-- CDN: jsdelivr end -->
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://000xiaoming.github.io/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+              imgUrl = 'https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io' + imgUrl;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
