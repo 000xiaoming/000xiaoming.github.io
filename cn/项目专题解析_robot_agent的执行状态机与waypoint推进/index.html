@@ -127,10 +127,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://000xiaoming.github.io/cn/项目专题解析_path_planner的图模型_BFS和route拼接/">
+  <link rel="canonical" href="https://000xiaoming.github.io/cn/项目专题解析_robot_agent的执行状态机与waypoint推进/">
   <title>
     
-      path_planner的图模型,BFS和route拼接 - I&#39;m Bruce Lee
+      robot_agent的执行状态机与waypoint推进 - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -383,11 +383,11 @@
               <a class="tag" href="/tags/#多机器人系统" title="多机器人系统">多机器人系统</a>
               
             </div>
-            <h1>path_planner的图模型,BFS和route拼接</h1>
+            <h1>robot_agent的执行状态机与waypoint推进</h1>
             <h2 class="subheading">ROS2</h2>
             <span class="meta">
               Posted by Bruce Lee on
-              2025-03-15
+              2025-03-17
             </span>
 
 
@@ -443,251 +443,148 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1>path_planner的图模型,BFS和route拼接</h1>
-<p>给<code>fleet_manager</code>一个足够简单,足够稳定,并且足够可解释的route结果,让任务分配真正闭环</p>
-<p>也就是说,当前planner首先要解决的不是&quot;最先进&quot;,而是&quot;最小正确&quot;.</p>
-<p>这篇只分析三个问题:</p>
-<ol>
-<li>为什么当前用的是离散waypoint图模型</li>
-<li>为什么当前算法选BFS而不是更复杂的方法</li>
-<li>为什么route要拆成<code>start -&gt; pickup</code>和<code>pickup -&gt; dropoff</code>两段再拼接</li>
-</ol>
+        <h1>robot_agent的执行状态机与waypoint推进</h1>
+<p>继<code>fleet_manager</code>和<code>path_planner</code>这两个节点之后. 但如果继续顺着当前这个逻辑往下走,第三个必须单独拿出来写的模块,其实就是<code>robot_agent</code>.</p>
+<p>原因很直接: <code>fleet_manager</code>负责把任务分出去,<code>path_planner</code>负责把任务翻译成route, <code>robot_agent</code>负责把route真正变成一个会流动的执行过程</p>
+<p>也就是说,如果没有<code>robot_agent</code>, 前面两层再完整,系统也只是停留在:manager认为自己已经分配了任务,但任务并没有真正经历执行生命周期<br>
+这里就有关键的几个问题: <code>robot_agent</code>为什么本质上是一个简化执行状态机, waypoint是如何被逐步推进并转成状态回传的,当前这个agent模型已经解决了什么,又还没有解决什么</p>
 <hr>
 <h3 id="当前阶段目标">当前阶段目标</h3>
-<p>当前<code>path_planner</code>在系统里的目标其实很克制:</p>
-<ol>
-<li>接收起点waypoint</li>
-<li>接收pickup waypoint</li>
-<li>接收dropoff waypoint</li>
-<li>在当前配置图上给出一条可走的waypoint序列</li>
-</ol>
-<p>它不是在做连续空间轨迹规划,也不是在做动态避障,更不是在做多机器人全局联合规划.</p>
-<p>所以如果把这个节点放回整个项目背景里看,就会发现它当前的任务本质是:把任务语义翻译成离散路径语义,而不是把机器人控制问题一次性做完.</p>
+<p>当前<code>robot_agent</code>在整个V1系统里的目标并不复杂,但很关键: 订阅<code>task_assignments</code>, 只接收发给自己的assignment, 保存<code>route_waypoints</code>,按周期推进当前waypoint,发布<code>idle / executing / completed</code>状态迁移</p>
+<p>如果把这个目标放回整个项目背景里看,它其实是在做一件非常具体的事情:把planner给出的静态路线,转成manager可观察的动态执行过程</p>
+<p>这一点之所以重要,是因为当前项目不是单机算法demo,而是一个多节点协调系统. 在这种系统里,&quot;已经发布assignment&quot;和&quot;assignment真的被执行了&quot;不是一回事.</p>
 <hr>
-<h3 id="先看接口-planner到底承诺了什么">先看接口: planner到底承诺了什么</h3>
-<p>当前服务接口是<code>PlanRoute.srv</code>:</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">string start_waypoint</span><br><span class="line">string pickup_waypoint</span><br><span class="line">string dropoff_waypoint</span><br><span class="line">---</span><br><span class="line">bool success</span><br><span class="line">string message</span><br><span class="line">string[] route_waypoints</span><br></pre></td></tr></table></figure>
-<p>这个接口非常值得注意,因为它说明planner当前不是通用图搜索接口,而是明显带有任务语义的接口.</p>
-<p>它不是只问:</p>
-<ol>
-<li>从A到B怎么走</li>
-</ol>
-<p>而是直接问:</p>
-<ol>
-<li>从当前起点怎么到pickup</li>
-<li>再从pickup怎么到dropoff</li>
-</ol>
-<p>也就是说,当前planner并不是一个抽象&quot;路径库&quot;,它更像是一个为transport task服务的路线生成器.</p>
-<p>这个设计有两个直接含义:</p>
-<ol>
-<li>planner理解当前任务模型</li>
-<li>manager不需要自己拆任务路径结构</li>
-</ol>
-<p>这说明当前分层方式是明确的: manager负责决定谁接任务, planner负责把任务转成route.</p>
+<h3 id="先看接口-robot-agent到底消费什么-又产出什么">先看接口: <code>robot_agent</code>到底消费什么,又产出什么</h3>
+<p>当前agent消费的输入是<code>TaskAssignment.msg</code>:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string robot_id</span><br><span class="line">fleet_msgs/Task task</span><br><span class="line">string[] route_waypoints</span><br></pre></td></tr></table></figure>
+<p>这个接口说明,agent接到的不是抽象任务意图,而是已经带好了离散路线的执行指令.换句话说,当前agent不负责再去理解pickup和dropoff之间怎么规划,它只需要回答下面两个问题:这是不是发给我的任务, 这条route我现在推进到哪里了</p>
+<p>而它周期性发布的输出是<code>RobotState.msg</code>:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">string robot_id</span><br><span class="line">geometry_msgs/Pose pose</span><br><span class="line">string current_waypoint</span><br><span class="line">string status</span><br><span class="line">float32 battery_percent</span><br><span class="line">string current_task_id</span><br></pre></td></tr></table></figure>
+<p>这里最关键的不是<code>pose</code>本身,而是三件事:, <code>status</code>,<code>current_waypoint</code>, <code>current_task_id</code></p>
+<p>因为对<code>fleet_manager</code>来说,它真正需要知道的不是底层控制量,而是: 这个robot是不是空闲, 它正在执行哪个task,它已经推进到哪一个离散点</p>
+<p>所以从系统语义看,<code>robot_agent</code>其实是在把route序列翻译成状态序列.</p>
 <hr>
-<h3 id="为什么这里先采用离散图模型">为什么这里先采用离散图模型</h3>
-<p>当前demo图配置在<code>demo_map.yaml</code>里,本质上由两部分组成:</p>
-<ol>
-<li>waypoint列表</li>
-<li>edge列表</li>
-</ol>
-<p>例如现在的waypoint有:</p>
-<ol>
-<li><code>dock_a</code></li>
-<li><code>mid_1</code></li>
-<li><code>pickup_zone</code></li>
-<li><code>mid_2</code></li>
-<li><code>dropoff_zone</code></li>
-<li><code>dock_c</code></li>
-</ol>
-<p>边则像这样:</p>
-<ol>
-<li><code>dock_a:mid_1</code></li>
-<li><code>mid_1:pickup_zone</code></li>
-<li><code>mid_1:mid_2</code></li>
-<li><code>mid_2:dropoff_zone</code></li>
-<li><code>mid_2:dock_c</code></li>
-</ol>
-<p>这类建模方式说明当前系统把环境先抽象成了一个无权离散图.</p>
-<h4 id="为什么这一步是合理的">为什么这一步是合理的</h4>
-<p>因为当前项目真正想验证的是车队协调主链路,不是地图表达能力本身.</p>
-<p>对于当前阶段,manager真正关心的是:</p>
-<ol>
-<li>机器人现在在哪个离散点</li>
-<li>pickup在哪个离散点</li>
-<li>dropoff在哪个离散点</li>
-<li>是否存在一条图上的连通路径</li>
-</ol>
-<p>只要这些语义成立,系统就已经能做出有意义的分配和执行模拟.这意味着项目当前实际上主动回避了几个高复杂度问题:</p>
-<ol>
-<li>连续空间建图</li>
-<li>局部避障</li>
-<li>轨迹时间参数化</li>
-<li>运动学约束</li>
-<li>更复杂地图格式接入</li>
-</ol>
-<p>这不是能力缺失,而是阶段控制.当前系统先把环境压缩成离散可达关系,是为了先验证任务协调,不是为了永久停留在简单地图上</p>
+<h3 id="为什么说它本质上是一个简化执行状态机">为什么说它本质上是一个简化执行状态机</h3>
+<p>看<code>robot_agent_node.cpp</code>会发现,当前实现没有很正式地写出一个枚举状态机,但它实际上已经具备了很清楚的状态迁移结构.</p>
+<p>内部关键状态主要有: <code>active_task_</code>, <code>completion_announced_</code>,<code>active_task_id_</code>, <code>route_waypoints_</code>, <code>route_index_</code>, <code>current_waypoint_</code></p>
+<p>这些变量组合起来,基本就把一个最小执行器的内部过程表达出来了.粗略可以压缩成下面这个过程:</p>
+<p><code>无任务</code><br>
+-&gt; <code>收到属于自己的assignment</code><br>
+-&gt; <code>active_task_ = true</code><br>
+-&gt; <code>沿route逐点推进</code><br>
+-&gt; <code>发布completed</code><br>
+-&gt; <code>清空任务上下文</code><br>
+-&gt; <code>重新回到idle</code></p>
+<p>注意这里最有意思的一点是:agent不是在收到assignment的瞬间就立刻宣布completed,也不是只维护一个布尔busy标志,而是显式保留了一个执行中间过程</p>
+<p>这说明当前项目已经意识到,哪怕是最小demo执行器,也必须把&quot;执行中&quot;当成一个独立状态来建模. 否则manager永远看不到任务生命周期真正流动起来.</p>
 <hr>
-<h3 id="参数化图配置这件事-其实比看起来更重要">参数化图配置这件事,其实比看起来更重要</h3>
-<p><code>path_planner</code>启动时并不是把图硬编码死在逻辑里面,而是先声明参数:</p>
-<ol>
-<li><code>graph_waypoints</code></li>
-<li><code>graph_edges</code></li>
-</ol>
-<p>然后通过<code>load_graph_from_parameters()</code>把参数装入内部的邻接表.这个设计的价值在于,它把&quot;规划逻辑&quot;和&quot;地图内容&quot;拆开了.</p>
-<p>换句话说,当前planner真正硬编码的不是地图,而只是:</p>
-<ol>
-<li>图是由waypoint和edge组成</li>
-<li>edge格式用<code>from:to</code>表示</li>
-<li>图内部以邻接表保存</li>
-</ol>
-<p>至于具体有多少节点,节点怎么连,则交给launch配置控制.</p>
-<p>这个分离对当前项目很重要,因为它让系统具备了以下性质:</p>
-<ol>
-<li>不改planner代码也能替换demo图</li>
-<li>同一套planner逻辑可以服务不同地图</li>
-<li>blog和文档可以把&quot;算法行为&quot;和&quot;场景配置&quot;分开分析</li>
-</ol>
-<h4 id="遗留问题和现象1-当前边配置默认被视为双向边">遗留问题和现象1: 当前边配置默认被视为双向边</h4>
-<p>代码里读取一条<code>from:to</code>后,会同时写入:</p>
-<ol>
-<li><code>graph_[from].push_back(to)</code></li>
-<li><code>graph_[to].push_back(from)</code></li>
-</ol>
-<p>这说明当前图模型是无向图.</p>
-<p>这对demo阶段是合理的,但后续如果出现单向通道,禁行方向,不同边代价,这个模型就需要升级.</p>
+<h3 id="assignment是怎么被接住的">assignment是怎么被接住的</h3>
+<p>当前agent订阅<code>task_assignments</code>, 回如果<code>msg-&gt;robot_id</code>不是自己的<code>robot_id</code>, 直接忽略, 如果当前<code>active_task_</code>已经为真, 直接拒绝新assignment,如果<code>route_waypoints</code>为空, 直接忽略. 这三步虽然简单,但语义很清楚.</p>
+<h4 id="第一层-agent只处理发给自己的任务">第一层: agent只处理发给自己的任务</h4>
+<p>这让<code>task_assignments</code>这个topic可以被多个agent同时订阅,但每个agent只消费属于自己的那一条.</p>
+<h4 id="第二层-当前agent一次只允许一个active-task">第二层: 当前agent一次只允许一个active task</h4>
+<p>这与整个V1系统的调度假设一致. 现在还不是多任务队列执行器,而是单robot单任务模型.</p>
+<h4 id="第三层-没有route就不接受assignment">第三层: 没有route就不接受assignment</h4>
+<p>这也再次说明当前系统协议是收敛的:agent消费的是可执行assignment,不是半成品任务</p>
+<p>过滤通过后,agent会把: <code>active_task_</code>置为<code>true</code>,<code>completion_announced_</code>置为<code>false</code>, 保存<code>active_task_id_</code>, 保存整条<code>route_waypoints_</code>, 把<code>route_index_</code>重置为0,把<code>current_waypoint_</code>设成route第一个点</p>
+<p>这里有一个值得注意的小细节:当前实现把<code>current_waypoint_</code>直接设成<code>route_waypoints_.front()</code>.</p>
+<p>这意味着assignment一旦被接收, agent内部就认为自己已经处在这条执行路线的起点语义上了. 对当前V1来说这是合理的,因为planner生成route时,第一点本来就应该是robot当前所在的离散waypoint.</p>
 <hr>
-<h3 id="为什么当前算法选BFS">为什么当前算法选BFS</h3>
-<p>很多人会下意识问:</p>
+<h3 id="waypoint推进是怎么发生的">waypoint推进是怎么发生的</h3>
+<p>当前agent没有单独的执行线程,而是把推进逻辑放进了一个1秒周期的定时器里. 每次定时器触发时都会调用<code>publish_state()</code>.</p>
+<p>这意味着当前执行模型不是:收到assignment后立刻高速推进完所有路径</p>
+<p>而是: 每个周期发布一次状态,如果还在route中间,就把<code>route_index_</code>往前推进一格,同时更新<code>current_waypoint_</code></p>
+<p>从代码看,核心分支大概分成4类.</p>
+<h4 id="1-没有active-task">1. 没有active task</h4>
+<p>如果<code>active_task_ == false</code>, 直接发布: <code>status = &quot;idle&quot;</code>, <code>current_task_id = &quot;&quot;</code></p>
+<p>这对应系统里的空闲态.</p>
+<h4 id="2-还没走到route末尾">2. 还没走到route末尾</h4>
+<p>如果<code>route_index_ + 1 &lt; route_waypoints_.size()</code>, 就:<code>++route_index_</code> 把<code>current_waypoint_</code>更新为新索引对应点<br>
+/ 发布<code>status = &quot;executing&quot;</code><br>
+/发布当前<code>active_task_id_</code></p>
+<p>这一步非常关键. 它说明当前执行语义不是&quot;我有任务所以一直executing&quot;,而是:只要route还有后续waypoint, agent就在每个timer tick里显式推进一次离散执行位置</p>
+<p>因此manager侧看到的不是静态busy,而是会随时间变化的<code>current_waypoint</code>.</p>
+<h4 id="3-已经到达route末尾-但还没宣布完成">3. 已经到达route末尾,但还没宣布完成</h4>
+<p>如果route已经走完并且<code>completion_announced_ == false</code>, agent不会立刻回到idle,而是先单独发布一次: <code>status = &quot;completed&quot;</code>, <code>current_task_id = active_task_id_</code></p>
+<p>然后把<code>completion_announced_</code>置真.</p>
+<p>这个设计很重要. 因为如果它在最后一个waypoint推进完成后立刻把任务上下文清空, manager就只能看到: 前一拍还在executing, 下一拍突然idle</p>
+<p>中间就少了一个明确的完成事件.</p>
+<p>而当前实现显式保留了一拍<code>completed</code>, 本质上是在告诉上游:这个任务不是消失了,而是已经完成了</p>
+<h4 id="4-完成事件已经发过-才真正回到idle">4. 完成事件已经发过,才真正回到idle</h4>
+<p>下一拍再进入<code>publish_state()</code>时, agent才会:</p>
 <ol>
-<li>为什么不是Dijkstra</li>
-<li>为什么不是A*</li>
-<li>为什么不是更接近真实导航的方案</li>
+<li><code>active_task_ = false</code></li>
+<li>清空<code>active_task_id_</code></li>
+<li>清空<code>route_waypoints_</code></li>
+<li>把<code>route_index_</code>重置为0</li>
+<li>发布<code>idle</code></li>
 </ol>
-<p>但当前这个项目阶段里,BFS恰恰是非常合理的.</p>
-<p>因为现在图的假设是:</p>
-<ol>
-<li>节点是离散waypoint</li>
-<li>边没有权重差别</li>
-<li>当前只需要最少边数意义上的可达路径</li>
-</ol>
-<p>在这种前提下,BFS的性质正好匹配需求:</p>
-<ol>
-<li>实现简单</li>
-<li>行为稳定</li>
-<li>结果可解释</li>
-<li>调试成本低</li>
-<li>足够支持当前V1闭环</li>
-</ol>
-<p>也就是说,这里算法选择不是在比拼上限,而是在追求:在当前问题模型下,选择最小且正确的算法</p>
-<p>这点很关键. 因为项目当前还处在&quot;系统链路验证期&quot;,此时如果一开始就引入更复杂算法,会同时引入更多调试面.</p>
+<p>这个两阶段尾声很像在状态机里补了一个&quot;完成已确认&quot;过渡态. 对demo系统来说,这个做法非常值.</p>
 <hr>
-<h3 id="BFS在这里到底做了什么">BFS在这里到底做了什么</h3>
-<p>当前<code>shortest_path(start, goal)</code>的逻辑很标准:</p>
-<ol>
-<li>先检查起点终点是否存在于图中</li>
-<li>用队列做广度优先遍历</li>
-<li>用<code>parent</code>记录每个访问节点来自哪里</li>
-<li>一旦到达goal,结束搜索</li>
-<li>再从goal沿<code>parent</code>反向回溯得到完整路径</li>
-<li>最后reverse成正向route</li>
-</ol>
-<p>这里真正值得注意的不是算法教材本身,而是它在工程上的可控性.</p>
-<h4 id="第一-它天然给出一条最少跳数路径">第一, 它天然给出一条最少跳数路径</h4>
-<p>在当前图边等价的前提下,这已经足够形成一个合理demo route.</p>
-<h4 id="第二-它很容易判断失败">第二, 它很容易判断失败</h4>
-<p>如果最后<code>parent</code>里没有goal,直接返回空路径.</p>
-<p>这种失败语义非常清楚,manager也很好处理.</p>
-<h4 id="第三-它不引入额外启发式假设">第三, 它不引入额外启发式假设</h4>
-<p>也就是说,当前路径结果只由图结构决定,不由额外heuristic决定. 这会让系统行为更容易预测.</p>
-<p>对于当前阶段来说,这一点比所谓&quot;更聪明&quot;更重要.</p>
+<h3 id="为什么这个设计对fleet-manager是必要的">为什么这个设计对<code>fleet_manager</code>是必要的</h3>
+<p>如果把<code>robot_agent</code>单独看,它只是个简单执行器. 但如果把它放回整个闭环里,就会发现它对<code>fleet_manager</code>的意义非常直接: manager需要看到robot何时进入<code>executing</code>.manager需要看到task何时进入<code>completed</code>.manager需要知道什么时候可以安全把robot重新视为<code>idle</code></p>
+<p>也就是说,agent真正提供的不是&quot;路径执行能力&quot;本身,而是:assignment生命周期的下游事实来源</p>
+<p>这也是为什么上一篇<code>fleet_manager</code>专题会强调assignment状态保持. manager内部虽然会保留一份比topic表面值更强的分配真相,但最终它仍然需要agent给出明确的执行与完成反馈.</p>
+<p>没有<code>robot_agent</code>, 当前V1系统最多只能证明:task能进入队列, planner能生成route,assignment能被发布</p>
+<p>但还证明不了:route能不能被消费,task会不会真的走完,robot资源会不会正确释放</p>
+<p>所以<code>robot_agent</code>这个模块虽然简单,但它恰好补上了整个主链路最后那段最关键的动态反馈.</p>
 <hr>
-<h3 id="为什么route不是直接做一次-start-dropoff">为什么route不是直接做一次 <code>start -&gt; dropoff</code></h3>
-<p>这是当前planner里最值得单独拿出来写的一点.它当前不是直接求:</p>
-<p><code>start_waypoint -&gt; dropoff_waypoint</code></p>
-<p>而是先求两段:</p>
+<h3 id="waypoint坐标为什么也在agent里占一个位置">waypoint坐标为什么也在agent里占一个位置</h3>
+<p>当前<code>robot_agent</code>除了维护<code>current_waypoint_</code>, 还会通过<code>lookup_waypoint_position()</code>给<code>RobotState.pose</code>填坐标.</p>
+<p>坐标来源有两层: 优先读launch参数里的<code>waypoint_positions</code>, 如果没有配置或查不到,就退回内置fallback map</p>
+<p>其中<code>demo_map.yaml</code>里把waypoint位置配置成:</p>
 <ol>
-<li><code>start_waypoint -&gt; pickup_waypoint</code></li>
-<li><code>pickup_waypoint -&gt; dropoff_waypoint</code></li>
+<li><code>dock_a:0.0:0.0</code></li>
+<li><code>mid_1:1.0:0.0</code></li>
+<li><code>pickup_zone:2.0:0.0</code></li>
+<li><code>mid_2:3.0:0.5</code></li>
+<li><code>dropoff_zone:4.0:1.0</code></li>
+<li><code>dock_c:3.0:1.5</code></li>
 </ol>
-<p>然后把第二段去掉第一个节点后拼接到第一段后面.这个设计非常贴合transport task语义.</p>
-<h4 id="为什么必须拆成两段">为什么必须拆成两段</h4>
-<p>因为取货点不是一个可有可无的中间点,它是任务语义的一部分.</p>
-<p>如果你只求<code>start -&gt; dropoff</code>, 那么只要图上存在一条更短路线绕过pickup, planner就会给出一条&quot;几何上可走,任务上错误&quot;的路径.</p>
-<p>所以在当前任务模型里,pickup不是路径优化提示,而是硬约束.</p>
-<p>也就是说:当前route不是单目标路径问题,而是一个带中间必经点的任务路径问题</p>
-<p>这也是为什么当前接口直接把pickup和dropoff都放进service请求里.</p>
-<h4 id="为什么拼接时要跳过第二段的起点">为什么拼接时要跳过第二段的起点</h4>
-<p>因为第二段是从pickup开始的. 如果直接全量拼接,那么pickup节点会重复一次.</p>
-<p>所以代码里使用:</p>
-<p><code>std::next(to_dropoff.begin())</code></p>
-<p>本质上就是在做:</p>
-<ol>
-<li>保留第一段完整路径</li>
-<li>跳过第二段里重复的pickup起点</li>
-<li>只接上pickup之后的后续部分</li>
-</ol>
-<p>这个处理虽然小,但是说明当前planner返回的route已经在为agent执行做格式清理,而不是把拼接负担丢给下游.</p>
+<p>而<code>demo.launch.py</code>又把同一个配置文件传给<code>path_planner</code>和两个<code>robot_agent</code>, 再分别给两个agent设置: <code>robot_1</code>从<code>dock_a</code>起步,<code>robot_2</code>从<code>dock_c</code>起步</p>
+<p>这件事的意义不只是&quot;日志更好看&quot;. 它其实说明当前项目已经在做一个很实用的分层: planner负责离散图连通关系,agent负责把离散waypoint映射成可消费的位置状态</p>
+<p>也就是说,当前<code>RobotState</code>不是纯逻辑状态,而是在往更真实的机器人状态接口靠拢.</p>
+<h4 id="遗留问题和现象1-当前pose仍然是waypoint级离散跳变">遗留问题和现象1: 当前pose仍然是waypoint级离散跳变</h4>
+<p>它不是连续运动轨迹,没有速度,没有朝向演化,也没有局部路径跟踪. 所以现在的pose更适合作为demo状态输出,还不是底盘控制层的真实观测.</p>
 <hr>
-<h3 id="这类planner的真正价值-不是复杂-而是可解释">这类planner的真正价值,不是复杂,而是可解释</h3>
-<p>当前planner最大的优点之一,其实不是它会搜图,而是它非常容易解释.</p>
-<p>比如给出一条route:</p>
-<p><code>dock_a -&gt; mid_1 -&gt; pickup_zone -&gt; mid_1 -&gt; mid_2 -&gt; dropoff_zone</code></p>
-<p>读者,开发者,甚至后续做日志分析的人,都能非常直接地回答:</p>
-<ol>
-<li>它先去pickup</li>
-<li>然后再去dropoff</li>
-<li>它为什么经过这些中间点</li>
-<li>图上是不是确实这么连的</li>
-</ol>
-<p>这对于当前blog连载也很重要. 因为可解释的系统才容易被逐篇记录和分析.</p>
-<p>如果一开始就上太重的规划系统,博客写作本身也会失去抓手.</p>
+<h3 id="这个agent已经解决了什么">这个agent已经解决了什么</h3>
+<p>如果从当前V1工程目标看,<code>robot_agent</code>已经把几件非常关键的事做成了:</p>
+<h4 id="1-assignment不再停留在manager内部">1. assignment不再停留在manager内部</h4>
+<p>现在任务真的可以被agent接住,而不是只在中心节点里自说自话.</p>
+<h4 id="2-route变成了可观察的执行过程">2. route变成了可观察的执行过程</h4>
+<p>manager和日志都能看到<code>current_waypoint</code>逐步推进,这让闭环从&quot;有route&quot;变成&quot;route在被消费&quot;.</p>
+<h4 id="3-completed事件被显式建模出来">3. completed事件被显式建模出来</h4>
+<p>这一点会直接影响manager何时释放robot资源,也让任务生命周期更完整.</p>
+<h4 id="4-执行状态与地图配置产生了连接">4. 执行状态与地图配置产生了连接</h4>
+<p>同一份launch-time配置既服务planner,也服务agent状态输出,这让demo图和执行反馈不再是两套分裂语义.</p>
 <hr>
-<h3 id="当前V1里-这个planner没有解决什么">当前V1里,这个planner没有解决什么</h3>
-<p>理解一个模块,不仅要看它做了什么,还要看它故意没做什么.当前<code>path_planner</code>还没有处理这些问题:</p>
-<h4 id="1-没有边权重">1. 没有边权重</h4>
-<p>所以当前最短路只是最少跳数,不是最小时间/最小代价.</p>
-<h4 id="2-没有冲突感知">2. 没有冲突感知</h4>
-<p>planner只考虑单机器人在图上的可达性,并不考虑两个机器人会不会在同一节点或边上冲突.</p>
-<h4 id="3-没有动态重规划">3. 没有动态重规划</h4>
-<p>当前更接近一次性给route,不是执行过程中根据状态变化不断调整.</p>
-<h4 id="4-没有方向约束">4. 没有方向约束</h4>
-<p>边现在被当作双向,因此还不能表达单向路径.</p>
-<h4 id="5-没有连续空间语义">5. 没有连续空间语义</h4>
-<p>它只负责离散waypoint序列,不负责真正的轨迹生成和底层导航.遗留问题和现象2: 当前planner已经足以支撑任务闭环,但它支撑的是&quot;离散协调层正确性&quot;,不是&quot;真实导航层完整性&quot;</p>
-<hr>
-<h3 id="可以会延伸出去的问题方向">可以会延伸出去的问题方向</h3>
-<p>分析完<code>path_planner</code>,后续自然会分成两条延伸方向.</p>
-<p>第一延伸出去问题方向是:</p>
-<ol>
-<li><code>robot_agent</code>如何消费route</li>
-<li>waypoint推进为什么构成一个简化执行状态机</li>
-<li>route sequence如何最终变成<code>idle/executing/completed</code></li>
-</ol>
-<p>第二个问题方向是回到更高层:</p>
-<ol>
-<li>如果未来引入冲突预约,planner接口要不要升级</li>
-<li>如果未来引入边权重,是不是要从BFS转向Dijkstra/A*</li>
-<li>如果未来接Nav2,当前planner应当保留在哪一层</li>
-</ol>
-<p>也就是说,当前这个planner虽然很小,但它刚好卡在一个很好的位置:它足够简单,能把当前阶段讲清楚; 也足够关键,能自然把文章继续带到下一阶段</p>
-<hr>
-<h3 id="最后">最后</h3>
-<p><code>path_planner</code>现在做的不是复杂路径规划,而是把transport task稳定翻译成一条离散,可解释,可执行的waypoint route,从而让整个V1系统的任务闭环真正落到图结构上</p>
-<p><code>robot_agent</code>又是做什么的呢: 它如何把route_waypoints转成执行过程,以及为什么它本质上是一个简化任务执行状态机.</p>
+<h3 id="当前它还没有解决什么">当前它还没有解决什么</h3>
+<p>理解这个模块,同样要看它刻意没做的部分.</p>
+<h4 id="1-没有真实导航控制">1. 没有真实导航控制</h4>
+<p>当前agent是按timer离散跳点,不是接Nav2,不是接底盘控制器,也不是订阅真实定位反馈.</p>
+<h4 id="2-没有执行失败语义">2. 没有执行失败语义</h4>
+<p>目前状态只有<code>idle / executing / completed</code>. 如果机器人中途卡住,偏航,丢失waypoint,或者任务取消,系统还没有对应状态模型.</p>
+<h4 id="3-没有中断-重分配处理">3. 没有中断/重分配处理</h4>
+<p>当前只要<code>active_task_</code>为真, agent就直接拒绝新assignment. 这对V1是合理的,但说明它还没有进入&quot;可抢占执行器&quot;阶段.</p>
+<h4 id="4-没有更细粒度进度表达">4. 没有更细粒度进度表达</h4>
+<p>现在的进度单位是waypoint跳变,不是边内进度,不是预计剩余时间,也不是更复杂的执行反馈.</p>
+<h4 id="5-battery目前是静态常量">5. battery目前是静态常量</h4>
+<h2 id="battery-percent固定为100-0F-这说明接口已经预留了资源状态字段-但当前运行语义还没有真正接进去-遗留问题和现象2-当前robot-agent已经足以支撑任务闭环里的执行反馈-但它支撑的是-离散任务执行语义-还不是-真实机器人执行语义"><code>battery_percent</code>固定为<code>100.0F</code>, 这说明接口已经预留了资源状态字段,但当前运行语义还没有真正接进去.遗留问题和现象2: 当前<code>robot_agent</code>已经足以支撑任务闭环里的执行反馈,但它支撑的是&quot;离散任务执行语义&quot;,还不是&quot;真实机器人执行语义&quot;</h2>
+<h3 id="从这里往后最自然会接到哪里">从这里往后最自然会接到哪里</h3>
+<p>把<code>robot_agent</code>分析完以后,当前系列其实形成了一个很清楚的三段式: <code>fleet_manager</code>把task接住并分出去, <code>path_planner</code>把task翻译成route, <code>robot_agent</code>把route翻译成执行状态流</p>
+<p>到这里,V1最小闭环里的三个核心节点都已经拆开写过了.</p>
+<p>现在已经可以去回答一个更大的问题:当前这个V1阶段到底已经真正完成了什么, 又还差什么</p>
+<p>也就是: 哪些能力已经构成了可运行原型, 哪些能力还只是接口预留,为什么冲突检测,更强调度和真实导航接入会成为下一轮复杂度跃迁点</p>
+<p>如果只用一句话总结当前这个<code>robot_agent</code>, 那就是:它现在做的不是机器人真实导航,而是把<code>TaskAssignment</code>稳定地翻译成一个可观察的执行状态机,从而让整个V1系统第一次真正拥有了从分配到完成的动态闭环</p>
 
 
         <hr>
         <!-- Pager -->
         <ul class="pager">
           
-          <li class="previous">
-            <a href="/cn/项目专题解析_robot_agent的执行状态机与waypoint推进/" data-toggle="tooltip" data-placement="top" title="robot_agent的执行状态机与waypoint推进">&larr; Previous Post</a>
-          </li>
-          
           
           <li class="next">
-            <a href="/cn/项目专题解析_fleet_manager的任务队列_planner依赖和assignment状态保持/" data-toggle="tooltip" data-placement="top" title="fleet_manager的任务队列,planner依赖和assignment状态保持">Next Post &rarr;</a>
+            <a href="/cn/项目专题解析_path_planner的图模型_BFS和route拼接/" data-toggle="tooltip" data-placement="top" title="path_planner的图模型,BFS和route拼接">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -736,7 +633,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=path_planner的图模型,BFS和route拼接&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/项目专题解析_path_planner的图模型_BFS和route拼接/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=robot_agent的执行状态机与waypoint推进&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/项目专题解析_robot_agent的执行状态机与waypoint推进/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -770,7 +667,7 @@
       repo: '',
       owner: '',
       admin: '',
-      id: 'Sat Mar 15 2025 19:50:00 GMT+0800', // Ensure uniqueness and length less than 50
+      id: 'Mon Mar 17 2025 21:10:00 GMT+0800', // Ensure uniqueness and length less than 50
       distractionFreeMode: false, // Facebook-like distraction free mode
       perPage: 10,
       pagerDirection: 'last',
@@ -823,7 +720,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">path_planner的图模型,BFS和route拼接</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%BD%93%E5%89%8D%E9%98%B6%E6%AE%B5%E7%9B%AE%E6%A0%87"><span class="toc-nav-number">1.0.1.</span> <span class="toc-nav-text">当前阶段目标</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%88%E7%9C%8B%E6%8E%A5%E5%8F%A3-planner%E5%88%B0%E5%BA%95%E6%89%BF%E8%AF%BA%E4%BA%86%E4%BB%80%E4%B9%88"><span class="toc-nav-number">1.0.2.</span> <span class="toc-nav-text">先看接口: planner到底承诺了什么</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%99%E9%87%8C%E5%85%88%E9%87%87%E7%94%A8%E7%A6%BB%E6%95%A3%E5%9B%BE%E6%A8%A1%E5%9E%8B"><span class="toc-nav-number">1.0.3.</span> <span class="toc-nav-text">为什么这里先采用离散图模型</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%99%E4%B8%80%E6%AD%A5%E6%98%AF%E5%90%88%E7%90%86%E7%9A%84"><span class="toc-nav-number">1.0.3.1.</span> <span class="toc-nav-text">为什么这一步是合理的</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%8F%82%E6%95%B0%E5%8C%96%E5%9B%BE%E9%85%8D%E7%BD%AE%E8%BF%99%E4%BB%B6%E4%BA%8B-%E5%85%B6%E5%AE%9E%E6%AF%94%E7%9C%8B%E8%B5%B7%E6%9D%A5%E6%9B%B4%E9%87%8D%E8%A6%81"><span class="toc-nav-number">1.0.4.</span> <span class="toc-nav-text">参数化图配置这件事,其实比看起来更重要</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E9%81%97%E7%95%99%E9%97%AE%E9%A2%98%E5%92%8C%E7%8E%B0%E8%B1%A11-%E5%BD%93%E5%89%8D%E8%BE%B9%E9%85%8D%E7%BD%AE%E9%BB%98%E8%AE%A4%E8%A2%AB%E8%A7%86%E4%B8%BA%E5%8F%8C%E5%90%91%E8%BE%B9"><span class="toc-nav-number">1.0.4.1.</span> <span class="toc-nav-text">遗留问题和现象1: 当前边配置默认被视为双向边</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BD%93%E5%89%8D%E7%AE%97%E6%B3%95%E9%80%89BFS"><span class="toc-nav-number">1.0.5.</span> <span class="toc-nav-text">为什么当前算法选BFS</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#BFS%E5%9C%A8%E8%BF%99%E9%87%8C%E5%88%B0%E5%BA%95%E5%81%9A%E4%BA%86%E4%BB%80%E4%B9%88"><span class="toc-nav-number">1.0.6.</span> <span class="toc-nav-text">BFS在这里到底做了什么</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%AC%AC%E4%B8%80-%E5%AE%83%E5%A4%A9%E7%84%B6%E7%BB%99%E5%87%BA%E4%B8%80%E6%9D%A1%E6%9C%80%E5%B0%91%E8%B7%B3%E6%95%B0%E8%B7%AF%E5%BE%84"><span class="toc-nav-number">1.0.6.1.</span> <span class="toc-nav-text">第一, 它天然给出一条最少跳数路径</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%AC%AC%E4%BA%8C-%E5%AE%83%E5%BE%88%E5%AE%B9%E6%98%93%E5%88%A4%E6%96%AD%E5%A4%B1%E8%B4%A5"><span class="toc-nav-number">1.0.6.2.</span> <span class="toc-nav-text">第二, 它很容易判断失败</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%AC%AC%E4%B8%89-%E5%AE%83%E4%B8%8D%E5%BC%95%E5%85%A5%E9%A2%9D%E5%A4%96%E5%90%AF%E5%8F%91%E5%BC%8F%E5%81%87%E8%AE%BE"><span class="toc-nav-number">1.0.6.3.</span> <span class="toc-nav-text">第三, 它不引入额外启发式假设</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88route%E4%B8%8D%E6%98%AF%E7%9B%B4%E6%8E%A5%E5%81%9A%E4%B8%80%E6%AC%A1-start-dropoff"><span class="toc-nav-number">1.0.7.</span> <span class="toc-nav-text">为什么route不是直接做一次 start -&gt; dropoff</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BF%85%E9%A1%BB%E6%8B%86%E6%88%90%E4%B8%A4%E6%AE%B5"><span class="toc-nav-number">1.0.7.1.</span> <span class="toc-nav-text">为什么必须拆成两段</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%8B%BC%E6%8E%A5%E6%97%B6%E8%A6%81%E8%B7%B3%E8%BF%87%E7%AC%AC%E4%BA%8C%E6%AE%B5%E7%9A%84%E8%B5%B7%E7%82%B9"><span class="toc-nav-number">1.0.7.2.</span> <span class="toc-nav-text">为什么拼接时要跳过第二段的起点</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%BF%99%E7%B1%BBplanner%E7%9A%84%E7%9C%9F%E6%AD%A3%E4%BB%B7%E5%80%BC-%E4%B8%8D%E6%98%AF%E5%A4%8D%E6%9D%82-%E8%80%8C%E6%98%AF%E5%8F%AF%E8%A7%A3%E9%87%8A"><span class="toc-nav-number">1.0.8.</span> <span class="toc-nav-text">这类planner的真正价值,不是复杂,而是可解释</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%BD%93%E5%89%8DV1%E9%87%8C-%E8%BF%99%E4%B8%AAplanner%E6%B2%A1%E6%9C%89%E8%A7%A3%E5%86%B3%E4%BB%80%E4%B9%88"><span class="toc-nav-number">1.0.9.</span> <span class="toc-nav-text">当前V1里,这个planner没有解决什么</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-%E6%B2%A1%E6%9C%89%E8%BE%B9%E6%9D%83%E9%87%8D"><span class="toc-nav-number">1.0.9.1.</span> <span class="toc-nav-text">1. 没有边权重</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-%E6%B2%A1%E6%9C%89%E5%86%B2%E7%AA%81%E6%84%9F%E7%9F%A5"><span class="toc-nav-number">1.0.9.2.</span> <span class="toc-nav-text">2. 没有冲突感知</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#3-%E6%B2%A1%E6%9C%89%E5%8A%A8%E6%80%81%E9%87%8D%E8%A7%84%E5%88%92"><span class="toc-nav-number">1.0.9.3.</span> <span class="toc-nav-text">3. 没有动态重规划</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#4-%E6%B2%A1%E6%9C%89%E6%96%B9%E5%90%91%E7%BA%A6%E6%9D%9F"><span class="toc-nav-number">1.0.9.4.</span> <span class="toc-nav-text">4. 没有方向约束</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#5-%E6%B2%A1%E6%9C%89%E8%BF%9E%E7%BB%AD%E7%A9%BA%E9%97%B4%E8%AF%AD%E4%B9%89"><span class="toc-nav-number">1.0.9.5.</span> <span class="toc-nav-text">5. 没有连续空间语义</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%8F%AF%E4%BB%A5%E4%BC%9A%E5%BB%B6%E4%BC%B8%E5%87%BA%E5%8E%BB%E7%9A%84%E9%97%AE%E9%A2%98%E6%96%B9%E5%90%91"><span class="toc-nav-number">1.0.10.</span> <span class="toc-nav-text">可以会延伸出去的问题方向</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%9C%80%E5%90%8E"><span class="toc-nav-number">1.0.11.</span> <span class="toc-nav-text">最后</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">robot_agent的执行状态机与waypoint推进</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%BD%93%E5%89%8D%E9%98%B6%E6%AE%B5%E7%9B%AE%E6%A0%87"><span class="toc-nav-number">1.0.1.</span> <span class="toc-nav-text">当前阶段目标</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%88%E7%9C%8B%E6%8E%A5%E5%8F%A3-robot-agent%E5%88%B0%E5%BA%95%E6%B6%88%E8%B4%B9%E4%BB%80%E4%B9%88-%E5%8F%88%E4%BA%A7%E5%87%BA%E4%BB%80%E4%B9%88"><span class="toc-nav-number">1.0.2.</span> <span class="toc-nav-text">先看接口: robot_agent到底消费什么,又产出什么</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AF%B4%E5%AE%83%E6%9C%AC%E8%B4%A8%E4%B8%8A%E6%98%AF%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8C%96%E6%89%A7%E8%A1%8C%E7%8A%B6%E6%80%81%E6%9C%BA"><span class="toc-nav-number">1.0.3.</span> <span class="toc-nav-text">为什么说它本质上是一个简化执行状态机</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#assignment%E6%98%AF%E6%80%8E%E4%B9%88%E8%A2%AB%E6%8E%A5%E4%BD%8F%E7%9A%84"><span class="toc-nav-number">1.0.4.</span> <span class="toc-nav-text">assignment是怎么被接住的</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%AC%AC%E4%B8%80%E5%B1%82-agent%E5%8F%AA%E5%A4%84%E7%90%86%E5%8F%91%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E4%BB%BB%E5%8A%A1"><span class="toc-nav-number">1.0.4.1.</span> <span class="toc-nav-text">第一层: agent只处理发给自己的任务</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%AC%AC%E4%BA%8C%E5%B1%82-%E5%BD%93%E5%89%8Dagent%E4%B8%80%E6%AC%A1%E5%8F%AA%E5%85%81%E8%AE%B8%E4%B8%80%E4%B8%AAactive-task"><span class="toc-nav-number">1.0.4.2.</span> <span class="toc-nav-text">第二层: 当前agent一次只允许一个active task</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%AC%AC%E4%B8%89%E5%B1%82-%E6%B2%A1%E6%9C%89route%E5%B0%B1%E4%B8%8D%E6%8E%A5%E5%8F%97assignment"><span class="toc-nav-number">1.0.4.3.</span> <span class="toc-nav-text">第三层: 没有route就不接受assignment</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#waypoint%E6%8E%A8%E8%BF%9B%E6%98%AF%E6%80%8E%E4%B9%88%E5%8F%91%E7%94%9F%E7%9A%84"><span class="toc-nav-number">1.0.5.</span> <span class="toc-nav-text">waypoint推进是怎么发生的</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-%E6%B2%A1%E6%9C%89active-task"><span class="toc-nav-number">1.0.5.1.</span> <span class="toc-nav-text">1. 没有active task</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-%E8%BF%98%E6%B2%A1%E8%B5%B0%E5%88%B0route%E6%9C%AB%E5%B0%BE"><span class="toc-nav-number">1.0.5.2.</span> <span class="toc-nav-text">2. 还没走到route末尾</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#3-%E5%B7%B2%E7%BB%8F%E5%88%B0%E8%BE%BEroute%E6%9C%AB%E5%B0%BE-%E4%BD%86%E8%BF%98%E6%B2%A1%E5%AE%A3%E5%B8%83%E5%AE%8C%E6%88%90"><span class="toc-nav-number">1.0.5.3.</span> <span class="toc-nav-text">3. 已经到达route末尾,但还没宣布完成</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#4-%E5%AE%8C%E6%88%90%E4%BA%8B%E4%BB%B6%E5%B7%B2%E7%BB%8F%E5%8F%91%E8%BF%87-%E6%89%8D%E7%9C%9F%E6%AD%A3%E5%9B%9E%E5%88%B0idle"><span class="toc-nav-number">1.0.5.4.</span> <span class="toc-nav-text">4. 完成事件已经发过,才真正回到idle</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%99%E4%B8%AA%E8%AE%BE%E8%AE%A1%E5%AF%B9fleet-manager%E6%98%AF%E5%BF%85%E8%A6%81%E7%9A%84"><span class="toc-nav-number">1.0.6.</span> <span class="toc-nav-text">为什么这个设计对fleet_manager是必要的</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#waypoint%E5%9D%90%E6%A0%87%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B9%9F%E5%9C%A8agent%E9%87%8C%E5%8D%A0%E4%B8%80%E4%B8%AA%E4%BD%8D%E7%BD%AE"><span class="toc-nav-number">1.0.7.</span> <span class="toc-nav-text">waypoint坐标为什么也在agent里占一个位置</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E9%81%97%E7%95%99%E9%97%AE%E9%A2%98%E5%92%8C%E7%8E%B0%E8%B1%A11-%E5%BD%93%E5%89%8Dpose%E4%BB%8D%E7%84%B6%E6%98%AFwaypoint%E7%BA%A7%E7%A6%BB%E6%95%A3%E8%B7%B3%E5%8F%98"><span class="toc-nav-number">1.0.7.1.</span> <span class="toc-nav-text">遗留问题和现象1: 当前pose仍然是waypoint级离散跳变</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%BF%99%E4%B8%AAagent%E5%B7%B2%E7%BB%8F%E8%A7%A3%E5%86%B3%E4%BA%86%E4%BB%80%E4%B9%88"><span class="toc-nav-number">1.0.8.</span> <span class="toc-nav-text">这个agent已经解决了什么</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-assignment%E4%B8%8D%E5%86%8D%E5%81%9C%E7%95%99%E5%9C%A8manager%E5%86%85%E9%83%A8"><span class="toc-nav-number">1.0.8.1.</span> <span class="toc-nav-text">1. assignment不再停留在manager内部</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-route%E5%8F%98%E6%88%90%E4%BA%86%E5%8F%AF%E8%A7%82%E5%AF%9F%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B"><span class="toc-nav-number">1.0.8.2.</span> <span class="toc-nav-text">2. route变成了可观察的执行过程</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#3-completed%E4%BA%8B%E4%BB%B6%E8%A2%AB%E6%98%BE%E5%BC%8F%E5%BB%BA%E6%A8%A1%E5%87%BA%E6%9D%A5"><span class="toc-nav-number">1.0.8.3.</span> <span class="toc-nav-text">3. completed事件被显式建模出来</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#4-%E6%89%A7%E8%A1%8C%E7%8A%B6%E6%80%81%E4%B8%8E%E5%9C%B0%E5%9B%BE%E9%85%8D%E7%BD%AE%E4%BA%A7%E7%94%9F%E4%BA%86%E8%BF%9E%E6%8E%A5"><span class="toc-nav-number">1.0.8.4.</span> <span class="toc-nav-text">4. 执行状态与地图配置产生了连接</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%BD%93%E5%89%8D%E5%AE%83%E8%BF%98%E6%B2%A1%E6%9C%89%E8%A7%A3%E5%86%B3%E4%BB%80%E4%B9%88"><span class="toc-nav-number">1.0.9.</span> <span class="toc-nav-text">当前它还没有解决什么</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-%E6%B2%A1%E6%9C%89%E7%9C%9F%E5%AE%9E%E5%AF%BC%E8%88%AA%E6%8E%A7%E5%88%B6"><span class="toc-nav-number">1.0.9.1.</span> <span class="toc-nav-text">1. 没有真实导航控制</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-%E6%B2%A1%E6%9C%89%E6%89%A7%E8%A1%8C%E5%A4%B1%E8%B4%A5%E8%AF%AD%E4%B9%89"><span class="toc-nav-number">1.0.9.2.</span> <span class="toc-nav-text">2. 没有执行失败语义</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#3-%E6%B2%A1%E6%9C%89%E4%B8%AD%E6%96%AD-%E9%87%8D%E5%88%86%E9%85%8D%E5%A4%84%E7%90%86"><span class="toc-nav-number">1.0.9.3.</span> <span class="toc-nav-text">3. 没有中断&#x2F;重分配处理</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#4-%E6%B2%A1%E6%9C%89%E6%9B%B4%E7%BB%86%E7%B2%92%E5%BA%A6%E8%BF%9B%E5%BA%A6%E8%A1%A8%E8%BE%BE"><span class="toc-nav-number">1.0.9.4.</span> <span class="toc-nav-text">4. 没有更细粒度进度表达</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#5-battery%E7%9B%AE%E5%89%8D%E6%98%AF%E9%9D%99%E6%80%81%E5%B8%B8%E9%87%8F"><span class="toc-nav-number">1.0.9.5.</span> <span class="toc-nav-text">5. battery目前是静态常量</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#battery-percent%E5%9B%BA%E5%AE%9A%E4%B8%BA100-0F-%E8%BF%99%E8%AF%B4%E6%98%8E%E6%8E%A5%E5%8F%A3%E5%B7%B2%E7%BB%8F%E9%A2%84%E7%95%99%E4%BA%86%E8%B5%84%E6%BA%90%E7%8A%B6%E6%80%81%E5%AD%97%E6%AE%B5-%E4%BD%86%E5%BD%93%E5%89%8D%E8%BF%90%E8%A1%8C%E8%AF%AD%E4%B9%89%E8%BF%98%E6%B2%A1%E6%9C%89%E7%9C%9F%E6%AD%A3%E6%8E%A5%E8%BF%9B%E5%8E%BB-%E9%81%97%E7%95%99%E9%97%AE%E9%A2%98%E5%92%8C%E7%8E%B0%E8%B1%A12-%E5%BD%93%E5%89%8Drobot-agent%E5%B7%B2%E7%BB%8F%E8%B6%B3%E4%BB%A5%E6%94%AF%E6%92%91%E4%BB%BB%E5%8A%A1%E9%97%AD%E7%8E%AF%E9%87%8C%E7%9A%84%E6%89%A7%E8%A1%8C%E5%8F%8D%E9%A6%88-%E4%BD%86%E5%AE%83%E6%94%AF%E6%92%91%E7%9A%84%E6%98%AF-%E7%A6%BB%E6%95%A3%E4%BB%BB%E5%8A%A1%E6%89%A7%E8%A1%8C%E8%AF%AD%E4%B9%89-%E8%BF%98%E4%B8%8D%E6%98%AF-%E7%9C%9F%E5%AE%9E%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%89%A7%E8%A1%8C%E8%AF%AD%E4%B9%89"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">battery_percent固定为100.0F, 这说明接口已经预留了资源状态字段,但当前运行语义还没有真正接进去.遗留问题和现象2: 当前robot_agent已经足以支撑任务闭环里的执行反馈,但它支撑的是&quot;离散任务执行语义&quot;,还不是&quot;真实机器人执行语义&quot;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BB%8E%E8%BF%99%E9%87%8C%E5%BE%80%E5%90%8E%E6%9C%80%E8%87%AA%E7%84%B6%E4%BC%9A%E6%8E%A5%E5%88%B0%E5%93%AA%E9%87%8C"><span class="toc-nav-number">1.1.1.</span> <span class="toc-nav-text">从这里往后最自然会接到哪里</span></a></li></ol></li></ol></li></ol>
         
         </div>
       </aside>
@@ -1043,7 +940,7 @@
     let jsdelivr = "https://cdn.jsdelivr.net/gh/";
     let gh = "000xiaoming";
     let ghPages = gh + ".github.io";
-    let pagePath = "cn/项目专题解析_path_planner的图模型_BFS和route拼接/";
+    let pagePath = "cn/项目专题解析_robot_agent的执行状态机与waypoint推进/";
     let jsdelivrurl;
     if (pagePath.indexOf("index.html") != -1) {
       jsdelivrurl = jsdelivr + gh + "/" + ghPages;
