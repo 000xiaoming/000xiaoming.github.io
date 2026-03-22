@@ -127,10 +127,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://000xiaoming.github.io/cn/archives/2/">
+  <link rel="canonical" href="https://000xiaoming.github.io/cn/项目专题解析_为什么当前阶段还没有选择Nav2-first_integration/">
   <title>
     
-      I&#39;m Bruce Lee
+      为什么当前阶段还没有选择Nav2-first integration - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -288,29 +288,7 @@
           <!-- LangSelect -->
           
           
-          <!-- LangSelect start -->
-          <!-- LangSelect -->
-<li>
-  <a id="lang-select-label"><i class="fa fa-globe"></i>
-    <span>
-      简体中文
-    </span>
-    <select id="lang-select" data-canonical="cn/archives/2/index.html">
-      
-      
-      <option value="en" >
-        English
-      </option>
-      
-      <option value="cn"  selected >
-        简体中文
-      </option>
-      
-    </select>
-  </a>
-</li>
-
-          <!-- LangSelect end -->
+          
           
           
         </ul>
@@ -363,18 +341,18 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io');
-      --intro-header-background-image-url-page: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png');
+      --intro-header-background-image-url-page: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io//img/header_img/lml_bg1.png');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io//img/header_img/lml_bg1.png');
     }
     header.intro-header {
-       /*config*/
-        background-image: var(--intro-header-background-image-url-home);
-        /* background-image: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg'); */
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png'); */
       
     }
 
@@ -397,10 +375,26 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>经年治世</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">西风烈,长空雁叫霜晨月</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#ROS2" title="ROS2">ROS2</a>
+              
+              <a class="tag" href="/tags/#多机器人系统" title="多机器人系统">多机器人系统</a>
+              
+            </div>
+            <h1>为什么当前阶段还没有选择Nav2-first integration</h1>
+            <h2 class="subheading">ROS2</h2>
+            <span class="meta">
+              Posted by Bruce Lee on
+              2026-03-25
+            </span>
+
+
+            
+            
+
+
           </div>
           
         </div>
@@ -441,690 +435,365 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Main Content -->
-<div class="container">
-  <div class="row">
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h1>为什么当前阶段还没有选择Nav2-first integration</h1>
+<p>写到现在, 当前这个<code>~/project-a/ros2-fleet-coordinator/</code>项目最容易被外部读者追问的一个问题其实是:既然这是ROS 2多机器人项目,为什么当前阶段没有一开始就直接走Nav2-first integration</p>
+<p>这个问题表面上看很自然.</p>
+<p>因为只要提到ROS 2机器人导航,很多人第一反应就是:地图/定位/规划/Nav2</p>
+<p>于是就会觉得,如果没有尽早把Nav2接进来,当前系统是不是只是一个过度简化的demo.</p>
+<p>但如果真的把这个项目的当前目标,代码结构和验证边界放在一起看,会发现现在没有走Nav2-first,并不是因为作者没想到,而是因为:当前项目阶段要优先回答的问题,根本还不是“真实导航怎么接”,而是“车队协调主链路怎么先成立”</p>
+<hr>
+<h3 id="当前阶段目标">当前阶段目标</h3>
+<p>先把问题定义说清楚.</p>
+<p>从<code>README.md</code>, <code>STATUS.md</code>和<code>TECHNICAL_APPROACH.md</code>看,当前项目的V1目标不是做一个完整导航系统,而是做一个:可验证的图模型车队协调原型</p>
+<p>当前要先打通的是这条链:提交transport task/manager接收并选择robot/ planner把task翻译成route/agent按route推进并回传完成</p>
+<p>注意这里的关键字是:transport task/waypoint route/assignment lifecycle/execution feedback</p>
+<p>也就是说,当前系统真正优先处理的是:任务协调语义<br>
+而不是:连续空间导航语义</p>
+<p>这就是为什么是否先上Nav2,在这个项目里其实不是一个“有没有现代机器人栈意识”的问题,而是一个“当前优先级到底放在哪一层”的问题.</p>
+<hr>
+<h3 id="先看现在系统到底是什么模型">先看现在系统到底是什么模型</h3>
+<p>当前项目的模型其实非常清楚.</p>
+<h4 id="path-planner处理的是离散图"><code>path_planner</code>处理的是离散图</h4>
+<p><code>TECHNICAL_APPROACH.md</code>已经明确写了:当前环境是waypoint-based, 不是continuous geometry-based navigation,BFS足够支撑当前无权demo graph, 当前goal是fleet coordination logic, 不是full navigation stack integration</p>
+<p>而代码里<code>path_planner</code>做的事情也完全对得上这个描述:读取<code>graph_waypoints</code>,读取<code>graph_edges</code>,用BFS算<code>start -&gt; pickup -&gt; dropoff</code>,返回离散<code>route_waypoints</code></p>
+<p>这说明当前planner本质上不是在做底层导航,而是在做:任务语义到离散路径语义的翻译</p>
+<h4 id="robot-agent处理的是执行状态流-不是控制器闭环"><code>robot_agent</code>处理的是执行状态流,不是控制器闭环</h4>
+<p>当前<code>robot_agent</code>收到的是<code>TaskAssignment</code>, 然后:保存<code>route_waypoints</code>,按timer逐步推进route index,发布<code>idle / executing / completed</code>,用waypoint坐标填充<code>pose</code></p>
+<p>它没有做的是:/局部避障/连续轨迹生成/控制命令输出/真实定位融合/recovery behavior</p>
+<p>也就是说,当前agent不是导航执行器,而是:任务执行语义模拟器</p>
+<p>这一点非常关键. 因为只有把当前系统的真实问题定义说清楚,后面讨论Nav2-first是否合适才有意义.</p>
+<hr>
+<h3 id="为什么Nav2-first在当前阶段反而会把问题搅在一起">为什么Nav2-first在当前阶段反而会把问题搅在一起</h3>
+<p>从技术名词上看,Nav2当然更“像真正机器人系统”. 但工程上更重要的问题是:它会不会在当前阶段把过多层次的问题同时引入系统</p>
+<p>对于这个项目,答案很可能是会.</p>
+<h4 id="第一层复杂度-问题会从协调逻辑瞬间变成导航栈集成逻辑">第一层复杂度: 问题会从协调逻辑瞬间变成导航栈集成逻辑</h4>
+<p>当前项目现在还在回答:assignment有没有形成/route有没有被消费/completed有没有回到manager/robot资源有没有被正确释放</p>
+<p>如果一开始就接Nav2, 你立刻还要同时面对:/costmap/global/local planner配置/lifecycle nodes/localization依赖/controller tuning/behavior tree / recovery/action接口时序</p>
+<p>这些问题当然都真实存在,但它们并不是当前项目最想先回答的问题.</p>
+<p>如果这些问题过早进场,最后你就很难分清楚:/是车队分配逻辑有问题/是导航栈配置有问题/是定位/地图问题/是动作反馈问题/ 还是只是运行环境问题</p>
+<p>对于一个还在验证主链路的系统来说,这通常不是收益,而是噪声源爆炸.</p>
+<h4 id="第二层复杂度-验证面会立刻膨胀">第二层复杂度: 验证面会立刻膨胀</h4>
+<p>上一篇DDS sandbox文章已经说明,当前项目连运行验证本身都要带环境上下文讨论.</p>
+<p>在这种前提下,如果再过早接入更重的导航栈,你要验证的就不再只是:manager和planner之间的service关系,assignment和state之间的topic关系</p>
+<p>而还会扩展到:action server/client链路, localization是否稳定,map与planner配置是否一致,recovery是否触发,navigation result和fleet状态是否同步</p>
+<p>也就是说,环境复杂性和系统复杂性会一起上涨.</p>
+<p>而当前这个项目的一个核心优点,恰恰是它在主动避免这种“同时增加五层复杂度”的局面.</p>
+<h4 id="第三层复杂度-问题归因会变差">第三层复杂度: 问题归因会变差</h4>
+<p>现在这个项目之所以适合写成一系列工程分析文章,一个很重要的原因是:当前每一层的职责边界还比较清楚</p>
+<p>manager负责分配<br>
+planner负责route<br>
+agent负责执行状态反馈</p>
+<p>但如果很早就做Nav2-first integration, 那么agent端的语义就会立刻变得更混合:它到底是在执行task lifecycle,还是在桥接Nav2 action,它的失败到底是调度失败还是导航失败,它的completed到底表示task完成还是navigation action完成</p>
+<p>这会直接让系统分析难度上升.</p>
+<p>从当前项目节奏看,这不是最该优先承受的复杂度.</p>
+<hr>
+<h3 id="为什么当前的graph-BFS-simulated-agent反而是对的">为什么当前的graph + BFS + simulated agent反而是对的</h3>
+<p>这里最容易被误解的地方是:</p>
+<p>有人会把“没有先上Nav2”理解成“当前方案只是低配替代品”.</p>
+<p>我觉得这个理解不准确.</p>
+<p>更准确的说法是:当前方案不是Nav2的廉价替代,而是为了先验证协调层而刻意选择的最小正确建模</p>
+<h4 id="第一-graph模型让空间语义足够清楚">第一, graph模型让空间语义足够清楚</h4>
+<p>当前任务是pickup + dropoff transport task.</p>
+<p>对于这类任务,当前阶段manager真正需要知道的是:robot在哪个离散点/ pickup在哪个离散点/dropoff在哪个离散点/图上有没有一条可解释路径</p>
+<p>在这个问题定义下,离散waypoint graph已经足够表达当前协调层需要的空间语义.</p>
+<h4 id="第二-BFS让route结果稳定且易解释">第二, BFS让route结果稳定且易解释</h4>
+<p>当前图是无权图, BFS给的是最少跳数路径.</p>
+<p>它的价值不在于“先进”,而在于:结果确定/行为稳定/容易调试/容易和blog分析对应起来</p>
+<p>对于当前阶段来说,这种可解释性比一开始堆更复杂算法更有价值.</p>
+<h4 id="第三-simulated-agent让执行反馈先成立">第三, simulated agent让执行反馈先成立</h4>
+<p>当前<code>robot_agent</code>虽然不是底盘执行器,但它解决了一件非常关键的事情:把静态assignment变成可观察的执行过程和完成事件</p>
+<p>如果这一步都还没先成立,那过早接Nav2其实是在把“导航层真实度”盖在“协调层主链路还未站稳”的基础上.</p>
+<p>这样做风险很高.</p>
+<h4 id="第四-launch-time参数化让场景和逻辑先分开">第四, launch-time参数化让场景和逻辑先分开</h4>
+<p>当前图拓扑和waypoint坐标都是launch-time参数配置.</p>
+<p>这意味着现在系统已经先把:路径逻辑/地图内容/执行反馈</p>
+<p>做了最小程度的解耦.</p>
+<p>这对后面继续升级是有价值的. 因为将来即使真的接Nav2, 当前协调层不一定要被整体推翻.</p>
+<hr>
+<h3 id="那是不是说Nav2不重要">那是不是说Nav2不重要</h3>
+<p>当然不是.</p>
+<p>更准确的说法是:Nav2很重要,但它在这个项目当前阶段还不是第一优先的集成对象</p>
+<p>原因不是Nav2不对,而是当前项目的演化顺序已经写得很清楚:先验证assignment/completion flow,再做冲突reservation,再升级调度,再做可视化,只有在那之后,才考虑更重的navigation integration</p>
+<p>这个顺序背后的逻辑很稳:先把协调层核心状态模型做清楚,再把fleet级资源约束做进来 , 最后才把更真实的运行层接进来</p>
+<p>这不是保守,而是为了避免把“导航问题”和“协调问题”提前糊成一团.</p>
+<hr>
+<h3 id="如果未来真的接Nav2-当前这套东西会不会白做">如果未来真的接Nav2, 当前这套东西会不会白做</h3>
+<p>我觉得不会.</p>
+<p>因为当前系统已经先把几个更上层的东西做出来了:  <code>Task</code> / <code>TaskAssignment</code> /<code>RobotState</code>/ manager的dispatch语义/planner与manager的边界/execution/completion反馈语义</p>
+<p>这些东西本来就不属于Nav2本身的职责.</p>
+<p>也就是说,未来如果接Nav2, 更像是把当前简化的<code>robot_agent</code>执行层换成一个更真实的运行层,而不是把整个项目从零重写.</p>
+<p>当然,接口细节和状态粒度肯定会变化,但当前做的并不是无效前置工作.</p>
+<p>相反,它是在先把fleet coordination这一层从navigation stack这一层里剥离出来.</p>
+<p>从架构上看,这是有价值的. 遗留问题和现象1: 当前阶段不做Nav2-first,并不意味着未来不接Nav2; 更准确的说法是,当前项目在先把“该由协调层负责的事”从“该由导航层负责的事”里分离出来</p>
+<hr>
+<p>到了这个阶段,项目已经有了几篇足够清楚的前置文章:/manager怎么分配/planner怎么生成离散route/agent怎么把route变成执行状态流/当前V1到底完成了什么/为什么冲突处理会成为下一个复杂度跃迁点/为什么运行验证要带环境上下文</p>
+<p>有了这些背景以后,再回头看Nav2-first这个问题,就比较容易得到一个不情绪化的答案:/当前不是不知道Nav2/当前也不是在回避真实导航/当前只是还在更前置的一层问题上收敛系统</p>
+<p><code>ros2-fleet-coordinator</code>项目没有选择Nav2-first integration,那就是:/因为它当前优先要验证的是车队协调主链路,而不是连续空间导航主链路; 在这个阶段,graph + BFS + simulated agent能更低噪声地把任务,分配,路径和执行反馈先拧成一条线,而Nav2-first会过早把导航栈集成复杂性压到一个还在收敛协调层状态模型的系统上</p>
+<p>从工程节奏上看,这个选择是合理的.</p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/cn/项目专题解析_DDS_sandbox限制与ROS2运行验证边界/" data-toggle="tooltip" data-placement="top" title="DDS sandbox限制与ROS2运行验证边界">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. All the images used in the blog are my original works or AI works, if you want to take it,don't hesitate. Thank you !
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=为什么当前阶段还没有选择Nav2-first integration&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/项目专题解析_为什么当前阶段还没有选择Nav2-first_integration/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <script src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Wed Mar 25 2026 23:55:00 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">为什么当前阶段还没有选择Nav2-first integration</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%BD%93%E5%89%8D%E9%98%B6%E6%AE%B5%E7%9B%AE%E6%A0%87"><span class="toc-nav-number">1.0.1.</span> <span class="toc-nav-text">当前阶段目标</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%88%E7%9C%8B%E7%8E%B0%E5%9C%A8%E7%B3%BB%E7%BB%9F%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88%E6%A8%A1%E5%9E%8B"><span class="toc-nav-number">1.0.2.</span> <span class="toc-nav-text">先看现在系统到底是什么模型</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#path-planner%E5%A4%84%E7%90%86%E7%9A%84%E6%98%AF%E7%A6%BB%E6%95%A3%E5%9B%BE"><span class="toc-nav-number">1.0.2.1.</span> <span class="toc-nav-text">path_planner处理的是离散图</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#robot-agent%E5%A4%84%E7%90%86%E7%9A%84%E6%98%AF%E6%89%A7%E8%A1%8C%E7%8A%B6%E6%80%81%E6%B5%81-%E4%B8%8D%E6%98%AF%E6%8E%A7%E5%88%B6%E5%99%A8%E9%97%AD%E7%8E%AF"><span class="toc-nav-number">1.0.2.2.</span> <span class="toc-nav-text">robot_agent处理的是执行状态流,不是控制器闭环</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88Nav2-first%E5%9C%A8%E5%BD%93%E5%89%8D%E9%98%B6%E6%AE%B5%E5%8F%8D%E8%80%8C%E4%BC%9A%E6%8A%8A%E9%97%AE%E9%A2%98%E6%90%85%E5%9C%A8%E4%B8%80%E8%B5%B7"><span class="toc-nav-number">1.0.3.</span> <span class="toc-nav-text">为什么Nav2-first在当前阶段反而会把问题搅在一起</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%AC%AC%E4%B8%80%E5%B1%82%E5%A4%8D%E6%9D%82%E5%BA%A6-%E9%97%AE%E9%A2%98%E4%BC%9A%E4%BB%8E%E5%8D%8F%E8%B0%83%E9%80%BB%E8%BE%91%E7%9E%AC%E9%97%B4%E5%8F%98%E6%88%90%E5%AF%BC%E8%88%AA%E6%A0%88%E9%9B%86%E6%88%90%E9%80%BB%E8%BE%91"><span class="toc-nav-number">1.0.3.1.</span> <span class="toc-nav-text">第一层复杂度: 问题会从协调逻辑瞬间变成导航栈集成逻辑</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%AC%AC%E4%BA%8C%E5%B1%82%E5%A4%8D%E6%9D%82%E5%BA%A6-%E9%AA%8C%E8%AF%81%E9%9D%A2%E4%BC%9A%E7%AB%8B%E5%88%BB%E8%86%A8%E8%83%80"><span class="toc-nav-number">1.0.3.2.</span> <span class="toc-nav-text">第二层复杂度: 验证面会立刻膨胀</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%AC%AC%E4%B8%89%E5%B1%82%E5%A4%8D%E6%9D%82%E5%BA%A6-%E9%97%AE%E9%A2%98%E5%BD%92%E5%9B%A0%E4%BC%9A%E5%8F%98%E5%B7%AE"><span class="toc-nav-number">1.0.3.3.</span> <span class="toc-nav-text">第三层复杂度: 问题归因会变差</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BD%93%E5%89%8D%E7%9A%84graph-BFS-simulated-agent%E5%8F%8D%E8%80%8C%E6%98%AF%E5%AF%B9%E7%9A%84"><span class="toc-nav-number">1.0.4.</span> <span class="toc-nav-text">为什么当前的graph + BFS + simulated agent反而是对的</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%AC%AC%E4%B8%80-graph%E6%A8%A1%E5%9E%8B%E8%AE%A9%E7%A9%BA%E9%97%B4%E8%AF%AD%E4%B9%89%E8%B6%B3%E5%A4%9F%E6%B8%85%E6%A5%9A"><span class="toc-nav-number">1.0.4.1.</span> <span class="toc-nav-text">第一, graph模型让空间语义足够清楚</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%AC%AC%E4%BA%8C-BFS%E8%AE%A9route%E7%BB%93%E6%9E%9C%E7%A8%B3%E5%AE%9A%E4%B8%94%E6%98%93%E8%A7%A3%E9%87%8A"><span class="toc-nav-number">1.0.4.2.</span> <span class="toc-nav-text">第二, BFS让route结果稳定且易解释</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%AC%AC%E4%B8%89-simulated-agent%E8%AE%A9%E6%89%A7%E8%A1%8C%E5%8F%8D%E9%A6%88%E5%85%88%E6%88%90%E7%AB%8B"><span class="toc-nav-number">1.0.4.3.</span> <span class="toc-nav-text">第三, simulated agent让执行反馈先成立</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%AC%AC%E5%9B%9B-launch-time%E5%8F%82%E6%95%B0%E5%8C%96%E8%AE%A9%E5%9C%BA%E6%99%AF%E5%92%8C%E9%80%BB%E8%BE%91%E5%85%88%E5%88%86%E5%BC%80"><span class="toc-nav-number">1.0.4.4.</span> <span class="toc-nav-text">第四, launch-time参数化让场景和逻辑先分开</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E9%82%A3%E6%98%AF%E4%B8%8D%E6%98%AF%E8%AF%B4Nav2%E4%B8%8D%E9%87%8D%E8%A6%81"><span class="toc-nav-number">1.0.5.</span> <span class="toc-nav-text">那是不是说Nav2不重要</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%A6%82%E6%9E%9C%E6%9C%AA%E6%9D%A5%E7%9C%9F%E7%9A%84%E6%8E%A5Nav2-%E5%BD%93%E5%89%8D%E8%BF%99%E5%A5%97%E4%B8%9C%E8%A5%BF%E4%BC%9A%E4%B8%8D%E4%BC%9A%E7%99%BD%E5%81%9A"><span class="toc-nav-number">1.0.6.</span> <span class="toc-nav-text">如果未来真的接Nav2, 当前这套东西会不会白做</span></a></li></ol></li></ol></li></ol>
+        
+        </div>
+      </aside>
     
 
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
+
+
+      <!-- Sidebar Container -->
+      <div class="
                 col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
+                col-md-10 col-md-offset-1
+                sidebar-container">
 
-      <!-- Main Content -->
-
-
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/build-and-manage-multi-file/">
-    <h2 class="post-title">
-      构建和管理多文件以及编译流程
-    </h2>
-    <h3 class="post-subtitle">
-      项目工程
-    </h3>
-    <div class="post-content-preview">
-      关于我
-欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
-主要内容分类
-
-项目工程：深入探讨技术的实现细节和理解。
-C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
-程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
-
-想要了解更多具体内容，您可以访问文章分类页面。
-联系我
-如果您有任何问题......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2024-09-20
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#项目工程" title="项目工程">项目工程</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/RISCV-exception-system-call-implementation/">
-    <h2 class="post-title">
-      异常处理与系统调用实现细节
-    </h2>
-    <h3 class="post-subtitle">
-      项目工程
-    </h3>
-    <div class="post-content-preview">
-      关于我
-欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
-主要内容分类
-
-项目工程：深入探讨技术的实现细节和理解。
-C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
-程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
-
-想要了解更多具体内容，您可以访问文章分类页面。
-联系我
-如果您有任何问题......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2024-09-15
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#项目工程" title="项目工程">项目工程</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/detailed-explanation-compilation-loading-execution/">
-    <h2 class="post-title">
-      用户程序的编译、加载及执行流程详解
-    </h2>
-    <h3 class="post-subtitle">
-      项目工程
-    </h3>
-    <div class="post-content-preview">
-      关于我
-欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
-主要内容分类
-
-项目工程：深入探讨技术的实现细节和理解。
-C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
-程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
-
-想要了解更多具体内容，您可以访问文章分类页面。
-联系我
-如果您有任何问题......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2024-09-15
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#项目工程" title="项目工程">项目工程</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/from-compilation-to-execution/">
-    <h2 class="post-title">
-      从编译到执行：navy-apps中程序加载与运行的全过程
-    </h2>
-    <h3 class="post-subtitle">
-      项目工程
-    </h3>
-    <div class="post-content-preview">
-      关于我
-欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
-主要内容分类
-
-项目工程：深入探讨技术的实现细节和理解。
-C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
-程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
-
-想要了解更多具体内容，您可以访问文章分类页面。
-联系我
-如果您有任何问题......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2024-09-15
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#项目工程" title="项目工程">项目工程</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/device_function_and_mechanism/">
-    <h2 class="post-title">
-      外设功能函数/跟踪函数与机制分析
-    </h2>
-    <h3 class="post-subtitle">
-      项目工程
-    </h3>
-    <div class="post-content-preview">
-      关于我
-欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
-主要内容分类
-
-项目工程：深入探讨技术的实现细节和理解。
-C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
-程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
-
-想要了解更多具体内容，您可以访问文章分类页面。
-联系我
-如果您有任何问题......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2024-09-01
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#项目工程" title="项目工程">项目工程</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/setup_process_and_printf/">
-    <h2 class="post-title">
-      启动过程汇编与printf的有趣想法
-    </h2>
-    <h3 class="post-subtitle">
-      项目工程
-    </h3>
-    <div class="post-content-preview">
-      关于我
-欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
-主要内容分类
-
-项目工程：深入探讨技术的实现细节和理解。
-C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
-程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
-
-想要了解更多具体内容，您可以访问文章分类页面。
-联系我
-如果您有任何问题......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2024-08-30
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#项目工程" title="项目工程">项目工程</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/elf_handle_and_am_facility/">
-    <h2 class="post-title">
-      elf处理原理和相关基础设施
-    </h2>
-    <h3 class="post-subtitle">
-      项目工程
-    </h3>
-    <div class="post-content-preview">
-      关于我
-欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
-主要内容分类
-
-项目工程：深入探讨技术的实现细节和理解。
-C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
-程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
-
-想要了解更多具体内容，您可以访问文章分类页面。
-联系我
-如果您有任何问题......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2024-08-25
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#项目工程" title="项目工程">项目工程</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/trace_implement/">
-    <h2 class="post-title">
-      trace实现原理与应用
-    </h2>
-    <h3 class="post-subtitle">
-      项目工程
-    </h3>
-    <div class="post-content-preview">
-      关于我
-欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
-主要内容分类
-
-项目工程：深入探讨技术的实现细节和理解。
-C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
-程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
-
-想要了解更多具体内容，您可以访问文章分类页面。
-联系我
-如果您有任何问题......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2024-08-20
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#项目工程" title="项目工程">项目工程</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/tracing_based_iringbuf/">
-    <h2 class="post-title">
-      跟踪设施与iringbuf的建立
-    </h2>
-    <h3 class="post-subtitle">
-      项目工程
-    </h3>
-    <div class="post-content-preview">
-      关于我
-欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
-主要内容分类
-
-项目工程：深入探讨技术的实现细节和理解。
-C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
-程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
-
-想要了解更多具体内容，您可以访问文章分类页面。
-联系我
-如果您有任何问题......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2024-08-18
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#项目工程" title="项目工程">项目工程</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/parameter_and_makefile_code/">
-    <h2 class="post-title">
-      时间/log/参数传递和makefile全自动编译
-    </h2>
-    <h3 class="post-subtitle">
-      项目工程
-    </h3>
-    <div class="post-content-preview">
-      关于我
-欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
-主要内容分类
-
-项目工程：深入探讨技术的实现细节和理解。
-C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
-程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
-
-想要了解更多具体内容，您可以访问文章分类页面。
-联系我
-如果您有任何问题......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2024-08-08
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#项目工程" title="项目工程">项目工程</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-
-  <!-- Pager -->
-  <ul class="pager">
-    
-    <li class="previous">
-      <a href="/cn/">&larr; 上一页</a>
-    </li>
-    
-    
-    <li class="next">
-      <a href="/cn/archives/3/">下一页 &rarr;</a>
-    </li>
-    
-  </ul>
-
-
-      <!-- 如果开启评论功能 -->
-      
-    </div>
-
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-        <!-- Visitors -->
-<h5><a href="/">来访者</a></h5>
-
-
-        <hr>
-    
         <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#ROS2" title="ROS2">ROS2</a>
+            
+            <a class="tag" href="/tags/#多机器人系统" title="多机器人系统">多机器人系统</a>
+            
+          </div>
+        </section>
+        
 
-<section>
-  <h5><a href="/tags/">特色标签</a></h5>
-  <div class="tags">
-    
-    
-    <a href="/tags/#IT" title="IT" rel="3">IT</a>
-    
-    
-    
-    <a href="/tags/#C/C++" title="C/C++" rel="7">C/C++</a>
-    
-    
-    
-    <a href="/tags/#项目工程" title="项目工程" rel="17">项目工程</a>
-    
-    
-    
-    <a href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象" rel="9">RISC-V问题和解决方案以及现象</a>
-    
-    
-    
-    <a href="/tags/#x86" title="x86" rel="9">x86</a>
-    
-    
-    
-    <a href="/tags/#数学哲学" title="数学哲学" rel="1">数学哲学</a>
-    
-    
-    
-    <a href="/tags/#ROS2" title="ROS2" rel="6">ROS2</a>
-    
-    
-    
-    <a href="/tags/#多机器人系统" title="多机器人系统" rel="6">多机器人系统</a>
-    
-    
-  </div>
-</section>
-
-
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-  <h5><a href="/about/">关于自己</a></h5>
-  <div class="short-about">
-
-    
-    <img id="avatar_pic" src="/img/avatar/fatpeople.png" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
-    
-
-    
-    <p>Don&#39;t wait Don&#39;t wait Don&#39;t wait for anything...</p>
-    
-
-    <!-- SNS Link -->
-    <ul class="list-inline">
-      
-
-      
-      <li>
-        <a target="_blank" href="https://github.com/000xiaoming">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-    </ul>
-  </div>
-</section>
-
-        <hr>
-    
-        <!-- RECENT POSTS -->
-
-<h5><a href="/">最近博文</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="../../%E9%A1%B9%E7%9B%AE%E4%B8%93%E9%A2%98%E8%A7%A3%E6%9E%90_%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BD%93%E5%89%8D%E9%98%B6%E6%AE%B5%E8%BF%98%E6%B2%A1%E6%9C%89%E9%80%89%E6%8B%A9Nav2-first_integration/">
-      <li>为什么当前阶段还没有选择Nav2-first integration</li>
-    </a>
-    
-    <a href="../../%E9%A1%B9%E7%9B%AE%E4%B8%93%E9%A2%98%E8%A7%A3%E6%9E%90_DDS_sandbox%E9%99%90%E5%88%B6%E4%B8%8EROS2%E8%BF%90%E8%A1%8C%E9%AA%8C%E8%AF%81%E8%BE%B9%E7%95%8C/">
-      <li>DDS sandbox限制与ROS2运行验证边界</li>
-    </a>
-    
-    <a href="../../%E9%A1%B9%E7%9B%AE%E4%B8%93%E9%A2%98%E8%A7%A3%E6%9E%90_%E5%86%B2%E7%AA%81%E6%A3%80%E6%B5%8B%E4%B8%8E%E9%A2%84%E7%BA%A6%E6%9C%BA%E5%88%B6%E4%B8%BA%E4%BD%95%E4%BC%9A%E6%88%90%E4%B8%BA%E4%B8%8B%E4%B8%80%E4%B8%AA%E5%A4%8D%E6%9D%82%E5%BA%A6%E8%B7%83%E8%BF%81%E7%82%B9/">
-      <li>冲突检测与预约机制为何会成为下一个复杂度跃迁点</li>
-    </a>
-    
-    <a href="../../%E9%A1%B9%E7%9B%AE%E4%B8%93%E9%A2%98%E8%A7%A3%E6%9E%90_robot_agent%E7%9A%84%E6%89%A7%E8%A1%8C%E7%8A%B6%E6%80%81%E6%9C%BA%E4%B8%8Ewaypoint%E6%8E%A8%E8%BF%9B/">
-      <li>robot_agent的执行状态机与waypoint推进</li>
-    </a>
-    
-    <a href="../../%E9%A1%B9%E7%9B%AE%E4%B8%93%E9%A2%98%E8%A7%A3%E6%9E%90_path_planner%E7%9A%84%E5%9B%BE%E6%A8%A1%E5%9E%8B_BFS%E5%92%8Croute%E6%8B%BC%E6%8E%A5/">
-      <li>path_planner的图模型,BFS和route拼接</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
         <!-- Friends Blog -->
-
-<h5><a href="/">链友</a></h5>
-<ul class="list-inline">
-  
-  <li><a href="https://v-vincen.life/" target="_blank">V_Vincen</a></li>
-  
-  <li><a href="http://beantech.org" target="_blank">Bean Tech</a></li>
-  
-  <li><a href="http://huangxuan.me" target="_blank">Hux Blog</a></li>
-  
-  <li><a href="https://hexo.io/" target="_blank">Hexo</a></li>
-  
-  <li><a href="https://fe32.top/" target="_blank">Ethan.Tzy</a></li>
-  
-</ul>
-
-
+        
         <hr>
-    
-        <!-- Archives -->
+        <h5>链友</h5>
+        <ul class="list-inline">
 
-<h5><a href="/archives/">archives</a></h5>
-<div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2026/03/">March 2026</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2025/03/">March 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2025/01/">January 2025</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/10/">October 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/09/">September 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/08/">August 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/07/">July 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/05/">May 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/04/">April 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/03/">March 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2024/01/">January 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2023/12/">December 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2023/10/">October 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2023/09/">September 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2023/08/">August 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archive/2023/07/">July 2023</a><span class="archive-list-count">4</span></li></ul>
-</div>
-
-
-        <hr>
-    
-        <!-- Categories -->
-
-<h5><a href="/categories/">categories</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="/categories/#Programer">
-      <li>Programer</li>
-    </a>
-    
-    <a href="/categories/#C/C++">
-      <li>C/C++</li>
-    </a>
-    
-    <a href="/categories/#项目工程">
-      <li>项目工程</li>
-    </a>
-    
-    <a href="/categories/#RISC-V问题和解决方案以及现象">
-      <li>RISC-V问题和解决方案以及现象</li>
-    </a>
-    
-    <a href="/categories/#x86">
-      <li>x86</li>
-    </a>
-    
-    <a href="/categories/#数学哲学">
-      <li>数学哲学</li>
-    </a>
-    
-    <a href="/categories/#多机器人系统">
-      <li>多机器人系统</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-</div>
-
-
-    
+          
+          <li>
+            <a href="https://v-vincen.life/" target="_blank">V_Vincen</a>
+          </li>
+          
+          <li>
+            <a href="http://beantech.org" target="_blank">Bean Tech</a>
+          </li>
+          
+          <li>
+            <a href="http://huangxuan.me" target="_blank">Hux Blog</a>
+          </li>
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+          <li>
+            <a href="https://fe32.top/" target="_blank">Ethan.Tzy</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
   </div>
-</div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->
@@ -1233,7 +902,7 @@ C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
     let jsdelivr = "https://cdn.jsdelivr.net/gh/";
     let gh = "000xiaoming";
     let ghPages = gh + ".github.io";
-    let pagePath = "cn/archives/2/index.html";
+    let pagePath = "cn/项目专题解析_为什么当前阶段还没有选择Nav2-first_integration/";
     let jsdelivrurl;
     if (pagePath.indexOf("index.html") != -1) {
       jsdelivrurl = jsdelivr + gh + "/" + ghPages;
