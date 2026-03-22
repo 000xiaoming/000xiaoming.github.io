@@ -127,10 +127,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://000xiaoming.github.io/cn/">
+  <link rel="canonical" href="https://000xiaoming.github.io/cn/项目专题解析_DDS_sandbox限制与ROS2运行验证边界/">
   <title>
     
-      I&#39;m Bruce Lee
+      DDS sandbox限制与ROS2运行验证边界 - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -288,29 +288,7 @@
           <!-- LangSelect -->
           
           
-          <!-- LangSelect start -->
-          <!-- LangSelect -->
-<li>
-  <a id="lang-select-label"><i class="fa fa-globe"></i>
-    <span>
-      简体中文
-    </span>
-    <select id="lang-select" data-canonical="cn/index.html">
-      
-      
-      <option value="en" >
-        English
-      </option>
-      
-      <option value="cn"  selected >
-        简体中文
-      </option>
-      
-    </select>
-  </a>
-</li>
-
-          <!-- LangSelect end -->
+          
           
           
         </ul>
@@ -363,18 +341,18 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io');
-      --intro-header-background-image-url-page: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png');
+      --intro-header-background-image-url-page: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io//img/header_img/lml_bg1.png');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io//img/header_img/lml_bg1.png');
     }
     header.intro-header {
-       /*config*/
-        background-image: var(--intro-header-background-image-url-home);
-        /* background-image: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg'); */
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png'); */
       
     }
 
@@ -397,10 +375,26 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>经年治世</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">西风烈,长空雁叫霜晨月</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#ROS2" title="ROS2">ROS2</a>
+              
+              <a class="tag" href="/tags/#多机器人系统" title="多机器人系统">多机器人系统</a>
+              
+            </div>
+            <h1>DDS sandbox限制与ROS2运行验证边界</h1>
+            <h2 class="subheading">ROS2</h2>
+            <span class="meta">
+              Posted by Bruce Lee on
+              2025-03-24
+            </span>
+
+
+            
+            
+
+
           </div>
           
         </div>
@@ -441,670 +435,349 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Main Content -->
-<div class="container">
-  <div class="row">
-    
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
-
-      <!-- Main Content -->
-
-
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/项目专题解析_DDS_sandbox限制与ROS2运行验证边界/">
-    <h2 class="post-title">
-      DDS sandbox限制与ROS2运行验证边界
-    </h2>
-    <h3 class="post-subtitle">
-      ROS2
-    </h3>
-    <div class="post-content-preview">
-      DDS sandbox限制与ROS2运行验证边界
-当前项目里有一部分“还没完全验证”的现象,并不是代码逻辑本身还错着,而是运行环境对ROS 2通信路径施加了额外限制
-这个区分非常重要.
-因为如果不把“代码缺陷”和“环境阻断”分开记账,最后很容易出现两种误判:明明代码主链路已经跑通,却误以为系统根本没成立,明明只是某种环境下的验证边界,却把它当成应用层bug一直追
-而当前项目的BUGS.md和......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2025-03-24
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#ROS2" title="ROS2">ROS2</a>
-    
-    <a href="/tags/#多机器人系统" title="多机器人系统">多机器人系统</a>
-    
-  </div>
-  
-
-</div>
+        <h1>DDS sandbox限制与ROS2运行验证边界</h1>
+<p>当前项目里有一部分“还没完全验证”的现象,并不是代码逻辑本身还错着,而是运行环境对ROS 2通信路径施加了额外限制</p>
+<p>这个区分非常重要.</p>
+<p>因为如果不把“代码缺陷”和“环境阻断”分开记账,最后很容易出现两种误判:明明代码主链路已经跑通,却误以为系统根本没成立,明明只是某种环境下的验证边界,却把它当成应用层bug一直追</p>
+<p>而当前项目的<code>BUGS.md</code>和<code>STATUS.md</code>其实已经把这个问题记得很清楚了:sandbox里存在DDS socket限制, <code>ros2 service call</code>形式的独立CLI验证会卡在service discovery,但在正常shell里, end-to-end demo task submission和planner failure recovery已经被跑通</p>
 <hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/项目专题解析_冲突检测与预约机制为何会成为下一个复杂度跃迁点/">
-    <h2 class="post-title">
-      冲突检测与预约机制为何会成为下一个复杂度跃迁点
-    </h2>
-    <h3 class="post-subtitle">
-      ROS2
-    </h3>
-    <div class="post-content-preview">
-      突检测与预约机制为何会成为下一个复杂度跃迁点
-V1位置已经比较清楚了:任务能提交,manager能分配,planner能给route,agent能执行并回completed
-也就是说,最小闭环已经成立.
-但如果再往前走一步,当前系统马上就会撞到一个不能再靠&quot;先简化一下&quot;继续绕过去的问题:多个机器人如果同时在图上运行,系统怎么保证它们不会在同一节点或同一边上冲突
-这就是为什......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2025-03-21
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#ROS2" title="ROS2">ROS2</a>
-    
-    <a href="/tags/#多机器人系统" title="多机器人系统">多机器人系统</a>
-    
-  </div>
-  
-
-</div>
+<h3 id="当前阶段目标">当前阶段目标</h3>
+<p>这里的目标不是讨论ROS 2底层中间件原理有多复杂,而是回答一个更工程化的问题:当一个ROS 2多节点系统运行在受限环境里时,我们该如何判断“这是代码坏了”还是“这是验证边界到了”</p>
+<p>这个问题在当前项目里非常实际.</p>
+<p>因为<code>ros2-fleet-coordinator</code>不是单进程程序,而是依赖:/多个node启动/topic通信/service发现与调用/launch过程里的环境写入</p>
+<p>只要运行环境在这些链路上卡住其中某一层,表面现象就很容易看起来像“系统没通”.但在工程分析上,这两类问题必须拆开.</p>
 <hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/项目专题解析_robot_agent的执行状态机与waypoint推进/">
-    <h2 class="post-title">
-      robot_agent的执行状态机与waypoint推进
-    </h2>
-    <h3 class="post-subtitle">
-      ROS2
-    </h3>
-    <div class="post-content-preview">
-      robot_agent的执行状态机与waypoint推进
-继fleet_manager和path_planner这两个节点之后. 但如果继续顺着当前这个逻辑往下走,第三个必须单独拿出来写的模块,其实就是robot_agent.
-原因很直接: fleet_manager负责把任务分出去,path_planner负责把任务翻译成route, robot_agent负责把route真正变成一个会流......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2025-03-17
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#ROS2" title="ROS2">ROS2</a>
-    
-    <a href="/tags/#多机器人系统" title="多机器人系统">多机器人系统</a>
-    
-  </div>
-  
-
-</div>
+<h3 id="先看当前sandbox里到底发生了什么">先看当前sandbox里到底发生了什么</h3>
+<p>ROS 2 nodes可以启动.DDS transport在sandbox里报告socket permission相关限制.独立的<code>ros2 service call /submit_task ...</code>客户端会卡在service discovery等待阶段</p>
+<p>这里记录了另一个更前置的环境问题: <code>ros2 launch</code>默认尝试往<code>~/.ros/log</code>写日志. 但这个路径在sandbox里是只读的.需要先把<code>ROS_LOG_DIR</code>重定向到workspace内可写目录</p>
+<p>也就是说,当前环境限制其实不是只有一层,而至少有两层.</p>
+<h4 id="第一层-launch写日志路径受限">第一层: launch写日志路径受限</h4>
+<p>这层问题比较表面.</p>
+<p>如果不先处理,<code>ros2 launch</code>就会因为默认日志目录不可写而受影响. 当前项目给出的workaround也很明确:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> ROS_LOG_DIR=/home/bruce/project-a/ros2-fleet-coordinator/fleet_ws/<span class="built_in">log</span>/ros</span><br></pre></td></tr></table></figure>
+<p>这类问题虽然麻烦,但本质还只是文件系统写权限问题.</p>
+<h4 id="第二层-DDS-discovery-socket路径受限">第二层: DDS discovery / socket路径受限</h4>
+<p>这层才更关键.</p>
+<p>因为它影响的不是“日志能不能写出来”,而是:ROS 2参与者能不能完成发现. 独立CLI客户端能不能真正连上service. sandbox里的运行验证能不能覆盖完整跨参与者路径</p>
+<p>也就是说,这一步卡住以后,你看到的就不再是一个单纯的启动报错,而是:系统看起来像已经起来了,但某些CLI驱动的runtime验证就是过不去</p>
+<p>这也是为什么它更容易和代码问题混淆.</p>
 <hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/项目专题解析_path_planner的图模型_BFS和route拼接/">
-    <h2 class="post-title">
-      path_planner的图模型,BFS和route拼接
-    </h2>
-    <h3 class="post-subtitle">
-      ROS2
-    </h3>
-    <div class="post-content-preview">
-      path_planner的图模型,BFS和route拼接
-给fleet_manager一个足够简单,足够稳定,并且足够可解释的route结果,让任务分配真正闭环
-也就是说,当前planner首先要解决的不是&quot;最先进&quot;,而是&quot;最小正确&quot;.
-这篇只分析三个问题:
-
-为什么当前用的是离散waypoint图模型
-为什么当前算法选BFS而不是更复杂的方法
-为什么......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2025-03-15
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#ROS2" title="ROS2">ROS2</a>
-    
-    <a href="/tags/#多机器人系统" title="多机器人系统">多机器人系统</a>
-    
-  </div>
-  
-
-</div>
+<h3 id="为什么这种现象特别容易被误判成代码缺陷">为什么这种现象特别容易被误判成代码缺陷</h3>
+<p>因为从表面看,你会看到一个很像应用故障的场景:<code>ros2 launch</code>启动了/node日志也在滚/但是另一个shell里的<code>ros2 service call</code>卡住了/然后你自然会怀疑是不是:<br>
+<code>submit_task</code>服务没真正注册<br>
+manager代码没真的工作<br>
+service名写错了<br>
+甚至整个任务链路根本没接上</p>
+<p>但当前项目文档之所以值得信任,就在于它没有把这些现象直接粗暴归结成“代码未完成”,而是做了更细的区分.</p>
+<p><code>BUGS.md</code>已经明确给出判断:这是environment limitation/当前没有相应代码fix/不作为应用逻辑缺陷提交代码修复</p>
+<p>这类判断很重要,因为它背后实际上是在回答:问题发生在系统行为层,还是发生在验证介质层</p>
+<p>如果验证介质本身被限制了,那你继续盯着业务逻辑改代码,往往只是空转.</p>
 <hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/项目专题解析_fleet_manager的任务队列_planner依赖和assignment状态保持/">
-    <h2 class="post-title">
-      fleet_manager的任务队列,planner依赖和assignment状态保持
-    </h2>
-    <h3 class="post-subtitle">
-      ROS2
-    </h3>
-    <div class="post-content-preview">
-      fleet_manager的任务队列,planner依赖和assignment状态保持
-在当前阶段,fleet_namager并不是一个&quot;高级调度器&quot;,但是它承担了整个闭环里面最关键的中间环节:
-
-接任务
-看机器人状态
-选一个当前可用机器人
-向planner要路径
-发布assignment
-等待执行状态和完成状态回来
-
-所以如果说robot_agent是在模拟执行,pat......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2025-03-10
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#ROS2" title="ROS2">ROS2</a>
-    
-    <a href="/tags/#多机器人系统" title="多机器人系统">多机器人系统</a>
-    
-  </div>
-  
-
-</div>
+<h3 id="那当前项目到底已经验证到了哪里">那当前项目到底已经验证到了哪里</h3>
+<p>这个问题必须说清楚,否则这篇文章就会变成“环境有问题,所以一切都不确定”. 这其实不对.</p>
+<p>根据当前<code>STATUS.md</code>, 已经明确跑通并验证的东西包括:<code>fleet_msgs</code>, <code>fleet_manager</code>, <code>robot_agent</code>, <code>path_planner</code>, <code>fleet_bringup</code>都能成功build.  <code>demo.launch.py</code>能在正常shell里启动整套节点. <code>submit_demo_task.sh</code>可以通过<code>ros2 run</code>提交demo任务. <code>submit_task</code>能够接受任务. <code>fleet_manager</code>能够把任务排队并分配给idle robot. <code>path_planner</code>能够在当前图上返回route. <code>robot_agent</code>能够逐waypoint执行并回报完成. <code>check_planner_failure_path.sh</code>验证了planner rejection之后,后续有效任务仍能继续跑通</p>
+<p>而且这些不是只停留在文档意图上,而是已经被记录为:在正常shell环境里完成的实际验证结果</p>
+<p>这点非常关键.</p>
+<p>因为它说明当前项目并不是“只能编译,不能运行”. 更准确的说法应该是:项目的主链路运行验证已经成立,但成立的验证环境不是当前这个sandbox-only CLI路径</p>
 <hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/continuous_discrete_time_unit_impulse_and_step/">
-    <h2 class="post-title">
-      连续/离散时间的单位冲激/阶跃关系及其表示意义
-    </h2>
-    <h3 class="post-subtitle">
-      数学哲学
-    </h3>
-    <div class="post-content-preview">
-      简单冲激和阶跃关系
-差分：离散时间单位脉冲是离散时间单位阶跃的差分
-$ \delta[n] = u[n] - u[n-1] $
-微分: 连续时间单位冲激是连续时间单位阶跃的微分:
-$ \delta_{\Delta}(t) = \frac{d u_{\Delta}(t)}{dt} $
-这是离散时间单位阶跃函数到离散时间单位脉冲转换。
-相反，离散时间单位阶跃函数是离散时间单位脉冲的求和,即:
-$......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2025-01-08
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#数学哲学" title="数学哲学">数学哲学</a>
-    
-  </div>
-  
-
-</div>
+<h3 id="那还没验证到哪里">那还没验证到哪里</h3>
+<p>当前没完全覆盖到的,不是整个系统运行,而是更具体的一段验证边界.</p>
+<p><code>STATUS.md</code>已经把这件事说得很明确:<code>ros2 service call</code>在sandbox里无法完成对应的独立CLI验证. 原因是separate CLI participant卡在service discovery.这与DDS socket restrictions相关</p>
+<p>也就是说,还没被当前sandbox完整覆盖到的,更准确地说是:sandbox-only条件下的独立CLI服务发现路径依赖该发现路径的某些端到端验证手段</p>
+<p>这和下面这些说法并不一样:/manager一定不能接任务/planner一定没响应/assignment flow一定没成立/整个系统一定没法运行</p>
+<p>当前文档之所以写得比较成熟,正是因为它没有把这些层次混在一起.</p>
 <hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/engineering_cultivation/">
-    <h2 class="post-title">
-      作为一个合格的工程师,除了技术/学识深度外,你还应该具备什么素养?
-    </h2>
-    <h3 class="post-subtitle">
-      持久战斗，更好生活...
-    </h3>
-    <div class="post-content-preview">
-      关于我
-欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
-主要内容分类
-
-项目工程：深入探讨技术的实现细节和理解。
-C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
-程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
-
-想要了解更多具体内容，您可以访问文章分类页面。
-联系我
-如果您有任何问题......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2024-10-10
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#IT" title="IT">IT</a>
-    
-  </div>
-  
-
-</div>
+<h3 id="为什么这篇专题对ROS-2工程判断很重要">为什么这篇专题对ROS 2工程判断很重要</h3>
+<p>因为ROS 2项目和普通单进程程序有一个很大的不同:“代码可编译”“节点可启动”“节点彼此可通信”“独立CLI可发现并调用服务”其实是四层不同的事情</p>
+<p>当前项目恰好把这件事暴露得很清楚.</p>
+<h4 id="第一层-build和打包">第一层: build和打包</h4>
+<p>当前已经通过.</p>
+<h4 id="第二层-launch启动">第二层: launch启动</h4>
+<p>在处理好日志目录问题后,当前也已经通过.</p>
+<h4 id="第三层-正常shell里的主链路运行验证">第三层: 正常shell里的主链路运行验证</h4>
+<p>当前也已经通过, 包括demo task和planner failure recovery.</p>
+<h4 id="第四层-sandbox-only环境下的独立CLI-discovery验证">第四层: sandbox-only环境下的独立CLI discovery验证</h4>
+<p>当前还受限.</p>
+<p>也就是说,当前项目最值得记录的经验之一其实是:对于ROS 2系统,验证结论必须带环境上下文,不能脱离运行边界裸说“验证通过”或“验证失败”</p>
+<p>否则结论很容易误导后续开发和后续博客分析.</p>
 <hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/multitasking-management-and-stack-operation/">
-    <h2 class="post-title">
-      多任务管理及栈操作技术详解
-    </h2>
-    <h3 class="post-subtitle">
-      项目工程
-    </h3>
-    <div class="post-content-preview">
-      关于我
-欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
-主要内容分类
-
-项目工程：深入探讨技术的实现细节和理解。
-C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
-程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
-
-想要了解更多具体内容，您可以访问文章分类页面。
-联系我
-如果您有任何问题......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2024-10-01
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#项目工程" title="项目工程">项目工程</a>
-    
-  </div>
-  
-
-</div>
+<h3 id="从这个现象也能反过来看当前项目文档为什么写得对">从这个现象也能反过来看当前项目文档为什么写得对</h3>
+<p>我觉得这个项目现在有一点做得挺对,就是它没有把所有未完成验证都往“代码bug”里塞.</p>
+<p><code>BUGS.md</code>把环境阻断也单独记成有状态的问题.<br>
+<code>STATUS.md</code>把正常shell已验证的部分和sandbox受限的部分拆开写.</p>
+<p>这种写法的价值在于:/你知道哪些结论是代码层已经拿到的/你知道哪些结论是环境层暂时拿不到的/你不会因为环境噪声去错误回滚已经成立的实现判断/你也不会因为正常shell能跑,就误以为所有验证场景都等价成立</p>
+<p>从工程管理角度看,这其实比“问题有没有完全解决”本身还重要.</p>
+<p>因为它保证了问题归因是清楚的.</p>
 <hr>
+<h3 id="这个专题之后最自然会接到哪里">这个专题之后最自然会接到哪里</h3>
+<p>把DDS sandbox限制这件事单独写完之后,系列里其实又清楚了一层:代码主链路现在已经被验证过/调度和冲突处理是接下来的核心功能升级/运行验证本身也有环境边界,不能脱离上下文看</p>
+<p>所以后面如果继续往专题线走,一个自然的方向会是:为什么当前阶段还没有选择Nav2-first integration</p>
+<p>因为到了这一步,就会更容易看出:当前系统为什么先停留在graph + BFS + simulated agent/为什么在环境验证边界都还需要单独记账时,过早引入更重的导航栈会让调试面进一步爆炸</p>
+<p>它提醒我们,在ROS 2多节点系统里,运行验证失败不自动等于应用逻辑失败; 当前<code>ros2-fleet-coordinator</code>已经在正常shell里验证了主链路,而sandbox里尚未完全覆盖的是一段受DDS discovery/socket限制影响的CLI验证边界</p>
 
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
 
-  <a href="/cn/multi-program-memory-manage-task-exchange/">
-    <h2 class="post-title">
-      多程序操作环境中的内存管理与任务切换
-    </h2>
-    <h3 class="post-subtitle">
-      项目工程
-    </h3>
-    <div class="post-content-preview">
-      关于我
-欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
-主要内容分类
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/cn/项目专题解析_冲突检测与预约机制为何会成为下一个复杂度跃迁点/" data-toggle="tooltip" data-placement="top" title="冲突检测与预约机制为何会成为下一个复杂度跃迁点">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
 
-项目工程：深入探讨技术的实现细节和理解。
-C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
-程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
-
-想要了解更多具体内容，您可以访问文章分类页面。
-联系我
-如果您有任何问题......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2024-09-30
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. All the images used in the blog are my original works or AI works, if you want to take it,don't hesitate. Thank you !
+    
   </p>
-  <div class="tags">
-    
-    <a href="/tags/#项目工程" title="项目工程">项目工程</a>
-    
-  </div>
-  
-
 </div>
-<hr>
+<!-- tip end -->
 
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
+        <!-- tip end -->
+        
 
-  <a href="/cn/build-and-manage-multi-file/">
-    <h2 class="post-title">
-      构建和管理多文件以及编译流程
-    </h2>
-    <h3 class="post-subtitle">
-      项目工程
-    </h3>
-    <div class="post-content-preview">
-      关于我
-欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
-主要内容分类
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
 
-项目工程：深入探讨技术的实现细节和理解。
-C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
-程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
-
-想要了解更多具体内容，您可以访问文章分类页面。
-联系我
-如果您有任何问题......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Bruce Lee on
-    2024-09-20
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#项目工程" title="项目工程">项目工程</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-
-  <!-- Pager -->
-  <ul class="pager">
-    
-    
-    <li class="next">
-      <a href="/cn/archives/2/">下一页 &rarr;</a>
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
     </li>
-    
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=DDS sandbox限制与ROS2运行验证边界&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/项目专题解析_DDS_sandbox限制与ROS2运行验证边界/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
   </ul>
+</div>
 
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
 
-      <!-- 如果开启评论功能 -->
-      
-    </div>
-
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-        <!-- Visitors -->
-<h5><a href="/">来访者</a></h5>
-
-
+        <!-- Sharing End -->
+        
         <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <script src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Mon Mar 24 2025 23:30:00 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
     
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">DDS sandbox限制与ROS2运行验证边界</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%BD%93%E5%89%8D%E9%98%B6%E6%AE%B5%E7%9B%AE%E6%A0%87"><span class="toc-nav-number">1.0.1.</span> <span class="toc-nav-text">当前阶段目标</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%88%E7%9C%8B%E5%BD%93%E5%89%8Dsandbox%E9%87%8C%E5%88%B0%E5%BA%95%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88"><span class="toc-nav-number">1.0.2.</span> <span class="toc-nav-text">先看当前sandbox里到底发生了什么</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%AC%AC%E4%B8%80%E5%B1%82-launch%E5%86%99%E6%97%A5%E5%BF%97%E8%B7%AF%E5%BE%84%E5%8F%97%E9%99%90"><span class="toc-nav-number">1.0.2.1.</span> <span class="toc-nav-text">第一层: launch写日志路径受限</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%AC%AC%E4%BA%8C%E5%B1%82-DDS-discovery-socket%E8%B7%AF%E5%BE%84%E5%8F%97%E9%99%90"><span class="toc-nav-number">1.0.2.2.</span> <span class="toc-nav-text">第二层: DDS discovery &#x2F; socket路径受限</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%99%E7%A7%8D%E7%8E%B0%E8%B1%A1%E7%89%B9%E5%88%AB%E5%AE%B9%E6%98%93%E8%A2%AB%E8%AF%AF%E5%88%A4%E6%88%90%E4%BB%A3%E7%A0%81%E7%BC%BA%E9%99%B7"><span class="toc-nav-number">1.0.3.</span> <span class="toc-nav-text">为什么这种现象特别容易被误判成代码缺陷</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E9%82%A3%E5%BD%93%E5%89%8D%E9%A1%B9%E7%9B%AE%E5%88%B0%E5%BA%95%E5%B7%B2%E7%BB%8F%E9%AA%8C%E8%AF%81%E5%88%B0%E4%BA%86%E5%93%AA%E9%87%8C"><span class="toc-nav-number">1.0.4.</span> <span class="toc-nav-text">那当前项目到底已经验证到了哪里</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E9%82%A3%E8%BF%98%E6%B2%A1%E9%AA%8C%E8%AF%81%E5%88%B0%E5%93%AA%E9%87%8C"><span class="toc-nav-number">1.0.5.</span> <span class="toc-nav-text">那还没验证到哪里</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%99%E7%AF%87%E4%B8%93%E9%A2%98%E5%AF%B9ROS-2%E5%B7%A5%E7%A8%8B%E5%88%A4%E6%96%AD%E5%BE%88%E9%87%8D%E8%A6%81"><span class="toc-nav-number">1.0.6.</span> <span class="toc-nav-text">为什么这篇专题对ROS 2工程判断很重要</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%AC%AC%E4%B8%80%E5%B1%82-build%E5%92%8C%E6%89%93%E5%8C%85"><span class="toc-nav-number">1.0.6.1.</span> <span class="toc-nav-text">第一层: build和打包</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%AC%AC%E4%BA%8C%E5%B1%82-launch%E5%90%AF%E5%8A%A8"><span class="toc-nav-number">1.0.6.2.</span> <span class="toc-nav-text">第二层: launch启动</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%AC%AC%E4%B8%89%E5%B1%82-%E6%AD%A3%E5%B8%B8shell%E9%87%8C%E7%9A%84%E4%B8%BB%E9%93%BE%E8%B7%AF%E8%BF%90%E8%A1%8C%E9%AA%8C%E8%AF%81"><span class="toc-nav-number">1.0.6.3.</span> <span class="toc-nav-text">第三层: 正常shell里的主链路运行验证</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%AC%AC%E5%9B%9B%E5%B1%82-sandbox-only%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84%E7%8B%AC%E7%AB%8BCLI-discovery%E9%AA%8C%E8%AF%81"><span class="toc-nav-number">1.0.6.4.</span> <span class="toc-nav-text">第四层: sandbox-only环境下的独立CLI discovery验证</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BB%8E%E8%BF%99%E4%B8%AA%E7%8E%B0%E8%B1%A1%E4%B9%9F%E8%83%BD%E5%8F%8D%E8%BF%87%E6%9D%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3%E4%B8%BA%E4%BB%80%E4%B9%88%E5%86%99%E5%BE%97%E5%AF%B9"><span class="toc-nav-number">1.0.7.</span> <span class="toc-nav-text">从这个现象也能反过来看当前项目文档为什么写得对</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%BF%99%E4%B8%AA%E4%B8%93%E9%A2%98%E4%B9%8B%E5%90%8E%E6%9C%80%E8%87%AA%E7%84%B6%E4%BC%9A%E6%8E%A5%E5%88%B0%E5%93%AA%E9%87%8C"><span class="toc-nav-number">1.0.8.</span> <span class="toc-nav-text">这个专题之后最自然会接到哪里</span></a></li></ol></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
         <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#ROS2" title="ROS2">ROS2</a>
+            
+            <a class="tag" href="/tags/#多机器人系统" title="多机器人系统">多机器人系统</a>
+            
+          </div>
+        </section>
+        
 
-<section>
-  <h5><a href="/tags/">特色标签</a></h5>
-  <div class="tags">
-    
-    
-    <a href="/tags/#IT" title="IT" rel="3">IT</a>
-    
-    
-    
-    <a href="/tags/#C/C++" title="C/C++" rel="7">C/C++</a>
-    
-    
-    
-    <a href="/tags/#项目工程" title="项目工程" rel="17">项目工程</a>
-    
-    
-    
-    <a href="/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象" rel="9">RISC-V问题和解决方案以及现象</a>
-    
-    
-    
-    <a href="/tags/#x86" title="x86" rel="9">x86</a>
-    
-    
-    
-    <a href="/tags/#数学哲学" title="数学哲学" rel="1">数学哲学</a>
-    
-    
-    
-    <a href="/tags/#ROS2" title="ROS2" rel="5">ROS2</a>
-    
-    
-    
-    <a href="/tags/#多机器人系统" title="多机器人系统" rel="5">多机器人系统</a>
-    
-    
-  </div>
-</section>
-
-
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-  <h5><a href="/about/">关于自己</a></h5>
-  <div class="short-about">
-
-    
-    <img id="avatar_pic" src="/img/avatar/fatpeople.png" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
-    
-
-    
-    <p>Don&#39;t wait Don&#39;t wait Don&#39;t wait for anything...</p>
-    
-
-    <!-- SNS Link -->
-    <ul class="list-inline">
-      
-
-      
-      <li>
-        <a target="_blank" href="https://github.com/000xiaoming">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-    </ul>
-  </div>
-</section>
-
-        <hr>
-    
-        <!-- RECENT POSTS -->
-
-<h5><a href="/">最近博文</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="%E9%A1%B9%E7%9B%AE%E4%B8%93%E9%A2%98%E8%A7%A3%E6%9E%90_DDS_sandbox%E9%99%90%E5%88%B6%E4%B8%8EROS2%E8%BF%90%E8%A1%8C%E9%AA%8C%E8%AF%81%E8%BE%B9%E7%95%8C/">
-      <li>DDS sandbox限制与ROS2运行验证边界</li>
-    </a>
-    
-    <a href="%E9%A1%B9%E7%9B%AE%E4%B8%93%E9%A2%98%E8%A7%A3%E6%9E%90_%E5%86%B2%E7%AA%81%E6%A3%80%E6%B5%8B%E4%B8%8E%E9%A2%84%E7%BA%A6%E6%9C%BA%E5%88%B6%E4%B8%BA%E4%BD%95%E4%BC%9A%E6%88%90%E4%B8%BA%E4%B8%8B%E4%B8%80%E4%B8%AA%E5%A4%8D%E6%9D%82%E5%BA%A6%E8%B7%83%E8%BF%81%E7%82%B9/">
-      <li>冲突检测与预约机制为何会成为下一个复杂度跃迁点</li>
-    </a>
-    
-    <a href="%E9%A1%B9%E7%9B%AE%E4%B8%93%E9%A2%98%E8%A7%A3%E6%9E%90_robot_agent%E7%9A%84%E6%89%A7%E8%A1%8C%E7%8A%B6%E6%80%81%E6%9C%BA%E4%B8%8Ewaypoint%E6%8E%A8%E8%BF%9B/">
-      <li>robot_agent的执行状态机与waypoint推进</li>
-    </a>
-    
-    <a href="%E9%A1%B9%E7%9B%AE%E4%B8%93%E9%A2%98%E8%A7%A3%E6%9E%90_path_planner%E7%9A%84%E5%9B%BE%E6%A8%A1%E5%9E%8B_BFS%E5%92%8Croute%E6%8B%BC%E6%8E%A5/">
-      <li>path_planner的图模型,BFS和route拼接</li>
-    </a>
-    
-    <a href="%E9%A1%B9%E7%9B%AE%E4%B8%93%E9%A2%98%E8%A7%A3%E6%9E%90_fleet_manager%E7%9A%84%E4%BB%BB%E5%8A%A1%E9%98%9F%E5%88%97_planner%E4%BE%9D%E8%B5%96%E5%92%8Cassignment%E7%8A%B6%E6%80%81%E4%BF%9D%E6%8C%81/">
-      <li>fleet_manager的任务队列,planner依赖和assignment状态保持</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
         <!-- Friends Blog -->
-
-<h5><a href="/">链友</a></h5>
-<ul class="list-inline">
-  
-  <li><a href="https://v-vincen.life/" target="_blank">V_Vincen</a></li>
-  
-  <li><a href="http://beantech.org" target="_blank">Bean Tech</a></li>
-  
-  <li><a href="http://huangxuan.me" target="_blank">Hux Blog</a></li>
-  
-  <li><a href="https://hexo.io/" target="_blank">Hexo</a></li>
-  
-  <li><a href="https://fe32.top/" target="_blank">Ethan.Tzy</a></li>
-  
-</ul>
-
-
+        
         <hr>
-    
-        <!-- Archives -->
+        <h5>链友</h5>
+        <ul class="list-inline">
 
-<h5><a href="/archives/">archives</a></h5>
-<div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../archive/2025/03/">March 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2025/01/">January 2025</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/10/">October 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/09/">September 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/08/">August 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/07/">July 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/05/">May 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/04/">April 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/03/">March 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2024/01/">January 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/12/">December 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/10/">October 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/09/">September 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/08/">August 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archive/2023/07/">July 2023</a><span class="archive-list-count">4</span></li></ul>
-</div>
-
-
-        <hr>
-    
-        <!-- Categories -->
-
-<h5><a href="/categories/">categories</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="/categories/#Programer">
-      <li>Programer</li>
-    </a>
-    
-    <a href="/categories/#C/C++">
-      <li>C/C++</li>
-    </a>
-    
-    <a href="/categories/#项目工程">
-      <li>项目工程</li>
-    </a>
-    
-    <a href="/categories/#RISC-V问题和解决方案以及现象">
-      <li>RISC-V问题和解决方案以及现象</li>
-    </a>
-    
-    <a href="/categories/#x86">
-      <li>x86</li>
-    </a>
-    
-    <a href="/categories/#数学哲学">
-      <li>数学哲学</li>
-    </a>
-    
-    <a href="/categories/#多机器人系统">
-      <li>多机器人系统</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-</div>
-
-
-    
+          
+          <li>
+            <a href="https://v-vincen.life/" target="_blank">V_Vincen</a>
+          </li>
+          
+          <li>
+            <a href="http://beantech.org" target="_blank">Bean Tech</a>
+          </li>
+          
+          <li>
+            <a href="http://huangxuan.me" target="_blank">Hux Blog</a>
+          </li>
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+          <li>
+            <a href="https://fe32.top/" target="_blank">Ethan.Tzy</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
   </div>
-</div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->
@@ -1213,7 +886,7 @@ C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
     let jsdelivr = "https://cdn.jsdelivr.net/gh/";
     let gh = "000xiaoming";
     let ghPages = gh + ".github.io";
-    let pagePath = "cn/index.html";
+    let pagePath = "cn/项目专题解析_DDS_sandbox限制与ROS2运行验证边界/";
     let jsdelivrurl;
     if (pagePath.indexOf("index.html") != -1) {
       jsdelivrurl = jsdelivr + gh + "/" + ghPages;
