@@ -195,19 +195,10 @@
 
 		<!-- Gitter -->
 		
-		<!-- Gitter -->
-<!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
-<script>
-  ((window.gitter = {}).chat = {}).options = {
-    room: 'your-community/your-room'
-  };
-</script>
-<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
-
-		
 
 		<!-- Navigation (contains search)-->
 		<!-- Navigation -->
+
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -218,7 +209,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">经年治世</a>
+      <a class="navbar-brand" href="/cn/">经年治世</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -226,56 +217,43 @@
     <div id="huxblog_navbar">
       <div class="navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
+          
           <li>
-            <a href="/">首页</a>
+            <a href="/cn/">首页</a>
           </li>
 
           
-          
-          
-          
           <li>
-            <a href="/about/">
-              
-              关于
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/archives/">
+            <a href="/cn/archives/">
               
               归档
               
+            </a>
+          </li>
+          
+          <li>
+            <a href="/cn/about/">
+              
+              关于
               
             </a>
           </li>
           
-          
-          
           <li>
-            <a href="/categories/">
+            <a href="/cn/categories/">
               
               分类
               
-              
             </a>
           </li>
           
-          
-          
           <li>
-            <a href="/tags/">
+            <a href="/cn/tags/">
               
               标签
               
-              
             </a>
           </li>
-          
           
 
           
@@ -336,34 +314,31 @@
 		<!-- Modified by Yu-Hsuan Yen -->
 <!-- Post Header -->
 
-  <!-- CDN: jsdelivr start -->
-  <style type="text/css">
-    .body--light {
-      /* intro-header */
-      --intro-header-background-image-url-home: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg3.png');
-      --intro-header-background-image-url-page: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io//img/header_img/lml_bg3.png');
-    }
-    .body--dark {
-      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg3.png');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io//img/header_img/lml_bg3.png');
-    }
-    header.intro-header {
-       /*post*/
-        background-image: var(--intro-header-background-image-url-post);
-        /* background-image: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg3.png'); */
-      
-    }
+<style type="text/css">
+  .body--light {
+    /* intro-header */
+    --intro-header-background-image-url-home: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg');
+    --intro-header-background-image-url-post: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg3.png');
+    --intro-header-background-image-url-page: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg3.png');
+  }
+  .body--dark {
+    --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg');
+    --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg3.png');
+    --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg3.png');
+  }
 
+  header.intro-header {
+     /*post*/
+      background-image: var(--intro-header-background-image-url-post);
     
-      #signature {/*signature*/
-        background-image: url('/img/signature/vincent-white.png');
-      }
-    
-  </style>
-  <!-- CDN: jsdelivr end -->
+  }
 
+  
+    #signature {/*signature*/
+      background-image: url('/img/signature/vincent-white.png');
+    }
+  
+</style>
 
 
 
@@ -378,7 +353,7 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/tags/#x86" title="x86">x86</a>
+              <a class="tag" href="/cn/tags/#x86" title="x86">x86</a>
               
             </div>
             <h1>本博客的汇编代码的环境规范</h1>
@@ -435,6 +410,7 @@
 	) -->
 		<!-- Modify by Yu-Hsuan Yen -->
 <!-- Post Content -->
+
 <article>
   <div class="container">
     <div class="row">
@@ -660,11 +636,11 @@
         <section>
           <!-- no hr -->
           <h5>
-            <a href="/tags/">特色标签</a>
+            <a href="/cn/tags/">特色标签</a>
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#x86" title="x86">x86</a>
+            <a class="tag" href="/cn/tags/#x86" title="x86">x86</a>
             
           </div>
         </section>
@@ -809,6 +785,8 @@
 <a id="rocket" href="#top" class=""></a>
 
 
+
+
   <!-- jQuery -->
   <script src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/jquery.min.js"></script>
 
@@ -834,7 +812,7 @@
 
   
     <!-- LangSelect start -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/langselect.js"></script>
+    <script type="text/javascript" src="/js/langselect.js"></script>
     <!-- LangSelect end -->
   
 
@@ -1038,7 +1016,9 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
             var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
             var imgUrl = data.header_img;
             
-              imgUrl = 'https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io' + imgUrl;
+              if (imgUrl) {
+                imgUrl = 'https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/' + imgUrl.replace(/^\/+/, '');
+              }
             
 
 
@@ -1266,6 +1246,6 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

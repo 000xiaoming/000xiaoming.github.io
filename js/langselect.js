@@ -1,13 +1,22 @@
 (function() {
   function changeLang() {
     var selectLang = this.value;
-    var canonical = this.dataset.canonical;
-    var url = canonical.split('/')[0];
-    var lang = url === 'index.html' ? '/' : (url === 'en' ? '/' : url);
-    var index = canonical.indexOf('/') === -1 ? 0 : canonical.indexOf('/');
-    var path = canonical.substring(index);
-    path = selectLang + (path === 'index.html' ? '/index.html' : path);
-    location.href = (location.origin + '/' + path).replace('index.html', '');
+    var canonical = this.dataset.canonical || 'index.html';
+    var isPost = this.dataset.isPost === 'true';
+    var languages = Array.prototype.map.call(this.options, function(option) {
+      return option.value;
+    });
+    var parts = canonical.split('/');
+    if (languages.indexOf(parts[0]) !== -1) {
+      parts.shift();
+    }
+    var suffix = parts.join('/') || 'index.html';
+    var target = selectLang + '/' + suffix;
+    if (!isPost && selectLang === languages[0]) {
+      target = suffix;
+    }
+
+    location.href = location.origin + '/' + target.replace(/(^|\/)index\.html$/, '$1');
   }
 
   if (document.getElementById('lang-select')) {

@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <meta name="baidu-site-verification" content="codeva-OySZDT59RD" />
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-Y95F7Y9NT1"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-Y95F7Y9NT1');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?9b08ea589f23fb1f5e2be85b8ca26b60";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="It&#39;s an IT blog..."/>
+  <meta name="keyword" content="v-vincen,v-vincen,livemylife,IT  blog,Blog"/>
+  <link rel="shortcut icon" href="/img/avatar/roguerabbit.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/highlight.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/widget.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/rocket.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/signature.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/catalog.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+      <!-- gitalk start -->
+      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/gitalk.css"/>
+      <!-- gitalk end -->
+    
+
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://000xiaoming.github.io/cn/项目解析ROS2多机器人车队协调器V1_从任务提交到路径分发的最小闭环/">
+  <title>
+    
+      从任务提交到路径分发的最小闭环 - I&#39;m Bruce Lee
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--dark">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'dark';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/cn/">经年治世</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li>
+            <a href="/cn/">首页</a>
+          </li>
+
+          
+          <li>
+            <a href="/cn/archives/">
+              
+              归档
+              
+            </a>
+          </li>
+          
+          <li>
+            <a href="/cn/about/">
+              
+              关于
+              
+            </a>
+          </li>
+          
+          <li>
+            <a href="/cn/categories/">
+              
+              分类
+              
+            </a>
+          </li>
+          
+          <li>
+            <a href="/cn/tags/">
+              
+              标签
+              
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>搜索</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+<style type="text/css">
+  .body--light {
+    /* intro-header */
+    --intro-header-background-image-url-home: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg');
+    --intro-header-background-image-url-post: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png');
+    --intro-header-background-image-url-page: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png');
+  }
+  .body--dark {
+    --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg');
+    --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png');
+    --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png');
+  }
+
+  header.intro-header {
+     /*post*/
+      background-image: var(--intro-header-background-image-url-post);
+    
+  }
+
+  
+    #signature {/*signature*/
+      background-image: url('/img/signature/vincent-white.png');
+    }
+  
+</style>
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/cn/tags/#多机器人系统" title="多机器人系统">多机器人系统</a>
+              
+              <a class="tag" href="/cn/tags/#fleet_manager" title="fleet_manager">fleet_manager</a>
+              
+              <a class="tag" href="/cn/tags/#path_planner" title="path_planner">path_planner</a>
+              
+              <a class="tag" href="/cn/tags/#robot_agent" title="robot_agent">robot_agent</a>
+              
+            </div>
+            <h1>从任务提交到路径分发的最小闭环</h1>
+            <h2 class="subheading">ROS2</h2>
+            <span class="meta">
+              Posted by Bruce Lee on
+              2025-04-20
+            </span>
+
+
+            
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h1>从任务提交到路径分发的最小闭环</h1>
+<p>ros2-fleet-coordinator本身并不是一开始就瞄准复杂调度,冲突消解,Nav2全栈集成. 相反,它先做了一件更基础,但也更关键的事情: 先把一个多机器人车队系统里面最小可运行闭环搭起来.</p>
+<p>这个闭环可以描述为:有机器人周期性上报自身状态/有任务入口可以提交取货点和放货点/有中心管理器选择空闲机器人/有路径规划器给出图上的waypoint路径/有机器人执行节点按waypoint逐步推进并汇报完成</p>
+<p>如果从工程分析角度看,这个项目当前并不是在解决&quot;最优车队调度&quot;问题,而是在解决另一个更前置的问题: 如何把任务流,状态流,路径流真正接起来,形成一个能跑通的系统过程</p>
+<p>这一点很重要. 因为很多项目在初期阶段很容易陷入两个极端: 要么只有架构图,没有真实流动起来的数据/要么只有零散节点,但是节点之间没有形成完整闭环</p>
+<p>而这个项目当前版本,恰恰是在补这条最基本的链路.</p>
+<hr>
+<h3 id="工程分解-为什么它拆成5个包">工程分解: 为什么它拆成5个包</h3>
+<p>该项目workspace下面有5个包: <code>fleet_msgs</code>/<code>fleet_manager</code>/ <code>robot_agent</code>/<code>path_planner</code>/<code>fleet_bringup</code></p>
+<p>这个拆法其实非常典型,但重点不在于&quot;典型&quot;,而在于职责边界比较清楚.</p>
+<h4 id="fleet-msgs"><code>fleet_msgs</code></h4>
+<p>它不是功能节点,而是接口层. 这里统一放消息,服务,动作定义.</p>
+<p>这类包的意义在于: 把系统里的公共契约抽出来/避免manager,planner,agent之间互相嵌入对方的数据假设/后续扩展字段时,修改位置集中</p>
+<p>如果没有这一层,常见现象就是每个节点自己拼topic内容,系统耦合会快速失控.</p>
+<h4 id="fleet-manager"><code>fleet_manager</code></h4>
+<p>它是中心调度节点,但当前版本更准确的说法是: 任务受理 + 空闲机器人选择 + 调用路径规划 + 发布分配结果</p>
+<p>注意这里它还不是严格意义上的高级调度器. 目前策略比较朴素,更像first-idle dispatcher.</p>
+<h4 id="robot-agent"><code>robot_agent</code></h4>
+<p>每个机器人对应一个执行节点. 它负责: 上报状态/接收分配/模拟沿route逐点前进/上报<code>idle/executing/completed</code>状态迁移</p>
+<p>所以它本质上是一个局部执行状态机.</p>
+<h4 id="path-planner"><code>path_planner</code></h4>
+<p>这里做了一件刻意简化的事情: 在离散waypoint图上做BFS路径规划.</p>
+<p>这说明项目当前关注点不是连续空间导航,而是任务级协调.</p>
+<h4 id="fleet-bringup"><code>fleet_bringup</code></h4>
+<p>负责launch和demo配置.</p>
+<p>这类包常常被低估,但对于ROS项目来说,bringup本身就是&quot;可运行工程&quot;的一部分. 没有它,系统就只是一堆源码.</p>
+<hr>
+<h3 id="先看核心问题-它到底在打通什么">先看核心问题: 它到底在打通什么</h3>
+<p>从<code>README.md</code>, <code>STATUS.md</code>, <code>BUGS.md</code>和几个核心node的实现看,这个项目此前真正存在过的主要问题是: 任务虽然能在<code>fleet_manager</code>内部排队,但是没有真正发起路径规划,没有真正下发给机器人,也没有真正形成执行-完成反馈</p>
+<p>这类问题在工程里很常见. 表面上看,你已经有: task queue/robot state/planner包/agent包</p>
+<p>但这些部件只是&quot;存在&quot;,并不代表它们已经形成闭环.</p>
+<p>所以这个项目当前最关键的修复不是某个算法优化,而是把以下通路补齐:</p>
+<p><code>submit_task -&gt; manager选择机器人 -&gt; 请求planner -&gt; 发布assignment -&gt; robot_agent执行 -&gt; 回传completed</code></p>
+<p>这件事情比看起来更重要,因为只有这条路径真的跑通了,后面才有资格谈: 冲突检测/优先级调度/任务重分配/更复杂的导航接入</p>
+<hr>
+<h3 id="过程模型-这个系统的最小状态机是什么">过程模型: 这个系统的最小状态机是什么</h3>
+<p>如果借用之前分析小型模拟器/状态模型的视角,这个项目也可以被压缩成一个&quot;过程状态机&quot;.</p>
+<p>它不是只关心某个函数输出什么,而是关心: 一个任务进入系统后,状态如何在不同节点之间迁移</p>
+<p>粗略可以写成:</p>
+<p><code>(任务未提交, 机器人idle, 无分配)</code><br>
+-&gt; <code>(任务进入pending队列)</code><br>
+-&gt; <code>(manager选择一个idle robot)</code><br>
+-&gt; <code>(planner返回route_waypoints)</code><br>
+-&gt; <code>(manager发布TaskAssignment)</code><br>
+-&gt; <code>(robot_agent进入executing)</code><br>
+-&gt; <code>(robot_agent逐点推进current_waypoint)</code><br>
+-&gt; <code>(robot_agent发布completed)</code><br>
+-&gt; <code>(manager把该机器人重新视为idle)</code></p>
+<p>这说明这个项目当前分析重点应该放在&quot;状态迁移是否合法&quot;,而不只是&quot;某段代码是否能编译&quot;.</p>
+<hr>
+<h3 id="fleet-manager做的事情-不是复杂-而是关键"><code>fleet_manager</code>做的事情: 不是复杂,而是关键</h3>
+<p><code>fleet_manager</code>内部当前有几个关键动作: 订阅<code>robot_states</code>/维护每个robot的最新状态/提供<code>submit_task</code>服务/周期性尝试给pending task分配机器人/调用<code>plan_route</code>服务/发布<code>task_assignments</code></p>
+<p>这个节点的关键点在于,它把&quot;任务队列逻辑&quot;和&quot;路径规划逻辑&quot;分开了.</p>
+<p>也就是说,manager自己不算路径,而是通过service向planner请求结果. 这种分离有两个直接好处: manager只负责调度语义,planner只负责路径语义/后续如果替换BFS为A*/Dijkstra或者更复杂的reserve-aware planner,manager层可以尽量不动</p>
+<p>但是这个设计也有一个很明显的现象: 当前manager是同步依赖planner结果的</p>
+<p>即,没有route就没有assignment. 这对当前V1是合理的,因为系统还在追求最小正确性. 但后续如果planning latency上来,就会逼着系统继续分层.</p>
+<p>另一个值得注意的实现细节是,manager在机器人刚被分配任务但agent还没有来得及发出执行状态时,会尽量保留已有assignment状态,避免刚分配就被后续idle消息覆盖.</p>
+<p>这种逻辑说明作者已经意识到: topic系统里的状态不是原子切换的,中心节点必须处理分配状态和回传状态之间的时间缝隙</p>
+<p>这其实是一个很实际的工程点.</p>
+<hr>
+<h3 id="path-planner为什么选择BFS"><code>path_planner</code>为什么选择BFS</h3>
+<p>很多人看到路径规划,第一反应就是: 为什么不是A*.为什么不是Dijkstra .为什么不直接上Nav2</p>
+<p>但从当前项目阶段看,BFS恰恰是一个很合理的选择.</p>
+<p>因为这个系统当前地图不是连续空间地图,而是waypoint graph. 在图边没有权重差异的情况下,BFS就是最小正确解.</p>
+<p>这里的核心不是算法先进性,而是:  路径可解释/行为确定/调试成本低/能快速验证manager和agent之间的任务通路</p>
+<p>这体现出一个很清楚的工程判断: 当前项目优先验证协调闭环,而不是优先堆叠复杂导航能力</p>
+<p>另外,planner当前把任务拆成两段: <code>start -&gt; pickup</code>/<code>pickup -&gt; dropoff</code></p>
+<p>然后再拼接route. 这也说明当前系统的任务模型是非常明确的,它不是泛化任务执行器,而是偏transport task模型.</p>
+<hr>
+<h3 id="robot-agent的意义-用最小执行器把闭环闭上"><code>robot_agent</code>的意义: 用最小执行器把闭环闭上</h3>
+<p><code>robot_agent</code>现在不是接机器人底盘,也不是控制真实导航栈. 它做的是更朴素但更必要的事情: 接收<code>TaskAssignment</code>/保存route_waypoints/定时推进route index/更新<code>current_waypoint</code>/发布<code>executing/completed/idle</code></p>
+<p>如果单看代码,它很像一个简化执行器. 但从工程位置看,它承担了一个非常重要的角色: 把静态任务分配,转化成动态状态反馈</p>
+<p>如果没有这层,manager永远只能停留在&quot;我认为已经分配了&quot;这个层面,而不是&quot;系统已经执行并回来了&quot;.</p>
+<p>这个节点还有一个值得注意的小设计:</p>
+<p>它除了读取初始<code>x/y</code>,还支持<code>waypoint_positions</code>参数,并且内置了一份fallback map.</p>
+<p>这说明作者其实在处理一个现实问题: 状态消息里不仅要告诉别人我在哪个waypoint,还要给出可消费的位置表示</p>
+<p>虽然当前只是demo坐标,但接口已经往更真实的robot state形式靠拢了.</p>
+<hr>
+<h3 id="为什么说这个项目当前更像-离散事件协调系统">为什么说这个项目当前更像&quot;离散事件协调系统&quot;</h3>
+<p>如果从分析视角看,这个项目虽然挂在ROS 2和机器人名下,但是V1的本质更接近: 一个基于topic/service的离散事件协调系统</p>
+<p>原因在于它当前主要处理的不是连续控制量,而是:robot是否idle/task是否pending/route是否规划成功/当前waypoint推进到了哪里/task是否completed</p>
+<p>所以项目当前真正的复杂度,主要在以下三件事: 跨节点状态一致性/请求/发布时序/assignment生命周期管理</p>
+<p>这也是为什么它现在文档里反复强调&quot;先验证完整assignment and completion flow&quot;. 因为这个阶段最怕的不是算法弱,而是系统状态前后对不上.</p>
+<hr>
+<h3 id="当前限制和遗留问题">当前限制和遗留问题</h3>
+<p>根据<code>STATUS.md</code>和<code>BUGS.md</code>,这个项目目前仍然有几个非常清楚的边界:</p>
+<h4 id="1-还没有冲突检测-预约">1. 还没有冲突检测/预约</h4>
+<p>也就是说,多个机器人是否会争用同一节点或边,当前没有系统性约束.</p>
+<p>这意味着现有planner给出的只是&quot;对单机器人可行&quot;,还不是&quot;对整个fleet全局可行&quot;.</p>
+<h4 id="2-调度策略还是first-idle">2. 调度策略还是first-idle</h4>
+<p>现在的manager更像最小dispatcher,并没有考虑: 距离代价/电量/优先级竞争/已有任务负载</p>
+<p>所以它目前的目标不是优化调度,而是先确保dispatch path成立.</p>
+<h4 id="3-运行时验证受sandbox环境限制">3. 运行时验证受sandbox环境限制</h4>
+<p>项目文档明确记录了DDS socket权限问题. 这意味着: build能做/launch启动能做/节点内topic行为能部分看到/但CLI驱动的完整service discovery和端到端验证,在当前沙箱里受阻</p>
+<p>这个问题很关键. 因为它告诉我们,当前未完成的验证不一定是代码错误,也可能是运行环境阻断. 遗留问题和现象1: 在ROS 2项目中,&quot;节点能启动&quot;和&quot;系统闭环已被完整验证&quot;不是一回事</p>
+<p>遗留问题和现象2: 对于多节点系统,环境限制有时会伪装成代码缺陷,必须把环境问题单独记账</p>
+<hr>
+<h3 id="这个项目为什么值得继续往下做">这个项目为什么值得继续往下做</h3>
+<p>我觉得这个项目当前最合理的地方,恰恰在于它没有一开始就追求太大.</p>
+<p>它先把系统压到下面这个规模: 图是离散的.planner是BFS.agent是模拟执行.scheduler是first-idle.bringup里只有少量demo节点</p>
+<p>这种压缩不是能力不足,而是一种工程节奏控制. 因为多机器人系统真正危险的地方在于: 你很容易同时引入调度复杂性,导航复杂性,并发复杂性,通信复杂性和环境复杂性</p>
+<p>一旦这些复杂性同时进入系统,那就不是&quot;难调试&quot;,而是根本不知道问题属于哪一层.</p>
+<p>而当前这个项目的好处是,它把问题分层得比较干净: 先确认接口层成立/再确认任务闭环成立/再去碰冲突控制/再去碰更强调度/最后再考虑重型导航集成</p>
+<p>这条路径是比较稳的.</p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/cn/项目专题解析_为什么当前planning用service而state和assignment用topic/" data-toggle="tooltip" data-placement="top" title="为什么当前planning用service而state和assignment用topic">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. All the images used in the blog are my original works or AI works, if you want to take it,don't hesitate. Thank you !
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=从任务提交到路径分发的最小闭环&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/项目解析ROS2多机器人车队协调器V1_从任务提交到路径分发的最小闭环/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <script src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Sun Apr 20 2025 18:30:00 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">从任务提交到路径分发的最小闭环</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%B7%A5%E7%A8%8B%E5%88%86%E8%A7%A3-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%AE%83%E6%8B%86%E6%88%905%E4%B8%AA%E5%8C%85"><span class="toc-nav-number">1.0.1.</span> <span class="toc-nav-text">工程分解: 为什么它拆成5个包</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#fleet-msgs"><span class="toc-nav-number">1.0.1.1.</span> <span class="toc-nav-text">fleet_msgs</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#fleet-manager"><span class="toc-nav-number">1.0.1.2.</span> <span class="toc-nav-text">fleet_manager</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#robot-agent"><span class="toc-nav-number">1.0.1.3.</span> <span class="toc-nav-text">robot_agent</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#path-planner"><span class="toc-nav-number">1.0.1.4.</span> <span class="toc-nav-text">path_planner</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#fleet-bringup"><span class="toc-nav-number">1.0.1.5.</span> <span class="toc-nav-text">fleet_bringup</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%88%E7%9C%8B%E6%A0%B8%E5%BF%83%E9%97%AE%E9%A2%98-%E5%AE%83%E5%88%B0%E5%BA%95%E5%9C%A8%E6%89%93%E9%80%9A%E4%BB%80%E4%B9%88"><span class="toc-nav-number">1.0.2.</span> <span class="toc-nav-text">先看核心问题: 它到底在打通什么</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%BF%87%E7%A8%8B%E6%A8%A1%E5%9E%8B-%E8%BF%99%E4%B8%AA%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%9C%80%E5%B0%8F%E7%8A%B6%E6%80%81%E6%9C%BA%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-nav-number">1.0.3.</span> <span class="toc-nav-text">过程模型: 这个系统的最小状态机是什么</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#fleet-manager%E5%81%9A%E7%9A%84%E4%BA%8B%E6%83%85-%E4%B8%8D%E6%98%AF%E5%A4%8D%E6%9D%82-%E8%80%8C%E6%98%AF%E5%85%B3%E9%94%AE"><span class="toc-nav-number">1.0.4.</span> <span class="toc-nav-text">fleet_manager做的事情: 不是复杂,而是关键</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#path-planner%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9BFS"><span class="toc-nav-number">1.0.5.</span> <span class="toc-nav-text">path_planner为什么选择BFS</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#robot-agent%E7%9A%84%E6%84%8F%E4%B9%89-%E7%94%A8%E6%9C%80%E5%B0%8F%E6%89%A7%E8%A1%8C%E5%99%A8%E6%8A%8A%E9%97%AD%E7%8E%AF%E9%97%AD%E4%B8%8A"><span class="toc-nav-number">1.0.6.</span> <span class="toc-nav-text">robot_agent的意义: 用最小执行器把闭环闭上</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AF%B4%E8%BF%99%E4%B8%AA%E9%A1%B9%E7%9B%AE%E5%BD%93%E5%89%8D%E6%9B%B4%E5%83%8F-%E7%A6%BB%E6%95%A3%E4%BA%8B%E4%BB%B6%E5%8D%8F%E8%B0%83%E7%B3%BB%E7%BB%9F"><span class="toc-nav-number">1.0.7.</span> <span class="toc-nav-text">为什么说这个项目当前更像&quot;离散事件协调系统&quot;</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%BD%93%E5%89%8D%E9%99%90%E5%88%B6%E5%92%8C%E9%81%97%E7%95%99%E9%97%AE%E9%A2%98"><span class="toc-nav-number">1.0.8.</span> <span class="toc-nav-text">当前限制和遗留问题</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-%E8%BF%98%E6%B2%A1%E6%9C%89%E5%86%B2%E7%AA%81%E6%A3%80%E6%B5%8B-%E9%A2%84%E7%BA%A6"><span class="toc-nav-number">1.0.8.1.</span> <span class="toc-nav-text">1. 还没有冲突检测&#x2F;预约</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-%E8%B0%83%E5%BA%A6%E7%AD%96%E7%95%A5%E8%BF%98%E6%98%AFfirst-idle"><span class="toc-nav-number">1.0.8.2.</span> <span class="toc-nav-text">2. 调度策略还是first-idle</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#3-%E8%BF%90%E8%A1%8C%E6%97%B6%E9%AA%8C%E8%AF%81%E5%8F%97sandbox%E7%8E%AF%E5%A2%83%E9%99%90%E5%88%B6"><span class="toc-nav-number">1.0.8.3.</span> <span class="toc-nav-text">3. 运行时验证受sandbox环境限制</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%BF%99%E4%B8%AA%E9%A1%B9%E7%9B%AE%E4%B8%BA%E4%BB%80%E4%B9%88%E5%80%BC%E5%BE%97%E7%BB%A7%E7%BB%AD%E5%BE%80%E4%B8%8B%E5%81%9A"><span class="toc-nav-number">1.0.9.</span> <span class="toc-nav-text">这个项目为什么值得继续往下做</span></a></li></ol></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/cn/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/cn/tags/#多机器人系统" title="多机器人系统">多机器人系统</a>
+            
+            <a class="tag" href="/cn/tags/#fleet_manager" title="fleet_manager">fleet_manager</a>
+            
+            <a class="tag" href="/cn/tags/#path_planner" title="path_planner">path_planner</a>
+            
+            <a class="tag" href="/cn/tags/#robot_agent" title="robot_agent">robot_agent</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>链友</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://v-vincen.life/" target="_blank">V_Vincen</a>
+          </li>
+          
+          <li>
+            <a href="http://beantech.org" target="_blank">Bean Tech</a>
+          </li>
+          
+          <li>
+            <a href="http://huangxuan.me" target="_blank">Hux Blog</a>
+          </li>
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+          <li>
+            <a href="https://fe32.top/" target="_blank">Ethan.Tzy</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/000xiaoming">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Bruce Lee
+          2026
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+
+
+  <!-- jQuery -->
+  <script src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/jquery.min.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/bootstrap.min.js"></script>
+
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/hux-blog.min.js"></script>
+
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/catalog.js"></script>
+
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/totop.js"></script>
+
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/mouseclick.js"  content='西风烈,长空雁叫霜晨月,霜晨月,马蹄声碎,喇叭声咽,雄关漫道真如铁,而今迈步从头越,从头越,苍山如海,残阳如血' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033' ></script>
+    <!-- Mouseclick -->
+  
+
+  
+
+  
+
+
+
+
+  <!-- CDN: jsdelivr start -->
+  <script async="async" type="text/javascript">
+    let imgsUrl = document.getElementsByTagName("img");
+    let imgUrl = Array.from(imgsUrl);
+
+    let jsdelivr = "https://cdn.jsdelivr.net/gh/";
+    let gh = "000xiaoming";
+    let ghPages = gh + ".github.io";
+    let pagePath = "cn/项目解析ROS2多机器人车队协调器V1_从任务提交到路径分发的最小闭环/";
+    let jsdelivrurl;
+    if (pagePath.indexOf("index.html") != -1) {
+      jsdelivrurl = jsdelivr + gh + "/" + ghPages;
+    } else {
+      jsdelivrurl = jsdelivr + gh + "/" + ghPages + "/" + pagePath;
+    }
+    imgUrl.forEach(item => {
+      let oldUrl = item.getAttribute("src");
+      let newUrl = oldUrl.replace(oldUrl, jsdelivrurl + oldUrl).replace("..", "");
+      item.setAttribute("src", newUrl);
+    });
+  </script>
+  <!-- CDN: jsdelivr end -->
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://000xiaoming.github.io/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+              if (imgUrl) {
+                imgUrl = 'https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/' + imgUrl.replace(/^\/+/, '');
+              }
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
