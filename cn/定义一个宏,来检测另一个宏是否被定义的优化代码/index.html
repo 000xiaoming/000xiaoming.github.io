@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="zh-CN">
 
 <!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
 <head>
+  
   <meta name="baidu-site-verification" content="codeva-OySZDT59RD" />
   <!-- Google Analytics -->
   
@@ -36,6 +38,20 @@
 
   <!-- Baidu Push -->
   
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
 
   <meta charset="utf-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -44,8 +60,9 @@
 
 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="description" content="It&#39;s an IT blog..."/>
-  <meta name="keyword" content="v-vincen,v-vincen,livemylife,IT  blog,Blog"/>
+  <meta name="description" content="Notes on systems programming, computer architecture, ROS2, operating systems, and engineering practice."/>
+  <meta name="keyword" content="Bruce Lee,systems programming,computer architecture,ROS2,RISC-V,x86,C/C++,operating systems,engineering practice"/>
+  
   <link rel="shortcut icon" href="/img/avatar/roguerabbit.jpg"/>
 
   <!-- Place this tag in your head or just before your close body tag. -->
@@ -53,64 +70,58 @@
 
   
     <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/beantech.min.css"/>
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
 
     <!-- Pygments Highlight CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/highlight.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/widget.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/rocket.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/signature.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/catalog.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/livemylife.css"/>
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
 
     
       <!-- wave start -->
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/wave.css"/>
+      <link rel="stylesheet" href="/css/wave.css"/>
       <!-- wave end -->
     
 
     
       <!-- top start (article top hot config) -->
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/top.css"/>
+      <link rel="stylesheet" href="/css/top.css"/>
       <!-- top end -->
     
 
     
       <!-- ThemeColor start -->
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/scroll.css"/>
+      <link rel="stylesheet" href="/css/scroll.css"/>
       <!-- ThemeColor end -->
     
 
     
       <!-- viewer start (Picture preview) -->
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/viewer.min.css"/>
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
       <!-- viewer end -->
     
 
     
       <!-- Search start -->
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/search.css"/>
+      <link rel="stylesheet" href="/css/search.css"/>
       <!-- Search end -->
     
 
     
       <!-- ThemeColor start -->
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/themecolor.css"/>
+      <link rel="stylesheet" href="/css/themecolor.css"/>
       <!-- ThemeColor end -->
     
 
     
 
     
-      <!-- gitalk start -->
-      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/gitalk.css"/>
-      <!-- gitalk end -->
-    
-
   
 
   <!-- Custom Fonts -->
@@ -137,9 +148,7 @@
 
 
 <!-- hack iOS CSS :active style -->
-
-	<body ontouchstart="" class="body--light body--dark">
-
+<body ontouchstart="" class="body--light">
 
 		<!-- ThemeColor -->
 		
@@ -172,8 +181,9 @@
       ? b.pop()
       : '';
   }
-  let themeMode = 'dark';
-  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+  var colorModeCookieName = 'sb-color-mode-v2';
+  let themeMode = 'light';
+  if (getCookieValue(colorModeCookieName) && (getCookieValue(colorModeCookieName) !== themeMode)) {
     let dbody = document.body.classList;
     themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
   }
@@ -187,7 +197,7 @@
       : "light";
     var exp = new Date();
     exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
-    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+    document.cookie = colorModeCookieName + "=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
   });
 </script>
 
@@ -317,14 +327,14 @@
 <style type="text/css">
   .body--light {
     /* intro-header */
-    --intro-header-background-image-url-home: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg');
-    --intro-header-background-image-url-post: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png');
-    --intro-header-background-image-url-page: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png');
+    --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
+    --intro-header-background-image-url-post: url('/img/header_img/lml_bg1.png');
+    --intro-header-background-image-url-page: url('/img/header_img/lml_bg1.png');
   }
   .body--dark {
-    --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg');
-    --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png');
-    --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/lml_bg1.png');
+    --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
+    --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/lml_bg1.png');
+    --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/lml_bg1.png');
   }
 
   header.intro-header {
@@ -425,9 +435,9 @@
 <li><strong>C/C++</strong>：围绕C/C++语言的技术点和编程技巧进行详细总结。</li>
 <li><strong>程序员哲学</strong>：分享程序员在职业生涯中应该具备的哲学理念和思考方式。</li>
 </ul>
-<p>想要了解更多具体内容，您可以访问<a href="https://000xiaoming.github.io/categories/">文章分类</a>页面。</p>
+<p>想要了解更多具体内容，您可以访问<a href="/cn/categories/">文章分类</a>页面。</p>
 <h2 id="联系我">联系我</h2>
-<p>如果您有任何问题或想要交流，欢迎通过<a href="https://000xiaoming.github.io/about/">关于页面</a>与我联系。</p>
+<p>如果您有任何问题或想要交流，欢迎通过<a href="/cn/about/">关于页面</a>与我联系。</p>
 <p>感谢您的阅读和支持，希望我的博客能为您的技术旅程带来帮助！</p>
 <hr>
 <h1>定义一个宏,来检测另一个宏是否被定义的优化代码</h1>
@@ -561,54 +571,6 @@
         <!-- comments start -->
         <!-- 1. gitalk comment -->
 
-  <!-- gitalk start -->
-  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
-
-  <div id="gitalk-container"></div>
-
-  
-    <script src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/comment/gitalk.js"></script>
-  
-
-  <script>
-    var gitalk = new Gitalk({
-      clientID: '',
-      clientSecret: '',
-      repo: '',
-      owner: '',
-      admin: '',
-      id: 'Sat Mar 23 2024 20:00:00 GMT+0800', // Ensure uniqueness and length less than 50
-      distractionFreeMode: false, // Facebook-like distraction free mode
-      perPage: 10,
-      pagerDirection: 'last',
-      createIssueManually: false,
-      language: 'en',
-      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
-    });
-    gitalk.render('gitalk-container');
-
-    var gtFolded = () => {
-      setTimeout(function () {
-        let markdownBody = document.getElementsByClassName("markdown-body");
-        let list = Array.from(markdownBody);
-        list.forEach(item => {
-          if (item.clientHeight > 250) {
-            item.classList.add('gt-comment-body-folded');
-            item.style.maxHeight = '250px';
-            item.title = 'Click to Expand';
-            item.onclick = function () {
-              item.classList.remove('gt-comment-body-folded');
-              item.style.maxHeight = '';
-              item.title = '';
-              item.onclick = null;
-            };
-          }
-        })
-      }, 800);
-    }
-  </script>
-
-  <!-- gitalk end -->
 
 
 <!-- 2. gitment comment -->
@@ -665,26 +627,6 @@
         <h5>链友</h5>
         <ul class="list-inline">
 
-          
-          <li>
-            <a href="https://v-vincen.life/" target="_blank">V_Vincen</a>
-          </li>
-          
-          <li>
-            <a href="http://beantech.org" target="_blank">Bean Tech</a>
-          </li>
-          
-          <li>
-            <a href="http://huangxuan.me" target="_blank">Hux Blog</a>
-          </li>
-          
-          <li>
-            <a href="https://hexo.io/" target="_blank">Hexo</a>
-          </li>
-          
-          <li>
-            <a href="https://fe32.top/" target="_blank">Ethan.Tzy</a>
-          </li>
           
         </ul>
         
@@ -801,25 +743,21 @@
 
 
   <!-- jQuery -->
-  <script src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/jquery.min.js"></script>
-
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
   <!-- Bootstrap Core JavaScript -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/bootstrap.min.js"></script>
-
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
   <!-- Custom Theme JavaScript -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/hux-blog.min.js"></script>
-
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
   <!-- catalog -->
-  <script async="true" type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/catalog.js"></script>
-
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
   <!-- totop(rocket) -->
-  <script async="true" type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/totop.js"></script>
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
 
   
 
   
     <!-- Scroll start -->
-    <script async="async" type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/scroll.js"></script>
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
     <!-- Scroll end -->
   
 
@@ -831,8 +769,7 @@
 
   
     <!-- Mouseclick -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/mouseclick.js"  content='西风烈,长空雁叫霜晨月,霜晨月,马蹄声碎,喇叭声咽,雄关漫道真如铁,而今迈步从头越,从头越,苍山如海,残阳如血' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033' ></script>
-    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='西风烈,长空雁叫霜晨月,霜晨月,马蹄声碎,喇叭声咽,雄关漫道真如铁,而今迈步从头越,从头越,苍山如海,残阳如血' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033'></script>
   
 
   
@@ -841,37 +778,14 @@
 
 
 
-
-  <!-- CDN: jsdelivr start -->
-  <script async="async" type="text/javascript">
-    let imgsUrl = document.getElementsByTagName("img");
-    let imgUrl = Array.from(imgsUrl);
-
-    let jsdelivr = "https://cdn.jsdelivr.net/gh/";
-    let gh = "000xiaoming";
-    let ghPages = gh + ".github.io";
-    let pagePath = "cn/定义一个宏,来检测另一个宏是否被定义的优化代码/";
-    let jsdelivrurl;
-    if (pagePath.indexOf("index.html") != -1) {
-      jsdelivrurl = jsdelivr + gh + "/" + ghPages;
-    } else {
-      jsdelivrurl = jsdelivr + gh + "/" + ghPages + "/" + pagePath;
-    }
-    imgUrl.forEach(item => {
-      let oldUrl = item.getAttribute("src");
-      let newUrl = oldUrl.replace(oldUrl, jsdelivrurl + oldUrl).replace("..", "");
-      item.setAttribute("src", newUrl);
-    });
-  </script>
-  <!-- CDN: jsdelivr end -->
 
 
 
   <!-- viewer start -->
   <!-- viewer start (Picture preview) -->
   
-    <script async="async" type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/viewer/viewer.min.js"></script>
-    <script async="async" type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/viewer/pic-viewer.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
   
 
   <!-- viewer end -->
@@ -938,8 +852,9 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
 </div>
 
 
+
   
-    <script src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/ziploader.js"></script>
+    <script src="/js/ziploader.js"></script>
   
   <script>
     // Popup Window;
@@ -1028,10 +943,6 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
             var date = data.date;
             var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
             var imgUrl = data.header_img;
-            
-              if (imgUrl) {
-                imgUrl = 'https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/' + imgUrl.replace(/^\/+/, '');
-              }
             
 
 

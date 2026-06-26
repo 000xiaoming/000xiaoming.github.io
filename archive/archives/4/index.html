@@ -1,8 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
 <head>
+  
   <meta name="baidu-site-verification" content="codeva-OySZDT59RD" />
   <!-- Google Analytics -->
   
@@ -36,6 +38,20 @@
 
   <!-- Baidu Push -->
   
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
 
   <meta charset="utf-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -44,8 +60,9 @@
 
 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="description" content="It&#39;s an IT blog..."/>
-  <meta name="keyword" content="v-vincen,v-vincen,livemylife,IT  blog,Blog"/>
+  <meta name="description" content="Notes on systems programming, computer architecture, ROS2, operating systems, and engineering practice."/>
+  <meta name="keyword" content="Bruce Lee,systems programming,computer architecture,ROS2,RISC-V,x86,C/C++,operating systems,engineering practice"/>
+  
   <link rel="shortcut icon" href="/img/avatar/roguerabbit.jpg"/>
 
   <!-- Place this tag in your head or just before your close body tag. -->
@@ -53,64 +70,58 @@
 
   
     <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/beantech.min.css"/>
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
 
     <!-- Pygments Highlight CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/highlight.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/widget.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/rocket.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/signature.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/catalog.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/livemylife.css"/>
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
 
     
       <!-- wave start -->
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/wave.css"/>
+      <link rel="stylesheet" href="/css/wave.css"/>
       <!-- wave end -->
     
 
     
       <!-- top start (article top hot config) -->
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/top.css"/>
+      <link rel="stylesheet" href="/css/top.css"/>
       <!-- top end -->
     
 
     
       <!-- ThemeColor start -->
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/scroll.css"/>
+      <link rel="stylesheet" href="/css/scroll.css"/>
       <!-- ThemeColor end -->
     
 
     
       <!-- viewer start (Picture preview) -->
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/viewer.min.css"/>
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
       <!-- viewer end -->
     
 
     
       <!-- Search start -->
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/search.css"/>
+      <link rel="stylesheet" href="/css/search.css"/>
       <!-- Search end -->
     
 
     
       <!-- ThemeColor start -->
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/themecolor.css"/>
+      <link rel="stylesheet" href="/css/themecolor.css"/>
       <!-- ThemeColor end -->
     
 
     
 
     
-      <!-- gitalk start -->
-      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/css/gitalk.css"/>
-      <!-- gitalk end -->
-    
-
   
 
   <!-- Custom Fonts -->
@@ -137,9 +148,7 @@
 
 
 <!-- hack iOS CSS :active style -->
-
-	<body ontouchstart="" class="body--light body--dark">
-
+<body ontouchstart="" class="body--light">
 
 		<!-- ThemeColor -->
 		
@@ -172,8 +181,9 @@
       ? b.pop()
       : '';
   }
-  let themeMode = 'dark';
-  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+  var colorModeCookieName = 'sb-color-mode-v2';
+  let themeMode = 'light';
+  if (getCookieValue(colorModeCookieName) && (getCookieValue(colorModeCookieName) !== themeMode)) {
     let dbody = document.body.classList;
     themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
   }
@@ -187,7 +197,7 @@
       : "light";
     var exp = new Date();
     exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
-    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+    document.cookie = colorModeCookieName + "=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
   });
 </script>
 
@@ -209,7 +219,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">Bruce Lee&#39;s Notes</a>
+      <a class="navbar-brand" href="/en/">Bruce Lee&#39;s Notes</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -219,7 +229,7 @@
         <ul class="nav navbar-nav navbar-right">
           
           <li>
-            <a href="/">HOME</a>
+            <a href="/en/">HOME</a>
           </li>
 
           
@@ -315,14 +325,14 @@
 <style type="text/css">
   .body--light {
     /* intro-header */
-    --intro-header-background-image-url-home: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg');
-    --intro-header-background-image-url-post: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg');
-    --intro-header-background-image-url-page: url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/archive_bg2.jpg');
+    --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
+    --intro-header-background-image-url-post: url('/img/header_img/newhome_bg.jpg');
+    --intro-header-background-image-url-page: url('/img/header_img/archive_bg2.jpg');
   }
   .body--dark {
-    --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg');
-    --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/newhome_bg.jpg');
-    --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/img/header_img/archive_bg2.jpg');
+    --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
+    --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
+    --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/archive_bg2.jpg');
   }
 
   header.intro-header {
@@ -456,7 +466,7 @@
 ">
     
         <!-- Visitors -->
-<h5><a href="/">VISITORS</a></h5>
+<h5><a href="/en/">VISITORS</a></h5>
 
 
         <hr>
@@ -530,7 +540,7 @@
         <!-- RECENT POSTS -->
 
 
-<h5><a href="/">RECENT POSTS</a></h5>
+<h5><a href="/en/">RECENT POSTS</a></h5>
 <div class="widget">
   <ul>
     
@@ -540,26 +550,6 @@
     
   </ul>
 </div>
-
-
-        <hr>
-    
-        <!-- Friends Blog -->
-
-<h5><a href="/">FRIENDS</a></h5>
-<ul class="list-inline">
-  
-  <li><a href="https://v-vincen.life/" target="_blank">V_Vincen</a></li>
-  
-  <li><a href="http://beantech.org" target="_blank">Bean Tech</a></li>
-  
-  <li><a href="http://huangxuan.me" target="_blank">Hux Blog</a></li>
-  
-  <li><a href="https://hexo.io/" target="_blank">Hexo</a></li>
-  
-  <li><a href="https://fe32.top/" target="_blank">Ethan.Tzy</a></li>
-  
-</ul>
 
 
         <hr>
@@ -665,25 +655,21 @@
 
 
   <!-- jQuery -->
-  <script src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/jquery.min.js"></script>
-
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
   <!-- Bootstrap Core JavaScript -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/bootstrap.min.js"></script>
-
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
   <!-- Custom Theme JavaScript -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/hux-blog.min.js"></script>
-
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
   <!-- catalog -->
-  <script async="true" type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/catalog.js"></script>
-
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
   <!-- totop(rocket) -->
-  <script async="true" type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/totop.js"></script>
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
 
   
 
   
     <!-- Scroll start -->
-    <script async="async" type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/scroll.js"></script>
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
     <!-- Scroll end -->
   
 
@@ -695,8 +681,7 @@
 
   
     <!-- Mouseclick -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/mouseclick.js"  content='Systems,Programming,Engineering,Keep learning,Build carefully,Think clearly' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033' ></script>
-    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='Systems,Programming,Engineering,Keep learning,Build carefully,Think clearly' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033'></script>
   
 
   
@@ -705,37 +690,14 @@
 
 
 
-
-  <!-- CDN: jsdelivr start -->
-  <script async="async" type="text/javascript">
-    let imgsUrl = document.getElementsByTagName("img");
-    let imgUrl = Array.from(imgsUrl);
-
-    let jsdelivr = "https://cdn.jsdelivr.net/gh/";
-    let gh = "000xiaoming";
-    let ghPages = gh + ".github.io";
-    let pagePath = "archive/archives/4/index.html";
-    let jsdelivrurl;
-    if (pagePath.indexOf("index.html") != -1) {
-      jsdelivrurl = jsdelivr + gh + "/" + ghPages;
-    } else {
-      jsdelivrurl = jsdelivr + gh + "/" + ghPages + "/" + pagePath;
-    }
-    imgUrl.forEach(item => {
-      let oldUrl = item.getAttribute("src");
-      let newUrl = oldUrl.replace(oldUrl, jsdelivrurl + oldUrl).replace("..", "");
-      item.setAttribute("src", newUrl);
-    });
-  </script>
-  <!-- CDN: jsdelivr end -->
 
 
 
   <!-- viewer start -->
   <!-- viewer start (Picture preview) -->
   
-    <script async="async" type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/viewer/viewer.min.js"></script>
-    <script async="async" type="text/javascript" src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/viewer/pic-viewer.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
   
 
   <!-- viewer end -->
@@ -802,8 +764,9 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
 </div>
 
 
+
   
-    <script src="https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/js/ziploader.js"></script>
+    <script src="/js/ziploader.js"></script>
   
   <script>
     // Popup Window;
@@ -892,10 +855,6 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
             var date = data.date;
             var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
             var imgUrl = data.header_img;
-            
-              if (imgUrl) {
-                imgUrl = 'https://cdn.jsdelivr.net/gh/000xiaoming/000xiaoming.github.io/' + imgUrl.replace(/^\/+/, '');
-              }
             
 
 

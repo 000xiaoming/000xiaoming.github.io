@@ -12,7 +12,7 @@
     }
     var suffix = parts.join('/') || 'index.html';
     var target = selectLang + '/' + suffix;
-    if (!isPost && selectLang === languages[0]) {
+    if (!isPost && selectLang === languages[0] && suffix !== 'index.html') {
       target = suffix;
     }
 
