@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://000xiaoming.github.io/cn/tags/index.html</loc>
+    <loc>https://000xiaoming.github.io/cn/categories/index.html</loc>
     
     <lastmod>2026-09-21</lastmod>
     
@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>https://000xiaoming.github.io/cn/categories/index.html</loc>
+    <loc>https://000xiaoming.github.io/cn/tags/index.html</loc>
     
     <lastmod>2026-09-21</lastmod>
     
@@ -65,9 +65,27 @@
   </url>
   
   <url>
+    <loc>https://000xiaoming.github.io/en/%E9%A1%B9%E7%9B%AE%E4%B8%93%E9%A2%98%E8%A7%A3%E6%9E%90_%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BD%93%E5%89%8Dplanning%E7%94%A8service%E8%80%8Cstate%E5%92%8Cassignment%E7%94%A8topic/</loc>
+    
+    <lastmod>2025-03-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://000xiaoming.github.io/cn/%E9%A1%B9%E7%9B%AE%E4%B8%93%E9%A2%98%E8%A7%A3%E6%9E%90_%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BD%93%E5%89%8Dplanning%E7%94%A8service%E8%80%8Cstate%E5%92%8Cassignment%E7%94%A8topic/</loc>
     
     <lastmod>2025-03-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/%E9%A1%B9%E7%9B%AE%E4%B8%93%E9%A2%98%E8%A7%A3%E6%9E%90_%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BD%93%E5%89%8D%E9%98%B6%E6%AE%B5%E8%BF%98%E6%B2%A1%E6%9C%89%E9%80%89%E6%8B%A9Nav2-first_integration/</loc>
+    
+    <lastmod>2025-03-25</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -83,6 +101,15 @@
   </url>
   
   <url>
+    <loc>https://000xiaoming.github.io/en/%E9%A1%B9%E7%9B%AE%E4%B8%93%E9%A2%98%E8%A7%A3%E6%9E%90_DDS_sandbox%E9%99%90%E5%88%B6%E4%B8%8EROS2%E8%BF%90%E8%A1%8C%E9%AA%8C%E8%AF%81%E8%BE%B9%E7%95%8C/</loc>
+    
+    <lastmod>2025-03-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://000xiaoming.github.io/cn/%E9%A1%B9%E7%9B%AE%E4%B8%93%E9%A2%98%E8%A7%A3%E6%9E%90_DDS_sandbox%E9%99%90%E5%88%B6%E4%B8%8EROS2%E8%BF%90%E8%A1%8C%E9%AA%8C%E8%AF%81%E8%BE%B9%E7%95%8C/</loc>
     
     <lastmod>2025-03-24</lastmod>
@@ -92,9 +119,27 @@
   </url>
   
   <url>
+    <loc>https://000xiaoming.github.io/en/%E9%A1%B9%E7%9B%AE%E4%B8%93%E9%A2%98%E8%A7%A3%E6%9E%90_%E5%86%B2%E7%AA%81%E6%A3%80%E6%B5%8B%E4%B8%8E%E9%A2%84%E7%BA%A6%E6%9C%BA%E5%88%B6%E4%B8%BA%E4%BD%95%E4%BC%9A%E6%88%90%E4%B8%BA%E4%B8%8B%E4%B8%80%E4%B8%AA%E5%A4%8D%E6%9D%82%E5%BA%A6%E8%B7%83%E8%BF%81%E7%82%B9/</loc>
+    
+    <lastmod>2025-03-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://000xiaoming.github.io/cn/%E9%A1%B9%E7%9B%AE%E4%B8%93%E9%A2%98%E8%A7%A3%E6%9E%90_%E5%86%B2%E7%AA%81%E6%A3%80%E6%B5%8B%E4%B8%8E%E9%A2%84%E7%BA%A6%E6%9C%BA%E5%88%B6%E4%B8%BA%E4%BD%95%E4%BC%9A%E6%88%90%E4%B8%BA%E4%B8%8B%E4%B8%80%E4%B8%AA%E5%A4%8D%E6%9D%82%E5%BA%A6%E8%B7%83%E8%BF%81%E7%82%B9/</loc>
     
     <lastmod>2025-03-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/%E9%A1%B9%E7%9B%AE%E4%B8%93%E9%A2%98%E8%A7%A3%E6%9E%90_robot_agent%E7%9A%84%E6%89%A7%E8%A1%8C%E7%8A%B6%E6%80%81%E6%9C%BA%E4%B8%8Ewaypoint%E6%8E%A8%E8%BF%9B/</loc>
+    
+    <lastmod>2025-03-17</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -164,9 +209,27 @@
   </url>
   
   <url>
+    <loc>https://000xiaoming.github.io/en/engineering_cultivation/</loc>
+    
+    <lastmod>2024-10-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://000xiaoming.github.io/cn/engineering_cultivation/</loc>
     
     <lastmod>2024-10-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/multitasking-management-and-stack-operation/</loc>
+    
+    <lastmod>2024-10-01</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -182,6 +245,15 @@
   </url>
   
   <url>
+    <loc>https://000xiaoming.github.io/en/multi-program-memory-manage-task-exchange/</loc>
+    
+    <lastmod>2024-09-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://000xiaoming.github.io/cn/multi-program-memory-manage-task-exchange/</loc>
     
     <lastmod>2024-09-30</lastmod>
@@ -191,9 +263,45 @@
   </url>
   
   <url>
+    <loc>https://000xiaoming.github.io/en/build-and-manage-multi-file/</loc>
+    
+    <lastmod>2024-09-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://000xiaoming.github.io/cn/build-and-manage-multi-file/</loc>
     
     <lastmod>2024-09-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/RISCV-exception-system-call-implementation/</loc>
+    
+    <lastmod>2024-09-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/detailed-explanation-compilation-loading-execution/</loc>
+    
+    <lastmod>2024-09-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/from-compilation-to-execution/</loc>
+    
+    <lastmod>2024-09-15</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -227,9 +335,27 @@
   </url>
   
   <url>
+    <loc>https://000xiaoming.github.io/en/device_function_and_mechanism/</loc>
+    
+    <lastmod>2024-09-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://000xiaoming.github.io/cn/device_function_and_mechanism/</loc>
     
     <lastmod>2024-09-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/setup_process_and_printf/</loc>
+    
+    <lastmod>2024-08-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -245,9 +371,27 @@
   </url>
   
   <url>
+    <loc>https://000xiaoming.github.io/en/elf_handle_and_am_facility/</loc>
+    
+    <lastmod>2024-08-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://000xiaoming.github.io/cn/elf_handle_and_am_facility/</loc>
     
     <lastmod>2024-08-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/trace_implement/</loc>
+    
+    <lastmod>2024-08-20</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -263,9 +407,27 @@
   </url>
   
   <url>
+    <loc>https://000xiaoming.github.io/en/tracing_based_iringbuf/</loc>
+    
+    <lastmod>2024-08-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://000xiaoming.github.io/cn/tracing_based_iringbuf/</loc>
     
     <lastmod>2024-08-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/parameter_and_makefile_code/</loc>
+    
+    <lastmod>2024-08-08</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -299,7 +461,25 @@
   </url>
   
   <url>
+    <loc>https://000xiaoming.github.io/en/batch-mode-RTFSC-makefile/</loc>
+    
+    <lastmod>2024-07-13</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://000xiaoming.github.io/cn/batch-mode-RTFSC-makefile/</loc>
+    
+    <lastmod>2024-07-13</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/RTFSC_2/</loc>
     
     <lastmod>2024-07-13</lastmod>
     
@@ -335,6 +515,15 @@
   </url>
   
   <url>
+    <loc>https://000xiaoming.github.io/en/Deep-understanding-of-variable-parameter-systems/</loc>
+    
+    <lastmod>2024-05-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://000xiaoming.github.io/cn/Deep-understanding-of-variable-parameter-systems/</loc>
     
     <lastmod>2024-05-10</lastmod>
@@ -344,9 +533,36 @@
   </url>
   
   <url>
+    <loc>https://000xiaoming.github.io/en/Multi-Macro-with-Annotation/</loc>
+    
+    <lastmod>2024-05-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://000xiaoming.github.io/cn/Multi-Macro-with-Annotation/</loc>
     
     <lastmod>2024-05-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/YEMU%E6%A8%A1%E6%8B%9F%E5%99%A8%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/</loc>
+    
+    <lastmod>2024-05-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/instruction/</loc>
+    
+    <lastmod>2024-05-08</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -389,6 +605,24 @@
   </url>
   
   <url>
+    <loc>https://000xiaoming.github.io/en/cmd_c%E5%B5%8C%E5%A5%97%E8%B0%83%E7%94%A8/</loc>
+    
+    <lastmod>2024-04-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/%E7%B3%BB%E5%88%97%E5%AE%8F%E4%BB%A5%E5%8F%8A%E5%87%BD%E6%95%B0/</loc>
+    
+    <lastmod>2024-04-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://000xiaoming.github.io/cn/cmd_c%E5%B5%8C%E5%A5%97%E8%B0%83%E7%94%A8/</loc>
     
     <lastmod>2024-04-08</lastmod>
@@ -407,9 +641,27 @@
   </url>
   
   <url>
+    <loc>https://000xiaoming.github.io/en/%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E5%AE%8F,%E6%9D%A5%E6%A3%80%E6%B5%8B%E5%8F%A6%E4%B8%80%E4%B8%AA%E5%AE%8F%E6%98%AF%E5%90%A6%E8%A2%AB%E5%AE%9A%E4%B9%89%E7%9A%84%E4%BC%98%E5%8C%96%E4%BB%A3%E7%A0%81/</loc>
+    
+    <lastmod>2024-03-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://000xiaoming.github.io/cn/%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E5%AE%8F,%E6%9D%A5%E6%A3%80%E6%B5%8B%E5%8F%A6%E4%B8%80%E4%B8%AA%E5%AE%8F%E6%98%AF%E5%90%A6%E8%A2%AB%E5%AE%9A%E4%B9%89%E7%9A%84%E4%BC%98%E5%8C%96%E4%BB%A3%E7%A0%81/</loc>
     
     <lastmod>2024-03-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/RISCV%E5%AD%98%E5%82%A8%E6%96%B9%E9%9D%A2/</loc>
+    
+    <lastmod>2024-02-26</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -425,9 +677,27 @@
   </url>
   
   <url>
+    <loc>https://000xiaoming.github.io/en/RISCV%E4%B9%B1%E5%BC%B9%E7%90%B4_1/</loc>
+    
+    <lastmod>2024-02-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://000xiaoming.github.io/cn/RISCV%E4%B9%B1%E5%BC%B9%E7%90%B4_1/</loc>
     
     <lastmod>2024-02-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/RISCV%E4%B8%8D%E5%90%8C%E9%98%B6%E6%AE%B5%E5%86%92%E9%99%A9%E9%97%AE%E9%A2%98%E5%92%8C%E5%88%86%E6%94%AF/</loc>
+    
+    <lastmod>2024-02-03</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -443,9 +713,27 @@
   </url>
   
   <url>
+    <loc>https://000xiaoming.github.io/en/RISCV%E5%90%84%E7%B1%BB%E5%86%92%E9%99%A9%E9%97%AE%E9%A2%98/</loc>
+    
+    <lastmod>2024-01-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://000xiaoming.github.io/cn/RISCV%E5%90%84%E7%B1%BB%E5%86%92%E9%99%A9%E9%97%AE%E9%A2%98/</loc>
     
     <lastmod>2024-01-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/RISCV%E8%BF%90%E7%AE%97%E4%B8%AD%E9%97%B4%E7%BB%93%E6%9E%9C%E7%B3%BB%E5%88%97%E9%97%AE%E9%A2%98/</loc>
+    
+    <lastmod>2024-01-14</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -461,9 +749,36 @@
   </url>
   
   <url>
+    <loc>https://000xiaoming.github.io/en/RISCV%E9%9D%9E%E8%A7%84%E6%A0%BC%E5%8C%96%E6%B5%AE%E7%82%B9%E7%B3%BB%E5%88%97%E9%97%AE%E9%A2%98/</loc>
+    
+    <lastmod>2024-01-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://000xiaoming.github.io/cn/RISCV%E9%9D%9E%E8%A7%84%E6%A0%BC%E5%8C%96%E6%B5%AE%E7%82%B9%E7%B3%BB%E5%88%97%E9%97%AE%E9%A2%98/</loc>
     
     <lastmod>2024-01-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/RISCV%E6%8C%87%E4%BB%A4%E8%AE%BE%E8%AE%A1%E5%92%8C%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98/</loc>
+    
+    <lastmod>2024-01-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/RISCV%E8%AE%BE%E8%AE%A1%E4%B8%AD%E8%B7%B3%E8%BD%AC%E5%92%8C%E5%90%8C%E6%AD%A5%E7%B3%BB%E5%88%97%E9%97%AE%E9%A2%98%E5%92%8Cx86/</loc>
+    
+    <lastmod>2024-01-03</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -488,9 +803,27 @@
   </url>
   
   <url>
+    <loc>https://000xiaoming.github.io/en/RISCV%E5%9F%BA%E6%9C%AC%E8%AE%BE%E8%AE%A1%E7%90%86%E5%BF%B5/</loc>
+    
+    <lastmod>2024-01-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://000xiaoming.github.io/cn/RISCV%E5%9F%BA%E6%9C%AC%E8%AE%BE%E8%AE%A1%E7%90%86%E5%BF%B5/</loc>
     
     <lastmod>2024-01-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/last/</loc>
+    
+    <lastmod>2023-12-12</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -506,9 +839,27 @@
   </url>
   
   <url>
+    <loc>https://000xiaoming.github.io/en/x86_3/</loc>
+    
+    <lastmod>2023-10-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://000xiaoming.github.io/cn/x86_3/</loc>
     
     <lastmod>2023-10-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/x86_2/</loc>
+    
+    <lastmod>2023-09-23</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -524,9 +875,27 @@
   </url>
   
   <url>
+    <loc>https://000xiaoming.github.io/en/%E6%9C%AC%E5%8D%9A%E5%AE%A2%E6%B1%87%E7%BC%96%E4%BB%A3%E7%A0%81%E7%9A%84%E7%8E%AF%E5%A2%83%E8%A7%84%E8%8C%83/</loc>
+    
+    <lastmod>2023-09-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://000xiaoming.github.io/cn/%E6%9C%AC%E5%8D%9A%E5%AE%A2%E6%B1%87%E7%BC%96%E4%BB%A3%E7%A0%81%E7%9A%84%E7%8E%AF%E5%A2%83%E8%A7%84%E8%8C%83/</loc>
     
     <lastmod>2023-09-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/x86_1/</loc>
+    
+    <lastmod>2023-09-11</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -542,9 +911,27 @@
   </url>
   
   <url>
+    <loc>https://000xiaoming.github.io/en/%E8%AE%BA%E6%8C%81%E4%B9%85%E6%88%98/</loc>
+    
+    <lastmod>2023-08-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://000xiaoming.github.io/cn/%E8%AE%BA%E6%8C%81%E4%B9%85%E6%88%98/</loc>
     
     <lastmod>2023-08-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/%E4%B8%AD%E6%96%AD%E6%A6%82%E8%A7%88/</loc>
+    
+    <lastmod>2023-07-31</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -578,9 +965,27 @@
   </url>
   
   <url>
+    <loc>https://000xiaoming.github.io/en/x86-8086%E6%98%BE%E7%A4%BA%E6%95%B0%E5%80%BC/</loc>
+    
+    <lastmod>2023-07-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://000xiaoming.github.io/cn/x86-8086%E6%98%BE%E7%A4%BA%E6%95%B0%E5%80%BC/</loc>
     
     <lastmod>2023-07-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/AI%E5%8F%91%E5%B1%95%E8%A7%81%E8%A7%A3/</loc>
+    
+    <lastmod>2023-07-25</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -596,7 +1001,25 @@
   </url>
   
   <url>
+    <loc>https://000xiaoming.github.io/en/lab4/</loc>
+    
+    <lastmod>2023-07-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://000xiaoming.github.io/cn/lab4/</loc>
+    
+    <lastmod>2023-07-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/assembly_start/</loc>
     
     <lastmod>2023-07-14</lastmod>
     
@@ -641,6 +1064,13 @@
 
   
   <url>
+    <loc>https://000xiaoming.github.io/tags/IT/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://000xiaoming.github.io/tags/C-C/</loc>
     <lastmod>2026-09-21</lastmod>
     <changefreq>weekly</changefreq>
@@ -649,6 +1079,27 @@
   
   <url>
     <loc>https://000xiaoming.github.io/tags/Preprocessor/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Engineering/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/RISC-V/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/x86/</loc>
     <lastmod>2026-09-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -669,13 +1120,6 @@
   </url>
   
   <url>
-    <loc>https://000xiaoming.github.io/tags/Engineering/</loc>
-    <lastmod>2026-09-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://000xiaoming.github.io/tags/Variadic-Functions/</loc>
     <lastmod>2026-09-21</lastmod>
     <changefreq>weekly</changefreq>
@@ -684,6 +1128,27 @@
   
   <url>
     <loc>https://000xiaoming.github.io/tags/Multi-Robot-Systems/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/DDS/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/sandbox/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Runtime-Verification/</loc>
     <lastmod>2026-09-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -732,69 +1197,6 @@
   </url>
   
   <url>
-    <loc>https://000xiaoming.github.io/tags/IT/</loc>
-    <lastmod>2026-09-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://000xiaoming.github.io/tags/%E9%A1%B9%E7%9B%AE%E5%B7%A5%E7%A8%8B/</loc>
-    <lastmod>2026-09-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://000xiaoming.github.io/tags/RISC-V%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%BB%A5%E5%8F%8A%E7%8E%B0%E8%B1%A1/</loc>
-    <lastmod>2026-09-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://000xiaoming.github.io/tags/x86/</loc>
-    <lastmod>2026-09-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://000xiaoming.github.io/tags/%E6%95%B0%E5%AD%A6%E5%93%B2%E5%AD%A6/</loc>
-    <lastmod>2026-09-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://000xiaoming.github.io/tags/%E5%A4%9A%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%B3%BB%E7%BB%9F/</loc>
-    <lastmod>2026-09-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://000xiaoming.github.io/tags/DDS/</loc>
-    <lastmod>2026-09-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://000xiaoming.github.io/tags/sandbox/</loc>
-    <lastmod>2026-09-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://000xiaoming.github.io/tags/%E8%BF%90%E8%A1%8C%E9%AA%8C%E8%AF%81/</loc>
-    <lastmod>2026-09-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://000xiaoming.github.io/tags/waypoint/</loc>
     <lastmod>2026-09-21</lastmod>
     <changefreq>weekly</changefreq>
@@ -802,7 +1204,7 @@
   </url>
   
   <url>
-    <loc>https://000xiaoming.github.io/tags/%E7%8A%B6%E6%80%81%E6%9C%BA/</loc>
+    <loc>https://000xiaoming.github.io/tags/State-Machines/</loc>
     <lastmod>2026-09-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -837,6 +1239,62 @@
   </url>
   
   <url>
+    <loc>https://000xiaoming.github.io/tags/Conflict-Detection/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Reservations/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E9%A1%B9%E7%9B%AE%E5%B7%A5%E7%A8%8B/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/RISC-V%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%BB%A5%E5%8F%8A%E7%8E%B0%E8%B1%A1/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E6%95%B0%E5%AD%A6%E5%93%B2%E5%AD%A6/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E5%A4%9A%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%B3%BB%E7%BB%9F/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E8%BF%90%E8%A1%8C%E9%AA%8C%E8%AF%81/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E7%8A%B6%E6%80%81%E6%9C%BA/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://000xiaoming.github.io/tags/%E5%86%B2%E7%AA%81%E6%A3%80%E6%B5%8B/</loc>
     <lastmod>2026-09-21</lastmod>
     <changefreq>weekly</changefreq>
@@ -853,6 +1311,13 @@
 
   
   <url>
+    <loc>https://000xiaoming.github.io/categories/Career-and-Reflections/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://000xiaoming.github.io/categories/C-C/</loc>
     <lastmod>2026-09-21</lastmod>
     <changefreq>weekly</changefreq>
@@ -860,14 +1325,28 @@
   </url>
   
   <url>
-    <loc>https://000xiaoming.github.io/categories/Signals-and-Systems/</loc>
+    <loc>https://000xiaoming.github.io/categories/Engineering/</loc>
     <lastmod>2026-09-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://000xiaoming.github.io/categories/Engineering/</loc>
+    <loc>https://000xiaoming.github.io/categories/RISC-V/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/categories/x86/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/categories/Signals-and-Systems/</loc>
     <lastmod>2026-09-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -896,13 +1375,6 @@
   
   <url>
     <loc>https://000xiaoming.github.io/categories/RISC-V%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%BB%A5%E5%8F%8A%E7%8E%B0%E8%B1%A1/</loc>
-    <lastmod>2026-09-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://000xiaoming.github.io/categories/x86/</loc>
     <lastmod>2026-09-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

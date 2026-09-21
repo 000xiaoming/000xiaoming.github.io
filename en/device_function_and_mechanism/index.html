@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  
+  <meta name="baidu-site-verification" content="codeva-OySZDT59RD" />
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-Y95F7Y9NT1"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-Y95F7Y9NT1');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?9b08ea589f23fb1f5e2be85b8ca26b60";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="Notes on systems programming, computer architecture, ROS2, operating systems, and engineering practice."/>
+  <meta name="keyword" content="Bruce Lee,systems programming,computer architecture,ROS2,RISC-V,x86,C/C++,operating systems,engineering practice"/>
+  
+  <link rel="shortcut icon" href="/img/avatar/roguerabbit.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://000xiaoming.github.io/en/device_function_and_mechanism/">
+  <title>
+    
+      Device Interfaces, Tracing, and Memory-Mapped I/O in NEMU - I&#39;m Bruce Lee
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="body--light">
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  var colorModeCookieName = 'sb-color-mode-v2';
+  let themeMode = 'light';
+  if (getCookieValue(colorModeCookieName) && (getCookieValue(colorModeCookieName) !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = colorModeCookieName + "=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/en/">Bruce Lee&#39;s Notes</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li>
+            <a href="/en/">HOME</a>
+          </li>
+
+          
+          <li>
+            <a href="/archives/">
+              
+              ARCHIVES
+              
+            </a>
+          </li>
+          
+          <li>
+            <a href="/about/">
+              
+              ABOUT
+              
+            </a>
+          </li>
+          
+          <li>
+            <a href="/categories/">
+              
+              CATEGORIES
+              
+            </a>
+          </li>
+          
+          <li>
+            <a href="/tags/">
+              
+              TAGS
+              
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>SEARCH</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          <!-- LangSelect start -->
+          <!-- LangSelect -->
+<li>
+  <a id="lang-select-label"><i class="fa fa-globe"></i>
+    <span>
+      English
+    </span>
+    <select id="lang-select" data-canonical="en/device_function_and_mechanism/" data-is-post="true">
+      
+      
+      <option value="en"  selected >
+        English
+      </option>
+      
+      <option value="cn" >
+        简体中文
+      </option>
+      
+    </select>
+  </a>
+</li>
+
+          <!-- LangSelect end -->
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+<style type="text/css">
+  .body--light {
+    /* intro-header */
+    --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
+    --intro-header-background-image-url-post: url('/img/header_img/lml_bg1.png');
+    --intro-header-background-image-url-page: url('/img/header_img/lml_bg1.png');
+  }
+  .body--dark {
+    --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
+    --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/lml_bg1.png');
+    --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/lml_bg1.png');
+  }
+
+  header.intro-header {
+     /*post*/
+      background-image: var(--intro-header-background-image-url-post);
+    
+  }
+
+  
+    #signature {/*signature*/
+      background-image: url('/img/signature/vincent-white.png');
+    }
+  
+</style>
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#Engineering" title="Engineering">Engineering</a>
+              
+            </div>
+            <h1>Device Interfaces, Tracing, and Memory-Mapped I/O in NEMU</h1>
+            <h2 class="subheading">Engineering</h2>
+            <span class="meta">
+              Posted by Bruce Lee on
+              2024-09-01
+            </span>
+
+
+            
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h1>About Me</h1>
+<p>Welcome to my blog! This is where I collect my observations and notes on programming and technology. The main subjects range from implementation details to broader ideas about programming.</p>
+<h2 id="Main-Topics">Main Topics</h2>
+<ul>
+<li><strong>Engineering Projects</strong>: Exploring implementation details and how technical systems work.</li>
+<li><strong>C/C++</strong>: Notes on language features and programming techniques.</li>
+<li><strong>The Programmer’s Perspective</strong>: Ideas about developing a career and a way of thinking as a programmer.</li>
+</ul>
+<p>For more, visit the <a href="/categories/">categories</a> page.</p>
+<h2 id="Contact">Contact</h2>
+<p>If you have questions or would like to discuss something, please get in touch through the <a href="/about/">About page</a>.</p>
+<p>Thank you for reading and for your support. I hope these notes help you on your own technical journey!</p>
+<hr>
+<h2 id="The-Timer">The Timer</h2>
+<p>When implementing <code>__am_timer_uptime</code>, I needed a reference time for startup. <code>__am_timer_init</code> is a natural place to establish it, with stored state available to the uptime operation.</p>
+<p>The eight bytes at <code>RTC_ADDR</code> expose the timer value. Their contents are maintained by the timer’s I/O handler. The order of the two 32-bit reads matters if reading one half triggers a refresh; the device model and driver must agree on how to obtain a consistent value.</p>
+<p>The handler is registered through <code>add_mmio_map</code>. A guest memory access reaches the physical-memory code, then the MMIO dispatch path when the address belongs to a mapped device. The registered callback can update the device’s backing registers before a read or react after a write.</p>
+<p>Ultimately, the emulated timer derives time from host facilities through helpers such as <code>get_time</code>, <code>get_time_internal</code>, and <code>gettimeofday</code>. Device initialization registers the timer map. During execution, <code>device_update</code> performs periodic device work. That update loop and the timer’s register-access callback are related but distinct paths.</p>
+<h2 id="Where-the-Early-Errors-Came-From">Where the Early Errors Came From</h2>
+<p>Around the same time, the native build segfaulted near my <code>printf</code> implementation even though examples still ran under NEMU. GDB showed an invalid memory access. My klib implementation was not fully compatible with the surrounding host-library expectations, so the native configuration needed closer isolation before it could be trusted as a klib test.</p>
+<p>The demos also failed because functions such as <code>memmove</code> had not yet been implemented. Adding them was necessary, but did not resolve every failure.</p>
+<p>With function tracing enabled for the final <code>bf</code> demo, a suspicious <code>malloc</code> call led me back to the allocator. I had omitted initialization of <code>hbrk</code>. Initializing it fixed the demo failures. I initially performed the initialization inside <code>malloc</code>, with the intention of moving it into a dedicated runtime initialization routine later.</p>
+<h2 id="The-io-read-Macro">The <code>io_read</code> Macro</h2>
+<p>The benchmark’s uptime helper uses:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">io_read</span><span class="params">(AM_TIMER_UPTIME)</span></span>.us</span><br></pre></td></tr></table></figure>
+<p>The <code>.us</code> access works because the macro yields a value of type <code>AM_TIMER_UPTIME_T</code>. Token pasting joins the supplied register name with <code>_T</code> to declare a temporary <code>__io_param</code>.</p>
+<p>The macro then calls <code>ioe_read</code>, passing the abstract register identifier and the temporary’s address. The identifier is also a numeric constant used to index a table of handler function pointers. The selected timer handler fills the temporary, and the macro’s final expression returns that structure value.</p>
+<h2 id="putch"><code>putch</code></h2>
+<p><code>putch</code> uses <code>outb</code> to write a byte to <code>SERIAL_PORT</code>. From the guest driver’s viewpoint, that is a write to a fixed device address. The emulator supplies the behavior associated with that address.</p>
+<h2 id="Separating-Native-Libraries-From-klib">Separating Native Libraries From klib</h2>
+<p>The native-only crashes suggested mismatches between my partial library and the host runtime. The conditional-compilation guards around the klib sources control when the custom implementations are included.</p>
+<p>Adjusting those guards can deliberately keep the native build on glibc while testing other parts of the program. Such a build no longer validates the substituted klib functions themselves, so the chosen configuration must be clear.</p>
+<h2 id="Device-Tracing">Device Tracing</h2>
+<p>Logging every device access can produce an overwhelming amount of output. My initial policy logged a device when the target changed, suppressing repeated consecutive accesses to the same device. This reduces noise at the cost of losing individual accesses.</p>
+<p><code>mmio_read</code> and <code>mmio_write</code> delegate to <code>map_read</code> and <code>map_write</code>, making the mapping layer a useful shared place for the tracing hook.</p>
+<p>The log belongs in the log file rather than on the terminal, where it could interfere with the program’s own text, graphics, or audio-related output. I first considered bundling it with instruction tracing, then separated it into <code>DTRACE</code> under the broader <code>TRACE</code> configuration so instruction logs could be disabled while device logs remained available.</p>
+<p>A <code>log_only</code> wrapper reused <code>log_write</code> without also writing to the console.</p>
+<h2 id="Keyboard-Events">Keyboard Events</h2>
+<p>A keyboard event has both a press/release indication and a key identifier. The driver separates the state bit from the code using the mask appropriate to the device’s encoding; in these notes, the experiment used a low-byte mask.</p>
+<p>For combinations such as a held modifier plus another key, the consumer needs to remember the modifier’s current state across events. A stream of individual events does not itself represent a complete simultaneous-key state.</p>
+<h1>VGA</h1>
+<h2 id="Configuration">Configuration</h2>
+<p>Compile-time VGA configuration selects a default screen size, such as 800×600 or 400×300. Helpers such as <code>screen_width</code> and <code>screen_height</code> may obtain values from the AM GPU configuration when NEMU itself is built for that target.</p>
+<p>It is important to distinguish the device model’s source of configuration from the guest driver’s register reads. A driver should report the configured device information, rather than create a circular dependency by asking a higher-level operation that depends on the same configuration.</p>
+<p>The ranges around <code>FB_ADDR</code> in the platform definitions also help establish the available framebuffer region.</p>
+<h2 id="Drawing-a-Rectangle">Drawing a Rectangle</h2>
+<p><code>AM_GPU_FBDRAW</code> supplies a destination position and a rectangular pixel buffer. My first implementation copied pixels linearly and turned intended rectangles into lines.</p>
+<p>The correct copy accounts for both row strides: locate the rectangle’s first destination pixel, then use nested loops or row copies to advance through each source row and the corresponding framebuffer row.</p>
+<h2 id="Guest-Accesses-to-Fixed-Addresses">Guest Accesses to Fixed Addresses</h2>
+<p>AM can directly access numeric addresses such as <code>FB_ADDR</code> because it is running as guest code. Its loads and stores are instructions interpreted by NEMU, which routes them to memory or device mappings.</p>
+<h2 id="Size-and-Synchronization-Registers">Size and Synchronization Registers</h2>
+<p>The VGA control allocation contains two 32-bit words. The first packs the width and height into its upper and lower halves. The second is the synchronization register, exposed at <code>VGACTL_ADDR + 4</code>.</p>
+<p>Writing 1 to the synchronization address requests a display update. In the device model, I checked the backing word directly as <code>vgactl_port_base[1]</code>, rather than wrap it in another named accessor. The registers are still present even if the implementation represents them simply as elements of an allocated array.</p>
+<h1>Following the Mapping From End to End</h1>
+<p>The apparent contrast is that NEMU initializes hardware through a chain of functions, while an AM driver seems to access a register merely by dereferencing a fixed address. The mapping machinery connects the two views.</p>
+<h2 id="Device-Side-Allocation">Device-Side Allocation</h2>
+<p><code>init_device</code> initializes the mapping infrastructure and devices in the required order. In configurations that run NEMU on AM, some host-side I/O initialization also goes through AM, so it is especially important to keep the host and guest layers distinct.</p>
+<p><code>init_map</code> allocates a large I/O backing region using <code>IO_SPACE_MAX</code>. <code>io_space</code> identifies its beginning, and <code>p_space</code> tracks allocations within it.</p>
+<p>In an AM-based host, allocator state can ultimately originate from <code>heap.start</code>, backed by linker symbols such as <code>_heap_start</code>. The linker aligns that heap boundary to a page-sized address. In an ordinary native host, the host allocator provides the backing memory instead.</p>
+<p><code>new_space</code> reserves part of the I/O region and advances <code>p_space</code>, rounding allocation sizes to page boundaries as required. The result is a host-accessible backing pointer, not the fixed guest-visible device address.</p>
+<h2 id="Registering-a-Device">Registering a Device</h2>
+<p>For the serial device, <code>init_serial</code> obtains backing space and calls <code>add_mmio_map</code> with the device name, guest address, backing pointer, length, and callback.</p>
+<p>The callback implements the effect of register accesses. For example, a serial write can call a host output routine to emit the character. Timer callbacks update the allocated timer-register values.</p>
+<p>The mapping registration checks for address conflicts and capacity limits, then records the guest interval, host backing pointer, and callback in the <code>maps</code> array. <code>nr_map</code> tracks the number of registered mappings, while <code>NR_MAP</code> limits their capacity.</p>
+<p>The interval is represented by its low and high guest addresses. The backing allocation’s address is a separate quantity and must not be confused with those guest addresses.</p>
+<h2 id="Periodic-Updates">Periodic Updates</h2>
+<p>After monitor initialization, execution reaches the CPU loop. Device updates use elapsed host time to decide when to perform work such as refreshing the VGA window. Those routines inspect the device’s allocated backing state and interact with the host display or audio library.</p>
+<h2 id="Driver-Side-Reads">Driver-Side Reads</h2>
+<p>The RTC test calls <code>io_read(AM_TIMER_UPTIME)</code> and reads its <code>us</code> field. The abstract-register dispatch selects the timer driver, which reads the guest-visible <code>RTC_ADDR</code>.</p>
+<p>That load executes in the emulator. Physical-address handling selects <code>mmio_read</code>; <code>fetch_mmio_map</code> finds the mapping whose guest interval contains the address; <code>map_read</code> checks the range and computes an offset.</p>
+<p>Finally, <code>host_read</code> reads from <code>map-&gt;space + offset</code> for the requested length. The register value therefore comes from the actual backing allocation even though the guest used a fixed device address. Writes follow the corresponding path and invoke the registered behavior.</p>
+<p>Ordinary guest RAM is backed by <code>pmem</code>; device registers have their own mapped backing spaces. It is useful to think of both as host-managed storage, but they are not necessarily all inside the same <code>pmem</code> array.</p>
+<h2 id="Linker-Addresses-and-the-Guest-Image">Linker Addresses and the Guest Image</h2>
+<p>The AM platform header defines the guest-visible device addresses. Its physical-memory constants depend on <code>_pmem_start</code>, which the linker setup places at the configured base, <code>0x80000000</code> in this example.</p>
+<p>An application is linked with its runtime and supporting libraries. From NEMU’s viewpoint, that combined result is a sequence of guest instructions and data. Runtime code and application code both execute through the same instruction, memory, and device mechanisms.</p>
+<p>This makes the direct register accesses less mysterious: the compiled guest loads and stores are exactly the operations that NEMU interprets and routes. The driver does not need direct access to NEMU’s internal <code>maps</code> array.</p>
+<h1>Audio and VGA Debugging</h1>
+<h2 id="Audio-Hardware-Model">Audio Hardware Model</h2>
+<p>The control registers include frequency, channel count, sample count, stream-buffer size, initialization state, and buffered-byte count. An enum names their indices in <code>audio_base</code>. The stream buffer was allocated with a size of <code>0x10000</code>.</p>
+<p>Accessing the mapped control region invokes its handler. My handler initialized SDL audio, opened the device, and changed its pause state. A static guard prevented initialization from being repeated on every access.</p>
+<p>The SDL callback copies the requested amount of audio into the provided stream. The first implementation used a fixed 4096-byte transfer chosen to match the test, which was only an initial simplification.</p>
+<h2 id="Audio-Driver">Audio Driver</h2>
+<p>Macros define the guest addresses of the control registers. I initially added device-register writes to <code>__am_audio_init</code>, but in the configuration being tested that function ran before the device mapping had been registered. The resulting access failed the mapping bounds check, so I removed that early access while sorting out initialization order.</p>
+<p>The configuration operation reports available buffer capacity. The control operation writes frequency, channels, and sample settings. The simplest playback implementation waits for the count to become zero, copies a test-sized block into the stream buffer, and updates the count. The device callback consumes data when the count is nonzero.</p>
+<p>A general streaming implementation needs to handle the actual producer and consumer sizes rather than depend on that one test block size.</p>
+<h2 id="Failures-Encountered">Failures Encountered</h2>
+<p>Playback initially worked but ran too fast. During debugging, I also saw:</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*** buffer overflow detected*** terminate</span><br></pre></td></tr></table></figure>
+<p>The buffer-overflow report led to a faulty <code>strcpy</code> implementation exposed by device tracing. Disabling tracing hid that failure, but fixing the string operation was the real requirement.</p>
+<p>Other symptoms suggested deeper heap corruption. One experiment added this assertion around <code>memset</code>:</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">//ui</span>nt32_t s_len = strlen(s);</span><br><span class="line"><span class="regexp">//</span>assert(n &lt;= s_len + <span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+<p>That assertion made some demos fail. It was intended to compare the requested write length with a string’s size, but <code>memset</code> operates on arbitrary storage, which need not contain a string; <code>strlen</code> is therefore not a valid general capacity check.</p>
+<p>A second, intermittently reproducible failure with VGA and audio enabled was:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">malloc</span><span class="params">()</span></span>: corrupted <span class="attribute">top</span> size</span><br></pre></td></tr></table></figure>
+<p>Another session showed repeated creation and destruction of threads:</p>
+<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">src/device/io/mmio.c:</span><span class="number">51</span> add_mmio_map] Add mmio map &#x27;vmem&#x27; at [<span class="number">0</span>xa1000000, <span class="number">0</span>xa10752ff]</span><br><span class="line">[<span class="keyword">New</span> <span class="keyword">Thread</span> <span class="number">0</span>x7fffeacf0640 (LWP <span class="number">48391</span>)]</span><br><span class="line">[<span class="keyword">New</span> <span class="keyword">Thread</span> <span class="number">0</span>x7fffea4ef640 (LWP <span class="number">48392</span>)]</span><br><span class="line">[<span class="keyword">New</span> <span class="keyword">Thread</span> <span class="number">0</span>x7fffe9cee640 (LWP <span class="number">48393</span>)]</span><br><span class="line">[<span class="keyword">New</span> <span class="keyword">Thread</span> <span class="number">0</span>x7fffe94ed640 (LWP <span class="number">48394</span>)]</span><br><span class="line">[<span class="keyword">New</span> <span class="keyword">Thread</span> <span class="number">0</span>x7fffe8cdc640 (LWP <span class="number">48395</span>)]</span><br><span class="line">[<span class="keyword">New</span> <span class="keyword">Thread</span> <span class="number">0</span>x7fffd3fff640 (LWP <span class="number">48396</span>)]</span><br><span class="line">[<span class="keyword">Thread</span> <span class="number">0</span>x7fffd3fff640 (LWP <span class="number">48396</span>) exited]</span><br><span class="line">[<span class="keyword">Thread</span> <span class="number">0</span>x7fffe8cdc640 (LWP <span class="number">48395</span>) exited]</span><br><span class="line">[<span class="keyword">New</span> <span class="keyword">Thread</span> <span class="number">0</span>x7fffe8cdc640 (LWP <span class="number">48397</span>)]</span><br><span class="line">[<span class="keyword">New</span> <span class="keyword">Thread</span> <span class="number">0</span>x7fffd3fff640 (LWP <span class="number">48398</span>)]</span><br><span class="line">[<span class="keyword">Thread</span> <span class="number">0</span>x7fffd3fff640 (LWP <span class="number">48398</span>) exited]</span><br><span class="line">[<span class="keyword">Thread</span> <span class="number">0</span>x7fffe8cdc640 (LWP <span class="number">48397</span>) exited]</span><br><span class="line">[<span class="keyword">New</span> <span class="keyword">Thread</span> <span class="number">0</span>x7fffe8cdc640 (LWP <span class="number">48399</span>)]</span><br><span class="line">[<span class="keyword">New</span> <span class="keyword">Thread</span> <span class="number">0</span>x7fffd3fff640 (LWP <span class="number">48400</span>)]</span><br><span class="line">[<span class="keyword">Thread</span> <span class="number">0</span>x7fffd3fff640 (LWP <span class="number">48400</span>) exited]</span><br><span class="line">[<span class="keyword">Thread</span> <span class="number">0</span>x7fffe8cdc640 (LWP <span class="number">48399</span>) exited]</span><br><span class="line">[<span class="keyword">New</span> <span class="keyword">Thread</span> <span class="number">0</span>x7fffe8cdc640 (LWP <span class="number">48401</span>)]</span><br><span class="line">[<span class="keyword">New</span> <span class="keyword">Thread</span> <span class="number">0</span>x7fffd3fff640 (LWP <span class="number">48402</span>)]</span><br></pre></td></tr></table></figure>
+<p>Using GDB’s TUI mode located that activity around SDL initialization. I also encountered an XCB/Xlib diagnostic:</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[xcb] Unknown sequence <span class="built_in">number</span> <span class="keyword">while</span> appending request</span><br><span class="line">[xcb] You called XInitThreads, this <span class="keyword">is</span> <span class="keyword">not</span> your fault</span><br><span class="line">[xcb] Aborting, sorry <span class="keyword">about</span> <span class="keyword">that</span>.</span><br><span class="line">riscv32-nemu-interpreter: ../../src/xcb_io.c:<span class="number">157</span>: append_pending_request: Assertion !xcb_xlib_unknown_seq_number&#x27; failed.</span><br><span class="line">make[<span class="number">1</span>]: *** [/home/bruce/project-a/git-project/ysyx-workbench/nemu/scripts/native.mk:<span class="number">49</span>: <span class="built_in">run</span>] Aborted (core dumped)</span><br></pre></td></tr></table></figure>
+<p>Enabling the memory-checking configuration made the heap-corruption problem reproducible. These observations were debugging clues, not proof that the graphics or audio library itself was the cause.</p>
+<h2 id="Further-Experiments">Further Experiments</h2>
+<p>An alternative playback implementation, left commented below the working code, still attempted to access <code>0xa1210000</code> despite repeated checks of its loops and call sites. The test input itself was not that large, so this remained an unresolved bounds issue in these notes.</p>
+<p>When running NEMU on NEMU, disabling function tracing also required removing the host-oriented <code>-lelf</code> link option from the applicable AM build path.</p>
+<p>Finally, sanitizer output exposed a mismatch between my assumptions about SDL’s sample count and the actual callback byte length. With 2048 samples and <code>AUDIO_S16SYS</code>, I observed a 2048-byte callback buffer in that test configuration. Adjusting the copy to the supplied length improved playback. The callback’s actual <code>len</code>, format, and channel configuration must determine how much memory is accessed.</p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/en/from-compilation-to-execution/" data-toggle="tooltip" data-placement="top" title="From Compilation to Execution: Loading Navy Applications in Nanos-lite">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/en/setup_process_and_printf/" data-toggle="tooltip" data-placement="top" title="Startup Assembly and Experiments With printf">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. All the images used in the blog are my original works or AI works, if you want to take it,don't hesitate. Thank you !
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+
+<div class="social-share" data-url="https://000xiaoming.github.io" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=Device Interfaces, Tracing, and Memory-Mapped I/O in NEMU&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/en/device_function_and_mechanism/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">About Me</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Main-Topics"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">Main Topics</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Contact"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">Contact</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#The-Timer"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">The Timer</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Where-the-Early-Errors-Came-From"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">Where the Early Errors Came From</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#The-io-read-Macro"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">The io_read Macro</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#putch"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">putch</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Separating-Native-Libraries-From-klib"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">Separating Native Libraries From klib</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Device-Tracing"><span class="toc-nav-number">1.8.</span> <span class="toc-nav-text">Device Tracing</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Keyboard-Events"><span class="toc-nav-number">1.9.</span> <span class="toc-nav-text">Keyboard Events</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">VGA</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Configuration"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">Configuration</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Drawing-a-Rectangle"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">Drawing a Rectangle</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Guest-Accesses-to-Fixed-Addresses"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">Guest Accesses to Fixed Addresses</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Size-and-Synchronization-Registers"><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">Size and Synchronization Registers</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Following the Mapping From End to End</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Device-Side-Allocation"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">Device-Side Allocation</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Registering-a-Device"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">Registering a Device</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Periodic-Updates"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">Periodic Updates</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Driver-Side-Reads"><span class="toc-nav-number">3.4.</span> <span class="toc-nav-text">Driver-Side Reads</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Linker-Addresses-and-the-Guest-Image"><span class="toc-nav-number">3.5.</span> <span class="toc-nav-text">Linker Addresses and the Guest Image</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">Audio and VGA Debugging</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Audio-Hardware-Model"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">Audio Hardware Model</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Audio-Driver"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">Audio Driver</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Failures-Encountered"><span class="toc-nav-number">4.3.</span> <span class="toc-nav-text">Failures Encountered</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Further-Experiments"><span class="toc-nav-number">4.4.</span> <span class="toc-nav-text">Further Experiments</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#Engineering" title="Engineering">Engineering</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>FRIENDS</h5>
+        <ul class="list-inline">
+
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/000xiaoming">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Bruce Lee
+          2026
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <a href="https://github.com/V-Vincen/V-Vincen.github.io" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='Systems,Programming,Engineering,Keep learning,Build carefully,Think clearly' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033'></script>
+  
+
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script defer type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script defer type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://000xiaoming.github.io/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="SEARCH..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

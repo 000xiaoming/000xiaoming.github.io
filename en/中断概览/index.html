@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  
+  <meta name="baidu-site-verification" content="codeva-OySZDT59RD" />
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-Y95F7Y9NT1"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-Y95F7Y9NT1');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?9b08ea589f23fb1f5e2be85b8ca26b60";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="Notes on systems programming, computer architecture, ROS2, operating systems, and engineering practice."/>
+  <meta name="keyword" content="Bruce Lee,systems programming,computer architecture,ROS2,RISC-V,x86,C/C++,operating systems,engineering practice"/>
+  
+  <link rel="shortcut icon" href="/img/avatar/roguerabbit.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://000xiaoming.github.io/en/中断概览/">
+  <title>
+    
+      8086 Interrupts: Sources, the Vector Table, and Handler Execution - I&#39;m Bruce Lee
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="body--light">
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  var colorModeCookieName = 'sb-color-mode-v2';
+  let themeMode = 'light';
+  if (getCookieValue(colorModeCookieName) && (getCookieValue(colorModeCookieName) !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = colorModeCookieName + "=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/en/">Bruce Lee&#39;s Notes</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li>
+            <a href="/en/">HOME</a>
+          </li>
+
+          
+          <li>
+            <a href="/archives/">
+              
+              ARCHIVES
+              
+            </a>
+          </li>
+          
+          <li>
+            <a href="/about/">
+              
+              ABOUT
+              
+            </a>
+          </li>
+          
+          <li>
+            <a href="/categories/">
+              
+              CATEGORIES
+              
+            </a>
+          </li>
+          
+          <li>
+            <a href="/tags/">
+              
+              TAGS
+              
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>SEARCH</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          <!-- LangSelect start -->
+          <!-- LangSelect -->
+<li>
+  <a id="lang-select-label"><i class="fa fa-globe"></i>
+    <span>
+      English
+    </span>
+    <select id="lang-select" data-canonical="en/中断概览/" data-is-post="true">
+      
+      
+      <option value="en"  selected >
+        English
+      </option>
+      
+      <option value="cn" >
+        简体中文
+      </option>
+      
+    </select>
+  </a>
+</li>
+
+          <!-- LangSelect end -->
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+<style type="text/css">
+  .body--light {
+    /* intro-header */
+    --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
+    --intro-header-background-image-url-post: url('/img/header_img/lml_bg1.png');
+    --intro-header-background-image-url-page: url('/img/header_img/lml_bg1.png');
+  }
+  .body--dark {
+    --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
+    --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/lml_bg1.png');
+    --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/lml_bg1.png');
+  }
+
+  header.intro-header {
+     /*post*/
+      background-image: var(--intro-header-background-image-url-post);
+    
+  }
+
+  
+    #signature {/*signature*/
+      background-image: url('/img/signature/vincent-white.png');
+    }
+  
+</style>
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#x86" title="x86">x86</a>
+              
+            </div>
+            <h1>8086 Interrupts: Sources, the Vector Table, and Handler Execution</h1>
+            <h2 class="subheading">A closer look at 8086 interrupts</h2>
+            <span class="meta">
+              Posted by Bruce Lee on
+              2023-08-01
+            </span>
+
+
+            
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h1>About Me</h1>
+<p>Welcome to my blog! This is where I collect my observations and notes on programming and technology. The main subjects range from implementation details to broader ideas about programming.</p>
+<h2 id="Main-Topics">Main Topics</h2>
+<ul>
+<li><strong>Engineering Projects</strong>: Exploring implementation details and how technical systems work.</li>
+<li><strong>C/C++</strong>: Notes on language features and programming techniques.</li>
+<li><strong>The Programmer’s Perspective</strong>: Ideas about developing a career and a way of thinking as a programmer.</li>
+</ul>
+<p>For more, visit the <a href="/categories/">categories</a> page.</p>
+<h2 id="Contact">Contact</h2>
+<p>If you have questions or would like to discuss something, please get in touch through the <a href="/about/">About page</a>.</p>
+<p>Thank you for reading and for your support. I hope these notes help you on your own technical journey!</p>
+<hr>
+<h2 id="Introduction">Introduction</h2>
+<p>An interrupt or exception transfers control to a handler in response to an event. This is more specific than the general ability to jump to another instruction address. These notes examine internal events, external requests, the 8086 vector table, and the BIOS/DOS routines built on that mechanism.</p>
+<h2 id="Where-events-originate">Where events originate</h2>
+<p>An internal condition, such as division by zero or a quotient that does not fit, is detected by processor execution logic. External devices signal requests through hardware interfaces. Maskable external requests are subject to interrupt-enable state.</p>
+<p>The original notes ask how the processor physically creates an exception signal and leave detailed circuit design for future study. One clarification is useful: an external programmable interrupt controller is not required to detect a divide error inside the CPU. Those are different event paths.</p>
+<h2 id="From-a-vector-number-to-a-handler">From a vector number to a handler</h2>
+<p>In the original 8086 real-mode arrangement, the interrupt vector table occupies physical <code>00000h</code> through <code>003FFh</code>: 256 entries of four bytes each. An entry stores a 16-bit instruction offset followed by a 16-bit code segment.</p>
+<p>For vector <code>n</code>, the CPU reads the offset from address <code>4*n</code> and the segment from <code>4*n + 2</code>. These expressions locate the stored pointer; they are not themselves the values loaded into <code>IP</code> and <code>CS</code>. The processor transfers to the handler addressed by that pointer, rather than executing the table bytes as instructions.</p>
+<p>For interrupt entry, the CPU saves the required return state on the stack, including FLAGS and the return code address, and adjusts interrupt/trace state. <code>IRET</code> restores the corresponding return state. Exact saved-PC behavior for exceptions depends on the processor generation and exception class.</p>
+<p>Vector zero is associated with divide error. Executing <code>int 0</code> explicitly invokes that vector too, but software invocation and an actual division fault need not have identical fault/restart semantics.</p>
+<p>A familiar DOS service sequence is:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mov ax,4c00h</span><br><span class="line">int 21h</span><br></pre></td></tr></table></figure>
+<p><code>AH = 4Ch</code> selects process termination and <code>AL = 00h</code> supplies its return code. The original <code>4chh</code> spelling is a typo.</p>
+<p><img src="/cn/%E4%B8%AD%E6%96%AD%E6%A6%82%E8%A7%88/interrupt.png" alt="Interrupt vector table"></p>
+<h2 id="External-devices-and-I-O-ports">External devices and I/O ports</h2>
+<p>Interface cards, motherboard controllers, and devices such as CMOS/RTC hardware expose registers through their interfaces. Depending on the architecture and device, those registers may be memory-mapped or placed in a separate I/O space. x86 supports distinct I/O-port instructions.</p>
+<p>In the historical PC keyboard arrangement, the controller exposes data at port <code>60h</code> and requests service through IRQ1 and the interrupt controller. The external controller and the keyboard’s own scanning electronics have different roles.</p>
+<h3 id="Reading-and-writing-ports">Reading and writing ports</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">out 60h,al</span><br><span class="line">in al,60h</span><br></pre></td></tr></table></figure>
+<p><code>IN</code> moves data into the accumulator; <code>OUT</code> moves it out to a port. This direction explains the operand order. For the discussed 16-bit forms, <code>AL</code> transfers a byte and <code>AX</code> transfers a word.</p>
+<p>Correction: the source associates <code>AL</code> with ports below 256 and <code>AX</code> with higher ports. Data width does not determine port-number range. An immediate encodes a port from 0 to 255; <code>DX</code> supplies a port number from the wider 16-bit space. Either permitted data width can be used with the appropriate form.</p>
+<h2 id="Why-interrupts-can-be-masked">Why interrupts can be masked</h2>
+<p>Masking temporarily prevents delivery of ordinary maskable requests. This can protect a short critical update, avoid unwanted nesting, or maintain priority while handling another event. It does not necessarily erase a pending device request.</p>
+<p>Stack initialization is an instructive example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mov ax,0200h</span><br><span class="line">mov ss,ax</span><br><span class="line">mov sp,0</span><br></pre></td></tr></table></figure>
+<p>The <code>SS</code> and <code>SP</code> updates belong together so an interrupt does not use an inconsistent stack. x86 provides a specific interrupt-inhibition window after loading <code>SS</code>; this should not be generalized into a claim that all possible events are excluded or that arbitrary multi-instruction updates become atomic.</p>
+<p>Keyboard IRQs are maskable. NMI arrives through a separate mechanism and is not controlled by IF. It is often associated with urgent hardware conditions, though it can also serve other purposes such as debugging. Interrupt priority depends on the processor and controller rules.</p>
+<h2 id="IF-STI-and-CLI">IF, <code>STI</code>, and <code>CLI</code></h2>
+<p><img src="/cn/%E4%B8%AD%E6%96%AD%E6%A6%82%E8%A7%88/flag.png" alt="Flags register"></p>
+<p>IF is the interrupt-enable flag for maskable hardware interrupts. <code>STI</code> sets it and <code>CLI</code> clears it, subject to the execution mode’s privilege and timing rules. Software interrupts and synchronous exceptions are not simply disabled by clearing IF. Not every instruction changes every flag.</p>
+<h2 id="Vector-numbers-and-ownership">Vector numbers and ownership</h2>
+<p>An eight-bit vector number has 256 possible values, zero through 255. Later x86 architectures reserve the low range for architectural exceptions, while historical PC firmware and DOS use conventions that can overlap differently. Apply the rules for the actual generation and environment.</p>
+<p>The source identifies <code>0000:0200</code>–<code>0000:02FF</code> as unused space for an exercise. That is not a universal guarantee: this region contains vector entries, and installed software may use them. A real installation must preserve or allocate vectors appropriately.</p>
+<h3 id="Familiar-internal-and-software-triggered-events">Familiar internal and software-triggered events</h3>
+<ul>
+<li>Vector 0: divide error.</li>
+<li>Vector 1: debug/single-step facilities, used by debuggers to regain control.</li>
+<li>Vector 3: breakpoint, commonly generated by the dedicated breakpoint instruction.</li>
+<li>Vector 4: overflow when <code>INTO</code> executes with OF set in supported legacy modes. <code>INTO</code> is unavailable in 64-bit mode; calling it generally obsolete because of performance is not the precise distinction.</li>
+<li><code>INT n</code>: an explicit software request to invoke vector <code>n</code>.</li>
+</ul>
+<p>Software and hardware interrupts differ in their trigger. A program executes <code>INT</code>; an external device raises a request. The handler entry mechanism can still share a vector-table organization.</p>
+<h2 id="BIOS-boot-and-handler-installation">BIOS boot and handler installation</h2>
+<p>For the original 8086 reset model, execution begins at <code>FFFF:0000</code>, physical <code>FFFF0h</code>, commonly containing a jump into firmware. Later x86 reset details differ. Firmware performs hardware initialization and installs its service vectors. A legacy bootstrap routine then selects a boot device, loads an appropriate boot sector, and transfers control to a loader that brings in the operating system.</p>
+<p>BIOS is firmware stored in ROM or flash, not ordinary writable RAM. The original suggestion of simply rewriting instructions at <code>FFFF:0000</code> requires a suitable firmware or emulator modification mechanism; a normal memory store does not generally accomplish it.</p>
+<h3 id="BIOS-int-19h">BIOS <code>int 19h</code></h3>
+<p>This is the familiar legacy bootstrap service. It should not be assumed to be literally the first interrupt firmware ever invokes during initialization.</p>
+<h3 id="BIOS-int-10h-video-services">BIOS <code>int 10h</code>: video services</h3>
+<p>Function 2 sets the cursor position:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mov ah,2</span><br><span class="line">mov bh,0</span><br><span class="line">mov dh,5</span><br><span class="line">mov dl,12</span><br><span class="line">int 10h</span><br></pre></td></tr></table></figure>
+<p>This selects page zero, row five, column twelve. Function 9 writes a character and attribute:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mov ah,9</span><br><span class="line">mov al,&#39;L&#39;</span><br><span class="line">mov bl,7</span><br><span class="line">mov bh,0</span><br><span class="line">mov cx,3</span><br><span class="line">int 10h</span><br></pre></td></tr></table></figure>
+<p>The example requests three copies of <code>L</code> with attribute seven. Many BIOS and DOS services select a function through <code>AH</code>, but that is an interface convention to check for each service, not an invariant of all interrupts.</p>
+<p><img src="/cn/%E4%B8%AD%E6%96%AD%E6%A6%82%E8%A7%88/zijie.shuxing.png" alt="Text attributes"></p>
+<h3 id="BIOS-int-13h-disk-services">BIOS <code>int 13h</code>: disk services</h3>
+<p>The traditional CHS interface addresses cylinders, heads, and sectors. Cylinder and head numbering starts at zero; sector numbering starts at one. The source’s two-head description fits a particular disk geometry, not every device.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">; ES:BX points to the destination buffer.</span><br><span class="line">mov ah,2</span><br><span class="line">mov ch,0</span><br><span class="line">mov cl,1</span><br><span class="line">mov dl,0</span><br><span class="line">mov dh,0</span><br><span class="line">mov al,1</span><br><span class="line">int 13h</span><br></pre></td></tr></table></figure>
+<p>This requests one sector using the indicated drive and CHS values. Function 3 writes instead of reading, with <code>ES:BX</code> pointing to source data. Real code must respect geometry, buffer limits, and the returned status; the snippet illustrates parameter placement only.</p>
+<h3 id="BIOS-int-9h-keyboard-IRQ-handling">BIOS <code>int 9h</code>: keyboard IRQ handling</h3>
+<p>In the legacy mapping considered here, IRQ1 invokes the keyboard handler at vector 9. Keyboard scanning electronics detect key transitions and send scan codes to the host controller. The host controller makes data available at port <code>60h</code> and requests an interrupt.</p>
+<p>For many ordinary keys in scan-code set 1, pressing produces a make code and release produces the make code plus <code>80h</code>. Extended keys and other scan-code sets have different sequences, so this is not a universal keyboard encoding rule.</p>
+<p>The source’s make-code table, expressed with standard key names, is:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Code</th>
+<th>Key</th>
+<th>Code</th>
+<th>Key</th>
+<th>Code</th>
+<th>Key</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Esc</td>
+<td>01</td>
+<td>U</td>
+<td>16</td>
+<td>H</td>
+<td>23</td>
+<td>B</td>
+<td>30</td>
+</tr>
+<tr>
+<td>1–9</td>
+<td>02–0A</td>
+<td>I</td>
+<td>17</td>
+<td>J</td>
+<td>24</td>
+<td>N</td>
+<td>31</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0B</td>
+<td>O</td>
+<td>18</td>
+<td>K</td>
+<td>25</td>
+<td>M</td>
+<td>32</td>
+</tr>
+<tr>
+<td>Minus</td>
+<td>0C</td>
+<td>P</td>
+<td>19</td>
+<td>L</td>
+<td>26</td>
+<td>Comma</td>
+<td>33</td>
+</tr>
+<tr>
+<td>Equals</td>
+<td>0D</td>
+<td>Left bracket</td>
+<td>1A</td>
+<td>Semicolon</td>
+<td>27</td>
+<td>Period</td>
+<td>34</td>
+</tr>
+<tr>
+<td>Backspace</td>
+<td>0E</td>
+<td>Right bracket</td>
+<td>1B</td>
+<td>Quote</td>
+<td>28</td>
+<td>Slash</td>
+<td>35</td>
+</tr>
+<tr>
+<td>Tab</td>
+<td>0F</td>
+<td>Enter</td>
+<td>1C</td>
+<td>Backtick</td>
+<td>29</td>
+<td>Right Shift</td>
+<td>36</td>
+</tr>
+<tr>
+<td>Q</td>
+<td>10</td>
+<td>Ctrl</td>
+<td>1D</td>
+<td>Left Shift</td>
+<td>2A</td>
+<td>Keypad asterisk</td>
+<td>37</td>
+</tr>
+<tr>
+<td>W</td>
+<td>11</td>
+<td>A</td>
+<td>1E</td>
+<td>Backslash</td>
+<td>2B</td>
+<td>Alt</td>
+<td>38</td>
+</tr>
+<tr>
+<td>E</td>
+<td>12</td>
+<td>S</td>
+<td>1F</td>
+<td>Z</td>
+<td>2C</td>
+<td>Space</td>
+<td>39</td>
+</tr>
+<tr>
+<td>R</td>
+<td>13</td>
+<td>D</td>
+<td>20</td>
+<td>X</td>
+<td>2D</td>
+<td>Caps Lock</td>
+<td>3A</td>
+</tr>
+<tr>
+<td>T</td>
+<td>14</td>
+<td>F</td>
+<td>21</td>
+<td>C</td>
+<td>2E</td>
+<td>F1–F10</td>
+<td>3B–44</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>15</td>
+<td>G</td>
+<td>22</td>
+<td>V</td>
+<td>2F</td>
+<td>Num Lock</td>
+<td>45</td>
+</tr>
+<tr>
+<td>Scroll Lock</td>
+<td>46</td>
+<td>Keypad minus</td>
+<td>4A</td>
+<td>End</td>
+<td>4F</td>
+<td>Delete</td>
+<td>53</td>
+</tr>
+<tr>
+<td>Home</td>
+<td>47</td>
+<td>Left</td>
+<td>4B</td>
+<td>Down</td>
+<td>50</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Up</td>
+<td>48</td>
+<td>Right</td>
+<td>4D</td>
+<td>Page Down</td>
+<td>51</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Page Up</td>
+<td>49</td>
+<td>Keypad plus</td>
+<td>4E</td>
+<td>Insert</td>
+<td>52</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Navigation and Print Screen interpretation can involve prefixes and keyboard layout/state; the compact table does not describe every sequence.</p>
+<p>The handler reads the scan code, updates modifier/toggle state, and places suitable character events into the BIOS keyboard buffer with their corresponding character codes. A traditional state byte is located at <code>0040:0017</code>. A custom handler can replace or chain this behavior when installed correctly.</p>
+<h3 id="BIOS-int-16h-consuming-keyboard-input">BIOS <code>int 16h</code>: consuming keyboard input</h3>
+<p>The hardware handler fills the buffer; an application still needs to read it. Function zero waits for a key event:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mov ah,0</span><br><span class="line">int 16h</span><br></pre></td></tr></table></figure>
+<p>It returns the scan code in <code>AH</code> and the corresponding character code in <code>AL</code> for the applicable event. Conceptually, the routine waits while the queue is empty, retrieves its oldest entry, and advances the queue. The traditional sixteen-word circular buffer commonly leaves one slot unused, allowing fifteen queued entries.</p>
+<h3 id="Keyboard-state">Keyboard state</h3>
+<p><img src="/cn/%E4%B8%AD%E6%96%AD%E6%A6%82%E8%A7%88/status.png" alt="Keyboard state byte"></p>
+<p>Modifier and toggle keys affect state, although particular key combinations can also generate buffered events. The original article included a ChatGPT explanation of Scroll Lock: historically it influenced scrolling behavior, and some applications still assign it a role. In spreadsheets such as Excel, it can make arrow keys scroll the worksheet instead of moving the selected cell. Behavior is application-specific; consult the application’s documentation rather than assuming one global action.</p>
+<h2 id="DOS-services">DOS services</h2>
+<h3 id="int-21h-function-4Ch"><code>int 21h</code>, function <code>4Ch</code></h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mov ah,4ch</span><br><span class="line">mov al,00h</span><br><span class="line">int 21h</span><br></pre></td></tr></table></figure>
+<p>This terminates the DOS process with return code zero.</p>
+<h3 id="int-21h-function-9"><code>int 21h</code>, function 9</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">; DS:DX points to a dollar-terminated string.</span><br><span class="line">mov ah,9</span><br><span class="line">int 21h</span><br></pre></td></tr></table></figure>
+<p>This displays a string ending with <code>$</code>, allowing the program to use a DOS service instead of writing directly to video memory. The service’s terminator differs from the zero-terminated strings used in other examples.</p>
+<p>For architectural interrupt details across later x86 modes, consult the <a target="_blank" rel="noopener" href="https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html">Intel system programming manuals</a>. The BIOS and DOS conventions above belong to the historical environment described in this article.</p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/en/论持久战/" data-toggle="tooltip" data-placement="top" title="Preparing for the Long Haul">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/en/x86-8086显示数值/" data-toggle="tooltip" data-placement="top" title="A Simple 8086 Assembly Lab: Displaying a Number on Screen">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. All the images used in the blog are my original works or AI works, if you want to take it,don't hesitate. Thank you !
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+
+<div class="social-share" data-url="https://000xiaoming.github.io" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=8086 Interrupts: Sources, the Vector Table, and Handler Execution&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/en/中断概览/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">About Me</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Main-Topics"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">Main Topics</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Contact"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">Contact</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Introduction"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">Introduction</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Where-events-originate"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">Where events originate</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#From-a-vector-number-to-a-handler"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">From a vector number to a handler</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#External-devices-and-I-O-ports"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">External devices and I&#x2F;O ports</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Reading-and-writing-ports"><span class="toc-nav-number">1.6.1.</span> <span class="toc-nav-text">Reading and writing ports</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Why-interrupts-can-be-masked"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">Why interrupts can be masked</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#IF-STI-and-CLI"><span class="toc-nav-number">1.8.</span> <span class="toc-nav-text">IF, STI, and CLI</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Vector-numbers-and-ownership"><span class="toc-nav-number">1.9.</span> <span class="toc-nav-text">Vector numbers and ownership</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Familiar-internal-and-software-triggered-events"><span class="toc-nav-number">1.9.1.</span> <span class="toc-nav-text">Familiar internal and software-triggered events</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#BIOS-boot-and-handler-installation"><span class="toc-nav-number">1.10.</span> <span class="toc-nav-text">BIOS boot and handler installation</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#BIOS-int-19h"><span class="toc-nav-number">1.10.1.</span> <span class="toc-nav-text">BIOS int 19h</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#BIOS-int-10h-video-services"><span class="toc-nav-number">1.10.2.</span> <span class="toc-nav-text">BIOS int 10h: video services</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#BIOS-int-13h-disk-services"><span class="toc-nav-number">1.10.3.</span> <span class="toc-nav-text">BIOS int 13h: disk services</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#BIOS-int-9h-keyboard-IRQ-handling"><span class="toc-nav-number">1.10.4.</span> <span class="toc-nav-text">BIOS int 9h: keyboard IRQ handling</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#BIOS-int-16h-consuming-keyboard-input"><span class="toc-nav-number">1.10.5.</span> <span class="toc-nav-text">BIOS int 16h: consuming keyboard input</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Keyboard-state"><span class="toc-nav-number">1.10.6.</span> <span class="toc-nav-text">Keyboard state</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#DOS-services"><span class="toc-nav-number">1.11.</span> <span class="toc-nav-text">DOS services</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#int-21h-function-4Ch"><span class="toc-nav-number">1.11.1.</span> <span class="toc-nav-text">int 21h, function 4Ch</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#int-21h-function-9"><span class="toc-nav-number">1.11.2.</span> <span class="toc-nav-text">int 21h, function 9</span></a></li></ol></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#x86" title="x86">x86</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>FRIENDS</h5>
+        <ul class="list-inline">
+
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/000xiaoming">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Bruce Lee
+          2026
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <a href="https://github.com/V-Vincen/V-Vincen.github.io" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='Systems,Programming,Engineering,Keep learning,Build carefully,Think clearly' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033'></script>
+  
+
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script defer type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script defer type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://000xiaoming.github.io/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="SEARCH..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
