@@ -23,7 +23,5 @@ let options = {
 };
 img.filter(item => item.getAttribute("alt"))
   .forEach(item => {
-    let id = item.getAttribute("alt");
-    item.setAttribute("id", id);
-    const viewer = new Viewer(document.getElementById(id), options);
+    new Viewer(item, options);
   });

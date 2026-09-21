@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://000xiaoming.github.io/en/%E9%A1%B9%E7%9B%AE%E8%A7%A3%E6%9E%90ROS2%E5%A4%9A%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%BD%A6%E9%98%9F%E5%8D%8F%E8%B0%83%E5%99%A8V1_%E4%BB%8E%E4%BB%BB%E5%8A%A1%E6%8F%90%E4%BA%A4%E5%88%B0%E8%B7%AF%E5%BE%84%E5%88%86%E5%8F%91%E7%9A%84%E6%9C%80%E5%B0%8F%E9%97%AD%E7%8E%AF/</loc>
+    <lastmod>2025-04-20</lastmod>
+  </url>
+  <url>
     <loc>https://000xiaoming.github.io/cn/%E9%A1%B9%E7%9B%AE%E8%A7%A3%E6%9E%90ROS2%E5%A4%9A%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%BD%A6%E9%98%9F%E5%8D%8F%E8%B0%83%E5%99%A8V1_%E4%BB%8E%E4%BB%BB%E5%8A%A1%E6%8F%90%E4%BA%A4%E5%88%B0%E8%B7%AF%E5%BE%84%E5%88%86%E5%8F%91%E7%9A%84%E6%9C%80%E5%B0%8F%E9%97%AD%E7%8E%AF/</loc>
     <lastmod>2025-04-20</lastmod>
   </url>
@@ -25,12 +29,24 @@
     <lastmod>2025-03-17</lastmod>
   </url>
   <url>
+    <loc>https://000xiaoming.github.io/en/%E9%A1%B9%E7%9B%AE%E4%B8%93%E9%A2%98%E8%A7%A3%E6%9E%90_path_planner%E7%9A%84%E5%9B%BE%E6%A8%A1%E5%9E%8B_BFS%E5%92%8Croute%E6%8B%BC%E6%8E%A5/</loc>
+    <lastmod>2025-03-15</lastmod>
+  </url>
+  <url>
     <loc>https://000xiaoming.github.io/cn/%E9%A1%B9%E7%9B%AE%E4%B8%93%E9%A2%98%E8%A7%A3%E6%9E%90_path_planner%E7%9A%84%E5%9B%BE%E6%A8%A1%E5%9E%8B_BFS%E5%92%8Croute%E6%8B%BC%E6%8E%A5/</loc>
     <lastmod>2025-03-15</lastmod>
   </url>
   <url>
+    <loc>https://000xiaoming.github.io/en/%E9%A1%B9%E7%9B%AE%E4%B8%93%E9%A2%98%E8%A7%A3%E6%9E%90_fleet_manager%E7%9A%84%E4%BB%BB%E5%8A%A1%E9%98%9F%E5%88%97_planner%E4%BE%9D%E8%B5%96%E5%92%8Cassignment%E7%8A%B6%E6%80%81%E4%BF%9D%E6%8C%81/</loc>
+    <lastmod>2025-03-10</lastmod>
+  </url>
+  <url>
     <loc>https://000xiaoming.github.io/cn/%E9%A1%B9%E7%9B%AE%E4%B8%93%E9%A2%98%E8%A7%A3%E6%9E%90_fleet_manager%E7%9A%84%E4%BB%BB%E5%8A%A1%E9%98%9F%E5%88%97_planner%E4%BE%9D%E8%B5%96%E5%92%8Cassignment%E7%8A%B6%E6%80%81%E4%BF%9D%E6%8C%81/</loc>
     <lastmod>2025-03-10</lastmod>
+  </url>
+  <url>
+    <loc>https://000xiaoming.github.io/en/continuous_discrete_time_unit_impulse_and_step/</loc>
+    <lastmod>2025-01-08</lastmod>
   </url>
   <url>
     <loc>https://000xiaoming.github.io/cn/continuous_discrete_time_unit_impulse_and_step/</loc>
@@ -89,6 +105,10 @@
     <lastmod>2024-08-08</lastmod>
   </url>
   <url>
+    <loc>https://000xiaoming.github.io/en/stdarg-sprintf-implementation/</loc>
+    <lastmod>2024-07-13</lastmod>
+  </url>
+  <url>
     <loc>https://000xiaoming.github.io/cn/stdarg-sprintf-implementation/</loc>
     <lastmod>2024-07-13</lastmod>
   </url>
@@ -122,6 +142,10 @@
   </url>
   <url>
     <loc>https://000xiaoming.github.io/cn/instruction/</loc>
+    <lastmod>2024-05-08</lastmod>
+  </url>
+  <url>
+    <loc>https://000xiaoming.github.io/en/C-Preprocessor-Token-Pasting-Operator/</loc>
     <lastmod>2024-05-08</lastmod>
   </url>
   <url>
