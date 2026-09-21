@@ -894,11 +894,12 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
       }
     });
 
-    function initSearchJson() {
+    function initSearchJson(onReady) {
       initLoad(['/search.flv'], {
         loadOptions: {
           success: function (obj) {
-            localStorage.setItem('searchJson', obj['search.json'])
+            localStorage.setItem('searchJson', obj['search.json']);
+            if (onReady) onReady();
           },
           error: function (e) {
             return console.log(e)
@@ -915,8 +916,16 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
     // search function;
     var searchFunc = function (search_id, content_id) {
       'use strict';
+      var searchJson = localStorage.getItem('searchJson');
+      if (!searchJson) {
+        initSearchJson(function () { searchFunc(search_id, content_id); });
+        return;
+      }
       isfetched = true;
-      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      var languagePrefix = '/cn/';
+      var datas = JSON.parse(searchJson).filter(function (data) {
+        return new URL(data.url, window.location.href).pathname.indexOf(languagePrefix) === 0;
+      });
       // console.log(search_id)
       var input = document.getElementById(search_id);
       var resultContent = document.getElementById(content_id);

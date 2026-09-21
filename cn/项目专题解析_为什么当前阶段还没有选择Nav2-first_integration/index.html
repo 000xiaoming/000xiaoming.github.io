@@ -387,11 +387,11 @@
           <div class="post-heading">
             <div class="tags">
               
+              <a class="tag" href="/cn/tags/#多机器人系统" title="多机器人系统">多机器人系统</a>
+              
               <a class="tag" href="/cn/tags/#Nav2" title="Nav2">Nav2</a>
               
               <a class="tag" href="/cn/tags/#integration" title="integration">integration</a>
-              
-              <a class="tag" href="/cn/tags/#多机器人系统" title="多机器人系统">多机器人系统</a>
               
             </div>
             <h1>为什么当前阶段还没有选择Nav2-first integration</h1>
@@ -674,11 +674,11 @@ agent负责执行状态反馈</p>
           </h5>
           <div class="tags">
             
+            <a class="tag" href="/cn/tags/#多机器人系统" title="多机器人系统">多机器人系统</a>
+            
             <a class="tag" href="/cn/tags/#Nav2" title="Nav2">Nav2</a>
             
             <a class="tag" href="/cn/tags/#integration" title="integration">integration</a>
-            
-            <a class="tag" href="/cn/tags/#多机器人系统" title="多机器人系统">多机器人系统</a>
             
           </div>
         </section>
@@ -954,11 +954,12 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
       }
     });
 
-    function initSearchJson() {
+    function initSearchJson(onReady) {
       initLoad(['/search.flv'], {
         loadOptions: {
           success: function (obj) {
-            localStorage.setItem('searchJson', obj['search.json'])
+            localStorage.setItem('searchJson', obj['search.json']);
+            if (onReady) onReady();
           },
           error: function (e) {
             return console.log(e)
@@ -975,8 +976,16 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
     // search function;
     var searchFunc = function (search_id, content_id) {
       'use strict';
+      var searchJson = localStorage.getItem('searchJson');
+      if (!searchJson) {
+        initSearchJson(function () { searchFunc(search_id, content_id); });
+        return;
+      }
       isfetched = true;
-      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      var languagePrefix = '/cn/';
+      var datas = JSON.parse(searchJson).filter(function (data) {
+        return new URL(data.url, window.location.href).pathname.indexOf(languagePrefix) === 0;
+      });
       // console.log(search_id)
       var input = document.getElementById(search_id);
       var resultContent = document.getElementById(content_id);

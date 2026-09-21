@@ -387,13 +387,13 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/tags/#Multi-Robot Systems" title="Multi-Robot Systems">Multi-Robot Systems</a>
-              
               <a class="tag" href="/tags/#fleet_manager" title="fleet_manager">fleet_manager</a>
               
               <a class="tag" href="/tags/#path_planner" title="path_planner">path_planner</a>
               
               <a class="tag" href="/tags/#robot_agent" title="robot_agent">robot_agent</a>
+              
+              <a class="tag" href="/tags/#Multi-Robot Systems" title="Multi-Robot Systems">Multi-Robot Systems</a>
               
             </div>
             <h1>ROS2 Fleet Coordinator V1: From Task Submission to Route Dispatch</h1>
@@ -767,13 +767,13 @@ becomes layer confusion.</p>
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#Multi-Robot Systems" title="Multi-Robot Systems">Multi-Robot Systems</a>
-            
             <a class="tag" href="/tags/#fleet_manager" title="fleet_manager">fleet_manager</a>
             
             <a class="tag" href="/tags/#path_planner" title="path_planner">path_planner</a>
             
             <a class="tag" href="/tags/#robot_agent" title="robot_agent">robot_agent</a>
+            
+            <a class="tag" href="/tags/#Multi-Robot Systems" title="Multi-Robot Systems">Multi-Robot Systems</a>
             
           </div>
         </section>
@@ -1049,11 +1049,12 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
       }
     });
 
-    function initSearchJson() {
+    function initSearchJson(onReady) {
       initLoad(['/search.flv'], {
         loadOptions: {
           success: function (obj) {
-            localStorage.setItem('searchJson', obj['search.json'])
+            localStorage.setItem('searchJson', obj['search.json']);
+            if (onReady) onReady();
           },
           error: function (e) {
             return console.log(e)
@@ -1070,8 +1071,16 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
     // search function;
     var searchFunc = function (search_id, content_id) {
       'use strict';
+      var searchJson = localStorage.getItem('searchJson');
+      if (!searchJson) {
+        initSearchJson(function () { searchFunc(search_id, content_id); });
+        return;
+      }
       isfetched = true;
-      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      var languagePrefix = '/en/';
+      var datas = JSON.parse(searchJson).filter(function (data) {
+        return new URL(data.url, window.location.href).pathname.indexOf(languagePrefix) === 0;
+      });
       // console.log(search_id)
       var input = document.getElementById(search_id);
       var resultContent = document.getElementById(content_id);

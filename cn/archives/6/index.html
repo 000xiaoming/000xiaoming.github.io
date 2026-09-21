@@ -645,7 +645,23 @@ C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
     
     
     
+    <a href="/cn/tags/#项目工程" title="项目工程" rel="17">项目工程</a>
+    
+    
+    
+    <a href="/cn/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象" rel="9">RISC-V问题和解决方案以及现象</a>
+    
+    
+    
     <a href="/cn/tags/#x86" title="x86" rel="9">x86</a>
+    
+    
+    
+    <a href="/cn/tags/#数学哲学" title="数学哲学" rel="1">数学哲学</a>
+    
+    
+    
+    <a href="/cn/tags/#多机器人系统" title="多机器人系统" rel="8">多机器人系统</a>
     
     
     
@@ -654,6 +670,10 @@ C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
     
     
     <a href="/cn/tags/#sandbox" title="sandbox" rel="1">sandbox</a>
+    
+    
+    
+    <a href="/cn/tags/#运行验证" title="运行验证" rel="1">运行验证</a>
     
     
     
@@ -685,6 +705,10 @@ C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
     
     
     
+    <a href="/cn/tags/#状态机" title="状态机" rel="1">状态机</a>
+    
+    
+    
     <a href="/cn/tags/#service" title="service" rel="1">service</a>
     
     
@@ -698,30 +722,6 @@ C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
     
     
     <a href="/cn/tags/#integration" title="integration" rel="1">integration</a>
-    
-    
-    
-    <a href="/cn/tags/#项目工程" title="项目工程" rel="17">项目工程</a>
-    
-    
-    
-    <a href="/cn/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象" rel="9">RISC-V问题和解决方案以及现象</a>
-    
-    
-    
-    <a href="/cn/tags/#数学哲学" title="数学哲学" rel="1">数学哲学</a>
-    
-    
-    
-    <a href="/cn/tags/#多机器人系统" title="多机器人系统" rel="8">多机器人系统</a>
-    
-    
-    
-    <a href="/cn/tags/#运行验证" title="运行验证" rel="1">运行验证</a>
-    
-    
-    
-    <a href="/cn/tags/#状态机" title="状态机" rel="1">状态机</a>
     
     
     
@@ -852,20 +852,12 @@ C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
 <div class="widget">
   <ul>
     
-    <a href="/cn/categories/#C/C++">
-      <li>C/C++</li>
-    </a>
-    
-    <a href="/cn/categories/#x86">
-      <li>x86</li>
-    </a>
-    
-    <a href="/cn/categories/#ROS2">
-      <li>ROS2</li>
-    </a>
-    
     <a href="/cn/categories/#Programer">
       <li>Programer</li>
+    </a>
+    
+    <a href="/cn/categories/#C/C++">
+      <li>C/C++</li>
     </a>
     
     <a href="/cn/categories/#项目工程">
@@ -876,8 +868,16 @@ C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
       <li>RISC-V问题和解决方案以及现象</li>
     </a>
     
+    <a href="/cn/categories/#x86">
+      <li>x86</li>
+    </a>
+    
     <a href="/cn/categories/#数学哲学">
       <li>数学哲学</li>
+    </a>
+    
+    <a href="/cn/categories/#ROS2">
+      <li>ROS2</li>
     </a>
     
   </ul>
@@ -1101,11 +1101,12 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
       }
     });
 
-    function initSearchJson() {
+    function initSearchJson(onReady) {
       initLoad(['/search.flv'], {
         loadOptions: {
           success: function (obj) {
-            localStorage.setItem('searchJson', obj['search.json'])
+            localStorage.setItem('searchJson', obj['search.json']);
+            if (onReady) onReady();
           },
           error: function (e) {
             return console.log(e)
@@ -1122,8 +1123,16 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
     // search function;
     var searchFunc = function (search_id, content_id) {
       'use strict';
+      var searchJson = localStorage.getItem('searchJson');
+      if (!searchJson) {
+        initSearchJson(function () { searchFunc(search_id, content_id); });
+        return;
+      }
       isfetched = true;
-      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      var languagePrefix = '/cn/';
+      var datas = JSON.parse(searchJson).filter(function (data) {
+        return new URL(data.url, window.location.href).pathname.indexOf(languagePrefix) === 0;
+      });
       // console.log(search_id)
       var input = document.getElementById(search_id);
       var resultContent = document.getElementById(content_id);

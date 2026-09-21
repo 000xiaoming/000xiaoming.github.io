@@ -387,13 +387,13 @@
           <div class="post-heading">
             <div class="tags">
               
+              <a class="tag" href="/cn/tags/#多机器人系统" title="多机器人系统">多机器人系统</a>
+              
               <a class="tag" href="/cn/tags/#fleet_manager" title="fleet_manager">fleet_manager</a>
               
               <a class="tag" href="/cn/tags/#path_planner" title="path_planner">path_planner</a>
               
               <a class="tag" href="/cn/tags/#assignment" title="assignment">assignment</a>
-              
-              <a class="tag" href="/cn/tags/#多机器人系统" title="多机器人系统">多机器人系统</a>
               
             </div>
             <h1>fleet_manager的任务队列,planner依赖和assignment状态保持</h1>
@@ -792,13 +792,13 @@ agent自己知道:“我下一拍才会把执行状态发出来”.</p>
           </h5>
           <div class="tags">
             
+            <a class="tag" href="/cn/tags/#多机器人系统" title="多机器人系统">多机器人系统</a>
+            
             <a class="tag" href="/cn/tags/#fleet_manager" title="fleet_manager">fleet_manager</a>
             
             <a class="tag" href="/cn/tags/#path_planner" title="path_planner">path_planner</a>
             
             <a class="tag" href="/cn/tags/#assignment" title="assignment">assignment</a>
-            
-            <a class="tag" href="/cn/tags/#多机器人系统" title="多机器人系统">多机器人系统</a>
             
           </div>
         </section>
@@ -1074,11 +1074,12 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
       }
     });
 
-    function initSearchJson() {
+    function initSearchJson(onReady) {
       initLoad(['/search.flv'], {
         loadOptions: {
           success: function (obj) {
-            localStorage.setItem('searchJson', obj['search.json'])
+            localStorage.setItem('searchJson', obj['search.json']);
+            if (onReady) onReady();
           },
           error: function (e) {
             return console.log(e)
@@ -1095,8 +1096,16 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
     // search function;
     var searchFunc = function (search_id, content_id) {
       'use strict';
+      var searchJson = localStorage.getItem('searchJson');
+      if (!searchJson) {
+        initSearchJson(function () { searchFunc(search_id, content_id); });
+        return;
+      }
       isfetched = true;
-      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      var languagePrefix = '/cn/';
+      var datas = JSON.parse(searchJson).filter(function (data) {
+        return new URL(data.url, window.location.href).pathname.indexOf(languagePrefix) === 0;
+      });
       // console.log(search_id)
       var input = document.getElementById(search_id);
       var resultContent = document.getElementById(content_id);

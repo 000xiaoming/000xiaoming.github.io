@@ -819,35 +819,7 @@ Welcome to my blog! This is where I collect my observations and notes on program
     
     
     
-    <a href="/tags/#Preprocessor" title="Preprocessor" rel="1">Preprocessor</a>
-    
-    
-    
-    <a href="/tags/#Engineering" title="Engineering" rel="17">Engineering</a>
-    
-    
-    
-    <a href="/tags/#RISC-V" title="RISC-V" rel="9">RISC-V</a>
-    
-    
-    
     <a href="/tags/#x86" title="x86" rel="9">x86</a>
-    
-    
-    
-    <a href="/tags/#Signals and Systems" title="Signals and Systems" rel="1">Signals and Systems</a>
-    
-    
-    
-    <a href="/tags/#Mathematics" title="Mathematics" rel="1">Mathematics</a>
-    
-    
-    
-    <a href="/tags/#Variadic Functions" title="Variadic Functions" rel="1">Variadic Functions</a>
-    
-    
-    
-    <a href="/tags/#Multi-Robot Systems" title="Multi-Robot Systems" rel="8">Multi-Robot Systems</a>
     
     
     
@@ -856,10 +828,6 @@ Welcome to my blog! This is where I collect my observations and notes on program
     
     
     <a href="/tags/#sandbox" title="sandbox" rel="1">sandbox</a>
-    
-    
-    
-    <a href="/tags/#Runtime Verification" title="Runtime Verification" rel="1">Runtime Verification</a>
     
     
     
@@ -891,10 +859,6 @@ Welcome to my blog! This is where I collect my observations and notes on program
     
     
     
-    <a href="/tags/#State Machines" title="State Machines" rel="1">State Machines</a>
-    
-    
-    
     <a href="/tags/#service" title="service" rel="1">service</a>
     
     
@@ -908,6 +872,42 @@ Welcome to my blog! This is where I collect my observations and notes on program
     
     
     <a href="/tags/#integration" title="integration" rel="1">integration</a>
+    
+    
+    
+    <a href="/tags/#Preprocessor" title="Preprocessor" rel="1">Preprocessor</a>
+    
+    
+    
+    <a href="/tags/#Engineering" title="Engineering" rel="17">Engineering</a>
+    
+    
+    
+    <a href="/tags/#RISC-V" title="RISC-V" rel="9">RISC-V</a>
+    
+    
+    
+    <a href="/tags/#Signals and Systems" title="Signals and Systems" rel="1">Signals and Systems</a>
+    
+    
+    
+    <a href="/tags/#Mathematics" title="Mathematics" rel="1">Mathematics</a>
+    
+    
+    
+    <a href="/tags/#Variadic Functions" title="Variadic Functions" rel="1">Variadic Functions</a>
+    
+    
+    
+    <a href="/tags/#Multi-Robot Systems" title="Multi-Robot Systems" rel="8">Multi-Robot Systems</a>
+    
+    
+    
+    <a href="/tags/#Runtime Verification" title="Runtime Verification" rel="1">Runtime Verification</a>
+    
+    
+    
+    <a href="/tags/#State Machines" title="State Machines" rel="1">State Machines</a>
     
     
     
@@ -1038,12 +1038,20 @@ Welcome to my blog! This is where I collect my observations and notes on program
 <div class="widget">
   <ul>
     
-    <a href="/categories/#Career and Reflections">
-      <li>Career and Reflections</li>
-    </a>
-    
     <a href="/categories/#C/C++">
       <li>C/C++</li>
+    </a>
+    
+    <a href="/categories/#x86">
+      <li>x86</li>
+    </a>
+    
+    <a href="/categories/#ROS2">
+      <li>ROS2</li>
+    </a>
+    
+    <a href="/categories/#Career and Reflections">
+      <li>Career and Reflections</li>
     </a>
     
     <a href="/categories/#Engineering">
@@ -1054,16 +1062,8 @@ Welcome to my blog! This is where I collect my observations and notes on program
       <li>RISC-V</li>
     </a>
     
-    <a href="/categories/#x86">
-      <li>x86</li>
-    </a>
-    
     <a href="/categories/#Signals and Systems">
       <li>Signals and Systems</li>
-    </a>
-    
-    <a href="/categories/#ROS2">
-      <li>ROS2</li>
     </a>
     
   </ul>
@@ -1287,11 +1287,12 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
       }
     });
 
-    function initSearchJson() {
+    function initSearchJson(onReady) {
       initLoad(['/search.flv'], {
         loadOptions: {
           success: function (obj) {
-            localStorage.setItem('searchJson', obj['search.json'])
+            localStorage.setItem('searchJson', obj['search.json']);
+            if (onReady) onReady();
           },
           error: function (e) {
             return console.log(e)
@@ -1308,8 +1309,16 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
     // search function;
     var searchFunc = function (search_id, content_id) {
       'use strict';
+      var searchJson = localStorage.getItem('searchJson');
+      if (!searchJson) {
+        initSearchJson(function () { searchFunc(search_id, content_id); });
+        return;
+      }
       isfetched = true;
-      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      var languagePrefix = '/en/';
+      var datas = JSON.parse(searchJson).filter(function (data) {
+        return new URL(data.url, window.location.href).pathname.indexOf(languagePrefix) === 0;
+      });
       // console.log(search_id)
       var input = document.getElementById(search_id);
       var resultContent = document.getElementById(content_id);

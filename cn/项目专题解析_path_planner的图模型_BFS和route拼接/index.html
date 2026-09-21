@@ -387,13 +387,13 @@
           <div class="post-heading">
             <div class="tags">
               
+              <a class="tag" href="/cn/tags/#多机器人系统" title="多机器人系统">多机器人系统</a>
+              
               <a class="tag" href="/cn/tags/#path_planner" title="path_planner">path_planner</a>
               
               <a class="tag" href="/cn/tags/#BFS" title="BFS">BFS</a>
               
               <a class="tag" href="/cn/tags/#route" title="route">route</a>
-              
-              <a class="tag" href="/cn/tags/#多机器人系统" title="多机器人系统">多机器人系统</a>
               
             </div>
             <h1>path_planner的图模型,BFS和route拼接</h1>
@@ -813,13 +813,13 @@
           </h5>
           <div class="tags">
             
+            <a class="tag" href="/cn/tags/#多机器人系统" title="多机器人系统">多机器人系统</a>
+            
             <a class="tag" href="/cn/tags/#path_planner" title="path_planner">path_planner</a>
             
             <a class="tag" href="/cn/tags/#BFS" title="BFS">BFS</a>
             
             <a class="tag" href="/cn/tags/#route" title="route">route</a>
-            
-            <a class="tag" href="/cn/tags/#多机器人系统" title="多机器人系统">多机器人系统</a>
             
           </div>
         </section>
@@ -1095,11 +1095,12 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
       }
     });
 
-    function initSearchJson() {
+    function initSearchJson(onReady) {
       initLoad(['/search.flv'], {
         loadOptions: {
           success: function (obj) {
-            localStorage.setItem('searchJson', obj['search.json'])
+            localStorage.setItem('searchJson', obj['search.json']);
+            if (onReady) onReady();
           },
           error: function (e) {
             return console.log(e)
@@ -1116,8 +1117,16 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
     // search function;
     var searchFunc = function (search_id, content_id) {
       'use strict';
+      var searchJson = localStorage.getItem('searchJson');
+      if (!searchJson) {
+        initSearchJson(function () { searchFunc(search_id, content_id); });
+        return;
+      }
       isfetched = true;
-      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      var languagePrefix = '/cn/';
+      var datas = JSON.parse(searchJson).filter(function (data) {
+        return new URL(data.url, window.location.href).pathname.indexOf(languagePrefix) === 0;
+      });
       // console.log(search_id)
       var input = document.getElementById(search_id);
       var resultContent = document.getElementById(content_id);
