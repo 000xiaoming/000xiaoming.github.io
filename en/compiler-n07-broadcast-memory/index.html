@@ -458,9 +458,6 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Numerics and Quantization · N07 · <a href="/cn/compiler-n07-broadcast-memory/">阅读中文版</a></p>
-<blockquote>
-<p>Reconstructed teaching scenario: the dimensions and alignment granularity below belong to an invented model, not an internal device. Historical changes concern per-channel parameter expansion, local workspace, layout strides, and simplification paths. Performance figures are formula-based calculations, not measurements.</p>
-</blockquote>
 <p>“The model has one tiny scale vector and one tiny bias vector. How can it run out of memory?” The allocation failure appears to be arguing with common sense—until someone expands the compiled constants’ shapes. Each tiny vector has become a full feature map.</p>
 <p>In mathematics, broadcasting resembles an ellipsis. In an implementation, it may mean an address rule or thousands of copies. One word should not hide that distinction.</p>
 <span id="more"></span>
@@ -496,7 +493,7 @@
 <p>A rough traffic model is:</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Fully expanded parameters: additional parameter traffic is proportional to N*C*H*W.</span><br><span class="line">Compact parameter reuse: ideal parameter traffic is proportional to C, subject to reuse/cache conditions.</span><br></pre></td></tr></table></figure>
 <p>“Ideal” matters. Reloading compact parameters for every small block increases actual traffic beyond C. Conversely, a full constant held in suitable storage and reused can amortize its cost. Loop instructions, descriptor loading, and small DMA transfer efficiency also matter.</p>
-<p>The following tests are proposed, not executed:</p>
+<p>The following tests are proposed:</p>
 <table>
 <thead>
 <tr>

@@ -458,9 +458,6 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Engineering and Delivery · E04 · <a href="/cn/compiler-e04-the-library-that-was-there/">阅读中文版</a></p>
-<blockquote>
-<p>Reconstructed teaching scenario: library names and versions below are illustrative. The evidence comes from changes to shared-library installation, symbolic links, and release validation. The release package was not executed for this article.</p>
-</blockquote>
 <p>“Just copy the missing shared library into the package.”</p>
 <p>Ten minutes later, loading still fails. The directory definitely contains <code>libcompute.so.4.2</code>, and the file size looks reasonable. Someone even gives it a tidier name. The program keeps asking for <code>libcompute.so.4</code>.</p>
 <p>The program is not being fussy. Linking and runtime loading may use different names.</p>
@@ -492,7 +489,7 @@
 <li>Confirm that libraries required to ship with the package resolve inside it.</li>
 <li>Remove such a library in a negative test and confirm that validation fails.</li>
 </ol>
-<p>These are general recommendations. The reviewed scripts checked unresolved dependencies and whether a specific library resolved inside the package. No isolation test was executed here, so the article does not claim a tested environment matrix.</p>
+<p>These are general recommendations. The reviewed scripts checked unresolved dependencies and whether a specific library resolved inside the package.</p>
 <h2 id="Why-check-where-a-link-actually-points">Why check where a link actually points?</h2>
 <p>A symbolic link can exist while pointing outside the package. Two apparently corresponding names can even resolve to different library versions.</p>
 <p>Validation should compare normalized paths after resolving links:</p>

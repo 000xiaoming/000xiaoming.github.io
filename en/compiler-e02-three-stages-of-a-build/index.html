@@ -458,9 +458,6 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Engineering and Delivery · E02 · <a href="/cn/compiler-e02-three-stages-of-a-build/">阅读中文版</a></p>
-<blockquote>
-<p>Reconstructed teaching scenario: the people and dialogue are illustrative. This article draws general design lessons from changes to build scripts. Command names are schematic; no remote build, installation, or deletion was performed.</p>
-</blockquote>
 <p>A colleague wants to verify a two-line change. They run the build script, and compilation fails halfway through. No disaster: use the previously installed tool to investigate. Except the installation directory is now empty.</p>
 <p>“I pressed Build. Why did it take away the old tool?”</p>
 <p>That confusion usually means a script has combined several responsibilities: load the environment, synchronize dependencies, configure the project, compile, clear the installation prefix, install, and trim the results. Each step may be reasonable on its own. Together, they make it difficult to answer: “At this failure point, which artifacts are still trustworthy?”</p>
@@ -492,7 +489,7 @@
 <p>The last question is easy to overlook. An executable in a directory need not come from the current source. An installation receipt can record the source revision, build type, dependency prefixes, and key artifacts. It is not a complete supply-chain proof, but it gives “Which version am I using?” a checkable starting point.</p>
 <p>The receipt should be written after installation checks finish, or explicitly distinguish “installing” from “ready.” A crash immediately after an early receipt could cause a partial installation to be treated as complete. The reviewed script installed files, checked required paths, then wrote the receipt. That supports recording stage completion; it does not establish an atomic directory replacement.</p>
 <h2 id="A-failure-matrix-is-worth-more-than-ten-smooth-builds">A failure matrix is worth more than ten smooth builds</h2>
-<p>The following proposed tests help examine the design. They were not run for this article.</p>
+<p>The following proposed tests help examine the design.</p>
 <table>
 <thead>
 <tr>

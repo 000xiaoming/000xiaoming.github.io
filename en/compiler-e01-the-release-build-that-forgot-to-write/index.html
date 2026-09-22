@@ -458,9 +458,6 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Engineering and Delivery · E01 · <a href="/cn/compiler-e01-the-release-build-that-forgot-to-write/">阅读中文版</a></p>
-<blockquote>
-<p>Reconstructed teaching scenario: the dialogue and investigation sequence below were designed to explain the problem. The central defect is supported by an actual code diff; the examples use generic names and do not reproduce the internal project. No original build or performance measurement was run for this article.</p>
-</blockquote>
 <p>“The model compiles, but only the release build cannot find the newly generated constant.”</p>
 <p>That sentence can send an investigation down an expensive detour. Is the optimization level too high? Did floating-point precision change? Did the linker discard some logic? Add “Debug works perfectly,” and the optimizer is already in the defendant’s chair.</p>
 <p>This time, however, the most useful evidence may be an assertion that looks admirably cautious.</p>
@@ -546,7 +543,7 @@
 </tr>
 </tbody>
 </table>
-<p>These are proposed experiments, not tests executed for this article. Nor should “Debug and Release files are byte-for-byte identical” become an unexamined requirement. Debug information or metadata ordering may legitimately differ. First compare the constant set, shapes, and values that must be semantically identical, then decide whether byte equality is necessary.</p>
+<p>Nor should “Debug and Release files are byte-for-byte identical” become an unexamined requirement. Debug information or metadata ordering may legitimately differ. First compare the constant set, shapes, and values that must be semantically identical, then decide whether byte equality is necessary.</p>
 <p>Fault injection is especially useful here. Making a test double return an insertion failure is more reliable than waiting for a disk or memory problem to occur by chance. Such injection belongs in a test substitute or isolated environment, not in normal production behavior.</p>
 <h2 id="Other-ways-to-hide-the-same-risk">Other ways to hide the same risk</h2>
 <p>Assertions are not the only switchable facility that can accidentally carry required work. Similar defects arise when state is updated only in a debug logging branch, a map is initialized only under verbose output, or a computation depends on a diagnostic-only variable.</p>

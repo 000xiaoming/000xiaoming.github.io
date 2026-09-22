@@ -458,9 +458,6 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Resources and Scheduling · R10 · <a href="/cn/compiler-r10-optimization-contracts/">阅读中文版</a></p>
-<blockquote>
-<p>Teaching reconstruction: this article discusses two kinds of real changes through the question of representation cost and complete semantics. The scenes and numbers are newly designed examples. The changes were not part of one incident, and the code supplies no performance measurements that can be quoted publicly.</p>
-</blockquote>
 <p>“Instead of multiplying the matrices and then taking a small slice, let’s slice the weights first and do a smaller multiplication.”</p>
 <p>“The equation is fine. Which quantization parameters belong to the new weights?”</p>
 <p>“Don’t the parameters follow the name?”</p>
@@ -480,7 +477,7 @@
 <h2 id="Why-looking-up-parameters-by-global-name-makes-rewriting-harder">Why looking up parameters by global name makes rewriting harder</h2>
 <p>If quantization information is retrieved from an external table by name, producing a new value involves more than creating an IR node. A rewrite must also maintain the relationship between names and metadata. Copying, slicing, concatenation, and transposition each impose different requirements on that relationship.</p>
 <p>One general direction is to place semantically essential parameters in types or explicit attributes where possible, requiring rewrite functions to handle them. Even when external data remains necessary, a common API for deriving weights could commit the value, quantization parameters, and provenance mapping together, instead of leaving each pattern to patch names independently.</p>
-<p>This is a design proposal, not an architecture implemented by the reviewed commit. Moving parameters into types is no universal solution: large arrays affect IR size, serialization, and comparison costs, while transformations involving the channel axis still require correct reasoning.</p>
+<p>Moving parameters into types is no universal solution: large arrays affect IR size, serialization, and comparison costs, while transformations involving the channel axis still require correct reasoning.</p>
 <h2 id="A-different-optimization-avoid-filling-the-tensor-with-broadcast-constants">A different optimization: avoid filling the tensor with broadcast constants</h2>
 <p>Another change in the same history addresses a different issue. Scale and bias parameters were previously expanded to match the input shape. The change retains channel vectors and constructs compact broadcast shapes instead.</p>
 <p>Consider a teaching input of shape B×T×C. If each channel’s coefficient is identical across batches and positions, expanding scale from C elements to B×T×C elements remains mathematically correct, but materializes repeated information. For the teaching values B=2 and T=37, the element counts differ by a factor of 74. That is a storage ratio derived from the shapes, not a measured speedup.</p>
@@ -544,7 +541,7 @@
 </tr>
 </tbody>
 </table>
-<p>A proposed first step is to check quantized-slicing equivalence in an independent, low-dimensional integer reference program, then compare compact and expanded parameters element by element. Performance experiments should separately measure compilation time, constant size, runtime transfers, and computation time, avoiding claims of overall acceleration based on a single declining metric. These experiments were not run for this article.</p>
+<p>A proposed first step is to check quantized-slicing equivalence in an independent, low-dimensional integer reference program, then compare compact and expanded parameters element by element. Performance experiments should separately measure compilation time, constant size, runtime transfers, and computation time, avoiding claims of overall acceleration based on a single declining metric.</p>
 <p>Sometimes the most responsible optimization patch first disables an optimization. What deserves to be restored is more than the whiteboard equation: it is the complete set of verifiable semantics behind it.</p>
 <!-- series-navigation -->
 <hr>

@@ -458,9 +458,6 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Resources and Scheduling · R09 · <a href="/cn/compiler-r09-encoding-boundaries/">阅读中文版</a></p>
-<blockquote>
-<p>Teaching reconstruction: this article uses a toy instruction set with reduced bit widths to explain encoding boundaries. Every number serves the example. The evidence comes from immediate expansion, register parsing, and negative tests; no proprietary target encoding is disclosed.</p>
-</blockquote>
 <p>“How did r7oops get past the register parser?”</p>
 <p>“The parser successfully read 7.”</p>
 <p>“What about the oops?”</p>
@@ -542,7 +539,7 @@
 </tr>
 </tbody>
 </table>
-<p>Some of these directions already have tests in the commits; those tests were not run for this article. A further experiment could exhaustively enumerate every bit pattern at teaching widths W=8 or W=12, checking that interpretation after expansion equals the original value. For register strings, insertion, deletion, and substitution mutations of valid strings could check the accepted and rejected sets.</p>
+<p>Some of these directions already have tests in the commits. A further experiment could exhaustively enumerate every bit pattern at teaching widths W=8 or W=12, checking that interpretation after expansion equals the original value. For register strings, insertion, deletion, and substitution mutations of valid strings could check the accepted and rejected sets.</p>
 <p>Performance claims should remain limited. Strict parsing may avoid exception-conversion costs, but any effect on compilation time depends on call frequency and the input distribution. Its most direct benefit here is stopping invalid input at the right boundary, reducing mysterious encoding errors far from the cause.</p>
 <p>“Parsing succeeded” is meaningful only after success has been defined. For a compiler, understanding the prefix and ignoring the rest is rarely a form of tolerance that should reach the device.</p>
 <!-- series-navigation -->

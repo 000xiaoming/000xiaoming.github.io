@@ -458,9 +458,6 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Numerics and Quantization · N11 · <a href="/cn/compiler-n11-import-order-and-constants/">阅读中文版</a></p>
-<blockquote>
-<p>Reconstructed teaching scenario: the dialogue and small examples were designed for explanation. Historical diffs support two concrete observations: the importer stopped converting a particular division form into a reciprocal early, and transposition of a constant left-hand matrix operand changed to preserve the original type information. Those diffs alone do not establish a complete root cause or performance effect. Inferences are identified explicitly.</p>
-</blockquote>
 <p>“A constant divided by a tensor—wouldn’t a scaled reciprocal be more efficient?” The enthusiastic importer tidies the algebra as soon as the model arrives. Later, a module checking quantization information asks, “Where did the original division go?”</p>
 <p>The formula need not be wrong. Its timing may disrupt correspondences that other stages still require.</p>
 <span id="more"></span>
@@ -560,7 +557,7 @@
 </tr>
 </tbody>
 </table>
-<p>Neither historical fix added the full matrix proposed here in its diff. These are recommendations, not completed validations. A fix title should not be expanded into a claim that every related issue was tested.</p>
+<p>Neither historical fix added the full matrix proposed here in its diff. These are recommendations, not completed validations.</p>
 <p>Deferring algebraic transformation may give later optimizations more information, or leave early IR slightly larger. Compilation-time effects require measurement. Constant transposition moves work to compilation and may reduce runtime reordering, while adding constant-storage or compiler-memory costs. If the backend can already avoid reordering through layout interpretation, an explicit transpose may not be preferable.</p>
 <p>An importer’s greatest contribution may be handing complete information to the next stage, rather than appearing clever immediately. Once the compiler knows what every number means and who uses each constant, cleverness becomes easier to prove harmless.</p>
 <h2 id="7-Give-Every-Rewrite-a-Metadata-Migration-Sheet">7. Give Every Rewrite a Metadata Migration Sheet</h2>

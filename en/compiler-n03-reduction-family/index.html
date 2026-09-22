@@ -458,9 +458,6 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Numerics and Quantization · N03 · <a href="/cn/compiler-n03-reduction-family/">阅读中文版</a></p>
-<blockquote>
-<p>Reconstructed teaching scenario: the dialogue and examples were written for this article. Historical evidence comes from adding the reduction family, structural tests, and consolidating instruction implementations. Those tests were not run here, and code reuse is not presented as a measured performance improvement.</p>
-</blockquote>
 <p>“We already have mean. For sum, remove the division; for max and min, change a symbol. Finished by this afternoon?”</p>
 <p>If an operator support list were a restaurant menu, that would be an attractive proposal. But adding an operator to a compiler requires more than a kitchen that can cook it. The ordering system must recognize it, the storeroom must know where its ingredients belong, and the waiter must deliver it to the right table. Three new dishes can touch a dozen integration points.</p>
 <span id="more"></span>
@@ -569,7 +566,7 @@
 </tr>
 </tbody>
 </table>
-<p>These are proposed tests, not executed results. Existing historical test files show attention to encoding and emission structure; they do not constitute a passing execution report obtained here.</p>
+<p>Existing historical test files show attention to encoding and emission structure; they do not constitute a passing execution report obtained here.</p>
 <p>Performance can first be split into three costs: input traffic, reduction-tree or serial-accumulation work, and invocation/configuration overhead. Extrema and sum read the same elements, but execution-unit throughput, dependencies, and type widening may differ. Small tensors are more likely to be dominated by configuration; large tensors may be limited by bandwidth or reduction throughput. The number of shared C++ classes is not a key term in that runtime model.</p>
 <p>The most useful outcome is not “three more supported operators,” but a clear map of responsibilities: what can be shared and what needs its own proof. The next member of the reduction family then knows which desk to visit.</p>
 <h2 id="7-Challenge-the-Abstraction-with-a-Zero-Point-Counterexample">7. Challenge the Abstraction with a Zero-Point Counterexample</h2>

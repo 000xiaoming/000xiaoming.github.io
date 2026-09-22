@@ -458,9 +458,6 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Engineering and Delivery · E14 · <a href="/cn/compiler-e14-same-shape-different-answers/">阅读中文版</a></p>
-<blockquote>
-<p>This article grows out of operator-specification work and addresses semantic issues across frameworks and backends. Scenarios and small examples were redesigned for teaching. Candidate configurations in historical documents are neither executed regression tests nor promises of complete operator support.</p>
-</blockquote>
 <p>“The shape, type, and memory size all match. Why are we still off by a pixel?”</p>
 <p>An investigator enlarges a feature map and notices a small discrepancy every few columns. Elsewhere, a pooling test differs only at the edges. The team initially treats them as separate failures before recognizing the shared question: <strong>how does an output coordinate map back to the input?</strong></p>
 <p>Shape says how many answers there are, not how to compute each one. Window boundaries, sampling coordinates, rounding rules, and index selection decide what fills that shape.</p>
@@ -484,7 +481,7 @@
 <p>Consider resizing a sequence of length 3 to length 5. Two common continuous-coordinate ideas are:</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Align endpoints: x = j * (3 - 1) / (5 - 1)</span><br><span class="line">Half-pixel:      x = (j + 0.5) * 3 / 5 - 0.5</span><br></pre></td></tr></table></figure>
 <p>At j=1, the first gives 0.5 and the second 0.4. The implementation must then convert the continuous coordinate into an integer index: floor, ceiling, nearest rounding, or a specified tie rule.</p>
-<p>These are two teaching examples, not a claim that every frontend defaults to one of them. A compiler must read the particular operator version and attributes instead of seeing “nearest” and choosing a familiar formula.</p>
+<p>A compiler must read the particular operator version and attributes instead of seeing “nearest” and choosing a familiar formula.</p>
 <p>An output length of 1 also exposes the endpoint formula’s denominator. Production code needs an explicit rule rather than relying on division by zero followed by a hopeful integer conversion.</p>
 <h2 id="Bilinear-interpolation-needs-a-coordinate-system-before-it-needs-four-neighbors">Bilinear interpolation needs a coordinate system before it needs four neighbors</h2>
 <p>In two dimensions, bilinear interpolation usually combines four neighboring points using horizontal and vertical weights. “Weight four points” describes only the second half of the computation.</p>
@@ -503,7 +500,7 @@
 <p>ReduceMax propagates a maximum value. ArgMax also propagates its location. Its reduction state is closer to:</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(best_value, best_index)</span><br></pre></td></tr></table></figure>
 <p>The operator contract must decide which index wins a tie. For <code>[7,9,9,4]</code>, the maximum is 9, but the returned index can be 1 or 2 according to the rule. A parallel reduction tree that changes left/right comparison order carelessly may return a wrong index while preserving the correct maximum value.</p>
-<p>NaNs, signed zero, and the output index type need definitions too. This article does not prescribe one universal answer because operation definitions can differ. A compiler must preserve the incoming contract and explain limits when it cannot implement it.</p>
+<p>NaNs, signed zero, and the output index type need definitions too. A compiler must preserve the incoming contract and explain limits when it cannot implement it.</p>
 <p>Keeping dimensions and normalizing negative axes also belong to semantics. Value and index reductions can share traversal structures, but “remember a subscript at the end” is not a correctness argument.</p>
 <h2 id="Why-random-tests-often-miss-these-failures">Why random tests often miss these failures</h2>
 <p>Exactly tied maxima may be rare in random input, allowing tie-breaking defects to hide. Large images dominated by interior pixels can dilute edge discrepancies. An aggregate mean-squared-error threshold may even tolerate a small but systematic coordinate shift.</p>
@@ -546,7 +543,7 @@
 </tr>
 </tbody>
 </table>
-<p>These tests were not run against the historical repository. Their purpose is to turn “a little numerical error” into hypotheses that specific counterexamples can test.</p>
+<p>Their purpose is to turn “a little numerical error” into hypotheses that specific counterexamples can test.</p>
 <h2 id="One-more-mapping-is-needed-between-specification-and-implementation">One more mapping is needed between specification and implementation</h2>
 <p>A useful operator specification includes more than formulas. It connects frontend attributes, normalized internal semantics, backend capabilities, and rejection conditions.</p>
 <p>If hardware supports only one rounding mode, determine whether preprocessing can compensate, another kernel is available, or some modes must be rejected. If a field is still unspecified, retaining “to be confirmed” prevents a later reader from turning a sketch into an implementation guarantee.</p>

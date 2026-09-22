@@ -458,9 +458,6 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Engineering and Delivery · E15 · <a href="/cn/compiler-e15-names-are-not-numerical-contracts/">阅读中文版</a></p>
-<blockquote>
-<p>This article extracts general lessons from historical operator notes and design questions. Candidate instructions in documentation are not treated as implemented capabilities. Dialogue is reconstructed for teaching; formulas and counterexamples explain principles, without invented performance or accuracy measurements.</p>
-</blockquote>
 <p>“The function name is right, and the input shape is right. Why is the answer so different?”</p>
 <p>A colleague reduces the failing sample to two negative numbers. What first looked like a small error suddenly becomes a sign reversal. Eventually, the team discovers that the two sides implemented different functions.</p>
 <p>Nonlinear operations often appear under short names: Pow, Sigmoid, Softmax, Norm. The answer actually depends on the domain, formula, axes, constants, approximation method, and intermediate precision behind that name.</p>
@@ -493,7 +490,7 @@
 <p>Some activations contain a periodic term such as sin²(αx). Here α controls the input’s phase scale, or oscillation frequency. If the complete formula also includes a coefficient such as 1/α, its effect on amplitude must be analyzed separately.</p>
 <p>When a fixed-point kernel maps real angles into an integer period, quantization scale, period normalization, and modulo range must agree. Applying the input scale only to a linear term while omitting it from the periodic term introduces position-dependent systematic error.</p>
 <p>Structured tests are especially helpful: sample several periods at equal intervals, including zeros, points near peaks, and period boundaries. Mean error is one metric, but also inspect phase shifts, preserved symmetry, and discontinuities at joins.</p>
-<p>No approximation kernel was tested for this article. These validation ideas follow from mathematical structure.</p>
+<p>These validation ideas follow from mathematical structure.</p>
 <h2 id="Softmax-stabilization-changes-the-evaluation-path">Softmax stabilization changes the evaluation path</h2>
 <p>Along a selected axis, Softmax computes:</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p_i = exp(x_i) / sum_j exp(x_j)</span><br></pre></td></tr></table></figure>
@@ -545,7 +542,7 @@
 </tbody>
 </table>
 <p>Historical material is valuable both for its answers and for details that code and tests have not yet confirmed. A public article should explain those questions instead of inventing a complete story for unknown hardware fields.</p>
-<p>In the reconstructed discussion, the first addition was not a denser lookup table. It was a mathematical definition. Until both sides agree on the correct answer, improving approximation precision can merely compute the wrong function more accurately.</p>
+<p>In the discussion, the first addition was not a denser lookup table. It was a mathematical definition. Until both sides agree on the correct answer, improving approximation precision can merely compute the wrong function more accurately.</p>
 <!-- series-navigation -->
 <hr>
 <p><a href="/en/compiler-engineering-notes/">Series contents</a> · <a href="/en/compiler-e14-same-shape-different-answers/">Previous</a></p>

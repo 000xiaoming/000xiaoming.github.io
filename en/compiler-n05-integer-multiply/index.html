@@ -458,9 +458,6 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Numerics and Quantization · N05 · <a href="/cn/compiler-n05-integer-multiply/">阅读中文版</a></p>
-<blockquote>
-<p>Reconstructed teaching scenario: the dialogue, coefficients, and pseudocode are redesigned teaching material. Historical diffs show dedicated scale-parameter calculation for multiplication and additional scalar-source controls. Error analysis and the test matrix below are derivations and proposals. No hardware tests were run.</p>
-</blockquote>
 <p>“The two integers multiply to exactly what the calculator says, but the model is still wrong.” Staring at the multiplication sign rarely helps here. The calculator has checked only one ledger: the integer product. The model keeps another: how large a real value each integer represents.</p>
 <p>Quantized multiplication is especially deceptive because every low-level step can be legal while their composition implements the wrong operation.</p>
 <span id="more"></span>
@@ -534,7 +531,7 @@
 </tr>
 </tbody>
 </table>
-<p>Scalar broadcasting can reduce parameter traffic, but numerous short loops may increase configuration and branch costs. Implementing square through multiplication reuses infrastructure; it does not prove that it beats a dedicated square instruction on every target. No comparative measurements were performed here. Useful observations would include effective element throughput, parameter-load counts, materialized broadcast size, and intermediate buffers.</p>
+<p>Scalar broadcasting can reduce parameter traffic, but numerous short loops may increase configuration and branch costs. Implementing square through multiplication reuses infrastructure; it does not prove that it beats a dedicated square instruction on every target. Useful observations would include effective element throughput, parameter-load counts, materialized broadcast size, and intermediate buffers.</p>
 <p>The multiplication sign is simple; its surrounding conventions are not. Record “where the value comes from” separately from “what the value represents,” and apparently mysterious numerical failures become two ledgers that can be checked line by line.</p>
 <h2 id="7-Separate-Failure-Modes-with-Three-Input-Groups">7. Separate Failure Modes with Three Input Groups</h2>
 <p>The first group tests only real zero: set each input integer to its own zero point. The correct product remains real zero, and the output integer should equal the output zero point. Failure directs attention to zero-point placement and sources before coefficient precision. It avoids guessing from a cloud of random errors whether the offset or multiplier is wrong.</p>

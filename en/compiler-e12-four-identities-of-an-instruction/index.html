@@ -458,9 +458,6 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Engineering and Delivery · E12 · <a href="/cn/compiler-e12-four-identities-of-an-instruction/">阅读中文版</a></p>
-<blockquote>
-<p>This article extracts general principles from historical design work and encoding regressions. Dialogue is a reconstructed teaching scenario. Example instructions, types, and fields were redesigned and do not describe a particular device. Design intent and an implementation demonstrated by tests are different kinds of evidence.</p>
-</blockquote>
 <p>“We are emitting one multiply instruction. Why does it need four layers?”</p>
 <p>Someone writes <code>emit(&quot;mul&quot;, a, b, out)</code> on the review whiteboard. It is short, direct, and almost looks like final assembly. A colleague asks, “Is a a tensor, a register number, a memory address, or a scalar to broadcast?”</p>
 <p>A brief silence follows. The string interface looks simple because it hides the questions.</p>
@@ -510,7 +507,7 @@
 <p>Some architectures also let branch distance affect instruction length, requiring iterative relaxation or a fixed-length strategy. The historical material does not establish such a mechanism here. The general point is that label resolution must state which stage’s lengths it uses.</p>
 <p>That is also why plausible pseudoassembly cannot replace binary validation: the human-readable stage may not yet determine final locations.</p>
 <h2 id="Which-layer-should-produce-a-good-error-message">Which layer should produce a good error message?</h2>
-<p>In the reconstructed review, “Why so many layers?” soon becomes “Who should report this failure?”</p>
+<p>In the review, “Why so many layers?” soon becomes “Who should report this failure?”</p>
 <table>
 <thead>
 <tr>

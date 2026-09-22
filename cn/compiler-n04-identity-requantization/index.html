@@ -458,9 +458,6 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 数值与量化 · N04 · <a href="/en/compiler-n04-identity-requantization/">Read in English</a></p>
-<blockquote>
-<p>教学场景重构：输入、数值与对白是重设的教学例子。历史修复确实区分了同类型直接转发和异类型重量化；下文讨论的是这些差异揭示的通用契约，测试建议未执行。</p>
-</blockquote>
 <p>“沿长度为一的轴求和，就是它自己。删掉，省一条指令。”这句话数学上很稳，工程上却差一个问题：“它自己”是同一个实数，还是同一串整数？</p>
 <p>有时删掉一个明明没有计算量的算子，反而让整个模型的数值变了。这样的优化像把温度计从摄氏刻度换成华氏刻度，却坚持显示数字不能动。</p>
 <span id="more"></span>
@@ -483,7 +480,7 @@
 <p>教学伪代码应当写成：</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">assert normalized_input_shape == normalized_output_shape</span><br><span class="line"></span><br><span class="line">if input_type == output_type:</span><br><span class="line">    result = input</span><br><span class="line">else if supported_quantized_conversion(input_type, output_type):</span><br><span class="line">    result = requantize(input, output_type)</span><br><span class="line">else:</span><br><span class="line">    report unsupported conversion</span><br></pre></td></tr></table></figure>
 <p>这里“支持”需要明确：整数存储范围怎么得出？有符号还是无符号？零点是否合法？位宽与计算中间值是否能表示？历史代码为输出整数存储类型计算夹取范围，并拒绝不能安全处理的宽度；这展示了保守失败的价值。比起靠默认范围勉强生成结果，早一点说明缺少支持，更容易定位。</p>
-<p>另外，完整类型比较是否足够，取决于 IR 还把哪些契约放在属性里。例如舍入模式、饱和策略或布局标记如果不在类型里，就应一并检查。本文不据一处修复声称所有这些属性都已覆盖。</p>
+<p>另外，完整类型比较是否足够，取决于 IR 还把哪些契约放在属性里。例如舍入模式、饱和策略或布局标记如果不在类型里，就应一并检查。</p>
 <h2 id="四、同尺度测试为何能长期掩盖问题">四、同尺度测试为何能长期掩盖问题</h2>
 <p>假设输入输出 scale 都为 0.1，零点都为 0。无论你插入重量化，还是直接转发，很多常见输入都得到相同整数。用全零数据时，甚至不同尺度也可能看不出问题。</p>
 <p>因此这种测试不应该“正常得太正常”。至少选择不相等的尺度、非零值、靠近舍入边界的值，并包含饱和情况。若是非零零点，还要测试表示实数零的那个整数；它通常不是整数 0。</p>
@@ -491,7 +488,7 @@
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s_in = 0.03，s_out = 0.12</span><br><span class="line">q_in = [4, 8, 20, -12]</span><br><span class="line">理想未饱和 q_out = [1, 2, 5, -3]</span><br></pre></td></tr></table></figure>
 <p>这些数只用于说明比例，没有覆盖舍入。再加入不能被 4 整除的值，才开始检验具体舍入规则。应以目标定义计算期望值，不能拿宿主语言默认的 round 当作通用答案。</p>
 <h2 id="五、无用归约删掉以后，性能账怎么记？">五、无用归约删掉以后，性能账怎么记？</h2>
-<p>历史修复把一条为了处理被删单位轴而构造的变换链，缩为直接输入或重量化。结构上减少了辅助节点，这是可以从差异直接观察的事实。运行时间减少多少，则没有本文取得的测量依据。</p>
+<p>历史修复把一条为了处理被删单位轴而构造的变换链，缩为直接输入或重量化。结构上减少了辅助节点，这是可以从差异直接观察的事实。</p>
 <p>若输入输出类型一致，直接转发可能同时省掉配置、执行和临时缓冲区；但前提是下游允许别名，没有额外复制需求。若需要重量化，仍要遍历元素并读取、写入，流量通常随张量大小增长。此时“原归约长度只有一，所以成本为零”的说法是错的，输出表示转换本身有成本。</p>
 <p>性能模型可以分成：</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">同类型路径：主要检查是否能消除物化与调度开销。</span><br><span class="line">异类型路径：T ≈ 启动成本 + 元素数 / 有效吞吐，另计读写流量。</span><br></pre></td></tr></table></figure>

@@ -439,8 +439,8 @@
     </h3>
     <div class="post-content-preview">
       Series contents · Resources and Scheduling · R05 · 阅读中文版
-
-Reconstructed teaching scenario: The opening questions are an abstract reconstruction of recurrent-state semantics, not a specific model in......
+“The final hidden state is already a graph output. Why save it again?”
+“Because the graph output goes to the caller. Persistent state goes t......
     </div>
   </a>
   
@@ -480,8 +480,8 @@ Reconstructed teaching scenario: The opening questions are an abstract reconstru
     </h3>
     <div class="post-content-preview">
       Series contents · Resources and Scheduling · R04 · 阅读中文版
-
-Reconstructed teaching scenario: Capacities, alignment units, and address widths are fictional examples. The verified change removes an old......
+“I only generated a slightly larger output, and the compiler says global memory is exhausted.”
+“Does it know how much memory the runtime wil......
     </div>
   </a>
   
@@ -521,8 +521,8 @@ Reconstructed teaching scenario: Capacities, alignment units, and address widths
     </h3>
     <div class="post-content-preview">
       Series contents · Resources and Scheduling · R03 · 阅读中文版
-
-Reconstructed teaching scenario: The debugging dialogue and tensor shapes are teaching examples. Verified observations come from a liveness......
+“We’ve passed this tensor’s last user. We can reclaim it.”
+“That user only changed its shape. The operation that actually reads the data is ......
     </div>
   </a>
   
@@ -562,8 +562,8 @@ Reconstructed teaching scenario: The debugging dialogue and tensor shapes are te
     </h3>
     <div class="post-content-preview">
       Series contents · Resources and Scheduling · R02 · 阅读中文版
-
-Reconstructed teaching scenario: Task numbers, engine names, and resource budgets below are redesigned examples. The source review establis......
+“The arithmetic barely grew. Why can’t we even generate the code?”
+The graph on the whiteboard looks innocent: one producer, followed by man......
     </div>
   </a>
   
@@ -603,8 +603,9 @@ Reconstructed teaching scenario: Task numbers, engine names, and resource budget
     </h3>
     <div class="post-content-preview">
       Series contents · Resources and Scheduling · R01 · 阅读中文版
-
-Reconstructed teaching scenario: The dialogue below was written to explain the problem; it is not a transcript of a historical incident. Te......
+“I just need one register to load an address. I’ll give it straight back.”
+“Funny. The outer loop counter is borrowing that same one.”
+This ......
     </div>
   </a>
   
@@ -644,8 +645,8 @@ Reconstructed teaching scenario: The dialogue below was written to explain the p
     </h3>
     <div class="post-content-preview">
       Series contents · Operators and Layouts · O12 · 阅读中文版
-
-Reconstructed teaching scenario: Imagine a backend designed for constant weights on the right suddenly encountering weights on the left. Histo......
+“It is still matrix multiplication. Why can it no longer compile just because the weights are on the left?”
+From linear algebra’s perspective, ......
     </div>
   </a>
   
@@ -685,8 +686,8 @@ Reconstructed teaching scenario: Imagine a backend designed for constant weights
     </h3>
     <div class="post-content-preview">
       Series contents · Operators and Layouts · O11 · 阅读中文版
-
-Reconstructed teaching scenario: A fictional review discussion explains fusion rejection conditions. A verified historical commit added fusion......
+“If convolution can fuse, surely the Sigmoid after this matrix multiplication can too?”
+Sometimes it can. Sometimes the compiler quite delibera......
     </div>
   </a>
   
@@ -726,8 +727,8 @@ Reconstructed teaching scenario: A fictional review discussion explains fusion r
     </h3>
     <div class="post-content-preview">
       Series contents · Operators and Layouts · O10 · 阅读中文版
-
-Reconstructed teaching scenario: The review dialogue below is fictional. Verified historical changes include fusing transposed convolution wit......
+“These two nodes are adjacent. Fusing them should make things faster, right?”
+“Possibly. First, explain what that intermediate tensor used to b......
     </div>
   </a>
   
@@ -767,8 +768,7 @@ Reconstructed teaching scenario: The review dialogue below is fictional. Verifie
     </h3>
     <div class="post-content-preview">
       Series contents · Operators and Layouts · O09 · 阅读中文版
-
-Reconstructed teaching scenario: The story of nested kernels clobbering a register is invented to explain the risk. Verified historical change......
+Two code-generation functions work beautifully in isolation. Combine them, and the result suddenly breaks. The first says, “I only borrowed a s......
     </div>
   </a>
   
@@ -808,8 +808,7 @@ Reconstructed teaching scenario: The story of nested kernels clobbering a regist
     </h3>
     <div class="post-content-preview">
       Series contents · Operators and Layouts · O08 · 阅读中文版
-
-Reconstructed teaching scenario: This article turns the surprise of “even a simple unary operator is wrong” into a sequence of debugging quest......
+If asked to name two operators that ought to be easy to implement, many people would choose Abs and Sign. One takes an absolute value; the othe......
     </div>
   </a>
   

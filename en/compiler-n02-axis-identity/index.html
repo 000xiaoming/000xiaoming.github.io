@@ -458,9 +458,6 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Numerics and Quantization · N02 · <a href="/cn/compiler-n02-axis-identity/">阅读中文版</a></p>
-<blockquote>
-<p>Reconstructed teaching scenario: the story, tensor sizes, and pseudocode are newly designed explanatory material. Historical diffs support the fix of retaining reduction axes before restoring the output shape. The diagnostic workflow and additional tests below are recommendations, not claims of completed execution.</p>
-</blockquote>
 <p>“Everything passes when we keep the dimensions. Everything fails when we drop them.” It sounds like an unusually polite error message: it practically tells you the answer, yet you can still spend a long time staring at the screen.</p>
 <p>The mean itself may be correct. The actual problem is that the third axis before reduction no longer occupies a third position afterward, while the layout-restoration code is still using the old map.</p>
 <span id="more"></span>
@@ -546,14 +543,14 @@
 </tr>
 </tbody>
 </table>
-<p>Historical changes added IR tests for reductions that do not retain dimensions. This establishes a clear regression target; the tests were not rerun here. When reading such a patch, ask whether the test checks only the final shape or also the relationship between intermediate permutations and the reduction. The former protects the interface; the latter helps locate the faulty step.</p>
+<p>Historical changes added IR tests for reductions that do not retain dimensions. This establishes a clear regression target. When reading such a patch, ask whether the test checks only the final shape or also the relationship between intermediate permutations and the reduction. The former protects the interface; the latter helps locate the faulty step.</p>
 <p>The vanishing dimension has not left the computation. It has only disappeared from the data structure. As long as something downstream still refers to it, the compiler owes it a reliable forwarding address.</p>
 <h2 id="7-Use-an-Axis-Identity-Table-to-Prevent-a-Second-Bad-Fix">7. Use an Axis-Identity Table to Prevent a Second Bad Fix</h2>
 <p>During debugging, name axes symbolically before assigning numbers. Suppose the original axes are A, B, C. After a permutation, the list is C, A, B. It says new position zero comes from old axis C, and new position one from old axis A. To reduce old axis B, find B in the new list: it is now at position two. The inverse permutation restores A, B, C; it does not simply reuse the original permutation array.</p>
 <p>This distinguishes two common arrays: “which old position supplies each new position” and “which new position receives each old position.” They are inverses, coinciding only for certain swaps. Tests that only swap two axes may not fail even when the conventions are confused. A three-axis cyclic permutation forces the distinction to become visible.</p>
 <p>Keep labeling the unit reduction axis B instead of deleting it from the list. Axis identity then remains visible throughout: C, A, B becomes C, A, B with B of length one; the inverse permutation restores A, B, C; only the external interface finally removes B. This is why retaining dimensions is easy to prove correct, rather than merely a stylistic preference.</p>
 <p>Shared inputs deserve attention too. When shape normalization changes a value’s type, every consumer observes it in the new coordinate system. Updating the reduction’s axes while missing another axis-sensitive consumer can make the local reduction test pass while the full graph remains incorrect. A composition test should attach both a reduction and another axis-sensitive node to the same input, verifying that the shared mapping is applied once and consumed by both.</p>
-<p>Stage snapshots are useful here: before and after normalization, and before and after legalization, list each value’s shape, axis identities, and output contract. Avoid relying on intuition while browsing one enormous IR log. Four short tables can often show exactly which stage first violates the invariant. This diagnostic process was not executed here; it is a manual method that transfers to other compilers.</p>
+<p>Stage snapshots are useful here: before and after normalization, and before and after legalization, list each value’s shape, axis identities, and output contract. Avoid relying on intuition while browsing one enormous IR log. Four short tables can often show exactly which stage first violates the invariant.</p>
 <!-- series-navigation -->
 <hr>
 <p><a href="/en/compiler-engineering-notes/">Back to series contents</a> · <a href="/en/compiler-n01-reduction-lowering/">Previous</a> · <a href="/en/compiler-n03-reduction-family/">Next</a></p>

@@ -458,9 +458,6 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 资源与调度 · R02 · <a href="/en/compiler-r02-dependency-pressure/">Read in English</a></p>
-<blockquote>
-<p>教学场景重构：文中的任务编号、引擎名称和资源预算都是重新设计的教学例子。源码核实的是依赖分组、压力检查与测试意图；没有执行调度器，也没有测量加速比。</p>
-</blockquote>
 <p>“算术量没有增加多少，怎么连代码都生成不出来？”</p>
 <p>白板上的图非常无辜：一个生产者，接着很多消费者。内存还有余量，计算单元也没增加，可依赖资源池先亮起红灯。把并行程序当成“节点加连线”画出来很容易，麻烦在于每条线最终都要找到一种设备可以理解的等待方式，而同步对象未必无限。</p>
 <span id="more"></span>
@@ -500,7 +497,7 @@
 <h2 id="一个容易漏掉的反例">一个容易漏掉的反例</h2>
 <p>假设两个消费者属于同一个引擎，但运行在不同队列，或者后续命令允许绕过前面的等待。此时 C1 等过 P，不能推导 C2 也等过 P。这是队列模型变化以后，原先正确的屏障合并可能失效的典型场景。</p>
 <p>另一个反例是一个逻辑算子拆成多个任务，选错生产者任务：等待了配置准备，却没等待真正写输出的任务。图级依赖构造必须跟 lowering 后的任务分解一致，不能仅凭原始算子的名称猜测完成点。</p>
-<h2 id="回归矩阵与尚未执行的实验">回归矩阵与尚未执行的实验</h2>
+<h2 id="回归矩阵与实验">回归矩阵与实验</h2>
 <table>
 <thead>
 <tr>
@@ -542,7 +539,7 @@
 </tr>
 </tbody>
 </table>
-<p>提交包含高扇出图的生成测试，以及边界分配、多生产者计数、重复等待和重复释放的检查。本文没有运行这些测试。</p>
+<p>提交包含高扇出图的生成测试，以及边界分配、多生产者计数、重复等待和重复释放的检查。</p>
 <p>建议的实验分两阶段。先用小型离散事件模型验证所有消费者都晚于真正的生产者完成，再比较逐边事件与分组合并策略。记录峰值同步槽数、额外等待边数量、理论临界路径和模拟队列利用率；只有在有真实设备测量条件时，才增加端到端时延。</p>
 <p>图有一百条边，并不意味着需要一百个同步槽。但在删掉第一个槽之前，必须能清楚说出：是哪条队列顺序，替它承担了那份承诺。</p>
 <!-- series-navigation -->
@@ -649,7 +646,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%9B%BE%E7%9A%84%E8%BE%B9%E4%B8%8D%E5%BF%85%E7%AD%89%E4%BA%8E%E4%B8%80%E4%B8%AA%E7%89%A9%E7%90%86%E5%90%8C%E6%AD%A5%E6%A7%BD"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">图的边不必等于一个物理同步槽</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%8A%8A%E8%BE%B9%E6%94%B9%E5%86%99%E6%88%90%E5%8C%BA%E9%97%B4%EF%BC%8C%E9%97%AE%E9%A2%98%E7%AA%81%E7%84%B6%E5%8F%98%E6%B8%85%E6%A5%9A%E4%BA%86"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">把边改写成区间，问题突然变清楚了</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%BF%99%E6%98%AF%E4%B8%80%E7%A7%8D%E5%90%88%E5%B9%B6%EF%BC%8C%E4%B9%9F%E6%98%AF%E4%B8%80%E7%A7%8D%E4%BF%9D%E5%AE%88%E7%AD%89%E5%BE%85"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">这是一种合并，也是一种保守等待</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%B5%84%E6%BA%90%E9%A2%84%E7%AE%97%E4%B8%8D%E8%83%BD%E5%85%A8%E9%83%A8%E4%BA%A4%E7%BB%99%E5%9B%BE%E7%BA%A7%E8%B0%83%E5%BA%A6"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">资源预算不能全部交给图级调度</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%81%9A%E4%B8%A4%E6%AC%A1%E6%A3%80%E6%9F%A5"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">为什么要做两次检查</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%89%8B%E5%B7%A5%E6%BC%94%E7%BB%83%E4%B8%80%E6%AC%A1%E5%90%88%E5%B9%B6%E5%90%8E%E7%9A%84%E8%B4%A6%E6%9C%AC"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">手工演练一次合并后的账本</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%80%E4%B8%AA%E5%AE%B9%E6%98%93%E6%BC%8F%E6%8E%89%E7%9A%84%E5%8F%8D%E4%BE%8B"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">一个容易漏掉的反例</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%9B%9E%E5%BD%92%E7%9F%A9%E9%98%B5%E4%B8%8E%E5%B0%9A%E6%9C%AA%E6%89%A7%E8%A1%8C%E7%9A%84%E5%AE%9E%E9%AA%8C"><span class="toc-nav-number">8.</span> <span class="toc-nav-text">回归矩阵与尚未执行的实验</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%9B%BE%E7%9A%84%E8%BE%B9%E4%B8%8D%E5%BF%85%E7%AD%89%E4%BA%8E%E4%B8%80%E4%B8%AA%E7%89%A9%E7%90%86%E5%90%8C%E6%AD%A5%E6%A7%BD"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">图的边不必等于一个物理同步槽</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%8A%8A%E8%BE%B9%E6%94%B9%E5%86%99%E6%88%90%E5%8C%BA%E9%97%B4%EF%BC%8C%E9%97%AE%E9%A2%98%E7%AA%81%E7%84%B6%E5%8F%98%E6%B8%85%E6%A5%9A%E4%BA%86"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">把边改写成区间，问题突然变清楚了</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%BF%99%E6%98%AF%E4%B8%80%E7%A7%8D%E5%90%88%E5%B9%B6%EF%BC%8C%E4%B9%9F%E6%98%AF%E4%B8%80%E7%A7%8D%E4%BF%9D%E5%AE%88%E7%AD%89%E5%BE%85"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">这是一种合并，也是一种保守等待</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%B5%84%E6%BA%90%E9%A2%84%E7%AE%97%E4%B8%8D%E8%83%BD%E5%85%A8%E9%83%A8%E4%BA%A4%E7%BB%99%E5%9B%BE%E7%BA%A7%E8%B0%83%E5%BA%A6"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">资源预算不能全部交给图级调度</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%81%9A%E4%B8%A4%E6%AC%A1%E6%A3%80%E6%9F%A5"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">为什么要做两次检查</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%89%8B%E5%B7%A5%E6%BC%94%E7%BB%83%E4%B8%80%E6%AC%A1%E5%90%88%E5%B9%B6%E5%90%8E%E7%9A%84%E8%B4%A6%E6%9C%AC"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">手工演练一次合并后的账本</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%80%E4%B8%AA%E5%AE%B9%E6%98%93%E6%BC%8F%E6%8E%89%E7%9A%84%E5%8F%8D%E4%BE%8B"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">一个容易漏掉的反例</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%9B%9E%E5%BD%92%E7%9F%A9%E9%98%B5%E4%B8%8E%E5%AE%9E%E9%AA%8C"><span class="toc-nav-number">8.</span> <span class="toc-nav-text">回归矩阵与实验</span></a></li></ol>
         
         </div>
       </aside>

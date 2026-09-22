@@ -458,9 +458,6 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Numerics and Quantization · N10 · <a href="/cn/compiler-n10-rewrite-result-types/">阅读中文版</a></p>
-<blockquote>
-<p>Reconstructed teaching scenario: the failure sequence and dialogue are reconstructed for explanation, with newly designed examples and scales. The historical patch explicitly changed the folded result’s element-type source from the input to the original normalization output, and added a test with different scales. That test was not rerun here.</p>
-</blockquote>
 <p>“The floating-point model compiles. The quantized one cannot get through the first stage.” Someone starts suspecting backend integer instructions. But the failure happens too early: before instruction emission, the function’s return type already mismatches.</p>
 <p>The cause is small: a new node takes the correct shape but the wrong element type. It is like updating an address after moving house, then accidentally copying the neighbor’s name onto the record.</p>
 <span id="more"></span>
@@ -569,7 +566,7 @@
 </tbody>
 </table>
 <p>Also inspect whether a failed path modifies the original operation before returning failure. A rewrite should ideally validate enough information before committing changes; otherwise even a pattern that reports no match may leave unexpected attributes. Related historical work changed some attribute handling to construct attributes on the new node instead of modifying the old one first. Such details help maintain rewrite discipline.</p>
-<p>Correcting a type source does not usually increase execution speed directly; it restores correctness and compilability. Folding may remove helper nodes, but a reshape that was only a view did not move data, so fewer nodes do not establish fewer memory accesses. No speed figures are reported here.</p>
+<p>Correcting a type source does not usually increase execution speed directly; it restores correctness and compilability. Folding may remove helper nodes, but a reshape that was only a view did not move data, so fewer nodes do not establish fewer memory accesses.</p>
 <p>The revealing point is that no elaborate mathematical derivation went wrong. Identical storage width concealed different numerical types. Once types carry scales, copying a type is no longer clerical work: it copies a numerical promise.</p>
 <h2 id="7-Make-Correct-Type-Propagation-a-Lasting-Rule">7. Make Correct Type Propagation a Lasting Rule</h2>
 <p>A fix can easily stop at replacing “input” with “output” on one line. To prevent the same error returning under another operator, classify rewrite helpers semantically: pure views preserve numerical element types; actual computation nodes use their result contracts; transformations that alter layout encodings explicitly remap them. A caller should see the category in the parameters, rather than guessing from “like” in a function name.</p>

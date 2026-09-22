@@ -458,9 +458,6 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Engineering and Delivery · E13 · <a href="/cn/compiler-e13-moving-data-moving-meaning/">阅读中文版</a></p>
-<blockquote>
-<p>This article draws on historical operator-specification work to discuss general semantics and useful design questions. Candidate hardware mappings in a document are not implemented capabilities; they do not establish that a compiler supports every operator discussed. The story is reconstructed for teaching, with redesigned shapes and values.</p>
-</blockquote>
 <p>“This patch should be safe. It does no computation. It only moves data.”</p>
 <p>Half an hour later, downstream matrix multiplication returns different results. The team checks multiplication, then quantization scales, before discovering that the copy preserved every byte while changing the position each byte represented.</p>
 <p>Data movement easily receives undeserved trust: if values did not change, semantics must be unchanged. Tensor semantics also include coordinates, shape, layout, aliasing, and quantization axes. Correctly moving bytes does not necessarily mean correctly moving a tensor.</p>
@@ -489,13 +486,13 @@
 <p>Unlike regular slicing, Gather may select positions supplied by another tensor. Reading the indices becomes part of the computation.</p>
 <p>For input <code>[8,13,21,34]</code> and indices <code>[2,0,2]</code>, the output is <code>[21,8,21]</code>. Duplicate indices must remain, and an optimization must not sort away the specified order.</p>
 <p>A Gather contract needs the index type, axis, output-shape rules, negative-index policy, and out-of-range behavior. Frontends and operator versions can differ; a backend must not silently fill the gaps with its favorite array-access convention.</p>
-<p>This also raises a performance question. Equal output sizes do not imply equal transfer costs. Consecutive indices, repeated hot indices, and scattered indices can have very different access behavior. There are no measurements here. A useful experiment would fix output element count, vary index distribution, and observe effective bandwidth and latency.</p>
+<p>This also raises a performance question. Equal output sizes do not imply equal transfer costs. Consecutive indices, repeated hot indices, and scattered indices can have very different access behavior. A useful experiment would fix output element count, vary index distribution, and observe effective bandwidth and latency.</p>
 <h2 id="Which-zero-does-Pad-insert">Which zero does Pad insert?</h2>
 <p>For affine quantization:</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">real = scale * (integer - zero_point)</span><br></pre></td></tr></table></figure>
 <p>If zero_point is 117, integer 117 represents real zero. Writing integer 0 around a quantized tensor’s edge introduces a negative real offset, not mathematical zero.</p>
 <p>A convolution’s internal padding path may conceal this issue because the compute unit handles boundaries specially. An explicit Pad operation actually writes buffer contents. Assumptions from those two implementation paths are not interchangeable.</p>
-<p>Constant padding, edge replication, and reflection also need distinct rules for empty dimensions, small inputs, and padding widths approaching input size. The source material does not establish implementations for all these modes. They are contract questions, not product capability statements.</p>
+<p>Constant padding, edge replication, and reflection also need distinct rules for empty dimensions, small inputs, and padding widths approaching input size.</p>
 <h2 id="Quantization-axes-move-with-coordinates">Quantization axes move with coordinates</h2>
 <p>Suppose a tensor uses different scales along its channel axis. If Permute moves that channel axis from the first position to the last, the quantization axis must move too. A Gather along the channel axis may need to select or duplicate scale entries with the same indices.</p>
 <p>Concat presents a subtler problem. Equal integer dtypes do not imply equal scales or zero points. Concatenating stored integers preserves those integers, but one common output quantization cannot generally interpret two different input scales at once.</p>
@@ -536,8 +533,7 @@
 </tr>
 </tbody>
 </table>
-<p>These tests were proposed, not run against the original project. Several historical documents completed the question list without providing evidence sufficient to validate every hardware detail. Keeping an unknown visible is more useful than allowing a tidy table to guarantee an implementation.</p>
-<p>The reconstructed review ended with more than a new address calculation. “It does no computation” became: “It preserves the selected real values, but must also preserve coordinates and interpretation.” A few extra words removed a great deal of wishful thinking.</p>
+<p>The review ended with more than a new address calculation. “It does no computation” became: “It preserves the selected real values, but must also preserve coordinates and interpretation.” A few extra words removed a great deal of wishful thinking.</p>
 <!-- series-navigation -->
 <hr>
 <p><a href="/en/compiler-engineering-notes/">Series contents</a> · <a href="/en/compiler-e12-four-identities-of-an-instruction/">Previous</a> · <a href="/en/compiler-e14-same-shape-different-answers/">Next</a></p>

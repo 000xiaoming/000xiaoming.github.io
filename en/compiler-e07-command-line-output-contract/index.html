@@ -458,9 +458,6 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Engineering and Delivery · E07 · <a href="/cn/compiler-e07-command-line-output-contract/">阅读中文版</a></p>
-<blockquote>
-<p>Reconstructed teaching scenario: tool names and file extensions below are fictional. The evidence comes from changes to compilation entry points, debug mode, output directories, and a compatibility wrapper. No original project tests were run.</p>
-</blockquote>
 <p>A compilation succeeds in the morning. In the afternoon, someone changes the model and compilation fails. An automation script sees that the output file still exists and sends the morning’s model to execution. The team then studies the afternoon’s graph to explain the wrong output. The investigation started with the wrong artifact.</p>
 <p>This is a counterexample about an output contract, not a retelling of a documented incident: <strong>a file’s existence does not mean this invocation successfully produced it.</strong></p>
 <span id="more"></span>
@@ -516,7 +513,7 @@
 <li>Performance meets expectations: a separate set of experiments is still required.</li>
 </ul>
 <p>The historical changes checked that an expected final file existed. Documentation also warned that an old model could remain after failure. That limitation should be preserved rather than rewritten as “stale outputs are completely solved.”</p>
-<p>A further design could use an isolated workspace per invocation, validate success before publishing, and record a job identifier or input digest. A temporary-file-and-rename design also needs to consider filesystem boundaries, concurrent overwrite policy, and when readers can observe the result. These are proposals, not guarantees established by the reviewed diff.</p>
+<p>A further design could use an isolated workspace per invocation, validate success before publishing, and record a job identifier or input digest. A temporary-file-and-rename design also needs to consider filesystem boundaries, concurrent overwrite policy, and when readers can observe the result.</p>
 <h2 id="Why-retain-an-old-entry-point-but-remove-most-of-its-code">Why retain an old entry point but remove most of its code?</h2>
 <p>One pipeline often accumulates several historical scripts. Copying the workflow to preserve an old command is convenient initially. Over time, it produces two slightly different option sets, cleanup policies, and collections of bugs.</p>
 <p>A lighter compatibility wrapper warns about deprecation and delegates to one primary implementation. Fixes remain centralized, and the compatibility layer does not quietly become a second compiler driver.</p>

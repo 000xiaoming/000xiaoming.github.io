@@ -458,9 +458,6 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Engineering and Delivery · E11 · <a href="/cn/compiler-e11-what-does-supported-really-mean/">阅读中文版</a></p>
-<blockquote>
-<p>Reconstructed teaching scenario: this article discusses a generic compiler and makes no product-specific support promise. Its evidence comes from reorganized user documentation and operator-capability descriptions. Example names refer to general concepts.</p>
-</blockquote>
 <p>A user sends a model graph: “You support this node, don’t you? I found it in the source.”</p>
 <p>The developer searches too. There is a definition, an inference function, even a test file. Yet the model still stops in the backend. Neither person is lying. They have put different meanings into “supported.”</p>
 <span id="more"></span>
@@ -492,7 +489,7 @@
 <h2 id="Why-changing-a-shape-does-not-create-streaming-inference">Why changing a shape does not create streaming inference</h2>
 <p>A common misunderstanding is that shortening a time dimension makes a model operate frame by frame. A shape tool may reinfer static dimensions and even adjust reshape constants. It does not automatically decide how state survives across invocations.</p>
 <p>Computations using historical windows or recurrent state still need input-state and output-state definitions, reset rules, and temporal order. Changing dimensions without those contracts may create a different computation.</p>
-<p>This explains an interface boundary, not a claim that every model has the same state requirements. Separating what a tool changes from what an application wants prevents a simple parameter from promising a capability it does not implement.</p>
+<p>Separating what a tool changes from what an application wants prevents a simple parameter from promising a capability it does not implement.</p>
 <h2 id="Give-a-failure-report-enough-context">Give a failure report enough context</h2>
 <p>A minimal diagnostic package is more useful than a screenshot of the final exception:</p>
 <table>

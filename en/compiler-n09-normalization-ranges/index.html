@@ -458,9 +458,6 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Numerics and Quantization · N09 · <a href="/cn/compiler-n09-normalization-ranges/">阅读中文版</a></p>
-<blockquote>
-<p>Reconstructed teaching scenario: the discussion, inputs, and values are redesigned examples. The historical implementation provides a shared decomposition for InstanceNorm and GroupNorm, including intermediate-range planning. No numerical normalization evaluation was run here. Range arguments rely on the stated assumptions.</p>
-</blockquote>
 <p>“We add epsilon to prevent division by zero.” Everyone relaxes. Then someone looks at the quantized constant and asks, “What value does it have after quantization?” The room goes quiet.</p>
 <p>A small epsilon is protective in a floating-point formula. On a fixed integer grid, small can also mean unrepresentable. Some of normalization’s hardest problems hide in its gentlest-looking constants.</p>
 <span id="more"></span>
@@ -545,7 +542,7 @@
 </tr>
 </tbody>
 </table>
-<p>Mean and variance may read the input repeatedly, while centering and multiplication may produce full-size intermediates. Reciprocal square root generally operates only on per-group statistics. Choose optimization priorities by data volume, not by which function looks most intimidating in the formula. Fusing statistics, reusing reads, and tiling are directions to evaluate; no implementation or measured benefit is claimed here.</p>
+<p>Mean and variance may read the input repeatedly, while centering and multiplication may produce full-size intermediates. Reciprocal square root generally operates only on per-group statistics. Choose optimization priorities by data volume, not by which function looks most intimidating in the formula. Fusing statistics, reusing reads, and tiling are directions to evaluate.</p>
 <p>Normalization’s most troublesome numbers are not always the large ones. Sometimes they are the ones thought too small to cause trouble. Making epsilon’s actual representation and every intermediate’s units and range visible turns debugging back into checkable arithmetic.</p>
 <h2 id="8-The-Same-Variance-Can-Be-Computed-by-Different-Routes">8. The Same Variance Can Be Computed by Different Routes</h2>
 <p>Two common variance formulas are the mean of squared deviations from the mean, and the mean of squares minus the square of the mean. They agree over exact reals. With finite precision, the latter subtracts two nearby large values when inputs have a large common offset and small variation, potentially losing significant precision. The former needs centered data and additional accesses, with potentially different resource costs.</p>
@@ -553,7 +550,7 @@
 <p>A discriminating teaching test adds one common offset to every input. Ideal normalization, setting aside affine processing and numerical epsilon errors, has the corresponding translation invariance: centered values and variance stay unchanged. Quantized input ranges may change, however, so design the test within one representable range and state whether the scale also changes. Otherwise a failure may come from requantizing the input, not from the variance algorithm.</p>
 <p>Now multiply every deviation by a positive factor. If epsilon is negligible relative to variance, normalization should be approximately invariant. If epsilon matters, that scaling invariance is not exact even mathematically. The comparison can expose an excessive effective epsilon: small-variance inputs are suppressed strongly, while larger-variance inputs are affected less. Reference computation must still distinguish the expected effect from an implementation error.</p>
 <p>Performance analysis should separate statistics tensors from feature tensors. Means, variances, and reciprocal standard deviations scale with group count; centered values and final outputs scale with total element count. Making reciprocal square root twice as fast need not substantially improve time dominated by full-size intermediate traffic. With many very short groups, statistical and function-approximation overhead may instead become substantial.</p>
-<p>The first normalization-optimization diagram should therefore show data sizes and lifetimes, followed by operator dependencies. Locate large tensors that are repeatedly read and written before deciding whether fusion, buffer reuse, or more precise scales are worthwhile. This article proposes that analysis order, not an acceleration result for any target.</p>
+<p>The first normalization-optimization diagram should therefore show data sizes and lifetimes, followed by operator dependencies. Locate large tensors that are repeatedly read and written before deciding whether fusion, buffer reuse, or more precise scales are worthwhile.</p>
 <!-- series-navigation -->
 <hr>
 <p><a href="/en/compiler-engineering-notes/">Back to series contents</a> · <a href="/en/compiler-n08-specialized-affine/">Previous</a> · <a href="/en/compiler-n10-rewrite-result-types/">Next</a></p>

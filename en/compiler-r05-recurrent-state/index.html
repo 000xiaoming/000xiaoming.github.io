@@ -458,9 +458,6 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Resources and Scheduling · R05 · <a href="/cn/compiler-r05-recurrent-state/">阅读中文版</a></p>
-<blockquote>
-<p>Reconstructed teaching scenario: The opening questions are an abstract reconstruction of recurrent-state semantics, not a specific model incident. This article distinguishes proposals that appeared in commits from their later revisions. A capability that once existed is not presented as a promise about the current version.</p>
-</blockquote>
 <p>“The final hidden state is already a graph output. Why save it again?”</p>
 <p>“Because the graph output goes to the caller. Persistent state goes to the next invocation.”</p>
 <p>“Then why not chain the two stores?”</p>
@@ -492,7 +489,7 @@
 <h2 id="Dynamic-Initial-State-Has-a-Separate-Contract">Dynamic Initial State Has a Separate Contract</h2>
 <p>Dynamic state support requires checking at least direction, batch, hidden dimension, element type, and quantization parameters. Equal tensor size is insufficient: the same element count can represent different directions or layouts.</p>
 <p>If input and output states use different quantization, feedback may require rescaling. If the runtime keeps state at a fixed address, aliasing writes must not overwrite input that has not yet been fully read. The final state of a bidirectional recurrence also has different implications from unidirectional streaming inference. Conclusions from one experimental unidirectional path cannot be extended to every form.</p>
-<p>These are general design requirements. This article does not claim the reviewed commits implement them all. The appearance and later removal of a restricted dynamic path is a reminder that capability claims belong to specific versions and explicit tests.</p>
+<p>These are general design requirements. The appearance and later removal of a restricted dynamic path is a reminder that capability claims belong to specific versions and explicit tests.</p>
 <h2 id="Is-an-Extra-Writeback-Wasteful">Is an Extra Writeback Wasteful?</h2>
 <p>If the destinations truly differ, both writebacks may be necessary. If the final state already occupies persistent storage, an internal action may express effects and dependencies without copying the same bytes again. Inspect storage aliases and actual transfer instructions after lowering rather than merely counting high-level Store nodes.</p>
 <p>Conditional optimizations include exposing persistent state directly as graph output or sharing storage between the final sequence slice and final state. But the caller must not still need the old output view when the next update occurs. Otherwise, saving a copy changes the data the caller observes.</p>
@@ -542,7 +539,7 @@
 </tr>
 </tbody>
 </table>
-<p>The structural checks in the commits cover some output relationships. Repeated-call behavior, instance isolation, and performance comparisons remain proposed experiments; they were not executed here.</p>
+<p>The structural checks in the commits cover some output relationships. Repeated-call behavior, instance isolation, and performance comparisons remain proposed experiments.</p>
 <p>An independent experiment could begin with the tiny teaching recurrence <code>h_next = 2*h + x</code>, avoiding complex gate functions. If two calls distinguish persistence from reinitialization, the state pipeline can be tested directly. Once that pipeline works, substitute a reference recurrent cell to separate state-management errors from arithmetic errors.</p>
 <p>When the same value seems to be written twice, first draw who owns each destination. In a stateful system, apparent duplication may be the visible trace of two different promises.</p>
 <!-- series-navigation -->

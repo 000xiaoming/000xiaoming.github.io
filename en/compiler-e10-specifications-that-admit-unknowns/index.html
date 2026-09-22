@@ -458,9 +458,6 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Engineering and Delivery · E10 · <a href="/cn/compiler-e10-specifications-that-admit-unknowns/">阅读中文版</a></p>
-<blockquote>
-<p>Reconstructed teaching scenario: the review questions below are illustrative. The evidence comes from the evolution of operator notes and design documents, many of which explicitly described candidate approaches. A conceptual diagram is not treated as a completed implementation.</p>
-</blockquote>
 <p>At a review, someone presents a polished diagram: an input tensor passes through an operator, and the output returns to memory. A few convincing assembly lines make the page look complete.</p>
 <p>Then someone asks, “Does that configuration field actually exist in the code?”</p>
 <p>The room goes quiet. The field name was invented to explain the idea, but readers had already interpreted it as a hardware interface.</p>
@@ -545,7 +542,7 @@
 <h2 id="Why-documentation-needs-regression-checks-too">Why documentation needs regression checks too</h2>
 <p>An example path that goes up one directory too far can stop a reader before any algorithm runs. A removed option left in a README creates a fictional entry point. Once documentation ships with installed artifacts, links and required pages become part of package completeness.</p>
 <p>The reviewed history included tiny path corrections alongside broad operator examples and user-facing documentation work. Their technical value differs, but both belong in the engineering account: one restores reproducibility of an example; the other organizes semantics and implementation evidence.</p>
-<p>Suggested checks cover references, relative paths, command options, formula assumptions, and support boundaries. The original project’s examples were not executed here. A conceptual workflow should be checked for logical consistency rather than presented as directly runnable code.</p>
+<p>Suggested checks cover references, relative paths, command options, formula assumptions, and support boundaries. A conceptual workflow should be checked for logical consistency rather than presented as directly runnable code.</p>
 <h2 id="Honesty-does-not-make-a-story-dull">Honesty does not make a story dull</h2>
 <p>A good question can be more engaging than a row of confident claims: “Why does changing only the output scale require different parameters for what looks like the same subtraction?” “Why might an operation with equal input and output shapes still introduce a copy?” These questions guide reasoning without inventing missing facts.</p>
 <p>Useful technical documentation does not always look finished. It makes the next verification step clear, turning unknowns into boundaries and boundaries into questions that can be discussed and resolved.</p>

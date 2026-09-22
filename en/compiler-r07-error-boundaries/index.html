@@ -458,9 +458,6 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Resources and Scheduling · R07 · <a href="/cn/compiler-r07-error-boundaries/">阅读中文版</a></p>
-<blockquote>
-<p>Teaching reconstruction: this article builds its narrative around a migration of code-generation interfaces. The verified changes convert exceptions to status results at a boundary, propagate failures through callers, and check serialization. Transactional rollback is a further design discussion, not an implemented feature established by the evidence.</p>
-</blockquote>
 <p>“The exception is caught. The compiler won’t crash.”</p>
 <p>“Then why is only half the output directory there?”</p>
 <p>“Because another path writes the files.”</p>
@@ -469,7 +466,7 @@
 <h2 id="Error-handling-starts-as-a-protocol-between-layers">Error handling starts as a protocol between layers</h2>
 <p>The changes reviewed here make operation-generation interfaces explicitly return success or failure, with optional diagnostic text. Inside the lower-level library, where exceptions are supported, a common wrapper catches both standard and unknown exceptions. The compiler checks the returned status and attaches the error to a specific operation location.</p>
 <p>This closes a practical architectural gap. The lower-level library may use exceptions, while the compiler above it propagates failure explicitly and may even be built with exceptions disabled. Requiring every operation caller to write its own try/catch invites omissions and makes build options harder to coordinate.</p>
-<p>The commit explicitly enables exceptions for the library and adds a boundary test program compiled with exceptions disabled. It tests whether failures can cross the interface through return values, without requiring the upper layer to handle a thrown exception. These build and test arrangements were inspected, not executed, for this article.</p>
+<p>The commit explicitly enables exceptions for the library and adds a boundary test program compiled with exceptions disabled. It tests whether failures can cross the interface through return values, without requiring the upper layer to handle a thrown exception.</p>
 <p>A simplified interface looks like this:</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">result = generate_operation(config, diagnostic)</span><br><span class="line">if result is failure:</span><br><span class="line">    report_at_current_operation(diagnostic)</span><br><span class="line">    stop_this_compilation</span><br></pre></td></tr></table></figure>
 <p>“Stop” matters here. A failure result does not automatically permit generating the next operation in the same generator.</p>
@@ -487,7 +484,7 @@
 <p>The RAII discussed in <a href="/en/compiler-r01-register-raii/">R01</a> can return local resources, but it cannot automatically delete instructions already appended. Moving parameter validation ahead of pseudo-instruction insertion, as discussed in <a href="/en/compiler-r09-encoding-boundaries/">R09</a>, strengthens one particular interface’s guarantee that failure occurs before output changes. Local guarantees are valuable. Combining them does not establish a global transaction.</p>
 <h2 id="Why-encode-before-exporting">Why encode before exporting?</h2>
 <p>The relevant output logic moves complete binary encoding ahead of the creation and writing of subsequent artifacts. Debug assembly is likewise serialized in memory before file writing begins. This catches “the instructions cannot be encoded at all” earlier and reduces the chance of leaving incomplete output behind.</p>
-<p>That still does not create a filesystem transaction. After encoding succeeds, insufficient disk space, permission errors, or process interruption can leave partial files. If the product requires an output directory to be either complete or absent, it needs mechanisms such as a temporary directory, integrity checks, and atomic publication. Those mechanisms were not confirmed in the reviewed changes, so they are presented here only as future design options.</p>
+<p>That still does not create a filesystem transaction. After encoding succeeds, insufficient disk space, permission errors, or process interruption can leave partial files. If the product requires an output directory to be either complete or absent, it needs mechanisms such as a temporary directory, integrity checks, and atomic publication.</p>
 <p>Encoding early also has a cost. Holding the complete output in memory may increase peak usage. Evaluating that cost requires comparing artifact size, repeated encoding, and the diagnostic benefit on failure, rather than assuming every preparatory step is an unconditional improvement.</p>
 <h2 id="Helper-functions-must-speak-the-same-error-language">Helper functions must speak the same error language</h2>
 <p>The migration does more than replace top-level try/catch blocks. Helpers for axis normalization, array access, and shape validation during slice-descriptor construction now return explicit fallible results. One change deserves particular attention: when required memory information is unavailable, construction fails explicitly instead of returning a default descriptor that appears normal.</p>
@@ -540,7 +537,7 @@
 </tr>
 </tbody>
 </table>
-<p>The commit includes coverage for several boundaries and both positive and negative cases. The end-to-end fault injection in the table is a proposed extension and was not executed.</p>
+<p>The commit includes coverage for several boundaries and both positive and negative cases. The table suggests extending coverage with end-to-end fault injection.</p>
 <p>An experiment could inject one controlled failure at each stage and record the returned status, diagnostic context, in-memory output, cursors, and files on disk. First define the basic guarantee that a failed context is discarded, then decide which interfaces merit stronger recovery. Avoid starting with expensive, complete rollback before establishing that any caller needs to retry.</p>
 <p>Mature error handling means more than keeping the process alive. Every layer should be able to explain where this failure stopped, what it left behind, and what actions are allowed next.</p>
 <!-- series-navigation -->

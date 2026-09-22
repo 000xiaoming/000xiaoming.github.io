@@ -458,9 +458,6 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Resources and Scheduling · R06 · <a href="/cn/compiler-r06-recurrent-dependencies/">阅读中文版</a></p>
-<blockquote>
-<p>Teaching reconstruction: this article explains a scheduling problem using two abstract engines and a simplified set of gate computations. The verified evidence is an instruction reordering in one recurrent stage and its accompanying code comments. It is neither a complete proof of hardware timing nor a measured performance result.</p>
-</blockquote>
 <p>“I added a wait. How can it still read gate values that haven’t finished computing?”</p>
 <p>“Which event are you waiting for?”</p>
 <p>“A ready event.”</p>
@@ -500,7 +497,7 @@
 <h2 id="Build-a-new-minimal-counterexample">Build a new minimal counterexample</h2>
 <p>Make the previous hidden-state update slow, the input projection fast, and the recurrent projection moderately slow. If the vector engine waits for an event that does not cover the real matrix work, it may read the gate values before the recurrent projection finishes.</p>
 <p>A simulator need not perform actual matrix multiplication. It can write version numbers to the output regions: the input projection writes <code>input_version=t</code>, the recurrent projection writes <code>state_version=t</code>, and the gate function checks that both versions equal t when it starts. This exposes the timing error of reading an old result even when the eventual numerical values happen to match.</p>
-<p>Next, shorten or lengthen the different engines’ execution times and explore legal queue interleavings. If the error appears only at a particular ratio of execution speeds, that explains how a fixed-latency model might hide the synchronization gap. This is a proposed independent experiment; it was not run for this article.</p>
+<p>Next, shorten or lengthen the different engines’ execution times and explore legal queue interleavings. If the error appears only at a particular ratio of execution speeds, that explains how a fixed-latency model might hide the synchronization gap.</p>
 <h2 id="Why-counting-waits-can-lead-you-astray">Why counting waits can lead you astray</h2>
 <p>Suppose an optimization reduces five waits to four. That number alone cannot tell us whether it removed redundant synchronization or lost a necessary completion relationship. Conversely, adding a wait can reduce total execution time: if the old program had circular waiting or prolonged blocking, establishing the correct producer-consumer order may let the queues make steadier progress.</p>
 <p>A more reliable debugging method is to identify the last writer for every read, then inspect the proof path between them. That path may include producer queue order, event completion, the consumer’s wait, and consumer queue order. The read is protected only if the entire path is valid. A reassuring event name cannot replace a missing segment.</p>

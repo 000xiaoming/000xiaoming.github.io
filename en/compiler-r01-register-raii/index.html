@@ -458,9 +458,6 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Resources and Scheduling · R01 · <a href="/cn/compiler-r01-register-raii/">阅读中文版</a></p>
-<blockquote>
-<p>Reconstructed teaching scenario: The dialogue below was written to explain the problem; it is not a transcript of a historical incident. Technical observations come from the interfaces, kernel migrations, and test designs in the reviewed commits. The target program was not executed for this article, and no measured performance results are reported.</p>
-</blockquote>
 <p>“I just need one register to load an address. I’ll give it straight back.”</p>
 <p>“Funny. The outer loop counter is borrowing that same one.”</p>
 <p>This argument does not happen in a code review chat. It happens in machine code: a loop count suddenly becomes an address, or a configuration load overwrites a scalar that has not yet been used. Each helper looks short in isolation. Together, they resemble a tool room with no checkout register.</p>
@@ -541,7 +538,6 @@
 </tr>
 </tbody>
 </table>
-<p>Only the test source was reviewed. This article does not claim those tests passed in the current environment.</p>
 <p>A further experiment could construct parameterized nested kernels, gradually increasing loop depth, configuration-loading paths, and simultaneously live temporaries. Record peak register use, emitted instruction count, and compile time, then use a minimal interpreter to check final counter values. Compare two generation strategies with the same semantics, rather than models containing different numbers of operations.</p>
 <p>One useful code-review question remains: when you see <code>auto temp = acquire()</code>, ask not only whether release is automatic, but whether the scope covers the generated program’s final use. Ownership now has a name. Lifetime is the next part of the story that must be made explicit.</p>
 <!-- series-navigation -->

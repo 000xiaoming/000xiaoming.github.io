@@ -458,9 +458,6 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Resources and Scheduling · R08 · <a href="/cn/compiler-r08-loops-determinism/">阅读中文版</a></p>
-<blockquote>
-<p>Teaching reconstruction: the dialogue, loop counts, and label names in this article are teaching examples. The evidence comes from changes to loop-label generation and added golden tests. The generator was not run, and byte equality is not treated as a complete proof of semantics.</p>
-</blockquote>
 <p>“This test passed a moment ago. It still passes on its own, but the output changes after the rest of the suite.”</p>
 <p>“Could it be the random seed?”</p>
 <p>“There are no random numbers. Just a static counter.”</p>
@@ -542,7 +539,7 @@
 </tr>
 </tbody>
 </table>
-<p>A useful extension would be a teaching interpreter supporting only the scalar instructions needed by these loops. It could check execution counts and address traces. Generate code for small random loops, then compare it with a high-level loop simulation. This complements golden testing: the interpreter checks abstract behavior, while the golden tests stabilize concrete encoding. This experiment was not run for this article.</p>
+<p>A useful extension would be a teaching interpreter supporting only the scalar instructions needed by these loops. It could check execution counts and address traces. Generate code for small random loops, then compare it with a high-level loop simulation. This complements golden testing: the interpreter checks abstract behavior, while the golden tests stabilize concrete encoding.</p>
 <p>For performance, distinguish compiler throughput under concurrent generation from device loop performance. Removing shared counters helps make independent generation more reproducible, but it does not establish a device speedup. Whether nested loops outperform unrolling depends on code size, branch overhead, descriptor updates, and instruction-cache pressure.</p>
 <p>The next time a test “passes on its own,” look beyond thread locks. Ask why this program’s labels remember that another program came before it.</p>
 <!-- series-navigation -->

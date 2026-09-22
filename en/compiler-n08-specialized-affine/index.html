@@ -458,9 +458,6 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Numerics and Quantization · N08 · <a href="/cn/compiler-n08-specialized-affine/">阅读中文版</a></p>
-<blockquote>
-<p>Reconstructed teaching scenario: the dialogue is fictional and illustrates design-review questions. The history contains additions of a dedicated affine backend, replacement by general multiplication and addition, and removal of the dedicated implementation. Commits from different branches are not stitched together by date into an unverified release narrative.</p>
-</blockquote>
 <p>“We were extending the dedicated operator last week. Why are we deleting it this week?” In a code review, the question can sound awkward. The useful follow-up is not “who took the wrong turn?” but “which abstraction boundary did we discover was in the wrong place?”</p>
 <p>Compiler design often works this way. The first implementation makes the problem visible; the second reveals which layer should own it.</p>
 <span id="more"></span>
@@ -529,7 +526,7 @@
 <p>The drama in a technical article should come from the structure of the problem, not from turning every commit title into a heroic moment. Sometimes the honest sentence is simply: “This entry only removed temporary notes.”</p>
 <h2 id="6-How-to-Judge-Whether-the-Design-Change-Was-Worthwhile">6. How to Judge Whether the Design Change Was Worthwhile</h2>
 <p>Create at least two comparisons. The first covers functional contracts: layouts, widths, parameter forms, fusion attributes, and invalid inputs in each path. The second is a resource ledger: constant size, peak local memory, intermediate materializations, instruction-configuration counts, and actual runtime.</p>
-<p>Proposed regressions, not executed here, include:</p>
+<p>Proposed regressions include:</p>
 <ul>
 <li>Run the same model through dedicated and decomposed paths; compare the real-value semantics of intermediates and final integer outputs.</li>
 <li>Make the product exceed the range before bias cancels it; check whether extra saturation changes the result.</li>
@@ -545,7 +542,7 @@
 <p>For example, if the dedicated implementation supports only certain layouts and parameter forms, check those constraints explicitly in its matcher and otherwise use general multiply-add. Avoid generating half a configuration only to fail deep inside the kernel on an unknown shape. An early support boundary makes it easier to distinguish unsupported models, missing legalization, and backend bugs.</p>
 <p>Fallbacks need tests too. A general path with two rounding steps and a dedicated path with one may agree only within an allowed error bound, not bit for bit. Specify the required equivalence level: exact identity, an absolute error limit, or another mathematically justified bound. Otherwise the fast-path switch can make regression behavior appear intermittently correct.</p>
 <p>When deleting a dedicated node, search in the opposite direction as well: which optimizations depended on that node to recognize affine structure? If those opportunities disappear, should new recognition patterns operate on the general graph? Restoring every performance opportunity immediately is not always necessary, but any loss should be visible. Successful linking alone does not complete deletion; the representation’s former analytical role also needs accounting.</p>
-<p>Documents deserve equally precise handling. A temporary review draft should not indefinitely serve as a specification, but its unresolved questions may deserve stable design notes, test cases, or recorded conclusions. Deleting a draft reduces stale information; forgetting its unresolved questions does not help. The historical deletion alone cannot tell us how later archival work was handled, so this article discusses the principle without inventing a process.</p>
+<p>Documents deserve equally precise handling. A temporary review draft should not indefinitely serve as a specification, but its unresolved questions may deserve stable design notes, test cases, or recorded conclusions. Deleting a draft reduces stale information; forgetting its unresolved questions does not help.</p>
 <p>A useful design retrospective need not portray every change of direction as part of the original plan. “The implementation exposed these constraints, so we moved the boundary” helps future engineers more than editing history into a perfect straight line. Readers need the conditions behind a decision, not a legend without forks.</p>
 <!-- series-navigation -->
 <hr>

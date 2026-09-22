@@ -458,9 +458,6 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Engineering and Delivery · E03 · <a href="/cn/compiler-e03-one-toolchain-three-versions/">阅读中文版</a></p>
-<blockquote>
-<p>Reconstructed teaching scenario: the terminal conversation below illustrates the issue. The technical evidence comes from changes to toolchain discovery, generator selection, and API adaptation. This is not a complete migration guide for any public release.</p>
-</blockquote>
 <p>“I fixed the LLVM path. Why does the generated code still fail to compile?”</p>
 <p>The configuration log reports the right dependency directory. The compiler complains that an interface is missing. The first response is to add headers. A few files start compiling; another target breaks.</p>
 <p>It is worth pausing for a question that sounds almost too simple: is this build actually using only one LLVM/MLIR toolchain?</p>
@@ -481,13 +478,13 @@
 <p>The reviewed adaptations changed pass lookup, arithmetic operation construction, and explicit interface includes. All can be called “version compatibility,” but they require at least three kinds of reasoning.</p>
 <p>First, an API may move to a different class or namespace. Confirm the meaning of its arguments, return value, and failure behavior. Finding a similarly named function is not the end of the migration.</p>
 <p>Second, header dependencies may need to become explicit. A previously indirect include happened to expose an interface; an update removed that accidental connection. The usual repair is a direct dependency at the use site, not an oversized shared header that makes every module happen to see everything again.</p>
-<p>Third, a replacement may differ semantically. Floating-point maximum operations can have similar names but different behavior for NaNs or signed zero. The reviewed diff did replace the relevant operation class. Successful compilation alone cannot establish equivalence at those boundaries. Check the semantics for the versions involved and verify edge cases. The article does not turn that substitution into an unproven claim of a complete numerical migration.</p>
+<p>Third, a replacement may differ semantically. Floating-point maximum operations can have similar names but different behavior for NaNs or signed zero. The reviewed diff did replace the relevant operation class. Successful compilation alone cannot establish equivalence at those boundaries. Check the semantics for the versions involved and verify edge cases.</p>
 <h2 id="Why-not-add-macros-to-“support-every-version”">Why not add macros to “support every version”?</h2>
 <p>Compatibility layers are useful when they cover a real support commitment. If a project validates one toolchain but adds branches for many untested versions, it becomes more flexible on paper while its verification space expands.</p>
 <p>Two generator versions, two header interfaces, two library sets, and two compilation configurations already create more combinations than casual testing tends to cover. A version branch may also solve a declaration mismatch without addressing a semantic change.</p>
 <p>For a fixed delivery environment, rejecting incompatible inputs early is often the more honest contract. A project that truly supports several upstream versions should make that a test matrix: specify the generator, library, and header combinations in each column. A list of versions that “compile” is not enough.</p>
 <h2 id="What-would-an-explainable-validation-look-like">What would an explainable validation look like?</h2>
-<p>The following checks are proposed methods; the original project was not run.</p>
+<p>The following checks are proposed methods.</p>
 <table>
 <thead>
 <tr>

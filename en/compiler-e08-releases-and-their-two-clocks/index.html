@@ -458,9 +458,6 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Engineering and Delivery · E08 · <a href="/cn/compiler-e08-releases-and-their-two-clocks/">阅读中文版</a></p>
-<blockquote>
-<p>Reconstructed teaching scenario: version names and directories are illustrative. This article draws on changes to packaging, archiving, and dependency manifests. No release package was rebuilt, and no reproducibility measurement was performed.</p>
-</blockquote>
 <p>“The source has not changed. The installation tree has not changed. Why does today’s archive have a different hash from yesterday’s?”</p>
 <p>The first suspicion is usually changed file contents. Extract both archives and compare files individually: the contents match. What changed may be file order, timestamps, ownership, or extra time information written by the compression layer.</p>
 <p>A release package carries the program and considerable metadata about how it was packed.</p>
@@ -489,11 +486,11 @@
 <h2 id="Why-development-dependencies-should-not-automatically-become-release-dependencies">Why development dependencies should not automatically become release dependencies</h2>
 <p>A development environment may contain training frameworks, plotting packages, conversion tools, debuggers, and old experimental libraries. A user running one model-compilation workflow may not need that entire environment.</p>
 <p>A separate delivery manifest can define dependencies around actual entry points: what parses the model, what performs conversion, and what loads a native extension. The history included a move from a development manifest to a release manifest, along with version adjustments.</p>
-<p>Pinning versions is not proof of compatibility. Python versions, platforms, and underlying ABIs can still change behavior. If development and release manifests deliberately differ, it becomes more important to state which workflow was validated in which environment. This article does not recommend copying historical dependency versions, or treat a version declaration as a passed test.</p>
+<p>Pinning versions is not proof of compatibility. Python versions, platforms, and underlying ABIs can still change behavior. If development and release manifests deliberately differ, it becomes more important to state which workflow was validated in which environment.</p>
 <h2 id="How-should-reproducibility-be-measured">How should reproducibility be measured?</h2>
 <p>Start by packaging the same installation tree twice with the same release name and reference time, then compare archive hashes. Vary one dimension at a time: member creation order, host ownership, or original file timestamps. Check whether normalization removes the expected differences.</p>
 <p>Then move to the harder layer: rebuild from a clean build tree and compare installed artifacts. If they differ, examine debug paths, build identifiers, generated-file ordering, and toolchain inputs separately instead of continuing to tweak tar arguments.</p>
-<p>This layered experiment was not performed here. If the default release name includes the current date, fix it before comparing supposedly identical inputs. Otherwise, the inputs themselves have changed and the hash comparison lacks a clear reference.</p>
+<p>If the default release name includes the current date, fix it before comparing supposedly identical inputs. Otherwise, the inputs themselves have changed and the hash comparison lacks a clear reference.</p>
 <h2 id="The-performance-bill-for-a-release">The performance bill for a release</h2>
 <p>Copying the installation tree, scanning dependencies, reading archives, and computing checksums all consume time and storage. Repeated scans may be optimized, but saving packaging time is not a good reason to remove the checks most likely to detect a mismatched release.</p>
 <p>To measure the costs, record copying, normalization, compression, validation, and archiving separately, with cache state, storage, and compression settings. Without data, a script refactor cannot be credited with higher throughput. More reliable delivery is also not a model-inference speedup.</p>

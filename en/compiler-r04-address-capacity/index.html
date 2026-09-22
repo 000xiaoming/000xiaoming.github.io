@@ -458,9 +458,6 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Resources and Scheduling · R04 · <a href="/cn/compiler-r04-address-capacity/">阅读中文版</a></p>
-<blockquote>
-<p>Reconstructed teaching scenario: Capacities, alignment units, and address widths are fictional examples. The verified change removes an old capacity constraint from address planning while strengthening overflow checks. It does not establish how large a model any actual device can hold.</p>
-</blockquote>
 <p>“I only generated a slightly larger output, and the compiler says global memory is exhausted.”</p>
 <p>“Does it know how much memory the runtime will provide?”</p>
 <p>“It knows a default number.”</p>
@@ -476,7 +473,7 @@
 <p>Now suppose a descriptor’s address format can represent values only up to M. Every allocation must still obey an explicit address-range contract. The reviewed implementation also requires the aligned exclusive end address to be representable, giving this teaching condition:</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">start &lt;= M</span><br><span class="line">aligned_size &lt;= M - start</span><br></pre></td></tr></table></figure>
 <p>The last address and the exclusive end address are different boundaries. If hardware needs to encode only the last valid byte, the contract may permit a different upper limit. If runtime metadata must also store the end offset, the exclusive end matters. This is an interface choice, not something to silently rewrite as <code>start + size - 1</code> out of habit.</p>
-<p>The reviewed tests specifically exercise sizes near the boundary, showing that this choice is intentional and tested in the source. This article does not present it as the sole correct definition for every system.</p>
+<p>The reviewed tests specifically exercise sizes near the boundary, showing that this choice is intentional and tested in the source.</p>
 <h2 id="Why-Subtract-Before-Comparing">Why Subtract Before Comparing?</h2>
 <p>An intuitive implementation is:</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">if start + size &gt; limit:</span><br><span class="line">    reject</span><br></pre></td></tr></table></figure>
@@ -497,7 +494,7 @@
 <p>Peak metrics also need precise names. Global logical high-water mark, peak simultaneously live local storage, artifact overhead, and runtime reservation are not one number. Labeling all of them “memory usage” makes performance analysis harder to diagnose than the original failure.</p>
 <h2 id="Can-the-Allocator-Still-Be-Used-After-an-Error">Can the Allocator Still Be Used After an Error?</h2>
 <p>Once capacity categories are clear, inspect failure-state behavior. Allocation commonly involves alignment, choosing a free segment, advancing the heap top, recording a mapping, and updating the peak. If address-format validation happens after some state has changed, returning failure does not necessarily leave the allocator in its pre-request state.</p>
-<p>That may be acceptable when any failure aborts compilation. A search algorithm that wants to try another layout, however, needs rollback, tentative allocation, or a temporary context. Two callers cannot silently assign different guarantees to the same interface returning false. This is a proposed review question, not a claim that the changes implement fully transactional trial allocation.</p>
+<p>That may be acceptable when any failure aborts compilation. A search algorithm that wants to try another layout, however, needs rollback, tentative allocation, or a temporary context. Two callers cannot silently assign different guarantees to the same interface returning false.</p>
 <p>Diagnostics should also distinguish requested size from aligned reservation. A teaching request for 21 bytes may reserve 30 after alignment. If an error prints only the request, a user may reasonably wonder why 25 apparently free bytes are insufficient. Showing the start, requested size, reserved size, and source of the limit makes the result something that can be checked by hand.</p>
 <p>Likewise, a high logical peak does not necessarily mean much data is live at once. Sparse address layouts, external reservations, and appended descriptors can all raise the maximum end address. Inspect both the interval set and the high-water mark rather than inferring a large, optimizable leak from one peak number.</p>
 <h2 id="Regression-Matrix">Regression Matrix</h2>

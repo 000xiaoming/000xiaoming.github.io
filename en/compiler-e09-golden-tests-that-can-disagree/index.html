@@ -458,9 +458,6 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Engineering and Delivery · E09 · <a href="/cn/compiler-e09-golden-tests-that-can-disagree/">阅读中文版</a></p>
-<blockquote>
-<p>Reconstructed teaching scenario: instruction and encoding examples use an invented teaching format. The evidence comes from golden tests and invalid-input tests added to an operator library. The test sources were read, not executed.</p>
-</blockquote>
 <p>“The generated assembly matches expectations, so the code generator is correct.”</p>
 <p>If the assembly printer and binary encoder are separate paths, that conclusion leaves half the problem unchecked. The printer can display the right enumeration name while the encoder writes its field into the wrong bits. Conversely, the machine code may be correct while the debugging assembly misleads the investigator.</p>
 <p>Before testing a code generator, establish exactly which output you are observing.</p>

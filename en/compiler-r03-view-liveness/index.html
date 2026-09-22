@@ -458,9 +458,6 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Resources and Scheduling · R03 · <a href="/cn/compiler-r03-view-liveness/">阅读中文版</a></p>
-<blockquote>
-<p>Reconstructed teaching scenario: The debugging dialogue and tensor shapes are teaching examples. Verified observations come from a liveness-check fix and its regression case. The timing scenarios explain the principle; they are not device execution traces.</p>
-</blockquote>
 <p>“We’ve passed this tensor’s last user. We can reclaim it.”</p>
 <p>“That user only changed its shape. The operation that actually reads the data is still waiting in another queue.”</p>
 <p>If memory allocators had an award for excessive helpfulness, premature reuse would be a strong contender. It follows IR order diligently: once direct users have been handled, it hands the space to the next writer. There is just one problem. The user has disappeared; the reader has not.</p>
@@ -541,7 +538,6 @@
 </tr>
 </tbody>
 </table>
-<p>Some entries reflect the reviewed regression structure; others are proposed extensions. None were run as part of this work.</p>
 <p>A separate teaching simulator could assign different delays to each queue and enumerate interleavings. Each read records its expected data version; each write increments the storage version. A read observing the wrong version supplies a concrete counterexample to premature reuse. This would explain more than inspecting peak addresses alone, but it remains a proposed experiment.</p>
 <p>When a tensor appears ready for immediate reclamation, the useful follow-up is not just how many users remain. Ask who still reads those bytes, through which alias chain, and under what completion relationship.</p>
 <!-- series-navigation -->

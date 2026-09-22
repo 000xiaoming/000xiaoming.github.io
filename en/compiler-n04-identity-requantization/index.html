@@ -458,9 +458,6 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Numerics and Quantization · N04 · <a href="/cn/compiler-n04-identity-requantization/">阅读中文版</a></p>
-<blockquote>
-<p>Reconstructed teaching scenario: the inputs, values, and dialogue are redesigned examples. The historical fix did distinguish direct forwarding for identical types from requantization for different types. The discussion below concerns the general contracts those changes reveal. Proposed tests were not executed.</p>
-</blockquote>
 <p>“Summing along an axis of length one returns the input. Delete it and save an instruction.” Mathematically, that sounds solid. In engineering terms, one question remains: does “the input” mean the same real value or the same sequence of integers?</p>
 <p>Deleting an operator with apparently no computational work can change the numerical behavior of an entire model. It is like switching a thermometer from Celsius to Fahrenheit while insisting that the displayed number must stay put.</p>
 <span id="more"></span>
@@ -491,7 +488,7 @@
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s_in = 0.03, s_out = 0.12</span><br><span class="line">q_in = [4, 8, 20, -12]</span><br><span class="line">ideal unsaturated q_out = [1, 2, 5, -3]</span><br></pre></td></tr></table></figure>
 <p>These values illustrate scaling but do not exercise rounding. Adding values not divisible by 4 begins testing the actual rounding rule. Expected values must follow the target’s definition; the host language’s default round is not a universal answer.</p>
 <h2 id="5-What-Is-the-Performance-Benefit-of-Removing-a-Useless-Reduction">5. What Is the Performance Benefit of Removing a Useless Reduction?</h2>
-<p>The historical fix shortened a transformation chain built for a removed unit axis into either the input itself or requantization. Fewer helper nodes are directly observable in the diff. No measurements obtained for this article establish how much execution time that saves.</p>
+<p>The historical fix shortened a transformation chain built for a removed unit axis into either the input itself or requantization. Fewer helper nodes are directly observable in the diff.</p>
 <p>When input and output types match, forwarding may remove configuration, execution, and temporary buffers, provided downstream consumers permit aliasing and need no extra copy. When requantization is required, elements must still be traversed, read, and written, with traffic generally growing with tensor size. “The reduction length is one, so its cost is zero” is wrong in that case: changing the output representation has a cost of its own.</p>
 <p>A performance model can separate the cases:</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Same-type path: primarily check whether materialization and scheduling overhead disappear.</span><br><span class="line">Different-type path: T ≈ startup cost + element count / effective throughput, plus read/write traffic.</span><br></pre></td></tr></table></figure>

@@ -458,9 +458,6 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Engineering and Delivery · E06 · <a href="/cn/compiler-e06-a-model-file-is-a-protocol/">阅读中文版</a></p>
-<blockquote>
-<p>Reconstructed teaching scenario: the format, names, and values below were redesigned for illustration. No internal file format is disclosed. The evidence comes from changes to model packaging and native-library integration; no real model package was generated or validated here.</p>
-</blockquote>
 <p>“If we only want one file in the end, why not zip the whole directory?”</p>
 <p>That is a reasonable backup strategy, but not necessarily a loading protocol. A runtime may need direct access to input and output tensor descriptions, instruction locations, parameter lengths, and destination addresses. It should not have to infer directory conventions or treat every temporary compiler file as a formal interface.</p>
 <p>A model file is therefore a protocol between a producer and a consumer before it is a sequence of bytes.</p>
@@ -494,7 +491,7 @@
 <p>That is more than translating a function into C++. A language boundary requires an explicit ownership contract:</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">pack_directory(input, out_blob)</span><br><span class="line">success → caller receives data and length, and must release them</span><br><span class="line">failure → caller must not treat residual objects as a complete result</span><br><span class="line">write_blob(blob, output)</span><br><span class="line">release_blob(blob)</span><br></pre></td></tr></table></figure>
 <p>Error-string lifetime also needs a definition. Can the next call overwrite it? Is it readable after success? Can the name be accessed after release? A seemingly harmless diagnostic can lose its essential context if the object has already been cleared.</p>
-<p>Callers should therefore preserve necessary diagnostics while the resource is valid and satisfy the ownership contract on every exit path. This is a general review method prompted by the interface, not a claim that the original integration provides complete exception safety.</p>
+<p>Callers should therefore preserve necessary diagnostics while the resource is valid and satisfy the ownership contract on every exit path.</p>
 <h2 id="How-can-two-implementations-prove-they-speak-the-same-language">How can two implementations prove they speak the same language?</h2>
 <p>The dangerous migration criterion is that the new implementation produces files that “look about right.” A stronger validation plan includes:</p>
 <table>
@@ -531,7 +528,7 @@
 </tr>
 </tbody>
 </table>
-<p>These tests are proposed, not executed. If the protocol permits different but equivalent orderings, semantic comparison is more appropriate than unconditional byte equality. If it promises a canonical encoding, add byte-for-byte comparison. Acceptance criteria should come from the protocol, not the test author’s preference.</p>
+<p>If the protocol permits different but equivalent orderings, semantic comparison is more appropriate than unconditional byte equality. If it promises a canonical encoding, add byte-for-byte comparison. Acceptance criteria should come from the protocol, not the test author’s preference.</p>
 <h2 id="Which-packaging-costs-matter">Which packaging costs matter?</h2>
 <p>Constructing the entire byte array before writing is straightforward and makes total-length checks convenient. With a large model, however, the process may hold original payloads, a concatenation buffer, and intermediate representations at the same time. Peak memory is not simply final file size.</p>
 <p>Streaming output can eliminate some copies, but may require calculating tables first, backpatching offsets, or using another layout when output is not seekable. Both designs have costs. Without measurements, a native library cannot be declared faster, and removing one process launch cannot be presented as improved model-execution performance.</p>

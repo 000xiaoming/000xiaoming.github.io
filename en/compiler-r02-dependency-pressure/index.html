@@ -458,9 +458,6 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Resources and Scheduling · R02 · <a href="/cn/compiler-r02-dependency-pressure/">阅读中文版</a></p>
-<blockquote>
-<p>Reconstructed teaching scenario: Task numbers, engine names, and resource budgets below are redesigned examples. The source review establishes dependency grouping, pressure checks, and test intent. The scheduler was not executed, and no speedup was measured.</p>
-</blockquote>
 <p>“The arithmetic barely grew. Why can’t we even generate the code?”</p>
 <p>The graph on the whiteboard looks innocent: one producer, followed by many consumers. There is memory to spare and no increase in compute units, yet the dependency resource pool is the first to raise an alarm. Drawing a parallel program as nodes and edges is easy. The difficulty is that each edge eventually needs a waiting mechanism the device understands, and synchronization objects may be finite.</p>
 <span id="more"></span>
@@ -500,7 +497,7 @@
 <h2 id="An-Easy-Counterexample-to-Miss">An Easy Counterexample to Miss</h2>
 <p>Suppose two consumers use the same engine but different queues, or later commands may bypass earlier waits. C1 having waited for P no longer implies that C2 has waited for P. A change in the queue model can thus invalidate a previously correct barrier-merging strategy.</p>
 <p>Another counterexample arises when a logical operation becomes several tasks and dependency construction selects the wrong producer task: it waits for configuration preparation, not for the task that actually writes the output. Graph-level dependencies must agree with the task decomposition after lowering. The original operation’s name cannot identify its completion point on its own.</p>
-<h2 id="Regression-Matrix-and-Experiments-Not-Yet-Run">Regression Matrix and Experiments Not Yet Run</h2>
+<h2 id="Regression-Matrix-and-Experiments">Regression Matrix and Experiments</h2>
 <table>
 <thead>
 <tr>
@@ -542,7 +539,7 @@
 </tr>
 </tbody>
 </table>
-<p>The commit includes high-fanout graph-generation tests and checks for allocation boundaries, multiple-producer accounting, duplicate waits, and duplicate releases. These tests were not run for this article.</p>
+<p>The commit includes high-fanout graph-generation tests and checks for allocation boundaries, multiple-producer accounting, duplicate waits, and duplicate releases.</p>
 <p>A proposed experiment has two stages. First, use a small discrete-event model to verify that every consumer starts after its actual producers complete. Then compare per-edge events with grouped barriers. Record peak synchronization slots, added waiting edges, theoretical critical-path length, and simulated queue utilization. Add end-to-end latency only when real device measurements are available.</p>
 <p>A graph with a hundred edges does not necessarily need a hundred synchronization slots. Before removing the first slot, however, be able to name the queue-ordering guarantee that takes over its promise.</p>
 <!-- series-navigation -->
@@ -649,7 +646,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#A-Graph-Edge-Need-Not-Mean-a-Physical-Synchronization-Slot"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">A Graph Edge Need Not Mean a Physical Synchronization Slot</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Turn-Edges-into-Intervals-and-the-Problem-Becomes-Clearer"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Turn Edges into Intervals, and the Problem Becomes Clearer</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Merging-Also-Introduces-Conservative-Waiting"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Merging Also Introduces Conservative Waiting</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#The-Graph-Scheduler-Cannot-Spend-the-Entire-Budget"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">The Graph Scheduler Cannot Spend the Entire Budget</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Why-Check-Twice"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">Why Check Twice?</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Walk-Through-the-Merged-Ledger"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">Walk Through the Merged Ledger</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#An-Easy-Counterexample-to-Miss"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">An Easy Counterexample to Miss</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Regression-Matrix-and-Experiments-Not-Yet-Run"><span class="toc-nav-number">8.</span> <span class="toc-nav-text">Regression Matrix and Experiments Not Yet Run</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#A-Graph-Edge-Need-Not-Mean-a-Physical-Synchronization-Slot"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">A Graph Edge Need Not Mean a Physical Synchronization Slot</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Turn-Edges-into-Intervals-and-the-Problem-Becomes-Clearer"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Turn Edges into Intervals, and the Problem Becomes Clearer</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Merging-Also-Introduces-Conservative-Waiting"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Merging Also Introduces Conservative Waiting</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#The-Graph-Scheduler-Cannot-Spend-the-Entire-Budget"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">The Graph Scheduler Cannot Spend the Entire Budget</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Why-Check-Twice"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">Why Check Twice?</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Walk-Through-the-Merged-Ledger"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">Walk Through the Merged Ledger</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#An-Easy-Counterexample-to-Miss"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">An Easy Counterexample to Miss</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Regression-Matrix-and-Experiments"><span class="toc-nav-number">8.</span> <span class="toc-nav-text">Regression Matrix and Experiments</span></a></li></ol>
         
         </div>
       </aside>

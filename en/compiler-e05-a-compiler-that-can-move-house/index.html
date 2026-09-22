@@ -458,9 +458,6 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Engineering and Delivery · E05 · <a href="/cn/compiler-e05-a-compiler-that-can-move-house/">阅读中文版</a></p>
-<blockquote>
-<p>Reconstructed teaching scenario: paths and module names have been generalized. This article discusses a lookup-table generator’s resource-location fix and its regression design. The original project was not run.</p>
-</blockquote>
 <p>The tool works in the development directory. Unpack its installation bundle somewhere else and convolution still works; several simple operators work too. Then a nonlinear activation reaches Python, which cannot find a module.</p>
 <p>“But we packaged the executable, didn’t we?”</p>
 <p>An executable is not necessarily the whole compiler. It may embed Python and call a lookup-table parameter generator that lives with the source tree. If the source path was embedded at build time, the program resembles someone who moves house but keeps ordering dinner to the old address.</p>
@@ -531,7 +528,7 @@
 <h2 id="How-to-discuss-the-performance-of-relocation-support">How to discuss the performance of relocation support</h2>
 <p>Path checks and one-time imports may add startup cost, but intuition cannot establish that they are a bottleneck. Fitting, parsing, and total compilation often operate on different time scales. Measure before optimizing.</p>
 <p>A proposed experiment would time the first import, repeated calls in one process, table-parameter generation, and total compilation separately. If results are cached, the cache key must include the input domain, quantization parameters, and approximation mode. A shared function name alone does not justify reusing a table.</p>
-<p>This article has no such measurements and no evidence that the change accelerated compilation. It repaired the relationship between a resource’s identity and its location. A compiler can move because its dependencies are expressed, not because it happens to remember the developer’s old address.</p>
+<p>It repaired the relationship between a resource’s identity and its location. A compiler can move because its dependencies are expressed, not because it happens to remember the developer’s old address.</p>
 <!-- series-navigation -->
 <hr>
 <p><a href="/en/compiler-engineering-notes/">Series contents</a> · <a href="/en/compiler-e04-the-library-that-was-there/">Previous</a> · <a href="/en/compiler-e06-a-model-file-is-a-protocol/">Next</a></p>

@@ -458,9 +458,6 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 数值与量化 · N01 · <a href="/en/compiler-n01-reduction-lowering/">Read in English</a></p>
-<blockquote>
-<p>教学场景重构：下面的对话和输入都是为解释问题重新设计的，不是现场聊天记录。实现观察来自历史差异；公式推导、取舍分析与建议实验分别说明，未执行硬件测量。</p>
-</blockquote>
 <p>“这个算子就一行：求平均。”同事把纸推过来。纸上确实只有一行。过了半小时，白板已经出现轴、步长、临时缓冲区和两个循环标签。有人笑：“平均值还没算，先把工作量平均分配一下？”</p>
 <p>谜底是：模型描述的是数学集合，向量引擎接收的是地址和固定形状。把“沿某一轴”翻译成“从哪里读、隔多少字节读、在哪停止”，才是编译器的工作。</p>
 <span id="more"></span>
@@ -487,11 +484,11 @@
 <p>另一条路线是先重排轴，把非原生归约转成引擎支持的尾部归约，然后恢复输出形状。底层只需检查有限的合法模式，生成一套参数。</p>
 <p>这种分层的好处不是“代码短，所以快”。它让形状转换出现在可检查的 IR 中，让已有的重排优化、缓冲区规划和调度有机会参与。相反，把多趟运算藏在一个代码生成函数里，可能让调度器只看到一个不透明大节点，难以识别内部临时张量的生存期。</p>
 <p>代价同样清楚：显式重排可能搬动大量数据。能否把重排吸收到生产者、消费者或布局解释中，决定它是不是值得。只减少底层分支数，不能推导运行时间下降。</p>
-<p>一个可用于选型、但尚未测量的成本模型为：</p>
+<p>一个可用于选型的成本模型为：</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">T_loop    ≈ T_read + P * (T_reduce + T_address + T_branch)</span><br><span class="line">T_reorder ≈ T_permute_in + T_native_reduce + T_permute_out</span><br></pre></td></tr></table></figure>
 <p>如果重排需要完整读写，而归约本身很小，重排可能占主导；如果循环每次工作极少，指令和参数加载成本也可能显著。应把这两个判断变成可测假设，而不是凭算子个数投票。</p>
 <h2 id="五、回归测试要故意让地址和数值“不舒服”">五、回归测试要故意让地址和数值“不舒服”</h2>
-<p>建议矩阵如下，均为待执行方案：</p>
+<p>建议的测试矩阵如下：</p>
 <table>
 <thead>
 <tr>

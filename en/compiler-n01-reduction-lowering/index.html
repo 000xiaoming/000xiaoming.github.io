@@ -458,9 +458,6 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Numerics and Quantization · N01 · <a href="/cn/compiler-n01-reduction-lowering/">阅读中文版</a></p>
-<blockquote>
-<p>Reconstructed teaching scenario: the dialogue and inputs below were designed to explain the problem; they are not a transcript of an actual debugging session. Implementation observations come from historical diffs. Derivations, tradeoffs, and proposed experiments are identified separately. No hardware measurements were performed.</p>
-</blockquote>
 <p>“The operator is one line: take the mean.” A colleague slides over a sheet of paper. It really does contain one line. Half an hour later, the whiteboard is covered in axes, strides, temporary buffers, and two loop labels. Someone laughs: “Before we calculate the average, shall we distribute the work evenly?”</p>
 <p>The explanation is simple: a model describes mathematical sets, while a vector engine accepts addresses and fixed shapes. Translating “along this axis” into “read here, advance this many bytes, stop there” is the compiler’s job.</p>
 <span id="more"></span>
@@ -491,7 +488,6 @@
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">T_loop    ≈ T_read + P * (T_reduce + T_address + T_branch)</span><br><span class="line">T_reorder ≈ T_permute_in + T_native_reduce + T_permute_out</span><br></pre></td></tr></table></figure>
 <p>If reordering requires a full read and write while the reduction itself is small, reordering may dominate. If each loop iteration does very little work, instruction and parameter-loading costs may also matter. These should become measurable hypotheses, not a vote based on operator counts.</p>
 <h2 id="5-Make-Regression-Tests-Uncomfortable-for-Both-Addresses-and-Numbers">5. Make Regression Tests Uncomfortable for Both Addresses and Numbers</h2>
-<p>The following matrix is a proposed test plan; it has not been executed here.</p>
 <table>
 <thead>
 <tr>
