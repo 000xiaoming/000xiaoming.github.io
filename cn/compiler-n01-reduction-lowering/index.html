@@ -141,7 +141,7 @@
   <link rel="canonical" href="https://000xiaoming.github.io/cn/compiler-n01-reduction-lowering/">
   <title>
     
-      N01｜求个平均值，为什么编译器先写起了循环？ - I&#39;m Bruce Lee
+      求个平均值，为什么编译器先写起了循环？ - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -387,16 +387,12 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/cn/tags/#内存布局" title="内存布局">内存布局</a>
+              <a class="tag" href="/cn/tags/#编译器" title="编译器">编译器</a>
               
-              <a class="tag" href="/cn/tags/#归约" title="归约">归约</a>
-              
-              <a class="tag" href="/cn/tags/#数值与量化" title="数值与量化">数值与量化</a>
-              
-              <a class="tag" href="/cn/tags/#算子降级" title="算子降级">算子降级</a>
+              <a class="tag" href="/cn/tags/#数值计算" title="数值计算">数值计算</a>
               
             </div>
-            <h1>N01｜求个平均值，为什么编译器先写起了循环？</h1>
+            <h1>求个平均值，为什么编译器先写起了循环？</h1>
             <h2 class="subheading">把任意归约轴变成可执行的循环，追踪搬运和布局成本。</h2>
             <span class="meta">
               Posted by Bruce Lee on
@@ -457,7 +453,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 数值与量化 · N01 · <a href="/en/compiler-n01-reduction-lowering/">Read in English</a></p>
+        <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 数值与量化 · <a href="/en/compiler-n01-reduction-lowering/">Read in English</a></p>
 <p>“这个算子就一行：求平均。”同事把纸推过来。纸上确实只有一行。过了半小时，白板已经出现轴、步长、临时缓冲区和两个循环标签。有人笑：“平均值还没算，先把工作量平均分配一下？”</p>
 <p>谜底是：模型描述的是数学集合，向量引擎接收的是地址和固定形状。把“沿某一轴”翻译成“从哪里读、隔多少字节读、在哪停止”，才是编译器的工作。</p>
 <span id="more"></span>
@@ -548,7 +544,7 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/cn/compiler-n02-axis-identity/" data-toggle="tooltip" data-placement="top" title="N02｜消失的维度：keep_dims=false 为什么能把逆置换弄坏？">&larr; Previous Post</a>
+            <a href="/cn/compiler-n02-axis-identity/" data-toggle="tooltip" data-placement="top" title="消失的维度：keep_dims=false 为什么能把逆置换弄坏？">&larr; Previous Post</a>
           </li>
           
           
@@ -603,7 +599,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=N01｜求个平均值，为什么编译器先写起了循环？&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/compiler-n01-reduction-lowering/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=求个平均值，为什么编译器先写起了循环？&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/compiler-n01-reduction-lowering/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -665,13 +661,9 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/cn/tags/#内存布局" title="内存布局">内存布局</a>
+            <a class="tag" href="/cn/tags/#编译器" title="编译器">编译器</a>
             
-            <a class="tag" href="/cn/tags/#归约" title="归约">归约</a>
-            
-            <a class="tag" href="/cn/tags/#数值与量化" title="数值与量化">数值与量化</a>
-            
-            <a class="tag" href="/cn/tags/#算子降级" title="算子降级">算子降级</a>
+            <a class="tag" href="/cn/tags/#数值计算" title="数值计算">数值计算</a>
             
           </div>
         </section>

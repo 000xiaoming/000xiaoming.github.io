@@ -141,7 +141,7 @@
   <link rel="canonical" href="https://000xiaoming.github.io/en/compiler-e13-moving-data-moving-meaning/">
   <title>
     
-      E13 | It Only Moves Data. How Can It Still Be Wrong? - I&#39;m Bruce Lee
+      It Only Moves Data. How Can It Still Be Wrong? - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -387,16 +387,12 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/tags/#Engineering and Delivery" title="Engineering and Delivery">Engineering and Delivery</a>
+              <a class="tag" href="/tags/#Compilers" title="Compilers">Compilers</a>
               
-              <a class="tag" href="/tags/#Tensor Shapes" title="Tensor Shapes">Tensor Shapes</a>
-              
-              <a class="tag" href="/tags/#Memory Layout" title="Memory Layout">Memory Layout</a>
-              
-              <a class="tag" href="/tags/#Quantization" title="Quantization">Quantization</a>
+              <a class="tag" href="/tags/#Memory and Concurrency" title="Memory and Concurrency">Memory and Concurrency</a>
               
             </div>
-            <h1>E13 | It Only Moves Data. How Can It Still Be Wrong?</h1>
+            <h1>It Only Moves Data. How Can It Still Be Wrong?</h1>
             <h2 class="subheading">Preserve coordinates, strides, aliasing, and quantization when moving data.</h2>
             <span class="meta">
               Posted by Bruce Lee on
@@ -457,7 +453,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Engineering and Delivery · E13 · <a href="/cn/compiler-e13-moving-data-moving-meaning/">阅读中文版</a></p>
+        <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Engineering and Delivery · <a href="/cn/compiler-e13-moving-data-moving-meaning/">阅读中文版</a></p>
 <p>“This patch should be safe. It does no computation. It only moves data.”</p>
 <p>Half an hour later, downstream matrix multiplication returns different results. The team checks multiplication, then quantization scales, before discovering that the copy preserved every byte while changing the position each byte represented.</p>
 <p>Data movement easily receives undeserved trust: if values did not change, semantics must be unchanged. Tensor semantics also include coordinates, shape, layout, aliasing, and quantization axes. Correctly moving bytes does not necessarily mean correctly moving a tensor.</p>
@@ -544,12 +540,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/en/compiler-e14-same-shape-different-answers/" data-toggle="tooltip" data-placement="top" title="E14 | Same Output Shape, Different Answers: Pooling, Resizing, and Index Reductions">&larr; Previous Post</a>
+            <a href="/en/compiler-e14-same-shape-different-answers/" data-toggle="tooltip" data-placement="top" title="Same Output Shape, Different Answers: Pooling, Resizing, and Index Reductions">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/en/compiler-e12-four-identities-of-an-instruction/" data-toggle="tooltip" data-placement="top" title="E12 | An Instruction’s Four Identities: Why Code Generation Needs More Than Strings">Next Post &rarr;</a>
+            <a href="/en/compiler-e12-four-identities-of-an-instruction/" data-toggle="tooltip" data-placement="top" title="An Instruction’s Four Identities: Why Code Generation Needs More Than Strings">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -599,7 +595,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=E13 | It Only Moves Data. How Can It Still Be Wrong?&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/en/compiler-e13-moving-data-moving-meaning/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=It Only Moves Data. How Can It Still Be Wrong?&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/en/compiler-e13-moving-data-moving-meaning/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -661,13 +657,9 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#Engineering and Delivery" title="Engineering and Delivery">Engineering and Delivery</a>
+            <a class="tag" href="/tags/#Compilers" title="Compilers">Compilers</a>
             
-            <a class="tag" href="/tags/#Tensor Shapes" title="Tensor Shapes">Tensor Shapes</a>
-            
-            <a class="tag" href="/tags/#Memory Layout" title="Memory Layout">Memory Layout</a>
-            
-            <a class="tag" href="/tags/#Quantization" title="Quantization">Quantization</a>
+            <a class="tag" href="/tags/#Memory and Concurrency" title="Memory and Concurrency">Memory and Concurrency</a>
             
           </div>
         </section>

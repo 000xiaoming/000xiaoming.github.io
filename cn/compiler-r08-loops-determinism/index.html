@@ -141,7 +141,7 @@
   <link rel="canonical" href="https://000xiaoming.github.io/cn/compiler-r08-loops-determinism/">
   <title>
     
-      R08｜循环只多了一层，为什么二进制快照像换了一个程序？ - I&#39;m Bruce Lee
+      循环只多了一层，为什么二进制快照像换了一个程序？ - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -387,16 +387,12 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/cn/tags/#测试" title="测试">测试</a>
+              <a class="tag" href="/cn/tags/#工程实践" title="工程实践">工程实践</a>
               
-              <a class="tag" href="/cn/tags/#确定性" title="确定性">确定性</a>
-              
-              <a class="tag" href="/cn/tags/#代码生成" title="代码生成">代码生成</a>
-              
-              <a class="tag" href="/cn/tags/#资源与调度" title="资源与调度">资源与调度</a>
+              <a class="tag" href="/cn/tags/#编译器" title="编译器">编译器</a>
               
             </div>
-            <h1>R08｜循环只多了一层，为什么二进制快照像换了一个程序？</h1>
+            <h1>循环只多了一层，为什么二进制快照像换了一个程序？</h1>
             <h2 class="subheading">循环、标签和独立发射实例如何影响二进制确定性。</h2>
             <span class="meta">
               Posted by Bruce Lee on
@@ -457,7 +453,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 资源与调度 · R08 · <a href="/en/compiler-r08-loops-determinism/">Read in English</a></p>
+        <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 资源与调度 · <a href="/en/compiler-r08-loops-determinism/">Read in English</a></p>
 <p>“刚才这个测试还过，单独跑也过，放到整套测试后面就变了。”</p>
 <p>“是不是随机种子？”</p>
 <p>“没有随机数。只有一个静态计数器。”</p>
@@ -478,7 +474,7 @@
 <p>考虑处理一个 3×5 的教学网格：</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">outer = 3</span><br><span class="line">outer_begin:</span><br><span class="line">    inner = 5</span><br><span class="line">inner_begin:</span><br><span class="line">    process_one_tile()</span><br><span class="line">    inner -= 1</span><br><span class="line">    if inner == 0: goto inner_done</span><br><span class="line">    advance_inner_address()</span><br><span class="line">    goto inner_begin</span><br><span class="line">inner_done:</span><br><span class="line">    outer -= 1</span><br><span class="line">    if outer == 0: goto all_done</span><br><span class="line">    advance_outer_boundary()</span><br><span class="line">    goto outer_begin</span><br><span class="line">all_done:</span><br></pre></td></tr></table></figure>
 <p>这里故意把最后一轮的地址推进放在退出判断后面，因为有些描述符模型不允许在结束后再推进到越界地址。实际实现也可能采取别的合法方式，但测试必须对应其地址协议。</p>
-<p>如果外层计数器在内层初始化时被重用，同一个小例子就可能永远到不了 all_done。这说明 <a href="/cn/compiler-r01-register-raii/">R01</a>里的资源租约与循环结构必须一起设计。</p>
+<p>如果外层计数器在内层初始化时被重用，同一个小例子就可能永远到不了 all_done。这说明 <a href="/cn/compiler-r01-register-raii/">寄存器与 RAII</a>里的资源租约与循环结构必须一起设计。</p>
 <h2 id="黄金测试能够提供什么证据">黄金测试能够提供什么证据</h2>
 <p>相关提交增加了一组固定的二进制参考，覆盖无循环、单次、内层循环、嵌套循环、复合算子、多步循环状态以及部分模式组合。测试比较真实汇编、伪汇编和二进制，还检查标签唯一、增量输出与完整输出一致、重复读取增量输出已经耗尽，以及依赖资源没有残留。</p>
 <p>同一批用例还反向执行一次，并在多个线程的独立生成器中重复构造。这样测试的重点从“某一次生成正确”扩展到“结果不依赖其他用例先做了什么”。</p>
@@ -552,12 +548,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/cn/compiler-r09-encoding-boundaries/" data-toggle="tooltip" data-placement="top" title="R09｜“数字已经读出来了”，并不代表输入合法">&larr; Previous Post</a>
+            <a href="/cn/compiler-r09-encoding-boundaries/" data-toggle="tooltip" data-placement="top" title="“数字已经读出来了”，并不代表输入合法">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/cn/compiler-r07-error-boundaries/" data-toggle="tooltip" data-placement="top" title="R07｜catch 住异常之后，半份机器码怎么办？">Next Post &rarr;</a>
+            <a href="/cn/compiler-r07-error-boundaries/" data-toggle="tooltip" data-placement="top" title="catch 住异常之后，半份机器码怎么办？">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -607,7 +603,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=R08｜循环只多了一层，为什么二进制快照像换了一个程序？&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/compiler-r08-loops-determinism/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=循环只多了一层，为什么二进制快照像换了一个程序？&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/compiler-r08-loops-determinism/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -669,13 +665,9 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/cn/tags/#测试" title="测试">测试</a>
+            <a class="tag" href="/cn/tags/#工程实践" title="工程实践">工程实践</a>
             
-            <a class="tag" href="/cn/tags/#确定性" title="确定性">确定性</a>
-            
-            <a class="tag" href="/cn/tags/#代码生成" title="代码生成">代码生成</a>
-            
-            <a class="tag" href="/cn/tags/#资源与调度" title="资源与调度">资源与调度</a>
+            <a class="tag" href="/cn/tags/#编译器" title="编译器">编译器</a>
             
           </div>
         </section>

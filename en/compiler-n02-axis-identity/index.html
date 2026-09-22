@@ -141,7 +141,7 @@
   <link rel="canonical" href="https://000xiaoming.github.io/en/compiler-n02-axis-identity/">
   <title>
     
-      N02 | The Vanishing Dimension: How keep_dims=false Can Break an Inverse Permutation - I&#39;m Bruce Lee
+      The Vanishing Dimension: How keep_dims=false Can Break an Inverse Permutation - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -387,16 +387,12 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/tags/#Tensor Shapes" title="Tensor Shapes">Tensor Shapes</a>
+              <a class="tag" href="/tags/#Compilers" title="Compilers">Compilers</a>
               
-              <a class="tag" href="/tags/#Reduction" title="Reduction">Reduction</a>
-              
-              <a class="tag" href="/tags/#Numerics and Quantization" title="Numerics and Quantization">Numerics and Quantization</a>
-              
-              <a class="tag" href="/tags/#Graph Rewriting" title="Graph Rewriting">Graph Rewriting</a>
+              <a class="tag" href="/tags/#Numerical Computing" title="Numerical Computing">Numerical Computing</a>
               
             </div>
-            <h1>N02 | The Vanishing Dimension: How keep_dims=false Can Break an Inverse Permutation</h1>
+            <h1>The Vanishing Dimension: How keep_dims=false Can Break an Inverse Permutation</h1>
             <h2 class="subheading">Preserve axis identity when dimensions disappear, then reconstruct the inverse permutation.</h2>
             <span class="meta">
               Posted by Bruce Lee on
@@ -457,7 +453,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Numerics and Quantization · N02 · <a href="/cn/compiler-n02-axis-identity/">阅读中文版</a></p>
+        <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Numerics and Quantization · <a href="/cn/compiler-n02-axis-identity/">阅读中文版</a></p>
 <p>“Everything passes when we keep the dimensions. Everything fails when we drop them.” It sounds like an unusually polite error message: it practically tells you the answer, yet you can still spend a long time staring at the screen.</p>
 <p>The mean itself may be correct. The actual problem is that the third axis before reduction no longer occupies a third position afterward, while the layout-restoration code is still using the old map.</p>
 <span id="more"></span>
@@ -488,7 +484,7 @@
 <li>The original operation reduces only a unit axis that is later removed.</li>
 <li>The original operation reduces several axes, some removed and others still present.</li>
 </ol>
-<p>If the second case becomes an ordinary empty axes list, and empty axes means all axes, “leave the value unchanged” turns into “collapse the entire tensor to one value.” A historical change introduced a marker for removed reduction axes to preserve exactly this distinction. N04 explores its quantization implications.</p>
+<p>If the second case becomes an ordinary empty axes list, and empty axes means all axes, “leave the value unchanged” turns into “collapse the entire tensor to one value.” A historical change introduced a marker for removed reduction axes to preserve exactly this distinction. <a href="/en/compiler-n04-identity-requantization/">Identity and Requantization</a> explores its quantization implications.</p>
 <h2 id="4-A-Correct-Permutation-Must-Also-Be-Supported">4. A Correct Permutation Must Also Be Supported</h2>
 <p>Theoretical support for arbitrary permutations does not mean the backend implements them all. Historical diffs show some cyclic permutations being decomposed into available adjacent-axis swaps; the relevant implementations subsequently evolved in other stages. A test form from one period is not an eternal interface for the entire repository.</p>
 <p>The general issue is that legalization must make its helper operations legal as well as the original reduction. If fixing an unsupported reduction introduces an unsupported permutation, the failure has merely moved one stop farther down the pipeline.</p>
@@ -561,12 +557,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/en/compiler-n03-reduction-family/" data-toggle="tooltip" data-placement="top" title="N03 | Max, Min, and Sum: Similar Operators, Different Mathematical Homework">&larr; Previous Post</a>
+            <a href="/en/compiler-n03-reduction-family/" data-toggle="tooltip" data-placement="top" title="Max, Min, and Sum: Similar Operators, Different Mathematical Homework">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/en/compiler-n01-reduction-lowering/" data-toggle="tooltip" data-placement="top" title="N01 | Just Take the Mean—Why Is the Compiler Writing Loops?">Next Post &rarr;</a>
+            <a href="/en/compiler-n01-reduction-lowering/" data-toggle="tooltip" data-placement="top" title="Just Take the Mean—Why Is the Compiler Writing Loops?">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -616,7 +612,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=N02 | The Vanishing Dimension: How keep_dims=false Can Break an Inverse Permutation&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/en/compiler-n02-axis-identity/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=The Vanishing Dimension: How keep_dims=false Can Break an Inverse Permutation&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/en/compiler-n02-axis-identity/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -678,13 +674,9 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#Tensor Shapes" title="Tensor Shapes">Tensor Shapes</a>
+            <a class="tag" href="/tags/#Compilers" title="Compilers">Compilers</a>
             
-            <a class="tag" href="/tags/#Reduction" title="Reduction">Reduction</a>
-            
-            <a class="tag" href="/tags/#Numerics and Quantization" title="Numerics and Quantization">Numerics and Quantization</a>
-            
-            <a class="tag" href="/tags/#Graph Rewriting" title="Graph Rewriting">Graph Rewriting</a>
+            <a class="tag" href="/tags/#Numerical Computing" title="Numerical Computing">Numerical Computing</a>
             
           </div>
         </section>

@@ -141,7 +141,7 @@
   <link rel="canonical" href="https://000xiaoming.github.io/en/compiler-r01-register-raii/">
   <title>
     
-      R01 | Why Does Someone Keep Borrowing My “Temporary” Register? - I&#39;m Bruce Lee
+      Why Does Someone Keep Borrowing My “Temporary” Register? - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -387,16 +387,12 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/tags/#RAII" title="RAII">RAII</a>
+              <a class="tag" href="/tags/#Compilers" title="Compilers">Compilers</a>
               
-              <a class="tag" href="/tags/#Code Generation" title="Code Generation">Code Generation</a>
-              
-              <a class="tag" href="/tags/#Register Allocation" title="Register Allocation">Register Allocation</a>
-              
-              <a class="tag" href="/tags/#Resources and Scheduling" title="Resources and Scheduling">Resources and Scheduling</a>
+              <a class="tag" href="/tags/#Memory and Concurrency" title="Memory and Concurrency">Memory and Concurrency</a>
               
             </div>
-            <h1>R01 | Why Does Someone Keep Borrowing My “Temporary” Register?</h1>
+            <h1>Why Does Someone Keep Borrowing My “Temporary” Register?</h1>
             <h2 class="subheading">Express register ownership through scope and define the limits of automatic release.</h2>
             <span class="meta">
               Posted by Bruce Lee on
@@ -457,7 +453,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Resources and Scheduling · R01 · <a href="/cn/compiler-r01-register-raii/">阅读中文版</a></p>
+        <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Resources and Scheduling · <a href="/cn/compiler-r01-register-raii/">阅读中文版</a></p>
 <p>“I just need one register to load an address. I’ll give it straight back.”</p>
 <p>“Funny. The outer loop counter is borrowing that same one.”</p>
 <p>This argument does not happen in a code review chat. It happens in machine code: a loop count suddenly becomes an address, or a configuration load overwrites a scalar that has not yet been used. Each helper looks short in isolation. Together, they resemble a tool room with no checkout register.</p>
@@ -485,7 +481,7 @@
 <li>Are temporary resources returned after failure?</li>
 <li>Are instructions, labels, dependency counts, and other generation state restored after failure?</li>
 </ol>
-<p>RAII can address the first. The second requires transactions, snapshots, or a protocol that discards the entire context on failure. Confusing the two can leave error recovery producing an apparently complete half-product. <a href="/en/compiler-r07-error-boundaries/">R07</a> examines this boundary further.</p>
+<p>RAII can address the first. The second requires transactions, snapshots, or a protocol that discards the entire context on failure. Confusing the two can leave error recovery producing an apparently complete half-product. <a href="/en/compiler-r07-error-boundaries/">Error Boundaries</a> examines this boundary further.</p>
 <p>Likewise, a scalar configuration register’s lease does not automatically settle the lifetime of an asynchronous completion event. A device queue may still be executing a command. Reusing the associated synchronization resources must follow their own semantics.</p>
 <h2 id="How-to-Discuss-Performance-Benefits">How to Discuss Performance Benefits</h2>
 <p>It is reasonable to infer that shortening host-side handle lifetimes can reduce the number of simultaneously occupied scratch slots and make complex kernels easier to compose. Replacing strings with handles, however, does not by itself imply shorter execution time. Ideally, the generated instruction sequence is almost unchanged. The main gains are correctness, maintainability, and the ability to support more complex compositions.</p>
@@ -550,12 +546,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/en/compiler-r02-dependency-pressure/" data-toggle="tooltip" data-placement="top" title="R02 | A Few More Branches in the Graph—and Synchronization Registers Run Out First?">&larr; Previous Post</a>
+            <a href="/en/compiler-r02-dependency-pressure/" data-toggle="tooltip" data-placement="top" title="A Few More Branches in the Graph—and Synchronization Registers Run Out First?">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/en/compiler-o12-static-left-matmul/" data-toggle="tooltip" data-placement="top" title="O12 | When Weights Move to the Left: A Transpose Identity That Moves the Whole Compiler Chain">Next Post &rarr;</a>
+            <a href="/en/compiler-o12-static-left-matmul/" data-toggle="tooltip" data-placement="top" title="When Weights Move to the Left: A Transpose Identity That Moves the Whole Compiler Chain">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -605,7 +601,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=R01 | Why Does Someone Keep Borrowing My “Temporary” Register?&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/en/compiler-r01-register-raii/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=Why Does Someone Keep Borrowing My “Temporary” Register?&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/en/compiler-r01-register-raii/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -667,13 +663,9 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#RAII" title="RAII">RAII</a>
+            <a class="tag" href="/tags/#Compilers" title="Compilers">Compilers</a>
             
-            <a class="tag" href="/tags/#Code Generation" title="Code Generation">Code Generation</a>
-            
-            <a class="tag" href="/tags/#Register Allocation" title="Register Allocation">Register Allocation</a>
-            
-            <a class="tag" href="/tags/#Resources and Scheduling" title="Resources and Scheduling">Resources and Scheduling</a>
+            <a class="tag" href="/tags/#Memory and Concurrency" title="Memory and Concurrency">Memory and Concurrency</a>
             
           </div>
         </section>

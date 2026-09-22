@@ -456,16 +456,16 @@
 
   <a href="/cn/compiler-e15-names-are-not-numerical-contracts/">
     <h2 class="post-title">
-      E15｜一个函数名，装不下它的数值契约：非线性与归一化的边界
+      一个函数名，装不下它的数值契约：非线性与归一化的边界
     </h2>
     <h3 class="post-subtitle">
       定义域、近似、精度与归约轴，比函数名字更重要。
     </h3>
     <div class="post-content-preview">
-      系列目录 · 工程与交付 · E15 · Read in English
+      系列目录 · 工程与交付 · Read in English
 “函数名字没写错，输入形状也对，为什么结果差这么多？”
 同事把错误样本缩成两个负数。原先看起来只是一点误差的问题，忽然变成了正负号相反。排查到最后，双方实现的竟然不是同一个函数。
-非线性运算经常以一个短名字出现在图里：Pow、Sigmoid、Softmax、Norm。真正决定答案的，却是这个名字背后的定义域、公式、轴、......
+非线性运算经常以一个短名字出现在图里：Pow、Sigmoid、Softmax、Norm。真正决定答案的，却是这个名字背后的定义域、公式、轴、常数、近似方......
     </div>
   </a>
   
@@ -475,13 +475,9 @@
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#工程与交付" title="工程与交付">工程与交付</a>
+    <a href="/cn/tags/#编译器" title="编译器">编译器</a>
     
-    <a href="/cn/tags/#归一化" title="归一化">归一化</a>
-    
-    <a href="/cn/tags/#非线性函数" title="非线性函数">非线性函数</a>
-    
-    <a href="/cn/tags/#数值精度" title="数值精度">数值精度</a>
+    <a href="/cn/tags/#数值计算" title="数值计算">数值计算</a>
     
   </div>
   
@@ -498,16 +494,16 @@
 
   <a href="/cn/compiler-e14-same-shape-different-answers/">
     <h2 class="post-title">
-      E14｜相同的输出形状，完全不同的答案：池化、缩放与索引归约
+      相同的输出形状，完全不同的答案：池化、缩放与索引归约
     </h2>
     <h3 class="post-subtitle">
       窗口分母、插值坐标和最大值索引决定具体答案。
     </h3>
     <div class="post-content-preview">
-      系列目录 · 工程与交付 · E14 · Read in English
+      系列目录 · 工程与交付 · Read in English
 “形状、类型、内存大小都对，怎么还差一个像素？”
 排查人盯着放大后的特征图，发现每隔几列就有一条细小的差异。另一边，池化测试只有边缘不一致。大家把它们当成两个独立问题，后来才意识到，它们问的是同一句话：输出坐标到底怎样对应输入？
-形状描述了有多少个答案，却没有定义每个答案如何计算。窗口边界、采样位置、舍入规则和索引选择......
+形状描述了有多少个答案，却没有定义每个答案如何计算。窗口边界、采样位置、舍入规则和索引选择，才决定了形......
     </div>
   </a>
   
@@ -517,13 +513,9 @@
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#工程与交付" title="工程与交付">工程与交付</a>
+    <a href="/cn/tags/#编译器" title="编译器">编译器</a>
     
-    <a href="/cn/tags/#池化" title="池化">池化</a>
-    
-    <a href="/cn/tags/#插值" title="插值">插值</a>
-    
-    <a href="/cn/tags/#归约" title="归约">归约</a>
+    <a href="/cn/tags/#数值计算" title="数值计算">数值计算</a>
     
   </div>
   
@@ -540,16 +532,17 @@
 
   <a href="/cn/compiler-e13-moving-data-moving-meaning/">
     <h2 class="post-title">
-      E13｜它只是在搬数据，为什么还会算错：张量变换的隐藏契约
+      它只是在搬数据，为什么还会算错：张量变换的隐藏契约
     </h2>
     <h3 class="post-subtitle">
       坐标、步长、别名和量化参数，让搬数据也有语义。
     </h3>
     <div class="post-content-preview">
-      系列目录 · 工程与交付 · E13 · Read in English
+      系列目录 · 工程与交付 · Read in English
 “这个补丁应该很安全，它没有计算，只是移动一下数据。”
 半小时后，下游矩阵乘法的结果全变了。大家先检查乘法，再检查量化比例，最后发现搬运操作保持了每个字节，却改变了每个字节代表的位置。
-数据移动最容易获得一种不应有的信任：只要数值没变，语义就没变。张量的语义还包括坐标、形状、布局、别名关系和量化轴。搬对了字节，不一定搬......
+数据移动最容易获得一种不应有的信任：只要数值没变，语义就没变。张量的语义还包括坐标、形状、布局、别名关系和量化轴。搬对了字节，不一定搬对了张量。
+......
     </div>
   </a>
   
@@ -559,13 +552,9 @@
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#工程与交付" title="工程与交付">工程与交付</a>
+    <a href="/cn/tags/#编译器" title="编译器">编译器</a>
     
-    <a href="/cn/tags/#张量形状" title="张量形状">张量形状</a>
-    
-    <a href="/cn/tags/#内存布局" title="内存布局">内存布局</a>
-    
-    <a href="/cn/tags/#量化" title="量化">量化</a>
+    <a href="/cn/tags/#内存与并发" title="内存与并发">内存与并发</a>
     
   </div>
   
@@ -582,17 +571,17 @@
 
   <a href="/cn/compiler-e12-four-identities-of-an-instruction/">
     <h2 class="post-title">
-      E12｜一条指令的四种身份：代码生成为什么不能只靠字符串
+      一条指令的四种身份：代码生成为什么不能只靠字符串
     </h2>
     <h3 class="post-subtitle">
       数学运算、内核、发射与编码的四层职责和错误归属。
     </h3>
     <div class="post-content-preview">
-      系列目录 · 工程与交付 · E12 · Read in English
+      系列目录 · 工程与交付 · Read in English
 “只是发一条乘法指令，为什么要经过四层？”
 评审桌上有人写下一行 emit(&quot;mul&quot;, a, b, out)。它短小、直接，甚至很像最终汇编。另一位同事问：“这个 a 是张量、寄存器编号、内存地址，还是要被广播的标量？”
 房间安静了几秒。字符串的简洁，来自它把问题藏起来了。
-编译器代码生成中的一条......
+编译器代码生成中的一条指令，往往经......
     </div>
   </a>
   
@@ -602,13 +591,9 @@
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#工程与交付" title="工程与交付">工程与交付</a>
+    <a href="/cn/tags/#工程实践" title="工程实践">工程实践</a>
     
-    <a href="/cn/tags/#指令编码" title="指令编码">指令编码</a>
-    
-    <a href="/cn/tags/#代码生成" title="代码生成">代码生成</a>
-    
-    <a href="/cn/tags/#后端设计" title="后端设计">后端设计</a>
+    <a href="/cn/tags/#编译器" title="编译器">编译器</a>
     
   </div>
   
@@ -625,19 +610,19 @@
 
   <a href="/cn/compiler-e11-what-does-supported-really-mean/">
     <h2 class="post-title">
-      E11｜搜索到了算子名字，就可以写进“支持列表”吗？
+      搜索到了算子名字，就可以写进“支持列表”吗？
     </h2>
     <h3 class="post-subtitle">
       从存在一个名字到完整编译路径，支持需要多层证据。
     </h3>
     <div class="post-content-preview">
-      系列目录 · 工程与交付 · E11 · Read in English
+      系列目录 · 工程与交付 · Read in English
 用户发来一张模型图：“这个节点你们不是支持吗？我在源码里搜到了。”
 开发者也搜了一遍，果然有定义、有推理函数，甚至有测试文件。但模型还是停在后端。两边都没有说谎，只是“支持”这个词装进了不同含义。
 
 一条算子路径上有多少道门
 把模型编译想成一次接力，会更容易理解：
-12模型导入 → 语义表示 → 目标 lowering......
+12模型导入 → 语义表示 → 目标 lowering → 优化与......
     </div>
   </a>
   
@@ -647,13 +632,9 @@
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#工程与交付" title="工程与交付">工程与交付</a>
+    <a href="/cn/tags/#工程实践" title="工程实践">工程实践</a>
     
-    <a href="/cn/tags/#测试" title="测试">测试</a>
-    
-    <a href="/cn/tags/#规范" title="规范">规范</a>
-    
-    <a href="/cn/tags/#模型导入" title="模型导入">模型导入</a>
+    <a href="/cn/tags/#编译器" title="编译器">编译器</a>
     
   </div>
   
@@ -670,17 +651,19 @@
 
   <a href="/cn/compiler-e10-specifications-that-admit-unknowns/">
     <h2 class="post-title">
-      E10｜一份算子文档最有价值的词，可能是“尚未确认”
+      一份算子文档最有价值的词，可能是“尚未确认”
     </h2>
     <h3 class="post-subtitle">
       规范要保留未知项，避免把示例表格写成能力承诺。
     </h3>
     <div class="post-content-preview">
-      系列目录 · 工程与交付 · E10 · Read in English
+      系列目录 · 工程与交付 · Read in English
 评审会上，有人画出一张漂亮的图：输入张量经过一个算子，输出张量写回内存。再添几行像模像样的汇编，页面顿时显得完整。
 接着有人问：“这个配置字段，代码里真有吗？”
 房间安静下来。图上的字段只是为了说明逻辑临时取的名字，读者却已经把它当成硬件接口。
-技术文档最容易制造的错误，不一定是公式写错，而是不同证据层次看上去一样肯定......
+技术文档最容易制造的错误，不一定是公式写错，而是不同证据层次看上去一样肯定。
+
+从公式......
     </div>
   </a>
   
@@ -690,13 +673,9 @@
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#工程与交付" title="工程与交付">工程与交付</a>
+    <a href="/cn/tags/#工程实践" title="工程实践">工程实践</a>
     
-    <a href="/cn/tags/#测试" title="测试">测试</a>
-    
-    <a href="/cn/tags/#规范" title="规范">规范</a>
-    
-    <a href="/cn/tags/#后端设计" title="后端设计">后端设计</a>
+    <a href="/cn/tags/#编译器" title="编译器">编译器</a>
     
   </div>
   
@@ -713,19 +692,19 @@
 
   <a href="/cn/compiler-e09-golden-tests-that-can-disagree/">
     <h2 class="post-title">
-      E09｜汇编看起来对了，机器码也会对吗？
+      汇编看起来对了，机器码也会对吗？
     </h2>
     <h3 class="post-subtitle">
       伪汇编、汇编、机器码与数学参考各自证明什么。
     </h3>
     <div class="post-content-preview">
-      系列目录 · 工程与交付 · E09 · Read in English
+      系列目录 · 工程与交付 · Read in English
 “生成的汇编跟预期一样，所以代码生成器没问题。”
 如果二进制编码器和汇编打印器是两条不同路径，这个结论少了一半。打印器可能正确显示某个枚举名字，而编码器把对应字段写错位置。反过来，机器码可能正确，只是调试汇编误导了排障者。
 测试代码生成器，必须先问清楚自己正在观察哪一个对象。
 
 三个输出层，各自会撒什么谎
-一个典型发射......
+一个典型发射器可能提供可......
     </div>
   </a>
   
@@ -735,13 +714,9 @@
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#工程与交付" title="工程与交付">工程与交付</a>
+    <a href="/cn/tags/#工程实践" title="工程实践">工程实践</a>
     
-    <a href="/cn/tags/#测试" title="测试">测试</a>
-    
-    <a href="/cn/tags/#指令编码" title="指令编码">指令编码</a>
-    
-    <a href="/cn/tags/#代码生成" title="代码生成">代码生成</a>
+    <a href="/cn/tags/#编译器" title="编译器">编译器</a>
     
   </div>
   
@@ -758,19 +733,19 @@
 
   <a href="/cn/compiler-e08-releases-and-their-two-clocks/">
     <h2 class="post-title">
-      E08｜同一份发布包，为什么每次哈希都不同？
+      同一份发布包，为什么每次哈希都不同？
     </h2>
     <h3 class="post-subtitle">
       区分归档事件时间、包内时间和字节可复现性。
     </h3>
     <div class="post-content-preview">
-      系列目录 · 工程与交付 · E08 · Read in English
+      系列目录 · 工程与交付 · Read in English
 “源码没动，安装目录没动，为什么今天打出来的压缩包和昨天不是同一个哈希？”
 最初的直觉通常是怀疑某个文件内容变化。展开归档逐个比较，却发现内容相同。真正变化的可能是文件顺序、时间戳、拥有者，或者压缩层写入的额外时间信息。
 发布包不仅包含程序，也包含许多关于“它是怎样被装进去的”的元数据。
 
 先分清两个不同的“相同”
-语......
+语义相同，是指......
     </div>
   </a>
   
@@ -780,13 +755,9 @@
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#工程与交付" title="工程与交付">工程与交付</a>
+    <a href="/cn/tags/#工程实践" title="工程实践">工程实践</a>
     
-    <a href="/cn/tags/#可复现构建" title="可复现构建">可复现构建</a>
-    
-    <a href="/cn/tags/#打包" title="打包">打包</a>
-    
-    <a href="/cn/tags/#确定性" title="确定性">确定性</a>
+    <a href="/cn/tags/#编译器" title="编译器">编译器</a>
     
   </div>
   
@@ -803,18 +774,18 @@
 
   <a href="/cn/compiler-e07-command-line-output-contract/">
     <h2 class="post-title">
-      E07｜编译已经失败，目录里为什么还有一个“成功的模型”？
+      编译已经失败，目录里为什么还有一个“成功的模型”？
     </h2>
     <h3 class="post-subtitle">
       输出目录、临时产物和旧文件，让成功与失败可判断。
     </h3>
     <div class="post-content-preview">
-      系列目录 · 工程与交付 · E07 · Read in English
+      系列目录 · 工程与交付 · Read in English
 早上一次编译成功，下午改了模型再编译失败。自动化脚本检查输出文件仍然存在，于是把上午的模型送去运行。最后大家围着下午的新图讨论错误输出，调查对象却从一开始就拿错了。
 这个场景说明了一个关于产物契约的反例：文件存在，不等于本次操作成功地产生了它。
 
 输出参数首先是一个语义承诺
-命令行里的 --output 看起来只是字符......
+命令行里的 --output 看起来只是字符串，实际决定......
     </div>
   </a>
   
@@ -824,13 +795,9 @@
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#工程与交付" title="工程与交付">工程与交付</a>
+    <a href="/cn/tags/#工程实践" title="工程实践">工程实践</a>
     
-    <a href="/cn/tags/#错误处理" title="错误处理">错误处理</a>
-    
-    <a href="/cn/tags/#CLI" title="CLI">CLI</a>
-    
-    <a href="/cn/tags/#文件读写" title="文件读写">文件读写</a>
+    <a href="/cn/tags/#编译器" title="编译器">编译器</a>
     
   </div>
   
@@ -847,18 +814,18 @@
 
   <a href="/cn/compiler-e06-a-model-file-is-a-protocol/">
     <h2 class="post-title">
-      E06｜把一堆编译产物装成一个文件，到底难在哪里？
+      把一堆编译产物装成一个文件，到底难在哪里？
     </h2>
     <h3 class="post-subtitle">
       模型文件作为协议，必须定义偏移、长度与所有权。
     </h3>
     <div class="post-content-preview">
-      系列目录 · 工程与交付 · E06 · Read in English
+      系列目录 · 工程与交付 · Read in English
 “既然最终只想要一个文件，把整个目录压缩一下不就行了？”
 这句话对备份很合理，对运行时加载却未必成立。运行时可能需要直接知道输入输出张量、指令段位置、参数段长度和目标地址。它不想猜目录约定，也不能把编译器临时文件全部当成正式接口。
 因此，模型文件首先是生产者与消费者之间的协议，然后才是一串字节。
 
-文件偏移和设备地址，......
+文件偏移和设备地址，不住在同一个......
     </div>
   </a>
   
@@ -868,13 +835,9 @@
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#工程与交付" title="工程与交付">工程与交付</a>
+    <a href="/cn/tags/#工程实践" title="工程实践">工程实践</a>
     
-    <a href="/cn/tags/#二进制格式" title="二进制格式">二进制格式</a>
-    
-    <a href="/cn/tags/#序列化" title="序列化">序列化</a>
-    
-    <a href="/cn/tags/#输入校验" title="输入校验">输入校验</a>
+    <a href="/cn/tags/#编译器" title="编译器">编译器</a>
     
   </div>
   
@@ -924,331 +887,47 @@
   <div class="tags">
     
     
-    <a href="/cn/tags/#IT" title="IT" rel="3">IT</a>
+    <a href="/cn/tags/#人工智能" title="人工智能" rel="1">人工智能</a>
     
     
     
-    <a href="/cn/tags/#C/C++" title="C/C++" rel="8">C/C++</a>
+    <a href="/cn/tags/#C/C++" title="C/C++" rel="7">C/C++</a>
     
     
     
-    <a href="/cn/tags/#项目工程" title="项目工程" rel="17">项目工程</a>
+    <a href="/cn/tags/#计算机体系结构" title="计算机体系结构" rel="19">计算机体系结构</a>
     
     
     
-    <a href="/cn/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象" rel="9">RISC-V问题和解决方案以及现象</a>
+    <a href="/cn/tags/#操作系统" title="操作系统" rel="11">操作系统</a>
     
     
     
-    <a href="/cn/tags/#x86" title="x86" rel="9">x86</a>
+    <a href="/cn/tags/#工程实践" title="工程实践" rel="20">工程实践</a>
     
     
     
-    <a href="/cn/tags/#工程与交付" title="工程与交付" rel="15">工程与交付</a>
+    <a href="/cn/tags/#编译器" title="编译器" rel="49">编译器</a>
     
     
     
-    <a href="/cn/tags/#断言" title="断言" rel="1">断言</a>
+    <a href="/cn/tags/#内存与并发" title="内存与并发" rel="13">内存与并发</a>
     
     
     
-    <a href="/cn/tags/#调试" title="调试" rel="2">调试</a>
+    <a href="/cn/tags/#数值计算" title="数值计算" rel="20">数值计算</a>
     
     
     
-    <a href="/cn/tags/#构建系统" title="构建系统" rel="2">构建系统</a>
+    <a href="/cn/tags/#数学" title="数学" rel="1">数学</a>
     
     
     
-    <a href="/cn/tags/#安装" title="安装" rel="1">安装</a>
+    <a href="/cn/tags/#随笔" title="随笔" rel="2">随笔</a>
     
     
     
-    <a href="/cn/tags/#错误处理" title="错误处理" rel="4">错误处理</a>
-    
-    
-    
-    <a href="/cn/tags/#工具链" title="工具链" rel="1">工具链</a>
-    
-    
-    
-    <a href="/cn/tags/#可复现构建" title="可复现构建" rel="2">可复现构建</a>
-    
-    
-    
-    <a href="/cn/tags/#动态链接" title="动态链接" rel="1">动态链接</a>
-    
-    
-    
-    <a href="/cn/tags/#打包" title="打包" rel="3">打包</a>
-    
-    
-    
-    <a href="/cn/tags/#ELF" title="ELF" rel="1">ELF</a>
-    
-    
-    
-    <a href="/cn/tags/#运行资源" title="运行资源" rel="1">运行资源</a>
-    
-    
-    
-    <a href="/cn/tags/#测试" title="测试" rel="7">测试</a>
-    
-    
-    
-    <a href="/cn/tags/#二进制格式" title="二进制格式" rel="1">二进制格式</a>
-    
-    
-    
-    <a href="/cn/tags/#序列化" title="序列化" rel="1">序列化</a>
-    
-    
-    
-    <a href="/cn/tags/#输入校验" title="输入校验" rel="2">输入校验</a>
-    
-    
-    
-    <a href="/cn/tags/#CLI" title="CLI" rel="1">CLI</a>
-    
-    
-    
-    <a href="/cn/tags/#文件读写" title="文件读写" rel="1">文件读写</a>
-    
-    
-    
-    <a href="/cn/tags/#确定性" title="确定性" rel="2">确定性</a>
-    
-    
-    
-    <a href="/cn/tags/#指令编码" title="指令编码" rel="4">指令编码</a>
-    
-    
-    
-    <a href="/cn/tags/#代码生成" title="代码生成" rel="8">代码生成</a>
-    
-    
-    
-    <a href="/cn/tags/#规范" title="规范" rel="2">规范</a>
-    
-    
-    
-    <a href="/cn/tags/#后端设计" title="后端设计" rel="4">后端设计</a>
-    
-    
-    
-    <a href="/cn/tags/#模型导入" title="模型导入" rel="2">模型导入</a>
-    
-    
-    
-    <a href="/cn/tags/#张量形状" title="张量形状" rel="3">张量形状</a>
-    
-    
-    
-    <a href="/cn/tags/#内存布局" title="内存布局" rel="7">内存布局</a>
-    
-    
-    
-    <a href="/cn/tags/#量化" title="量化" rel="16">量化</a>
-    
-    
-    
-    <a href="/cn/tags/#池化" title="池化" rel="1">池化</a>
-    
-    
-    
-    <a href="/cn/tags/#插值" title="插值" rel="1">插值</a>
-    
-    
-    
-    <a href="/cn/tags/#归约" title="归约" rel="5">归约</a>
-    
-    
-    
-    <a href="/cn/tags/#归一化" title="归一化" rel="2">归一化</a>
-    
-    
-    
-    <a href="/cn/tags/#非线性函数" title="非线性函数" rel="1">非线性函数</a>
-    
-    
-    
-    <a href="/cn/tags/#数值精度" title="数值精度" rel="4">数值精度</a>
-    
-    
-    
-    <a href="/cn/tags/#系列导读" title="系列导读" rel="1">系列导读</a>
-    
-    
-    
-    <a href="/cn/tags/#数值与量化" title="数值与量化" rel="11">数值与量化</a>
-    
-    
-    
-    <a href="/cn/tags/#算子降级" title="算子降级" rel="3">算子降级</a>
-    
-    
-    
-    <a href="/cn/tags/#图重写" title="图重写" rel="7">图重写</a>
-    
-    
-    
-    <a href="/cn/tags/#重量化" title="重量化" rel="1">重量化</a>
-    
-    
-    
-    <a href="/cn/tags/#整数运算" title="整数运算" rel="5">整数运算</a>
-    
-    
-    
-    <a href="/cn/tags/#BatchNorm" title="BatchNorm" rel="1">BatchNorm</a>
-    
-    
-    
-    <a href="/cn/tags/#广播" title="广播" rel="2">广播</a>
-    
-    
-    
-    <a href="/cn/tags/#内存规划" title="内存规划" rel="4">内存规划</a>
-    
-    
-    
-    <a href="/cn/tags/#MLIR" title="MLIR" rel="1">MLIR</a>
-    
-    
-    
-    <a href="/cn/tags/#类型系统" title="类型系统" rel="1">类型系统</a>
-    
-    
-    
-    <a href="/cn/tags/#算子与布局" title="算子与布局" rel="12">算子与布局</a>
-    
-    
-    
-    <a href="/cn/tags/#卷积" title="卷积" rel="3">卷积</a>
-    
-    
-    
-    <a href="/cn/tags/#内存对齐" title="内存对齐" rel="1">内存对齐</a>
-    
-    
-    
-    <a href="/cn/tags/#常量" title="常量" rel="1">常量</a>
-    
-    
-    
-    <a href="/cn/tags/#常量折叠" title="常量折叠" rel="1">常量折叠</a>
-    
-    
-    
-    <a href="/cn/tags/#寄存器分配" title="寄存器分配" rel="3">寄存器分配</a>
-    
-    
-    
-    <a href="/cn/tags/#RAII" title="RAII" rel="2">RAII</a>
-    
-    
-    
-    <a href="/cn/tags/#算子融合" title="算子融合" rel="2">算子融合</a>
-    
-    
-    
-    <a href="/cn/tags/#MatMul" title="MatMul" rel="2">MatMul</a>
-    
-    
-    
-    <a href="/cn/tags/#资源与调度" title="资源与调度" rel="10">资源与调度</a>
-    
-    
-    
-    <a href="/cn/tags/#调度" title="调度" rel="3">调度</a>
-    
-    
-    
-    <a href="/cn/tags/#同步" title="同步" rel="3">同步</a>
-    
-    
-    
-    <a href="/cn/tags/#活跃性" title="活跃性" rel="1">活跃性</a>
-    
-    
-    
-    <a href="/cn/tags/#有状态计算" title="有状态计算" rel="2">有状态计算</a>
-    
-    
-    
-    <a href="/cn/tags/#数学哲学" title="数学哲学" rel="1">数学哲学</a>
-    
-    
-    
-    <a href="/cn/tags/#多机器人系统" title="多机器人系统" rel="8">多机器人系统</a>
-    
-    
-    
-    <a href="/cn/tags/#DDS" title="DDS" rel="1">DDS</a>
-    
-    
-    
-    <a href="/cn/tags/#sandbox" title="sandbox" rel="1">sandbox</a>
-    
-    
-    
-    <a href="/cn/tags/#运行验证" title="运行验证" rel="1">运行验证</a>
-    
-    
-    
-    <a href="/cn/tags/#fleet_manager" title="fleet_manager" rel="3">fleet_manager</a>
-    
-    
-    
-    <a href="/cn/tags/#path_planner" title="path_planner" rel="4">path_planner</a>
-    
-    
-    
-    <a href="/cn/tags/#assignment" title="assignment" rel="1">assignment</a>
-    
-    
-    
-    <a href="/cn/tags/#BFS" title="BFS" rel="1">BFS</a>
-    
-    
-    
-    <a href="/cn/tags/#route" title="route" rel="1">route</a>
-    
-    
-    
-    <a href="/cn/tags/#robot_agent" title="robot_agent" rel="2">robot_agent</a>
-    
-    
-    
-    <a href="/cn/tags/#waypoint" title="waypoint" rel="1">waypoint</a>
-    
-    
-    
-    <a href="/cn/tags/#状态机" title="状态机" rel="1">状态机</a>
-    
-    
-    
-    <a href="/cn/tags/#service" title="service" rel="1">service</a>
-    
-    
-    
-    <a href="/cn/tags/#topic" title="topic" rel="1">topic</a>
-    
-    
-    
-    <a href="/cn/tags/#Nav2" title="Nav2" rel="1">Nav2</a>
-    
-    
-    
-    <a href="/cn/tags/#integration" title="integration" rel="1">integration</a>
-    
-    
-    
-    <a href="/cn/tags/#冲突检测" title="冲突检测" rel="1">冲突检测</a>
-    
-    
-    
-    <a href="/cn/tags/#预约机制" title="预约机制" rel="1">预约机制</a>
+    <a href="/cn/tags/#机器人" title="机器人" rel="8">机器人</a>
     
     
   </div>
@@ -1314,23 +993,23 @@
   <ul>
     
     <a href="compiler-e15-names-are-not-numerical-contracts/">
-      <li>E15｜一个函数名，装不下它的数值契约：非线性与归一化的边界</li>
+      <li>一个函数名，装不下它的数值契约：非线性与归一化的边界</li>
     </a>
     
     <a href="compiler-e14-same-shape-different-answers/">
-      <li>E14｜相同的输出形状，完全不同的答案：池化、缩放与索引归约</li>
+      <li>相同的输出形状，完全不同的答案：池化、缩放与索引归约</li>
     </a>
     
     <a href="compiler-e13-moving-data-moving-meaning/">
-      <li>E13｜它只是在搬数据，为什么还会算错：张量变换的隐藏契约</li>
+      <li>它只是在搬数据，为什么还会算错：张量变换的隐藏契约</li>
     </a>
     
     <a href="compiler-e12-four-identities-of-an-instruction/">
-      <li>E12｜一条指令的四种身份：代码生成为什么不能只靠字符串</li>
+      <li>一条指令的四种身份：代码生成为什么不能只靠字符串</li>
     </a>
     
     <a href="compiler-e11-what-does-supported-really-mean/">
-      <li>E11｜搜索到了算子名字，就可以写进“支持列表”吗？</li>
+      <li>搜索到了算子名字，就可以写进“支持列表”吗？</li>
     </a>
     
   </ul>

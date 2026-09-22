@@ -141,7 +141,7 @@
   <link rel="canonical" href="https://000xiaoming.github.io/cn/compiler-o12-static-left-matmul/">
   <title>
     
-      O12｜权重跑到左边以后：用一个转置恒等式，搬动整个编译链 - I&#39;m Bruce Lee
+      权重跑到左边以后：用一个转置恒等式，搬动整个编译链 - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -387,16 +387,12 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/cn/tags/#量化" title="量化">量化</a>
+              <a class="tag" href="/cn/tags/#编译器" title="编译器">编译器</a>
               
-              <a class="tag" href="/cn/tags/#图重写" title="图重写">图重写</a>
-              
-              <a class="tag" href="/cn/tags/#算子与布局" title="算子与布局">算子与布局</a>
-              
-              <a class="tag" href="/cn/tags/#MatMul" title="MatMul">MatMul</a>
+              <a class="tag" href="/cn/tags/#数值计算" title="数值计算">数值计算</a>
               
             </div>
-            <h1>O12｜权重跑到左边以后：用一个转置恒等式，搬动整个编译链</h1>
+            <h1>权重跑到左边以后：用一个转置恒等式，搬动整个编译链</h1>
             <h2 class="subheading">转置恒等式只是起点，权重命名与量化轴还要一起移动。</h2>
             <span class="meta">
               Posted by Bruce Lee on
@@ -457,7 +453,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 算子与布局 · O12 · <a href="/en/compiler-o12-static-left-matmul/">Read in English</a></p>
+        <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 算子与布局 · <a href="/en/compiler-o12-static-left-matmul/">Read in English</a></p>
 <p>“都是矩阵乘法，权重放左边怎么就不能编译？”</p>
 <p>从线性代数看，这是个合理的疑问。从后端看，矩阵单元的数据流、权重打包、偏置参数与量化通道可能都围绕 <code>动态输入 @ 常量权重</code> 组织。当常量跑到左侧，算子名字没变，原有实现的假设却几乎全被触碰。</p>
 <span id="more"></span>
@@ -502,12 +498,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/cn/compiler-r01-register-raii/" data-toggle="tooltip" data-placement="top" title="R01｜那只“临时”寄存器，为什么总被别人借走？">&larr; Previous Post</a>
+            <a href="/cn/compiler-r01-register-raii/" data-toggle="tooltip" data-placement="top" title="那只“临时”寄存器，为什么总被别人借走？">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/cn/compiler-o11-matmul-fusion-barriers/" data-toggle="tooltip" data-placement="top" title="O11｜MatMul 后面有个 Sigmoid：为什么编译器偏偏不肯融合">Next Post &rarr;</a>
+            <a href="/cn/compiler-o11-matmul-fusion-barriers/" data-toggle="tooltip" data-placement="top" title="MatMul 后面有个 Sigmoid：为什么编译器偏偏不肯融合">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -557,7 +553,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=O12｜权重跑到左边以后：用一个转置恒等式，搬动整个编译链&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/compiler-o12-static-left-matmul/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=权重跑到左边以后：用一个转置恒等式，搬动整个编译链&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/compiler-o12-static-left-matmul/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -619,13 +615,9 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/cn/tags/#量化" title="量化">量化</a>
+            <a class="tag" href="/cn/tags/#编译器" title="编译器">编译器</a>
             
-            <a class="tag" href="/cn/tags/#图重写" title="图重写">图重写</a>
-            
-            <a class="tag" href="/cn/tags/#算子与布局" title="算子与布局">算子与布局</a>
-            
-            <a class="tag" href="/cn/tags/#MatMul" title="MatMul">MatMul</a>
+            <a class="tag" href="/cn/tags/#数值计算" title="数值计算">数值计算</a>
             
           </div>
         </section>

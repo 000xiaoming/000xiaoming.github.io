@@ -141,7 +141,7 @@
   <link rel="canonical" href="https://000xiaoming.github.io/en/compiler-r08-loops-determinism/">
   <title>
     
-      R08 | One More Loop, and the Binary Snapshot Looks Like a Different Program - I&#39;m Bruce Lee
+      One More Loop, and the Binary Snapshot Looks Like a Different Program - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -387,16 +387,12 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/tags/#Testing" title="Testing">Testing</a>
+              <a class="tag" href="/tags/#Engineering" title="Engineering">Engineering</a>
               
-              <a class="tag" href="/tags/#Determinism" title="Determinism">Determinism</a>
-              
-              <a class="tag" href="/tags/#Code Generation" title="Code Generation">Code Generation</a>
-              
-              <a class="tag" href="/tags/#Resources and Scheduling" title="Resources and Scheduling">Resources and Scheduling</a>
+              <a class="tag" href="/tags/#Compilers" title="Compilers">Compilers</a>
               
             </div>
-            <h1>R08 | One More Loop, and the Binary Snapshot Looks Like a Different Program</h1>
+            <h1>One More Loop, and the Binary Snapshot Looks Like a Different Program</h1>
             <h2 class="subheading">Examine how loops, labels, and independent emitter instances affect binary determinism.</h2>
             <span class="meta">
               Posted by Bruce Lee on
@@ -457,7 +453,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Resources and Scheduling · R08 · <a href="/cn/compiler-r08-loops-determinism/">阅读中文版</a></p>
+        <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Resources and Scheduling · <a href="/cn/compiler-r08-loops-determinism/">阅读中文版</a></p>
 <p>“This test passed a moment ago. It still passes on its own, but the output changes after the rest of the suite.”</p>
 <p>“Could it be the random seed?”</p>
 <p>“There are no random numbers. Just a static counter.”</p>
@@ -478,7 +474,7 @@
 <p>Consider processing a 3×5 grid:</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">outer = 3</span><br><span class="line">outer_begin:</span><br><span class="line">    inner = 5</span><br><span class="line">inner_begin:</span><br><span class="line">    process_one_tile()</span><br><span class="line">    inner -= 1</span><br><span class="line">    if inner == 0: goto inner_done</span><br><span class="line">    advance_inner_address()</span><br><span class="line">    goto inner_begin</span><br><span class="line">inner_done:</span><br><span class="line">    outer -= 1</span><br><span class="line">    if outer == 0: goto all_done</span><br><span class="line">    advance_outer_boundary()</span><br><span class="line">    goto outer_begin</span><br><span class="line">all_done:</span><br></pre></td></tr></table></figure>
 <p>The address advance is deliberately placed after the exit check, so it is skipped on the final iteration. Some descriptor models do not allow advancing to an out-of-bounds address after processing has finished. A real implementation may use another valid approach, but its tests must follow its addressing protocol.</p>
-<p>If the outer counter’s register is reused when initializing the inner loop, even this small example may never reach all_done. That is why the resource leases in <a href="/en/compiler-r01-register-raii/">R01</a> must be designed together with the loop structure.</p>
+<p>If the outer counter’s register is reused when initializing the inner loop, even this small example may never reach all_done. That is why the resource leases in <a href="/en/compiler-r01-register-raii/">Registers and RAII</a> must be designed together with the loop structure.</p>
 <h2 id="What-evidence-can-golden-tests-provide">What evidence can golden tests provide?</h2>
 <p>The relevant commit adds fixed binary references covering no loop, a single iteration, an inner loop, nested loops, composite operations, multistep recurrent state, and some combinations of modes. The tests compare actual assembly, pseudo-assembly, and binary output. They also check label uniqueness, agreement between incremental and complete output, exhaustion after repeated incremental reads, and the absence of leftover dependency resources.</p>
 <p>The same cases are also run in reverse order and reconstructed in independent generators across multiple threads. This broadens the focus from “one generation produced the right output” to “the result does not depend on what other cases did first.”</p>
@@ -552,12 +548,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/en/compiler-r09-encoding-boundaries/" data-toggle="tooltip" data-placement="top" title="R09 | “I Parsed a Number” Does Not Mean the Input Is Valid">&larr; Previous Post</a>
+            <a href="/en/compiler-r09-encoding-boundaries/" data-toggle="tooltip" data-placement="top" title="“I Parsed a Number” Does Not Mean the Input Is Valid">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/en/compiler-r07-error-boundaries/" data-toggle="tooltip" data-placement="top" title="R07 | You Caught the Exception. What Happens to the Half-Written Machine Code?">Next Post &rarr;</a>
+            <a href="/en/compiler-r07-error-boundaries/" data-toggle="tooltip" data-placement="top" title="You Caught the Exception. What Happens to the Half-Written Machine Code?">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -607,7 +603,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=R08 | One More Loop, and the Binary Snapshot Looks Like a Different Program&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/en/compiler-r08-loops-determinism/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=One More Loop, and the Binary Snapshot Looks Like a Different Program&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/en/compiler-r08-loops-determinism/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -669,13 +665,9 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#Testing" title="Testing">Testing</a>
+            <a class="tag" href="/tags/#Engineering" title="Engineering">Engineering</a>
             
-            <a class="tag" href="/tags/#Determinism" title="Determinism">Determinism</a>
-            
-            <a class="tag" href="/tags/#Code Generation" title="Code Generation">Code Generation</a>
-            
-            <a class="tag" href="/tags/#Resources and Scheduling" title="Resources and Scheduling">Resources and Scheduling</a>
+            <a class="tag" href="/tags/#Compilers" title="Compilers">Compilers</a>
             
           </div>
         </section>

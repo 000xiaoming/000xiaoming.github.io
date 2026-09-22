@@ -141,7 +141,7 @@
   <link rel="canonical" href="https://000xiaoming.github.io/en/compiler-n07-broadcast-memory/">
   <title>
     
-      N07 | Just a Few Channel Parameters—So Why Is Local Memory Full? - I&#39;m Bruce Lee
+      Just a Few Channel Parameters—So Why Is Local Memory Full? - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -387,16 +387,12 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/tags/#Quantization" title="Quantization">Quantization</a>
+              <a class="tag" href="/tags/#Compilers" title="Compilers">Compilers</a>
               
-              <a class="tag" href="/tags/#Numerics and Quantization" title="Numerics and Quantization">Numerics and Quantization</a>
-              
-              <a class="tag" href="/tags/#Broadcasting" title="Broadcasting">Broadcasting</a>
-              
-              <a class="tag" href="/tags/#Memory Planning" title="Memory Planning">Memory Planning</a>
+              <a class="tag" href="/tags/#Numerical Computing" title="Numerical Computing">Numerical Computing</a>
               
             </div>
-            <h1>N07 | Just a Few Channel Parameters—So Why Is Local Memory Full?</h1>
+            <h1>Just a Few Channel Parameters—So Why Is Local Memory Full?</h1>
             <h2 class="subheading">Avoid materializing channel parameters across a whole tensor while preserving broadcasting.</h2>
             <span class="meta">
               Posted by Bruce Lee on
@@ -457,7 +453,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Numerics and Quantization · N07 · <a href="/cn/compiler-n07-broadcast-memory/">阅读中文版</a></p>
+        <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Numerics and Quantization · <a href="/cn/compiler-n07-broadcast-memory/">阅读中文版</a></p>
 <p>“The model has one tiny scale vector and one tiny bias vector. How can it run out of memory?” The allocation failure appears to be arguing with common sense—until someone expands the compiled constants’ shapes. Each tiny vector has become a full feature map.</p>
 <p>In mathematics, broadcasting resembles an ellipsis. In an implementation, it may mean an address rule or thousands of copies. One word should not hide that distinction.</p>
 <span id="more"></span>
@@ -487,7 +483,7 @@
 <p>The question extends beyond affine operators. Whenever a kernel moves from multiple stages to in-place processing, revisit extra workspace, aliasing conditions, dependencies, and alignment.</p>
 <h2 id="5-Why-Simplifying-Multiplication-by-One-Helps-but-Does-Not-Solve-Everything">5. Why Simplifying Multiplication by One Helps but Does Not Solve Everything</h2>
 <p>One historical fix for memory exhaustion lowered unit-coefficient cases to bias addition, or to requantization when the bias was also zero. This avoided some constants and intermediate nodes.</p>
-<p>That is reasonable but limited. General coefficients still need broadcasting and workspace, and approximately unit coefficients raise the error conditions discussed in N06. A special case compiling successfully does not establish that the broadcast-memory model is solved.</p>
+<p>That is reasonable but limited. General coefficients still need broadcasting and workspace, and approximately unit coefficients raise the error conditions discussed in <a href="/en/compiler-n06-batchnorm-quantization/">BatchNorm Quantization</a>. A special case compiling successfully does not establish that the broadcast-memory model is solved.</p>
 <p>Broader candidates include deferring broadcast materialization through zero strides or broadcast descriptors, loading compact parameters by tile, reusing parameters across adjacent elementwise computations, and permitting safe output-buffer reuse. All need actual support and tests; these suggestions are not presented as historically completed capabilities.</p>
 <h2 id="6-Observe-Performance-and-Resources-Together">6. Observe Performance and Resources Together</h2>
 <p>A rough traffic model is:</p>
@@ -554,12 +550,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/en/compiler-n08-specialized-affine/" data-toggle="tooltip" data-placement="top" title="N08 | Build a Dedicated Operator, Then Remove It: A Design Change Worth Recording">&larr; Previous Post</a>
+            <a href="/en/compiler-n08-specialized-affine/" data-toggle="tooltip" data-placement="top" title="Build a Dedicated Operator, Then Remove It: A Design Change Worth Recording">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/en/compiler-n06-batchnorm-quantization/" data-toggle="tooltip" data-placement="top" title="N06 | Once BatchNorm Becomes Multiply-Add, the Numerical Work Begins">Next Post &rarr;</a>
+            <a href="/en/compiler-n06-batchnorm-quantization/" data-toggle="tooltip" data-placement="top" title="Once BatchNorm Becomes Multiply-Add, the Numerical Work Begins">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -609,7 +605,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=N07 | Just a Few Channel Parameters—So Why Is Local Memory Full?&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/en/compiler-n07-broadcast-memory/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=Just a Few Channel Parameters—So Why Is Local Memory Full?&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/en/compiler-n07-broadcast-memory/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -671,13 +667,9 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#Quantization" title="Quantization">Quantization</a>
+            <a class="tag" href="/tags/#Compilers" title="Compilers">Compilers</a>
             
-            <a class="tag" href="/tags/#Numerics and Quantization" title="Numerics and Quantization">Numerics and Quantization</a>
-            
-            <a class="tag" href="/tags/#Broadcasting" title="Broadcasting">Broadcasting</a>
-            
-            <a class="tag" href="/tags/#Memory Planning" title="Memory Planning">Memory Planning</a>
+            <a class="tag" href="/tags/#Numerical Computing" title="Numerical Computing">Numerical Computing</a>
             
           </div>
         </section>

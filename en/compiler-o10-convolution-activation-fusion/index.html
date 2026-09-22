@@ -141,7 +141,7 @@
   <link rel="canonical" href="https://000xiaoming.github.io/en/compiler-o10-convolution-activation-fusion/">
   <title>
     
-      O10 | Putting Activation Inside Convolution: Preserve the Quantization Boundary Before Removing the Node - I&#39;m Bruce Lee
+      Putting Activation Inside Convolution: Preserve the Quantization Boundary Before Removing the Node - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -387,16 +387,12 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/tags/#Quantization" title="Quantization">Quantization</a>
+              <a class="tag" href="/tags/#Compilers" title="Compilers">Compilers</a>
               
-              <a class="tag" href="/tags/#Operators and Layouts" title="Operators and Layouts">Operators and Layouts</a>
-              
-              <a class="tag" href="/tags/#Convolution" title="Convolution">Convolution</a>
-              
-              <a class="tag" href="/tags/#Operator Fusion" title="Operator Fusion">Operator Fusion</a>
+              <a class="tag" href="/tags/#Numerical Computing" title="Numerical Computing">Numerical Computing</a>
               
             </div>
-            <h1>O10 | Putting Activation Inside Convolution: Preserve the Quantization Boundary Before Removing the Node</h1>
+            <h1>Putting Activation Inside Convolution: Preserve the Quantization Boundary Before Removing the Node</h1>
             <h2 class="subheading">Preserve intermediate quantization and legality when fusing convolution with activation.</h2>
             <span class="meta">
               Posted by Bruce Lee on
@@ -457,7 +453,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Operators and Layouts · O10 · <a href="/cn/compiler-o10-convolution-activation-fusion/">阅读中文版</a></p>
+        <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Operators and Layouts · <a href="/cn/compiler-o10-convolution-activation-fusion/">阅读中文版</a></p>
 <p>“These two nodes are adjacent. Fusing them should make things faster, right?”</p>
 <p>“Possibly. First, explain what that intermediate tensor used to be.”</p>
 <p>The most tempting picture of fusion is one fewer circle in a graph. What disappears may include more than a name: real storage, a quantization step, a data type, and a value read by other nodes. Turn on a postprocessing switch while forgetting those intermediate semantics, and the graph becomes shorter while the answer may move further away.</p>
@@ -501,12 +497,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/en/compiler-o11-matmul-fusion-barriers/" data-toggle="tooltip" data-placement="top" title="O11 | A Sigmoid After MatMul: Why the Compiler Still Refuses to Fuse It">&larr; Previous Post</a>
+            <a href="/en/compiler-o11-matmul-fusion-barriers/" data-toggle="tooltip" data-placement="top" title="A Sigmoid After MatMul: Why the Compiler Still Refuses to Fuse It">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/en/compiler-o09-scratch-register-lifetimes/" data-toggle="tooltip" data-placement="top" title="O09 | Who Moved My Scratch Register? Teaching an Emitter to Borrow and Return">Next Post &rarr;</a>
+            <a href="/en/compiler-o09-scratch-register-lifetimes/" data-toggle="tooltip" data-placement="top" title="Who Moved My Scratch Register? Teaching an Emitter to Borrow and Return">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -556,7 +552,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=O10 | Putting Activation Inside Convolution: Preserve the Quantization Boundary Before Removing the Node&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/en/compiler-o10-convolution-activation-fusion/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=Putting Activation Inside Convolution: Preserve the Quantization Boundary Before Removing the Node&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/en/compiler-o10-convolution-activation-fusion/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -618,13 +614,9 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#Quantization" title="Quantization">Quantization</a>
+            <a class="tag" href="/tags/#Compilers" title="Compilers">Compilers</a>
             
-            <a class="tag" href="/tags/#Operators and Layouts" title="Operators and Layouts">Operators and Layouts</a>
-            
-            <a class="tag" href="/tags/#Convolution" title="Convolution">Convolution</a>
-            
-            <a class="tag" href="/tags/#Operator Fusion" title="Operator Fusion">Operator Fusion</a>
+            <a class="tag" href="/tags/#Numerical Computing" title="Numerical Computing">Numerical Computing</a>
             
           </div>
         </section>

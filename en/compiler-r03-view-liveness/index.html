@@ -141,7 +141,7 @@
   <link rel="canonical" href="https://000xiaoming.github.io/en/compiler-r03-view-liveness/">
   <title>
     
-      R03 | The View Moved No Data. Why Can’t We Return the Memory? - I&#39;m Bruce Lee
+      The View Moved No Data. Why Can’t We Return the Memory? - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -387,16 +387,12 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/tags/#Memory Planning" title="Memory Planning">Memory Planning</a>
+              <a class="tag" href="/tags/#Compilers" title="Compilers">Compilers</a>
               
-              <a class="tag" href="/tags/#Resources and Scheduling" title="Resources and Scheduling">Resources and Scheduling</a>
-              
-              <a class="tag" href="/tags/#Synchronization" title="Synchronization">Synchronization</a>
-              
-              <a class="tag" href="/tags/#Liveness" title="Liveness">Liveness</a>
+              <a class="tag" href="/tags/#Memory and Concurrency" title="Memory and Concurrency">Memory and Concurrency</a>
               
             </div>
-            <h1>R03 | The View Moved No Data. Why Can’t We Return the Memory?</h1>
+            <h1>The View Moved No Data. Why Can’t We Return the Memory?</h1>
             <h2 class="subheading">Follow asynchronous consumers through view chains before reclaiming underlying storage.</h2>
             <span class="meta">
               Posted by Bruce Lee on
@@ -457,7 +453,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Resources and Scheduling · R03 · <a href="/cn/compiler-r03-view-liveness/">阅读中文版</a></p>
+        <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Resources and Scheduling · <a href="/cn/compiler-r03-view-liveness/">阅读中文版</a></p>
 <p>“We’ve passed this tensor’s last user. We can reclaim it.”</p>
 <p>“That user only changed its shape. The operation that actually reads the data is still waiting in another queue.”</p>
 <p>If memory allocators had an award for excessive helpfulness, premature reuse would be a strong contender. It follows IR order diligently: once direct users have been handled, it hands the space to the next writer. There is just one problem. The user has disappeared; the reader has not.</p>
@@ -550,12 +546,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/en/compiler-r04-address-capacity/" data-toggle="tooltip" data-placement="top" title="R04 | The Address Fits. Why Does the Compiler Say Memory Is Full?">&larr; Previous Post</a>
+            <a href="/en/compiler-r04-address-capacity/" data-toggle="tooltip" data-placement="top" title="The Address Fits. Why Does the Compiler Say Memory Is Full?">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/en/compiler-r02-dependency-pressure/" data-toggle="tooltip" data-placement="top" title="R02 | A Few More Branches in the Graph—and Synchronization Registers Run Out First?">Next Post &rarr;</a>
+            <a href="/en/compiler-r02-dependency-pressure/" data-toggle="tooltip" data-placement="top" title="A Few More Branches in the Graph—and Synchronization Registers Run Out First?">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -605,7 +601,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=R03 | The View Moved No Data. Why Can’t We Return the Memory?&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/en/compiler-r03-view-liveness/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=The View Moved No Data. Why Can’t We Return the Memory?&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/en/compiler-r03-view-liveness/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -667,13 +663,9 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#Memory Planning" title="Memory Planning">Memory Planning</a>
+            <a class="tag" href="/tags/#Compilers" title="Compilers">Compilers</a>
             
-            <a class="tag" href="/tags/#Resources and Scheduling" title="Resources and Scheduling">Resources and Scheduling</a>
-            
-            <a class="tag" href="/tags/#Synchronization" title="Synchronization">Synchronization</a>
-            
-            <a class="tag" href="/tags/#Liveness" title="Liveness">Liveness</a>
+            <a class="tag" href="/tags/#Memory and Concurrency" title="Memory and Concurrency">Memory and Concurrency</a>
             
           </div>
         </section>

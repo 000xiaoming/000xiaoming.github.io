@@ -141,7 +141,7 @@
   <link rel="canonical" href="https://000xiaoming.github.io/cn/compiler-r07-error-boundaries/">
   <title>
     
-      R07｜catch 住异常之后，半份机器码怎么办？ - I&#39;m Bruce Lee
+      catch 住异常之后，半份机器码怎么办？ - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -387,16 +387,12 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/cn/tags/#错误处理" title="错误处理">错误处理</a>
+              <a class="tag" href="/cn/tags/#工程实践" title="工程实践">工程实践</a>
               
-              <a class="tag" href="/cn/tags/#测试" title="测试">测试</a>
-              
-              <a class="tag" href="/cn/tags/#代码生成" title="代码生成">代码生成</a>
-              
-              <a class="tag" href="/cn/tags/#资源与调度" title="资源与调度">资源与调度</a>
+              <a class="tag" href="/cn/tags/#编译器" title="编译器">编译器</a>
               
             </div>
-            <h1>R07｜catch 住异常之后，半份机器码怎么办？</h1>
+            <h1>catch 住异常之后，半份机器码怎么办？</h1>
             <h2 class="subheading">错误被捕获之后，已产生的状态与输出仍需明确处理。</h2>
             <span class="meta">
               Posted by Bruce Lee on
@@ -457,7 +453,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 资源与调度 · R07 · <a href="/en/compiler-r07-error-boundaries/">Read in English</a></p>
+        <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 资源与调度 · <a href="/en/compiler-r07-error-boundaries/">Read in English</a></p>
 <p>“异常已经被 catch 了，编译器不会崩。”</p>
 <p>“那输出目录里为什么有一半文件？”</p>
 <p>“因为写文件发生在另一条路径。”</p>
@@ -481,7 +477,7 @@
 <h2 id="不要把异常转换叫作事务">不要把异常转换叫作事务</h2>
 <p>一个真正的事务通常承诺：成功提交全部变化；失败恢复到可定义的先前状态。代码生成器的变化包括指令列表、伪指令列表、标签编号、增量读取游标、依赖组计数、临时资源和内存分配摘要。</p>
 <p>而这里核实到的包装，主要完成“捕获异常并返回状态”。它没有建立所有这些对象的统一快照，也没有在失败后逆向撤销所有动作。因此更准确的失败策略是：失败后终止并废弃这次生成上下文，除非某个接口单独承诺可恢复。</p>
-<p><a href="/cn/compiler-r01-register-raii/">R01</a>中的 RAII 能归还局部资源，但无法自动删除已经追加的指令。<a href="/cn/compiler-r09-encoding-boundaries/">R09</a>中把参数验证移到追加伪指令之前，则是对特定接口加强“失败前不改变输出”的保证。局部保证很有价值，不能被拼成未经证明的全局事务。</p>
+<p><a href="/cn/compiler-r01-register-raii/">寄存器与 RAII</a>中的 RAII 能归还局部资源，但无法自动删除已经追加的指令。<a href="/cn/compiler-r09-encoding-boundaries/">指令编码的边界</a>中把参数验证移到追加伪指令之前，则是对特定接口加强“失败前不改变输出”的保证。局部保证很有价值，不能被拼成未经证明的全局事务。</p>
 <h2 id="为什么导出前先编码一遍">为什么导出前先编码一遍</h2>
 <p>相关写出逻辑把完整二进制编码提前到创建和写出后续产物之前，调试汇编也先序列化到内存，再进入文件写出流程。这样可以把“指令根本不能编码”的失败挡在更早位置，减少留下半份输出的机会。</p>
 <p>不过，这也不等于文件系统事务。编码成功以后，磁盘空间不足、权限错误或进程中断，仍可能留下部分文件。若产品要求输出目录要么完整、要么不存在，还需要临时目录、完整性校验与原子发布之类机制。</p>
@@ -550,12 +546,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/cn/compiler-r08-loops-determinism/" data-toggle="tooltip" data-placement="top" title="R08｜循环只多了一层，为什么二进制快照像换了一个程序？">&larr; Previous Post</a>
+            <a href="/cn/compiler-r08-loops-determinism/" data-toggle="tooltip" data-placement="top" title="循环只多了一层，为什么二进制快照像换了一个程序？">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/cn/compiler-r06-recurrent-dependencies/" data-toggle="tooltip" data-placement="top" title="R06｜等过了事件，为什么还没等到数据？">Next Post &rarr;</a>
+            <a href="/cn/compiler-r06-recurrent-dependencies/" data-toggle="tooltip" data-placement="top" title="等过了事件，为什么还没等到数据？">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -605,7 +601,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=R07｜catch 住异常之后，半份机器码怎么办？&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/compiler-r07-error-boundaries/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=catch 住异常之后，半份机器码怎么办？&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/compiler-r07-error-boundaries/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -667,13 +663,9 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/cn/tags/#错误处理" title="错误处理">错误处理</a>
+            <a class="tag" href="/cn/tags/#工程实践" title="工程实践">工程实践</a>
             
-            <a class="tag" href="/cn/tags/#测试" title="测试">测试</a>
-            
-            <a class="tag" href="/cn/tags/#代码生成" title="代码生成">代码生成</a>
-            
-            <a class="tag" href="/cn/tags/#资源与调度" title="资源与调度">资源与调度</a>
+            <a class="tag" href="/cn/tags/#编译器" title="编译器">编译器</a>
             
           </div>
         </section>

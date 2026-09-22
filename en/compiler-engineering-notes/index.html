@@ -387,7 +387,7 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/tags/#Reading Guides" title="Reading Guides">Reading Guides</a>
+              <a class="tag" href="/tags/#Compilers" title="Compilers">Compilers</a>
               
             </div>
             <h1>Compiler Engineering Notes: 48 Bilingual Articles and Reading Paths</h1>
@@ -457,14 +457,14 @@
 <span id="more"></span>
 <h2 id="Where-to-start">Where to start</h2>
 <ul>
-<li>For a complete debugging story: <a href="/en/compiler-e01-the-release-build-that-forgot-to-write/">E01 | Debug Works, but Release “Optimizes Away” a Write</a>.</li>
-<li>For quantization problems: <a href="/en/compiler-n05-integer-multiply/">N05 | The Multiplication Is Right; the Scale Is Wrong: An Integer Kernel’s Two Ledgers</a> → <a href="/en/compiler-n06-batchnorm-quantization/">N06 | Once BatchNorm Becomes Multiply-Add, the Numerical Work Begins</a> → <a href="/en/compiler-n09-normalization-ranges/">N09 | Epsilon Was Nonzero—Until It Nearly Vanished in the Integer Domain</a>.</li>
-<li>For shapes and layouts: <a href="/en/compiler-o03-reshape-proof/">O03 | Why Does Reshape Need Code? The Elements Stay the Same; Their Route Changes</a> → <a href="/en/compiler-o05-broadcast-address-plans/">O05 | Broadcasting: Sometimes the Right Address Is the One That Does Not Move</a> → <a href="/en/compiler-o06-aligned-stride-constants/">O06 | The First Row Works, the Second Disappears: Alignment, Strides, and Padded Constants</a>.</li>
-<li>For asynchronous execution and resource ownership: <a href="/en/compiler-r01-register-raii/">R01 | Why Does Someone Keep Borrowing My “Temporary” Register?</a> → <a href="/en/compiler-r03-view-liveness/">R03 | The View Moved No Data. Why Can’t We Return the Memory?</a> → <a href="/en/compiler-r06-recurrent-dependencies/">R06 | I Waited for the Event. Why Isn’t the Data Ready?</a>.</li>
-<li>For compiler delivery: <a href="/en/compiler-e02-three-stages-of-a-build/">E02 | “I Only Rebuilt It.” Why Did the Installation Directory Disappear?</a> → <a href="/en/compiler-e04-the-library-that-was-there/">E04 | The Library Is in the Package. Why Can’t the Program Find It?</a> → <a href="/en/compiler-e05-a-compiler-that-can-move-house/">E05 | The Compiler Moved. Its Lookup-Table Module Didn’t Get the Address</a> → <a href="/en/compiler-e08-releases-and-their-two-clocks/">E08 | Why Does the Same Release Package Get a Different Hash Every Time?</a>.</li>
-<li>For backend architecture and verification: <a href="/en/compiler-e12-four-identities-of-an-instruction/">E12 | An Instruction’s Four Identities: Why Code Generation Needs More Than Strings</a> → <a href="/en/compiler-e09-golden-tests-that-can-disagree/">E09 | The Assembly Looks Right. Does That Mean the Machine Code Is Right?</a> → <a href="/en/compiler-e10-specifications-that-admit-unknowns/">E10 | The Most Useful Words in an Operator Specification May Be “Not Yet Confirmed”</a>.</li>
+<li>For a complete debugging story: <a href="/en/compiler-e01-the-release-build-that-forgot-to-write/">Debug Works, but Release “Optimizes Away” a Write</a>.</li>
+<li>For quantization problems: <a href="/en/compiler-n05-integer-multiply/">The Multiplication Is Right; the Scale Is Wrong: An Integer Kernel’s Two Ledgers</a> → <a href="/en/compiler-n06-batchnorm-quantization/">Once BatchNorm Becomes Multiply-Add, the Numerical Work Begins</a> → <a href="/en/compiler-n09-normalization-ranges/">Epsilon Was Nonzero—Until It Nearly Vanished in the Integer Domain</a>.</li>
+<li>For shapes and layouts: <a href="/en/compiler-o03-reshape-proof/">Why Does Reshape Need Code? The Elements Stay the Same; Their Route Changes</a> → <a href="/en/compiler-o05-broadcast-address-plans/">Broadcasting: Sometimes the Right Address Is the One That Does Not Move</a> → <a href="/en/compiler-o06-aligned-stride-constants/">The First Row Works, the Second Disappears: Alignment, Strides, and Padded Constants</a>.</li>
+<li>For asynchronous execution and resource ownership: <a href="/en/compiler-r01-register-raii/">Why Does Someone Keep Borrowing My “Temporary” Register?</a> → <a href="/en/compiler-r03-view-liveness/">The View Moved No Data. Why Can’t We Return the Memory?</a> → <a href="/en/compiler-r06-recurrent-dependencies/">I Waited for the Event. Why Isn’t the Data Ready?</a>.</li>
+<li>For compiler delivery: <a href="/en/compiler-e02-three-stages-of-a-build/">“I Only Rebuilt It.” Why Did the Installation Directory Disappear?</a> → <a href="/en/compiler-e04-the-library-that-was-there/">The Library Is in the Package. Why Can’t the Program Find It?</a> → <a href="/en/compiler-e05-a-compiler-that-can-move-house/">The Compiler Moved. Its Lookup-Table Module Didn’t Get the Address</a> → <a href="/en/compiler-e08-releases-and-their-two-clocks/">Why Does the Same Release Package Get a Different Hash Every Time?</a>.</li>
+<li>For backend architecture and verification: <a href="/en/compiler-e12-four-identities-of-an-instruction/">An Instruction’s Four Identities: Why Code Generation Needs More Than Strings</a> → <a href="/en/compiler-e09-golden-tests-that-can-disagree/">The Assembly Looks Right. Does That Mean the Machine Code Is Right?</a> → <a href="/en/compiler-e10-specifications-that-admit-unknowns/">The Most Useful Words in an Operator Specification May Be “Not Yet Confirmed”</a>.</li>
 </ul>
-<h2 id="Part-I-Numerical-Correctness-—-Integers-and-the-Scales-That-Interpret-Them">Part I: Numerical Correctness — Integers and the Scales That Interpret Them</h2>
+<h2 id="Numerical-Correctness-—-Integers-and-the-Scales-That-Interpret-Them">Numerical Correctness — Integers and the Scales That Interpret Them</h2>
 <table>
 <thead>
 <tr>
@@ -474,52 +474,52 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="/en/compiler-n01-reduction-lowering/">N01 | Just Take the Mean—Why Is the Compiler Writing Loops?</a></td>
+<td><a href="/en/compiler-n01-reduction-lowering/">Just Take the Mean—Why Is the Compiler Writing Loops?</a></td>
 <td>Lower arbitrary reduction axes into executable loops and account for layout and transfer costs.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-n02-axis-identity/">N02 | The Vanishing Dimension: How keep_dims=false Can Break an Inverse Permutation</a></td>
+<td><a href="/en/compiler-n02-axis-identity/">The Vanishing Dimension: How keep_dims=false Can Break an Inverse Permutation</a></td>
 <td>Preserve axis identity when dimensions disappear, then reconstruct the inverse permutation.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-n03-reduction-family/">N03 | Max, Min, and Sum: Similar Operators, Different Mathematical Homework</a></td>
+<td><a href="/en/compiler-n03-reduction-family/">Max, Min, and Sum: Similar Operators, Different Mathematical Homework</a></td>
 <td>Share reduction structure without copying initialization, accumulation, or rescaling semantics.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-n04-identity-requantization/">N04 | This Reduction Does Nothing—Why Can’t We Delete It?</a></td>
+<td><a href="/en/compiler-n04-identity-requantization/">This Reduction Does Nothing—Why Can’t We Delete It?</a></td>
 <td>A mathematical identity can still require a change of quantized representation.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-n05-integer-multiply/">N05 | The Multiplication Is Right; the Scale Is Wrong: An Integer Kernel’s Two Ledgers</a></td>
+<td><a href="/en/compiler-n05-integer-multiply/">The Multiplication Is Right; the Scale Is Wrong: An Integer Kernel’s Two Ledgers</a></td>
 <td>Track input scales, output scales, and the range of the intermediate product.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-n06-batchnorm-quantization/">N06 | Once BatchNorm Becomes Multiply-Add, the Numerical Work Begins</a></td>
+<td><a href="/en/compiler-n06-batchnorm-quantization/">Once BatchNorm Becomes Multiply-Add, the Numerical Work Begins</a></td>
 <td>Follow fixed statistics through channelwise affine transforms, multipliers, shifts, and biases.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-n07-broadcast-memory/">N07 | Just a Few Channel Parameters—So Why Is Local Memory Full?</a></td>
+<td><a href="/en/compiler-n07-broadcast-memory/">Just a Few Channel Parameters—So Why Is Local Memory Full?</a></td>
 <td>Avoid materializing channel parameters across a whole tensor while preserving broadcasting.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-n08-specialized-affine/">N08 | Build a Dedicated Operator, Then Remove It: A Design Change Worth Recording</a></td>
+<td><a href="/en/compiler-n08-specialized-affine/">Build a Dedicated Operator, Then Remove It: A Design Change Worth Recording</a></td>
 <td>Compare the expressiveness and maintenance cost of a dedicated affine operator and its decomposition.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-n09-normalization-ranges/">N09 | Epsilon Was Nonzero—Until It Nearly Vanished in the Integer Domain</a></td>
+<td><a href="/en/compiler-n09-normalization-ranges/">Epsilon Was Nonzero—Until It Nearly Vanished in the Integer Domain</a></td>
 <td>Follow epsilon, squares, and reciprocal square roots through normalization range planning.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-n10-rewrite-result-types/">N10 | Floating Point Passes, Quantization Fails: A Rewrite Gives the Output the Input’s Identity</a></td>
+<td><a href="/en/compiler-n10-rewrite-result-types/">Floating Point Passes, Quantization Fails: A Rewrite Gives the Output the Input’s Identity</a></td>
 <td>Treat the rewritten result type as both a container and a numerical contract.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-n11-import-order-and-constants/">N11 | The Importer Got Clever Too Soon: Algebraic Optimization before Quantization Metadata</a></td>
+<td><a href="/en/compiler-n11-import-order-and-constants/">The Importer Got Clever Too Soon: Algebraic Optimization before Quantization Metadata</a></td>
 <td>Understand the interaction between algebraic rewrite order, metadata matching, and constants.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="Part-II-Operators-and-Layouts-—-Putting-Mathematics-into-Memory">Part II: Operators and Layouts — Putting Mathematics into Memory</h2>
+<h2 id="Operators-and-Layouts-—-Putting-Mathematics-into-Memory">Operators and Layouts — Putting Mathematics into Memory</h2>
 <table>
 <thead>
 <tr>
@@ -529,56 +529,56 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="/en/compiler-o01-grouped-convolution/">O01 | Grouped Convolution: Once You Slice the Cake, Slice the Labels Too</a></td>
+<td><a href="/en/compiler-o01-grouped-convolution/">Grouped Convolution: Once You Slice the Cake, Slice the Labels Too</a></td>
 <td>Split input and weight groups while carrying their quantization metadata with them.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-o02-transposed-convolution-storage/">O02 | Transposed Convolution Weights: The Shape Is Honest, but Memory Speaks Another Dialect</a></td>
+<td><a href="/en/compiler-o02-transposed-convolution-storage/">Transposed Convolution Weights: The Shape Is Honest, but Memory Speaks Another Dialect</a></td>
 <td>Derive slices from actual weight storage, not just a logical dimension order.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-o03-reshape-proof/">O03 | Why Does Reshape Need Code? The Elements Stay the Same; Their Route Changes</a></td>
+<td><a href="/en/compiler-o03-reshape-proof/">Why Does Reshape Need Code? The Elements Stay the Same; Their Route Changes</a></td>
 <td>Prove the linear element mapping and distinguish shape changes from physical rearrangement.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-o04-dump-layout/">O04 | When the Debugger Starts Lying: One Permute, Three Ways to Fix Dump</a></td>
+<td><a href="/en/compiler-o04-dump-layout/">When the Debugger Starts Lying: One Permute, Three Ways to Fix Dump</a></td>
 <td>Three alternative branch fixes show why observation paths need layout contracts too.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-o05-broadcast-address-plans/">O05 | Broadcasting: Sometimes the Right Address Is the One That Does Not Move</a></td>
+<td><a href="/en/compiler-o05-broadcast-address-plans/">Broadcasting: Sometimes the Right Address Is the One That Does Not Move</a></td>
 <td>Build per-axis address plans for scalars, lower-rank inputs, and more complex broadcasts.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-o06-aligned-stride-constants/">O06 | The First Row Works, the Second Disappears: Alignment, Strides, and Padded Constants</a></td>
+<td><a href="/en/compiler-o06-aligned-stride-constants/">The First Row Works, the Second Disappears: Alignment, Strides, and Padded Constants</a></td>
 <td>Make logical widths, physical strides, padded storage, and parameter layouts agree.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-o07-scalar-arithmetic-direction/">O07 | Subtracting Zero Can Disappear; Subtracting from Zero Cannot</a></td>
+<td><a href="/en/compiler-o07-scalar-arithmetic-direction/">Subtracting Zero Can Disappear; Subtracting from Zero Cannot</a></td>
 <td>Keep constant folding, commutativity, and operand direction as separate decisions.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-o08-unary-quantization-contract/">O08 | Abs and Sign: One Line of Arithmetic Does Not Make Their Parameter Contracts Interchangeable</a></td>
+<td><a href="/en/compiler-o08-unary-quantization-contract/">Abs and Sign: One Line of Arithmetic Does Not Make Their Parameter Contracts Interchangeable</a></td>
 <td>Carry a unary operator’s definition through types, quantization, and parameter encoding.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-o09-scratch-register-lifetimes/">O09 | Who Moved My Scratch Register? Teaching an Emitter to Borrow and Return</a></td>
+<td><a href="/en/compiler-o09-scratch-register-lifetimes/">Who Moved My Scratch Register? Teaching an Emitter to Borrow and Return</a></td>
 <td>Replace informal scratch-register conventions with explicit borrowing and lifetime rules.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-o10-convolution-activation-fusion/">O10 | Putting Activation Inside Convolution: Preserve the Quantization Boundary Before Removing the Node</a></td>
+<td><a href="/en/compiler-o10-convolution-activation-fusion/">Putting Activation Inside Convolution: Preserve the Quantization Boundary Before Removing the Node</a></td>
 <td>Preserve intermediate quantization and legality when fusing convolution with activation.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-o11-matmul-fusion-barriers/">O11 | A Sigmoid After MatMul: Why the Compiler Still Refuses to Fuse It</a></td>
+<td><a href="/en/compiler-o11-matmul-fusion-barriers/">A Sigmoid After MatMul: Why the Compiler Still Refuses to Fuse It</a></td>
 <td>Understand how consumers, views, and dependencies constrain matrix-activation fusion.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-o12-static-left-matmul/">O12 | When Weights Move to the Left: A Transpose Identity That Moves the Whole Compiler Chain</a></td>
+<td><a href="/en/compiler-o12-static-left-matmul/">When Weights Move to the Left: A Transpose Identity That Moves the Whole Compiler Chain</a></td>
 <td>A transpose identity starts the rewrite; weight identity and quantization axes must follow.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="Part-III-Resources-and-Scheduling-—-Who-Still-Needs-This-Data">Part III: Resources and Scheduling — Who Still Needs This Data?</h2>
+<h2 id="Resources-and-Scheduling-—-Who-Still-Needs-This-Data">Resources and Scheduling — Who Still Needs This Data?</h2>
 <table>
 <thead>
 <tr>
@@ -588,48 +588,48 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="/en/compiler-r01-register-raii/">R01 | Why Does Someone Keep Borrowing My “Temporary” Register?</a></td>
+<td><a href="/en/compiler-r01-register-raii/">Why Does Someone Keep Borrowing My “Temporary” Register?</a></td>
 <td>Express register ownership through scope and define the limits of automatic release.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-r02-dependency-pressure/">R02 | A Few More Branches in the Graph—and Synchronization Registers Run Out First?</a></td>
+<td><a href="/en/compiler-r02-dependency-pressure/">A Few More Branches in the Graph—and Synchronization Registers Run Out First?</a></td>
 <td>Explain how graph fan-out and dependency joins create synchronization-resource pressure.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-r03-view-liveness/">R03 | The View Moved No Data. Why Can’t We Return the Memory?</a></td>
+<td><a href="/en/compiler-r03-view-liveness/">The View Moved No Data. Why Can’t We Return the Memory?</a></td>
 <td>Follow asynchronous consumers through view chains before reclaiming underlying storage.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-r04-address-capacity/">R04 | The Address Fits. Why Does the Compiler Say Memory Is Full?</a></td>
+<td><a href="/en/compiler-r04-address-capacity/">The Address Fits. Why Does the Compiler Say Memory Is Full?</a></td>
 <td>Separate encodable addresses, allocation intervals, and actual memory budgets.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-r05-recurrent-state/">R05 | Why Write the Same Final State Twice?</a></td>
+<td><a href="/en/compiler-r05-recurrent-state/">Why Write the Same Final State Twice?</a></td>
 <td>Distinguish persistent state, final state, and direct-output buffers.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-r06-recurrent-dependencies/">R06 | I Waited for the Event. Why Isn’t the Data Ready?</a></td>
+<td><a href="/en/compiler-r06-recurrent-dependencies/">I Waited for the Event. Why Isn’t the Data Ready?</a></td>
 <td>Make synchronization events cover the actual production of data across execution engines.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-r07-error-boundaries/">R07 | You Caught the Exception. What Happens to the Half-Written Machine Code?</a></td>
+<td><a href="/en/compiler-r07-error-boundaries/">You Caught the Exception. What Happens to the Half-Written Machine Code?</a></td>
 <td>After catching an error, account for the state and output already produced.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-r08-loops-determinism/">R08 | One More Loop, and the Binary Snapshot Looks Like a Different Program</a></td>
+<td><a href="/en/compiler-r08-loops-determinism/">One More Loop, and the Binary Snapshot Looks Like a Different Program</a></td>
 <td>Examine how loops, labels, and independent emitter instances affect binary determinism.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-r09-encoding-boundaries/">R09 | “I Parsed a Number” Does Not Mean the Input Is Valid</a></td>
+<td><a href="/en/compiler-r09-encoding-boundaries/">“I Parsed a Number” Does Not Mean the Input Is Valid</a></td>
 <td>Check full input consumption, signs, and field ranges after parsing succeeds.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-r10-optimization-contracts/">R10 | Fewer Operations—So Why Disable the Optimization?</a></td>
+<td><a href="/en/compiler-r10-optimization-contracts/">Fewer Operations—So Why Disable the Optimization?</a></td>
 <td>Treat disabling an optimization as a design decision about slicing and quantization contracts.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="Part-IV-Compiler-Engineering-—-From-a-Development-Tree-to-a-Deliverable">Part IV: Compiler Engineering — From a Development Tree to a Deliverable</h2>
+<h2 id="Compiler-Engineering-—-From-a-Development-Tree-to-a-Deliverable">Compiler Engineering — From a Development Tree to a Deliverable</h2>
 <table>
 <thead>
 <tr>
@@ -639,332 +639,283 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="/en/compiler-e01-the-release-build-that-forgot-to-write/">E01 | Debug Works, but Release “Optimizes Away” a Write</a></td>
+<td><a href="/en/compiler-e01-the-release-build-that-forgot-to-write/">Debug Works, but Release “Optimizes Away” a Write</a></td>
 <td>A required write hidden in an assertion disappears when checks are disabled.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-e02-three-stages-of-a-build/">E02 | “I Only Rebuilt It.” Why Did the Installation Directory Disappear?</a></td>
+<td><a href="/en/compiler-e02-three-stages-of-a-build/">“I Only Rebuilt It.” Why Did the Installation Directory Disappear?</a></td>
 <td>Define the responsibilities and failure states of environment setup, builds, and installation.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-e03-one-toolchain-three-versions/">E03 | One Version of the Headers, Another Version of the Generator</a></td>
+<td><a href="/en/compiler-e03-one-toolchain-three-versions/">One Version of the Headers, Another Version of the Generator</a></td>
 <td>Headers, libraries, generators, and caches jointly determine toolchain identity.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-e04-the-library-that-was-there/">E04 | The Library Is in the Package. Why Can’t the Program Find It?</a></td>
+<td><a href="/en/compiler-e04-the-library-that-was-there/">The Library Is in the Package. Why Can’t the Program Find It?</a></td>
 <td>Connect real library files, SONAMEs, linker names, and runtime search paths.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-e05-a-compiler-that-can-move-house/">E05 | The Compiler Moved. Its Lookup-Table Module Didn’t Get the Address</a></td>
+<td><a href="/en/compiler-e05-a-compiler-that-can-move-house/">The Compiler Moved. Its Lookup-Table Module Didn’t Get the Address</a></td>
 <td>Use real functionality and missing-resource tests to validate relocation.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-e06-a-model-file-is-a-protocol/">E06 | Why Is Packing Compiler Outputs into One File Hard?</a></td>
+<td><a href="/en/compiler-e06-a-model-file-is-a-protocol/">Why Is Packing Compiler Outputs into One File Hard?</a></td>
 <td>Treat a model file as a protocol with offsets, lengths, and ownership.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-e07-command-line-output-contract/">E07 | Compilation Failed. Why Is There Still a “Successful Model” in the Directory?</a></td>
+<td><a href="/en/compiler-e07-command-line-output-contract/">Compilation Failed. Why Is There Still a “Successful Model” in the Directory?</a></td>
 <td>Make output directories, temporary artifacts, and stale files part of a clear success contract.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-e08-releases-and-their-two-clocks/">E08 | Why Does the Same Release Package Get a Different Hash Every Time?</a></td>
+<td><a href="/en/compiler-e08-releases-and-their-two-clocks/">Why Does the Same Release Package Get a Different Hash Every Time?</a></td>
 <td>Separate archive-event time, package timestamps, and byte reproducibility.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-e09-golden-tests-that-can-disagree/">E09 | The Assembly Looks Right. Does That Mean the Machine Code Is Right?</a></td>
+<td><a href="/en/compiler-e09-golden-tests-that-can-disagree/">The Assembly Looks Right. Does That Mean the Machine Code Is Right?</a></td>
 <td>Understand what pseudoassembly, assembly, machine code, and mathematical references each prove.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-e10-specifications-that-admit-unknowns/">E10 | The Most Useful Words in an Operator Specification May Be “Not Yet Confirmed”</a></td>
+<td><a href="/en/compiler-e10-specifications-that-admit-unknowns/">The Most Useful Words in an Operator Specification May Be “Not Yet Confirmed”</a></td>
 <td>Keep unknowns explicit rather than turning example tables into capability promises.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-e11-what-does-supported-really-mean/">E11 | You Found the Operator’s Name. Does That Make It Supported?</a></td>
+<td><a href="/en/compiler-e11-what-does-supported-really-mean/">You Found the Operator’s Name. Does That Make It Supported?</a></td>
 <td>Require evidence for a complete compilation path before calling an operator supported.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-e12-four-identities-of-an-instruction/">E12 | An Instruction’s Four Identities: Why Code Generation Needs More Than Strings</a></td>
+<td><a href="/en/compiler-e12-four-identities-of-an-instruction/">An Instruction’s Four Identities: Why Code Generation Needs More Than Strings</a></td>
 <td>Assign responsibilities and diagnostics across operation, kernel, emission, and encoding layers.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-e13-moving-data-moving-meaning/">E13 | It Only Moves Data. How Can It Still Be Wrong?</a></td>
+<td><a href="/en/compiler-e13-moving-data-moving-meaning/">It Only Moves Data. How Can It Still Be Wrong?</a></td>
 <td>Preserve coordinates, strides, aliasing, and quantization when moving data.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-e14-same-shape-different-answers/">E14 | Same Output Shape, Different Answers: Pooling, Resizing, and Index Reductions</a></td>
+<td><a href="/en/compiler-e14-same-shape-different-answers/">Same Output Shape, Different Answers: Pooling, Resizing, and Index Reductions</a></td>
 <td>Let window denominators, sampling coordinates, and index rules determine actual results.</td>
 </tr>
 <tr>
-<td><a href="/en/compiler-e15-names-are-not-numerical-contracts/">E15 | A Function Name Cannot Hold Its Numerical Contract</a></td>
+<td><a href="/en/compiler-e15-names-are-not-numerical-contracts/">A Function Name Cannot Hold Its Numerical Contract</a></td>
 <td>Specify domains, approximations, precision, and axes beyond a function’s name.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="Follow-a-question-across-the-series">Follow a question across the series</h2>
 <ul>
-<li><strong>Can this rewrite be removed?</strong> <a href="/en/compiler-n04-identity-requantization/">N04</a> → <a href="/en/compiler-n10-rewrite-result-types/">N10</a> → <a href="/en/compiler-r10-optimization-contracts/">R10</a>: mathematical identity, result representation, and optimization preconditions must all hold.</li>
-<li><strong>Is the observed error the real error?</strong> <a href="/en/compiler-o04-dump-layout/">O04</a> → <a href="/en/compiler-e09-golden-tests-that-can-disagree/">E09</a>: debugging layouts and test baselines can be wrong too.</li>
-<li><strong>Do fewer nodes always mean faster execution?</strong> <a href="/en/compiler-n07-broadcast-memory/">N07</a> → <a href="/en/compiler-o10-convolution-activation-fusion/">O10</a> → <a href="/en/compiler-o11-matmul-fusion-barriers/">O11</a>: movement, memory, rounding boundaries, and consumers determine the potential benefit.</li>
-<li><strong>What does an operator name promise?</strong> <a href="/en/compiler-e11-what-does-supported-really-mean/">E11</a> → <a href="/en/compiler-e14-same-shape-different-answers/">E14</a> → <a href="/en/compiler-e15-names-are-not-numerical-contracts/">E15</a>: a name and an output shape leave much of the numerical contract unspecified.</li>
-<li><strong>Does a file’s existence mean success?</strong> <a href="/en/compiler-e01-the-release-build-that-forgot-to-write/">E01</a> → <a href="/en/compiler-e06-a-model-file-is-a-protocol/">E06</a> → <a href="/en/compiler-e07-command-line-output-contract/">E07</a> → <a href="/en/compiler-r07-error-boundaries/">R07</a>: required side effects and output states need verifiable completion conditions.</li>
+<li><strong>Can this rewrite be removed?</strong> <a href="/en/compiler-n04-identity-requantization/">Identity and Requantization</a> → <a href="/en/compiler-n10-rewrite-result-types/">Rewrite Result Types</a> → <a href="/en/compiler-r10-optimization-contracts/">Optimization Preconditions</a>: mathematical identity, result representation, and optimization preconditions must all hold.</li>
+<li><strong>Is the observed error the real error?</strong> <a href="/en/compiler-o04-dump-layout/">Debug Output Layout</a> → <a href="/en/compiler-e09-golden-tests-that-can-disagree/">Layered Regression Tests</a>: debugging layouts and test baselines can be wrong too.</li>
+<li><strong>Do fewer nodes always mean faster execution?</strong> <a href="/en/compiler-n07-broadcast-memory/">Broadcast Memory</a> → <a href="/en/compiler-o10-convolution-activation-fusion/">Convolution Fusion</a> → <a href="/en/compiler-o11-matmul-fusion-barriers/">MatMul Fusion Boundaries</a>: movement, memory, rounding boundaries, and consumers determine the potential benefit.</li>
+<li><strong>What does an operator name promise?</strong> <a href="/en/compiler-e11-what-does-supported-really-mean/">Operator Support</a> → <a href="/en/compiler-e14-same-shape-different-answers/">Pooling and Sampling</a> → <a href="/en/compiler-e15-names-are-not-numerical-contracts/">Nonlinear Functions and Normalization</a>: a name and an output shape leave much of the numerical contract unspecified.</li>
+<li><strong>Does a file’s existence mean success?</strong> <a href="/en/compiler-e01-the-release-build-that-forgot-to-write/">Assertion Side Effects</a> → <a href="/en/compiler-e06-a-model-file-is-a-protocol/">Model File Protocols</a> → <a href="/en/compiler-e07-command-line-output-contract/">CLI Output Contracts</a> → <a href="/en/compiler-r07-error-boundaries/">Error Boundaries</a>: required side effects and output states need verifiable completion conditions.</li>
 </ul>
 <p>Each article is an independent Markdown file, ready to read, edit, or import into a blog platform. Tables and code blocks require no online resources.</p>
 <h2 id="Connections-to-earlier-blog-posts">Connections to earlier blog posts</h2>
 <ul>
-<li>Build foundations: <a href="/en/build-and-manage-multi-file/">Building and Managing Multiple Files</a> → E02, E03.</li>
-<li>Loading foundations: <a href="/en/detailed-explanation-compilation-loading-execution/">Compilation, Loading, and Execution</a> → E04, E05.</li>
-<li>Memory foundations: <a href="/en/multi-program-memory-manage-task-exchange/">Memory Management and Task Switching</a> → R03, R04.</li>
-<li>Debugging foundations: <a href="/en/debug/">Engineering Debugging Experience</a> → O04, E01, E09.</li>
+<li>Build foundations: <a href="/en/build-and-manage-multi-file/">Building and Managing Multiple Files</a> → <a href="/en/compiler-e02-three-stages-of-a-build/">Build Stages</a>, <a href="/en/compiler-e03-one-toolchain-three-versions/">Toolchain Consistency</a>.</li>
+<li>Loading foundations: <a href="/en/detailed-explanation-compilation-loading-execution/">Compilation, Loading, and Execution</a> → <a href="/en/compiler-e04-the-library-that-was-there/">Dynamic Library Resolution</a>, <a href="/en/compiler-e05-a-compiler-that-can-move-house/">Compiler Relocation</a>.</li>
+<li>Memory foundations: <a href="/en/multi-program-memory-manage-task-exchange/">Memory Management and Task Switching</a> → <a href="/en/compiler-r03-view-liveness/">View Liveness</a>, <a href="/en/compiler-r04-address-capacity/">Addresses and Capacity</a>.</li>
+<li>Debugging foundations: <a href="/en/debug/">Engineering Debugging Experience</a> → <a href="/en/compiler-o04-dump-layout/">Debug Output Layout</a>, <a href="/en/compiler-e01-the-release-build-that-forgot-to-write/">Assertion Side Effects</a>, <a href="/en/compiler-e09-golden-tests-that-can-disagree/">Layered Regression Tests</a>.</li>
 </ul>
 <h2 id="Editorial-calendar">Editorial calendar</h2>
 <table>
 <thead>
 <tr>
-<th>ID</th>
 <th>Date</th>
 <th>Article</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>N01</td>
 <td>2026-01-06</td>
-<td><a href="/en/compiler-n01-reduction-lowering/">N01 | Just Take the Mean—Why Is the Compiler Writing Loops?</a></td>
+<td><a href="/en/compiler-n01-reduction-lowering/">Just Take the Mean—Why Is the Compiler Writing Loops?</a></td>
 </tr>
 <tr>
-<td>N02</td>
 <td>2026-01-11</td>
-<td><a href="/en/compiler-n02-axis-identity/">N02 | The Vanishing Dimension: How keep_dims=false Can Break an Inverse Permutation</a></td>
+<td><a href="/en/compiler-n02-axis-identity/">The Vanishing Dimension: How keep_dims=false Can Break an Inverse Permutation</a></td>
 </tr>
 <tr>
-<td>N03</td>
 <td>2026-01-18</td>
-<td><a href="/en/compiler-n03-reduction-family/">N03 | Max, Min, and Sum: Similar Operators, Different Mathematical Homework</a></td>
+<td><a href="/en/compiler-n03-reduction-family/">Max, Min, and Sum: Similar Operators, Different Mathematical Homework</a></td>
 </tr>
 <tr>
-<td>N04</td>
 <td>2026-01-22</td>
-<td><a href="/en/compiler-n04-identity-requantization/">N04 | This Reduction Does Nothing—Why Can’t We Delete It?</a></td>
+<td><a href="/en/compiler-n04-identity-requantization/">This Reduction Does Nothing—Why Can’t We Delete It?</a></td>
 </tr>
 <tr>
-<td>N05</td>
 <td>2026-01-28</td>
-<td><a href="/en/compiler-n05-integer-multiply/">N05 | The Multiplication Is Right; the Scale Is Wrong: An Integer Kernel’s Two Ledgers</a></td>
+<td><a href="/en/compiler-n05-integer-multiply/">The Multiplication Is Right; the Scale Is Wrong: An Integer Kernel’s Two Ledgers</a></td>
 </tr>
 <tr>
-<td>N06</td>
 <td>2026-02-02</td>
-<td><a href="/en/compiler-n06-batchnorm-quantization/">N06 | Once BatchNorm Becomes Multiply-Add, the Numerical Work Begins</a></td>
+<td><a href="/en/compiler-n06-batchnorm-quantization/">Once BatchNorm Becomes Multiply-Add, the Numerical Work Begins</a></td>
 </tr>
 <tr>
-<td>N07</td>
 <td>2026-02-09</td>
-<td><a href="/en/compiler-n07-broadcast-memory/">N07 | Just a Few Channel Parameters—So Why Is Local Memory Full?</a></td>
+<td><a href="/en/compiler-n07-broadcast-memory/">Just a Few Channel Parameters—So Why Is Local Memory Full?</a></td>
 </tr>
 <tr>
-<td>N08</td>
 <td>2026-02-13</td>
-<td><a href="/en/compiler-n08-specialized-affine/">N08 | Build a Dedicated Operator, Then Remove It: A Design Change Worth Recording</a></td>
+<td><a href="/en/compiler-n08-specialized-affine/">Build a Dedicated Operator, Then Remove It: A Design Change Worth Recording</a></td>
 </tr>
 <tr>
-<td>N09</td>
 <td>2026-02-19</td>
-<td><a href="/en/compiler-n09-normalization-ranges/">N09 | Epsilon Was Nonzero—Until It Nearly Vanished in the Integer Domain</a></td>
+<td><a href="/en/compiler-n09-normalization-ranges/">Epsilon Was Nonzero—Until It Nearly Vanished in the Integer Domain</a></td>
 </tr>
 <tr>
-<td>N10</td>
 <td>2026-02-24</td>
-<td><a href="/en/compiler-n10-rewrite-result-types/">N10 | Floating Point Passes, Quantization Fails: A Rewrite Gives the Output the Input’s Identity</a></td>
+<td><a href="/en/compiler-n10-rewrite-result-types/">Floating Point Passes, Quantization Fails: A Rewrite Gives the Output the Input’s Identity</a></td>
 </tr>
 <tr>
-<td>N11</td>
 <td>2026-03-03</td>
-<td><a href="/en/compiler-n11-import-order-and-constants/">N11 | The Importer Got Clever Too Soon: Algebraic Optimization before Quantization Metadata</a></td>
+<td><a href="/en/compiler-n11-import-order-and-constants/">The Importer Got Clever Too Soon: Algebraic Optimization before Quantization Metadata</a></td>
 </tr>
 <tr>
-<td>O01</td>
 <td>2026-03-07</td>
-<td><a href="/en/compiler-o01-grouped-convolution/">O01 | Grouped Convolution: Once You Slice the Cake, Slice the Labels Too</a></td>
+<td><a href="/en/compiler-o01-grouped-convolution/">Grouped Convolution: Once You Slice the Cake, Slice the Labels Too</a></td>
 </tr>
 <tr>
-<td>O02</td>
 <td>2026-03-13</td>
-<td><a href="/en/compiler-o02-transposed-convolution-storage/">O02 | Transposed Convolution Weights: The Shape Is Honest, but Memory Speaks Another Dialect</a></td>
+<td><a href="/en/compiler-o02-transposed-convolution-storage/">Transposed Convolution Weights: The Shape Is Honest, but Memory Speaks Another Dialect</a></td>
 </tr>
 <tr>
-<td>O03</td>
 <td>2026-03-18</td>
-<td><a href="/en/compiler-o03-reshape-proof/">O03 | Why Does Reshape Need Code? The Elements Stay the Same; Their Route Changes</a></td>
+<td><a href="/en/compiler-o03-reshape-proof/">Why Does Reshape Need Code? The Elements Stay the Same; Their Route Changes</a></td>
 </tr>
 <tr>
-<td>O04</td>
 <td>2026-03-25</td>
-<td><a href="/en/compiler-o04-dump-layout/">O04 | When the Debugger Starts Lying: One Permute, Three Ways to Fix Dump</a></td>
+<td><a href="/en/compiler-o04-dump-layout/">When the Debugger Starts Lying: One Permute, Three Ways to Fix Dump</a></td>
 </tr>
 <tr>
-<td>O05</td>
 <td>2026-03-29</td>
-<td><a href="/en/compiler-o05-broadcast-address-plans/">O05 | Broadcasting: Sometimes the Right Address Is the One That Does Not Move</a></td>
+<td><a href="/en/compiler-o05-broadcast-address-plans/">Broadcasting: Sometimes the Right Address Is the One That Does Not Move</a></td>
 </tr>
 <tr>
-<td>O06</td>
 <td>2026-04-03</td>
-<td><a href="/en/compiler-o06-aligned-stride-constants/">O06 | The First Row Works, the Second Disappears: Alignment, Strides, and Padded Constants</a></td>
+<td><a href="/en/compiler-o06-aligned-stride-constants/">The First Row Works, the Second Disappears: Alignment, Strides, and Padded Constants</a></td>
 </tr>
 <tr>
-<td>O07</td>
 <td>2026-04-09</td>
-<td><a href="/en/compiler-o07-scalar-arithmetic-direction/">O07 | Subtracting Zero Can Disappear; Subtracting from Zero Cannot</a></td>
+<td><a href="/en/compiler-o07-scalar-arithmetic-direction/">Subtracting Zero Can Disappear; Subtracting from Zero Cannot</a></td>
 </tr>
 <tr>
-<td>O08</td>
 <td>2026-04-15</td>
-<td><a href="/en/compiler-o08-unary-quantization-contract/">O08 | Abs and Sign: One Line of Arithmetic Does Not Make Their Parameter Contracts Interchangeable</a></td>
+<td><a href="/en/compiler-o08-unary-quantization-contract/">Abs and Sign: One Line of Arithmetic Does Not Make Their Parameter Contracts Interchangeable</a></td>
 </tr>
 <tr>
-<td>O09</td>
 <td>2026-04-20</td>
-<td><a href="/en/compiler-o09-scratch-register-lifetimes/">O09 | Who Moved My Scratch Register? Teaching an Emitter to Borrow and Return</a></td>
+<td><a href="/en/compiler-o09-scratch-register-lifetimes/">Who Moved My Scratch Register? Teaching an Emitter to Borrow and Return</a></td>
 </tr>
 <tr>
-<td>O10</td>
 <td>2026-04-25</td>
-<td><a href="/en/compiler-o10-convolution-activation-fusion/">O10 | Putting Activation Inside Convolution: Preserve the Quantization Boundary Before Removing the Node</a></td>
+<td><a href="/en/compiler-o10-convolution-activation-fusion/">Putting Activation Inside Convolution: Preserve the Quantization Boundary Before Removing the Node</a></td>
 </tr>
 <tr>
-<td>O11</td>
 <td>2026-05-01</td>
-<td><a href="/en/compiler-o11-matmul-fusion-barriers/">O11 | A Sigmoid After MatMul: Why the Compiler Still Refuses to Fuse It</a></td>
+<td><a href="/en/compiler-o11-matmul-fusion-barriers/">A Sigmoid After MatMul: Why the Compiler Still Refuses to Fuse It</a></td>
 </tr>
 <tr>
-<td>O12</td>
 <td>2026-05-07</td>
-<td><a href="/en/compiler-o12-static-left-matmul/">O12 | When Weights Move to the Left: A Transpose Identity That Moves the Whole Compiler Chain</a></td>
+<td><a href="/en/compiler-o12-static-left-matmul/">When Weights Move to the Left: A Transpose Identity That Moves the Whole Compiler Chain</a></td>
 </tr>
 <tr>
-<td>R01</td>
 <td>2026-05-12</td>
-<td><a href="/en/compiler-r01-register-raii/">R01 | Why Does Someone Keep Borrowing My “Temporary” Register?</a></td>
+<td><a href="/en/compiler-r01-register-raii/">Why Does Someone Keep Borrowing My “Temporary” Register?</a></td>
 </tr>
 <tr>
-<td>R02</td>
 <td>2026-05-17</td>
-<td><a href="/en/compiler-r02-dependency-pressure/">R02 | A Few More Branches in the Graph—and Synchronization Registers Run Out First?</a></td>
+<td><a href="/en/compiler-r02-dependency-pressure/">A Few More Branches in the Graph—and Synchronization Registers Run Out First?</a></td>
 </tr>
 <tr>
-<td>R03</td>
 <td>2026-05-23</td>
-<td><a href="/en/compiler-r03-view-liveness/">R03 | The View Moved No Data. Why Can’t We Return the Memory?</a></td>
+<td><a href="/en/compiler-r03-view-liveness/">The View Moved No Data. Why Can’t We Return the Memory?</a></td>
 </tr>
 <tr>
-<td>R04</td>
 <td>2026-05-29</td>
-<td><a href="/en/compiler-r04-address-capacity/">R04 | The Address Fits. Why Does the Compiler Say Memory Is Full?</a></td>
+<td><a href="/en/compiler-r04-address-capacity/">The Address Fits. Why Does the Compiler Say Memory Is Full?</a></td>
 </tr>
 <tr>
-<td>R05</td>
 <td>2026-06-03</td>
-<td><a href="/en/compiler-r05-recurrent-state/">R05 | Why Write the Same Final State Twice?</a></td>
+<td><a href="/en/compiler-r05-recurrent-state/">Why Write the Same Final State Twice?</a></td>
 </tr>
 <tr>
-<td>R06</td>
 <td>2026-06-08</td>
-<td><a href="/en/compiler-r06-recurrent-dependencies/">R06 | I Waited for the Event. Why Isn’t the Data Ready?</a></td>
+<td><a href="/en/compiler-r06-recurrent-dependencies/">I Waited for the Event. Why Isn’t the Data Ready?</a></td>
 </tr>
 <tr>
-<td>R07</td>
 <td>2026-06-14</td>
-<td><a href="/en/compiler-r07-error-boundaries/">R07 | You Caught the Exception. What Happens to the Half-Written Machine Code?</a></td>
+<td><a href="/en/compiler-r07-error-boundaries/">You Caught the Exception. What Happens to the Half-Written Machine Code?</a></td>
 </tr>
 <tr>
-<td>R08</td>
 <td>2026-06-20</td>
-<td><a href="/en/compiler-r08-loops-determinism/">R08 | One More Loop, and the Binary Snapshot Looks Like a Different Program</a></td>
+<td><a href="/en/compiler-r08-loops-determinism/">One More Loop, and the Binary Snapshot Looks Like a Different Program</a></td>
 </tr>
 <tr>
-<td>R09</td>
 <td>2026-06-25</td>
-<td><a href="/en/compiler-r09-encoding-boundaries/">R09 | “I Parsed a Number” Does Not Mean the Input Is Valid</a></td>
+<td><a href="/en/compiler-r09-encoding-boundaries/">“I Parsed a Number” Does Not Mean the Input Is Valid</a></td>
 </tr>
 <tr>
-<td>R10</td>
 <td>2026-06-30</td>
-<td><a href="/en/compiler-r10-optimization-contracts/">R10 | Fewer Operations—So Why Disable the Optimization?</a></td>
+<td><a href="/en/compiler-r10-optimization-contracts/">Fewer Operations—So Why Disable the Optimization?</a></td>
 </tr>
 <tr>
-<td>E01</td>
 <td>2026-07-05</td>
-<td><a href="/en/compiler-e01-the-release-build-that-forgot-to-write/">E01 | Debug Works, but Release “Optimizes Away” a Write</a></td>
+<td><a href="/en/compiler-e01-the-release-build-that-forgot-to-write/">Debug Works, but Release “Optimizes Away” a Write</a></td>
 </tr>
 <tr>
-<td>E02</td>
 <td>2026-07-12</td>
-<td><a href="/en/compiler-e02-three-stages-of-a-build/">E02 | “I Only Rebuilt It.” Why Did the Installation Directory Disappear?</a></td>
+<td><a href="/en/compiler-e02-three-stages-of-a-build/">“I Only Rebuilt It.” Why Did the Installation Directory Disappear?</a></td>
 </tr>
 <tr>
-<td>E03</td>
 <td>2026-07-16</td>
-<td><a href="/en/compiler-e03-one-toolchain-three-versions/">E03 | One Version of the Headers, Another Version of the Generator</a></td>
+<td><a href="/en/compiler-e03-one-toolchain-three-versions/">One Version of the Headers, Another Version of the Generator</a></td>
 </tr>
 <tr>
-<td>E04</td>
 <td>2026-07-22</td>
-<td><a href="/en/compiler-e04-the-library-that-was-there/">E04 | The Library Is in the Package. Why Can’t the Program Find It?</a></td>
+<td><a href="/en/compiler-e04-the-library-that-was-there/">The Library Is in the Package. Why Can’t the Program Find It?</a></td>
 </tr>
 <tr>
-<td>E05</td>
 <td>2026-07-27</td>
-<td><a href="/en/compiler-e05-a-compiler-that-can-move-house/">E05 | The Compiler Moved. Its Lookup-Table Module Didn’t Get the Address</a></td>
+<td><a href="/en/compiler-e05-a-compiler-that-can-move-house/">The Compiler Moved. Its Lookup-Table Module Didn’t Get the Address</a></td>
 </tr>
 <tr>
-<td>E06</td>
 <td>2026-08-03</td>
-<td><a href="/en/compiler-e06-a-model-file-is-a-protocol/">E06 | Why Is Packing Compiler Outputs into One File Hard?</a></td>
+<td><a href="/en/compiler-e06-a-model-file-is-a-protocol/">Why Is Packing Compiler Outputs into One File Hard?</a></td>
 </tr>
 <tr>
-<td>E07</td>
 <td>2026-08-07</td>
-<td><a href="/en/compiler-e07-command-line-output-contract/">E07 | Compilation Failed. Why Is There Still a “Successful Model” in the Directory?</a></td>
+<td><a href="/en/compiler-e07-command-line-output-contract/">Compilation Failed. Why Is There Still a “Successful Model” in the Directory?</a></td>
 </tr>
 <tr>
-<td>E08</td>
 <td>2026-08-13</td>
-<td><a href="/en/compiler-e08-releases-and-their-two-clocks/">E08 | Why Does the Same Release Package Get a Different Hash Every Time?</a></td>
+<td><a href="/en/compiler-e08-releases-and-their-two-clocks/">Why Does the Same Release Package Get a Different Hash Every Time?</a></td>
 </tr>
 <tr>
-<td>E09</td>
 <td>2026-08-18</td>
-<td><a href="/en/compiler-e09-golden-tests-that-can-disagree/">E09 | The Assembly Looks Right. Does That Mean the Machine Code Is Right?</a></td>
+<td><a href="/en/compiler-e09-golden-tests-that-can-disagree/">The Assembly Looks Right. Does That Mean the Machine Code Is Right?</a></td>
 </tr>
 <tr>
-<td>E10</td>
 <td>2026-08-25</td>
-<td><a href="/en/compiler-e10-specifications-that-admit-unknowns/">E10 | The Most Useful Words in an Operator Specification May Be “Not Yet Confirmed”</a></td>
+<td><a href="/en/compiler-e10-specifications-that-admit-unknowns/">The Most Useful Words in an Operator Specification May Be “Not Yet Confirmed”</a></td>
 </tr>
 <tr>
-<td>E11</td>
 <td>2026-08-29</td>
-<td><a href="/en/compiler-e11-what-does-supported-really-mean/">E11 | You Found the Operator’s Name. Does That Make It Supported?</a></td>
+<td><a href="/en/compiler-e11-what-does-supported-really-mean/">You Found the Operator’s Name. Does That Make It Supported?</a></td>
 </tr>
 <tr>
-<td>E12</td>
 <td>2026-09-04</td>
-<td><a href="/en/compiler-e12-four-identities-of-an-instruction/">E12 | An Instruction’s Four Identities: Why Code Generation Needs More Than Strings</a></td>
+<td><a href="/en/compiler-e12-four-identities-of-an-instruction/">An Instruction’s Four Identities: Why Code Generation Needs More Than Strings</a></td>
 </tr>
 <tr>
-<td>E13</td>
 <td>2026-09-09</td>
-<td><a href="/en/compiler-e13-moving-data-moving-meaning/">E13 | It Only Moves Data. How Can It Still Be Wrong?</a></td>
+<td><a href="/en/compiler-e13-moving-data-moving-meaning/">It Only Moves Data. How Can It Still Be Wrong?</a></td>
 </tr>
 <tr>
-<td>E14</td>
 <td>2026-09-16</td>
-<td><a href="/en/compiler-e14-same-shape-different-answers/">E14 | Same Output Shape, Different Answers: Pooling, Resizing, and Index Reductions</a></td>
+<td><a href="/en/compiler-e14-same-shape-different-answers/">Same Output Shape, Different Answers: Pooling, Resizing, and Index Reductions</a></td>
 </tr>
 <tr>
-<td>E15</td>
 <td>2026-09-20</td>
-<td><a href="/en/compiler-e15-names-are-not-numerical-contracts/">E15 | A Function Name Cannot Hold Its Numerical Contract</a></td>
+<td><a href="/en/compiler-e15-names-are-not-numerical-contracts/">A Function Name Cannot Hold Its Numerical Contract</a></td>
 </tr>
 </tbody>
 </table>
@@ -975,7 +926,7 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/en/compiler-n01-reduction-lowering/" data-toggle="tooltip" data-placement="top" title="N01 | Just Take the Mean—Why Is the Compiler Writing Loops?">&larr; Previous Post</a>
+            <a href="/en/compiler-n01-reduction-lowering/" data-toggle="tooltip" data-placement="top" title="Just Take the Mean—Why Is the Compiler Writing Loops?">&larr; Previous Post</a>
           </li>
           
           
@@ -1069,7 +1020,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Where-to-start"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Where to start</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Part-I-Numerical-Correctness-%E2%80%94-Integers-and-the-Scales-That-Interpret-Them"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Part I: Numerical Correctness — Integers and the Scales That Interpret Them</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Part-II-Operators-and-Layouts-%E2%80%94-Putting-Mathematics-into-Memory"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Part II: Operators and Layouts — Putting Mathematics into Memory</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Part-III-Resources-and-Scheduling-%E2%80%94-Who-Still-Needs-This-Data"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">Part III: Resources and Scheduling — Who Still Needs This Data?</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Part-IV-Compiler-Engineering-%E2%80%94-From-a-Development-Tree-to-a-Deliverable"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">Part IV: Compiler Engineering — From a Development Tree to a Deliverable</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Follow-a-question-across-the-series"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">Follow a question across the series</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Connections-to-earlier-blog-posts"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">Connections to earlier blog posts</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Editorial-calendar"><span class="toc-nav-number">8.</span> <span class="toc-nav-text">Editorial calendar</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Where-to-start"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Where to start</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Numerical-Correctness-%E2%80%94-Integers-and-the-Scales-That-Interpret-Them"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Numerical Correctness — Integers and the Scales That Interpret Them</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Operators-and-Layouts-%E2%80%94-Putting-Mathematics-into-Memory"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Operators and Layouts — Putting Mathematics into Memory</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Resources-and-Scheduling-%E2%80%94-Who-Still-Needs-This-Data"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">Resources and Scheduling — Who Still Needs This Data?</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Compiler-Engineering-%E2%80%94-From-a-Development-Tree-to-a-Deliverable"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">Compiler Engineering — From a Development Tree to a Deliverable</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Follow-a-question-across-the-series"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">Follow a question across the series</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Connections-to-earlier-blog-posts"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">Connections to earlier blog posts</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Editorial-calendar"><span class="toc-nav-number">8.</span> <span class="toc-nav-text">Editorial calendar</span></a></li></ol>
         
         </div>
       </aside>
@@ -1092,7 +1043,7 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#Reading Guides" title="Reading Guides">Reading Guides</a>
+            <a class="tag" href="/tags/#Compilers" title="Compilers">Compilers</a>
             
           </div>
         </section>

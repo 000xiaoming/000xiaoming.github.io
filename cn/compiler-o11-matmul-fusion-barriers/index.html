@@ -141,7 +141,7 @@
   <link rel="canonical" href="https://000xiaoming.github.io/cn/compiler-o11-matmul-fusion-barriers/">
   <title>
     
-      O11｜MatMul 后面有个 Sigmoid：为什么编译器偏偏不肯融合 - I&#39;m Bruce Lee
+      MatMul 后面有个 Sigmoid：为什么编译器偏偏不肯融合 - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -387,16 +387,12 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/cn/tags/#量化" title="量化">量化</a>
+              <a class="tag" href="/cn/tags/#编译器" title="编译器">编译器</a>
               
-              <a class="tag" href="/cn/tags/#算子与布局" title="算子与布局">算子与布局</a>
-              
-              <a class="tag" href="/cn/tags/#算子融合" title="算子融合">算子融合</a>
-              
-              <a class="tag" href="/cn/tags/#MatMul" title="MatMul">MatMul</a>
+              <a class="tag" href="/cn/tags/#数值计算" title="数值计算">数值计算</a>
               
             </div>
-            <h1>O11｜MatMul 后面有个 Sigmoid：为什么编译器偏偏不肯融合</h1>
+            <h1>MatMul 后面有个 Sigmoid：为什么编译器偏偏不肯融合</h1>
             <h2 class="subheading">多消费者、视图和依赖边界如何限制矩阵乘激活融合。</h2>
             <span class="meta">
               Posted by Bruce Lee on
@@ -457,7 +453,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 算子与布局 · O11 · <a href="/en/compiler-o11-matmul-fusion-barriers/">Read in English</a></p>
+        <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 算子与布局 · <a href="/en/compiler-o11-matmul-fusion-barriers/">Read in English</a></p>
 <p>“卷积都能融合，矩阵乘法后面这个 Sigmoid 总可以吧？”</p>
 <p>有时可以，有时编译器认真地说不。最有价值的优化文章，不只有成功合并后的漂亮图，还应该解释那些故意留下的节点。它们常常标记着真正的语义边界。</p>
 <span id="more"></span>
@@ -501,12 +497,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/cn/compiler-o12-static-left-matmul/" data-toggle="tooltip" data-placement="top" title="O12｜权重跑到左边以后：用一个转置恒等式，搬动整个编译链">&larr; Previous Post</a>
+            <a href="/cn/compiler-o12-static-left-matmul/" data-toggle="tooltip" data-placement="top" title="权重跑到左边以后：用一个转置恒等式，搬动整个编译链">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/cn/compiler-o10-convolution-activation-fusion/" data-toggle="tooltip" data-placement="top" title="O10｜把激活函数塞进卷积：少一个节点之前，先保住那条量化边界">Next Post &rarr;</a>
+            <a href="/cn/compiler-o10-convolution-activation-fusion/" data-toggle="tooltip" data-placement="top" title="把激活函数塞进卷积：少一个节点之前，先保住那条量化边界">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -556,7 +552,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=O11｜MatMul 后面有个 Sigmoid：为什么编译器偏偏不肯融合&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/compiler-o11-matmul-fusion-barriers/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=MatMul 后面有个 Sigmoid：为什么编译器偏偏不肯融合&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/compiler-o11-matmul-fusion-barriers/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -618,13 +614,9 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/cn/tags/#量化" title="量化">量化</a>
+            <a class="tag" href="/cn/tags/#编译器" title="编译器">编译器</a>
             
-            <a class="tag" href="/cn/tags/#算子与布局" title="算子与布局">算子与布局</a>
-            
-            <a class="tag" href="/cn/tags/#算子融合" title="算子融合">算子融合</a>
-            
-            <a class="tag" href="/cn/tags/#MatMul" title="MatMul">MatMul</a>
+            <a class="tag" href="/cn/tags/#数值计算" title="数值计算">数值计算</a>
             
           </div>
         </section>

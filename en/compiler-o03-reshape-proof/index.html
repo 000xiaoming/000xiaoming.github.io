@@ -141,7 +141,7 @@
   <link rel="canonical" href="https://000xiaoming.github.io/en/compiler-o03-reshape-proof/">
   <title>
     
-      O03 | Why Does Reshape Need Code? The Elements Stay the Same; Their Route Changes - I&#39;m Bruce Lee
+      Why Does Reshape Need Code? The Elements Stay the Same; Their Route Changes - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -387,16 +387,12 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/tags/#Tensor Shapes" title="Tensor Shapes">Tensor Shapes</a>
+              <a class="tag" href="/tags/#Compilers" title="Compilers">Compilers</a>
               
-              <a class="tag" href="/tags/#Memory Layout" title="Memory Layout">Memory Layout</a>
-              
-              <a class="tag" href="/tags/#Lowering" title="Lowering">Lowering</a>
-              
-              <a class="tag" href="/tags/#Operators and Layouts" title="Operators and Layouts">Operators and Layouts</a>
+              <a class="tag" href="/tags/#Memory and Concurrency" title="Memory and Concurrency">Memory and Concurrency</a>
               
             </div>
-            <h1>O03 | Why Does Reshape Need Code? The Elements Stay the Same; Their Route Changes</h1>
+            <h1>Why Does Reshape Need Code? The Elements Stay the Same; Their Route Changes</h1>
             <h2 class="subheading">Prove the linear element mapping and distinguish shape changes from physical rearrangement.</h2>
             <span class="meta">
               Posted by Bruce Lee on
@@ -457,7 +453,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Operators and Layouts · O03 · <a href="/cn/compiler-o03-reshape-proof/">阅读中文版</a></p>
+        <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Operators and Layouts · <a href="/cn/compiler-o03-reshape-proof/">阅读中文版</a></p>
 <p>“Not a single element is missing. Why does the compiler say this is unsupported?”</p>
 <p>Reshape hears this accusation often. The model author sees the same number of elements; the backend may see different physical row strides, different memory-block boundaries, and a movement instruction that can express only particular ways of combining dimensions. Neither side is mistaken. They are simply standing on different floors.</p>
 <span id="more"></span>
@@ -527,12 +523,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/en/compiler-o04-dump-layout/" data-toggle="tooltip" data-placement="top" title="O04 | When the Debugger Starts Lying: One Permute, Three Ways to Fix Dump">&larr; Previous Post</a>
+            <a href="/en/compiler-o04-dump-layout/" data-toggle="tooltip" data-placement="top" title="When the Debugger Starts Lying: One Permute, Three Ways to Fix Dump">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/en/compiler-o02-transposed-convolution-storage/" data-toggle="tooltip" data-placement="top" title="O02 | Transposed Convolution Weights: The Shape Is Honest, but Memory Speaks Another Dialect">Next Post &rarr;</a>
+            <a href="/en/compiler-o02-transposed-convolution-storage/" data-toggle="tooltip" data-placement="top" title="Transposed Convolution Weights: The Shape Is Honest, but Memory Speaks Another Dialect">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -582,7 +578,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=O03 | Why Does Reshape Need Code? The Elements Stay the Same; Their Route Changes&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/en/compiler-o03-reshape-proof/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=Why Does Reshape Need Code? The Elements Stay the Same; Their Route Changes&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/en/compiler-o03-reshape-proof/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -644,13 +640,9 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#Tensor Shapes" title="Tensor Shapes">Tensor Shapes</a>
+            <a class="tag" href="/tags/#Compilers" title="Compilers">Compilers</a>
             
-            <a class="tag" href="/tags/#Memory Layout" title="Memory Layout">Memory Layout</a>
-            
-            <a class="tag" href="/tags/#Lowering" title="Lowering">Lowering</a>
-            
-            <a class="tag" href="/tags/#Operators and Layouts" title="Operators and Layouts">Operators and Layouts</a>
+            <a class="tag" href="/tags/#Memory and Concurrency" title="Memory and Concurrency">Memory and Concurrency</a>
             
           </div>
         </section>

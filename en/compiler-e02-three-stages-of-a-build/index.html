@@ -141,7 +141,7 @@
   <link rel="canonical" href="https://000xiaoming.github.io/en/compiler-e02-three-stages-of-a-build/">
   <title>
     
-      E02 | “I Only Rebuilt It.” Why Did the Installation Directory Disappear? - I&#39;m Bruce Lee
+      “I Only Rebuilt It.” Why Did the Installation Directory Disappear? - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -387,16 +387,12 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/tags/#Engineering and Delivery" title="Engineering and Delivery">Engineering and Delivery</a>
+              <a class="tag" href="/tags/#Engineering" title="Engineering">Engineering</a>
               
-              <a class="tag" href="/tags/#Build Systems" title="Build Systems">Build Systems</a>
-              
-              <a class="tag" href="/tags/#Installation" title="Installation">Installation</a>
-              
-              <a class="tag" href="/tags/#Error Handling" title="Error Handling">Error Handling</a>
+              <a class="tag" href="/tags/#Compilers" title="Compilers">Compilers</a>
               
             </div>
-            <h1>E02 | “I Only Rebuilt It.” Why Did the Installation Directory Disappear?</h1>
+            <h1>“I Only Rebuilt It.” Why Did the Installation Directory Disappear?</h1>
             <h2 class="subheading">Define the responsibilities and failure states of environment setup, builds, and installation.</h2>
             <span class="meta">
               Posted by Bruce Lee on
@@ -457,7 +453,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Engineering and Delivery · E02 · <a href="/cn/compiler-e02-three-stages-of-a-build/">阅读中文版</a></p>
+        <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Engineering and Delivery · <a href="/cn/compiler-e02-three-stages-of-a-build/">阅读中文版</a></p>
 <p>A colleague wants to verify a two-line change. They run the build script, and compilation fails halfway through. No disaster: use the previously installed tool to investigate. Except the installation directory is now empty.</p>
 <p>“I pressed Build. Why did it take away the old tool?”</p>
 <p>That confusion usually means a script has combined several responsibilities: load the environment, synchronize dependencies, configure the project, compile, clear the installation prefix, install, and trim the results. Each step may be reasonable on its own. Together, they make it difficult to answer: “At this failure point, which artifacts are still trustworthy?”</p>
@@ -544,12 +540,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/en/compiler-e03-one-toolchain-three-versions/" data-toggle="tooltip" data-placement="top" title="E03 | One Version of the Headers, Another Version of the Generator">&larr; Previous Post</a>
+            <a href="/en/compiler-e03-one-toolchain-three-versions/" data-toggle="tooltip" data-placement="top" title="One Version of the Headers, Another Version of the Generator">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/en/compiler-e01-the-release-build-that-forgot-to-write/" data-toggle="tooltip" data-placement="top" title="E01 | Debug Works, but Release “Optimizes Away” a Write">Next Post &rarr;</a>
+            <a href="/en/compiler-e01-the-release-build-that-forgot-to-write/" data-toggle="tooltip" data-placement="top" title="Debug Works, but Release “Optimizes Away” a Write">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -599,7 +595,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=E02 | “I Only Rebuilt It.” Why Did the Installation Directory Disappear?&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/en/compiler-e02-three-stages-of-a-build/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=“I Only Rebuilt It.” Why Did the Installation Directory Disappear?&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/en/compiler-e02-three-stages-of-a-build/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -661,13 +657,9 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#Engineering and Delivery" title="Engineering and Delivery">Engineering and Delivery</a>
+            <a class="tag" href="/tags/#Engineering" title="Engineering">Engineering</a>
             
-            <a class="tag" href="/tags/#Build Systems" title="Build Systems">Build Systems</a>
-            
-            <a class="tag" href="/tags/#Installation" title="Installation">Installation</a>
-            
-            <a class="tag" href="/tags/#Error Handling" title="Error Handling">Error Handling</a>
+            <a class="tag" href="/tags/#Compilers" title="Compilers">Compilers</a>
             
           </div>
         </section>

@@ -141,7 +141,7 @@
   <link rel="canonical" href="https://000xiaoming.github.io/en/compiler-e06-a-model-file-is-a-protocol/">
   <title>
     
-      E06 | Why Is Packing Compiler Outputs into One File Hard? - I&#39;m Bruce Lee
+      Why Is Packing Compiler Outputs into One File Hard? - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -387,16 +387,12 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/tags/#Engineering and Delivery" title="Engineering and Delivery">Engineering and Delivery</a>
+              <a class="tag" href="/tags/#Engineering" title="Engineering">Engineering</a>
               
-              <a class="tag" href="/tags/#Binary Formats" title="Binary Formats">Binary Formats</a>
-              
-              <a class="tag" href="/tags/#Serialization" title="Serialization">Serialization</a>
-              
-              <a class="tag" href="/tags/#Input Validation" title="Input Validation">Input Validation</a>
+              <a class="tag" href="/tags/#Compilers" title="Compilers">Compilers</a>
               
             </div>
-            <h1>E06 | Why Is Packing Compiler Outputs into One File Hard?</h1>
+            <h1>Why Is Packing Compiler Outputs into One File Hard?</h1>
             <h2 class="subheading">Treat a model file as a protocol with offsets, lengths, and ownership.</h2>
             <span class="meta">
               Posted by Bruce Lee on
@@ -457,7 +453,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Engineering and Delivery · E06 · <a href="/cn/compiler-e06-a-model-file-is-a-protocol/">阅读中文版</a></p>
+        <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Engineering and Delivery · <a href="/cn/compiler-e06-a-model-file-is-a-protocol/">阅读中文版</a></p>
 <p>“If we only want one file in the end, why not zip the whole directory?”</p>
 <p>That is a reasonable backup strategy, but not necessarily a loading protocol. A runtime may need direct access to input and output tensor descriptions, instruction locations, parameter lengths, and destination addresses. It should not have to infer directory conventions or treat every temporary compiler file as a formal interface.</p>
 <p>A model file is therefore a protocol between a producer and a consumer before it is a sequence of bytes.</p>
@@ -543,12 +539,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/en/compiler-e07-command-line-output-contract/" data-toggle="tooltip" data-placement="top" title="E07 | Compilation Failed. Why Is There Still a “Successful Model” in the Directory?">&larr; Previous Post</a>
+            <a href="/en/compiler-e07-command-line-output-contract/" data-toggle="tooltip" data-placement="top" title="Compilation Failed. Why Is There Still a “Successful Model” in the Directory?">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/en/compiler-e05-a-compiler-that-can-move-house/" data-toggle="tooltip" data-placement="top" title="E05 | The Compiler Moved. Its Lookup-Table Module Didn’t Get the Address">Next Post &rarr;</a>
+            <a href="/en/compiler-e05-a-compiler-that-can-move-house/" data-toggle="tooltip" data-placement="top" title="The Compiler Moved. Its Lookup-Table Module Didn’t Get the Address">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -598,7 +594,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=E06 | Why Is Packing Compiler Outputs into One File Hard?&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/en/compiler-e06-a-model-file-is-a-protocol/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=Why Is Packing Compiler Outputs into One File Hard?&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/en/compiler-e06-a-model-file-is-a-protocol/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -660,13 +656,9 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#Engineering and Delivery" title="Engineering and Delivery">Engineering and Delivery</a>
+            <a class="tag" href="/tags/#Engineering" title="Engineering">Engineering</a>
             
-            <a class="tag" href="/tags/#Binary Formats" title="Binary Formats">Binary Formats</a>
-            
-            <a class="tag" href="/tags/#Serialization" title="Serialization">Serialization</a>
-            
-            <a class="tag" href="/tags/#Input Validation" title="Input Validation">Input Validation</a>
+            <a class="tag" href="/tags/#Compilers" title="Compilers">Compilers</a>
             
           </div>
         </section>

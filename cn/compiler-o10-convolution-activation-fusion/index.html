@@ -141,7 +141,7 @@
   <link rel="canonical" href="https://000xiaoming.github.io/cn/compiler-o10-convolution-activation-fusion/">
   <title>
     
-      O10｜把激活函数塞进卷积：少一个节点之前，先保住那条量化边界 - I&#39;m Bruce Lee
+      把激活函数塞进卷积：少一个节点之前，先保住那条量化边界 - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -387,16 +387,12 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/cn/tags/#量化" title="量化">量化</a>
+              <a class="tag" href="/cn/tags/#编译器" title="编译器">编译器</a>
               
-              <a class="tag" href="/cn/tags/#算子与布局" title="算子与布局">算子与布局</a>
-              
-              <a class="tag" href="/cn/tags/#卷积" title="卷积">卷积</a>
-              
-              <a class="tag" href="/cn/tags/#算子融合" title="算子融合">算子融合</a>
+              <a class="tag" href="/cn/tags/#数值计算" title="数值计算">数值计算</a>
               
             </div>
-            <h1>O10｜把激活函数塞进卷积：少一个节点之前，先保住那条量化边界</h1>
+            <h1>把激活函数塞进卷积：少一个节点之前，先保住那条量化边界</h1>
             <h2 class="subheading">融合卷积与激活之前，保住中间量化与合法形状。</h2>
             <span class="meta">
               Posted by Bruce Lee on
@@ -457,7 +453,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 算子与布局 · O10 · <a href="/en/compiler-o10-convolution-activation-fusion/">Read in English</a></p>
+        <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 算子与布局 · <a href="/en/compiler-o10-convolution-activation-fusion/">Read in English</a></p>
 <p>“这两个节点挨着，融合以后应该会快吧？”</p>
 <p>“可能。先说清楚中间那个张量原来是什么。”</p>
 <p>融合最诱人的画面是删掉图上的一个圆圈。可被删掉的不只是一个名字，还可能是一段真实的存储、一次量化、一种数据类型和一个被其他节点读取的值。若只把后处理开关打开，忘记中间语义，图确实更短了，答案也可能更远了。</p>
@@ -501,12 +497,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/cn/compiler-o11-matmul-fusion-barriers/" data-toggle="tooltip" data-placement="top" title="O11｜MatMul 后面有个 Sigmoid：为什么编译器偏偏不肯融合">&larr; Previous Post</a>
+            <a href="/cn/compiler-o11-matmul-fusion-barriers/" data-toggle="tooltip" data-placement="top" title="MatMul 后面有个 Sigmoid：为什么编译器偏偏不肯融合">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/cn/compiler-o09-scratch-register-lifetimes/" data-toggle="tooltip" data-placement="top" title="O09｜谁动了我的临时寄存器：让发射器学会借东西、还东西">Next Post &rarr;</a>
+            <a href="/cn/compiler-o09-scratch-register-lifetimes/" data-toggle="tooltip" data-placement="top" title="谁动了我的临时寄存器：让发射器学会借东西、还东西">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -556,7 +552,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=O10｜把激活函数塞进卷积：少一个节点之前，先保住那条量化边界&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/compiler-o10-convolution-activation-fusion/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=把激活函数塞进卷积：少一个节点之前，先保住那条量化边界&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/compiler-o10-convolution-activation-fusion/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -618,13 +614,9 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/cn/tags/#量化" title="量化">量化</a>
+            <a class="tag" href="/cn/tags/#编译器" title="编译器">编译器</a>
             
-            <a class="tag" href="/cn/tags/#算子与布局" title="算子与布局">算子与布局</a>
-            
-            <a class="tag" href="/cn/tags/#卷积" title="卷积">卷积</a>
-            
-            <a class="tag" href="/cn/tags/#算子融合" title="算子融合">算子融合</a>
+            <a class="tag" href="/cn/tags/#数值计算" title="数值计算">数值计算</a>
             
           </div>
         </section>

@@ -141,7 +141,7 @@
   <link rel="canonical" href="https://000xiaoming.github.io/cn/compiler-e04-the-library-that-was-there/">
   <title>
     
-      E04｜库文件明明在包里，为什么程序还是说找不到？ - I&#39;m Bruce Lee
+      库文件明明在包里，为什么程序还是说找不到？ - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -387,16 +387,12 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/cn/tags/#工程与交付" title="工程与交付">工程与交付</a>
+              <a class="tag" href="/cn/tags/#工程实践" title="工程实践">工程实践</a>
               
-              <a class="tag" href="/cn/tags/#动态链接" title="动态链接">动态链接</a>
-              
-              <a class="tag" href="/cn/tags/#打包" title="打包">打包</a>
-              
-              <a class="tag" href="/cn/tags/#ELF" title="ELF">ELF</a>
+              <a class="tag" href="/cn/tags/#编译器" title="编译器">编译器</a>
               
             </div>
-            <h1>E04｜库文件明明在包里，为什么程序还是说找不到？</h1>
+            <h1>库文件明明在包里，为什么程序还是说找不到？</h1>
             <h2 class="subheading">真实库、SONAME、链接名与运行搜索路径如何连接。</h2>
             <span class="meta">
               Posted by Bruce Lee on
@@ -457,7 +453,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 工程与交付 · E04 · <a href="/en/compiler-e04-the-library-that-was-there/">Read in English</a></p>
+        <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 工程与交付 · <a href="/en/compiler-e04-the-library-that-was-there/">Read in English</a></p>
 <p>“把缺的动态库复制进去就好了。”</p>
 <p>十分钟后，新日志仍然显示加载失败。目录里确实有 <code>libcompute.so.4.2</code>，而且文件大小看起来很正常。排查者甚至给它改了个更顺眼的名字。程序却坚持寻找 <code>libcompute.so.4</code>。</p>
 <p>这不是程序挑剔，而是链接阶段与运行阶段使用的名字可能不同。</p>
@@ -543,12 +539,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/cn/compiler-e05-a-compiler-that-can-move-house/" data-toggle="tooltip" data-placement="top" title="E05｜编译器搬了个家，查表模块就失联了">&larr; Previous Post</a>
+            <a href="/cn/compiler-e05-a-compiler-that-can-move-house/" data-toggle="tooltip" data-placement="top" title="编译器搬了个家，查表模块就失联了">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/cn/compiler-e03-one-toolchain-three-versions/" data-toggle="tooltip" data-placement="top" title="E03｜头文件是一版，生成器是另一版：编译器构建里的“多人接力”">Next Post &rarr;</a>
+            <a href="/cn/compiler-e03-one-toolchain-three-versions/" data-toggle="tooltip" data-placement="top" title="头文件是一版，生成器是另一版：编译器构建里的“多人接力”">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -598,7 +594,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=E04｜库文件明明在包里，为什么程序还是说找不到？&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/compiler-e04-the-library-that-was-there/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=库文件明明在包里，为什么程序还是说找不到？&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/compiler-e04-the-library-that-was-there/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -660,13 +656,9 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/cn/tags/#工程与交付" title="工程与交付">工程与交付</a>
+            <a class="tag" href="/cn/tags/#工程实践" title="工程实践">工程实践</a>
             
-            <a class="tag" href="/cn/tags/#动态链接" title="动态链接">动态链接</a>
-            
-            <a class="tag" href="/cn/tags/#打包" title="打包">打包</a>
-            
-            <a class="tag" href="/cn/tags/#ELF" title="ELF">ELF</a>
+            <a class="tag" href="/cn/tags/#编译器" title="编译器">编译器</a>
             
           </div>
         </section>

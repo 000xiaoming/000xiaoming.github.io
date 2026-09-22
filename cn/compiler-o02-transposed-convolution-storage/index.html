@@ -141,7 +141,7 @@
   <link rel="canonical" href="https://000xiaoming.github.io/cn/compiler-o02-transposed-convolution-storage/">
   <title>
     
-      O02｜转置卷积的权重：形状很诚实，内存却说了另一种方言 - I&#39;m Bruce Lee
+      转置卷积的权重：形状很诚实，内存却说了另一种方言 - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -387,16 +387,12 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/cn/tags/#内存布局" title="内存布局">内存布局</a>
+              <a class="tag" href="/cn/tags/#编译器" title="编译器">编译器</a>
               
-              <a class="tag" href="/cn/tags/#量化" title="量化">量化</a>
-              
-              <a class="tag" href="/cn/tags/#算子与布局" title="算子与布局">算子与布局</a>
-              
-              <a class="tag" href="/cn/tags/#卷积" title="卷积">卷积</a>
+              <a class="tag" href="/cn/tags/#数值计算" title="数值计算">数值计算</a>
               
             </div>
-            <h1>O02｜转置卷积的权重：形状很诚实，内存却说了另一种方言</h1>
+            <h1>转置卷积的权重：形状很诚实，内存却说了另一种方言</h1>
             <h2 class="subheading">逻辑维度顺序和真实权重存储不同，切片公式就会不同。</h2>
             <span class="meta">
               Posted by Bruce Lee on
@@ -457,7 +453,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 算子与布局 · O02 · <a href="/en/compiler-o02-transposed-convolution-storage/">Read in English</a></p>
+        <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 算子与布局 · <a href="/en/compiler-o02-transposed-convolution-storage/">Read in English</a></p>
 <p>第一次遇到这种错误，很容易怀疑卷积核翻转、步长或 padding：单组结果很好，打开分组就不对。于是有人把边界参数来回改了三次，最终得到一种更令人不安的状态——某些输入又对了。</p>
 <p>真正该问的第一句话可能是：“这块权重的类型写着什么，字节实际又按什么顺序存？”</p>
 <span id="more"></span>
@@ -498,12 +494,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/cn/compiler-o03-reshape-proof/" data-toggle="tooltip" data-placement="top" title="O03｜Reshape 为什么还要写代码：元素没变，搬家路线变了">&larr; Previous Post</a>
+            <a href="/cn/compiler-o03-reshape-proof/" data-toggle="tooltip" data-placement="top" title="Reshape 为什么还要写代码：元素没变，搬家路线变了">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/cn/compiler-o01-grouped-convolution/" data-toggle="tooltip" data-placement="top" title="O01｜分组卷积：切开蛋糕以后，盘子上的标签也得切">Next Post &rarr;</a>
+            <a href="/cn/compiler-o01-grouped-convolution/" data-toggle="tooltip" data-placement="top" title="分组卷积：切开蛋糕以后，盘子上的标签也得切">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -553,7 +549,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=O02｜转置卷积的权重：形状很诚实，内存却说了另一种方言&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/compiler-o02-transposed-convolution-storage/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=转置卷积的权重：形状很诚实，内存却说了另一种方言&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/compiler-o02-transposed-convolution-storage/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -615,13 +611,9 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/cn/tags/#内存布局" title="内存布局">内存布局</a>
+            <a class="tag" href="/cn/tags/#编译器" title="编译器">编译器</a>
             
-            <a class="tag" href="/cn/tags/#量化" title="量化">量化</a>
-            
-            <a class="tag" href="/cn/tags/#算子与布局" title="算子与布局">算子与布局</a>
-            
-            <a class="tag" href="/cn/tags/#卷积" title="卷积">卷积</a>
+            <a class="tag" href="/cn/tags/#数值计算" title="数值计算">数值计算</a>
             
           </div>
         </section>

@@ -141,7 +141,7 @@
   <link rel="canonical" href="https://000xiaoming.github.io/cn/compiler-o03-reshape-proof/">
   <title>
     
-      O03｜Reshape 为什么还要写代码：元素没变，搬家路线变了 - I&#39;m Bruce Lee
+      Reshape 为什么还要写代码：元素没变，搬家路线变了 - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -387,16 +387,12 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/cn/tags/#张量形状" title="张量形状">张量形状</a>
+              <a class="tag" href="/cn/tags/#编译器" title="编译器">编译器</a>
               
-              <a class="tag" href="/cn/tags/#内存布局" title="内存布局">内存布局</a>
-              
-              <a class="tag" href="/cn/tags/#算子降级" title="算子降级">算子降级</a>
-              
-              <a class="tag" href="/cn/tags/#算子与布局" title="算子与布局">算子与布局</a>
+              <a class="tag" href="/cn/tags/#内存与并发" title="内存与并发">内存与并发</a>
               
             </div>
-            <h1>O03｜Reshape 为什么还要写代码：元素没变，搬家路线变了</h1>
+            <h1>Reshape 为什么还要写代码：元素没变，搬家路线变了</h1>
             <h2 class="subheading">证明线性元素映射，区分形状变化与布局重排。</h2>
             <span class="meta">
               Posted by Bruce Lee on
@@ -457,7 +453,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 算子与布局 · O03 · <a href="/en/compiler-o03-reshape-proof/">Read in English</a></p>
+        <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 算子与布局 · <a href="/en/compiler-o03-reshape-proof/">Read in English</a></p>
 <p>“数据一个没少，为什么编译器说不支持？”</p>
 <p>这是 reshape 最常收到的质问。模型作者看见的是相同数量的元素，后端看见的却可能是不同的物理行距、不同的内存块边界，以及一条只能表达特定维度合并方式的搬运指令。双方都没看错，只是站在不同楼层。</p>
 <span id="more"></span>
@@ -527,12 +523,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/cn/compiler-o04-dump-layout/" data-toggle="tooltip" data-placement="top" title="O04｜当调试器开始撒谎：一次 Permute，三种 Dump 修法">&larr; Previous Post</a>
+            <a href="/cn/compiler-o04-dump-layout/" data-toggle="tooltip" data-placement="top" title="当调试器开始撒谎：一次 Permute，三种 Dump 修法">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/cn/compiler-o02-transposed-convolution-storage/" data-toggle="tooltip" data-placement="top" title="O02｜转置卷积的权重：形状很诚实，内存却说了另一种方言">Next Post &rarr;</a>
+            <a href="/cn/compiler-o02-transposed-convolution-storage/" data-toggle="tooltip" data-placement="top" title="转置卷积的权重：形状很诚实，内存却说了另一种方言">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -582,7 +578,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=O03｜Reshape 为什么还要写代码：元素没变，搬家路线变了&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/compiler-o03-reshape-proof/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=Reshape 为什么还要写代码：元素没变，搬家路线变了&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/compiler-o03-reshape-proof/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -644,13 +640,9 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/cn/tags/#张量形状" title="张量形状">张量形状</a>
+            <a class="tag" href="/cn/tags/#编译器" title="编译器">编译器</a>
             
-            <a class="tag" href="/cn/tags/#内存布局" title="内存布局">内存布局</a>
-            
-            <a class="tag" href="/cn/tags/#算子降级" title="算子降级">算子降级</a>
-            
-            <a class="tag" href="/cn/tags/#算子与布局" title="算子与布局">算子与布局</a>
+            <a class="tag" href="/cn/tags/#内存与并发" title="内存与并发">内存与并发</a>
             
           </div>
         </section>

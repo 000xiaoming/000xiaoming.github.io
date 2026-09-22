@@ -432,18 +432,18 @@
 
   <a href="/cn/compiler-o07-scalar-arithmetic-direction/">
     <h2 class="post-title">
-      O07｜减去零可以消失，零减去你不行：标量算子的方向感
+      减去零可以消失，零减去你不行：标量算子的方向感
     </h2>
     <h3 class="post-subtitle">
       常量折叠、交换律和操作数方向，不能混成一次简化。
     </h3>
     <div class="post-content-preview">
-      系列目录 · 算子与布局 · O07 · Read in English
+      系列目录 · 算子与布局 · Read in English
 “减法也能照着加法写吧？”
 大部分接口确实长得很像。都是两个输入、一个输出，都需要数据类型、地址描述符和量化参数。危险恰恰在“大部分”三个字。加法让很多操作数交换看起来无害，减法则像一个记性特别好的同事：你把谁放前面，它一直记到最后一个结果。
 
 方向与标量识别
-教学表达式 x-c 和 c-x，即便 c 是只有一个元素的......
+教学表达式 x-c 和 c-x，即便 c 是只有一个元素的常量，也不能......
     </div>
   </a>
   
@@ -453,13 +453,9 @@
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#量化" title="量化">量化</a>
+    <a href="/cn/tags/#编译器" title="编译器">编译器</a>
     
-    <a href="/cn/tags/#整数运算" title="整数运算">整数运算</a>
-    
-    <a href="/cn/tags/#算子与布局" title="算子与布局">算子与布局</a>
-    
-    <a href="/cn/tags/#常量折叠" title="常量折叠">常量折叠</a>
+    <a href="/cn/tags/#数值计算" title="数值计算">数值计算</a>
     
   </div>
   
@@ -476,18 +472,18 @@
 
   <a href="/cn/compiler-o06-aligned-stride-constants/">
     <h2 class="post-title">
-      O06｜第一行正确，第二行失踪：对齐、Stride 与常量填充的连环案
+      第一行正确，第二行失踪：对齐、Stride 与常量填充的连环案
     </h2>
     <h3 class="post-subtitle">
       逻辑宽度、物理步长、对齐补齐与参数表必须一致。
     </h3>
     <div class="post-content-preview">
-      系列目录 · 算子与布局 · O06 · Read in English
+      系列目录 · 算子与布局 · Read in English
 “第一行都对，第二行开始像抽奖。”
 这往往是一个很友善的错误：它已经用结果形状提示了故障边界。若运算公式错，第一行通常也逃不掉；若第一行正确、跨行开始错误，应优先检查地址步长、物理填充和循环结束时的指针位置。当然这只是定位假设，需要证据确认。
 
 写清布局与步长
-教学张量为 HWC，[2,3,5]，每元素 1 字节。假设......
+教学张量为 HWC，[2,3,5]，每元素 1 字节。假设每个像素的通......
     </div>
   </a>
   
@@ -497,13 +493,9 @@
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#内存布局" title="内存布局">内存布局</a>
+    <a href="/cn/tags/#编译器" title="编译器">编译器</a>
     
-    <a href="/cn/tags/#算子与布局" title="算子与布局">算子与布局</a>
-    
-    <a href="/cn/tags/#内存对齐" title="内存对齐">内存对齐</a>
-    
-    <a href="/cn/tags/#常量" title="常量">常量</a>
+    <a href="/cn/tags/#内存与并发" title="内存与并发">内存与并发</a>
     
   </div>
   
@@ -520,18 +512,18 @@
 
   <a href="/cn/compiler-o05-broadcast-address-plans/">
     <h2 class="post-title">
-      O05｜广播不负责喊话：它负责让地址有时前进、有时原地不动
+      广播不负责喊话：它负责让地址有时前进、有时原地不动
     </h2>
     <h3 class="post-subtitle">
       按轴建立地址前进规则，覆盖标量、低秩和复杂广播。
     </h3>
     <div class="post-content-preview">
-      系列目录 · 算子与布局 · O05 · Read in English
+      系列目录 · 算子与布局 · Read in English
 “框架里一行就能算，怎么到了后端还要分类讨论？”
 广播的数学定义非常紧凑：对齐维度，从右往左看，长度相同或其中一边为 1 就可兼容。然而一条机器指令还要知道从哪里读、一次读多少、下次地址增加多少，以及哪一个输入按向量读取。数学说“这个值复用”，机器追问“复用几次，再移动几个字节”。
 
 把广播翻译成地址轨迹
-考虑教学主张......
+考虑教学主张量 A:[2......
     </div>
   </a>
   
@@ -541,13 +533,9 @@
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#代码生成" title="代码生成">代码生成</a>
+    <a href="/cn/tags/#编译器" title="编译器">编译器</a>
     
-    <a href="/cn/tags/#内存布局" title="内存布局">内存布局</a>
-    
-    <a href="/cn/tags/#广播" title="广播">广播</a>
-    
-    <a href="/cn/tags/#算子与布局" title="算子与布局">算子与布局</a>
+    <a href="/cn/tags/#内存与并发" title="内存与并发">内存与并发</a>
     
   </div>
   
@@ -564,20 +552,20 @@
 
   <a href="/cn/compiler-o04-dump-layout/">
     <h2 class="post-title">
-      O04｜当调试器开始撒谎：一次 Permute，三种 Dump 修法
+      当调试器开始撒谎：一次 Permute，三种 Dump 修法
     </h2>
     <h3 class="post-subtitle">
       三条分支修法共同揭示观察路径也需要布局契约。
     </h3>
     <div class="post-content-preview">
-      系列目录 · 算子与布局 · O04 · Read in English
+      系列目录 · 算子与布局 · Read in English
 “数值错了。”
 “你怎么知道？”
 “Dump 告诉我的。”
 这是一个值得暂停的时刻。Dump 能显示字节，不能自动保证解释字节的规则正确。布局标签、shape、量化比例、写回位置、采样时刻，任何一项不匹配，都能把正确的计算包装成错误的结果。调试器不会故意说谎，但它也会带着默认值上班。
 
 先确认观察布局
-假设教学张量按 ......
+假设教学张量按 HWC 排列......
     </div>
   </a>
   
@@ -587,13 +575,9 @@
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#调试" title="调试">调试</a>
+    <a href="/cn/tags/#编译器" title="编译器">编译器</a>
     
-    <a href="/cn/tags/#测试" title="测试">测试</a>
-    
-    <a href="/cn/tags/#内存布局" title="内存布局">内存布局</a>
-    
-    <a href="/cn/tags/#算子与布局" title="算子与布局">算子与布局</a>
+    <a href="/cn/tags/#内存与并发" title="内存与并发">内存与并发</a>
     
   </div>
   
@@ -610,18 +594,18 @@
 
   <a href="/cn/compiler-o03-reshape-proof/">
     <h2 class="post-title">
-      O03｜Reshape 为什么还要写代码：元素没变，搬家路线变了
+      Reshape 为什么还要写代码：元素没变，搬家路线变了
     </h2>
     <h3 class="post-subtitle">
       证明线性元素映射，区分形状变化与布局重排。
     </h3>
     <div class="post-content-preview">
-      系列目录 · 算子与布局 · O03 · Read in English
+      系列目录 · 算子与布局 · Read in English
 “数据一个没少，为什么编译器说不支持？”
 这是 reshape 最常收到的质问。模型作者看见的是相同数量的元素，后端看见的却可能是不同的物理行距、不同的内存块边界，以及一条只能表达特定维度合并方式的搬运指令。双方都没看错，只是站在不同楼层。
 
 证明线性元素映射
-教学输入为 [3,10]，输出为 [3,2,5]。按连续行......
+教学输入为 [3,10]，输出为 [3,2,5]。按连续行主序解释，线......
     </div>
   </a>
   
@@ -631,13 +615,9 @@
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#张量形状" title="张量形状">张量形状</a>
+    <a href="/cn/tags/#编译器" title="编译器">编译器</a>
     
-    <a href="/cn/tags/#内存布局" title="内存布局">内存布局</a>
-    
-    <a href="/cn/tags/#算子降级" title="算子降级">算子降级</a>
-    
-    <a href="/cn/tags/#算子与布局" title="算子与布局">算子与布局</a>
+    <a href="/cn/tags/#内存与并发" title="内存与并发">内存与并发</a>
     
   </div>
   
@@ -654,18 +634,18 @@
 
   <a href="/cn/compiler-o02-transposed-convolution-storage/">
     <h2 class="post-title">
-      O02｜转置卷积的权重：形状很诚实，内存却说了另一种方言
+      转置卷积的权重：形状很诚实，内存却说了另一种方言
     </h2>
     <h3 class="post-subtitle">
       逻辑维度顺序和真实权重存储不同，切片公式就会不同。
     </h3>
     <div class="post-content-preview">
-      系列目录 · 算子与布局 · O02 · Read in English
+      系列目录 · 算子与布局 · Read in English
 第一次遇到这种错误，很容易怀疑卷积核翻转、步长或 padding：单组结果很好，打开分组就不对。于是有人把边界参数来回改了三次，最终得到一种更令人不安的状态——某些输入又对了。
 真正该问的第一句话可能是：“这块权重的类型写着什么，字节实际又按什么顺序存？”
 
 逻辑形状与实际存储
-张量形状是解释规则的一部分，不保证已经说......
+张量形状是解释规则的一部分，不保证已经说完全部布局信......
     </div>
   </a>
   
@@ -675,13 +655,9 @@
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#内存布局" title="内存布局">内存布局</a>
+    <a href="/cn/tags/#编译器" title="编译器">编译器</a>
     
-    <a href="/cn/tags/#量化" title="量化">量化</a>
-    
-    <a href="/cn/tags/#算子与布局" title="算子与布局">算子与布局</a>
-    
-    <a href="/cn/tags/#卷积" title="卷积">卷积</a>
+    <a href="/cn/tags/#数值计算" title="数值计算">数值计算</a>
     
   </div>
   
@@ -698,17 +674,18 @@
 
   <a href="/cn/compiler-o01-grouped-convolution/">
     <h2 class="post-title">
-      O01｜分组卷积：切开蛋糕以后，盘子上的标签也得切
+      分组卷积：切开蛋糕以后，盘子上的标签也得切
     </h2>
     <h3 class="post-subtitle">
       按组切分输入与权重时，连同量化信息一起维护。
     </h3>
     <div class="post-content-preview">
-      系列目录 · 算子与布局 · O01 · Read in English
+      系列目录 · 算子与布局 · Read in English
 “普通卷积已经跑通了。分组卷积，不就是多传一个参数吗？”
 这句话的危险程度，和“这个文件只改一行”差不多。算子定义里的一个整数，到了后端可能意味着一个新图：输入要切，权重要切，偏置要切，输出要拼起来。更麻烦的是，整数权重旁边还有一套解释这些整数的量化信息。蛋糕分好了，标签拿错，大家吃到的味道仍然不对。
 
-分组的数学与合......
+分组的数学与合法性
+先把问......
     </div>
   </a>
   
@@ -718,13 +695,9 @@
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#量化" title="量化">量化</a>
+    <a href="/cn/tags/#编译器" title="编译器">编译器</a>
     
-    <a href="/cn/tags/#算子降级" title="算子降级">算子降级</a>
-    
-    <a href="/cn/tags/#算子与布局" title="算子与布局">算子与布局</a>
-    
-    <a href="/cn/tags/#卷积" title="卷积">卷积</a>
+    <a href="/cn/tags/#数值计算" title="数值计算">数值计算</a>
     
   </div>
   
@@ -741,18 +714,18 @@
 
   <a href="/cn/compiler-n11-import-order-and-constants/">
     <h2 class="post-title">
-      N11｜太早变聪明的导入器：当代数优化抢在量化信息前面
+      太早变聪明的导入器：当代数优化抢在量化信息前面
     </h2>
     <h3 class="post-subtitle">
       代数变换时机、量化元数据匹配和常量处理为何互相制约。
     </h3>
     <div class="post-content-preview">
-      系列目录 · 数值与量化 · N11 · Read in English
+      系列目录 · 数值与量化 · Read in English
 “常量除以张量，直接转成带系数的倒数，不是更高效吗？”导入器很热心，模型刚进门就替它做了一次代数整理。到了量化信息核对阶段，另一个模块却在找：“原来的除法去哪儿了？”
 这类问题不是优化公式一定错误，而是发生时机可能破坏了其他阶段仍然需要的对应关系。
 
 一、导入、标注和优化，不是可以任意交换的三件事
-设模型含有 c/x。......
+设模型含有 c/x。在合适的数值......
     </div>
   </a>
   
@@ -762,13 +735,9 @@
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#模型导入" title="模型导入">模型导入</a>
+    <a href="/cn/tags/#编译器" title="编译器">编译器</a>
     
-    <a href="/cn/tags/#量化" title="量化">量化</a>
-    
-    <a href="/cn/tags/#数值与量化" title="数值与量化">数值与量化</a>
-    
-    <a href="/cn/tags/#图重写" title="图重写">图重写</a>
+    <a href="/cn/tags/#数值计算" title="数值计算">数值计算</a>
     
   </div>
   
@@ -785,19 +754,19 @@
 
   <a href="/cn/compiler-n10-rewrite-result-types/">
     <h2 class="post-title">
-      N10｜浮点全绿、量化全红：一次重写把输出的身份证换成了输入的
+      浮点全绿、量化全红：一次重写把输出的身份证换成了输入的
     </h2>
     <h3 class="post-subtitle">
       重写结果类型既描述容器，也携带量化含义。
     </h3>
     <div class="post-content-preview">
-      系列目录 · 数值与量化 · N10 · Read in English
+      系列目录 · 数值与量化 · Read in English
 “浮点模型能编，量化模型连第一阶段都过不了。”有人开始怀疑后端整数指令。可错误发生得太早：还没走到发射指令，函数返回类型就已经对不上了。
 真正的原因很小：构造新节点时，形状拿对了，元素类型拿错了。像搬家时地址更新成功，却顺手把住户名字抄成了邻居。
 
 一、一个看起来完全合理的折叠
 图中可能有这样的结构：
-1234原始通道......
+1234原始通道张量  → ......
     </div>
   </a>
   
@@ -807,13 +776,9 @@
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#数值与量化" title="数值与量化">数值与量化</a>
+    <a href="/cn/tags/#编译器" title="编译器">编译器</a>
     
-    <a href="/cn/tags/#图重写" title="图重写">图重写</a>
-    
-    <a href="/cn/tags/#MLIR" title="MLIR">MLIR</a>
-    
-    <a href="/cn/tags/#类型系统" title="类型系统">类型系统</a>
+    <a href="/cn/tags/#数值计算" title="数值计算">数值计算</a>
     
   </div>
   
@@ -830,18 +795,18 @@
 
   <a href="/cn/compiler-n09-normalization-ranges/">
     <h2 class="post-title">
-      N09｜epsilon 明明不是零，到了整数域却差点失踪
+      epsilon 明明不是零，到了整数域却差点失踪
     </h2>
     <h3 class="post-subtitle">
       从 epsilon、平方与倒平方根追踪归一化的数值范围。
     </h3>
     <div class="post-content-preview">
-      系列目录 · 数值与量化 · N09 · Read in English
+      系列目录 · 数值与量化 · Read in English
 “为了防止除零，我们加了 epsilon。”大家听得很安心。另一个人看着量化常量问：“它量化以后是多少？”房间安静了一下。
 epsilon 在浮点公式里很小，是一种保护；到了固定刻度的整数域里，很小也可能意味着不可表示。标准化的难点，就藏在这些看起来最温柔的常数里。
 
 一、归一化先统一成“每组 M 个数”
-对某组输入 ......
+对某组输入 x，使用总体......
     </div>
   </a>
   
@@ -851,13 +816,9 @@ epsilon 在浮点公式里很小，是一种保护；到了固定刻度的整数
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#量化" title="量化">量化</a>
+    <a href="/cn/tags/#编译器" title="编译器">编译器</a>
     
-    <a href="/cn/tags/#归一化" title="归一化">归一化</a>
-    
-    <a href="/cn/tags/#数值精度" title="数值精度">数值精度</a>
-    
-    <a href="/cn/tags/#数值与量化" title="数值与量化">数值与量化</a>
+    <a href="/cn/tags/#数值计算" title="数值计算">数值计算</a>
     
   </div>
   
@@ -911,331 +872,47 @@ epsilon 在浮点公式里很小，是一种保护；到了固定刻度的整数
   <div class="tags">
     
     
-    <a href="/cn/tags/#IT" title="IT" rel="3">IT</a>
+    <a href="/cn/tags/#人工智能" title="人工智能" rel="1">人工智能</a>
     
     
     
-    <a href="/cn/tags/#C/C++" title="C/C++" rel="8">C/C++</a>
+    <a href="/cn/tags/#C/C++" title="C/C++" rel="7">C/C++</a>
     
     
     
-    <a href="/cn/tags/#项目工程" title="项目工程" rel="17">项目工程</a>
+    <a href="/cn/tags/#计算机体系结构" title="计算机体系结构" rel="19">计算机体系结构</a>
     
     
     
-    <a href="/cn/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象" rel="9">RISC-V问题和解决方案以及现象</a>
+    <a href="/cn/tags/#操作系统" title="操作系统" rel="11">操作系统</a>
     
     
     
-    <a href="/cn/tags/#x86" title="x86" rel="9">x86</a>
+    <a href="/cn/tags/#工程实践" title="工程实践" rel="20">工程实践</a>
     
     
     
-    <a href="/cn/tags/#工程与交付" title="工程与交付" rel="15">工程与交付</a>
+    <a href="/cn/tags/#编译器" title="编译器" rel="49">编译器</a>
     
     
     
-    <a href="/cn/tags/#断言" title="断言" rel="1">断言</a>
+    <a href="/cn/tags/#内存与并发" title="内存与并发" rel="13">内存与并发</a>
     
     
     
-    <a href="/cn/tags/#调试" title="调试" rel="2">调试</a>
+    <a href="/cn/tags/#数值计算" title="数值计算" rel="20">数值计算</a>
     
     
     
-    <a href="/cn/tags/#构建系统" title="构建系统" rel="2">构建系统</a>
+    <a href="/cn/tags/#数学" title="数学" rel="1">数学</a>
     
     
     
-    <a href="/cn/tags/#安装" title="安装" rel="1">安装</a>
+    <a href="/cn/tags/#随笔" title="随笔" rel="2">随笔</a>
     
     
     
-    <a href="/cn/tags/#错误处理" title="错误处理" rel="4">错误处理</a>
-    
-    
-    
-    <a href="/cn/tags/#工具链" title="工具链" rel="1">工具链</a>
-    
-    
-    
-    <a href="/cn/tags/#可复现构建" title="可复现构建" rel="2">可复现构建</a>
-    
-    
-    
-    <a href="/cn/tags/#动态链接" title="动态链接" rel="1">动态链接</a>
-    
-    
-    
-    <a href="/cn/tags/#打包" title="打包" rel="3">打包</a>
-    
-    
-    
-    <a href="/cn/tags/#ELF" title="ELF" rel="1">ELF</a>
-    
-    
-    
-    <a href="/cn/tags/#运行资源" title="运行资源" rel="1">运行资源</a>
-    
-    
-    
-    <a href="/cn/tags/#测试" title="测试" rel="7">测试</a>
-    
-    
-    
-    <a href="/cn/tags/#二进制格式" title="二进制格式" rel="1">二进制格式</a>
-    
-    
-    
-    <a href="/cn/tags/#序列化" title="序列化" rel="1">序列化</a>
-    
-    
-    
-    <a href="/cn/tags/#输入校验" title="输入校验" rel="2">输入校验</a>
-    
-    
-    
-    <a href="/cn/tags/#CLI" title="CLI" rel="1">CLI</a>
-    
-    
-    
-    <a href="/cn/tags/#文件读写" title="文件读写" rel="1">文件读写</a>
-    
-    
-    
-    <a href="/cn/tags/#确定性" title="确定性" rel="2">确定性</a>
-    
-    
-    
-    <a href="/cn/tags/#指令编码" title="指令编码" rel="4">指令编码</a>
-    
-    
-    
-    <a href="/cn/tags/#代码生成" title="代码生成" rel="8">代码生成</a>
-    
-    
-    
-    <a href="/cn/tags/#规范" title="规范" rel="2">规范</a>
-    
-    
-    
-    <a href="/cn/tags/#后端设计" title="后端设计" rel="4">后端设计</a>
-    
-    
-    
-    <a href="/cn/tags/#模型导入" title="模型导入" rel="2">模型导入</a>
-    
-    
-    
-    <a href="/cn/tags/#张量形状" title="张量形状" rel="3">张量形状</a>
-    
-    
-    
-    <a href="/cn/tags/#内存布局" title="内存布局" rel="7">内存布局</a>
-    
-    
-    
-    <a href="/cn/tags/#量化" title="量化" rel="16">量化</a>
-    
-    
-    
-    <a href="/cn/tags/#池化" title="池化" rel="1">池化</a>
-    
-    
-    
-    <a href="/cn/tags/#插值" title="插值" rel="1">插值</a>
-    
-    
-    
-    <a href="/cn/tags/#归约" title="归约" rel="5">归约</a>
-    
-    
-    
-    <a href="/cn/tags/#归一化" title="归一化" rel="2">归一化</a>
-    
-    
-    
-    <a href="/cn/tags/#非线性函数" title="非线性函数" rel="1">非线性函数</a>
-    
-    
-    
-    <a href="/cn/tags/#数值精度" title="数值精度" rel="4">数值精度</a>
-    
-    
-    
-    <a href="/cn/tags/#系列导读" title="系列导读" rel="1">系列导读</a>
-    
-    
-    
-    <a href="/cn/tags/#数值与量化" title="数值与量化" rel="11">数值与量化</a>
-    
-    
-    
-    <a href="/cn/tags/#算子降级" title="算子降级" rel="3">算子降级</a>
-    
-    
-    
-    <a href="/cn/tags/#图重写" title="图重写" rel="7">图重写</a>
-    
-    
-    
-    <a href="/cn/tags/#重量化" title="重量化" rel="1">重量化</a>
-    
-    
-    
-    <a href="/cn/tags/#整数运算" title="整数运算" rel="5">整数运算</a>
-    
-    
-    
-    <a href="/cn/tags/#BatchNorm" title="BatchNorm" rel="1">BatchNorm</a>
-    
-    
-    
-    <a href="/cn/tags/#广播" title="广播" rel="2">广播</a>
-    
-    
-    
-    <a href="/cn/tags/#内存规划" title="内存规划" rel="4">内存规划</a>
-    
-    
-    
-    <a href="/cn/tags/#MLIR" title="MLIR" rel="1">MLIR</a>
-    
-    
-    
-    <a href="/cn/tags/#类型系统" title="类型系统" rel="1">类型系统</a>
-    
-    
-    
-    <a href="/cn/tags/#算子与布局" title="算子与布局" rel="12">算子与布局</a>
-    
-    
-    
-    <a href="/cn/tags/#卷积" title="卷积" rel="3">卷积</a>
-    
-    
-    
-    <a href="/cn/tags/#内存对齐" title="内存对齐" rel="1">内存对齐</a>
-    
-    
-    
-    <a href="/cn/tags/#常量" title="常量" rel="1">常量</a>
-    
-    
-    
-    <a href="/cn/tags/#常量折叠" title="常量折叠" rel="1">常量折叠</a>
-    
-    
-    
-    <a href="/cn/tags/#寄存器分配" title="寄存器分配" rel="3">寄存器分配</a>
-    
-    
-    
-    <a href="/cn/tags/#RAII" title="RAII" rel="2">RAII</a>
-    
-    
-    
-    <a href="/cn/tags/#算子融合" title="算子融合" rel="2">算子融合</a>
-    
-    
-    
-    <a href="/cn/tags/#MatMul" title="MatMul" rel="2">MatMul</a>
-    
-    
-    
-    <a href="/cn/tags/#资源与调度" title="资源与调度" rel="10">资源与调度</a>
-    
-    
-    
-    <a href="/cn/tags/#调度" title="调度" rel="3">调度</a>
-    
-    
-    
-    <a href="/cn/tags/#同步" title="同步" rel="3">同步</a>
-    
-    
-    
-    <a href="/cn/tags/#活跃性" title="活跃性" rel="1">活跃性</a>
-    
-    
-    
-    <a href="/cn/tags/#有状态计算" title="有状态计算" rel="2">有状态计算</a>
-    
-    
-    
-    <a href="/cn/tags/#数学哲学" title="数学哲学" rel="1">数学哲学</a>
-    
-    
-    
-    <a href="/cn/tags/#多机器人系统" title="多机器人系统" rel="8">多机器人系统</a>
-    
-    
-    
-    <a href="/cn/tags/#DDS" title="DDS" rel="1">DDS</a>
-    
-    
-    
-    <a href="/cn/tags/#sandbox" title="sandbox" rel="1">sandbox</a>
-    
-    
-    
-    <a href="/cn/tags/#运行验证" title="运行验证" rel="1">运行验证</a>
-    
-    
-    
-    <a href="/cn/tags/#fleet_manager" title="fleet_manager" rel="3">fleet_manager</a>
-    
-    
-    
-    <a href="/cn/tags/#path_planner" title="path_planner" rel="4">path_planner</a>
-    
-    
-    
-    <a href="/cn/tags/#assignment" title="assignment" rel="1">assignment</a>
-    
-    
-    
-    <a href="/cn/tags/#BFS" title="BFS" rel="1">BFS</a>
-    
-    
-    
-    <a href="/cn/tags/#route" title="route" rel="1">route</a>
-    
-    
-    
-    <a href="/cn/tags/#robot_agent" title="robot_agent" rel="2">robot_agent</a>
-    
-    
-    
-    <a href="/cn/tags/#waypoint" title="waypoint" rel="1">waypoint</a>
-    
-    
-    
-    <a href="/cn/tags/#状态机" title="状态机" rel="1">状态机</a>
-    
-    
-    
-    <a href="/cn/tags/#service" title="service" rel="1">service</a>
-    
-    
-    
-    <a href="/cn/tags/#topic" title="topic" rel="1">topic</a>
-    
-    
-    
-    <a href="/cn/tags/#Nav2" title="Nav2" rel="1">Nav2</a>
-    
-    
-    
-    <a href="/cn/tags/#integration" title="integration" rel="1">integration</a>
-    
-    
-    
-    <a href="/cn/tags/#冲突检测" title="冲突检测" rel="1">冲突检测</a>
-    
-    
-    
-    <a href="/cn/tags/#预约机制" title="预约机制" rel="1">预约机制</a>
+    <a href="/cn/tags/#机器人" title="机器人" rel="8">机器人</a>
     
     
   </div>
@@ -1301,23 +978,23 @@ epsilon 在浮点公式里很小，是一种保护；到了固定刻度的整数
   <ul>
     
     <a href="../../compiler-e15-names-are-not-numerical-contracts/">
-      <li>E15｜一个函数名，装不下它的数值契约：非线性与归一化的边界</li>
+      <li>一个函数名，装不下它的数值契约：非线性与归一化的边界</li>
     </a>
     
     <a href="../../compiler-e14-same-shape-different-answers/">
-      <li>E14｜相同的输出形状，完全不同的答案：池化、缩放与索引归约</li>
+      <li>相同的输出形状，完全不同的答案：池化、缩放与索引归约</li>
     </a>
     
     <a href="../../compiler-e13-moving-data-moving-meaning/">
-      <li>E13｜它只是在搬数据，为什么还会算错：张量变换的隐藏契约</li>
+      <li>它只是在搬数据，为什么还会算错：张量变换的隐藏契约</li>
     </a>
     
     <a href="../../compiler-e12-four-identities-of-an-instruction/">
-      <li>E12｜一条指令的四种身份：代码生成为什么不能只靠字符串</li>
+      <li>一条指令的四种身份：代码生成为什么不能只靠字符串</li>
     </a>
     
     <a href="../../compiler-e11-what-does-supported-really-mean/">
-      <li>E11｜搜索到了算子名字，就可以写进“支持列表”吗？</li>
+      <li>搜索到了算子名字，就可以写进“支持列表”吗？</li>
     </a>
     
   </ul>

@@ -141,7 +141,7 @@
   <link rel="canonical" href="https://000xiaoming.github.io/cn/compiler-o01-grouped-convolution/">
   <title>
     
-      O01｜分组卷积：切开蛋糕以后，盘子上的标签也得切 - I&#39;m Bruce Lee
+      分组卷积：切开蛋糕以后，盘子上的标签也得切 - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -387,16 +387,12 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/cn/tags/#量化" title="量化">量化</a>
+              <a class="tag" href="/cn/tags/#编译器" title="编译器">编译器</a>
               
-              <a class="tag" href="/cn/tags/#算子降级" title="算子降级">算子降级</a>
-              
-              <a class="tag" href="/cn/tags/#算子与布局" title="算子与布局">算子与布局</a>
-              
-              <a class="tag" href="/cn/tags/#卷积" title="卷积">卷积</a>
+              <a class="tag" href="/cn/tags/#数值计算" title="数值计算">数值计算</a>
               
             </div>
-            <h1>O01｜分组卷积：切开蛋糕以后，盘子上的标签也得切</h1>
+            <h1>分组卷积：切开蛋糕以后，盘子上的标签也得切</h1>
             <h2 class="subheading">按组切分输入与权重时，连同量化信息一起维护。</h2>
             <span class="meta">
               Posted by Bruce Lee on
@@ -457,7 +453,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 算子与布局 · O01 · <a href="/en/compiler-o01-grouped-convolution/">Read in English</a></p>
+        <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 算子与布局 · <a href="/en/compiler-o01-grouped-convolution/">Read in English</a></p>
 <p>“普通卷积已经跑通了。分组卷积，不就是多传一个参数吗？”</p>
 <p>这句话的危险程度，和“这个文件只改一行”差不多。算子定义里的一个整数，到了后端可能意味着一个新图：输入要切，权重要切，偏置要切，输出要拼起来。更麻烦的是，整数权重旁边还有一套解释这些整数的量化信息。蛋糕分好了，标签拿错，大家吃到的味道仍然不对。</p>
 <span id="more"></span>
@@ -498,12 +494,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/cn/compiler-o02-transposed-convolution-storage/" data-toggle="tooltip" data-placement="top" title="O02｜转置卷积的权重：形状很诚实，内存却说了另一种方言">&larr; Previous Post</a>
+            <a href="/cn/compiler-o02-transposed-convolution-storage/" data-toggle="tooltip" data-placement="top" title="转置卷积的权重：形状很诚实，内存却说了另一种方言">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/cn/compiler-n11-import-order-and-constants/" data-toggle="tooltip" data-placement="top" title="N11｜太早变聪明的导入器：当代数优化抢在量化信息前面">Next Post &rarr;</a>
+            <a href="/cn/compiler-n11-import-order-and-constants/" data-toggle="tooltip" data-placement="top" title="太早变聪明的导入器：当代数优化抢在量化信息前面">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -553,7 +549,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=O01｜分组卷积：切开蛋糕以后，盘子上的标签也得切&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/compiler-o01-grouped-convolution/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=分组卷积：切开蛋糕以后，盘子上的标签也得切&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/compiler-o01-grouped-convolution/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -615,13 +611,9 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/cn/tags/#量化" title="量化">量化</a>
+            <a class="tag" href="/cn/tags/#编译器" title="编译器">编译器</a>
             
-            <a class="tag" href="/cn/tags/#算子降级" title="算子降级">算子降级</a>
-            
-            <a class="tag" href="/cn/tags/#算子与布局" title="算子与布局">算子与布局</a>
-            
-            <a class="tag" href="/cn/tags/#卷积" title="卷积">卷积</a>
+            <a class="tag" href="/cn/tags/#数值计算" title="数值计算">数值计算</a>
             
           </div>
         </section>

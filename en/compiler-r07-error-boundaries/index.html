@@ -141,7 +141,7 @@
   <link rel="canonical" href="https://000xiaoming.github.io/en/compiler-r07-error-boundaries/">
   <title>
     
-      R07 | You Caught the Exception. What Happens to the Half-Written Machine Code? - I&#39;m Bruce Lee
+      You Caught the Exception. What Happens to the Half-Written Machine Code? - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -387,16 +387,12 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/tags/#Error Handling" title="Error Handling">Error Handling</a>
+              <a class="tag" href="/tags/#Engineering" title="Engineering">Engineering</a>
               
-              <a class="tag" href="/tags/#Testing" title="Testing">Testing</a>
-              
-              <a class="tag" href="/tags/#Code Generation" title="Code Generation">Code Generation</a>
-              
-              <a class="tag" href="/tags/#Resources and Scheduling" title="Resources and Scheduling">Resources and Scheduling</a>
+              <a class="tag" href="/tags/#Compilers" title="Compilers">Compilers</a>
               
             </div>
-            <h1>R07 | You Caught the Exception. What Happens to the Half-Written Machine Code?</h1>
+            <h1>You Caught the Exception. What Happens to the Half-Written Machine Code?</h1>
             <h2 class="subheading">After catching an error, account for the state and output already produced.</h2>
             <span class="meta">
               Posted by Bruce Lee on
@@ -457,7 +453,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Resources and Scheduling · R07 · <a href="/cn/compiler-r07-error-boundaries/">阅读中文版</a></p>
+        <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Resources and Scheduling · <a href="/cn/compiler-r07-error-boundaries/">阅读中文版</a></p>
 <p>“The exception is caught. The compiler won’t crash.”</p>
 <p>“Then why is only half the output directory there?”</p>
 <p>“Because another path writes the files.”</p>
@@ -481,7 +477,7 @@
 <h2 id="Do-not-call-exception-conversion-a-transaction">Do not call exception conversion a transaction</h2>
 <p>A transaction normally promises to commit all changes on success and restore a defined earlier state on failure. A code generator changes many things: instruction lists, pseudo-instruction lists, label numbers, incremental-read cursors, dependency-group counts, temporary resources, and memory-allocation summaries.</p>
 <p>The wrapper verified here primarily catches exceptions and returns status. It does not create a unified snapshot of all those objects or undo every action after failure. A more accurate failure policy is therefore to stop and discard this generation context, unless an individual interface separately promises recovery.</p>
-<p>The RAII discussed in <a href="/en/compiler-r01-register-raii/">R01</a> can return local resources, but it cannot automatically delete instructions already appended. Moving parameter validation ahead of pseudo-instruction insertion, as discussed in <a href="/en/compiler-r09-encoding-boundaries/">R09</a>, strengthens one particular interface’s guarantee that failure occurs before output changes. Local guarantees are valuable. Combining them does not establish a global transaction.</p>
+<p>The RAII discussed in <a href="/en/compiler-r01-register-raii/">Registers and RAII</a> can return local resources, but it cannot automatically delete instructions already appended. Moving parameter validation ahead of pseudo-instruction insertion, as discussed in <a href="/en/compiler-r09-encoding-boundaries/">Encoding Boundaries</a>, strengthens one particular interface’s guarantee that failure occurs before output changes. Local guarantees are valuable. Combining them does not establish a global transaction.</p>
 <h2 id="Why-encode-before-exporting">Why encode before exporting?</h2>
 <p>The relevant output logic moves complete binary encoding ahead of the creation and writing of subsequent artifacts. Debug assembly is likewise serialized in memory before file writing begins. This catches “the instructions cannot be encoded at all” earlier and reduces the chance of leaving incomplete output behind.</p>
 <p>That still does not create a filesystem transaction. After encoding succeeds, insufficient disk space, permission errors, or process interruption can leave partial files. If the product requires an output directory to be either complete or absent, it needs mechanisms such as a temporary directory, integrity checks, and atomic publication.</p>
@@ -550,12 +546,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/en/compiler-r08-loops-determinism/" data-toggle="tooltip" data-placement="top" title="R08 | One More Loop, and the Binary Snapshot Looks Like a Different Program">&larr; Previous Post</a>
+            <a href="/en/compiler-r08-loops-determinism/" data-toggle="tooltip" data-placement="top" title="One More Loop, and the Binary Snapshot Looks Like a Different Program">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/en/compiler-r06-recurrent-dependencies/" data-toggle="tooltip" data-placement="top" title="R06 | I Waited for the Event. Why Isn't the Data Ready?">Next Post &rarr;</a>
+            <a href="/en/compiler-r06-recurrent-dependencies/" data-toggle="tooltip" data-placement="top" title="I Waited for the Event. Why Isn't the Data Ready?">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -605,7 +601,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=R07 | You Caught the Exception. What Happens to the Half-Written Machine Code?&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/en/compiler-r07-error-boundaries/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=You Caught the Exception. What Happens to the Half-Written Machine Code?&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/en/compiler-r07-error-boundaries/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -667,13 +663,9 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#Error Handling" title="Error Handling">Error Handling</a>
+            <a class="tag" href="/tags/#Engineering" title="Engineering">Engineering</a>
             
-            <a class="tag" href="/tags/#Testing" title="Testing">Testing</a>
-            
-            <a class="tag" href="/tags/#Code Generation" title="Code Generation">Code Generation</a>
-            
-            <a class="tag" href="/tags/#Resources and Scheduling" title="Resources and Scheduling">Resources and Scheduling</a>
+            <a class="tag" href="/tags/#Compilers" title="Compilers">Compilers</a>
             
           </div>
         </section>

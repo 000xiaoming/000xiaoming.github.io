@@ -141,7 +141,7 @@
   <link rel="canonical" href="https://000xiaoming.github.io/en/compiler-o12-static-left-matmul/">
   <title>
     
-      O12 | When Weights Move to the Left: A Transpose Identity That Moves the Whole Compiler Chain - I&#39;m Bruce Lee
+      When Weights Move to the Left: A Transpose Identity That Moves the Whole Compiler Chain - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -387,16 +387,12 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/tags/#MatMul" title="MatMul">MatMul</a>
+              <a class="tag" href="/tags/#Compilers" title="Compilers">Compilers</a>
               
-              <a class="tag" href="/tags/#Quantization" title="Quantization">Quantization</a>
-              
-              <a class="tag" href="/tags/#Graph Rewriting" title="Graph Rewriting">Graph Rewriting</a>
-              
-              <a class="tag" href="/tags/#Operators and Layouts" title="Operators and Layouts">Operators and Layouts</a>
+              <a class="tag" href="/tags/#Numerical Computing" title="Numerical Computing">Numerical Computing</a>
               
             </div>
-            <h1>O12 | When Weights Move to the Left: A Transpose Identity That Moves the Whole Compiler Chain</h1>
+            <h1>When Weights Move to the Left: A Transpose Identity That Moves the Whole Compiler Chain</h1>
             <h2 class="subheading">A transpose identity starts the rewrite; weight identity and quantization axes must follow.</h2>
             <span class="meta">
               Posted by Bruce Lee on
@@ -457,7 +453,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Operators and Layouts · O12 · <a href="/cn/compiler-o12-static-left-matmul/">阅读中文版</a></p>
+        <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Operators and Layouts · <a href="/cn/compiler-o12-static-left-matmul/">阅读中文版</a></p>
 <p>“It is still matrix multiplication. Why can it no longer compile just because the weights are on the left?”</p>
 <p>From linear algebra’s perspective, that is a reasonable question. From the backend’s perspective, matrix-unit dataflow, weight packing, bias parameters, and quantization channels may all be organized around <code>dynamic input @ constant weights</code>. Move the constant to the left, and the operator’s name stays the same while almost every implementation assumption is touched.</p>
 <span id="more"></span>
@@ -502,12 +498,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/en/compiler-r01-register-raii/" data-toggle="tooltip" data-placement="top" title="R01 | Why Does Someone Keep Borrowing My “Temporary” Register?">&larr; Previous Post</a>
+            <a href="/en/compiler-r01-register-raii/" data-toggle="tooltip" data-placement="top" title="Why Does Someone Keep Borrowing My “Temporary” Register?">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/en/compiler-o11-matmul-fusion-barriers/" data-toggle="tooltip" data-placement="top" title="O11 | A Sigmoid After MatMul: Why the Compiler Still Refuses to Fuse It">Next Post &rarr;</a>
+            <a href="/en/compiler-o11-matmul-fusion-barriers/" data-toggle="tooltip" data-placement="top" title="A Sigmoid After MatMul: Why the Compiler Still Refuses to Fuse It">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -557,7 +553,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=O12 | When Weights Move to the Left: A Transpose Identity That Moves the Whole Compiler Chain&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/en/compiler-o12-static-left-matmul/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=When Weights Move to the Left: A Transpose Identity That Moves the Whole Compiler Chain&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/en/compiler-o12-static-left-matmul/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -619,13 +615,9 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#MatMul" title="MatMul">MatMul</a>
+            <a class="tag" href="/tags/#Compilers" title="Compilers">Compilers</a>
             
-            <a class="tag" href="/tags/#Quantization" title="Quantization">Quantization</a>
-            
-            <a class="tag" href="/tags/#Graph Rewriting" title="Graph Rewriting">Graph Rewriting</a>
-            
-            <a class="tag" href="/tags/#Operators and Layouts" title="Operators and Layouts">Operators and Layouts</a>
+            <a class="tag" href="/tags/#Numerical Computing" title="Numerical Computing">Numerical Computing</a>
             
           </div>
         </section>

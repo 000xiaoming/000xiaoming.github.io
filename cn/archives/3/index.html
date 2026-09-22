@@ -432,20 +432,21 @@
 
   <a href="/cn/compiler-r05-recurrent-state/">
     <h2 class="post-title">
-      R05｜同一个最终状态，为什么需要两次写出？
+      同一个最终状态，为什么需要两次写出？
     </h2>
     <h3 class="post-subtitle">
       持续状态、最终状态与直接输出，为什么不是同一种缓冲。
     </h3>
     <div class="post-content-preview">
-      系列目录 · 资源与调度 · R05 · Read in English
+      系列目录 · 资源与调度 · Read in English
 “最终隐藏状态已经是图输出，为什么还要保存一次？”
 “因为图输出交给调用者，持久化状态交给下一次调用。”
 “那把两次保存串起来不就行了？”
 听起来像一次很普通的公共子表达式复用。可状态型计算里，两个目的地拥有不同生命周期；把它们误写成一条链，可能把值的意义和副作用混在一起。
 
 先把三个对象分开
-对一个循环单元，可用教学......
+对一个循环单元，可用教学关系描述：
+......
     </div>
   </a>
   
@@ -455,13 +456,9 @@
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#内存规划" title="内存规划">内存规划</a>
+    <a href="/cn/tags/#编译器" title="编译器">编译器</a>
     
-    <a href="/cn/tags/#资源与调度" title="资源与调度">资源与调度</a>
-    
-    <a href="/cn/tags/#调度" title="调度">调度</a>
-    
-    <a href="/cn/tags/#有状态计算" title="有状态计算">有状态计算</a>
+    <a href="/cn/tags/#内存与并发" title="内存与并发">内存与并发</a>
     
   </div>
   
@@ -478,19 +475,20 @@
 
   <a href="/cn/compiler-r04-address-capacity/">
     <h2 class="post-title">
-      R04｜地址能表示，为什么编译器说“内存满了”？
+      地址能表示，为什么编译器说“内存满了”？
     </h2>
     <h3 class="post-subtitle">
       区分可编码地址范围、分配区间和真实内存预算。
     </h3>
     <div class="post-content-preview">
-      系列目录 · 资源与调度 · R04 · Read in English
+      系列目录 · 资源与调度 · Read in English
 “我只是生成一个稍大的输出，编译器却说全局内存用完了。”
 “它知道运行时会给多少内存吗？”
 “它知道一个默认数字。”
 这段对话的危险之处在于，那个默认数字往往存在很久，以至于看起来像硬件真理。它可能最初服务于某个部署环境，后来却被一路复制成所有模型必须遵守的编译期上限。
 
-三个不同的问题，被挤进了一个 capacity......
+三个不同的问题，被挤进了一个 capacity
+地址分配至......
     </div>
   </a>
   
@@ -500,13 +498,9 @@
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#指令编码" title="指令编码">指令编码</a>
+    <a href="/cn/tags/#编译器" title="编译器">编译器</a>
     
-    <a href="/cn/tags/#整数运算" title="整数运算">整数运算</a>
-    
-    <a href="/cn/tags/#内存规划" title="内存规划">内存规划</a>
-    
-    <a href="/cn/tags/#资源与调度" title="资源与调度">资源与调度</a>
+    <a href="/cn/tags/#内存与并发" title="内存与并发">内存与并发</a>
     
   </div>
   
@@ -523,18 +517,18 @@
 
   <a href="/cn/compiler-r03-view-liveness/">
     <h2 class="post-title">
-      R03｜视图没有搬数据，为什么内存仍然不能还？
+      视图没有搬数据，为什么内存仍然不能还？
     </h2>
     <h3 class="post-subtitle">
       跨过视图链追踪异步消费者，防止过早回收底层存储。
     </h3>
     <div class="post-content-preview">
-      系列目录 · 资源与调度 · R03 · Read in English
+      系列目录 · 资源与调度 · Read in English
 “这个张量的最后一个用户已经过去了，可以回收。”
 “最后一个用户只是换了个形状。真正读数据的算子，还在另一条队列里排队。”
 如果给内存分配器颁发“过度热心奖”，这类提前复用很有竞争力。它严格按 IR 出场顺序办事，看到直接用户都处理完了，立刻把空间交给下一个写入者。唯一的问题是：用户消失了，读者没有消失。
 
-有三个容易......
+有三个容易混淆的结束时......
     </div>
   </a>
   
@@ -544,13 +538,9 @@
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#内存规划" title="内存规划">内存规划</a>
+    <a href="/cn/tags/#编译器" title="编译器">编译器</a>
     
-    <a href="/cn/tags/#资源与调度" title="资源与调度">资源与调度</a>
-    
-    <a href="/cn/tags/#同步" title="同步">同步</a>
-    
-    <a href="/cn/tags/#活跃性" title="活跃性">活跃性</a>
+    <a href="/cn/tags/#内存与并发" title="内存与并发">内存与并发</a>
     
   </div>
   
@@ -567,18 +557,18 @@
 
   <a href="/cn/compiler-r02-dependency-pressure/">
     <h2 class="post-title">
-      R02｜图里只是多了几个分叉，为什么同步寄存器先耗尽了？
+      图里只是多了几个分叉，为什么同步寄存器先耗尽了？
     </h2>
     <h3 class="post-subtitle">
       分叉与依赖汇合如何形成同步资源压力。
     </h3>
     <div class="post-content-preview">
-      系列目录 · 资源与调度 · R02 · Read in English
+      系列目录 · 资源与调度 · Read in English
 “算术量没有增加多少，怎么连代码都生成不出来？”
 白板上的图非常无辜：一个生产者，接着很多消费者。内存还有余量，计算单元也没增加，可依赖资源池先亮起红灯。把并行程序当成“节点加连线”画出来很容易，麻烦在于每条线最终都要找到一种设备可以理解的等待方式，而同步对象未必无限。
 
 图的边不必等于一个物理同步槽
-设搬运引擎 D ......
+设搬运引擎 D 产生一份数据......
     </div>
   </a>
   
@@ -588,13 +578,9 @@
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#寄存器分配" title="寄存器分配">寄存器分配</a>
+    <a href="/cn/tags/#编译器" title="编译器">编译器</a>
     
-    <a href="/cn/tags/#资源与调度" title="资源与调度">资源与调度</a>
-    
-    <a href="/cn/tags/#调度" title="调度">调度</a>
-    
-    <a href="/cn/tags/#同步" title="同步">同步</a>
+    <a href="/cn/tags/#内存与并发" title="内存与并发">内存与并发</a>
     
   </div>
   
@@ -611,17 +597,17 @@
 
   <a href="/cn/compiler-r01-register-raii/">
     <h2 class="post-title">
-      R01｜那只“临时”寄存器，为什么总被别人借走？
+      那只“临时”寄存器，为什么总被别人借走？
     </h2>
     <h3 class="post-subtitle">
       用作用域表达寄存器所有权，明确自动归还的边界。
     </h3>
     <div class="post-content-preview">
-      系列目录 · 资源与调度 · R01 · Read in English
+      系列目录 · 资源与调度 · Read in English
 “我只借一个寄存器，装一下地址，马上还。”
 “巧了，外面的循环计数器也只借了同一个。”
 这类争执不会出现在代码评审聊天里。它会出现在机器码里：循环次数突然变成一段地址，或者配置加载覆盖了尚未使用的标量值。每个辅助函数单独看都很短，拼起来却像一间没有借用登记簿的工具房。
-问题不是程序员记不住寄存器名字，而是名字没有表达所......
+问题不是程序员记不住寄存器名字，而是名字没有表达所有权。字符串......
     </div>
   </a>
   
@@ -631,13 +617,9 @@
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#代码生成" title="代码生成">代码生成</a>
+    <a href="/cn/tags/#编译器" title="编译器">编译器</a>
     
-    <a href="/cn/tags/#寄存器分配" title="寄存器分配">寄存器分配</a>
-    
-    <a href="/cn/tags/#RAII" title="RAII">RAII</a>
-    
-    <a href="/cn/tags/#资源与调度" title="资源与调度">资源与调度</a>
+    <a href="/cn/tags/#内存与并发" title="内存与并发">内存与并发</a>
     
   </div>
   
@@ -654,18 +636,18 @@
 
   <a href="/cn/compiler-o12-static-left-matmul/">
     <h2 class="post-title">
-      O12｜权重跑到左边以后：用一个转置恒等式，搬动整个编译链
+      权重跑到左边以后：用一个转置恒等式，搬动整个编译链
     </h2>
     <h3 class="post-subtitle">
       转置恒等式只是起点，权重命名与量化轴还要一起移动。
     </h3>
     <div class="post-content-preview">
-      系列目录 · 算子与布局 · O12 · Read in English
+      系列目录 · 算子与布局 · Read in English
 “都是矩阵乘法，权重放左边怎么就不能编译？”
 从线性代数看，这是个合理的疑问。从后端看，矩阵单元的数据流、权重打包、偏置参数与量化通道可能都围绕 动态输入 @ 常量权重 组织。当常量跑到左侧，算子名字没变，原有实现的假设却几乎全被触碰。
 
 转置恒等式与形状证明
-最直接但危险的方案是交换两个输入。矩阵乘法通常不满足交换律......
+最直接但危险的方案是交换两个输入。矩阵乘法通常不满足交换律，连输出形状......
     </div>
   </a>
   
@@ -675,13 +657,9 @@
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#量化" title="量化">量化</a>
+    <a href="/cn/tags/#编译器" title="编译器">编译器</a>
     
-    <a href="/cn/tags/#图重写" title="图重写">图重写</a>
-    
-    <a href="/cn/tags/#算子与布局" title="算子与布局">算子与布局</a>
-    
-    <a href="/cn/tags/#MatMul" title="MatMul">MatMul</a>
+    <a href="/cn/tags/#数值计算" title="数值计算">数值计算</a>
     
   </div>
   
@@ -698,19 +676,19 @@
 
   <a href="/cn/compiler-o11-matmul-fusion-barriers/">
     <h2 class="post-title">
-      O11｜MatMul 后面有个 Sigmoid：为什么编译器偏偏不肯融合
+      MatMul 后面有个 Sigmoid：为什么编译器偏偏不肯融合
     </h2>
     <h3 class="post-subtitle">
       多消费者、视图和依赖边界如何限制矩阵乘激活融合。
     </h3>
     <div class="post-content-preview">
-      系列目录 · 算子与布局 · O11 · Read in English
+      系列目录 · 算子与布局 · Read in English
 “卷积都能融合，矩阵乘法后面这个 Sigmoid 总可以吧？”
 有时可以，有时编译器认真地说不。最有价值的优化文章，不只有成功合并后的漂亮图，还应该解释那些故意留下的节点。它们常常标记着真正的语义边界。
 
 直接邻接与语义屏障
 最简单的教学图为：
-1X:[B,M,K] -- MatMul(W:[K,N]) --&gt; ......
+1X:[B,M,K] -- MatMul(W:[K,N]) --&gt; U:[B,M......
     </div>
   </a>
   
@@ -720,13 +698,9 @@
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#量化" title="量化">量化</a>
+    <a href="/cn/tags/#编译器" title="编译器">编译器</a>
     
-    <a href="/cn/tags/#算子与布局" title="算子与布局">算子与布局</a>
-    
-    <a href="/cn/tags/#算子融合" title="算子融合">算子融合</a>
-    
-    <a href="/cn/tags/#MatMul" title="MatMul">MatMul</a>
+    <a href="/cn/tags/#数值计算" title="数值计算">数值计算</a>
     
   </div>
   
@@ -743,19 +717,19 @@
 
   <a href="/cn/compiler-o10-convolution-activation-fusion/">
     <h2 class="post-title">
-      O10｜把激活函数塞进卷积：少一个节点之前，先保住那条量化边界
+      把激活函数塞进卷积：少一个节点之前，先保住那条量化边界
     </h2>
     <h3 class="post-subtitle">
       融合卷积与激活之前，保住中间量化与合法形状。
     </h3>
     <div class="post-content-preview">
-      系列目录 · 算子与布局 · O10 · Read in English
+      系列目录 · 算子与布局 · Read in English
 “这两个节点挨着，融合以后应该会快吧？”
 “可能。先说清楚中间那个张量原来是什么。”
 融合最诱人的画面是删掉图上的一个圆圈。可被删掉的不只是一个名字，还可能是一段真实的存储、一次量化、一种数据类型和一个被其他节点读取的值。若只把后处理开关打开，忘记中间语义，图确实更短了，答案也可能更远了。
 
 先检查融合前提
-教学计算为......
+教学计算为 u=Con......
     </div>
   </a>
   
@@ -765,13 +739,9 @@
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#量化" title="量化">量化</a>
+    <a href="/cn/tags/#编译器" title="编译器">编译器</a>
     
-    <a href="/cn/tags/#算子与布局" title="算子与布局">算子与布局</a>
-    
-    <a href="/cn/tags/#卷积" title="卷积">卷积</a>
-    
-    <a href="/cn/tags/#算子融合" title="算子融合">算子融合</a>
+    <a href="/cn/tags/#数值计算" title="数值计算">数值计算</a>
     
   </div>
   
@@ -788,15 +758,15 @@
 
   <a href="/cn/compiler-o09-scratch-register-lifetimes/">
     <h2 class="post-title">
-      O09｜谁动了我的临时寄存器：让发射器学会借东西、还东西
+      谁动了我的临时寄存器：让发射器学会借东西、还东西
     </h2>
     <h3 class="post-subtitle">
       从手写临时寄存器到明确的借用、释放和嵌套约束。
     </h3>
     <div class="post-content-preview">
-      系列目录 · 算子与布局 · O09 · Read in English
+      系列目录 · 算子与布局 · Read in English
 单独测试时，两个代码生成函数都很好。把它们组合起来，结果突然不对。第一个函数说：“我只是借个临时寄存器存基址。”第二个函数说：“我也是。”问题是，它们借的是同一个，而且谁也没问谁什么时候还。
-字符串寄存器名特别方便：写起来短、看起来直接。它也没有所有权，无法告诉你某个名字现在是否装着仍然要用的地址、循环次数或中间值。当......
+字符串寄存器名特别方便：写起来短、看起来直接。它也没有所有权，无法告诉你某个名字现在是否装着仍然要用的地址、循环次数或中间值。当内核开始调用......
     </div>
   </a>
   
@@ -806,13 +776,9 @@
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#代码生成" title="代码生成">代码生成</a>
+    <a href="/cn/tags/#编译器" title="编译器">编译器</a>
     
-    <a href="/cn/tags/#算子与布局" title="算子与布局">算子与布局</a>
-    
-    <a href="/cn/tags/#寄存器分配" title="寄存器分配">寄存器分配</a>
-    
-    <a href="/cn/tags/#RAII" title="RAII">RAII</a>
+    <a href="/cn/tags/#内存与并发" title="内存与并发">内存与并发</a>
     
   </div>
   
@@ -829,16 +795,16 @@
 
   <a href="/cn/compiler-o08-unary-quantization-contract/">
     <h2 class="post-title">
-      O08｜Abs 和 Sign：算术只有一行，参数协议却不能复制粘贴
+      Abs 和 Sign：算术只有一行，参数协议却不能复制粘贴
     </h2>
     <h3 class="post-subtitle">
       一元算子的数学定义，需要贯穿类型、量化和参数编码。
     </h3>
     <div class="post-content-preview">
-      系列目录 · 算子与布局 · O08 · Read in English
+      系列目录 · 算子与布局 · Read in English
 如果让人选两个最容易实现的算子，Abs 和 Sign 很可能榜上有名。一个取绝对值，一个判断正负。于是有人决定从现成二元算子复制一份代码，把两个输入都填成同一个值，再换一下操作码。
 编译成功了。结果也出来了。接下来，那个本该最简单的算子，花掉了一整段调试时间。
-真正的疑问是：“二元参数结构长得一样，是否意味着每个字段在......
+真正的疑问是：“二元参数结构长得一样，是否意味着每个字段在一元指令里含......
     </div>
   </a>
   
@@ -848,13 +814,9 @@
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#代码生成" title="代码生成">代码生成</a>
+    <a href="/cn/tags/#编译器" title="编译器">编译器</a>
     
-    <a href="/cn/tags/#量化" title="量化">量化</a>
-    
-    <a href="/cn/tags/#整数运算" title="整数运算">整数运算</a>
-    
-    <a href="/cn/tags/#算子与布局" title="算子与布局">算子与布局</a>
+    <a href="/cn/tags/#数值计算" title="数值计算">数值计算</a>
     
   </div>
   
@@ -908,331 +870,47 @@
   <div class="tags">
     
     
-    <a href="/cn/tags/#IT" title="IT" rel="3">IT</a>
+    <a href="/cn/tags/#人工智能" title="人工智能" rel="1">人工智能</a>
     
     
     
-    <a href="/cn/tags/#C/C++" title="C/C++" rel="8">C/C++</a>
+    <a href="/cn/tags/#C/C++" title="C/C++" rel="7">C/C++</a>
     
     
     
-    <a href="/cn/tags/#项目工程" title="项目工程" rel="17">项目工程</a>
+    <a href="/cn/tags/#计算机体系结构" title="计算机体系结构" rel="19">计算机体系结构</a>
     
     
     
-    <a href="/cn/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象" rel="9">RISC-V问题和解决方案以及现象</a>
+    <a href="/cn/tags/#操作系统" title="操作系统" rel="11">操作系统</a>
     
     
     
-    <a href="/cn/tags/#x86" title="x86" rel="9">x86</a>
+    <a href="/cn/tags/#工程实践" title="工程实践" rel="20">工程实践</a>
     
     
     
-    <a href="/cn/tags/#工程与交付" title="工程与交付" rel="15">工程与交付</a>
+    <a href="/cn/tags/#编译器" title="编译器" rel="49">编译器</a>
     
     
     
-    <a href="/cn/tags/#断言" title="断言" rel="1">断言</a>
+    <a href="/cn/tags/#内存与并发" title="内存与并发" rel="13">内存与并发</a>
     
     
     
-    <a href="/cn/tags/#调试" title="调试" rel="2">调试</a>
+    <a href="/cn/tags/#数值计算" title="数值计算" rel="20">数值计算</a>
     
     
     
-    <a href="/cn/tags/#构建系统" title="构建系统" rel="2">构建系统</a>
+    <a href="/cn/tags/#数学" title="数学" rel="1">数学</a>
     
     
     
-    <a href="/cn/tags/#安装" title="安装" rel="1">安装</a>
+    <a href="/cn/tags/#随笔" title="随笔" rel="2">随笔</a>
     
     
     
-    <a href="/cn/tags/#错误处理" title="错误处理" rel="4">错误处理</a>
-    
-    
-    
-    <a href="/cn/tags/#工具链" title="工具链" rel="1">工具链</a>
-    
-    
-    
-    <a href="/cn/tags/#可复现构建" title="可复现构建" rel="2">可复现构建</a>
-    
-    
-    
-    <a href="/cn/tags/#动态链接" title="动态链接" rel="1">动态链接</a>
-    
-    
-    
-    <a href="/cn/tags/#打包" title="打包" rel="3">打包</a>
-    
-    
-    
-    <a href="/cn/tags/#ELF" title="ELF" rel="1">ELF</a>
-    
-    
-    
-    <a href="/cn/tags/#运行资源" title="运行资源" rel="1">运行资源</a>
-    
-    
-    
-    <a href="/cn/tags/#测试" title="测试" rel="7">测试</a>
-    
-    
-    
-    <a href="/cn/tags/#二进制格式" title="二进制格式" rel="1">二进制格式</a>
-    
-    
-    
-    <a href="/cn/tags/#序列化" title="序列化" rel="1">序列化</a>
-    
-    
-    
-    <a href="/cn/tags/#输入校验" title="输入校验" rel="2">输入校验</a>
-    
-    
-    
-    <a href="/cn/tags/#CLI" title="CLI" rel="1">CLI</a>
-    
-    
-    
-    <a href="/cn/tags/#文件读写" title="文件读写" rel="1">文件读写</a>
-    
-    
-    
-    <a href="/cn/tags/#确定性" title="确定性" rel="2">确定性</a>
-    
-    
-    
-    <a href="/cn/tags/#指令编码" title="指令编码" rel="4">指令编码</a>
-    
-    
-    
-    <a href="/cn/tags/#代码生成" title="代码生成" rel="8">代码生成</a>
-    
-    
-    
-    <a href="/cn/tags/#规范" title="规范" rel="2">规范</a>
-    
-    
-    
-    <a href="/cn/tags/#后端设计" title="后端设计" rel="4">后端设计</a>
-    
-    
-    
-    <a href="/cn/tags/#模型导入" title="模型导入" rel="2">模型导入</a>
-    
-    
-    
-    <a href="/cn/tags/#张量形状" title="张量形状" rel="3">张量形状</a>
-    
-    
-    
-    <a href="/cn/tags/#内存布局" title="内存布局" rel="7">内存布局</a>
-    
-    
-    
-    <a href="/cn/tags/#量化" title="量化" rel="16">量化</a>
-    
-    
-    
-    <a href="/cn/tags/#池化" title="池化" rel="1">池化</a>
-    
-    
-    
-    <a href="/cn/tags/#插值" title="插值" rel="1">插值</a>
-    
-    
-    
-    <a href="/cn/tags/#归约" title="归约" rel="5">归约</a>
-    
-    
-    
-    <a href="/cn/tags/#归一化" title="归一化" rel="2">归一化</a>
-    
-    
-    
-    <a href="/cn/tags/#非线性函数" title="非线性函数" rel="1">非线性函数</a>
-    
-    
-    
-    <a href="/cn/tags/#数值精度" title="数值精度" rel="4">数值精度</a>
-    
-    
-    
-    <a href="/cn/tags/#系列导读" title="系列导读" rel="1">系列导读</a>
-    
-    
-    
-    <a href="/cn/tags/#数值与量化" title="数值与量化" rel="11">数值与量化</a>
-    
-    
-    
-    <a href="/cn/tags/#算子降级" title="算子降级" rel="3">算子降级</a>
-    
-    
-    
-    <a href="/cn/tags/#图重写" title="图重写" rel="7">图重写</a>
-    
-    
-    
-    <a href="/cn/tags/#重量化" title="重量化" rel="1">重量化</a>
-    
-    
-    
-    <a href="/cn/tags/#整数运算" title="整数运算" rel="5">整数运算</a>
-    
-    
-    
-    <a href="/cn/tags/#BatchNorm" title="BatchNorm" rel="1">BatchNorm</a>
-    
-    
-    
-    <a href="/cn/tags/#广播" title="广播" rel="2">广播</a>
-    
-    
-    
-    <a href="/cn/tags/#内存规划" title="内存规划" rel="4">内存规划</a>
-    
-    
-    
-    <a href="/cn/tags/#MLIR" title="MLIR" rel="1">MLIR</a>
-    
-    
-    
-    <a href="/cn/tags/#类型系统" title="类型系统" rel="1">类型系统</a>
-    
-    
-    
-    <a href="/cn/tags/#算子与布局" title="算子与布局" rel="12">算子与布局</a>
-    
-    
-    
-    <a href="/cn/tags/#卷积" title="卷积" rel="3">卷积</a>
-    
-    
-    
-    <a href="/cn/tags/#内存对齐" title="内存对齐" rel="1">内存对齐</a>
-    
-    
-    
-    <a href="/cn/tags/#常量" title="常量" rel="1">常量</a>
-    
-    
-    
-    <a href="/cn/tags/#常量折叠" title="常量折叠" rel="1">常量折叠</a>
-    
-    
-    
-    <a href="/cn/tags/#寄存器分配" title="寄存器分配" rel="3">寄存器分配</a>
-    
-    
-    
-    <a href="/cn/tags/#RAII" title="RAII" rel="2">RAII</a>
-    
-    
-    
-    <a href="/cn/tags/#算子融合" title="算子融合" rel="2">算子融合</a>
-    
-    
-    
-    <a href="/cn/tags/#MatMul" title="MatMul" rel="2">MatMul</a>
-    
-    
-    
-    <a href="/cn/tags/#资源与调度" title="资源与调度" rel="10">资源与调度</a>
-    
-    
-    
-    <a href="/cn/tags/#调度" title="调度" rel="3">调度</a>
-    
-    
-    
-    <a href="/cn/tags/#同步" title="同步" rel="3">同步</a>
-    
-    
-    
-    <a href="/cn/tags/#活跃性" title="活跃性" rel="1">活跃性</a>
-    
-    
-    
-    <a href="/cn/tags/#有状态计算" title="有状态计算" rel="2">有状态计算</a>
-    
-    
-    
-    <a href="/cn/tags/#数学哲学" title="数学哲学" rel="1">数学哲学</a>
-    
-    
-    
-    <a href="/cn/tags/#多机器人系统" title="多机器人系统" rel="8">多机器人系统</a>
-    
-    
-    
-    <a href="/cn/tags/#DDS" title="DDS" rel="1">DDS</a>
-    
-    
-    
-    <a href="/cn/tags/#sandbox" title="sandbox" rel="1">sandbox</a>
-    
-    
-    
-    <a href="/cn/tags/#运行验证" title="运行验证" rel="1">运行验证</a>
-    
-    
-    
-    <a href="/cn/tags/#fleet_manager" title="fleet_manager" rel="3">fleet_manager</a>
-    
-    
-    
-    <a href="/cn/tags/#path_planner" title="path_planner" rel="4">path_planner</a>
-    
-    
-    
-    <a href="/cn/tags/#assignment" title="assignment" rel="1">assignment</a>
-    
-    
-    
-    <a href="/cn/tags/#BFS" title="BFS" rel="1">BFS</a>
-    
-    
-    
-    <a href="/cn/tags/#route" title="route" rel="1">route</a>
-    
-    
-    
-    <a href="/cn/tags/#robot_agent" title="robot_agent" rel="2">robot_agent</a>
-    
-    
-    
-    <a href="/cn/tags/#waypoint" title="waypoint" rel="1">waypoint</a>
-    
-    
-    
-    <a href="/cn/tags/#状态机" title="状态机" rel="1">状态机</a>
-    
-    
-    
-    <a href="/cn/tags/#service" title="service" rel="1">service</a>
-    
-    
-    
-    <a href="/cn/tags/#topic" title="topic" rel="1">topic</a>
-    
-    
-    
-    <a href="/cn/tags/#Nav2" title="Nav2" rel="1">Nav2</a>
-    
-    
-    
-    <a href="/cn/tags/#integration" title="integration" rel="1">integration</a>
-    
-    
-    
-    <a href="/cn/tags/#冲突检测" title="冲突检测" rel="1">冲突检测</a>
-    
-    
-    
-    <a href="/cn/tags/#预约机制" title="预约机制" rel="1">预约机制</a>
+    <a href="/cn/tags/#机器人" title="机器人" rel="8">机器人</a>
     
     
   </div>
@@ -1298,23 +976,23 @@
   <ul>
     
     <a href="../../compiler-e15-names-are-not-numerical-contracts/">
-      <li>E15｜一个函数名，装不下它的数值契约：非线性与归一化的边界</li>
+      <li>一个函数名，装不下它的数值契约：非线性与归一化的边界</li>
     </a>
     
     <a href="../../compiler-e14-same-shape-different-answers/">
-      <li>E14｜相同的输出形状，完全不同的答案：池化、缩放与索引归约</li>
+      <li>相同的输出形状，完全不同的答案：池化、缩放与索引归约</li>
     </a>
     
     <a href="../../compiler-e13-moving-data-moving-meaning/">
-      <li>E13｜它只是在搬数据，为什么还会算错：张量变换的隐藏契约</li>
+      <li>它只是在搬数据，为什么还会算错：张量变换的隐藏契约</li>
     </a>
     
     <a href="../../compiler-e12-four-identities-of-an-instruction/">
-      <li>E12｜一条指令的四种身份：代码生成为什么不能只靠字符串</li>
+      <li>一条指令的四种身份：代码生成为什么不能只靠字符串</li>
     </a>
     
     <a href="../../compiler-e11-what-does-supported-really-mean/">
-      <li>E11｜搜索到了算子名字，就可以写进“支持列表”吗？</li>
+      <li>搜索到了算子名字，就可以写进“支持列表”吗？</li>
     </a>
     
   </ul>

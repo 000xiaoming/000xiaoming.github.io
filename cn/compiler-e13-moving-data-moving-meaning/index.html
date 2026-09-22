@@ -141,7 +141,7 @@
   <link rel="canonical" href="https://000xiaoming.github.io/cn/compiler-e13-moving-data-moving-meaning/">
   <title>
     
-      E13｜它只是在搬数据，为什么还会算错：张量变换的隐藏契约 - I&#39;m Bruce Lee
+      它只是在搬数据，为什么还会算错：张量变换的隐藏契约 - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -387,16 +387,12 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/cn/tags/#工程与交付" title="工程与交付">工程与交付</a>
+              <a class="tag" href="/cn/tags/#编译器" title="编译器">编译器</a>
               
-              <a class="tag" href="/cn/tags/#张量形状" title="张量形状">张量形状</a>
-              
-              <a class="tag" href="/cn/tags/#内存布局" title="内存布局">内存布局</a>
-              
-              <a class="tag" href="/cn/tags/#量化" title="量化">量化</a>
+              <a class="tag" href="/cn/tags/#内存与并发" title="内存与并发">内存与并发</a>
               
             </div>
-            <h1>E13｜它只是在搬数据，为什么还会算错：张量变换的隐藏契约</h1>
+            <h1>它只是在搬数据，为什么还会算错：张量变换的隐藏契约</h1>
             <h2 class="subheading">坐标、步长、别名和量化参数，让搬数据也有语义。</h2>
             <span class="meta">
               Posted by Bruce Lee on
@@ -457,7 +453,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 工程与交付 · E13 · <a href="/en/compiler-e13-moving-data-moving-meaning/">Read in English</a></p>
+        <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 工程与交付 · <a href="/en/compiler-e13-moving-data-moving-meaning/">Read in English</a></p>
 <p>“这个补丁应该很安全，它没有计算，只是移动一下数据。”</p>
 <p>半小时后，下游矩阵乘法的结果全变了。大家先检查乘法，再检查量化比例，最后发现搬运操作保持了每个字节，却改变了每个字节代表的位置。</p>
 <p>数据移动最容易获得一种不应有的信任：只要数值没变，语义就没变。张量的语义还包括坐标、形状、布局、别名关系和量化轴。搬对了字节，不一定搬对了张量。</p>
@@ -544,12 +540,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/cn/compiler-e14-same-shape-different-answers/" data-toggle="tooltip" data-placement="top" title="E14｜相同的输出形状，完全不同的答案：池化、缩放与索引归约">&larr; Previous Post</a>
+            <a href="/cn/compiler-e14-same-shape-different-answers/" data-toggle="tooltip" data-placement="top" title="相同的输出形状，完全不同的答案：池化、缩放与索引归约">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/cn/compiler-e12-four-identities-of-an-instruction/" data-toggle="tooltip" data-placement="top" title="E12｜一条指令的四种身份：代码生成为什么不能只靠字符串">Next Post &rarr;</a>
+            <a href="/cn/compiler-e12-four-identities-of-an-instruction/" data-toggle="tooltip" data-placement="top" title="一条指令的四种身份：代码生成为什么不能只靠字符串">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -599,7 +595,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=E13｜它只是在搬数据，为什么还会算错：张量变换的隐藏契约&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/compiler-e13-moving-data-moving-meaning/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=它只是在搬数据，为什么还会算错：张量变换的隐藏契约&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/compiler-e13-moving-data-moving-meaning/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -661,13 +657,9 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/cn/tags/#工程与交付" title="工程与交付">工程与交付</a>
+            <a class="tag" href="/cn/tags/#编译器" title="编译器">编译器</a>
             
-            <a class="tag" href="/cn/tags/#张量形状" title="张量形状">张量形状</a>
-            
-            <a class="tag" href="/cn/tags/#内存布局" title="内存布局">内存布局</a>
-            
-            <a class="tag" href="/cn/tags/#量化" title="量化">量化</a>
+            <a class="tag" href="/cn/tags/#内存与并发" title="内存与并发">内存与并发</a>
             
           </div>
         </section>

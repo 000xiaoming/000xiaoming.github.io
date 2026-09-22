@@ -141,7 +141,7 @@
   <link rel="canonical" href="https://000xiaoming.github.io/cn/compiler-n06-batchnorm-quantization/">
   <title>
     
-      N06｜BatchNorm 变成乘加之后，真正的数值工作才开始 - I&#39;m Bruce Lee
+      BatchNorm 变成乘加之后，真正的数值工作才开始 - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -387,16 +387,12 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/cn/tags/#量化" title="量化">量化</a>
+              <a class="tag" href="/cn/tags/#编译器" title="编译器">编译器</a>
               
-              <a class="tag" href="/cn/tags/#数值与量化" title="数值与量化">数值与量化</a>
-              
-              <a class="tag" href="/cn/tags/#整数运算" title="整数运算">整数运算</a>
-              
-              <a class="tag" href="/cn/tags/#BatchNorm" title="BatchNorm">BatchNorm</a>
+              <a class="tag" href="/cn/tags/#数值计算" title="数值计算">数值计算</a>
               
             </div>
-            <h1>N06｜BatchNorm 变成乘加之后，真正的数值工作才开始</h1>
+            <h1>BatchNorm 变成乘加之后，真正的数值工作才开始</h1>
             <h2 class="subheading">从固定统计量到通道乘加，再到乘数、移位和偏置。</h2>
             <span class="meta">
               Posted by Bruce Lee on
@@ -457,7 +453,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 数值与量化 · N06 · <a href="/en/compiler-n06-batchnorm-quantization/">Read in English</a></p>
+        <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 数值与量化 · <a href="/en/compiler-n06-batchnorm-quantization/">Read in English</a></p>
 <p>“BatchNorm 已经融合成 y=ax+b了，剩下不就一个乘法一个加法？”大家点头。几分钟后，问题变成：“a 用多少位？b 的 scale 是谁的？乘完先截断吗？a 接近 1 到底能不能省？”</p>
 <p>这不是公式越来越复杂，而是公式终于遇到了有限位宽。</p>
 <span id="more"></span>
@@ -554,12 +550,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/cn/compiler-n07-broadcast-memory/" data-toggle="tooltip" data-placement="top" title="N07｜只有几个通道参数，为什么局部内存先满了？">&larr; Previous Post</a>
+            <a href="/cn/compiler-n07-broadcast-memory/" data-toggle="tooltip" data-placement="top" title="只有几个通道参数，为什么局部内存先满了？">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/cn/compiler-n05-integer-multiply/" data-toggle="tooltip" data-placement="top" title="N05｜乘法没算错，尺度乘错了：整数内核的两张账单">Next Post &rarr;</a>
+            <a href="/cn/compiler-n05-integer-multiply/" data-toggle="tooltip" data-placement="top" title="乘法没算错，尺度乘错了：整数内核的两张账单">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -609,7 +605,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=N06｜BatchNorm 变成乘加之后，真正的数值工作才开始&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/compiler-n06-batchnorm-quantization/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=BatchNorm 变成乘加之后，真正的数值工作才开始&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/compiler-n06-batchnorm-quantization/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -671,13 +667,9 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/cn/tags/#量化" title="量化">量化</a>
+            <a class="tag" href="/cn/tags/#编译器" title="编译器">编译器</a>
             
-            <a class="tag" href="/cn/tags/#数值与量化" title="数值与量化">数值与量化</a>
-            
-            <a class="tag" href="/cn/tags/#整数运算" title="整数运算">整数运算</a>
-            
-            <a class="tag" href="/cn/tags/#BatchNorm" title="BatchNorm">BatchNorm</a>
+            <a class="tag" href="/cn/tags/#数值计算" title="数值计算">数值计算</a>
             
           </div>
         </section>

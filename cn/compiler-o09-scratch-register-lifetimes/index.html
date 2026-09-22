@@ -141,7 +141,7 @@
   <link rel="canonical" href="https://000xiaoming.github.io/cn/compiler-o09-scratch-register-lifetimes/">
   <title>
     
-      O09｜谁动了我的临时寄存器：让发射器学会借东西、还东西 - I&#39;m Bruce Lee
+      谁动了我的临时寄存器：让发射器学会借东西、还东西 - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -387,16 +387,12 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/cn/tags/#代码生成" title="代码生成">代码生成</a>
+              <a class="tag" href="/cn/tags/#编译器" title="编译器">编译器</a>
               
-              <a class="tag" href="/cn/tags/#算子与布局" title="算子与布局">算子与布局</a>
-              
-              <a class="tag" href="/cn/tags/#寄存器分配" title="寄存器分配">寄存器分配</a>
-              
-              <a class="tag" href="/cn/tags/#RAII" title="RAII">RAII</a>
+              <a class="tag" href="/cn/tags/#内存与并发" title="内存与并发">内存与并发</a>
               
             </div>
-            <h1>O09｜谁动了我的临时寄存器：让发射器学会借东西、还东西</h1>
+            <h1>谁动了我的临时寄存器：让发射器学会借东西、还东西</h1>
             <h2 class="subheading">从手写临时寄存器到明确的借用、释放和嵌套约束。</h2>
             <span class="meta">
               Posted by Bruce Lee on
@@ -457,7 +453,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 算子与布局 · O09 · <a href="/en/compiler-o09-scratch-register-lifetimes/">Read in English</a></p>
+        <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 算子与布局 · <a href="/en/compiler-o09-scratch-register-lifetimes/">Read in English</a></p>
 <p>单独测试时，两个代码生成函数都很好。把它们组合起来，结果突然不对。第一个函数说：“我只是借个临时寄存器存基址。”第二个函数说：“我也是。”问题是，它们借的是同一个，而且谁也没问谁什么时候还。</p>
 <p>字符串寄存器名特别方便：写起来短、看起来直接。它也没有所有权，无法告诉你某个名字现在是否装着仍然要用的地址、循环次数或中间值。当内核开始调用公共发射辅助函数，过去分散在不同文件里的“默认临时寄存器”就会在同一条指令流里相遇。</p>
 <span id="more"></span>
@@ -501,12 +497,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/cn/compiler-o10-convolution-activation-fusion/" data-toggle="tooltip" data-placement="top" title="O10｜把激活函数塞进卷积：少一个节点之前，先保住那条量化边界">&larr; Previous Post</a>
+            <a href="/cn/compiler-o10-convolution-activation-fusion/" data-toggle="tooltip" data-placement="top" title="把激活函数塞进卷积：少一个节点之前，先保住那条量化边界">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/cn/compiler-o08-unary-quantization-contract/" data-toggle="tooltip" data-placement="top" title="O08｜Abs 和 Sign：算术只有一行，参数协议却不能复制粘贴">Next Post &rarr;</a>
+            <a href="/cn/compiler-o08-unary-quantization-contract/" data-toggle="tooltip" data-placement="top" title="Abs 和 Sign：算术只有一行，参数协议却不能复制粘贴">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -556,7 +552,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=O09｜谁动了我的临时寄存器：让发射器学会借东西、还东西&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/compiler-o09-scratch-register-lifetimes/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=谁动了我的临时寄存器：让发射器学会借东西、还东西&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/compiler-o09-scratch-register-lifetimes/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -618,13 +614,9 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/cn/tags/#代码生成" title="代码生成">代码生成</a>
+            <a class="tag" href="/cn/tags/#编译器" title="编译器">编译器</a>
             
-            <a class="tag" href="/cn/tags/#算子与布局" title="算子与布局">算子与布局</a>
-            
-            <a class="tag" href="/cn/tags/#寄存器分配" title="寄存器分配">寄存器分配</a>
-            
-            <a class="tag" href="/cn/tags/#RAII" title="RAII">RAII</a>
+            <a class="tag" href="/cn/tags/#内存与并发" title="内存与并发">内存与并发</a>
             
           </div>
         </section>

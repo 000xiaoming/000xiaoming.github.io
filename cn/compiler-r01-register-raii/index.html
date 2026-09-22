@@ -141,7 +141,7 @@
   <link rel="canonical" href="https://000xiaoming.github.io/cn/compiler-r01-register-raii/">
   <title>
     
-      R01｜那只“临时”寄存器，为什么总被别人借走？ - I&#39;m Bruce Lee
+      那只“临时”寄存器，为什么总被别人借走？ - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -387,16 +387,12 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/cn/tags/#代码生成" title="代码生成">代码生成</a>
+              <a class="tag" href="/cn/tags/#编译器" title="编译器">编译器</a>
               
-              <a class="tag" href="/cn/tags/#寄存器分配" title="寄存器分配">寄存器分配</a>
-              
-              <a class="tag" href="/cn/tags/#RAII" title="RAII">RAII</a>
-              
-              <a class="tag" href="/cn/tags/#资源与调度" title="资源与调度">资源与调度</a>
+              <a class="tag" href="/cn/tags/#内存与并发" title="内存与并发">内存与并发</a>
               
             </div>
-            <h1>R01｜那只“临时”寄存器，为什么总被别人借走？</h1>
+            <h1>那只“临时”寄存器，为什么总被别人借走？</h1>
             <h2 class="subheading">用作用域表达寄存器所有权，明确自动归还的边界。</h2>
             <span class="meta">
               Posted by Bruce Lee on
@@ -457,7 +453,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 资源与调度 · R01 · <a href="/en/compiler-r01-register-raii/">Read in English</a></p>
+        <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 资源与调度 · <a href="/en/compiler-r01-register-raii/">Read in English</a></p>
 <p>“我只借一个寄存器，装一下地址，马上还。”</p>
 <p>“巧了，外面的循环计数器也只借了同一个。”</p>
 <p>这类争执不会出现在代码评审聊天里。它会出现在机器码里：循环次数突然变成一段地址，或者配置加载覆盖了尚未使用的标量值。每个辅助函数单独看都很短，拼起来却像一间没有借用登记簿的工具房。</p>
@@ -485,7 +481,7 @@
 <li>失败以后，临时资源是否归还？</li>
 <li>失败以后，指令、标签、依赖计数等生成状态是否恢复？</li>
 </ol>
-<p>第一题可以由 RAII 承担，第二题需要事务、快照或“失败即废弃整个上下文”的协议。把二者混为一谈，就会在错误恢复路径里生成一份看起来很完整的半成品。<a href="/cn/compiler-r07-error-boundaries/">R07</a>会继续讨论这个边界。</p>
+<p>第一题可以由 RAII 承担，第二题需要事务、快照或“失败即废弃整个上下文”的协议。把二者混为一谈，就会在错误恢复路径里生成一份看起来很完整的半成品。<a href="/cn/compiler-r07-error-boundaries/">错误处理的边界</a>会继续讨论这个边界。</p>
 <p>同样，标量配置寄存器的租约不自动解决异步完成事件的寿命。设备队列可能尚未执行完某条命令，相关同步资源何时能复用，必须遵守它自己的语义。</p>
 <h2 id="性能收益应该怎么讲">性能收益应该怎么讲</h2>
 <p>可以合理推测，缩短主机侧句柄的持有范围，有助于降低同时占用的临时槽数量，也让复杂内核更容易组合。但从几个字符串变为句柄，不能直接推导运行时间减少。理想情况下，生成的指令序列几乎一样；收益主要体现在正确性、可维护性和容纳更复杂组合的能力。</p>
@@ -550,12 +546,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/cn/compiler-r02-dependency-pressure/" data-toggle="tooltip" data-placement="top" title="R02｜图里只是多了几个分叉，为什么同步寄存器先耗尽了？">&larr; Previous Post</a>
+            <a href="/cn/compiler-r02-dependency-pressure/" data-toggle="tooltip" data-placement="top" title="图里只是多了几个分叉，为什么同步寄存器先耗尽了？">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/cn/compiler-o12-static-left-matmul/" data-toggle="tooltip" data-placement="top" title="O12｜权重跑到左边以后：用一个转置恒等式，搬动整个编译链">Next Post &rarr;</a>
+            <a href="/cn/compiler-o12-static-left-matmul/" data-toggle="tooltip" data-placement="top" title="权重跑到左边以后：用一个转置恒等式，搬动整个编译链">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -605,7 +601,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=R01｜那只“临时”寄存器，为什么总被别人借走？&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/compiler-r01-register-raii/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=那只“临时”寄存器，为什么总被别人借走？&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/compiler-r01-register-raii/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -667,13 +663,9 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/cn/tags/#代码生成" title="代码生成">代码生成</a>
+            <a class="tag" href="/cn/tags/#编译器" title="编译器">编译器</a>
             
-            <a class="tag" href="/cn/tags/#寄存器分配" title="寄存器分配">寄存器分配</a>
-            
-            <a class="tag" href="/cn/tags/#RAII" title="RAII">RAII</a>
-            
-            <a class="tag" href="/cn/tags/#资源与调度" title="资源与调度">资源与调度</a>
+            <a class="tag" href="/cn/tags/#内存与并发" title="内存与并发">内存与并发</a>
             
           </div>
         </section>

@@ -141,7 +141,7 @@
   <link rel="canonical" href="https://000xiaoming.github.io/en/compiler-o09-scratch-register-lifetimes/">
   <title>
     
-      O09 | Who Moved My Scratch Register? Teaching an Emitter to Borrow and Return - I&#39;m Bruce Lee
+      Who Moved My Scratch Register? Teaching an Emitter to Borrow and Return - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -387,16 +387,12 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/tags/#RAII" title="RAII">RAII</a>
+              <a class="tag" href="/tags/#Compilers" title="Compilers">Compilers</a>
               
-              <a class="tag" href="/tags/#Code Generation" title="Code Generation">Code Generation</a>
-              
-              <a class="tag" href="/tags/#Operators and Layouts" title="Operators and Layouts">Operators and Layouts</a>
-              
-              <a class="tag" href="/tags/#Register Allocation" title="Register Allocation">Register Allocation</a>
+              <a class="tag" href="/tags/#Memory and Concurrency" title="Memory and Concurrency">Memory and Concurrency</a>
               
             </div>
-            <h1>O09 | Who Moved My Scratch Register? Teaching an Emitter to Borrow and Return</h1>
+            <h1>Who Moved My Scratch Register? Teaching an Emitter to Borrow and Return</h1>
             <h2 class="subheading">Replace informal scratch-register conventions with explicit borrowing and lifetime rules.</h2>
             <span class="meta">
               Posted by Bruce Lee on
@@ -457,7 +453,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Operators and Layouts · O09 · <a href="/cn/compiler-o09-scratch-register-lifetimes/">阅读中文版</a></p>
+        <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Operators and Layouts · <a href="/cn/compiler-o09-scratch-register-lifetimes/">阅读中文版</a></p>
 <p>Two code-generation functions work beautifully in isolation. Combine them, and the result suddenly breaks. The first says, “I only borrowed a scratch register for a base address.” The second says, “So did I.” They borrowed the same one, and neither asked when the other would return it.</p>
 <p>Register names as strings are wonderfully convenient: short to write and direct to read. They also express no ownership. A string cannot tell you whether that name currently holds an address, loop count, or intermediate value that is still needed. As kernels begin calling shared emission helpers, “default scratch registers” once scattered across files meet in the same instruction stream.</p>
 <span id="more"></span>
@@ -501,12 +497,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/en/compiler-o10-convolution-activation-fusion/" data-toggle="tooltip" data-placement="top" title="O10 | Putting Activation Inside Convolution: Preserve the Quantization Boundary Before Removing the Node">&larr; Previous Post</a>
+            <a href="/en/compiler-o10-convolution-activation-fusion/" data-toggle="tooltip" data-placement="top" title="Putting Activation Inside Convolution: Preserve the Quantization Boundary Before Removing the Node">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/en/compiler-o08-unary-quantization-contract/" data-toggle="tooltip" data-placement="top" title="O08 | Abs and Sign: One Line of Arithmetic Does Not Make Their Parameter Contracts Interchangeable">Next Post &rarr;</a>
+            <a href="/en/compiler-o08-unary-quantization-contract/" data-toggle="tooltip" data-placement="top" title="Abs and Sign: One Line of Arithmetic Does Not Make Their Parameter Contracts Interchangeable">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -556,7 +552,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=O09 | Who Moved My Scratch Register? Teaching an Emitter to Borrow and Return&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/en/compiler-o09-scratch-register-lifetimes/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=Who Moved My Scratch Register? Teaching an Emitter to Borrow and Return&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/en/compiler-o09-scratch-register-lifetimes/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -618,13 +614,9 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#RAII" title="RAII">RAII</a>
+            <a class="tag" href="/tags/#Compilers" title="Compilers">Compilers</a>
             
-            <a class="tag" href="/tags/#Code Generation" title="Code Generation">Code Generation</a>
-            
-            <a class="tag" href="/tags/#Operators and Layouts" title="Operators and Layouts">Operators and Layouts</a>
-            
-            <a class="tag" href="/tags/#Register Allocation" title="Register Allocation">Register Allocation</a>
+            <a class="tag" href="/tags/#Memory and Concurrency" title="Memory and Concurrency">Memory and Concurrency</a>
             
           </div>
         </section>

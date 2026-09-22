@@ -141,7 +141,7 @@
   <link rel="canonical" href="https://000xiaoming.github.io/cn/compiler-o08-unary-quantization-contract/">
   <title>
     
-      O08｜Abs 和 Sign：算术只有一行，参数协议却不能复制粘贴 - I&#39;m Bruce Lee
+      Abs 和 Sign：算术只有一行，参数协议却不能复制粘贴 - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -387,16 +387,12 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/cn/tags/#代码生成" title="代码生成">代码生成</a>
+              <a class="tag" href="/cn/tags/#编译器" title="编译器">编译器</a>
               
-              <a class="tag" href="/cn/tags/#量化" title="量化">量化</a>
-              
-              <a class="tag" href="/cn/tags/#整数运算" title="整数运算">整数运算</a>
-              
-              <a class="tag" href="/cn/tags/#算子与布局" title="算子与布局">算子与布局</a>
+              <a class="tag" href="/cn/tags/#数值计算" title="数值计算">数值计算</a>
               
             </div>
-            <h1>O08｜Abs 和 Sign：算术只有一行，参数协议却不能复制粘贴</h1>
+            <h1>Abs 和 Sign：算术只有一行，参数协议却不能复制粘贴</h1>
             <h2 class="subheading">一元算子的数学定义，需要贯穿类型、量化和参数编码。</h2>
             <span class="meta">
               Posted by Bruce Lee on
@@ -457,7 +453,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 算子与布局 · O08 · <a href="/en/compiler-o08-unary-quantization-contract/">Read in English</a></p>
+        <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 算子与布局 · <a href="/en/compiler-o08-unary-quantization-contract/">Read in English</a></p>
 <p>如果让人选两个最容易实现的算子，Abs 和 Sign 很可能榜上有名。一个取绝对值，一个判断正负。于是有人决定从现成二元算子复制一份代码，把两个输入都填成同一个值，再换一下操作码。</p>
 <p>编译成功了。结果也出来了。接下来，那个本该最简单的算子，花掉了一整段调试时间。</p>
 <p>真正的疑问是：“二元参数结构长得一样，是否意味着每个字段在一元指令里含义也一样？”</p>
@@ -501,12 +497,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/cn/compiler-o09-scratch-register-lifetimes/" data-toggle="tooltip" data-placement="top" title="O09｜谁动了我的临时寄存器：让发射器学会借东西、还东西">&larr; Previous Post</a>
+            <a href="/cn/compiler-o09-scratch-register-lifetimes/" data-toggle="tooltip" data-placement="top" title="谁动了我的临时寄存器：让发射器学会借东西、还东西">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/cn/compiler-o07-scalar-arithmetic-direction/" data-toggle="tooltip" data-placement="top" title="O07｜减去零可以消失，零减去你不行：标量算子的方向感">Next Post &rarr;</a>
+            <a href="/cn/compiler-o07-scalar-arithmetic-direction/" data-toggle="tooltip" data-placement="top" title="减去零可以消失，零减去你不行：标量算子的方向感">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -556,7 +552,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=O08｜Abs 和 Sign：算术只有一行，参数协议却不能复制粘贴&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/compiler-o08-unary-quantization-contract/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=Abs 和 Sign：算术只有一行，参数协议却不能复制粘贴&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/compiler-o08-unary-quantization-contract/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -618,13 +614,9 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/cn/tags/#代码生成" title="代码生成">代码生成</a>
+            <a class="tag" href="/cn/tags/#编译器" title="编译器">编译器</a>
             
-            <a class="tag" href="/cn/tags/#量化" title="量化">量化</a>
-            
-            <a class="tag" href="/cn/tags/#整数运算" title="整数运算">整数运算</a>
-            
-            <a class="tag" href="/cn/tags/#算子与布局" title="算子与布局">算子与布局</a>
+            <a class="tag" href="/cn/tags/#数值计算" title="数值计算">数值计算</a>
             
           </div>
         </section>

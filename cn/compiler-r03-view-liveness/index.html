@@ -141,7 +141,7 @@
   <link rel="canonical" href="https://000xiaoming.github.io/cn/compiler-r03-view-liveness/">
   <title>
     
-      R03｜视图没有搬数据，为什么内存仍然不能还？ - I&#39;m Bruce Lee
+      视图没有搬数据，为什么内存仍然不能还？ - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -387,16 +387,12 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/cn/tags/#内存规划" title="内存规划">内存规划</a>
+              <a class="tag" href="/cn/tags/#编译器" title="编译器">编译器</a>
               
-              <a class="tag" href="/cn/tags/#资源与调度" title="资源与调度">资源与调度</a>
-              
-              <a class="tag" href="/cn/tags/#同步" title="同步">同步</a>
-              
-              <a class="tag" href="/cn/tags/#活跃性" title="活跃性">活跃性</a>
+              <a class="tag" href="/cn/tags/#内存与并发" title="内存与并发">内存与并发</a>
               
             </div>
-            <h1>R03｜视图没有搬数据，为什么内存仍然不能还？</h1>
+            <h1>视图没有搬数据，为什么内存仍然不能还？</h1>
             <h2 class="subheading">跨过视图链追踪异步消费者，防止过早回收底层存储。</h2>
             <span class="meta">
               Posted by Bruce Lee on
@@ -457,7 +453,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 资源与调度 · R03 · <a href="/en/compiler-r03-view-liveness/">Read in English</a></p>
+        <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 资源与调度 · <a href="/en/compiler-r03-view-liveness/">Read in English</a></p>
 <p>“这个张量的最后一个用户已经过去了，可以回收。”</p>
 <p>“最后一个用户只是换了个形状。真正读数据的算子，还在另一条队列里排队。”</p>
 <p>如果给内存分配器颁发“过度热心奖”，这类提前复用很有竞争力。它严格按 IR 出场顺序办事，看到直接用户都处理完了，立刻把空间交给下一个写入者。唯一的问题是：用户消失了，读者没有消失。</p>
@@ -550,12 +546,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/cn/compiler-r04-address-capacity/" data-toggle="tooltip" data-placement="top" title="R04｜地址能表示，为什么编译器说“内存满了”？">&larr; Previous Post</a>
+            <a href="/cn/compiler-r04-address-capacity/" data-toggle="tooltip" data-placement="top" title="地址能表示，为什么编译器说“内存满了”？">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/cn/compiler-r02-dependency-pressure/" data-toggle="tooltip" data-placement="top" title="R02｜图里只是多了几个分叉，为什么同步寄存器先耗尽了？">Next Post &rarr;</a>
+            <a href="/cn/compiler-r02-dependency-pressure/" data-toggle="tooltip" data-placement="top" title="图里只是多了几个分叉，为什么同步寄存器先耗尽了？">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -605,7 +601,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=R03｜视图没有搬数据，为什么内存仍然不能还？&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/compiler-r03-view-liveness/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=视图没有搬数据，为什么内存仍然不能还？&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/compiler-r03-view-liveness/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -667,13 +663,9 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/cn/tags/#内存规划" title="内存规划">内存规划</a>
+            <a class="tag" href="/cn/tags/#编译器" title="编译器">编译器</a>
             
-            <a class="tag" href="/cn/tags/#资源与调度" title="资源与调度">资源与调度</a>
-            
-            <a class="tag" href="/cn/tags/#同步" title="同步">同步</a>
-            
-            <a class="tag" href="/cn/tags/#活跃性" title="活跃性">活跃性</a>
+            <a class="tag" href="/cn/tags/#内存与并发" title="内存与并发">内存与并发</a>
             
           </div>
         </section>

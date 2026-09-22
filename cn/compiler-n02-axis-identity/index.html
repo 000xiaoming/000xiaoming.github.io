@@ -141,7 +141,7 @@
   <link rel="canonical" href="https://000xiaoming.github.io/cn/compiler-n02-axis-identity/">
   <title>
     
-      N02｜消失的维度：keep_dims=false 为什么能把逆置换弄坏？ - I&#39;m Bruce Lee
+      消失的维度：keep_dims=false 为什么能把逆置换弄坏？ - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -387,16 +387,12 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/cn/tags/#张量形状" title="张量形状">张量形状</a>
+              <a class="tag" href="/cn/tags/#编译器" title="编译器">编译器</a>
               
-              <a class="tag" href="/cn/tags/#归约" title="归约">归约</a>
-              
-              <a class="tag" href="/cn/tags/#数值与量化" title="数值与量化">数值与量化</a>
-              
-              <a class="tag" href="/cn/tags/#图重写" title="图重写">图重写</a>
+              <a class="tag" href="/cn/tags/#数值计算" title="数值计算">数值计算</a>
               
             </div>
-            <h1>N02｜消失的维度：keep_dims=false 为什么能把逆置换弄坏？</h1>
+            <h1>消失的维度：keep_dims=false 为什么能把逆置换弄坏？</h1>
             <h2 class="subheading">被删掉的轴不再属于原来的坐标系，逆置换必须重建。</h2>
             <span class="meta">
               Posted by Bruce Lee on
@@ -457,7 +453,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 数值与量化 · N02 · <a href="/en/compiler-n02-axis-identity/">Read in English</a></p>
+        <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 数值与量化 · <a href="/en/compiler-n02-axis-identity/">Read in English</a></p>
 <p>“保持维度时全绿，去掉维度时全红。”这句话很像一个过于礼貌的报错：它几乎把答案告诉了你，却还是能让人对着屏幕坐很久。</p>
 <p>求平均本身可能没有算错。真正出问题的是：归约前的第三根轴，在归约后已经不再有第三个位置，而恢复布局的代码还拿着旧地图。</p>
 <span id="more"></span>
@@ -488,7 +484,7 @@
 <li>原始只归约一个单位轴，这个轴后来被删除。</li>
 <li>原始有多个归约轴，其中一部分被删除，另一部分仍然存在。</li>
 </ol>
-<p>第二种如果变成普通空 axes，而空 axes 被定义为全轴，就会从“值不变”变成“整个张量压成一个值”。历史中增加了记录被移除归约轴的标记，正是为了保存这个区别。N04 将继续讨论它的量化含义。</p>
+<p>第二种如果变成普通空 axes，而空 axes 被定义为全轴，就会从“值不变”变成“整个张量压成一个值”。历史中增加了记录被移除归约轴的标记，正是为了保存这个区别。<a href="/cn/compiler-n04-identity-requantization/">恒等归约与重量化</a> 将继续讨论它的量化含义。</p>
 <h2 id="四、排列正确，还得是硬件支持的排列">四、排列正确，还得是硬件支持的排列</h2>
 <p>理论上的任意置换不等于后端已支持任意置换。历史差异中，一些循环排列被分解成可用的相邻轴交换，随后相关实现又在其他阶段演进。不能拿某一时期的测试形态，当成整个仓库永恒不变的接口。</p>
 <p>这里的通用问题是：合法化不仅要把归约变成合法操作，也必须保证自己生成的辅助操作合法。如果“修复”一个不支持的归约时，顺手生成一个不支持的置换，错误只是晚了一站出现。</p>
@@ -561,12 +557,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/cn/compiler-n03-reduction-family/" data-toggle="tooltip" data-placement="top" title="N03｜最大值、最小值和求和：长得像三兄弟，不能共用一份数学作业">&larr; Previous Post</a>
+            <a href="/cn/compiler-n03-reduction-family/" data-toggle="tooltip" data-placement="top" title="最大值、最小值和求和：长得像三兄弟，不能共用一份数学作业">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/cn/compiler-n01-reduction-lowering/" data-toggle="tooltip" data-placement="top" title="N01｜求个平均值，为什么编译器先写起了循环？">Next Post &rarr;</a>
+            <a href="/cn/compiler-n01-reduction-lowering/" data-toggle="tooltip" data-placement="top" title="求个平均值，为什么编译器先写起了循环？">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -616,7 +612,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=N02｜消失的维度：keep_dims=false 为什么能把逆置换弄坏？&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/compiler-n02-axis-identity/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=消失的维度：keep_dims=false 为什么能把逆置换弄坏？&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/compiler-n02-axis-identity/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -678,13 +674,9 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/cn/tags/#张量形状" title="张量形状">张量形状</a>
+            <a class="tag" href="/cn/tags/#编译器" title="编译器">编译器</a>
             
-            <a class="tag" href="/cn/tags/#归约" title="归约">归约</a>
-            
-            <a class="tag" href="/cn/tags/#数值与量化" title="数值与量化">数值与量化</a>
-            
-            <a class="tag" href="/cn/tags/#图重写" title="图重写">图重写</a>
+            <a class="tag" href="/cn/tags/#数值计算" title="数值计算">数值计算</a>
             
           </div>
         </section>

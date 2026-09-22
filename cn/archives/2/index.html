@@ -432,16 +432,16 @@
 
   <a href="/cn/compiler-e05-a-compiler-that-can-move-house/">
     <h2 class="post-title">
-      E05｜编译器搬了个家，查表模块就失联了
+      编译器搬了个家，查表模块就失联了
     </h2>
     <h3 class="post-subtitle">
       通过真实功能与缺件测试，验证运行资源能随包移动。
     </h3>
     <div class="post-content-preview">
-      系列目录 · 工程与交付 · E05 · Read in English
+      系列目录 · 工程与交付 · Read in English
 工具在开发目录里运行得很好。把安装包解压到另一处，卷积能过，几个简单算子也能过，直到编译一个非线性激活，Python 才报找不到模块。
 “可执行文件不是都打包了吗？”
-问题在于，可执行文件不一定是编译器的全部。它可能嵌入 Python，调用某个查表参数生成器。生成器又是随着源码目录存在的资源。如果源码路径在编译时被硬编......
+问题在于，可执行文件不一定是编译器的全部。它可能嵌入 Python，调用某个查表参数生成器。生成器又是随着源码目录存在的资源。如果源码路径在编译时被硬编码，程序就像......
     </div>
   </a>
   
@@ -451,13 +451,9 @@
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#工程与交付" title="工程与交付">工程与交付</a>
+    <a href="/cn/tags/#工程实践" title="工程实践">工程实践</a>
     
-    <a href="/cn/tags/#打包" title="打包">打包</a>
-    
-    <a href="/cn/tags/#运行资源" title="运行资源">运行资源</a>
-    
-    <a href="/cn/tags/#测试" title="测试">测试</a>
+    <a href="/cn/tags/#编译器" title="编译器">编译器</a>
     
   </div>
   
@@ -474,19 +470,19 @@
 
   <a href="/cn/compiler-e04-the-library-that-was-there/">
     <h2 class="post-title">
-      E04｜库文件明明在包里，为什么程序还是说找不到？
+      库文件明明在包里，为什么程序还是说找不到？
     </h2>
     <h3 class="post-subtitle">
       真实库、SONAME、链接名与运行搜索路径如何连接。
     </h3>
     <div class="post-content-preview">
-      系列目录 · 工程与交付 · E04 · Read in English
+      系列目录 · 工程与交付 · Read in English
 “把缺的动态库复制进去就好了。”
 十分钟后，新日志仍然显示加载失败。目录里确实有 libcompute.so.4.2，而且文件大小看起来很正常。排查者甚至给它改了个更顺眼的名字。程序却坚持寻找 libcompute.so.4。
 这不是程序挑剔，而是链接阶段与运行阶段使用的名字可能不同。
 
 一个共享库的三张名片
-在常见的......
+在常见的 ELF 共......
     </div>
   </a>
   
@@ -496,13 +492,9 @@
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#工程与交付" title="工程与交付">工程与交付</a>
+    <a href="/cn/tags/#工程实践" title="工程实践">工程实践</a>
     
-    <a href="/cn/tags/#动态链接" title="动态链接">动态链接</a>
-    
-    <a href="/cn/tags/#打包" title="打包">打包</a>
-    
-    <a href="/cn/tags/#ELF" title="ELF">ELF</a>
+    <a href="/cn/tags/#编译器" title="编译器">编译器</a>
     
   </div>
   
@@ -519,19 +511,19 @@
 
   <a href="/cn/compiler-e03-one-toolchain-three-versions/">
     <h2 class="post-title">
-      E03｜头文件是一版，生成器是另一版：编译器构建里的“多人接力”
+      头文件是一版，生成器是另一版：编译器构建里的“多人接力”
     </h2>
     <h3 class="post-subtitle">
       头文件、库、生成器和缓存共同决定工具链身份。
     </h3>
     <div class="post-content-preview">
-      系列目录 · 工程与交付 · E03 · Read in English
+      系列目录 · 工程与交付 · Read in English
 “已经把 LLVM 的路径改对了，为什么生成出来的代码还是不能编译？”
 排查者打开配置日志：依赖目录正确。再看报错：有个接口找不到。第一反应是继续加头文件。几个文件修好以后，另一个目标又失败了。
 这时候值得暂停一下，问一个看似傻的问题：这个构建过程里，真的只有一套 LLVM/MLIR 吗？
 
 一个版本号为什么不够
-编译......
+编译器工程至少有......
     </div>
   </a>
   
@@ -541,13 +533,9 @@
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#工程与交付" title="工程与交付">工程与交付</a>
+    <a href="/cn/tags/#工程实践" title="工程实践">工程实践</a>
     
-    <a href="/cn/tags/#构建系统" title="构建系统">构建系统</a>
-    
-    <a href="/cn/tags/#工具链" title="工具链">工具链</a>
-    
-    <a href="/cn/tags/#可复现构建" title="可复现构建">可复现构建</a>
+    <a href="/cn/tags/#编译器" title="编译器">编译器</a>
     
   </div>
   
@@ -564,16 +552,16 @@
 
   <a href="/cn/compiler-e02-three-stages-of-a-build/">
     <h2 class="post-title">
-      E02｜“我只是重新编译”，为什么安装目录先消失了？
+      “我只是重新编译”，为什么安装目录先消失了？
     </h2>
     <h3 class="post-subtitle">
       环境、构建和安装各自负责什么，失败后留下什么。
     </h3>
     <div class="post-content-preview">
-      系列目录 · 工程与交付 · E02 · Read in English
+      系列目录 · 工程与交付 · Read in English
 一位同事想验证两行修改，运行构建脚本，编译到一半失败。问题不大，先用上次安装的工具继续排查——然后发现安装目录已经空了。
 “我按的是构建按钮，为什么旧工具也被收走了？”
-这类困惑通常说明，脚本把几个职责揉成了一个动作：加载环境、同步依赖、配置工程、编译、清空安装前缀、安装、裁剪产物。每一步单看都合理，放在一起却很难回答......
+这类困惑通常说明，脚本把几个职责揉成了一个动作：加载环境、同步依赖、配置工程、编译、清空安装前缀、安装、裁剪产物。每一步单看都合理，放在一起却很难回答“失败到这里......
     </div>
   </a>
   
@@ -583,13 +571,9 @@
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#工程与交付" title="工程与交付">工程与交付</a>
+    <a href="/cn/tags/#工程实践" title="工程实践">工程实践</a>
     
-    <a href="/cn/tags/#构建系统" title="构建系统">构建系统</a>
-    
-    <a href="/cn/tags/#安装" title="安装">安装</a>
-    
-    <a href="/cn/tags/#错误处理" title="错误处理">错误处理</a>
+    <a href="/cn/tags/#编译器" title="编译器">编译器</a>
     
   </div>
   
@@ -606,19 +590,19 @@
 
   <a href="/cn/compiler-e01-the-release-build-that-forgot-to-write/">
     <h2 class="post-title">
-      E01｜Debug 一切正常，Release 却把写入操作“优化没了”
+      Debug 一切正常，Release 却把写入操作“优化没了”
     </h2>
     <h3 class="post-subtitle">
       必要写入藏进断言后，关闭检查会改变程序语义。
     </h3>
     <div class="post-content-preview">
-      系列目录 · 工程与交付 · E01 · Read in English
+      系列目录 · 工程与交付 · Read in English
 “模型能编译，只有发布版本找不到新生成的常量。”
 这句话很容易把人带进一条昂贵的岔路：优化级别是不是太高？浮点精度是不是变了？链接器是不是把某段逻辑丢掉了？如果再补充一句“Debug 完全正常”，优化器几乎已经坐上被告席。
 但这一次，最值得看的未必是汇编，而是一个看起来极其负责的断言。
 
 一行代码为什么能决定两种程序
-......
+设想编译器把......
     </div>
   </a>
   
@@ -628,13 +612,9 @@
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#C/C++" title="C/C++">C/C++</a>
+    <a href="/cn/tags/#工程实践" title="工程实践">工程实践</a>
     
-    <a href="/cn/tags/#工程与交付" title="工程与交付">工程与交付</a>
-    
-    <a href="/cn/tags/#断言" title="断言">断言</a>
-    
-    <a href="/cn/tags/#调试" title="调试">调试</a>
+    <a href="/cn/tags/#编译器" title="编译器">编译器</a>
     
   </div>
   
@@ -651,19 +631,19 @@
 
   <a href="/cn/compiler-r10-optimization-contracts/">
     <h2 class="post-title">
-      R10｜少算一点，为什么反而不敢优化了？
+      少算一点，为什么反而不敢优化了？
     </h2>
     <h3 class="post-subtitle">
       优化停用也是设计决定：切片、量化与参数尺寸的契约。
     </h3>
     <div class="post-content-preview">
-      系列目录 · 资源与调度 · R10 · Read in English
+      系列目录 · 资源与调度 · Read in English
 “矩阵乘完再切一小块，不如先切权重，再做小矩阵乘。”
 “公式没错。切出来的新权重，用哪一组量化参数？”
 “参数不是跟名字走的吗？”
 白板上的代数变换往往十分干净。可编译器中的值除了形状和元素，还背着尺度、零点、通道轴、布局、存储和来源信息。省下的乘法如果把这些信息甩在身后，优化就会从“更快”变成“更难发现错误”。
 
-从......
+从一条正确的浮......
     </div>
   </a>
   
@@ -673,13 +653,9 @@
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#后端设计" title="后端设计">后端设计</a>
+    <a href="/cn/tags/#编译器" title="编译器">编译器</a>
     
-    <a href="/cn/tags/#量化" title="量化">量化</a>
-    
-    <a href="/cn/tags/#图重写" title="图重写">图重写</a>
-    
-    <a href="/cn/tags/#资源与调度" title="资源与调度">资源与调度</a>
+    <a href="/cn/tags/#内存与并发" title="内存与并发">内存与并发</a>
     
   </div>
   
@@ -696,18 +672,18 @@
 
   <a href="/cn/compiler-r09-encoding-boundaries/">
     <h2 class="post-title">
-      R09｜“数字已经读出来了”，并不代表输入合法
+      “数字已经读出来了”，并不代表输入合法
     </h2>
     <h3 class="post-subtitle">
       解析成功之后，仍要检查完整消费、符号与字段范围。
     </h3>
     <div class="post-content-preview">
-      系列目录 · 资源与调度 · R09 · Read in English
+      系列目录 · 资源与调度 · Read in English
 “寄存器写成了 r7oops，怎么还能继续往下走？”
 “解析函数成功读出了 7。”
 “后面的 oops 呢？”
 “它没问。”
-编译器后端里，很多错误不是没做检查，而是检查回答了一个比预期更弱的问题。解析出一个整数，只证明字符串开头存在可解析片段，不证明整个字段满足语法；把立即数拆成高低两段，也只证明公式看起来合理，不证......
+编译器后端里，很多错误不是没做检查，而是检查回答了一个比预期更弱的问题。解析出一个整数，只证明字符串开头存在可解析片段，不证明整个字段满足语法；把立即数拆成高低两段，也只证明公式看起来合理，不证明边界处没有......
     </div>
   </a>
   
@@ -717,13 +693,9 @@
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#错误处理" title="错误处理">错误处理</a>
+    <a href="/cn/tags/#工程实践" title="工程实践">工程实践</a>
     
-    <a href="/cn/tags/#输入校验" title="输入校验">输入校验</a>
-    
-    <a href="/cn/tags/#指令编码" title="指令编码">指令编码</a>
-    
-    <a href="/cn/tags/#资源与调度" title="资源与调度">资源与调度</a>
+    <a href="/cn/tags/#编译器" title="编译器">编译器</a>
     
   </div>
   
@@ -740,19 +712,20 @@
 
   <a href="/cn/compiler-r08-loops-determinism/">
     <h2 class="post-title">
-      R08｜循环只多了一层，为什么二进制快照像换了一个程序？
+      循环只多了一层，为什么二进制快照像换了一个程序？
     </h2>
     <h3 class="post-subtitle">
       循环、标签和独立发射实例如何影响二进制确定性。
     </h3>
     <div class="post-content-preview">
-      系列目录 · 资源与调度 · R08 · Read in English
+      系列目录 · 资源与调度 · Read in English
 “刚才这个测试还过，单独跑也过，放到整套测试后面就变了。”
 “是不是随机种子？”
 “没有随机数。只有一个静态计数器。”
 有时编译器的不确定性不来自复杂并行算法，而来自一个朴素到容易被忽略的全局状态：为循环标签编号的计数器。第一个测试用掉一些编号，第二个测试就从更大的数字开始；换个执行顺序，汇编文本又不同。
 
-标签应该属......
+标签应该属于谁
+标签用......
     </div>
   </a>
   
@@ -762,13 +735,9 @@
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#测试" title="测试">测试</a>
+    <a href="/cn/tags/#工程实践" title="工程实践">工程实践</a>
     
-    <a href="/cn/tags/#确定性" title="确定性">确定性</a>
-    
-    <a href="/cn/tags/#代码生成" title="代码生成">代码生成</a>
-    
-    <a href="/cn/tags/#资源与调度" title="资源与调度">资源与调度</a>
+    <a href="/cn/tags/#编译器" title="编译器">编译器</a>
     
   </div>
   
@@ -785,17 +754,17 @@
 
   <a href="/cn/compiler-r07-error-boundaries/">
     <h2 class="post-title">
-      R07｜catch 住异常之后，半份机器码怎么办？
+      catch 住异常之后，半份机器码怎么办？
     </h2>
     <h3 class="post-subtitle">
       错误被捕获之后，已产生的状态与输出仍需明确处理。
     </h3>
     <div class="post-content-preview">
-      系列目录 · 资源与调度 · R07 · Read in English
+      系列目录 · 资源与调度 · Read in English
 “异常已经被 catch 了，编译器不会崩。”
 “那输出目录里为什么有一半文件？”
 “因为写文件发生在另一条路径。”
-代码生成的失败，很少只发生在一个漂亮的 try 块里。形状检查可能失败，描述符字段可能无法编码，依赖计数可能不合法，直到最后导出二进制，才发现某条指令装不进目标格式。把异常接住只是第一步；下一步是决定失......
+代码生成的失败，很少只发生在一个漂亮的 try 块里。形状检查可能失败，描述符字段可能无法编码，依赖计数可能不合法，直到最后导出二进制，才发现某条指令装不进目标格式。把异常接住只是第一步；下一步是决定失败以后，调用......
     </div>
   </a>
   
@@ -805,13 +774,9 @@
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#错误处理" title="错误处理">错误处理</a>
+    <a href="/cn/tags/#工程实践" title="工程实践">工程实践</a>
     
-    <a href="/cn/tags/#测试" title="测试">测试</a>
-    
-    <a href="/cn/tags/#代码生成" title="代码生成">代码生成</a>
-    
-    <a href="/cn/tags/#资源与调度" title="资源与调度">资源与调度</a>
+    <a href="/cn/tags/#编译器" title="编译器">编译器</a>
     
   </div>
   
@@ -828,20 +793,20 @@
 
   <a href="/cn/compiler-r06-recurrent-dependencies/">
     <h2 class="post-title">
-      R06｜等过了事件，为什么还没等到数据？
+      等过了事件，为什么还没等到数据？
     </h2>
     <h3 class="post-subtitle">
       跨执行单元传递状态时，事件必须覆盖真正的数据生产。
     </h3>
     <div class="post-content-preview">
-      系列目录 · 资源与调度 · R06 · Read in English
+      系列目录 · 资源与调度 · Read in English
 “我已经加了等待，怎么还能读到没算完的门值？”
 “你等的是哪个事件？”
 “一个 ready 事件。”
 “它到底覆盖了哪条真实工作？”
 最后这个问题，往往比前面十行同步代码都重要。事件名字表达的是愿望，设备执行的是协议。一个叫“数据就绪”的标记，只有与生产数据的真实命令建立了正确关系，才真的能代表数据就绪。
 
-循环单元天......
+循环单元天然有两种并行......
     </div>
   </a>
   
@@ -851,13 +816,9 @@
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#资源与调度" title="资源与调度">资源与调度</a>
+    <a href="/cn/tags/#编译器" title="编译器">编译器</a>
     
-    <a href="/cn/tags/#调度" title="调度">调度</a>
-    
-    <a href="/cn/tags/#同步" title="同步">同步</a>
-    
-    <a href="/cn/tags/#有状态计算" title="有状态计算">有状态计算</a>
+    <a href="/cn/tags/#内存与并发" title="内存与并发">内存与并发</a>
     
   </div>
   
@@ -911,331 +872,47 @@
   <div class="tags">
     
     
-    <a href="/cn/tags/#IT" title="IT" rel="3">IT</a>
+    <a href="/cn/tags/#人工智能" title="人工智能" rel="1">人工智能</a>
     
     
     
-    <a href="/cn/tags/#C/C++" title="C/C++" rel="8">C/C++</a>
+    <a href="/cn/tags/#C/C++" title="C/C++" rel="7">C/C++</a>
     
     
     
-    <a href="/cn/tags/#项目工程" title="项目工程" rel="17">项目工程</a>
+    <a href="/cn/tags/#计算机体系结构" title="计算机体系结构" rel="19">计算机体系结构</a>
     
     
     
-    <a href="/cn/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象" rel="9">RISC-V问题和解决方案以及现象</a>
+    <a href="/cn/tags/#操作系统" title="操作系统" rel="11">操作系统</a>
     
     
     
-    <a href="/cn/tags/#x86" title="x86" rel="9">x86</a>
+    <a href="/cn/tags/#工程实践" title="工程实践" rel="20">工程实践</a>
     
     
     
-    <a href="/cn/tags/#工程与交付" title="工程与交付" rel="15">工程与交付</a>
+    <a href="/cn/tags/#编译器" title="编译器" rel="49">编译器</a>
     
     
     
-    <a href="/cn/tags/#断言" title="断言" rel="1">断言</a>
+    <a href="/cn/tags/#内存与并发" title="内存与并发" rel="13">内存与并发</a>
     
     
     
-    <a href="/cn/tags/#调试" title="调试" rel="2">调试</a>
+    <a href="/cn/tags/#数值计算" title="数值计算" rel="20">数值计算</a>
     
     
     
-    <a href="/cn/tags/#构建系统" title="构建系统" rel="2">构建系统</a>
+    <a href="/cn/tags/#数学" title="数学" rel="1">数学</a>
     
     
     
-    <a href="/cn/tags/#安装" title="安装" rel="1">安装</a>
+    <a href="/cn/tags/#随笔" title="随笔" rel="2">随笔</a>
     
     
     
-    <a href="/cn/tags/#错误处理" title="错误处理" rel="4">错误处理</a>
-    
-    
-    
-    <a href="/cn/tags/#工具链" title="工具链" rel="1">工具链</a>
-    
-    
-    
-    <a href="/cn/tags/#可复现构建" title="可复现构建" rel="2">可复现构建</a>
-    
-    
-    
-    <a href="/cn/tags/#动态链接" title="动态链接" rel="1">动态链接</a>
-    
-    
-    
-    <a href="/cn/tags/#打包" title="打包" rel="3">打包</a>
-    
-    
-    
-    <a href="/cn/tags/#ELF" title="ELF" rel="1">ELF</a>
-    
-    
-    
-    <a href="/cn/tags/#运行资源" title="运行资源" rel="1">运行资源</a>
-    
-    
-    
-    <a href="/cn/tags/#测试" title="测试" rel="7">测试</a>
-    
-    
-    
-    <a href="/cn/tags/#二进制格式" title="二进制格式" rel="1">二进制格式</a>
-    
-    
-    
-    <a href="/cn/tags/#序列化" title="序列化" rel="1">序列化</a>
-    
-    
-    
-    <a href="/cn/tags/#输入校验" title="输入校验" rel="2">输入校验</a>
-    
-    
-    
-    <a href="/cn/tags/#CLI" title="CLI" rel="1">CLI</a>
-    
-    
-    
-    <a href="/cn/tags/#文件读写" title="文件读写" rel="1">文件读写</a>
-    
-    
-    
-    <a href="/cn/tags/#确定性" title="确定性" rel="2">确定性</a>
-    
-    
-    
-    <a href="/cn/tags/#指令编码" title="指令编码" rel="4">指令编码</a>
-    
-    
-    
-    <a href="/cn/tags/#代码生成" title="代码生成" rel="8">代码生成</a>
-    
-    
-    
-    <a href="/cn/tags/#规范" title="规范" rel="2">规范</a>
-    
-    
-    
-    <a href="/cn/tags/#后端设计" title="后端设计" rel="4">后端设计</a>
-    
-    
-    
-    <a href="/cn/tags/#模型导入" title="模型导入" rel="2">模型导入</a>
-    
-    
-    
-    <a href="/cn/tags/#张量形状" title="张量形状" rel="3">张量形状</a>
-    
-    
-    
-    <a href="/cn/tags/#内存布局" title="内存布局" rel="7">内存布局</a>
-    
-    
-    
-    <a href="/cn/tags/#量化" title="量化" rel="16">量化</a>
-    
-    
-    
-    <a href="/cn/tags/#池化" title="池化" rel="1">池化</a>
-    
-    
-    
-    <a href="/cn/tags/#插值" title="插值" rel="1">插值</a>
-    
-    
-    
-    <a href="/cn/tags/#归约" title="归约" rel="5">归约</a>
-    
-    
-    
-    <a href="/cn/tags/#归一化" title="归一化" rel="2">归一化</a>
-    
-    
-    
-    <a href="/cn/tags/#非线性函数" title="非线性函数" rel="1">非线性函数</a>
-    
-    
-    
-    <a href="/cn/tags/#数值精度" title="数值精度" rel="4">数值精度</a>
-    
-    
-    
-    <a href="/cn/tags/#系列导读" title="系列导读" rel="1">系列导读</a>
-    
-    
-    
-    <a href="/cn/tags/#数值与量化" title="数值与量化" rel="11">数值与量化</a>
-    
-    
-    
-    <a href="/cn/tags/#算子降级" title="算子降级" rel="3">算子降级</a>
-    
-    
-    
-    <a href="/cn/tags/#图重写" title="图重写" rel="7">图重写</a>
-    
-    
-    
-    <a href="/cn/tags/#重量化" title="重量化" rel="1">重量化</a>
-    
-    
-    
-    <a href="/cn/tags/#整数运算" title="整数运算" rel="5">整数运算</a>
-    
-    
-    
-    <a href="/cn/tags/#BatchNorm" title="BatchNorm" rel="1">BatchNorm</a>
-    
-    
-    
-    <a href="/cn/tags/#广播" title="广播" rel="2">广播</a>
-    
-    
-    
-    <a href="/cn/tags/#内存规划" title="内存规划" rel="4">内存规划</a>
-    
-    
-    
-    <a href="/cn/tags/#MLIR" title="MLIR" rel="1">MLIR</a>
-    
-    
-    
-    <a href="/cn/tags/#类型系统" title="类型系统" rel="1">类型系统</a>
-    
-    
-    
-    <a href="/cn/tags/#算子与布局" title="算子与布局" rel="12">算子与布局</a>
-    
-    
-    
-    <a href="/cn/tags/#卷积" title="卷积" rel="3">卷积</a>
-    
-    
-    
-    <a href="/cn/tags/#内存对齐" title="内存对齐" rel="1">内存对齐</a>
-    
-    
-    
-    <a href="/cn/tags/#常量" title="常量" rel="1">常量</a>
-    
-    
-    
-    <a href="/cn/tags/#常量折叠" title="常量折叠" rel="1">常量折叠</a>
-    
-    
-    
-    <a href="/cn/tags/#寄存器分配" title="寄存器分配" rel="3">寄存器分配</a>
-    
-    
-    
-    <a href="/cn/tags/#RAII" title="RAII" rel="2">RAII</a>
-    
-    
-    
-    <a href="/cn/tags/#算子融合" title="算子融合" rel="2">算子融合</a>
-    
-    
-    
-    <a href="/cn/tags/#MatMul" title="MatMul" rel="2">MatMul</a>
-    
-    
-    
-    <a href="/cn/tags/#资源与调度" title="资源与调度" rel="10">资源与调度</a>
-    
-    
-    
-    <a href="/cn/tags/#调度" title="调度" rel="3">调度</a>
-    
-    
-    
-    <a href="/cn/tags/#同步" title="同步" rel="3">同步</a>
-    
-    
-    
-    <a href="/cn/tags/#活跃性" title="活跃性" rel="1">活跃性</a>
-    
-    
-    
-    <a href="/cn/tags/#有状态计算" title="有状态计算" rel="2">有状态计算</a>
-    
-    
-    
-    <a href="/cn/tags/#数学哲学" title="数学哲学" rel="1">数学哲学</a>
-    
-    
-    
-    <a href="/cn/tags/#多机器人系统" title="多机器人系统" rel="8">多机器人系统</a>
-    
-    
-    
-    <a href="/cn/tags/#DDS" title="DDS" rel="1">DDS</a>
-    
-    
-    
-    <a href="/cn/tags/#sandbox" title="sandbox" rel="1">sandbox</a>
-    
-    
-    
-    <a href="/cn/tags/#运行验证" title="运行验证" rel="1">运行验证</a>
-    
-    
-    
-    <a href="/cn/tags/#fleet_manager" title="fleet_manager" rel="3">fleet_manager</a>
-    
-    
-    
-    <a href="/cn/tags/#path_planner" title="path_planner" rel="4">path_planner</a>
-    
-    
-    
-    <a href="/cn/tags/#assignment" title="assignment" rel="1">assignment</a>
-    
-    
-    
-    <a href="/cn/tags/#BFS" title="BFS" rel="1">BFS</a>
-    
-    
-    
-    <a href="/cn/tags/#route" title="route" rel="1">route</a>
-    
-    
-    
-    <a href="/cn/tags/#robot_agent" title="robot_agent" rel="2">robot_agent</a>
-    
-    
-    
-    <a href="/cn/tags/#waypoint" title="waypoint" rel="1">waypoint</a>
-    
-    
-    
-    <a href="/cn/tags/#状态机" title="状态机" rel="1">状态机</a>
-    
-    
-    
-    <a href="/cn/tags/#service" title="service" rel="1">service</a>
-    
-    
-    
-    <a href="/cn/tags/#topic" title="topic" rel="1">topic</a>
-    
-    
-    
-    <a href="/cn/tags/#Nav2" title="Nav2" rel="1">Nav2</a>
-    
-    
-    
-    <a href="/cn/tags/#integration" title="integration" rel="1">integration</a>
-    
-    
-    
-    <a href="/cn/tags/#冲突检测" title="冲突检测" rel="1">冲突检测</a>
-    
-    
-    
-    <a href="/cn/tags/#预约机制" title="预约机制" rel="1">预约机制</a>
+    <a href="/cn/tags/#机器人" title="机器人" rel="8">机器人</a>
     
     
   </div>
@@ -1301,23 +978,23 @@
   <ul>
     
     <a href="../../compiler-e15-names-are-not-numerical-contracts/">
-      <li>E15｜一个函数名，装不下它的数值契约：非线性与归一化的边界</li>
+      <li>一个函数名，装不下它的数值契约：非线性与归一化的边界</li>
     </a>
     
     <a href="../../compiler-e14-same-shape-different-answers/">
-      <li>E14｜相同的输出形状，完全不同的答案：池化、缩放与索引归约</li>
+      <li>相同的输出形状，完全不同的答案：池化、缩放与索引归约</li>
     </a>
     
     <a href="../../compiler-e13-moving-data-moving-meaning/">
-      <li>E13｜它只是在搬数据，为什么还会算错：张量变换的隐藏契约</li>
+      <li>它只是在搬数据，为什么还会算错：张量变换的隐藏契约</li>
     </a>
     
     <a href="../../compiler-e12-four-identities-of-an-instruction/">
-      <li>E12｜一条指令的四种身份：代码生成为什么不能只靠字符串</li>
+      <li>一条指令的四种身份：代码生成为什么不能只靠字符串</li>
     </a>
     
     <a href="../../compiler-e11-what-does-supported-really-mean/">
-      <li>E11｜搜索到了算子名字，就可以写进“支持列表”吗？</li>
+      <li>搜索到了算子名字，就可以写进“支持列表”吗？</li>
     </a>
     
   </ul>

@@ -387,7 +387,7 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/cn/tags/#系列导读" title="系列导读">系列导读</a>
+              <a class="tag" href="/cn/tags/#编译器" title="编译器">编译器</a>
               
             </div>
             <h1>编译器工程笔记：48 篇双语文章与阅读路线</h1>
@@ -456,14 +456,14 @@
 <span id="more"></span>
 <h2 id="开始阅读">开始阅读</h2>
 <ul>
-<li>想先读一篇有完整排障过程的故事：<a href="/cn/compiler-e01-the-release-build-that-forgot-to-write/">E01｜Debug 一切正常，Release 却把写入操作“优化没了”</a>。</li>
-<li>正在排查量化结果：<a href="/cn/compiler-n05-integer-multiply/">N05｜乘法没算错，尺度乘错了：整数内核的两张账单</a> → <a href="/cn/compiler-n06-batchnorm-quantization/">N06｜BatchNorm 变成乘加之后，真正的数值工作才开始</a> → <a href="/cn/compiler-n09-normalization-ranges/">N09｜epsilon 明明不是零，到了整数域却差点失踪</a>。</li>
-<li>正在处理形状与布局：<a href="/cn/compiler-o03-reshape-proof/">O03｜Reshape 为什么还要写代码：元素没变，搬家路线变了</a> → <a href="/cn/compiler-o05-broadcast-address-plans/">O05｜广播不负责喊话：它负责让地址有时前进、有时原地不动</a> → <a href="/cn/compiler-o06-aligned-stride-constants/">O06｜第一行正确，第二行失踪：对齐、Stride 与常量填充的连环案</a>。</li>
-<li>正在追异步执行与资源问题：<a href="/cn/compiler-r01-register-raii/">R01｜那只“临时”寄存器，为什么总被别人借走？</a> → <a href="/cn/compiler-r03-view-liveness/">R03｜视图没有搬数据，为什么内存仍然不能还？</a> → <a href="/cn/compiler-r06-recurrent-dependencies/">R06｜等过了事件，为什么还没等到数据？</a>。</li>
-<li>正在做编译器交付：<a href="/cn/compiler-e02-three-stages-of-a-build/">E02｜“我只是重新编译”，为什么安装目录先消失了？</a> → <a href="/cn/compiler-e04-the-library-that-was-there/">E04｜库文件明明在包里，为什么程序还是说找不到？</a> → <a href="/cn/compiler-e05-a-compiler-that-can-move-house/">E05｜编译器搬了个家，查表模块就失联了</a> → <a href="/cn/compiler-e08-releases-and-their-two-clocks/">E08｜同一份发布包，为什么每次哈希都不同？</a>。</li>
-<li>正在设计后端架构与验证：<a href="/cn/compiler-e12-four-identities-of-an-instruction/">E12｜一条指令的四种身份：代码生成为什么不能只靠字符串</a> → <a href="/cn/compiler-e09-golden-tests-that-can-disagree/">E09｜汇编看起来对了，机器码也会对吗？</a> → <a href="/cn/compiler-e10-specifications-that-admit-unknowns/">E10｜一份算子文档最有价值的词，可能是“尚未确认”</a>。</li>
+<li>想先读一篇有完整排障过程的故事：<a href="/cn/compiler-e01-the-release-build-that-forgot-to-write/">Debug 一切正常，Release 却把写入操作“优化没了”</a>。</li>
+<li>正在排查量化结果：<a href="/cn/compiler-n05-integer-multiply/">乘法没算错，尺度乘错了：整数内核的两张账单</a> → <a href="/cn/compiler-n06-batchnorm-quantization/">BatchNorm 变成乘加之后，真正的数值工作才开始</a> → <a href="/cn/compiler-n09-normalization-ranges/">epsilon 明明不是零，到了整数域却差点失踪</a>。</li>
+<li>正在处理形状与布局：<a href="/cn/compiler-o03-reshape-proof/">Reshape 为什么还要写代码：元素没变，搬家路线变了</a> → <a href="/cn/compiler-o05-broadcast-address-plans/">广播不负责喊话：它负责让地址有时前进、有时原地不动</a> → <a href="/cn/compiler-o06-aligned-stride-constants/">第一行正确，第二行失踪：对齐、Stride 与常量填充的连环案</a>。</li>
+<li>正在追异步执行与资源问题：<a href="/cn/compiler-r01-register-raii/">那只“临时”寄存器，为什么总被别人借走？</a> → <a href="/cn/compiler-r03-view-liveness/">视图没有搬数据，为什么内存仍然不能还？</a> → <a href="/cn/compiler-r06-recurrent-dependencies/">等过了事件，为什么还没等到数据？</a>。</li>
+<li>正在做编译器交付：<a href="/cn/compiler-e02-three-stages-of-a-build/">“我只是重新编译”，为什么安装目录先消失了？</a> → <a href="/cn/compiler-e04-the-library-that-was-there/">库文件明明在包里，为什么程序还是说找不到？</a> → <a href="/cn/compiler-e05-a-compiler-that-can-move-house/">编译器搬了个家，查表模块就失联了</a> → <a href="/cn/compiler-e08-releases-and-their-two-clocks/">同一份发布包，为什么每次哈希都不同？</a>。</li>
+<li>正在设计后端架构与验证：<a href="/cn/compiler-e12-four-identities-of-an-instruction/">一条指令的四种身份：代码生成为什么不能只靠字符串</a> → <a href="/cn/compiler-e09-golden-tests-that-can-disagree/">汇编看起来对了，机器码也会对吗？</a> → <a href="/cn/compiler-e10-specifications-that-admit-unknowns/">一份算子文档最有价值的词，可能是“尚未确认”</a>。</li>
 </ul>
-<h2 id="第一辑：数值正确性，从一个整数到一套标尺">第一辑：数值正确性，从一个整数到一套标尺</h2>
+<h2 id="数值正确性，从一个整数到一套标尺">数值正确性，从一个整数到一套标尺</h2>
 <table>
 <thead>
 <tr>
@@ -473,52 +473,52 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="/cn/compiler-n01-reduction-lowering/">N01｜求个平均值，为什么编译器先写起了循环？</a></td>
+<td><a href="/cn/compiler-n01-reduction-lowering/">求个平均值，为什么编译器先写起了循环？</a></td>
 <td>把任意归约轴变成可执行的循环，追踪搬运和布局成本。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-n02-axis-identity/">N02｜消失的维度：keep_dims=false 为什么能把逆置换弄坏？</a></td>
+<td><a href="/cn/compiler-n02-axis-identity/">消失的维度：keep_dims=false 为什么能把逆置换弄坏？</a></td>
 <td>被删掉的轴不再属于原来的坐标系，逆置换必须重建。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-n03-reduction-family/">N03｜最大值、最小值和求和：长得像三兄弟，不能共用一份数学作业</a></td>
+<td><a href="/cn/compiler-n03-reduction-family/">最大值、最小值和求和：长得像三兄弟，不能共用一份数学作业</a></td>
 <td>归约框架可以共享，初始化、累加与重定标不能照搬。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-n04-identity-requantization/">N04｜这个归约什么也没做，为什么还不能删？</a></td>
+<td><a href="/cn/compiler-n04-identity-requantization/">这个归约什么也没做，为什么还不能删？</a></td>
 <td>数学恒等不代表量化编码恒等，空轴和单位轴也有契约。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-n05-integer-multiply/">N05｜乘法没算错，尺度乘错了：整数内核的两张账单</a></td>
+<td><a href="/cn/compiler-n05-integer-multiply/">乘法没算错，尺度乘错了：整数内核的两张账单</a></td>
 <td>逐项核对输入 scale、输出 scale 与中间乘积的范围。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-n06-batchnorm-quantization/">N06｜BatchNorm 变成乘加之后，真正的数值工作才开始</a></td>
+<td><a href="/cn/compiler-n06-batchnorm-quantization/">BatchNorm 变成乘加之后，真正的数值工作才开始</a></td>
 <td>从固定统计量到通道乘加，再到乘数、移位和偏置。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-n07-broadcast-memory/">N07｜只有几个通道参数，为什么局部内存先满了？</a></td>
+<td><a href="/cn/compiler-n07-broadcast-memory/">只有几个通道参数，为什么局部内存先满了？</a></td>
 <td>避免把通道向量铺满整张量，同时守住广播语义。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-n08-specialized-affine/">N08｜写了专用算子，又把它拆掉：一次值得认真记录的设计转向</a></td>
+<td><a href="/cn/compiler-n08-specialized-affine/">写了专用算子，又把它拆掉：一次值得认真记录的设计转向</a></td>
 <td>专用仿射算子的引入与撤回，如何比较维护成本与表达力。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-n09-normalization-ranges/">N09｜epsilon 明明不是零，到了整数域却差点失踪</a></td>
+<td><a href="/cn/compiler-n09-normalization-ranges/">epsilon 明明不是零，到了整数域却差点失踪</a></td>
 <td>从 epsilon、平方与倒平方根追踪归一化的数值范围。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-n10-rewrite-result-types/">N10｜浮点全绿、量化全红：一次重写把输出的身份证换成了输入的</a></td>
+<td><a href="/cn/compiler-n10-rewrite-result-types/">浮点全绿、量化全红：一次重写把输出的身份证换成了输入的</a></td>
 <td>重写结果类型既描述容器，也携带量化含义。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-n11-import-order-and-constants/">N11｜太早变聪明的导入器：当代数优化抢在量化信息前面</a></td>
+<td><a href="/cn/compiler-n11-import-order-and-constants/">太早变聪明的导入器：当代数优化抢在量化信息前面</a></td>
 <td>代数变换时机、量化元数据匹配和常量处理为何互相制约。</td>
 </tr>
 </tbody>
 </table>
-<h2 id="第二辑：算子与布局，让数学落到真实内存">第二辑：算子与布局，让数学落到真实内存</h2>
+<h2 id="算子与布局，让数学落到真实内存">算子与布局，让数学落到真实内存</h2>
 <table>
 <thead>
 <tr>
@@ -528,56 +528,56 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="/cn/compiler-o01-grouped-convolution/">O01｜分组卷积：切开蛋糕以后，盘子上的标签也得切</a></td>
+<td><a href="/cn/compiler-o01-grouped-convolution/">分组卷积：切开蛋糕以后，盘子上的标签也得切</a></td>
 <td>按组切分输入与权重时，连同量化信息一起维护。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-o02-transposed-convolution-storage/">O02｜转置卷积的权重：形状很诚实，内存却说了另一种方言</a></td>
+<td><a href="/cn/compiler-o02-transposed-convolution-storage/">转置卷积的权重：形状很诚实，内存却说了另一种方言</a></td>
 <td>逻辑维度顺序和真实权重存储不同，切片公式就会不同。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-o03-reshape-proof/">O03｜Reshape 为什么还要写代码：元素没变，搬家路线变了</a></td>
+<td><a href="/cn/compiler-o03-reshape-proof/">Reshape 为什么还要写代码：元素没变，搬家路线变了</a></td>
 <td>证明线性元素映射，区分形状变化与布局重排。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-o04-dump-layout/">O04｜当调试器开始撒谎：一次 Permute，三种 Dump 修法</a></td>
+<td><a href="/cn/compiler-o04-dump-layout/">当调试器开始撒谎：一次 Permute，三种 Dump 修法</a></td>
 <td>三条分支修法共同揭示观察路径也需要布局契约。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-o05-broadcast-address-plans/">O05｜广播不负责喊话：它负责让地址有时前进、有时原地不动</a></td>
+<td><a href="/cn/compiler-o05-broadcast-address-plans/">广播不负责喊话：它负责让地址有时前进、有时原地不动</a></td>
 <td>按轴建立地址前进规则，覆盖标量、低秩和复杂广播。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-o06-aligned-stride-constants/">O06｜第一行正确，第二行失踪：对齐、Stride 与常量填充的连环案</a></td>
+<td><a href="/cn/compiler-o06-aligned-stride-constants/">第一行正确，第二行失踪：对齐、Stride 与常量填充的连环案</a></td>
 <td>逻辑宽度、物理步长、对齐补齐与参数表必须一致。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-o07-scalar-arithmetic-direction/">O07｜减去零可以消失，零减去你不行：标量算子的方向感</a></td>
+<td><a href="/cn/compiler-o07-scalar-arithmetic-direction/">减去零可以消失，零减去你不行：标量算子的方向感</a></td>
 <td>常量折叠、交换律和操作数方向，不能混成一次简化。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-o08-unary-quantization-contract/">O08｜Abs 和 Sign：算术只有一行，参数协议却不能复制粘贴</a></td>
+<td><a href="/cn/compiler-o08-unary-quantization-contract/">Abs 和 Sign：算术只有一行，参数协议却不能复制粘贴</a></td>
 <td>一元算子的数学定义，需要贯穿类型、量化和参数编码。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-o09-scratch-register-lifetimes/">O09｜谁动了我的临时寄存器：让发射器学会借东西、还东西</a></td>
+<td><a href="/cn/compiler-o09-scratch-register-lifetimes/">谁动了我的临时寄存器：让发射器学会借东西、还东西</a></td>
 <td>从手写临时寄存器到明确的借用、释放和嵌套约束。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-o10-convolution-activation-fusion/">O10｜把激活函数塞进卷积：少一个节点之前，先保住那条量化边界</a></td>
+<td><a href="/cn/compiler-o10-convolution-activation-fusion/">把激活函数塞进卷积：少一个节点之前，先保住那条量化边界</a></td>
 <td>融合卷积与激活之前，保住中间量化与合法形状。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-o11-matmul-fusion-barriers/">O11｜MatMul 后面有个 Sigmoid：为什么编译器偏偏不肯融合</a></td>
+<td><a href="/cn/compiler-o11-matmul-fusion-barriers/">MatMul 后面有个 Sigmoid：为什么编译器偏偏不肯融合</a></td>
 <td>多消费者、视图和依赖边界如何限制矩阵乘激活融合。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-o12-static-left-matmul/">O12｜权重跑到左边以后：用一个转置恒等式，搬动整个编译链</a></td>
+<td><a href="/cn/compiler-o12-static-left-matmul/">权重跑到左边以后：用一个转置恒等式，搬动整个编译链</a></td>
 <td>转置恒等式只是起点，权重命名与量化轴还要一起移动。</td>
 </tr>
 </tbody>
 </table>
-<h2 id="第三辑：资源与调度，谁还在使用这块数据">第三辑：资源与调度，谁还在使用这块数据</h2>
+<h2 id="资源与调度，谁还在使用这块数据">资源与调度，谁还在使用这块数据</h2>
 <table>
 <thead>
 <tr>
@@ -587,48 +587,48 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="/cn/compiler-r01-register-raii/">R01｜那只“临时”寄存器，为什么总被别人借走？</a></td>
+<td><a href="/cn/compiler-r01-register-raii/">那只“临时”寄存器，为什么总被别人借走？</a></td>
 <td>用作用域表达寄存器所有权，明确自动归还的边界。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-r02-dependency-pressure/">R02｜图里只是多了几个分叉，为什么同步寄存器先耗尽了？</a></td>
+<td><a href="/cn/compiler-r02-dependency-pressure/">图里只是多了几个分叉，为什么同步寄存器先耗尽了？</a></td>
 <td>分叉与依赖汇合如何形成同步资源压力。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-r03-view-liveness/">R03｜视图没有搬数据，为什么内存仍然不能还？</a></td>
+<td><a href="/cn/compiler-r03-view-liveness/">视图没有搬数据，为什么内存仍然不能还？</a></td>
 <td>跨过视图链追踪异步消费者，防止过早回收底层存储。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-r04-address-capacity/">R04｜地址能表示，为什么编译器说“内存满了”？</a></td>
+<td><a href="/cn/compiler-r04-address-capacity/">地址能表示，为什么编译器说“内存满了”？</a></td>
 <td>区分可编码地址范围、分配区间和真实内存预算。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-r05-recurrent-state/">R05｜同一个最终状态，为什么需要两次写出？</a></td>
+<td><a href="/cn/compiler-r05-recurrent-state/">同一个最终状态，为什么需要两次写出？</a></td>
 <td>持续状态、最终状态与直接输出，为什么不是同一种缓冲。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-r06-recurrent-dependencies/">R06｜等过了事件，为什么还没等到数据？</a></td>
+<td><a href="/cn/compiler-r06-recurrent-dependencies/">等过了事件，为什么还没等到数据？</a></td>
 <td>跨执行单元传递状态时，事件必须覆盖真正的数据生产。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-r07-error-boundaries/">R07｜catch 住异常之后，半份机器码怎么办？</a></td>
+<td><a href="/cn/compiler-r07-error-boundaries/">catch 住异常之后，半份机器码怎么办？</a></td>
 <td>错误被捕获之后，已产生的状态与输出仍需明确处理。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-r08-loops-determinism/">R08｜循环只多了一层，为什么二进制快照像换了一个程序？</a></td>
+<td><a href="/cn/compiler-r08-loops-determinism/">循环只多了一层，为什么二进制快照像换了一个程序？</a></td>
 <td>循环、标签和独立发射实例如何影响二进制确定性。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-r09-encoding-boundaries/">R09｜“数字已经读出来了”，并不代表输入合法</a></td>
+<td><a href="/cn/compiler-r09-encoding-boundaries/">“数字已经读出来了”，并不代表输入合法</a></td>
 <td>解析成功之后，仍要检查完整消费、符号与字段范围。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-r10-optimization-contracts/">R10｜少算一点，为什么反而不敢优化了？</a></td>
+<td><a href="/cn/compiler-r10-optimization-contracts/">少算一点，为什么反而不敢优化了？</a></td>
 <td>优化停用也是设计决定：切片、量化与参数尺寸的契约。</td>
 </tr>
 </tbody>
 </table>
-<h2 id="第四辑：编译器工程，从开发目录到可交付产物">第四辑：编译器工程，从开发目录到可交付产物</h2>
+<h2 id="编译器工程，从开发目录到可交付产物">编译器工程，从开发目录到可交付产物</h2>
 <table>
 <thead>
 <tr>
@@ -638,332 +638,283 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="/cn/compiler-e01-the-release-build-that-forgot-to-write/">E01｜Debug 一切正常，Release 却把写入操作“优化没了”</a></td>
+<td><a href="/cn/compiler-e01-the-release-build-that-forgot-to-write/">Debug 一切正常，Release 却把写入操作“优化没了”</a></td>
 <td>必要写入藏进断言后，关闭检查会改变程序语义。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-e02-three-stages-of-a-build/">E02｜“我只是重新编译”，为什么安装目录先消失了？</a></td>
+<td><a href="/cn/compiler-e02-three-stages-of-a-build/">“我只是重新编译”，为什么安装目录先消失了？</a></td>
 <td>环境、构建和安装各自负责什么，失败后留下什么。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-e03-one-toolchain-three-versions/">E03｜头文件是一版，生成器是另一版：编译器构建里的“多人接力”</a></td>
+<td><a href="/cn/compiler-e03-one-toolchain-three-versions/">头文件是一版，生成器是另一版：编译器构建里的“多人接力”</a></td>
 <td>头文件、库、生成器和缓存共同决定工具链身份。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-e04-the-library-that-was-there/">E04｜库文件明明在包里，为什么程序还是说找不到？</a></td>
+<td><a href="/cn/compiler-e04-the-library-that-was-there/">库文件明明在包里，为什么程序还是说找不到？</a></td>
 <td>真实库、SONAME、链接名与运行搜索路径如何连接。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-e05-a-compiler-that-can-move-house/">E05｜编译器搬了个家，查表模块就失联了</a></td>
+<td><a href="/cn/compiler-e05-a-compiler-that-can-move-house/">编译器搬了个家，查表模块就失联了</a></td>
 <td>通过真实功能与缺件测试，验证运行资源能随包移动。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-e06-a-model-file-is-a-protocol/">E06｜把一堆编译产物装成一个文件，到底难在哪里？</a></td>
+<td><a href="/cn/compiler-e06-a-model-file-is-a-protocol/">把一堆编译产物装成一个文件，到底难在哪里？</a></td>
 <td>模型文件作为协议，必须定义偏移、长度与所有权。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-e07-command-line-output-contract/">E07｜编译已经失败，目录里为什么还有一个“成功的模型”？</a></td>
+<td><a href="/cn/compiler-e07-command-line-output-contract/">编译已经失败，目录里为什么还有一个“成功的模型”？</a></td>
 <td>输出目录、临时产物和旧文件，让成功与失败可判断。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-e08-releases-and-their-two-clocks/">E08｜同一份发布包，为什么每次哈希都不同？</a></td>
+<td><a href="/cn/compiler-e08-releases-and-their-two-clocks/">同一份发布包，为什么每次哈希都不同？</a></td>
 <td>区分归档事件时间、包内时间和字节可复现性。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-e09-golden-tests-that-can-disagree/">E09｜汇编看起来对了，机器码也会对吗？</a></td>
+<td><a href="/cn/compiler-e09-golden-tests-that-can-disagree/">汇编看起来对了，机器码也会对吗？</a></td>
 <td>伪汇编、汇编、机器码与数学参考各自证明什么。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-e10-specifications-that-admit-unknowns/">E10｜一份算子文档最有价值的词，可能是“尚未确认”</a></td>
+<td><a href="/cn/compiler-e10-specifications-that-admit-unknowns/">一份算子文档最有价值的词，可能是“尚未确认”</a></td>
 <td>规范要保留未知项，避免把示例表格写成能力承诺。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-e11-what-does-supported-really-mean/">E11｜搜索到了算子名字，就可以写进“支持列表”吗？</a></td>
+<td><a href="/cn/compiler-e11-what-does-supported-really-mean/">搜索到了算子名字，就可以写进“支持列表”吗？</a></td>
 <td>从存在一个名字到完整编译路径，支持需要多层证据。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-e12-four-identities-of-an-instruction/">E12｜一条指令的四种身份：代码生成为什么不能只靠字符串</a></td>
+<td><a href="/cn/compiler-e12-four-identities-of-an-instruction/">一条指令的四种身份：代码生成为什么不能只靠字符串</a></td>
 <td>数学运算、内核、发射与编码的四层职责和错误归属。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-e13-moving-data-moving-meaning/">E13｜它只是在搬数据，为什么还会算错：张量变换的隐藏契约</a></td>
+<td><a href="/cn/compiler-e13-moving-data-moving-meaning/">它只是在搬数据，为什么还会算错：张量变换的隐藏契约</a></td>
 <td>坐标、步长、别名和量化参数，让搬数据也有语义。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-e14-same-shape-different-answers/">E14｜相同的输出形状，完全不同的答案：池化、缩放与索引归约</a></td>
+<td><a href="/cn/compiler-e14-same-shape-different-answers/">相同的输出形状，完全不同的答案：池化、缩放与索引归约</a></td>
 <td>窗口分母、插值坐标和最大值索引决定具体答案。</td>
 </tr>
 <tr>
-<td><a href="/cn/compiler-e15-names-are-not-numerical-contracts/">E15｜一个函数名，装不下它的数值契约：非线性与归一化的边界</a></td>
+<td><a href="/cn/compiler-e15-names-are-not-numerical-contracts/">一个函数名，装不下它的数值契约：非线性与归一化的边界</a></td>
 <td>定义域、近似、精度与归约轴，比函数名字更重要。</td>
 </tr>
 </tbody>
 </table>
 <h2 id="按问题串起来读">按问题串起来读</h2>
 <ul>
-<li><strong>一个改写能不能删除？</strong> <a href="/cn/compiler-n04-identity-requantization/">N04</a> → <a href="/cn/compiler-n10-rewrite-result-types/">N10</a> → <a href="/cn/compiler-r10-optimization-contracts/">R10</a>：数学恒等、结果表示和优化前提需要同时成立。</li>
-<li><strong>看见的错误就是真实错误吗？</strong> <a href="/cn/compiler-o04-dump-layout/">O04</a> → <a href="/cn/compiler-e09-golden-tests-that-can-disagree/">E09</a>：观察布局与测试基线也可能出错。</li>
-<li><strong>减少节点是否一定更快？</strong> <a href="/cn/compiler-n07-broadcast-memory/">N07</a> → <a href="/cn/compiler-o10-convolution-activation-fusion/">O10</a> → <a href="/cn/compiler-o11-matmul-fusion-barriers/">O11</a>：搬运、内存、舍入边界与消费者关系共同决定收益。</li>
-<li><strong>一个名字究竟承诺了什么？</strong> <a href="/cn/compiler-e11-what-does-supported-really-mean/">E11</a> → <a href="/cn/compiler-e14-same-shape-different-answers/">E14</a> → <a href="/cn/compiler-e15-names-are-not-numerical-contracts/">E15</a>：算子名称、输出形状与完整数值语义之间仍有距离。</li>
-<li><strong>一个文件存在是否等于成功？</strong> <a href="/cn/compiler-e01-the-release-build-that-forgot-to-write/">E01</a> → <a href="/cn/compiler-e06-a-model-file-is-a-protocol/">E06</a> → <a href="/cn/compiler-e07-command-line-output-contract/">E07</a> → <a href="/cn/compiler-r07-error-boundaries/">R07</a>：从必要副作用到输出状态，成功要有可验证的条件。</li>
+<li><strong>一个改写能不能删除？</strong> <a href="/cn/compiler-n04-identity-requantization/">恒等归约与重量化</a> → <a href="/cn/compiler-n10-rewrite-result-types/">重写中的结果类型</a> → <a href="/cn/compiler-r10-optimization-contracts/">优化的前提</a>：数学恒等、结果表示和优化前提需要同时成立。</li>
+<li><strong>看见的错误就是真实错误吗？</strong> <a href="/cn/compiler-o04-dump-layout/">调试输出的布局</a> → <a href="/cn/compiler-e09-golden-tests-that-can-disagree/">多层回归测试</a>：观察布局与测试基线也可能出错。</li>
+<li><strong>减少节点是否一定更快？</strong> <a href="/cn/compiler-n07-broadcast-memory/">广播参数与内存</a> → <a href="/cn/compiler-o10-convolution-activation-fusion/">卷积与激活融合</a> → <a href="/cn/compiler-o11-matmul-fusion-barriers/">矩阵乘的融合边界</a>：搬运、内存、舍入边界与消费者关系共同决定收益。</li>
+<li><strong>一个名字究竟承诺了什么？</strong> <a href="/cn/compiler-e11-what-does-supported-really-mean/">算子支持的判定</a> → <a href="/cn/compiler-e14-same-shape-different-answers/">池化与采样语义</a> → <a href="/cn/compiler-e15-names-are-not-numerical-contracts/">非线性与归一化</a>：算子名称、输出形状与完整数值语义之间仍有距离。</li>
+<li><strong>一个文件存在是否等于成功？</strong> <a href="/cn/compiler-e01-the-release-build-that-forgot-to-write/">Release 中的断言副作用</a> → <a href="/cn/compiler-e06-a-model-file-is-a-protocol/">模型文件协议</a> → <a href="/cn/compiler-e07-command-line-output-contract/">命令行的产物约定</a> → <a href="/cn/compiler-r07-error-boundaries/">错误处理的边界</a>：从必要副作用到输出状态，成功要有可验证的条件。</li>
 </ul>
 <p>每篇文章均可通过顶部语言菜单切换中英文，通过文末导航继续阅读同辑下一篇。</p>
 <h2 id="与博客既有文章衔接">与博客既有文章衔接</h2>
 <ul>
-<li>构建基础：<a href="/cn/build-and-manage-multi-file/">构建和管理多文件以及编译流程</a> → E02、E03。</li>
-<li>装载基础：<a href="/cn/detailed-explanation-compilation-loading-execution/">用户程序的编译、加载及执行流程详解</a> → E04、E05。</li>
-<li>内存基础：<a href="/cn/multi-program-memory-manage-task-exchange/">多程序操作环境中的内存管理与任务切换</a> → R03、R04。</li>
-<li>调试基础：<a href="/cn/debug/">工程 debug 经验</a> → O04、E01、E09。</li>
+<li>构建基础：<a href="/cn/build-and-manage-multi-file/">构建和管理多文件以及编译流程</a> → <a href="/cn/compiler-e02-three-stages-of-a-build/">构建阶段的职责</a>、<a href="/cn/compiler-e03-one-toolchain-three-versions/">工具链的一致性</a>。</li>
+<li>装载基础：<a href="/cn/detailed-explanation-compilation-loading-execution/">用户程序的编译、加载及执行流程详解</a> → <a href="/cn/compiler-e04-the-library-that-was-there/">动态库与搜索路径</a>、<a href="/cn/compiler-e05-a-compiler-that-can-move-house/">编译器的可迁移性</a>。</li>
+<li>内存基础：<a href="/cn/multi-program-memory-manage-task-exchange/">多程序操作环境中的内存管理与任务切换</a> → <a href="/cn/compiler-r03-view-liveness/">视图的生存期</a>、<a href="/cn/compiler-r04-address-capacity/">地址与容量</a>。</li>
+<li>调试基础：<a href="/cn/debug/">工程 debug 经验</a> → <a href="/cn/compiler-o04-dump-layout/">调试输出的布局</a>、<a href="/cn/compiler-e01-the-release-build-that-forgot-to-write/">Release 中的断言副作用</a>、<a href="/cn/compiler-e09-golden-tests-that-can-disagree/">多层回归测试</a>。</li>
 </ul>
 <h2 id="编排日历">编排日历</h2>
 <table>
 <thead>
 <tr>
-<th>编号</th>
 <th>日期</th>
 <th>文章</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>N01</td>
 <td>2026-01-06</td>
-<td><a href="/cn/compiler-n01-reduction-lowering/">N01｜求个平均值，为什么编译器先写起了循环？</a></td>
+<td><a href="/cn/compiler-n01-reduction-lowering/">求个平均值，为什么编译器先写起了循环？</a></td>
 </tr>
 <tr>
-<td>N02</td>
 <td>2026-01-11</td>
-<td><a href="/cn/compiler-n02-axis-identity/">N02｜消失的维度：keep_dims=false 为什么能把逆置换弄坏？</a></td>
+<td><a href="/cn/compiler-n02-axis-identity/">消失的维度：keep_dims=false 为什么能把逆置换弄坏？</a></td>
 </tr>
 <tr>
-<td>N03</td>
 <td>2026-01-18</td>
-<td><a href="/cn/compiler-n03-reduction-family/">N03｜最大值、最小值和求和：长得像三兄弟，不能共用一份数学作业</a></td>
+<td><a href="/cn/compiler-n03-reduction-family/">最大值、最小值和求和：长得像三兄弟，不能共用一份数学作业</a></td>
 </tr>
 <tr>
-<td>N04</td>
 <td>2026-01-22</td>
-<td><a href="/cn/compiler-n04-identity-requantization/">N04｜这个归约什么也没做，为什么还不能删？</a></td>
+<td><a href="/cn/compiler-n04-identity-requantization/">这个归约什么也没做，为什么还不能删？</a></td>
 </tr>
 <tr>
-<td>N05</td>
 <td>2026-01-28</td>
-<td><a href="/cn/compiler-n05-integer-multiply/">N05｜乘法没算错，尺度乘错了：整数内核的两张账单</a></td>
+<td><a href="/cn/compiler-n05-integer-multiply/">乘法没算错，尺度乘错了：整数内核的两张账单</a></td>
 </tr>
 <tr>
-<td>N06</td>
 <td>2026-02-02</td>
-<td><a href="/cn/compiler-n06-batchnorm-quantization/">N06｜BatchNorm 变成乘加之后，真正的数值工作才开始</a></td>
+<td><a href="/cn/compiler-n06-batchnorm-quantization/">BatchNorm 变成乘加之后，真正的数值工作才开始</a></td>
 </tr>
 <tr>
-<td>N07</td>
 <td>2026-02-09</td>
-<td><a href="/cn/compiler-n07-broadcast-memory/">N07｜只有几个通道参数，为什么局部内存先满了？</a></td>
+<td><a href="/cn/compiler-n07-broadcast-memory/">只有几个通道参数，为什么局部内存先满了？</a></td>
 </tr>
 <tr>
-<td>N08</td>
 <td>2026-02-13</td>
-<td><a href="/cn/compiler-n08-specialized-affine/">N08｜写了专用算子，又把它拆掉：一次值得认真记录的设计转向</a></td>
+<td><a href="/cn/compiler-n08-specialized-affine/">写了专用算子，又把它拆掉：一次值得认真记录的设计转向</a></td>
 </tr>
 <tr>
-<td>N09</td>
 <td>2026-02-19</td>
-<td><a href="/cn/compiler-n09-normalization-ranges/">N09｜epsilon 明明不是零，到了整数域却差点失踪</a></td>
+<td><a href="/cn/compiler-n09-normalization-ranges/">epsilon 明明不是零，到了整数域却差点失踪</a></td>
 </tr>
 <tr>
-<td>N10</td>
 <td>2026-02-24</td>
-<td><a href="/cn/compiler-n10-rewrite-result-types/">N10｜浮点全绿、量化全红：一次重写把输出的身份证换成了输入的</a></td>
+<td><a href="/cn/compiler-n10-rewrite-result-types/">浮点全绿、量化全红：一次重写把输出的身份证换成了输入的</a></td>
 </tr>
 <tr>
-<td>N11</td>
 <td>2026-03-03</td>
-<td><a href="/cn/compiler-n11-import-order-and-constants/">N11｜太早变聪明的导入器：当代数优化抢在量化信息前面</a></td>
+<td><a href="/cn/compiler-n11-import-order-and-constants/">太早变聪明的导入器：当代数优化抢在量化信息前面</a></td>
 </tr>
 <tr>
-<td>O01</td>
 <td>2026-03-07</td>
-<td><a href="/cn/compiler-o01-grouped-convolution/">O01｜分组卷积：切开蛋糕以后，盘子上的标签也得切</a></td>
+<td><a href="/cn/compiler-o01-grouped-convolution/">分组卷积：切开蛋糕以后，盘子上的标签也得切</a></td>
 </tr>
 <tr>
-<td>O02</td>
 <td>2026-03-13</td>
-<td><a href="/cn/compiler-o02-transposed-convolution-storage/">O02｜转置卷积的权重：形状很诚实，内存却说了另一种方言</a></td>
+<td><a href="/cn/compiler-o02-transposed-convolution-storage/">转置卷积的权重：形状很诚实，内存却说了另一种方言</a></td>
 </tr>
 <tr>
-<td>O03</td>
 <td>2026-03-18</td>
-<td><a href="/cn/compiler-o03-reshape-proof/">O03｜Reshape 为什么还要写代码：元素没变，搬家路线变了</a></td>
+<td><a href="/cn/compiler-o03-reshape-proof/">Reshape 为什么还要写代码：元素没变，搬家路线变了</a></td>
 </tr>
 <tr>
-<td>O04</td>
 <td>2026-03-25</td>
-<td><a href="/cn/compiler-o04-dump-layout/">O04｜当调试器开始撒谎：一次 Permute，三种 Dump 修法</a></td>
+<td><a href="/cn/compiler-o04-dump-layout/">当调试器开始撒谎：一次 Permute，三种 Dump 修法</a></td>
 </tr>
 <tr>
-<td>O05</td>
 <td>2026-03-29</td>
-<td><a href="/cn/compiler-o05-broadcast-address-plans/">O05｜广播不负责喊话：它负责让地址有时前进、有时原地不动</a></td>
+<td><a href="/cn/compiler-o05-broadcast-address-plans/">广播不负责喊话：它负责让地址有时前进、有时原地不动</a></td>
 </tr>
 <tr>
-<td>O06</td>
 <td>2026-04-03</td>
-<td><a href="/cn/compiler-o06-aligned-stride-constants/">O06｜第一行正确，第二行失踪：对齐、Stride 与常量填充的连环案</a></td>
+<td><a href="/cn/compiler-o06-aligned-stride-constants/">第一行正确，第二行失踪：对齐、Stride 与常量填充的连环案</a></td>
 </tr>
 <tr>
-<td>O07</td>
 <td>2026-04-09</td>
-<td><a href="/cn/compiler-o07-scalar-arithmetic-direction/">O07｜减去零可以消失，零减去你不行：标量算子的方向感</a></td>
+<td><a href="/cn/compiler-o07-scalar-arithmetic-direction/">减去零可以消失，零减去你不行：标量算子的方向感</a></td>
 </tr>
 <tr>
-<td>O08</td>
 <td>2026-04-15</td>
-<td><a href="/cn/compiler-o08-unary-quantization-contract/">O08｜Abs 和 Sign：算术只有一行，参数协议却不能复制粘贴</a></td>
+<td><a href="/cn/compiler-o08-unary-quantization-contract/">Abs 和 Sign：算术只有一行，参数协议却不能复制粘贴</a></td>
 </tr>
 <tr>
-<td>O09</td>
 <td>2026-04-20</td>
-<td><a href="/cn/compiler-o09-scratch-register-lifetimes/">O09｜谁动了我的临时寄存器：让发射器学会借东西、还东西</a></td>
+<td><a href="/cn/compiler-o09-scratch-register-lifetimes/">谁动了我的临时寄存器：让发射器学会借东西、还东西</a></td>
 </tr>
 <tr>
-<td>O10</td>
 <td>2026-04-25</td>
-<td><a href="/cn/compiler-o10-convolution-activation-fusion/">O10｜把激活函数塞进卷积：少一个节点之前，先保住那条量化边界</a></td>
+<td><a href="/cn/compiler-o10-convolution-activation-fusion/">把激活函数塞进卷积：少一个节点之前，先保住那条量化边界</a></td>
 </tr>
 <tr>
-<td>O11</td>
 <td>2026-05-01</td>
-<td><a href="/cn/compiler-o11-matmul-fusion-barriers/">O11｜MatMul 后面有个 Sigmoid：为什么编译器偏偏不肯融合</a></td>
+<td><a href="/cn/compiler-o11-matmul-fusion-barriers/">MatMul 后面有个 Sigmoid：为什么编译器偏偏不肯融合</a></td>
 </tr>
 <tr>
-<td>O12</td>
 <td>2026-05-07</td>
-<td><a href="/cn/compiler-o12-static-left-matmul/">O12｜权重跑到左边以后：用一个转置恒等式，搬动整个编译链</a></td>
+<td><a href="/cn/compiler-o12-static-left-matmul/">权重跑到左边以后：用一个转置恒等式，搬动整个编译链</a></td>
 </tr>
 <tr>
-<td>R01</td>
 <td>2026-05-12</td>
-<td><a href="/cn/compiler-r01-register-raii/">R01｜那只“临时”寄存器，为什么总被别人借走？</a></td>
+<td><a href="/cn/compiler-r01-register-raii/">那只“临时”寄存器，为什么总被别人借走？</a></td>
 </tr>
 <tr>
-<td>R02</td>
 <td>2026-05-17</td>
-<td><a href="/cn/compiler-r02-dependency-pressure/">R02｜图里只是多了几个分叉，为什么同步寄存器先耗尽了？</a></td>
+<td><a href="/cn/compiler-r02-dependency-pressure/">图里只是多了几个分叉，为什么同步寄存器先耗尽了？</a></td>
 </tr>
 <tr>
-<td>R03</td>
 <td>2026-05-23</td>
-<td><a href="/cn/compiler-r03-view-liveness/">R03｜视图没有搬数据，为什么内存仍然不能还？</a></td>
+<td><a href="/cn/compiler-r03-view-liveness/">视图没有搬数据，为什么内存仍然不能还？</a></td>
 </tr>
 <tr>
-<td>R04</td>
 <td>2026-05-29</td>
-<td><a href="/cn/compiler-r04-address-capacity/">R04｜地址能表示，为什么编译器说“内存满了”？</a></td>
+<td><a href="/cn/compiler-r04-address-capacity/">地址能表示，为什么编译器说“内存满了”？</a></td>
 </tr>
 <tr>
-<td>R05</td>
 <td>2026-06-03</td>
-<td><a href="/cn/compiler-r05-recurrent-state/">R05｜同一个最终状态，为什么需要两次写出？</a></td>
+<td><a href="/cn/compiler-r05-recurrent-state/">同一个最终状态，为什么需要两次写出？</a></td>
 </tr>
 <tr>
-<td>R06</td>
 <td>2026-06-08</td>
-<td><a href="/cn/compiler-r06-recurrent-dependencies/">R06｜等过了事件，为什么还没等到数据？</a></td>
+<td><a href="/cn/compiler-r06-recurrent-dependencies/">等过了事件，为什么还没等到数据？</a></td>
 </tr>
 <tr>
-<td>R07</td>
 <td>2026-06-14</td>
-<td><a href="/cn/compiler-r07-error-boundaries/">R07｜catch 住异常之后，半份机器码怎么办？</a></td>
+<td><a href="/cn/compiler-r07-error-boundaries/">catch 住异常之后，半份机器码怎么办？</a></td>
 </tr>
 <tr>
-<td>R08</td>
 <td>2026-06-20</td>
-<td><a href="/cn/compiler-r08-loops-determinism/">R08｜循环只多了一层，为什么二进制快照像换了一个程序？</a></td>
+<td><a href="/cn/compiler-r08-loops-determinism/">循环只多了一层，为什么二进制快照像换了一个程序？</a></td>
 </tr>
 <tr>
-<td>R09</td>
 <td>2026-06-25</td>
-<td><a href="/cn/compiler-r09-encoding-boundaries/">R09｜“数字已经读出来了”，并不代表输入合法</a></td>
+<td><a href="/cn/compiler-r09-encoding-boundaries/">“数字已经读出来了”，并不代表输入合法</a></td>
 </tr>
 <tr>
-<td>R10</td>
 <td>2026-06-30</td>
-<td><a href="/cn/compiler-r10-optimization-contracts/">R10｜少算一点，为什么反而不敢优化了？</a></td>
+<td><a href="/cn/compiler-r10-optimization-contracts/">少算一点，为什么反而不敢优化了？</a></td>
 </tr>
 <tr>
-<td>E01</td>
 <td>2026-07-05</td>
-<td><a href="/cn/compiler-e01-the-release-build-that-forgot-to-write/">E01｜Debug 一切正常，Release 却把写入操作“优化没了”</a></td>
+<td><a href="/cn/compiler-e01-the-release-build-that-forgot-to-write/">Debug 一切正常，Release 却把写入操作“优化没了”</a></td>
 </tr>
 <tr>
-<td>E02</td>
 <td>2026-07-12</td>
-<td><a href="/cn/compiler-e02-three-stages-of-a-build/">E02｜“我只是重新编译”，为什么安装目录先消失了？</a></td>
+<td><a href="/cn/compiler-e02-three-stages-of-a-build/">“我只是重新编译”，为什么安装目录先消失了？</a></td>
 </tr>
 <tr>
-<td>E03</td>
 <td>2026-07-16</td>
-<td><a href="/cn/compiler-e03-one-toolchain-three-versions/">E03｜头文件是一版，生成器是另一版：编译器构建里的“多人接力”</a></td>
+<td><a href="/cn/compiler-e03-one-toolchain-three-versions/">头文件是一版，生成器是另一版：编译器构建里的“多人接力”</a></td>
 </tr>
 <tr>
-<td>E04</td>
 <td>2026-07-22</td>
-<td><a href="/cn/compiler-e04-the-library-that-was-there/">E04｜库文件明明在包里，为什么程序还是说找不到？</a></td>
+<td><a href="/cn/compiler-e04-the-library-that-was-there/">库文件明明在包里，为什么程序还是说找不到？</a></td>
 </tr>
 <tr>
-<td>E05</td>
 <td>2026-07-27</td>
-<td><a href="/cn/compiler-e05-a-compiler-that-can-move-house/">E05｜编译器搬了个家，查表模块就失联了</a></td>
+<td><a href="/cn/compiler-e05-a-compiler-that-can-move-house/">编译器搬了个家，查表模块就失联了</a></td>
 </tr>
 <tr>
-<td>E06</td>
 <td>2026-08-03</td>
-<td><a href="/cn/compiler-e06-a-model-file-is-a-protocol/">E06｜把一堆编译产物装成一个文件，到底难在哪里？</a></td>
+<td><a href="/cn/compiler-e06-a-model-file-is-a-protocol/">把一堆编译产物装成一个文件，到底难在哪里？</a></td>
 </tr>
 <tr>
-<td>E07</td>
 <td>2026-08-07</td>
-<td><a href="/cn/compiler-e07-command-line-output-contract/">E07｜编译已经失败，目录里为什么还有一个“成功的模型”？</a></td>
+<td><a href="/cn/compiler-e07-command-line-output-contract/">编译已经失败，目录里为什么还有一个“成功的模型”？</a></td>
 </tr>
 <tr>
-<td>E08</td>
 <td>2026-08-13</td>
-<td><a href="/cn/compiler-e08-releases-and-their-two-clocks/">E08｜同一份发布包，为什么每次哈希都不同？</a></td>
+<td><a href="/cn/compiler-e08-releases-and-their-two-clocks/">同一份发布包，为什么每次哈希都不同？</a></td>
 </tr>
 <tr>
-<td>E09</td>
 <td>2026-08-18</td>
-<td><a href="/cn/compiler-e09-golden-tests-that-can-disagree/">E09｜汇编看起来对了，机器码也会对吗？</a></td>
+<td><a href="/cn/compiler-e09-golden-tests-that-can-disagree/">汇编看起来对了，机器码也会对吗？</a></td>
 </tr>
 <tr>
-<td>E10</td>
 <td>2026-08-25</td>
-<td><a href="/cn/compiler-e10-specifications-that-admit-unknowns/">E10｜一份算子文档最有价值的词，可能是“尚未确认”</a></td>
+<td><a href="/cn/compiler-e10-specifications-that-admit-unknowns/">一份算子文档最有价值的词，可能是“尚未确认”</a></td>
 </tr>
 <tr>
-<td>E11</td>
 <td>2026-08-29</td>
-<td><a href="/cn/compiler-e11-what-does-supported-really-mean/">E11｜搜索到了算子名字，就可以写进“支持列表”吗？</a></td>
+<td><a href="/cn/compiler-e11-what-does-supported-really-mean/">搜索到了算子名字，就可以写进“支持列表”吗？</a></td>
 </tr>
 <tr>
-<td>E12</td>
 <td>2026-09-04</td>
-<td><a href="/cn/compiler-e12-four-identities-of-an-instruction/">E12｜一条指令的四种身份：代码生成为什么不能只靠字符串</a></td>
+<td><a href="/cn/compiler-e12-four-identities-of-an-instruction/">一条指令的四种身份：代码生成为什么不能只靠字符串</a></td>
 </tr>
 <tr>
-<td>E13</td>
 <td>2026-09-09</td>
-<td><a href="/cn/compiler-e13-moving-data-moving-meaning/">E13｜它只是在搬数据，为什么还会算错：张量变换的隐藏契约</a></td>
+<td><a href="/cn/compiler-e13-moving-data-moving-meaning/">它只是在搬数据，为什么还会算错：张量变换的隐藏契约</a></td>
 </tr>
 <tr>
-<td>E14</td>
 <td>2026-09-16</td>
-<td><a href="/cn/compiler-e14-same-shape-different-answers/">E14｜相同的输出形状，完全不同的答案：池化、缩放与索引归约</a></td>
+<td><a href="/cn/compiler-e14-same-shape-different-answers/">相同的输出形状，完全不同的答案：池化、缩放与索引归约</a></td>
 </tr>
 <tr>
-<td>E15</td>
 <td>2026-09-20</td>
-<td><a href="/cn/compiler-e15-names-are-not-numerical-contracts/">E15｜一个函数名，装不下它的数值契约：非线性与归一化的边界</a></td>
+<td><a href="/cn/compiler-e15-names-are-not-numerical-contracts/">一个函数名，装不下它的数值契约：非线性与归一化的边界</a></td>
 </tr>
 </tbody>
 </table>
@@ -974,7 +925,7 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/cn/compiler-n01-reduction-lowering/" data-toggle="tooltip" data-placement="top" title="N01｜求个平均值，为什么编译器先写起了循环？">&larr; Previous Post</a>
+            <a href="/cn/compiler-n01-reduction-lowering/" data-toggle="tooltip" data-placement="top" title="求个平均值，为什么编译器先写起了循环？">&larr; Previous Post</a>
           </li>
           
           
@@ -1068,7 +1019,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%BC%80%E5%A7%8B%E9%98%85%E8%AF%BB"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">开始阅读</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%AC%AC%E4%B8%80%E8%BE%91%EF%BC%9A%E6%95%B0%E5%80%BC%E6%AD%A3%E7%A1%AE%E6%80%A7%EF%BC%8C%E4%BB%8E%E4%B8%80%E4%B8%AA%E6%95%B4%E6%95%B0%E5%88%B0%E4%B8%80%E5%A5%97%E6%A0%87%E5%B0%BA"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">第一辑：数值正确性，从一个整数到一套标尺</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%AC%AC%E4%BA%8C%E8%BE%91%EF%BC%9A%E7%AE%97%E5%AD%90%E4%B8%8E%E5%B8%83%E5%B1%80%EF%BC%8C%E8%AE%A9%E6%95%B0%E5%AD%A6%E8%90%BD%E5%88%B0%E7%9C%9F%E5%AE%9E%E5%86%85%E5%AD%98"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">第二辑：算子与布局，让数学落到真实内存</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%AC%AC%E4%B8%89%E8%BE%91%EF%BC%9A%E8%B5%84%E6%BA%90%E4%B8%8E%E8%B0%83%E5%BA%A6%EF%BC%8C%E8%B0%81%E8%BF%98%E5%9C%A8%E4%BD%BF%E7%94%A8%E8%BF%99%E5%9D%97%E6%95%B0%E6%8D%AE"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">第三辑：资源与调度，谁还在使用这块数据</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%AC%AC%E5%9B%9B%E8%BE%91%EF%BC%9A%E7%BC%96%E8%AF%91%E5%99%A8%E5%B7%A5%E7%A8%8B%EF%BC%8C%E4%BB%8E%E5%BC%80%E5%8F%91%E7%9B%AE%E5%BD%95%E5%88%B0%E5%8F%AF%E4%BA%A4%E4%BB%98%E4%BA%A7%E7%89%A9"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">第四辑：编译器工程，从开发目录到可交付产物</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%8C%89%E9%97%AE%E9%A2%98%E4%B8%B2%E8%B5%B7%E6%9D%A5%E8%AF%BB"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">按问题串起来读</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%8E%E5%8D%9A%E5%AE%A2%E6%97%A2%E6%9C%89%E6%96%87%E7%AB%A0%E8%A1%94%E6%8E%A5"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">与博客既有文章衔接</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%BC%96%E6%8E%92%E6%97%A5%E5%8E%86"><span class="toc-nav-number">8.</span> <span class="toc-nav-text">编排日历</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%BC%80%E5%A7%8B%E9%98%85%E8%AF%BB"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">开始阅读</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%95%B0%E5%80%BC%E6%AD%A3%E7%A1%AE%E6%80%A7%EF%BC%8C%E4%BB%8E%E4%B8%80%E4%B8%AA%E6%95%B4%E6%95%B0%E5%88%B0%E4%B8%80%E5%A5%97%E6%A0%87%E5%B0%BA"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">数值正确性，从一个整数到一套标尺</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%AE%97%E5%AD%90%E4%B8%8E%E5%B8%83%E5%B1%80%EF%BC%8C%E8%AE%A9%E6%95%B0%E5%AD%A6%E8%90%BD%E5%88%B0%E7%9C%9F%E5%AE%9E%E5%86%85%E5%AD%98"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">算子与布局，让数学落到真实内存</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%B5%84%E6%BA%90%E4%B8%8E%E8%B0%83%E5%BA%A6%EF%BC%8C%E8%B0%81%E8%BF%98%E5%9C%A8%E4%BD%BF%E7%94%A8%E8%BF%99%E5%9D%97%E6%95%B0%E6%8D%AE"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">资源与调度，谁还在使用这块数据</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%BC%96%E8%AF%91%E5%99%A8%E5%B7%A5%E7%A8%8B%EF%BC%8C%E4%BB%8E%E5%BC%80%E5%8F%91%E7%9B%AE%E5%BD%95%E5%88%B0%E5%8F%AF%E4%BA%A4%E4%BB%98%E4%BA%A7%E7%89%A9"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">编译器工程，从开发目录到可交付产物</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%8C%89%E9%97%AE%E9%A2%98%E4%B8%B2%E8%B5%B7%E6%9D%A5%E8%AF%BB"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">按问题串起来读</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%8E%E5%8D%9A%E5%AE%A2%E6%97%A2%E6%9C%89%E6%96%87%E7%AB%A0%E8%A1%94%E6%8E%A5"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">与博客既有文章衔接</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%BC%96%E6%8E%92%E6%97%A5%E5%8E%86"><span class="toc-nav-number">8.</span> <span class="toc-nav-text">编排日历</span></a></li></ol>
         
         </div>
       </aside>
@@ -1091,7 +1042,7 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/cn/tags/#系列导读" title="系列导读">系列导读</a>
+            <a class="tag" href="/cn/tags/#编译器" title="编译器">编译器</a>
             
           </div>
         </section>

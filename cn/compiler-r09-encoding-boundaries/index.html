@@ -141,7 +141,7 @@
   <link rel="canonical" href="https://000xiaoming.github.io/cn/compiler-r09-encoding-boundaries/">
   <title>
     
-      R09｜“数字已经读出来了”，并不代表输入合法 - I&#39;m Bruce Lee
+      “数字已经读出来了”，并不代表输入合法 - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -387,16 +387,12 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/cn/tags/#错误处理" title="错误处理">错误处理</a>
+              <a class="tag" href="/cn/tags/#工程实践" title="工程实践">工程实践</a>
               
-              <a class="tag" href="/cn/tags/#输入校验" title="输入校验">输入校验</a>
-              
-              <a class="tag" href="/cn/tags/#指令编码" title="指令编码">指令编码</a>
-              
-              <a class="tag" href="/cn/tags/#资源与调度" title="资源与调度">资源与调度</a>
+              <a class="tag" href="/cn/tags/#编译器" title="编译器">编译器</a>
               
             </div>
-            <h1>R09｜“数字已经读出来了”，并不代表输入合法</h1>
+            <h1>“数字已经读出来了”，并不代表输入合法</h1>
             <h2 class="subheading">解析成功之后，仍要检查完整消费、符号与字段范围。</h2>
             <span class="meta">
               Posted by Bruce Lee on
@@ -457,7 +453,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 资源与调度 · R09 · <a href="/en/compiler-r09-encoding-boundaries/">Read in English</a></p>
+        <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 资源与调度 · <a href="/en/compiler-r09-encoding-boundaries/">Read in English</a></p>
 <p>“寄存器写成了 r7oops，怎么还能继续往下走？”</p>
 <p>“解析函数成功读出了 7。”</p>
 <p>“后面的 oops 呢？”</p>
@@ -472,7 +468,7 @@
 <p>这里不应把“严格”理解成“越少接受越好”。有些别名或带前导零的编号原本被定义为合法，测试也保留它们。严格的意思是完整实现既定语法，而不是顺手收紧所有历史行为。</p>
 <h2 id="为什么失败可能延迟到二进制导出">为什么失败可能延迟到二进制导出</h2>
 <p>一些生成器先保存寄存器字符串和指令对象，直到编码字段时才解析。于是构造一条指令可以成功，导出时才发现 r7oops。</p>
-<p>这种延迟并非一定错误，但接口必须让调用者知道：构造成功不是可编码的最终保证。错误边界需要覆盖导出，导出失败还应保留调用方原有输出，避免把旧有效数据替换成半份新数据。相关测试专门检查了这一点，与 <a href="/cn/compiler-r07-error-boundaries/">R07</a>讨论的状态接口形成配合。</p>
+<p>这种延迟并非一定错误，但接口必须让调用者知道：构造成功不是可编码的最终保证。错误边界需要覆盖导出，导出失败还应保留调用方原有输出，避免把旧有效数据替换成半份新数据。相关测试专门检查了这一点，与 <a href="/cn/compiler-r07-error-boundaries/">错误处理的边界</a>讨论的状态接口形成配合。</p>
 <p>如果希望更早报错，可以在构造阶段把字符串解析为类型化寄存器。但这涉及接口迁移和诊断归属；保留字符串形式也可能有可读性或工具互操作原因。选择哪一层验证，要看整体设计，不能仅凭一个非法输入就宣布所有延迟编码都不可取。</p>
 <h2 id="立即数拆分最容易在符号边界翻车">立即数拆分最容易在符号边界翻车</h2>
 <p>考虑一个教学指令集：机器字宽 W，低段立即数宽 L，并且低段作为有符号数参与加法。我们希望构造无符号位模式 x：</p>
@@ -552,12 +548,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/cn/compiler-r10-optimization-contracts/" data-toggle="tooltip" data-placement="top" title="R10｜少算一点，为什么反而不敢优化了？">&larr; Previous Post</a>
+            <a href="/cn/compiler-r10-optimization-contracts/" data-toggle="tooltip" data-placement="top" title="少算一点，为什么反而不敢优化了？">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/cn/compiler-r08-loops-determinism/" data-toggle="tooltip" data-placement="top" title="R08｜循环只多了一层，为什么二进制快照像换了一个程序？">Next Post &rarr;</a>
+            <a href="/cn/compiler-r08-loops-determinism/" data-toggle="tooltip" data-placement="top" title="循环只多了一层，为什么二进制快照像换了一个程序？">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -607,7 +603,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=R09｜“数字已经读出来了”，并不代表输入合法&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/compiler-r09-encoding-boundaries/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=“数字已经读出来了”，并不代表输入合法&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/compiler-r09-encoding-boundaries/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -669,13 +665,9 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/cn/tags/#错误处理" title="错误处理">错误处理</a>
+            <a class="tag" href="/cn/tags/#工程实践" title="工程实践">工程实践</a>
             
-            <a class="tag" href="/cn/tags/#输入校验" title="输入校验">输入校验</a>
-            
-            <a class="tag" href="/cn/tags/#指令编码" title="指令编码">指令编码</a>
-            
-            <a class="tag" href="/cn/tags/#资源与调度" title="资源与调度">资源与调度</a>
+            <a class="tag" href="/cn/tags/#编译器" title="编译器">编译器</a>
             
           </div>
         </section>

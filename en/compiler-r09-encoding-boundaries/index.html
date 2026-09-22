@@ -141,7 +141,7 @@
   <link rel="canonical" href="https://000xiaoming.github.io/en/compiler-r09-encoding-boundaries/">
   <title>
     
-      R09 | “I Parsed a Number” Does Not Mean the Input Is Valid - I&#39;m Bruce Lee
+      “I Parsed a Number” Does Not Mean the Input Is Valid - I&#39;m Bruce Lee
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -387,16 +387,12 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/tags/#Error Handling" title="Error Handling">Error Handling</a>
+              <a class="tag" href="/tags/#Engineering" title="Engineering">Engineering</a>
               
-              <a class="tag" href="/tags/#Input Validation" title="Input Validation">Input Validation</a>
-              
-              <a class="tag" href="/tags/#Instruction Encoding" title="Instruction Encoding">Instruction Encoding</a>
-              
-              <a class="tag" href="/tags/#Resources and Scheduling" title="Resources and Scheduling">Resources and Scheduling</a>
+              <a class="tag" href="/tags/#Compilers" title="Compilers">Compilers</a>
               
             </div>
-            <h1>R09 | “I Parsed a Number” Does Not Mean the Input Is Valid</h1>
+            <h1>“I Parsed a Number” Does Not Mean the Input Is Valid</h1>
             <h2 class="subheading">Check full input consumption, signs, and field ranges after parsing succeeds.</h2>
             <span class="meta">
               Posted by Bruce Lee on
@@ -457,7 +453,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Resources and Scheduling · R09 · <a href="/cn/compiler-r09-encoding-boundaries/">阅读中文版</a></p>
+        <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Resources and Scheduling · <a href="/cn/compiler-r09-encoding-boundaries/">阅读中文版</a></p>
 <p>“How did r7oops get past the register parser?”</p>
 <p>“The parser successfully read 7.”</p>
 <p>“What about the oops?”</p>
@@ -472,7 +468,7 @@
 <p>“Strict” should not mean “accept as little as possible.” Some aliases and numbers with leading zeros were already defined as valid, and the tests retain them. Strictness means implementing the established grammar completely, not opportunistically tightening every historical behavior.</p>
 <h2 id="Why-failure-may-be-deferred-until-binary-export">Why failure may be deferred until binary export</h2>
 <p>Some generators retain register strings and instruction objects, parsing the strings only when encoding fields. Constructing an instruction can therefore succeed, with r7oops discovered only during export.</p>
-<p>Deferring this check is not inherently wrong, but the interface must make clear that successful construction is not a final guarantee of encodability. The error boundary must cover export, and failed export should preserve the caller’s existing output rather than replacing valid old data with incomplete new data. The associated tests specifically check this behavior, complementing the status interfaces discussed in <a href="/en/compiler-r07-error-boundaries/">R07</a>.</p>
+<p>Deferring this check is not inherently wrong, but the interface must make clear that successful construction is not a final guarantee of encodability. The error boundary must cover export, and failed export should preserve the caller’s existing output rather than replacing valid old data with incomplete new data. The associated tests specifically check this behavior, complementing the status interfaces discussed in <a href="/en/compiler-r07-error-boundaries/">Error Boundaries</a>.</p>
 <p>To report an error earlier, construction could parse the string into a typed register. That entails interface migration and decisions about diagnostic ownership. Retaining strings may also serve readability or tool interoperability. The right validation layer depends on the overall design; one invalid input does not establish that all deferred encoding is undesirable.</p>
 <h2 id="Immediate-splitting-is-vulnerable-at-sign-boundaries">Immediate splitting is vulnerable at sign boundaries</h2>
 <p>Consider a teaching instruction set with machine-word width W and low immediate width L, where the low part participates in addition as a signed value. We want to construct an unsigned bit pattern x:</p>
@@ -552,12 +548,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/en/compiler-r10-optimization-contracts/" data-toggle="tooltip" data-placement="top" title="R10 | Fewer Operations—So Why Disable the Optimization?">&larr; Previous Post</a>
+            <a href="/en/compiler-r10-optimization-contracts/" data-toggle="tooltip" data-placement="top" title="Fewer Operations—So Why Disable the Optimization?">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/en/compiler-r08-loops-determinism/" data-toggle="tooltip" data-placement="top" title="R08 | One More Loop, and the Binary Snapshot Looks Like a Different Program">Next Post &rarr;</a>
+            <a href="/en/compiler-r08-loops-determinism/" data-toggle="tooltip" data-placement="top" title="One More Loop, and the Binary Snapshot Looks Like a Different Program">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -607,7 +603,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=R09 | “I Parsed a Number” Does Not Mean the Input Is Valid&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/en/compiler-r09-encoding-boundaries/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=“I Parsed a Number” Does Not Mean the Input Is Valid&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/en/compiler-r09-encoding-boundaries/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -669,13 +665,9 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#Error Handling" title="Error Handling">Error Handling</a>
+            <a class="tag" href="/tags/#Engineering" title="Engineering">Engineering</a>
             
-            <a class="tag" href="/tags/#Input Validation" title="Input Validation">Input Validation</a>
-            
-            <a class="tag" href="/tags/#Instruction Encoding" title="Instruction Encoding">Instruction Encoding</a>
-            
-            <a class="tag" href="/tags/#Resources and Scheduling" title="Resources and Scheduling">Resources and Scheduling</a>
+            <a class="tag" href="/tags/#Compilers" title="Compilers">Compilers</a>
             
           </div>
         </section>
