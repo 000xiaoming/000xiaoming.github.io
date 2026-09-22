@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  
+  <meta name="baidu-site-verification" content="codeva-OySZDT59RD" />
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-Y95F7Y9NT1"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-Y95F7Y9NT1');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?9b08ea589f23fb1f5e2be85b8ca26b60";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="Notes on systems programming, computer architecture, ROS2, operating systems, and engineering practice."/>
+  <meta name="keyword" content="Bruce Lee,systems programming,computer architecture,ROS2,RISC-V,x86,C/C++,operating systems,engineering practice"/>
+  
+  <link rel="shortcut icon" href="/img/avatar/roguerabbit.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://000xiaoming.github.io/cn/compiler-o10-convolution-activation-fusion/">
+  <title>
+    
+      O10｜把激活函数塞进卷积：少一个节点之前，先保住那条量化边界 - I&#39;m Bruce Lee
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="body--light">
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  var colorModeCookieName = 'sb-color-mode-v2';
+  let themeMode = 'light';
+  if (getCookieValue(colorModeCookieName) && (getCookieValue(colorModeCookieName) !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = colorModeCookieName + "=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/cn/">经年治世</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li>
+            <a href="/cn/">首页</a>
+          </li>
+
+          
+          <li>
+            <a href="/cn/archives/">
+              
+              归档
+              
+            </a>
+          </li>
+          
+          <li>
+            <a href="/cn/about/">
+              
+              关于
+              
+            </a>
+          </li>
+          
+          <li>
+            <a href="/cn/categories/">
+              
+              分类
+              
+            </a>
+          </li>
+          
+          <li>
+            <a href="/cn/tags/">
+              
+              标签
+              
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>搜索</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          <!-- LangSelect start -->
+          <!-- LangSelect -->
+<li>
+  <a id="lang-select-label"><i class="fa fa-globe"></i>
+    <span>
+      简体中文
+    </span>
+    <select id="lang-select" data-canonical="cn/compiler-o10-convolution-activation-fusion/" data-is-post="true">
+      
+      
+      <option value="en" >
+        English
+      </option>
+      
+      <option value="cn"  selected >
+        简体中文
+      </option>
+      
+    </select>
+  </a>
+</li>
+
+          <!-- LangSelect end -->
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+<style type="text/css">
+  .body--light {
+    /* intro-header */
+    --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
+    --intro-header-background-image-url-post: url('/img/header_img/lml_bg1.png');
+    --intro-header-background-image-url-page: url('/img/header_img/lml_bg1.png');
+  }
+  .body--dark {
+    --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
+    --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/lml_bg1.png');
+    --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/lml_bg1.png');
+  }
+
+  header.intro-header {
+     /*post*/
+      background-image: var(--intro-header-background-image-url-post);
+    
+  }
+
+  
+    #signature {/*signature*/
+      background-image: url('/img/signature/vincent-white.png');
+    }
+  
+</style>
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/cn/tags/#量化" title="量化">量化</a>
+              
+              <a class="tag" href="/cn/tags/#算子与布局" title="算子与布局">算子与布局</a>
+              
+              <a class="tag" href="/cn/tags/#卷积" title="卷积">卷积</a>
+              
+              <a class="tag" href="/cn/tags/#算子融合" title="算子融合">算子融合</a>
+              
+            </div>
+            <h1>O10｜把激活函数塞进卷积：少一个节点之前，先保住那条量化边界</h1>
+            <h2 class="subheading">融合卷积与激活之前，保住中间量化与合法形状。</h2>
+            <span class="meta">
+              Posted by Bruce Lee on
+              2026-04-25
+            </span>
+
+
+            
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 算子与布局 · O10 · <a href="/en/compiler-o10-convolution-activation-fusion/">Read in English</a></p>
+<blockquote>
+<p>教学场景重构：以下评审对话为虚构。已核实的历史修改包括转置卷积与 GELU 融合、普通卷积与 GELU/Sigmoid 融合，以及转置卷积再扩展到 Sigmoid。没有在本次任务中运行设备或测量加速比。</p>
+</blockquote>
+<p>“这两个节点挨着，融合以后应该会快吧？”</p>
+<p>“可能。先说清楚中间那个张量原来是什么。”</p>
+<p>融合最诱人的画面是删掉图上的一个圆圈。可被删掉的不只是一个名字，还可能是一段真实的存储、一次量化、一种数据类型和一个被其他节点读取的值。若只把后处理开关打开，忘记中间语义，图确实更短了，答案也可能更远了。</p>
+<span id="more"></span>
+<h2 id="先检查融合前提">先检查融合前提</h2>
+<p>教学计算为 <code>u=Conv(x,w,b)</code>，<code>y=GELU(u)</code>。假设目标有卷积后处理路径，能够在卷积产生结果后接入查表或分段线性近似。融合的目标是让 y 直接成为卷积节点的最终输出，减少独立激活阶段的调度及中间搬运。是否真的消除这些成本，应由生成结果与测量验证。</p>
+<p>第一个条件是 u 的使用者。如果旁边还有 <code>z=Abs(u)</code>，把卷积输出直接改成激活后的 y，会让 z 看到完全不同的值。历史规则要求生产者只有一个使用者，并拒绝已经带融合激活的生产者。这个条件看似保守，却非常容易证明。复制卷积保留另一条分支也许能实现融合，但可能重复大量计算，不能作为没有成本模型的默认方案。</p>
+<p>分组属性也是明确的限制：所检查的这几条卷积与转置卷积融合规则都要求 group=1。分组卷积是否先被合法拆解、拆解后的节点能否再融合，属于另一条需要单独验证的路径，不能由这些融合提交直接推出。</p>
+<p>第二个条件是激活本身。图中一类查表节点可以表达多种非线性函数，不代表同一卷积后处理路径支持所有函数。历史的转置卷积先接受 GELU，后续扩展到 Sigmoid；普通卷积接受受限的两个函数。拒绝其他函数是能力边界，不应该被一个“非线性融合”大标题抹平。</p>
+<p>其中一个提交标题看上去只是删除旧文件名，实际同时改变了匹配条件、代码生成验证和测试期望，把另一种激活加入支持。这类细节特别适合提醒读者：目录重命名可以伴随语义扩展，评审不能只检查文件是否搬过去。测试中原先“保留独立激活”的案例也变成了“应该融合”，证据来自断言变化。</p>
+<p>第三个条件是形状关系。逐元素激活不改变元素的对应关系，但图优化期间可能出现等元素数、不同外观 rank 的类型。已查看的不同融合规则对 shape 的检查并不完全相同：有的要求形状相等，有的检查元素数相等。公开的通用结论应当是“必须证明元素一一对应且布局兼容”，不能把任一局部检查说成充分条件。</p>
+<h2 id="保留中间量化边界">保留中间量化边界</h2>
+<p>真正容易丢失的是中间量化。假设卷积输出 u 使用比例 <code>su</code>，激活输出 y 使用比例 <code>sy</code>。LUT 的分段或查表输入依赖 u 的编码坐标。融合节点最终类型变成 y 的类型后，如果再从最终输出类型推导 LUT 输入，就可能错误地拿 sy 去解释卷积中间结果。</p>
+<p>教学假设 <code>su=0.25</code>、<code>sy=0.0625</code>，且两个 zero point 都为 0，同样的整数 8 分别代表 2 和 0.5。用错比例，会让查表访问的函数位置产生系统差异。融合后保留“激活前的类型描述”，就能明确区分生产者内部边界与节点最终输出。历史重写保存了这份信息，并携带 LUT、函数种类和表头数据。</p>
+<p>可以把融合计划写成：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fused = ComputeWithActivation(</span><br><span class="line">    inputs = original_compute_inputs,</span><br><span class="line">    table = activation_table,</span><br><span class="line">    intermediate_type = type_of_u,</span><br><span class="line">    output_type = type_of_y,</span><br><span class="line">    activation_kind = supported_kind)</span><br></pre></td></tr></table></figure>
+<p>这份伪代码不对应原工程接口，只表达契约。关键不是属性叫什么，而是中间值的数值域不能随节点被删除而失忆。</p>
+<h2 id="代码生成与回归证据">代码生成与回归证据</h2>
+<p>图重写成功只是前半程。代码生成还必须取得 LUT 的已分配地址，构造后处理参数，选择正确函数编码，关联描述符，再在发出计算指令前装载 LUT 参数。历史修改在地址、描述符、参数内存和内核发射各层补齐链路。如果只看到后处理使能位，就宣布融合完成，可能遗漏一个仍未初始化的参数寄存器。</p>
+<p>同时应验证属性集合完整。存在 LUT 操作数但缺少中间类型或表头，属于不完整融合状态；没有 LUT 却残留融合属性，也应拒绝。历史代码对这些组合加入诊断，并限制受支持的中间存储类型。这样外部手写 IR 或其他 pass 构造的异常状态，不会绕过重写规则直接进入发射阶段。</p>
+<p>为什么普通卷积还要测试？因为增加可选融合输入最容易损害已有路径。无激活时，不应装载无用 LUT 参数，也不应意外打开后处理。历史测试同时查看融合与非融合指令，并确认融合后不再单独发出相应的向量查表操作。这比“图中少了一个节点”更接近实际执行行为。</p>
+<p>但要小心：没有独立查表指令，只能证明生成形态改变，不能证明数值误差可接受。分段线性近似、定点参数精度、饱和与舍入仍需要专门数值测试。本文建议在激活曲线转折区、接近饱和区和量化边界附近加密取点，而不是仅用宽区间均匀随机样本。</p>
+<p>一个有用的错误对照是保留两个教学实现：先卷积再独立激活，与融合实现。比较时应使用相同的中间量化约定。如果参考实现直接在高精度实数卷积结果上做激活，而融合路径模拟的是先量化再激活，两者不同可能来自参考定义不一致。优化正确性通常要求保持原图语义，而不是悄悄更换成另一个“看上去更精确”的函数。</p>
+<h2 id="成本、语义与安全重写">成本、语义与安全重写</h2>
+<p>性能账单可以先做定性分解：潜在收益包括减少中间结果读写、任务启动和同步；新增或保留成本包括 LUT 参数装载、表数据访问，以及后处理吞吐对计算流水的限制。若中间张量本来就在片上缓存，省掉的成本与写回大内存完全不同。融合后还可能改变并行调度，不能把节点数量减少直接换算成速度百分比。</p>
+<p>建议测量时按输出大小、通道规模和激活类型分组，并记录中间存储是否真的消失、LUT 是否重复装载、总体延迟与算术单元利用情况。对小算子，参数与启动成本可能主导；对大算子，计算或带宽可能主导。本次任务没有这些数据，所以文章保留问题和测量方案，不编造漂亮结论。</p>
+<p>融合还有一条容易被名字掩盖的限制：同样叫 GELU，不同表示可能采用不同近似、不同输入范围或不同的分段参数。匹配函数名字只能找到候选，真正执行时还需要保留生成好的表数据与表头含义。若把原激活的 LUT 换成另一个“也叫同名函数”的默认表，误差约定可能已经改变。历史规则把现有 LUT 及相关信息带到融合节点，是维护原有近似路径的重要一环。</p>
+<p>可以把融合前后的语义写成两条数据链。原图先产生某种量化编码的 u，再按该编码访问激活近似，最后得到 y；融合图应在内部保留同样的 u 编码边界，即使它不再成为一个独立内存张量。边界不再落地，不代表边界不再存在。若目标后处理直接接收更宽的累加值，那么还需证明它怎样重现原本的缩放与舍入，或者明确给出允许的数值差异。</p>
+<p>图重写中的删除顺序也值得评审。新融合节点先创建并替换激活结果，再删除原生产者，需要确保没有遗漏使用者、没有留下指向旧节点的引用，也没有把新节点插到依赖之前。单使用者限制有助于简化这部分证明。若未来放宽到多结果或跨区域，原有几十行模式就未必足够，支配关系、区域边界和副作用都需要加入考虑。</p>
+<p>位置与诊断信息也是产物质量的一部分。融合以后出错，用户应该能回到卷积和激活这两个来源，而不只是看见一个新造的匿名节点。历史规则组合了来源位置，这有助于保留线索。通用建议是把来源追踪用于解释错误，但不要把所有源属性不加区分地复制为执行属性；某些属性描述的是旧输出，融合后可能已经不适用。逐项定义保留、转换与删除规则更可靠。</p>
+<p>“所有属性都复制，再覆盖几个”为什么需要谨慎？假设某个属性缓存了原输出元素类型、量化区间或内存估算，覆盖结果类型后它就可能过时。被检查的差异明确保留了中间类型，但不能由此保证任意未来新增属性都会自动正确。测试应包含一个具有不同激活前后编码的案例，并验证生成参数来自该取的那一侧。属性演化是融合实现长期维护的一部分。</p>
+<p>最后，结构负例应与原因一一对应。多使用者案例只破坏使用次数，函数不支持案例只改变函数类别，形状不符案例只改变对应关系。若一个负例同时包含多种不合法条件，它通过只能证明“某个条件挡住了”，无法锁定具体保护。教学测试越小、每次只破坏一条不变量，越能解释未来修改为什么使它从保留变成融合，或反过来。</p>
+<p>最终，融合值得庆祝的时刻应是：使用者关系保住了，中间类型保住了，参数完整了，普通路径没退化，生成物和数值测试都支持等价。那个被删掉的节点，才算体面地退休。</p>
+<!-- series-navigation -->
+<hr>
+<p><a href="/cn/compiler-engineering-notes/">返回系列目录</a> · <a href="/cn/compiler-o09-scratch-register-lifetimes/">上一篇</a> · <a href="/cn/compiler-o11-matmul-fusion-barriers/">下一篇</a></p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/cn/compiler-o11-matmul-fusion-barriers/" data-toggle="tooltip" data-placement="top" title="O11｜MatMul 后面有个 Sigmoid：为什么编译器偏偏不肯融合">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/cn/compiler-o09-scratch-register-lifetimes/" data-toggle="tooltip" data-placement="top" title="O09｜谁动了我的临时寄存器：让发射器学会借东西、还东西">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. All the images used in the blog are my original works or AI works, if you want to take it,don't hesitate. Thank you !
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+
+<div class="social-share" data-url="https://000xiaoming.github.io" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=O10｜把激活函数塞进卷积：少一个节点之前，先保住那条量化边界&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/compiler-o10-convolution-activation-fusion/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%85%88%E6%A3%80%E6%9F%A5%E8%9E%8D%E5%90%88%E5%89%8D%E6%8F%90"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">先检查融合前提</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BF%9D%E7%95%99%E4%B8%AD%E9%97%B4%E9%87%8F%E5%8C%96%E8%BE%B9%E7%95%8C"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">保留中间量化边界</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E4%B8%8E%E5%9B%9E%E5%BD%92%E8%AF%81%E6%8D%AE"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">代码生成与回归证据</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%88%90%E6%9C%AC%E3%80%81%E8%AF%AD%E4%B9%89%E4%B8%8E%E5%AE%89%E5%85%A8%E9%87%8D%E5%86%99"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">成本、语义与安全重写</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/cn/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/cn/tags/#量化" title="量化">量化</a>
+            
+            <a class="tag" href="/cn/tags/#算子与布局" title="算子与布局">算子与布局</a>
+            
+            <a class="tag" href="/cn/tags/#卷积" title="卷积">卷积</a>
+            
+            <a class="tag" href="/cn/tags/#算子融合" title="算子融合">算子融合</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>链友</h5>
+        <ul class="list-inline">
+
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/000xiaoming">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Bruce Lee
+          2026
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <a href="https://github.com/V-Vincen/V-Vincen.github.io" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='西风烈,长空雁叫霜晨月,霜晨月,马蹄声碎,喇叭声咽,雄关漫道真如铁,而今迈步从头越,从头越,苍山如海,残阳如血' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033'></script>
+  
+
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script defer type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script defer type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://000xiaoming.github.io/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson(onReady) {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json']);
+            if (onReady) onReady();
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      var searchJson = localStorage.getItem('searchJson');
+      if (!searchJson) {
+        initSearchJson(function () { searchFunc(search_id, content_id); });
+        return;
+      }
+      isfetched = true;
+      var languagePrefix = '/cn/';
+      var datas = JSON.parse(searchJson).filter(function (data) {
+        return new URL(data.url, window.location.href).pathname.indexOf(languagePrefix) === 0;
+      });
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

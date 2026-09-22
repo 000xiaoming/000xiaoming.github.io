@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  
+  <meta name="baidu-site-verification" content="codeva-OySZDT59RD" />
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-Y95F7Y9NT1"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-Y95F7Y9NT1');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?9b08ea589f23fb1f5e2be85b8ca26b60";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="Notes on systems programming, computer architecture, ROS2, operating systems, and engineering practice."/>
+  <meta name="keyword" content="Bruce Lee,systems programming,computer architecture,ROS2,RISC-V,x86,C/C++,operating systems,engineering practice"/>
+  
+  <link rel="shortcut icon" href="/img/avatar/roguerabbit.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://000xiaoming.github.io/cn/compiler-e12-four-identities-of-an-instruction/">
+  <title>
+    
+      E12｜一条指令的四种身份：代码生成为什么不能只靠字符串 - I&#39;m Bruce Lee
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="body--light">
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  var colorModeCookieName = 'sb-color-mode-v2';
+  let themeMode = 'light';
+  if (getCookieValue(colorModeCookieName) && (getCookieValue(colorModeCookieName) !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = colorModeCookieName + "=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/cn/">经年治世</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li>
+            <a href="/cn/">首页</a>
+          </li>
+
+          
+          <li>
+            <a href="/cn/archives/">
+              
+              归档
+              
+            </a>
+          </li>
+          
+          <li>
+            <a href="/cn/about/">
+              
+              关于
+              
+            </a>
+          </li>
+          
+          <li>
+            <a href="/cn/categories/">
+              
+              分类
+              
+            </a>
+          </li>
+          
+          <li>
+            <a href="/cn/tags/">
+              
+              标签
+              
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>搜索</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          <!-- LangSelect start -->
+          <!-- LangSelect -->
+<li>
+  <a id="lang-select-label"><i class="fa fa-globe"></i>
+    <span>
+      简体中文
+    </span>
+    <select id="lang-select" data-canonical="cn/compiler-e12-four-identities-of-an-instruction/" data-is-post="true">
+      
+      
+      <option value="en" >
+        English
+      </option>
+      
+      <option value="cn"  selected >
+        简体中文
+      </option>
+      
+    </select>
+  </a>
+</li>
+
+          <!-- LangSelect end -->
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+<style type="text/css">
+  .body--light {
+    /* intro-header */
+    --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
+    --intro-header-background-image-url-post: url('/img/header_img/lml_bg1.png');
+    --intro-header-background-image-url-page: url('/img/header_img/lml_bg1.png');
+  }
+  .body--dark {
+    --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
+    --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/lml_bg1.png');
+    --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/lml_bg1.png');
+  }
+
+  header.intro-header {
+     /*post*/
+      background-image: var(--intro-header-background-image-url-post);
+    
+  }
+
+  
+    #signature {/*signature*/
+      background-image: url('/img/signature/vincent-white.png');
+    }
+  
+</style>
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/cn/tags/#工程与交付" title="工程与交付">工程与交付</a>
+              
+              <a class="tag" href="/cn/tags/#指令编码" title="指令编码">指令编码</a>
+              
+              <a class="tag" href="/cn/tags/#代码生成" title="代码生成">代码生成</a>
+              
+              <a class="tag" href="/cn/tags/#后端设计" title="后端设计">后端设计</a>
+              
+            </div>
+            <h1>E12｜一条指令的四种身份：代码生成为什么不能只靠字符串</h1>
+            <h2 class="subheading">数学运算、内核、发射与编码的四层职责和错误归属。</h2>
+            <span class="meta">
+              Posted by Bruce Lee on
+              2026-09-04
+            </span>
+
+
+            
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 工程与交付 · E12 · <a href="/en/compiler-e12-four-identities-of-an-instruction/">Read in English</a></p>
+<blockquote>
+<p>本文从历史设计整理和编码回归工作中提炼通用原理。对话为教学场景重构；示例指令、类型和字段均重新设计，不对应某个具体硬件。设计文档表达的意图，与已经通过测试的实现，是两种不同证据。</p>
+</blockquote>
+<p>“只是发一条乘法指令，为什么要经过四层？”</p>
+<p>评审桌上有人写下一行 <code>emit(&quot;mul&quot;, a, b, out)</code>。它短小、直接，甚至很像最终汇编。另一位同事问：“这个 a 是张量、寄存器编号、内存地址，还是要被广播的标量？”</p>
+<p>房间安静了几秒。字符串的简洁，来自它把问题藏起来了。</p>
+<p>编译器代码生成中的一条指令，往往经历几种身份：它首先是数学运算，然后成为某个计算内核的执行步骤，再成为一组硬件操作，最后才成为固定宽度的二进制字段。混淆这些身份，最常见的后果不是立刻报错，而是下层开始猜测上层的意图。</p>
+<span id="more"></span>
+<h2 id="第一层只回答“算什么”">第一层只回答“算什么”</h2>
+<p>以二维矩阵乘法为例，上层契约可以写成：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">A: [M, K]</span><br><span class="line">B: [K, N]</span><br><span class="line">C: [M, N]</span><br><span class="line">C[m,n] = sum_k A[m,k] * B[k,n]</span><br></pre></td></tr></table></figure>
+<p>这里需要明确转置、累加类型、量化参数和是否带激活。它不必知道第几个配置寄存器存放某个地址。</p>
+<p>这条边界很有用。假设布局改变，上层数学语义通常不变；假设某个硬件版本重新编码地址字段，上层也不应该跟着修改。反过来，如果激活融合改变舍入发生的位置，它就可能影响数值语义，不能伪装成纯编码调整。</p>
+<p>“上层不认识寄存器”并不意味着上层什么都不用检查。维度不匹配、输出类型不合法等错误，越早被明确拒绝，越容易解释给模型使用者。</p>
+<h2 id="第二层回答“如何组织计算”">第二层回答“如何组织计算”</h2>
+<p>内核层决定分块、循环、数据复用和临时缓冲区。例如把输出分成多个小矩形，每次装载一段输入，再沿 K 维累加。</p>
+<p>这层最容易混入两类彼此独立的信息：</p>
+<ul>
+<li>张量信息：形状、步长、元素类型、量化参数。</li>
+<li>执行资源：存储地址、寄存器、事件、依赖和循环标签。</li>
+</ul>
+<p>如果拿一个通用整数同时代表“张量第几个维度”和“寄存器编号”，编译器可能仍然通过 C++ 类型检查，却失去了表达边界的能力。</p>
+<p>可以把设计问题转成一个具体提问：当内核请求“装载这个切片”时，它是否已经说明了切片的逻辑范围与物理步长？如果没有，下层就会被迫从地址和总字节数倒推形状。这种倒推在连续布局上偶尔有效，在广播、对齐和非连续视图上很快失效。</p>
+<h2 id="第三层回答“硬件需要哪些动作”">第三层回答“硬件需要哪些动作”</h2>
+<p>发射层把一个执行步骤拆成硬件动作：配置地址、设置步长、触发搬运、计算、等待依赖。它需要了解硬件能力，却不应重新解释矩阵乘法的数学定义。</p>
+<p>教学例子中，一个搬运请求可以包含：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">source: MemoryAddress</span><br><span class="line">destination: MemoryAddress</span><br><span class="line">extent: ElementCount</span><br><span class="line">source_stride: ByteStride</span><br><span class="line">destination_stride: ByteStride</span><br></pre></td></tr></table></figure>
+<p>这些名字看起来啰嗦，却可以阻止很具体的错误：把元素步长直接写进按字节计量的字段，把地址当成寄存器编号，或者忘记检查元素数量是否超出编码范围。</p>
+<p>强类型不能自动证明算法正确。它的价值是让一类错误更难表达，并让剩下的检查有明确归属。地址对齐应在哪层验证、寄存器不足由谁报告、立即数超范围是否允许展开，都应写进这层的契约。</p>
+<h2 id="第四层回答“这些位怎样排列”">第四层回答“这些位怎样排列”</h2>
+<p>最终编码层负责操作码、字段宽度、符号扩展、字节序和保留位。它接收的应该是已经明确的指令结构，而不是需要继续猜测意义的字符串列表。</p>
+<p>历史设计整理中，一个值得推广的选择是按<strong>编码格式</strong>组织类型，而不是机械地为每个操作码建立一套继承体系。例如多个算术指令可能共享相同的寄存器字段布局，只在操作码上不同；另一些访存指令则需要完全不同的地址字段。</p>
+<p>这有两种常见极端：</p>
+<ol>
+<li>所有指令都使用 <code>vector&lt;string&gt;</code>，结果非法状态太容易出现。</li>
+<li>每个操作码都有庞大的独立类，结果相同校验和编码逻辑散落各处。</li>
+</ol>
+<p>按格式组织载荷，再明确允许的操作码集合，是一种折中。它是否适合某个项目，取决于硬件格式是否稳定、操作码之间真正共享多少结构。类型数量本身不是设计质量指标。</p>
+<h2 id="标签位移为什么必须依据最终指令长度">标签位移为什么必须依据最终指令长度</h2>
+<p>现在考虑一个分支：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">jump done</span><br><span class="line">load_constant large_value</span><br><span class="line">done:</span><br><span class="line">store result</span><br></pre></td></tr></table></figure>
+<p>假设 <code>load_constant</code> 在某些值上只需一条机器指令，在另一些值上需要两条。如果先按照“一行等于一条”计算标签地址，再展开伪指令，跳转目标就可能落错位置。</p>
+<p>可靠的组织方式通常需要区分：</p>
+<ol>
+<li>语义操作和伪指令。</li>
+<li>展开后的实际指令序列。</li>
+<li>按实际长度计算的标签位置。</li>
+<li>最终字段检查与编码。</li>
+</ol>
+<p>某些架构还存在分支距离影响指令长度的情况，可能需要迭代放宽或固定长度策略。本文的历史材料不足以证明存在这种机制；它只是说明，标签解析必须明确依赖哪个阶段的长度。</p>
+<p>这也解释了为什么“伪汇编看起来正确”不能代替二进制检查：人眼阅读的那一层，未必已经决定最终位置。</p>
+<h2 id="一个好错误消息应该在哪一层出现">一个好错误消息应该在哪一层出现</h2>
+<p>重构场景里的问题很快从“为什么这么多层”变成了“这个错误应该谁来报”。</p>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>更合适的检查位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>矩阵相乘的收缩维不相等</td>
+<td>运算语义入口</td>
+</tr>
+<tr>
+<td>当前内核不支持某种布局</td>
+<td>内核选择或布局规划</td>
+</tr>
+<tr>
+<td>临时寄存器申请失败</td>
+<td>资源管理与发射边界</td>
+</tr>
+<tr>
+<td>一个立即数字段装不下</td>
+<td>编码校验，或有明确规则的展开层</td>
+</tr>
+<tr>
+<td>跳转标签未定义</td>
+<td>标签解析阶段</td>
+</tr>
+</tbody>
+</table>
+<p>下层发现上层漏掉的问题时仍然要防御，但错误信息应包含足够上下文。例如“字段溢出”适合定位编码器，“不支持这个张量步长”更适合解释内核限制。把所有失败都压到最终断言里，会使不同性质的问题看起来完全一样。</p>
+<h2 id="怎样证明分层没有把错误藏得更深">怎样证明分层没有把错误藏得更深</h2>
+<p>每层都需要独立于自身实现的观察点：</p>
+<ul>
+<li>运算层用小尺寸参考计算检查语义。</li>
+<li>内核层检查切片覆盖、边界和访存范围。</li>
+<li>发射层检查操作顺序、依赖和资源生命周期。</li>
+<li>编码层检查固定输入对应的精确字节，并测试边界拒绝。</li>
+</ul>
+<p>这些检查相互补充。一个能够生成相同字节的编码器，可能仍然编码了错误的数学操作；一个数值上正确的例子，也可能没有碰到立即数的边界。</p>
+<p>相关历史测试逐步加强了伪汇编、实际汇编和二进制的比较。这个事实能支持“检查跨层一致性很有价值”，不能支持“整个指令集已经完整验证”。</p>
+<p>可以设计一个未执行的实验：对一个内核分别改变布局、块大小和立即数范围，观察变化停留在哪些层。如果一个纯编码字段调整迫使数学语义层修改，边界可能泄漏；如果改变张量形状却没有触发任何合法性检查，边界也可能过于松散。</p>
+<p>四层架构最终要买到的是可解释性：错的是数学、组织方式、硬件动作，还是编码位。能准确回答这个问题，调试才不需要从模型输入一路猜到最后一个字节。</p>
+<!-- series-navigation -->
+<hr>
+<p><a href="/cn/compiler-engineering-notes/">返回系列目录</a> · <a href="/cn/compiler-e11-what-does-supported-really-mean/">上一篇</a> · <a href="/cn/compiler-e13-moving-data-moving-meaning/">下一篇</a></p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/cn/compiler-e13-moving-data-moving-meaning/" data-toggle="tooltip" data-placement="top" title="E13｜它只是在搬数据，为什么还会算错：张量变换的隐藏契约">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/cn/compiler-e11-what-does-supported-really-mean/" data-toggle="tooltip" data-placement="top" title="E11｜搜索到了算子名字，就可以写进“支持列表”吗？">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. All the images used in the blog are my original works or AI works, if you want to take it,don't hesitate. Thank you !
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+
+<div class="social-share" data-url="https://000xiaoming.github.io" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=E12｜一条指令的四种身份：代码生成为什么不能只靠字符串&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/compiler-e12-four-identities-of-an-instruction/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%AC%AC%E4%B8%80%E5%B1%82%E5%8F%AA%E5%9B%9E%E7%AD%94%E2%80%9C%E7%AE%97%E4%BB%80%E4%B9%88%E2%80%9D"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">第一层只回答“算什么”</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%AC%AC%E4%BA%8C%E5%B1%82%E5%9B%9E%E7%AD%94%E2%80%9C%E5%A6%82%E4%BD%95%E7%BB%84%E7%BB%87%E8%AE%A1%E7%AE%97%E2%80%9D"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">第二层回答“如何组织计算”</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%AC%AC%E4%B8%89%E5%B1%82%E5%9B%9E%E7%AD%94%E2%80%9C%E7%A1%AC%E4%BB%B6%E9%9C%80%E8%A6%81%E5%93%AA%E4%BA%9B%E5%8A%A8%E4%BD%9C%E2%80%9D"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">第三层回答“硬件需要哪些动作”</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%AC%AC%E5%9B%9B%E5%B1%82%E5%9B%9E%E7%AD%94%E2%80%9C%E8%BF%99%E4%BA%9B%E4%BD%8D%E6%80%8E%E6%A0%B7%E6%8E%92%E5%88%97%E2%80%9D"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">第四层回答“这些位怎样排列”</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%A0%87%E7%AD%BE%E4%BD%8D%E7%A7%BB%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BF%85%E9%A1%BB%E4%BE%9D%E6%8D%AE%E6%9C%80%E7%BB%88%E6%8C%87%E4%BB%A4%E9%95%BF%E5%BA%A6"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">标签位移为什么必须依据最终指令长度</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%80%E4%B8%AA%E5%A5%BD%E9%94%99%E8%AF%AF%E6%B6%88%E6%81%AF%E5%BA%94%E8%AF%A5%E5%9C%A8%E5%93%AA%E4%B8%80%E5%B1%82%E5%87%BA%E7%8E%B0"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">一个好错误消息应该在哪一层出现</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%80%8E%E6%A0%B7%E8%AF%81%E6%98%8E%E5%88%86%E5%B1%82%E6%B2%A1%E6%9C%89%E6%8A%8A%E9%94%99%E8%AF%AF%E8%97%8F%E5%BE%97%E6%9B%B4%E6%B7%B1"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">怎样证明分层没有把错误藏得更深</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/cn/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/cn/tags/#工程与交付" title="工程与交付">工程与交付</a>
+            
+            <a class="tag" href="/cn/tags/#指令编码" title="指令编码">指令编码</a>
+            
+            <a class="tag" href="/cn/tags/#代码生成" title="代码生成">代码生成</a>
+            
+            <a class="tag" href="/cn/tags/#后端设计" title="后端设计">后端设计</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>链友</h5>
+        <ul class="list-inline">
+
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/000xiaoming">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Bruce Lee
+          2026
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <a href="https://github.com/V-Vincen/V-Vincen.github.io" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='西风烈,长空雁叫霜晨月,霜晨月,马蹄声碎,喇叭声咽,雄关漫道真如铁,而今迈步从头越,从头越,苍山如海,残阳如血' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033'></script>
+  
+
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script defer type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script defer type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://000xiaoming.github.io/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson(onReady) {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json']);
+            if (onReady) onReady();
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      var searchJson = localStorage.getItem('searchJson');
+      if (!searchJson) {
+        initSearchJson(function () { searchFunc(search_id, content_id); });
+        return;
+      }
+      isfetched = true;
+      var languagePrefix = '/cn/';
+      var datas = JSON.parse(searchJson).filter(function (data) {
+        return new URL(data.url, window.location.href).pathname.indexOf(languagePrefix) === 0;
+      });
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

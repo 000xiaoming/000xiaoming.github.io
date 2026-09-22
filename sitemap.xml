@@ -2,6 +2,888 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-e02-three-stages-of-a-build/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-e01-the-release-build-that-forgot-to-write/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-e03-one-toolchain-three-versions/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-e04-the-library-that-was-there/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-e06-a-model-file-is-a-protocol/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-e07-command-line-output-contract/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-e09-golden-tests-that-can-disagree/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-e10-specifications-that-admit-unknowns/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-e11-what-does-supported-really-mean/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-e08-releases-and-their-two-clocks/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-e05-a-compiler-that-can-move-house/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-e14-same-shape-different-answers/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-e13-moving-data-moving-meaning/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-e15-names-are-not-numerical-contracts/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-e12-four-identities-of-an-instruction/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-engineering-notes/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-n02-axis-identity/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-n03-reduction-family/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-n04-identity-requantization/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-n05-integer-multiply/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-n06-batchnorm-quantization/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-n08-specialized-affine/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-n07-broadcast-memory/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-n09-normalization-ranges/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-n11-import-order-and-constants/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-n10-rewrite-result-types/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-o01-grouped-convolution/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-o02-transposed-convolution-storage/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-o03-reshape-proof/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-o05-broadcast-address-plans/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-o04-dump-layout/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-o06-aligned-stride-constants/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-o07-scalar-arithmetic-direction/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-o08-unary-quantization-contract/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-o10-convolution-activation-fusion/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-o09-scratch-register-lifetimes/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-o11-matmul-fusion-barriers/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-o12-static-left-matmul/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-n01-reduction-lowering/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-r01-register-raii/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-r02-dependency-pressure/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-r03-view-liveness/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-r04-address-capacity/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-r05-recurrent-state/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-r06-recurrent-dependencies/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-r07-error-boundaries/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-r09-encoding-boundaries/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-r10-optimization-contracts/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/cn/compiler-r08-loops-determinism/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-e01-the-release-build-that-forgot-to-write/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-e02-three-stages-of-a-build/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-e03-one-toolchain-three-versions/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-e04-the-library-that-was-there/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-e05-a-compiler-that-can-move-house/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-e06-a-model-file-is-a-protocol/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-e07-command-line-output-contract/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-e08-releases-and-their-two-clocks/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-e09-golden-tests-that-can-disagree/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-e10-specifications-that-admit-unknowns/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-e11-what-does-supported-really-mean/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-e12-four-identities-of-an-instruction/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-e13-moving-data-moving-meaning/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-e14-same-shape-different-answers/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-e15-names-are-not-numerical-contracts/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-engineering-notes/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-n02-axis-identity/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-n01-reduction-lowering/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-n03-reduction-family/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-n04-identity-requantization/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-n05-integer-multiply/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-n06-batchnorm-quantization/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-n07-broadcast-memory/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-n08-specialized-affine/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-n09-normalization-ranges/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-n10-rewrite-result-types/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-n11-import-order-and-constants/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-o01-grouped-convolution/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-o02-transposed-convolution-storage/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-o03-reshape-proof/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-o04-dump-layout/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-o05-broadcast-address-plans/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-o06-aligned-stride-constants/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-o07-scalar-arithmetic-direction/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-o08-unary-quantization-contract/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-o09-scratch-register-lifetimes/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-o10-convolution-activation-fusion/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-o11-matmul-fusion-barriers/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-o12-static-left-matmul/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-r01-register-raii/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-r02-dependency-pressure/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-r03-view-liveness/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-r04-address-capacity/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-r05-recurrent-state/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-r06-recurrent-dependencies/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-r07-error-boundaries/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-r08-loops-determinism/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-r09-encoding-boundaries/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/en/compiler-r10-optimization-contracts/</loc>
+    
+    <lastmod>2026-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://000xiaoming.github.io/categories/index.html</loc>
     
     <lastmod>2026-09-21</lastmod>
@@ -1057,7 +1939,7 @@
 
   <url>
     <loc>https://000xiaoming.github.io/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -1065,245 +1947,1015 @@
   
   <url>
     <loc>https://000xiaoming.github.io/tags/IT/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/tags/C-C/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/tags/%E9%A1%B9%E7%9B%AE%E5%B7%A5%E7%A8%8B/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/tags/RISC-V%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%BB%A5%E5%8F%8A%E7%8E%B0%E8%B1%A1/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/tags/x86/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E5%B7%A5%E7%A8%8B%E4%B8%8E%E4%BA%A4%E4%BB%98/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E6%9E%84%E5%BB%BA%E7%B3%BB%E7%BB%9F/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E5%AE%89%E8%A3%85/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E6%96%AD%E8%A8%80/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E8%B0%83%E8%AF%95/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E5%B7%A5%E5%85%B7%E9%93%BE/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E5%8F%AF%E5%A4%8D%E7%8E%B0%E6%9E%84%E5%BB%BA/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E6%89%93%E5%8C%85/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/ELF/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%A0%BC%E5%BC%8F/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E5%BA%8F%E5%88%97%E5%8C%96/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E8%BE%93%E5%85%A5%E6%A0%A1%E9%AA%8C/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/CLI/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E6%B5%8B%E8%AF%95/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E6%8C%87%E4%BB%A4%E7%BC%96%E7%A0%81/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E8%A7%84%E8%8C%83/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E5%90%8E%E7%AB%AF%E8%AE%BE%E8%AE%A1/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E6%A8%A1%E5%9E%8B%E5%AF%BC%E5%85%A5/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E7%A1%AE%E5%AE%9A%E6%80%A7/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E8%BF%90%E8%A1%8C%E8%B5%84%E6%BA%90/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E6%B1%A0%E5%8C%96/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E6%8F%92%E5%80%BC/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E5%BD%92%E7%BA%A6/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E5%BC%A0%E9%87%8F%E5%BD%A2%E7%8A%B6/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E5%86%85%E5%AD%98%E5%B8%83%E5%B1%80/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E9%87%8F%E5%8C%96/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E5%BD%92%E4%B8%80%E5%8C%96/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%87%BD%E6%95%B0/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E6%95%B0%E5%80%BC%E7%B2%BE%E5%BA%A6/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E7%B3%BB%E5%88%97%E5%AF%BC%E8%AF%BB/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E6%95%B0%E5%80%BC%E4%B8%8E%E9%87%8F%E5%8C%96/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E5%9B%BE%E9%87%8D%E5%86%99/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E9%87%8D%E9%87%8F%E5%8C%96/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E6%95%B4%E6%95%B0%E8%BF%90%E7%AE%97/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/BatchNorm/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E5%B9%BF%E6%92%AD/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E5%86%85%E5%AD%98%E8%A7%84%E5%88%92/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/MLIR/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E7%B1%BB%E5%9E%8B%E7%B3%BB%E7%BB%9F/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E7%AE%97%E5%AD%90%E4%B8%8E%E5%B8%83%E5%B1%80/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E5%8D%B7%E7%A7%AF/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E7%AE%97%E5%AD%90%E9%99%8D%E7%BA%A7/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E5%B8%B8%E9%87%8F/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E5%B8%B8%E9%87%8F%E6%8A%98%E5%8F%A0/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E7%AE%97%E5%AD%90%E8%9E%8D%E5%90%88/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E5%AF%84%E5%AD%98%E5%99%A8%E5%88%86%E9%85%8D/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/RAII/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/MatMul/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E8%B5%84%E6%BA%90%E4%B8%8E%E8%B0%83%E5%BA%A6/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E8%B0%83%E5%BA%A6/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E5%90%8C%E6%AD%A5/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E6%B4%BB%E8%B7%83%E6%80%A7/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/%E6%9C%89%E7%8A%B6%E6%80%81%E8%AE%A1%E7%AE%97/</loc>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/tags/%E6%95%B0%E5%AD%A6%E5%93%B2%E5%AD%A6/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/tags/%E5%A4%9A%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%B3%BB%E7%BB%9F/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/tags/DDS/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/tags/sandbox/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/tags/%E8%BF%90%E8%A1%8C%E9%AA%8C%E8%AF%81/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/tags/fleet-manager/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/tags/path-planner/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/tags/assignment/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/tags/BFS/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/tags/route/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/tags/robot-agent/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/tags/waypoint/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/tags/%E7%8A%B6%E6%80%81%E6%9C%BA/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/tags/service/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/tags/topic/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/tags/Nav2/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/tags/integration/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/tags/%E5%86%B2%E7%AA%81%E6%A3%80%E6%B5%8B/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/tags/%E9%A2%84%E7%BA%A6%E6%9C%BA%E5%88%B6/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/tags/Preprocessor/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/tags/Engineering/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/tags/RISC-V/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Engineering-and-Delivery/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Assertions/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Debugging/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Build-Systems/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Installation/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Error-Handling/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Toolchains/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Reproducible-Builds/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Dynamic-Linking/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Packaging/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Runtime-Resources/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Testing/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Binary-Formats/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Serialization/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Input-Validation/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/File-I-O/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Determinism/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Instruction-Encoding/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Code-Generation/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Specifications/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Backend-Design/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Model-Import/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Tensor-Shapes/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Memory-Layout/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Quantization/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Pooling/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Interpolation/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Reduction/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Normalization/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Nonlinear-Functions/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Numerical-Accuracy/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Reading-Guides/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Numerics-and-Quantization/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Graph-Rewriting/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Lowering/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Requantization/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Integer-Arithmetic/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Broadcasting/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Memory-Planning/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Type-Systems/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Operators-and-Layouts/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Convolution/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Memory-Alignment/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Constants/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Constant-Folding/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Register-Allocation/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Operator-Fusion/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Resources-and-Scheduling/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Scheduling/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Synchronization/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Liveness/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/tags/Stateful-Computation/</loc>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/tags/Signals-and-Systems/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/tags/Mathematics/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/tags/Variadic-Functions/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/tags/Multi-Robot-Systems/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/tags/Runtime-Verification/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/tags/State-Machines/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/tags/Conflict-Detection/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/tags/Reservations/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -1312,77 +2964,91 @@
   
   <url>
     <loc>https://000xiaoming.github.io/categories/Programer/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/categories/C-C/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/categories/%E9%A1%B9%E7%9B%AE%E5%B7%A5%E7%A8%8B/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/categories/RISC-V%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%BB%A5%E5%8F%8A%E7%8E%B0%E8%B1%A1/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/categories/x86/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/categories/%E7%BC%96%E8%AF%91%E5%99%A8%E5%B7%A5%E7%A8%8B/</loc>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/categories/%E6%95%B0%E5%AD%A6%E5%93%B2%E5%AD%A6/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/categories/ROS2/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/categories/Career-and-Reflections/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/categories/Engineering/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/categories/RISC-V/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://000xiaoming.github.io/categories/Compiler-Engineering/</loc>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://000xiaoming.github.io/categories/Signals-and-Systems/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  
+  <meta name="baidu-site-verification" content="codeva-OySZDT59RD" />
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-Y95F7Y9NT1"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-Y95F7Y9NT1');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?9b08ea589f23fb1f5e2be85b8ca26b60";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="Notes on systems programming, computer architecture, ROS2, operating systems, and engineering practice."/>
+  <meta name="keyword" content="Bruce Lee,systems programming,computer architecture,ROS2,RISC-V,x86,C/C++,operating systems,engineering practice"/>
+  
+  <link rel="shortcut icon" href="/img/avatar/roguerabbit.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://000xiaoming.github.io/cn/compiler-n10-rewrite-result-types/">
+  <title>
+    
+      N10｜浮点全绿、量化全红：一次重写把输出的身份证换成了输入的 - I&#39;m Bruce Lee
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="body--light">
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  var colorModeCookieName = 'sb-color-mode-v2';
+  let themeMode = 'light';
+  if (getCookieValue(colorModeCookieName) && (getCookieValue(colorModeCookieName) !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = colorModeCookieName + "=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/cn/">经年治世</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li>
+            <a href="/cn/">首页</a>
+          </li>
+
+          
+          <li>
+            <a href="/cn/archives/">
+              
+              归档
+              
+            </a>
+          </li>
+          
+          <li>
+            <a href="/cn/about/">
+              
+              关于
+              
+            </a>
+          </li>
+          
+          <li>
+            <a href="/cn/categories/">
+              
+              分类
+              
+            </a>
+          </li>
+          
+          <li>
+            <a href="/cn/tags/">
+              
+              标签
+              
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>搜索</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          <!-- LangSelect start -->
+          <!-- LangSelect -->
+<li>
+  <a id="lang-select-label"><i class="fa fa-globe"></i>
+    <span>
+      简体中文
+    </span>
+    <select id="lang-select" data-canonical="cn/compiler-n10-rewrite-result-types/" data-is-post="true">
+      
+      
+      <option value="en" >
+        English
+      </option>
+      
+      <option value="cn"  selected >
+        简体中文
+      </option>
+      
+    </select>
+  </a>
+</li>
+
+          <!-- LangSelect end -->
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+<style type="text/css">
+  .body--light {
+    /* intro-header */
+    --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
+    --intro-header-background-image-url-post: url('/img/header_img/lml_bg1.png');
+    --intro-header-background-image-url-page: url('/img/header_img/lml_bg1.png');
+  }
+  .body--dark {
+    --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
+    --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/lml_bg1.png');
+    --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/lml_bg1.png');
+  }
+
+  header.intro-header {
+     /*post*/
+      background-image: var(--intro-header-background-image-url-post);
+    
+  }
+
+  
+    #signature {/*signature*/
+      background-image: url('/img/signature/vincent-white.png');
+    }
+  
+</style>
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/cn/tags/#数值与量化" title="数值与量化">数值与量化</a>
+              
+              <a class="tag" href="/cn/tags/#图重写" title="图重写">图重写</a>
+              
+              <a class="tag" href="/cn/tags/#MLIR" title="MLIR">MLIR</a>
+              
+              <a class="tag" href="/cn/tags/#类型系统" title="类型系统">类型系统</a>
+              
+            </div>
+            <h1>N10｜浮点全绿、量化全红：一次重写把输出的身份证换成了输入的</h1>
+            <h2 class="subheading">重写结果类型既描述容器，也携带量化含义。</h2>
+            <span class="meta">
+              Posted by Bruce Lee on
+              2026-02-24
+            </span>
+
+
+            
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 数值与量化 · N10 · <a href="/en/compiler-n10-rewrite-result-types/">Read in English</a></p>
+<blockquote>
+<p>教学场景重构：报错过程与对话为解释问题重构，例子与尺度重新设计。历史补丁明确把折叠后结果的元素类型来源从输入改为原标准化输出，并新增不同尺度测试；本文没有重新执行该测试。</p>
+</blockquote>
+<p>“浮点模型能编，量化模型连第一阶段都过不了。”有人开始怀疑后端整数指令。可错误发生得太早：还没走到发射指令，函数返回类型就已经对不上了。</p>
+<p>真正的原因很小：构造新节点时，形状拿对了，元素类型拿错了。像搬家时地址更新成功，却顺手把住户名字抄成了邻居。</p>
+<span id="more"></span>
+<h2 id="一、一个看起来完全合理的折叠">一、一个看起来完全合理的折叠</h2>
+<p>图中可能有这样的结构：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">原始通道张量</span><br><span class="line">  → reshape 成按组组织的张量</span><br><span class="line">  → InstanceNorm</span><br><span class="line">  → reshape 回原形状</span><br></pre></td></tr></table></figure>
+<p>若分组关系、参数广播和形状条件满足，它可以折叠为对原张量直接做 GroupNorm。这样删掉辅助 reshape，使图更直接。</p>
+<p>比如教学输入 <code>[1,10,3,7]</code>，分为 5组，每组包含 2个通道。可将每组空间和通道元素组织到一起进行统计。折叠后的输出 shape应恢复到原来的 <code>[1,10,3,7]</code>。</p>
+<p>问题在于“恢复 shape”并没有回答“采用哪个量化域”。标准化可以显著改变数据分布，输出 scale不必等于输入 scale。</p>
+<h2 id="二、浮点类型把错误藏起来了">二、浮点类型把错误藏起来了</h2>
+<p>普通浮点路径中，输入元素类型是 f32，标准化输出也是 f32。无论类型构造函数从输入拿元素类型，还是从原输出拿，都得到 f32。测试因此通过。</p>
+<p>量化路径中，元素类型可能同时包含存储整数类型、表达实数类型、scale和 zero point。两个张量都“使用 8 位整数”，不代表类型相等。</p>
+<p>教学例子：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入元素类型：signed 8-bit，scale 0.02，zero 0</span><br><span class="line">标准化输出：signed 8-bit，scale 0.08，zero 0</span><br></pre></td></tr></table></figure>
+<p>若重写后的 GroupNorm使用输入元素类型，结果就带上 0.02，而函数承诺返回的是 0.08。错误可能在 verifier直接暴露，也可能被某些宽松的中间转换暂时掩盖，直到后续节点才出现。</p>
+<p>历史差异表明，量化信息已在 canonicalize之前导入，因此“这是早期高层图，还没有量化类型”的假设不成立。编译阶段名称不是保证，真正的阶段契约才是。</p>
+<h2 id="三、结果类型是一项义务，不能靠输入猜">三、结果类型是一项义务，不能靠输入猜</h2>
+<p>图重写最重要的等价条件之一，是新表达式满足旧表达式的可观察结果契约。它不只包括元素个数，还包括数值表示、布局或编码信息，以及外部接口要求。</p>
+<p>构造折叠结果时，可以采用这份来源表：</p>
+<table>
+<thead>
+<tr>
+<th>成分</th>
+<th>合理来源</th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>最终逻辑形状</td>
+<td>被折叠结构的原输入/最终输出关系</td>
+<td>恢复外部索引语义</td>
+</tr>
+<tr>
+<td>元素类型</td>
+<td>原计算节点的输出</td>
+<td>保留数值域</td>
+</tr>
+<tr>
+<td>参数值</td>
+<td>验证后的原参数，必要时重排</td>
+<td>保持仿射语义</td>
+</tr>
+<tr>
+<td>编码信息</td>
+<td>明确继承或重新推导</td>
+<td>不因便利复制而错置</td>
+</tr>
+<tr>
+<td>诊断来源</td>
+<td>原操作与新用途的关联</td>
+<td>保留可追踪性</td>
+</tr>
+</tbody>
+</table>
+<p>“从输入复制一个 tensor type再改 shape”是很常见的便利写法，却不适用于会改变数值域的操作。更好的 helper命名或参数设计应迫使调用者表明自己到底继承什么。</p>
+<p>这也不意味着永远从输出完整复制。中间 reshape、permute可能需要当前坐标系的形状；某些布局编码会随着维度排列变化。正确做法是逐项推导，而不是把“输入类型错了”修成“所有地方无脑用输出类型”。</p>
+<h2 id="四、为什么测试必须让输入输出故意不同">四、为什么测试必须让输入输出故意不同</h2>
+<p>历史原有测试给输入、归一化输出和函数返回使用同一个尺度。这个测试验证了图形折叠，却无法区分元素类型究竟从哪来。</p>
+<p>新增回归采用不同输入输出尺度，并明确检查折叠后 GroupNorm结果的量化类型。它让错误实现与正确实现产生不同可观察结果，这才是回归测试的核心价值。</p>
+<p>可以把测试设计理解为“制造分叉”：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">若 scale_in == scale_out：</span><br><span class="line">    从输入抄类型和从输出抄类型，结果相同。</span><br><span class="line">若 scale_in != scale_out：</span><br><span class="line">    两种实现分叉，测试才有辨别能力。</span><br></pre></td></tr></table></figure>
+<p>同理，如果想抓住参数组播错误，不要每组都用相同 gamma；如果想抓住轴置换，不要各维相等；如果想抓住零点丢失，不要只用零点零。测试的任务不是让代码过得舒服，而是让错误无处借用巧合。</p>
+<h2 id="五、编译错误有时是最便宜的数值保护">五、编译错误有时是最便宜的数值保护</h2>
+<p>函数返回类型不匹配，听起来像编译体验问题；实际上它阻止了一个数值域错误继续流入后端。若输入整数被用错误尺度解释，后续算子可能每一步都按自己的类型正确计算，却整体偏离模型。</p>
+<p>因此类型 verifier值得尽早运行，并在关键重写后检查。编译器开发常有一种冲动：遇到类型报错，就插入 cast让它过。只有明确 cast执行了什么数值转换，且该转换符合原语义，才有理由这么做。把类型强行改成目标类型，不会自动改变底层整数含义。</p>
+<p>如果输出契约本来就是原输出类型，最直接的修复是构造正确结果，而不是事后掩饰不匹配。历史补丁属于前者。</p>
+<h2 id="六、别只测一个-pattern，要测它和邻居相处">六、别只测一个 pattern，要测它和邻居相处</h2>
+<p>这个问题跨了两个阶段：量化信息导入与规范化重写。单独在纯浮点 IR上测 pattern，很难发现；只测量化导入不做折叠，也不会触发。因此建议同时保留单阶段测试与小型组合测试。</p>
+<table>
+<thead>
+<tr>
+<th>待执行场景</th>
+<th>核心断言</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>浮点路径</td>
+<td>图可折叠且结果形状正确</td>
+</tr>
+<tr>
+<td>同尺度量化</td>
+<td>保留原有路径行为</td>
+</tr>
+<tr>
+<td>异尺度量化</td>
+<td>结果元素类型来自原计算输出</td>
+</tr>
+<tr>
+<td>非零零点</td>
+<td>零点不会被输入或默认值覆盖</td>
+</tr>
+<tr>
+<td>分组参数不相同</td>
+<td>展开映射正确</td>
+</tr>
+<tr>
+<td>非法组数/参数长度</td>
+<td>不生成半正确节点</td>
+</tr>
+<tr>
+<td>前后 reshape被继续折叠</td>
+<td>最终函数签名仍一致</td>
+</tr>
+</tbody>
+</table>
+<p>还应观察失败路径是否先修改了原操作再返回失败。重写最好在充分验证后统一提交变更；否则一次未匹配的 pattern也可能留下意外属性。历史相关实现把部分属性收集改为在新节点上构造，而不是先修改原节点，这种细节同样有助于维持重写纪律。</p>
+<p>性能方面，修正类型来源通常不会直接提高执行速度，它首先恢复正确性与可编译性。折叠本身可能减少辅助节点，但 reshape若只是视图，不能把节点减少换算成访存减少。本文没有给出速度数字。</p>
+<p>最有启发性的地方在于：这不是一个复杂数学推导错误，而是“相同存储位宽”掩盖了“不同数值类型”。当类型开始携带尺度，复制类型就不再是机械文书工作，而是复制一份数值承诺。</p>
+<h2 id="七、如何把“正确复制类型”变成长期规则">七、如何把“正确复制类型”变成长期规则</h2>
+<p>一次修复最容易停留在把一行输入改成输出。要避免同类错误换个算子回来，可以对重写辅助函数做语义分类：纯视图变换保持数值元素类型；真正的计算节点使用其结果契约；会改变布局编码的变换显式重映射编码。调用者应当能从函数参数看出它属于哪一类，而不是靠函数名中的“like”猜测。</p>
+<p>这不是要求每个 helper都写得很长，而是避免一个方便接口同时承诺过多东西。若某个函数既复制 shape又复制 element type还顺带带上 encoding，调用者只想继承其中一项时就容易误用。把独立选择表达出来，往往比加一条“注意量化类型”的注释更可靠。</p>
+<p>测试也可以围绕类型来源做变形。固定图结构，只改变原计算输出的 scale，重写后的结果类型必须随它改变；固定输出契约，只改变输入 scale，折叠结果不能无理由跟着输入改。两组测试像给来源关系拉两根线，能直接判断结果究竟跟谁走。若类型还包含零点或存储符号，可以对它们分别采用同样方法。</p>
+<p>当函数边界出现错误时，建议从返回值逆向追踪第一个类型发生变化的位置，而不是先检查所有量化参数。若原标准化输出正确，折叠节点错误，问题就已经收敛到重写；若原输出一开始就错，则应回到导入阶段。这个定位顺序利用了类型系统提供的离散证据，比先跑一整套数值误差分析更省力。</p>
+<p>还可以检查重写前后所有外部使用者的输入要求。一个结果可能既被返回，又被另一个计算消费；只修函数返回处的类型转换，可能留下另一路错误。保持被替换值的完整结果契约，能同时维护所有使用者，而不是在每条边上补一个临时修正。</p>
+<p>最后要防止测试依赖某个恰好发生的后续折叠。若只有把整个优化流水线跑完才看到最终类型，可能难以确认是谁修正或破坏了它。给核心 pattern一份独立回归，再给组合阶段一份小型回归，既能定位问题，又能检查它在真实阶段顺序中仍然成立。两者各有职责，不需要把所有模型都变成庞大的端到端测试。</p>
+<!-- series-navigation -->
+<hr>
+<p><a href="/cn/compiler-engineering-notes/">返回系列目录</a> · <a href="/cn/compiler-n09-normalization-ranges/">上一篇</a> · <a href="/cn/compiler-n11-import-order-and-constants/">下一篇</a></p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/cn/compiler-n11-import-order-and-constants/" data-toggle="tooltip" data-placement="top" title="N11｜太早变聪明的导入器：当代数优化抢在量化信息前面">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/cn/compiler-n09-normalization-ranges/" data-toggle="tooltip" data-placement="top" title="N09｜epsilon 明明不是零，到了整数域却差点失踪">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. All the images used in the blog are my original works or AI works, if you want to take it,don't hesitate. Thank you !
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+
+<div class="social-share" data-url="https://000xiaoming.github.io" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=N10｜浮点全绿、量化全红：一次重写把输出的身份证换成了输入的&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/compiler-n10-rewrite-result-types/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%80%E3%80%81%E4%B8%80%E4%B8%AA%E7%9C%8B%E8%B5%B7%E6%9D%A5%E5%AE%8C%E5%85%A8%E5%90%88%E7%90%86%E7%9A%84%E6%8A%98%E5%8F%A0"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">一、一个看起来完全合理的折叠</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BA%8C%E3%80%81%E6%B5%AE%E7%82%B9%E7%B1%BB%E5%9E%8B%E6%8A%8A%E9%94%99%E8%AF%AF%E8%97%8F%E8%B5%B7%E6%9D%A5%E4%BA%86"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">二、浮点类型把错误藏起来了</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%89%E3%80%81%E7%BB%93%E6%9E%9C%E7%B1%BB%E5%9E%8B%E6%98%AF%E4%B8%80%E9%A1%B9%E4%B9%89%E5%8A%A1%EF%BC%8C%E4%B8%8D%E8%83%BD%E9%9D%A0%E8%BE%93%E5%85%A5%E7%8C%9C"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">三、结果类型是一项义务，不能靠输入猜</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%9B%9B%E3%80%81%E4%B8%BA%E4%BB%80%E4%B9%88%E6%B5%8B%E8%AF%95%E5%BF%85%E9%A1%BB%E8%AE%A9%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%95%85%E6%84%8F%E4%B8%8D%E5%90%8C"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">四、为什么测试必须让输入输出故意不同</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BA%94%E3%80%81%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF%E6%9C%89%E6%97%B6%E6%98%AF%E6%9C%80%E4%BE%BF%E5%AE%9C%E7%9A%84%E6%95%B0%E5%80%BC%E4%BF%9D%E6%8A%A4"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">五、编译错误有时是最便宜的数值保护</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%85%AD%E3%80%81%E5%88%AB%E5%8F%AA%E6%B5%8B%E4%B8%80%E4%B8%AA-pattern%EF%BC%8C%E8%A6%81%E6%B5%8B%E5%AE%83%E5%92%8C%E9%82%BB%E5%B1%85%E7%9B%B8%E5%A4%84"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">六、别只测一个 pattern，要测它和邻居相处</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%83%E3%80%81%E5%A6%82%E4%BD%95%E6%8A%8A%E2%80%9C%E6%AD%A3%E7%A1%AE%E5%A4%8D%E5%88%B6%E7%B1%BB%E5%9E%8B%E2%80%9D%E5%8F%98%E6%88%90%E9%95%BF%E6%9C%9F%E8%A7%84%E5%88%99"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">七、如何把“正确复制类型”变成长期规则</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/cn/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/cn/tags/#数值与量化" title="数值与量化">数值与量化</a>
+            
+            <a class="tag" href="/cn/tags/#图重写" title="图重写">图重写</a>
+            
+            <a class="tag" href="/cn/tags/#MLIR" title="MLIR">MLIR</a>
+            
+            <a class="tag" href="/cn/tags/#类型系统" title="类型系统">类型系统</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>链友</h5>
+        <ul class="list-inline">
+
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/000xiaoming">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Bruce Lee
+          2026
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <a href="https://github.com/V-Vincen/V-Vincen.github.io" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='西风烈,长空雁叫霜晨月,霜晨月,马蹄声碎,喇叭声咽,雄关漫道真如铁,而今迈步从头越,从头越,苍山如海,残阳如血' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033'></script>
+  
+
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script defer type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script defer type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://000xiaoming.github.io/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson(onReady) {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json']);
+            if (onReady) onReady();
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      var searchJson = localStorage.getItem('searchJson');
+      if (!searchJson) {
+        initSearchJson(function () { searchFunc(search_id, content_id); });
+        return;
+      }
+      isfetched = true;
+      var languagePrefix = '/cn/';
+      var datas = JSON.parse(searchJson).filter(function (data) {
+        return new URL(data.url, window.location.href).pathname.indexOf(languagePrefix) === 0;
+      });
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

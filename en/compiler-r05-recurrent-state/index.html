@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  
+  <meta name="baidu-site-verification" content="codeva-OySZDT59RD" />
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-Y95F7Y9NT1"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-Y95F7Y9NT1');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?9b08ea589f23fb1f5e2be85b8ca26b60";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="Notes on systems programming, computer architecture, ROS2, operating systems, and engineering practice."/>
+  <meta name="keyword" content="Bruce Lee,systems programming,computer architecture,ROS2,RISC-V,x86,C/C++,operating systems,engineering practice"/>
+  
+  <link rel="shortcut icon" href="/img/avatar/roguerabbit.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://000xiaoming.github.io/en/compiler-r05-recurrent-state/">
+  <title>
+    
+      R05 | Why Write the Same Final State Twice? - I&#39;m Bruce Lee
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="body--light">
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  var colorModeCookieName = 'sb-color-mode-v2';
+  let themeMode = 'light';
+  if (getCookieValue(colorModeCookieName) && (getCookieValue(colorModeCookieName) !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = colorModeCookieName + "=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/en/">Bruce Lee&#39;s Notes</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li>
+            <a href="/en/">HOME</a>
+          </li>
+
+          
+          <li>
+            <a href="/archives/">
+              
+              ARCHIVES
+              
+            </a>
+          </li>
+          
+          <li>
+            <a href="/about/">
+              
+              ABOUT
+              
+            </a>
+          </li>
+          
+          <li>
+            <a href="/categories/">
+              
+              CATEGORIES
+              
+            </a>
+          </li>
+          
+          <li>
+            <a href="/tags/">
+              
+              TAGS
+              
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>SEARCH</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          <!-- LangSelect start -->
+          <!-- LangSelect -->
+<li>
+  <a id="lang-select-label"><i class="fa fa-globe"></i>
+    <span>
+      English
+    </span>
+    <select id="lang-select" data-canonical="en/compiler-r05-recurrent-state/" data-is-post="true">
+      
+      
+      <option value="en"  selected >
+        English
+      </option>
+      
+      <option value="cn" >
+        简体中文
+      </option>
+      
+    </select>
+  </a>
+</li>
+
+          <!-- LangSelect end -->
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+<style type="text/css">
+  .body--light {
+    /* intro-header */
+    --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
+    --intro-header-background-image-url-post: url('/img/header_img/lml_bg1.png');
+    --intro-header-background-image-url-page: url('/img/header_img/lml_bg1.png');
+  }
+  .body--dark {
+    --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
+    --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/lml_bg1.png');
+    --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/lml_bg1.png');
+  }
+
+  header.intro-header {
+     /*post*/
+      background-image: var(--intro-header-background-image-url-post);
+    
+  }
+
+  
+    #signature {/*signature*/
+      background-image: url('/img/signature/vincent-white.png');
+    }
+  
+</style>
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#Memory Planning" title="Memory Planning">Memory Planning</a>
+              
+              <a class="tag" href="/tags/#Resources and Scheduling" title="Resources and Scheduling">Resources and Scheduling</a>
+              
+              <a class="tag" href="/tags/#Scheduling" title="Scheduling">Scheduling</a>
+              
+              <a class="tag" href="/tags/#Stateful Computation" title="Stateful Computation">Stateful Computation</a>
+              
+            </div>
+            <h1>R05 | Why Write the Same Final State Twice?</h1>
+            <h2 class="subheading">Distinguish persistent state, final state, and direct-output buffers.</h2>
+            <span class="meta">
+              Posted by Bruce Lee on
+              2026-06-03
+            </span>
+
+
+            
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <p><a href="/en/compiler-engineering-notes/">Series contents</a> · Resources and Scheduling · R05 · <a href="/cn/compiler-r05-recurrent-state/">阅读中文版</a></p>
+<blockquote>
+<p>Reconstructed teaching scenario: The opening questions are an abstract reconstruction of recurrent-state semantics, not a specific model incident. This article distinguishes proposals that appeared in commits from their later revisions. A capability that once existed is not presented as a promise about the current version.</p>
+</blockquote>
+<p>“The final hidden state is already a graph output. Why save it again?”</p>
+<p>“Because the graph output goes to the caller. Persistent state goes to the next invocation.”</p>
+<p>“Then why not chain the two stores?”</p>
+<p>It sounds like ordinary common-subexpression reuse. In stateful computation, however, the two destinations have different lifetimes. Turning them into a chain can confuse a value’s meaning with the side effects that store it.</p>
+<span id="more"></span>
+<h2 id="Separate-Three-Objects-First">Separate Three Objects First</h2>
+<p>A recurrent cell can be described by this teaching relationship:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(sequence_result, final_state) = recurrent(input, initial_state)</span><br></pre></td></tr></table></figure>
+<p>sequence_result is the current invocation’s sequence output, final_state is the state at the last step, and persistent_slot is the location that retains state between invocations. Similar shapes do not make these the same kind of object.</p>
+<p>The final state may serve two purposes: update persistent storage and return as a graph output for this invocation. The natural dependency graph therefore fans out:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">                   ┌─ Write to persistent storage</span><br><span class="line">final_state ────────┤</span><br><span class="line">                   └─ Write to graph-output storage → Return to caller</span><br></pre></td></tr></table></figure>
+<p>A more error-prone form is:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">final_state → Result of state writeback → Graph-output writeback</span><br></pre></td></tr></table></figure>
+<p>Whether that second form is correct depends on the exact definition of a store’s returned value. A destination alias, a value annotated with a memory space, or a placeholder that preserves a side effect cannot necessarily replace the original final_state unconditionally.</p>
+<h2 id="The-History-Is-Not-a-Straight-Line">The History Is Not a Straight Line</h2>
+<p>Commit titles deserve particular caution here. Two commits with the same title contain different changes.</p>
+<p>One proposal tried to accept dynamic initial state. When the initial state was not constant, it allowed only a restricted unidirectional case and required its type to match the final state. It also checked whether the final state already had exactly one store user, using that fact to decide whether to create another internal store.</p>
+<p>The other same-title proposal did not retain that dynamic-input extension. Instead, it always created internal state writeback while leaving existing consumers attached directly to the original final state. Its accompanying test focused on both the internal state store and the graph-output store reading the final state directly.</p>
+<p>A later change removed the dynamic-initial-state path, restored the constant-initialization requirement, and adopted this direct fanout. The Git tree diff between the two compared endpoints was empty. That establishes equal contents at those endpoints, not the absence of the intermediate experiment, nor that both histories reached the current working branch.</p>
+<p>The useful lesson is not a slogan about successfully supporting dynamic state. Input-state policy and output-state policy are separate matters. Correct output handling does not automatically establish support for every input form.</p>
+<h2 id="Why-“There-Is-Already-a-Store”-Is-Insufficient">Why “There Is Already a Store” Is Insufficient</h2>
+<p>A value having one store user does not identify the destination. It could be a graph-output buffer or a state slot shared across invocations. Even if their bytes are identical, ownership, address stability, update timing, and reclamation conditions may differ.</p>
+<p>Skipping persistence based only on user count mistakes a structural property for a semantic one. A better question is whether the writeback satisfies the persistence contract. That answer should come from destination identity, an effect description, or an explicit lowering convention.</p>
+<p>The reviewed final test checks that internal state writeback targets the same address as initial-state storage. It also checks that graph-output writeback directly consumes the final state rather than the result of internal writeback. These are assertions about IR structure and address relationships, not evidence that numerical behavior across repeated inference calls has been validated.</p>
+<h2 id="Why-Persistence-Bugs-May-Appear-Only-on-the-Second-Run">Why Persistence Bugs May Appear Only on the Second Run</h2>
+<p>In a teaching scenario, the first invocation uses initialized state and computes correctly. If the internal slot is never updated, the second invocation starts from the initialization again. A single-inference test can miss this entirely.</p>
+<p>A subtler case is also possible: the graph output contains the correct final state, but the runtime never feeds that output back into the state input. Seeing a correct output file, a developer assumes persistence works, while the next invocation still reads the old location.</p>
+<p>Conversely, if the runtime explicitly feeds output into the next invocation while the compiler also updates internal state implicitly, two state-management schemes may coexist. A public interface should say who manages state, whether reset is supported, and whether instances may run concurrently, rather than hiding these semantics in a placeholder marker.</p>
+<h2 id="Dynamic-Initial-State-Has-a-Separate-Contract">Dynamic Initial State Has a Separate Contract</h2>
+<p>Dynamic state support requires checking at least direction, batch, hidden dimension, element type, and quantization parameters. Equal tensor size is insufficient: the same element count can represent different directions or layouts.</p>
+<p>If input and output states use different quantization, feedback may require rescaling. If the runtime keeps state at a fixed address, aliasing writes must not overwrite input that has not yet been fully read. The final state of a bidirectional recurrence also has different implications from unidirectional streaming inference. Conclusions from one experimental unidirectional path cannot be extended to every form.</p>
+<p>These are general design requirements. This article does not claim the reviewed commits implement them all. The appearance and later removal of a restricted dynamic path is a reminder that capability claims belong to specific versions and explicit tests.</p>
+<h2 id="Is-an-Extra-Writeback-Wasteful">Is an Extra Writeback Wasteful?</h2>
+<p>If the destinations truly differ, both writebacks may be necessary. If the final state already occupies persistent storage, an internal action may express effects and dependencies without copying the same bytes again. Inspect storage aliases and actual transfer instructions after lowering rather than merely counting high-level Store nodes.</p>
+<p>Conditional optimizations include exposing persistent state directly as graph output or sharing storage between the final sequence slice and final state. But the caller must not still need the old output view when the next update occurs. Otherwise, saving a copy changes the data the caller observes.</p>
+<p>Performance evaluation should therefore track bytes written, copy count, state-slot lifetime, and how long callers retain outputs. Comparing Store-node counts in isolation can reward missing semantics as apparent efficiency.</p>
+<h2 id="The-Save-Must-Finish-Before-the-Next-Read">The Save Must Finish Before the Next Read</h2>
+<p>Even if both writebacks read the correct final state, ordering between invocations still matters. Suppose return from this invocation guarantees only that graph output is ready, without waiting for internal state writeback. A caller immediately starts another invocation, which may race with the unfinished update.</p>
+<p>Persistence thus requires both an address relationship and a completion relationship. A teaching contract is: this invocation’s state writeback completes before the next invocation reads its initial state. Call synchronization, device events, or serial runtime execution may provide the guarantee, but the responsible layer must be identifiable.</p>
+<p>Now let two threads share one model instance. If they share its state slot, interleaved calls may form an unintended state sequence. Two independent streams require independent state instances. Merely duplicating the output tensor does not necessarily isolate internal persistent storage.</p>
+<p>This does not mean every recurrent operation must implement thread isolation itself. It means interface designers must state responsibility clearly. The historical evidence here is mainly at the lowering-graph and address-assertion level. Those assertions do not directly prove runtime serialization, per-instance resource management, or cross-invocation events.</p>
+<p>A test could deliberately make state writeback slower than graph-output writeback and immediately start the next invocation. An independent teaching simulator makes that delay easy to inject and separates two facts that otherwise look alike: both outputs are correct, and state is ready for the next call.</p>
+<h2 id="Regression-Matrix-and-Experiment-Plan">Regression Matrix and Experiment Plan</h2>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Question to verify</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Final state is not a graph output</td>
+<td>Does internal state still persist?</td>
+</tr>
+<tr>
+<td>Final state is also a graph output</td>
+<td>Do both destinations read the correct original value?</td>
+</tr>
+<tr>
+<td>Explicit external state input</td>
+<td>Is it supported, or clearly rejected?</td>
+</tr>
+<tr>
+<td>Two consecutive invocations</td>
+<td>Does the second use the first invocation’s final state?</td>
+</tr>
+<tr>
+<td>Two independent instances</td>
+<td>Are their state slots isolated?</td>
+</tr>
+<tr>
+<td>Invocation after reset</td>
+<td>Is initial state restored according to the contract?</td>
+</tr>
+<tr>
+<td>Multiple directions or mismatched types</td>
+<td>Are unidirectional rules prevented from applying incorrectly?</td>
+</tr>
+</tbody>
+</table>
+<p>The structural checks in the commits cover some output relationships. Repeated-call behavior, instance isolation, and performance comparisons remain proposed experiments; they were not executed here.</p>
+<p>An independent experiment could begin with the tiny teaching recurrence <code>h_next = 2*h + x</code>, avoiding complex gate functions. If two calls distinguish persistence from reinitialization, the state pipeline can be tested directly. Once that pipeline works, substitute a reference recurrent cell to separate state-management errors from arithmetic errors.</p>
+<p>When the same value seems to be written twice, first draw who owns each destination. In a stateful system, apparent duplication may be the visible trace of two different promises.</p>
+<!-- series-navigation -->
+<hr>
+<p><a href="/en/compiler-engineering-notes/">Back to series contents</a> · <a href="/en/compiler-r04-address-capacity/">Previous</a> · <a href="/en/compiler-r06-recurrent-dependencies/">Next</a></p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/en/compiler-r06-recurrent-dependencies/" data-toggle="tooltip" data-placement="top" title="R06 | I Waited for the Event. Why Isn't the Data Ready?">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/en/compiler-r04-address-capacity/" data-toggle="tooltip" data-placement="top" title="R04 | The Address Fits. Why Does the Compiler Say Memory Is Full?">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. All the images used in the blog are my original works or AI works, if you want to take it,don't hesitate. Thank you !
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+
+<div class="social-share" data-url="https://000xiaoming.github.io" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=R05 | Why Write the Same Final State Twice?&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/en/compiler-r05-recurrent-state/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Separate-Three-Objects-First"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Separate Three Objects First</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#The-History-Is-Not-a-Straight-Line"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">The History Is Not a Straight Line</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Why-%E2%80%9CThere-Is-Already-a-Store%E2%80%9D-Is-Insufficient"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Why “There Is Already a Store” Is Insufficient</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Why-Persistence-Bugs-May-Appear-Only-on-the-Second-Run"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">Why Persistence Bugs May Appear Only on the Second Run</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Dynamic-Initial-State-Has-a-Separate-Contract"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">Dynamic Initial State Has a Separate Contract</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Is-an-Extra-Writeback-Wasteful"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">Is an Extra Writeback Wasteful?</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#The-Save-Must-Finish-Before-the-Next-Read"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">The Save Must Finish Before the Next Read</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Regression-Matrix-and-Experiment-Plan"><span class="toc-nav-number">8.</span> <span class="toc-nav-text">Regression Matrix and Experiment Plan</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#Memory Planning" title="Memory Planning">Memory Planning</a>
+            
+            <a class="tag" href="/tags/#Resources and Scheduling" title="Resources and Scheduling">Resources and Scheduling</a>
+            
+            <a class="tag" href="/tags/#Scheduling" title="Scheduling">Scheduling</a>
+            
+            <a class="tag" href="/tags/#Stateful Computation" title="Stateful Computation">Stateful Computation</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>FRIENDS</h5>
+        <ul class="list-inline">
+
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/000xiaoming">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Bruce Lee
+          2026
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <a href="https://github.com/V-Vincen/V-Vincen.github.io" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='Systems,Programming,Engineering,Keep learning,Build carefully,Think clearly' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033'></script>
+  
+
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script defer type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script defer type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://000xiaoming.github.io/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="SEARCH..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson(onReady) {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json']);
+            if (onReady) onReady();
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      var searchJson = localStorage.getItem('searchJson');
+      if (!searchJson) {
+        initSearchJson(function () { searchFunc(search_id, content_id); });
+        return;
+      }
+      isfetched = true;
+      var languagePrefix = '/en/';
+      var datas = JSON.parse(searchJson).filter(function (data) {
+        return new URL(data.url, window.location.href).pathname.indexOf(languagePrefix) === 0;
+      });
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  
+  <meta name="baidu-site-verification" content="codeva-OySZDT59RD" />
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-Y95F7Y9NT1"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-Y95F7Y9NT1');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?9b08ea589f23fb1f5e2be85b8ca26b60";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="Notes on systems programming, computer architecture, ROS2, operating systems, and engineering practice."/>
+  <meta name="keyword" content="Bruce Lee,systems programming,computer architecture,ROS2,RISC-V,x86,C/C++,operating systems,engineering practice"/>
+  
+  <link rel="shortcut icon" href="/img/avatar/roguerabbit.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://000xiaoming.github.io/cn/compiler-n06-batchnorm-quantization/">
+  <title>
+    
+      N06｜BatchNorm 变成乘加之后，真正的数值工作才开始 - I&#39;m Bruce Lee
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="body--light">
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  var colorModeCookieName = 'sb-color-mode-v2';
+  let themeMode = 'light';
+  if (getCookieValue(colorModeCookieName) && (getCookieValue(colorModeCookieName) !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = colorModeCookieName + "=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/cn/">经年治世</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li>
+            <a href="/cn/">首页</a>
+          </li>
+
+          
+          <li>
+            <a href="/cn/archives/">
+              
+              归档
+              
+            </a>
+          </li>
+          
+          <li>
+            <a href="/cn/about/">
+              
+              关于
+              
+            </a>
+          </li>
+          
+          <li>
+            <a href="/cn/categories/">
+              
+              分类
+              
+            </a>
+          </li>
+          
+          <li>
+            <a href="/cn/tags/">
+              
+              标签
+              
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>搜索</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          <!-- LangSelect start -->
+          <!-- LangSelect -->
+<li>
+  <a id="lang-select-label"><i class="fa fa-globe"></i>
+    <span>
+      简体中文
+    </span>
+    <select id="lang-select" data-canonical="cn/compiler-n06-batchnorm-quantization/" data-is-post="true">
+      
+      
+      <option value="en" >
+        English
+      </option>
+      
+      <option value="cn"  selected >
+        简体中文
+      </option>
+      
+    </select>
+  </a>
+</li>
+
+          <!-- LangSelect end -->
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+<style type="text/css">
+  .body--light {
+    /* intro-header */
+    --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
+    --intro-header-background-image-url-post: url('/img/header_img/lml_bg1.png');
+    --intro-header-background-image-url-page: url('/img/header_img/lml_bg1.png');
+  }
+  .body--dark {
+    --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
+    --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/lml_bg1.png');
+    --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/lml_bg1.png');
+  }
+
+  header.intro-header {
+     /*post*/
+      background-image: var(--intro-header-background-image-url-post);
+    
+  }
+
+  
+    #signature {/*signature*/
+      background-image: url('/img/signature/vincent-white.png');
+    }
+  
+</style>
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/cn/tags/#量化" title="量化">量化</a>
+              
+              <a class="tag" href="/cn/tags/#数值与量化" title="数值与量化">数值与量化</a>
+              
+              <a class="tag" href="/cn/tags/#整数运算" title="整数运算">整数运算</a>
+              
+              <a class="tag" href="/cn/tags/#BatchNorm" title="BatchNorm">BatchNorm</a>
+              
+            </div>
+            <h1>N06｜BatchNorm 变成乘加之后，真正的数值工作才开始</h1>
+            <h2 class="subheading">从固定统计量到通道乘加，再到乘数、移位和偏置。</h2>
+            <span class="meta">
+              Posted by Bruce Lee on
+              2026-02-02
+            </span>
+
+
+            
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <p><a href="/cn/compiler-engineering-notes/">系列目录</a> · 数值与量化 · N06 · <a href="/en/compiler-n06-batchnorm-quantization/">Read in English</a></p>
+<blockquote>
+<p>教学场景重构：下面的讨论和算例是重新编写的讲解，不是历史会议记录。实现观察限于推理仿射路径及其量化演进；没有声称支持训练统计更新，也没有运行本文建议的实验。</p>
+</blockquote>
+<p>“BatchNorm 已经融合成 y=ax+b了，剩下不就一个乘法一个加法？”大家点头。几分钟后，问题变成：“a 用多少位？b 的 scale 是谁的？乘完先截断吗？a 接近 1 到底能不能省？”</p>
+<p>这不是公式越来越复杂，而是公式终于遇到了有限位宽。</p>
+<span id="more"></span>
+<h2 id="一、推理时的归一化可以折叠成仿射变换">一、推理时的归一化可以折叠成仿射变换</h2>
+<p>固定推理统计量时，逐通道 BatchNorm 可写为：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">y_c = gamma_c * (x_c - mean_c) / sqrt(var_c + epsilon) + beta_c</span><br><span class="line">a_c = gamma_c / sqrt(var_c + epsilon)</span><br><span class="line">b_c = beta_c - mean_c * a_c</span><br><span class="line">y_c = a_c * x_c + b_c</span><br></pre></td></tr></table></figure>
+<p>这里统计量固定是前提。若处于训练阶段，需要从当前批次计算统计并更新状态，不能直接套用这一折叠。</p>
+<p>历史中的相关实现承接的是这种仿射形式：读取乘法和偏置常量，生成整数常量及量化类型，再下降到目标计算。一个较早的方案使用专用仿射操作，后续转向通用乘加。两种方案都绕不开同一份数值契约。</p>
+<h2 id="二、参数自身也有量化域">二、参数自身也有量化域</h2>
+<p>设输入为 <code>x=s_x(q_x-z_x)</code>，系数为 <code>a=s_a(q_a-z_a)</code>。即使 a是模型常量，它也不能简单截成整数后直接乘。</p>
+<p>教学系数取 <code>[-0.8,0.25,1.6]</code>。若用对称有符号存储并选择某个正范围 Q，常见做法是：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s_a = max(abs(a)) / Q</span><br><span class="line">q_a = clamp(round(a/s_a))</span><br></pre></td></tr></table></figure>
+<p>选择零点时，有符号对称域通常取零；无符号存储若要容纳正负系数，需要把零移到可用范围内部。历史常量量化逻辑根据存储符号与范围选择零点，以绝对值范围推导尺度，再舍入和夹取。</p>
+<p>这种最大绝对值方案容易实现，但有一个取舍：一个特别大的通道会让所有小系数共用更粗的刻度。逐通道尺度可能改善误差，却需要后端支持更复杂的参数和广播。不能只把精度比较停留在“8 位还是 16 位”。</p>
+<p>全零参数还需要专门定义 scale，避免除零。用正的兜底尺度表示全零是可行策略，但生成的整数值仍应等于表示实数零的零点，而不应把所有无符号整数都直接写成 0。</p>
+<h2 id="三、中间乘积落到哪里，决定偏置有没有机会补救">三、中间乘积落到哪里，决定偏置有没有机会补救</h2>
+<p>若把乘法结果立即量化到最终输出类型，再加偏置，可以写成：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">q_mid = Q_out(a*x)</span><br><span class="line">q_y   = Q_out(D_out(q_mid) + b)</span><br></pre></td></tr></table></figure>
+<p>这里 Q 和 D 分别表示量化与反量化。若先在更宽域保留中间结果，只在最后量化：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">q_y = Q_out(a*x + b)</span><br></pre></td></tr></table></figure>
+<p>两者一般不同。一个非常直观的教学例子：输出实数范围上界为 10，乘积为 12，偏置为 -4。分两步并在乘法后饱和，会先得到 10，再加 -4 得到 6；最后才饱和，则得到 8。后面的负偏置救不回已经被截掉的 2。</p>
+<p>历史实现能看到乘法中间结果使用输出类型的路径。因此公开分析应提出中间范围与舍入点的验证问题，不能把代数相等当作逐位相等证明。是否可接受取决于目标量化规范和模型误差预算。</p>
+<p>若使用更宽中间类型，会增加存储和带宽；若融合成一次仿射操作，可能减少一次量化，但需要执行单元或内核语义支持。选择哪条路线应同时列出精度、资源和维护成本。</p>
+<h2 id="四、“几乎等于一”并不总能安全省掉乘法">四、“几乎等于一”并不总能安全省掉乘法</h2>
+<p>历史中曾用系数接近 1、偏置接近 0 的条件选择简化路径。数学上若 a=1，b=0，确实只剩输入到输出域的重量化；若 a=1，b≠0，可考虑只保留加法。</p>
+<p>但“接近 1”是近似优化，它的误差与输入幅度有关：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">省略乘法带来的实数误差 = (a-1)*x</span><br></pre></td></tr></table></figure>
+<p>如果 |a-1| 很小而 |x| 很大，误差仍可能跨过输出的一个或多个量化刻度。因此常数容差最好与数据范围或量化等价性联系起来，而不是独立拍一个数字。</p>
+<p>更强的证明思路是：在所有允许输入整数上，原表达式和简化表达式产生相同输出整数。小位宽时可以穷举；更大空间则需要区间推理或有明确边界的误差分析。这是建议方法，本文未执行。</p>
+<p>后续历史版本调整了这些快捷分支，所以不能把某个中间版本的“近似恒等优化”描述成最终常驻能力。读提交链的意义之一，就是避免把曾经存在的路标当成今天的路。</p>
+<h2 id="五、将尺度吸附到二的幂：用精度换实现条件">五、将尺度吸附到二的幂：用精度换实现条件</h2>
+<p>另一处历史变化，在某个配置条件下把常量 scale吸附到二的幂。通用动机是让比例更适合移位或受限乘子路径，但具体收益需要看目标执行方式。</p>
+<p>若原始尺度 s被提高到邻近的二次幂 s’，通常覆盖范围更宽，刻度也更粗。用最近舍入且未饱和时，单个常量量化误差的绝对值可粗略界为 s’/2；这只是常量本身误差，乘上激活后还会放大。</p>
+<p>因此可以比较三种策略：自由尺度、二次幂尺度、逐通道尺度。比较内容不应只有最终平均误差，还应包含最大误差、极端通道、饱和比例和乘子能否被合法表示。某种模式“更容易生成”不是无代价优势。</p>
+<h2 id="六、一份数值回归矩阵">六、一份数值回归矩阵</h2>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>待执行样例</th>
+<th>要回答的问题</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>系数</td>
+<td>负、零、很小、很大、接近一</td>
+<td>符号与范围是否可靠</td>
+</tr>
+<tr>
+<td>偏置</td>
+<td>零、正负、与乘积相抵</td>
+<td>中间饱和是否过早</td>
+</tr>
+<tr>
+<td>参数形式</td>
+<td>标量、逐通道、混合长度</td>
+<td>广播是否符合语义</td>
+</tr>
+<tr>
+<td>存储</td>
+<td>不同位宽与符号</td>
+<td>零点和夹取范围</td>
+</tr>
+<tr>
+<td>尺度策略</td>
+<td>自由尺度、二次幂尺度</td>
+<td>误差与实现成本</td>
+</tr>
+<tr>
+<td>边界</td>
+<td>恰到饱和、舍入中点、实数零</td>
+<td>舍入定义是否一致</td>
+</tr>
+</tbody>
+</table>
+<p>历史包含编译入口和常量处理，本文没有据此宣称数值回归全部通过。参考实现应明确采用同样的推理统计、epsilon、舍入和饱和顺序；否则比较结果会把规范差异误判为内核错误。</p>
+<p>性能方面，仿射运算通常需要逐元素读取和写入。若参数按通道复用，额外参数量随 C增长；若提前展开成完整特征图，额外量随 NCHW增长。下一篇将讨论为什么一段为了简单而写的广播代码，可能比乘加本身更值得优化。</p>
+<p>乘加公式短，并不意味着工程只剩收尾。它恰好把所有数值责任集中到一个能写清、能验证的地方：常量怎么表示，中间在哪里舍入，最后在哪里饱和。</p>
+<h2 id="七、把参数误差沿公式传一遍">七、把参数误差沿公式传一遍</h2>
+<p>为了知道常量量化到底影响多少，可以把量化后的系数记为 a加上误差 da，偏置记为 b加上误差 db。忽略后续舍入和饱和时，输出误差就是 da乘输入，再加 db。因此小系数误差遇到大输入会放大，偏置误差则直接平移整条通道曲线。</p>
+<p>这个关系给出一种很具体的测试设计：不要只随机抽取激活，而要分别在输入区间两端、接近零的位置取样。区间两端容易放大乘法系数误差，零附近容易看出偏置和零点问题。若每个通道的误差几乎是常量，先看偏置；若误差随输入线性增长，先看系数；若到某个幅度突然折断，先看饱和。它比只报告最大绝对误差更有诊断信息。</p>
+<p>当采用统一参数尺度时，可以再按通道绘制系数量化前后的差异。大系数通道通常占据多数动态范围，小系数通道可能被量化到零。此时整体均方误差不一定很大，但某些通道的功能可能发生质变。把误差按通道分解，是检查逐通道仿射特别自然的一步，不能只依赖一份全张量平均值。</p>
+<p>偏置的量化范围也不一定适合照搬激活的存储位宽。偏置可能用于抵消较大的均值项，实际数值比最终输出范围大。如果偏置常量自身在物化时先被夹取，后续加法即使完全正确，也只能处理已经损坏的参数。区分“常量存储时饱和”和“计算结果饱和”，有助于定位误差最早出现的阶段。</p>
+<p>在设计评审中可以要求四个可见数：系数反量化误差、偏置反量化误差、乘法中间范围、最终输出饱和比例。前两项能通过常量生成过程检查，后两项需要结合输入范围或运行样本。只有一项通过，不能替代其他三项。本文没有生成这些测量结果，而是说明为什么它们比“与参考差不多”更有解释力。</p>
+<p>若要启用近似省略乘一的优化，也可以利用相同误差传递公式给出阈值：在已知输入绝对值上界时，系数偏差造成的最坏实数误差必须小于允许预算。若还要求整数逐位相同，就必须考虑舍入边界，单纯小于半个输出刻度仍不总足够，因为原结果可能恰好贴着边界。</p>
+<!-- series-navigation -->
+<hr>
+<p><a href="/cn/compiler-engineering-notes/">返回系列目录</a> · <a href="/cn/compiler-n05-integer-multiply/">上一篇</a> · <a href="/cn/compiler-n07-broadcast-memory/">下一篇</a></p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/cn/compiler-n07-broadcast-memory/" data-toggle="tooltip" data-placement="top" title="N07｜只有几个通道参数，为什么局部内存先满了？">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/cn/compiler-n05-integer-multiply/" data-toggle="tooltip" data-placement="top" title="N05｜乘法没算错，尺度乘错了：整数内核的两张账单">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. All the images used in the blog are my original works or AI works, if you want to take it,don't hesitate. Thank you !
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+
+<div class="social-share" data-url="https://000xiaoming.github.io" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=N06｜BatchNorm 变成乘加之后，真正的数值工作才开始&body=Hi,I found this website and thought you might like it https://000xiaoming.github.io/cn/compiler-n06-batchnorm-quantization/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%80%E3%80%81%E6%8E%A8%E7%90%86%E6%97%B6%E7%9A%84%E5%BD%92%E4%B8%80%E5%8C%96%E5%8F%AF%E4%BB%A5%E6%8A%98%E5%8F%A0%E6%88%90%E4%BB%BF%E5%B0%84%E5%8F%98%E6%8D%A2"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">一、推理时的归一化可以折叠成仿射变换</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BA%8C%E3%80%81%E5%8F%82%E6%95%B0%E8%87%AA%E8%BA%AB%E4%B9%9F%E6%9C%89%E9%87%8F%E5%8C%96%E5%9F%9F"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">二、参数自身也有量化域</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%89%E3%80%81%E4%B8%AD%E9%97%B4%E4%B9%98%E7%A7%AF%E8%90%BD%E5%88%B0%E5%93%AA%E9%87%8C%EF%BC%8C%E5%86%B3%E5%AE%9A%E5%81%8F%E7%BD%AE%E6%9C%89%E6%B2%A1%E6%9C%89%E6%9C%BA%E4%BC%9A%E8%A1%A5%E6%95%91"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">三、中间乘积落到哪里，决定偏置有没有机会补救</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%9B%9B%E3%80%81%E2%80%9C%E5%87%A0%E4%B9%8E%E7%AD%89%E4%BA%8E%E4%B8%80%E2%80%9D%E5%B9%B6%E4%B8%8D%E6%80%BB%E8%83%BD%E5%AE%89%E5%85%A8%E7%9C%81%E6%8E%89%E4%B9%98%E6%B3%95"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">四、“几乎等于一”并不总能安全省掉乘法</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BA%94%E3%80%81%E5%B0%86%E5%B0%BA%E5%BA%A6%E5%90%B8%E9%99%84%E5%88%B0%E4%BA%8C%E7%9A%84%E5%B9%82%EF%BC%9A%E7%94%A8%E7%B2%BE%E5%BA%A6%E6%8D%A2%E5%AE%9E%E7%8E%B0%E6%9D%A1%E4%BB%B6"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">五、将尺度吸附到二的幂：用精度换实现条件</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%85%AD%E3%80%81%E4%B8%80%E4%BB%BD%E6%95%B0%E5%80%BC%E5%9B%9E%E5%BD%92%E7%9F%A9%E9%98%B5"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">六、一份数值回归矩阵</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%83%E3%80%81%E6%8A%8A%E5%8F%82%E6%95%B0%E8%AF%AF%E5%B7%AE%E6%B2%BF%E5%85%AC%E5%BC%8F%E4%BC%A0%E4%B8%80%E9%81%8D"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">七、把参数误差沿公式传一遍</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/cn/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/cn/tags/#量化" title="量化">量化</a>
+            
+            <a class="tag" href="/cn/tags/#数值与量化" title="数值与量化">数值与量化</a>
+            
+            <a class="tag" href="/cn/tags/#整数运算" title="整数运算">整数运算</a>
+            
+            <a class="tag" href="/cn/tags/#BatchNorm" title="BatchNorm">BatchNorm</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>链友</h5>
+        <ul class="list-inline">
+
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/000xiaoming">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Bruce Lee
+          2026
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <a href="https://github.com/V-Vincen/V-Vincen.github.io" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='西风烈,长空雁叫霜晨月,霜晨月,马蹄声碎,喇叭声咽,雄关漫道真如铁,而今迈步从头越,从头越,苍山如海,残阳如血' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033'></script>
+  
+
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script defer type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script defer type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://000xiaoming.github.io/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson(onReady) {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json']);
+            if (onReady) onReady();
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      var searchJson = localStorage.getItem('searchJson');
+      if (!searchJson) {
+        initSearchJson(function () { searchFunc(search_id, content_id); });
+        return;
+      }
+      isfetched = true;
+      var languagePrefix = '/cn/';
+      var datas = JSON.parse(searchJson).filter(function (data) {
+        return new URL(data.url, window.location.href).pathname.indexOf(languagePrefix) === 0;
+      });
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

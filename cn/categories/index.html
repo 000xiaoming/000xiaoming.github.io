@@ -447,6 +447,8 @@
         
         <a href="#x86" title="x86" rel="9">x86</a>
         
+        <a href="#编译器工程" title="编译器工程" rel="49">编译器工程</a>
+        
         <a href="#数学哲学" title="数学哲学" rel="1">数学哲学</a>
         
         <a href="#ROS2" title="ROS2" rel="8">ROS2</a>
@@ -707,9 +709,9 @@
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
         <div class="post-preview">
-          <a href="/cn/cmd_c嵌套调用/">
+          <a href="/cn/build-and-manage-multi-file/">
             <h2 class="post-title">
-              cmd_c嵌套调用
+              构建和管理多文件以及编译流程
             </h2>
             
             <h3 class="post-subtitle">
@@ -726,9 +728,9 @@
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
         <div class="post-preview">
-          <a href="/cn/build-and-manage-multi-file/">
+          <a href="/cn/cmd_c嵌套调用/">
             <h2 class="post-title">
-              构建和管理多文件以及编译流程
+              cmd_c嵌套调用
             </h2>
             
             <h3 class="post-subtitle">
@@ -999,9 +1001,9 @@
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
         <div class="post-preview">
-          <a href="/cn/RISCV乱弹琴_1/">
+          <a href="/cn/RISCV不同阶段冒险问题和分支/">
             <h2 class="post-title">
-              RISCV直接模式处理例外的实现问题与解决方案/PC的变化与SEPC的存储精确性问题/反相关代码导致的被迫按序执行的问题/内存别名问题
+              RISCV不同阶段前递问题/load-use冒险的停顿技术/优化控制冒险发生时浪费的时钟周期问题分析/ID计算加速的专用前递通路问题/PC清理-预测加速问题/流水线清理问题
             </h2>
             
             <h3 class="post-subtitle">
@@ -1018,9 +1020,9 @@
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
         <div class="post-preview">
-          <a href="/cn/RISCV不同阶段冒险问题和分支/">
+          <a href="/cn/RISCV乱弹琴_1/">
             <h2 class="post-title">
-              RISCV不同阶段前递问题/load-use冒险的停顿技术/优化控制冒险发生时浪费的时钟周期问题分析/ID计算加速的专用前递通路问题/PC清理-预测加速问题/流水线清理问题
+              RISCV直接模式处理例外的实现问题与解决方案/PC的变化与SEPC的存储精确性问题/反相关代码导致的被迫按序执行的问题/内存别名问题
             </h2>
             
             <h3 class="post-subtitle">
@@ -1113,25 +1115,6 @@
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
         <div class="post-preview">
-          <a href="/cn/RISCV设计中跳转和同步系列问题和x86/">
-            <h2 class="post-title">
-              RISCV超12位立即数字段的跳转问题/解决数据竞争问题的底层支持/数组索引访问与指针访问/常见优化/x86的复杂性缺陷
-            </h2>
-            
-            <h3 class="post-subtitle">
-              RISC-V
-            </h3>
-            
-          </a>
-          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </div>
-        <hr>
-        
-        <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-        <div class="post-preview">
           <a href="/cn/RISCV运算中间结果系列问题/">
             <h2 class="post-title">
               RISCV舍入问题和中间结果存储问题/浮点并行加速的不稳定性问题以及传统并行算法研究步骤
@@ -1154,6 +1137,25 @@
           <a href="/cn/RISCV非规格化浮点系列问题/">
             <h2 class="post-title">
               RISCV乘法硬件加速算法原理/单精度规格化与非规格化最小正数问题/F/D标准扩展与I问题
+            </h2>
+            
+            <h3 class="post-subtitle">
+              RISC-V
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/RISCV设计中跳转和同步系列问题和x86/">
+            <h2 class="post-title">
+              RISCV超12位立即数字段的跳转问题/解决数据竞争问题的底层支持/数组索引访问与指针访问/常见优化/x86的复杂性缺陷
             </h2>
             
             <h3 class="post-subtitle">
@@ -1336,6 +1338,944 @@
             
             <h3 class="post-subtitle">
               大不了，从头来过...
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+      </div>
+      
+      <div class="one-tag-list">
+        <span class="fa fa-tag listing-seperator" id="编译器工程">
+          <span class="tag-text">编译器工程</span>
+        </span>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-e02-three-stages-of-a-build/">
+            <h2 class="post-title">
+              E02｜“我只是重新编译”，为什么安装目录先消失了？
+            </h2>
+            
+            <h3 class="post-subtitle">
+              环境、构建和安装各自负责什么，失败后留下什么。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-e01-the-release-build-that-forgot-to-write/">
+            <h2 class="post-title">
+              E01｜Debug 一切正常，Release 却把写入操作“优化没了”
+            </h2>
+            
+            <h3 class="post-subtitle">
+              必要写入藏进断言后，关闭检查会改变程序语义。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-e03-one-toolchain-three-versions/">
+            <h2 class="post-title">
+              E03｜头文件是一版，生成器是另一版：编译器构建里的“多人接力”
+            </h2>
+            
+            <h3 class="post-subtitle">
+              头文件、库、生成器和缓存共同决定工具链身份。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-e04-the-library-that-was-there/">
+            <h2 class="post-title">
+              E04｜库文件明明在包里，为什么程序还是说找不到？
+            </h2>
+            
+            <h3 class="post-subtitle">
+              真实库、SONAME、链接名与运行搜索路径如何连接。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-e06-a-model-file-is-a-protocol/">
+            <h2 class="post-title">
+              E06｜把一堆编译产物装成一个文件，到底难在哪里？
+            </h2>
+            
+            <h3 class="post-subtitle">
+              模型文件作为协议，必须定义偏移、长度与所有权。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-e07-command-line-output-contract/">
+            <h2 class="post-title">
+              E07｜编译已经失败，目录里为什么还有一个“成功的模型”？
+            </h2>
+            
+            <h3 class="post-subtitle">
+              输出目录、临时产物和旧文件，让成功与失败可判断。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-e09-golden-tests-that-can-disagree/">
+            <h2 class="post-title">
+              E09｜汇编看起来对了，机器码也会对吗？
+            </h2>
+            
+            <h3 class="post-subtitle">
+              伪汇编、汇编、机器码与数学参考各自证明什么。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-e10-specifications-that-admit-unknowns/">
+            <h2 class="post-title">
+              E10｜一份算子文档最有价值的词，可能是“尚未确认”
+            </h2>
+            
+            <h3 class="post-subtitle">
+              规范要保留未知项，避免把示例表格写成能力承诺。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-e11-what-does-supported-really-mean/">
+            <h2 class="post-title">
+              E11｜搜索到了算子名字，就可以写进“支持列表”吗？
+            </h2>
+            
+            <h3 class="post-subtitle">
+              从存在一个名字到完整编译路径，支持需要多层证据。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-e08-releases-and-their-two-clocks/">
+            <h2 class="post-title">
+              E08｜同一份发布包，为什么每次哈希都不同？
+            </h2>
+            
+            <h3 class="post-subtitle">
+              区分归档事件时间、包内时间和字节可复现性。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-e05-a-compiler-that-can-move-house/">
+            <h2 class="post-title">
+              E05｜编译器搬了个家，查表模块就失联了
+            </h2>
+            
+            <h3 class="post-subtitle">
+              通过真实功能与缺件测试，验证运行资源能随包移动。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-e14-same-shape-different-answers/">
+            <h2 class="post-title">
+              E14｜相同的输出形状，完全不同的答案：池化、缩放与索引归约
+            </h2>
+            
+            <h3 class="post-subtitle">
+              窗口分母、插值坐标和最大值索引决定具体答案。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-e13-moving-data-moving-meaning/">
+            <h2 class="post-title">
+              E13｜它只是在搬数据，为什么还会算错：张量变换的隐藏契约
+            </h2>
+            
+            <h3 class="post-subtitle">
+              坐标、步长、别名和量化参数，让搬数据也有语义。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-e15-names-are-not-numerical-contracts/">
+            <h2 class="post-title">
+              E15｜一个函数名，装不下它的数值契约：非线性与归一化的边界
+            </h2>
+            
+            <h3 class="post-subtitle">
+              定义域、近似、精度与归约轴，比函数名字更重要。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-e12-four-identities-of-an-instruction/">
+            <h2 class="post-title">
+              E12｜一条指令的四种身份：代码生成为什么不能只靠字符串
+            </h2>
+            
+            <h3 class="post-subtitle">
+              数学运算、内核、发射与编码的四层职责和错误归属。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-engineering-notes/">
+            <h2 class="post-title">
+              编译器工程笔记：48 篇双语文章与阅读路线
+            </h2>
+            
+            <h3 class="post-subtitle">
+              数值与量化、算子与布局、资源与调度、工程与交付
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-n02-axis-identity/">
+            <h2 class="post-title">
+              N02｜消失的维度：keep_dims=false 为什么能把逆置换弄坏？
+            </h2>
+            
+            <h3 class="post-subtitle">
+              被删掉的轴不再属于原来的坐标系，逆置换必须重建。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-n03-reduction-family/">
+            <h2 class="post-title">
+              N03｜最大值、最小值和求和：长得像三兄弟，不能共用一份数学作业
+            </h2>
+            
+            <h3 class="post-subtitle">
+              归约框架可以共享，初始化、累加与重定标不能照搬。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-n04-identity-requantization/">
+            <h2 class="post-title">
+              N04｜这个归约什么也没做，为什么还不能删？
+            </h2>
+            
+            <h3 class="post-subtitle">
+              数学恒等不代表量化编码恒等，空轴和单位轴也有契约。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-n05-integer-multiply/">
+            <h2 class="post-title">
+              N05｜乘法没算错，尺度乘错了：整数内核的两张账单
+            </h2>
+            
+            <h3 class="post-subtitle">
+              逐项核对输入 scale、输出 scale 与中间乘积的范围。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-n06-batchnorm-quantization/">
+            <h2 class="post-title">
+              N06｜BatchNorm 变成乘加之后，真正的数值工作才开始
+            </h2>
+            
+            <h3 class="post-subtitle">
+              从固定统计量到通道乘加，再到乘数、移位和偏置。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-n08-specialized-affine/">
+            <h2 class="post-title">
+              N08｜写了专用算子，又把它拆掉：一次值得认真记录的设计转向
+            </h2>
+            
+            <h3 class="post-subtitle">
+              专用仿射算子的引入与撤回，如何比较维护成本与表达力。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-n07-broadcast-memory/">
+            <h2 class="post-title">
+              N07｜只有几个通道参数，为什么局部内存先满了？
+            </h2>
+            
+            <h3 class="post-subtitle">
+              避免把通道向量铺满整张量，同时守住广播语义。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-n09-normalization-ranges/">
+            <h2 class="post-title">
+              N09｜epsilon 明明不是零，到了整数域却差点失踪
+            </h2>
+            
+            <h3 class="post-subtitle">
+              从 epsilon、平方与倒平方根追踪归一化的数值范围。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-n11-import-order-and-constants/">
+            <h2 class="post-title">
+              N11｜太早变聪明的导入器：当代数优化抢在量化信息前面
+            </h2>
+            
+            <h3 class="post-subtitle">
+              代数变换时机、量化元数据匹配和常量处理为何互相制约。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-n10-rewrite-result-types/">
+            <h2 class="post-title">
+              N10｜浮点全绿、量化全红：一次重写把输出的身份证换成了输入的
+            </h2>
+            
+            <h3 class="post-subtitle">
+              重写结果类型既描述容器，也携带量化含义。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-o01-grouped-convolution/">
+            <h2 class="post-title">
+              O01｜分组卷积：切开蛋糕以后，盘子上的标签也得切
+            </h2>
+            
+            <h3 class="post-subtitle">
+              按组切分输入与权重时，连同量化信息一起维护。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-o02-transposed-convolution-storage/">
+            <h2 class="post-title">
+              O02｜转置卷积的权重：形状很诚实，内存却说了另一种方言
+            </h2>
+            
+            <h3 class="post-subtitle">
+              逻辑维度顺序和真实权重存储不同，切片公式就会不同。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-o03-reshape-proof/">
+            <h2 class="post-title">
+              O03｜Reshape 为什么还要写代码：元素没变，搬家路线变了
+            </h2>
+            
+            <h3 class="post-subtitle">
+              证明线性元素映射，区分形状变化与布局重排。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-o05-broadcast-address-plans/">
+            <h2 class="post-title">
+              O05｜广播不负责喊话：它负责让地址有时前进、有时原地不动
+            </h2>
+            
+            <h3 class="post-subtitle">
+              按轴建立地址前进规则，覆盖标量、低秩和复杂广播。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-o04-dump-layout/">
+            <h2 class="post-title">
+              O04｜当调试器开始撒谎：一次 Permute，三种 Dump 修法
+            </h2>
+            
+            <h3 class="post-subtitle">
+              三条分支修法共同揭示观察路径也需要布局契约。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-o06-aligned-stride-constants/">
+            <h2 class="post-title">
+              O06｜第一行正确，第二行失踪：对齐、Stride 与常量填充的连环案
+            </h2>
+            
+            <h3 class="post-subtitle">
+              逻辑宽度、物理步长、对齐补齐与参数表必须一致。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-o07-scalar-arithmetic-direction/">
+            <h2 class="post-title">
+              O07｜减去零可以消失，零减去你不行：标量算子的方向感
+            </h2>
+            
+            <h3 class="post-subtitle">
+              常量折叠、交换律和操作数方向，不能混成一次简化。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-o08-unary-quantization-contract/">
+            <h2 class="post-title">
+              O08｜Abs 和 Sign：算术只有一行，参数协议却不能复制粘贴
+            </h2>
+            
+            <h3 class="post-subtitle">
+              一元算子的数学定义，需要贯穿类型、量化和参数编码。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-o10-convolution-activation-fusion/">
+            <h2 class="post-title">
+              O10｜把激活函数塞进卷积：少一个节点之前，先保住那条量化边界
+            </h2>
+            
+            <h3 class="post-subtitle">
+              融合卷积与激活之前，保住中间量化与合法形状。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-o09-scratch-register-lifetimes/">
+            <h2 class="post-title">
+              O09｜谁动了我的临时寄存器：让发射器学会借东西、还东西
+            </h2>
+            
+            <h3 class="post-subtitle">
+              从手写临时寄存器到明确的借用、释放和嵌套约束。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-o11-matmul-fusion-barriers/">
+            <h2 class="post-title">
+              O11｜MatMul 后面有个 Sigmoid：为什么编译器偏偏不肯融合
+            </h2>
+            
+            <h3 class="post-subtitle">
+              多消费者、视图和依赖边界如何限制矩阵乘激活融合。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-o12-static-left-matmul/">
+            <h2 class="post-title">
+              O12｜权重跑到左边以后：用一个转置恒等式，搬动整个编译链
+            </h2>
+            
+            <h3 class="post-subtitle">
+              转置恒等式只是起点，权重命名与量化轴还要一起移动。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-n01-reduction-lowering/">
+            <h2 class="post-title">
+              N01｜求个平均值，为什么编译器先写起了循环？
+            </h2>
+            
+            <h3 class="post-subtitle">
+              把任意归约轴变成可执行的循环，追踪搬运和布局成本。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-r01-register-raii/">
+            <h2 class="post-title">
+              R01｜那只“临时”寄存器，为什么总被别人借走？
+            </h2>
+            
+            <h3 class="post-subtitle">
+              用作用域表达寄存器所有权，明确自动归还的边界。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-r02-dependency-pressure/">
+            <h2 class="post-title">
+              R02｜图里只是多了几个分叉，为什么同步寄存器先耗尽了？
+            </h2>
+            
+            <h3 class="post-subtitle">
+              分叉与依赖汇合如何形成同步资源压力。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-r03-view-liveness/">
+            <h2 class="post-title">
+              R03｜视图没有搬数据，为什么内存仍然不能还？
+            </h2>
+            
+            <h3 class="post-subtitle">
+              跨过视图链追踪异步消费者，防止过早回收底层存储。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-r04-address-capacity/">
+            <h2 class="post-title">
+              R04｜地址能表示，为什么编译器说“内存满了”？
+            </h2>
+            
+            <h3 class="post-subtitle">
+              区分可编码地址范围、分配区间和真实内存预算。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-r05-recurrent-state/">
+            <h2 class="post-title">
+              R05｜同一个最终状态，为什么需要两次写出？
+            </h2>
+            
+            <h3 class="post-subtitle">
+              持续状态、最终状态与直接输出，为什么不是同一种缓冲。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-r06-recurrent-dependencies/">
+            <h2 class="post-title">
+              R06｜等过了事件，为什么还没等到数据？
+            </h2>
+            
+            <h3 class="post-subtitle">
+              跨执行单元传递状态时，事件必须覆盖真正的数据生产。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-r07-error-boundaries/">
+            <h2 class="post-title">
+              R07｜catch 住异常之后，半份机器码怎么办？
+            </h2>
+            
+            <h3 class="post-subtitle">
+              错误被捕获之后，已产生的状态与输出仍需明确处理。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-r09-encoding-boundaries/">
+            <h2 class="post-title">
+              R09｜“数字已经读出来了”，并不代表输入合法
+            </h2>
+            
+            <h3 class="post-subtitle">
+              解析成功之后，仍要检查完整消费、符号与字段范围。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-r10-optimization-contracts/">
+            <h2 class="post-title">
+              R10｜少算一点，为什么反而不敢优化了？
+            </h2>
+            
+            <h3 class="post-subtitle">
+              优化停用也是设计决定：切片、量化与参数尺寸的契约。
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/compiler-r08-loops-determinism/">
+            <h2 class="post-title">
+              R08｜循环只多了一层，为什么二进制快照像换了一个程序？
+            </h2>
+            
+            <h3 class="post-subtitle">
+              循环、标签和独立发射实例如何影响二进制确定性。
             </h3>
             
           </a>

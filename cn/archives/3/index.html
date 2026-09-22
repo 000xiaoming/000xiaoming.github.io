@@ -430,35 +430,38 @@
   <!-- top end -->
   
 
-  <a href="/cn/tracing_based_iringbuf/">
+  <a href="/cn/compiler-r05-recurrent-state/">
     <h2 class="post-title">
-      跟踪设施与iringbuf的建立
+      R05｜同一个最终状态，为什么需要两次写出？
     </h2>
     <h3 class="post-subtitle">
-      项目工程
+      持续状态、最终状态与直接输出，为什么不是同一种缓冲。
     </h3>
     <div class="post-content-preview">
-      关于我
-欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
-主要内容分类
+      系列目录 · 资源与调度 · R05 · Read in English
 
-项目工程：深入探讨技术的实现细节和理解。
-C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
-程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
+教学场景重构：开场的问题来自循环状态语义的抽象重构，不对应具体模型事故。本文区分提交中出现过的方案与其后修改，不把曾经存在的支持能力当作当前版本承诺。
 
-想要了解更多具体内容，您可以访问文章分类页面。
-联系我
-如果您有任何问题......
+“最终隐藏状态已经是图输出，为什么还要保存一次？”
+“因为图输出交给调用者，持久化状态交给下一次调用。”
+“那把两次保存串起来不就行了？”
+听起来像一次很普通的公共......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Bruce Lee on
-    2024-08-18
+    2026-06-03
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#项目工程" title="项目工程">项目工程</a>
+    <a href="/cn/tags/#内存规划" title="内存规划">内存规划</a>
+    
+    <a href="/cn/tags/#资源与调度" title="资源与调度">资源与调度</a>
+    
+    <a href="/cn/tags/#调度" title="调度">调度</a>
+    
+    <a href="/cn/tags/#有状态计算" title="有状态计算">有状态计算</a>
     
   </div>
   
@@ -473,35 +476,38 @@ C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
   <!-- top end -->
   
 
-  <a href="/cn/parameter_and_makefile_code/">
+  <a href="/cn/compiler-r04-address-capacity/">
     <h2 class="post-title">
-      时间/log/参数传递和makefile全自动编译
+      R04｜地址能表示，为什么编译器说“内存满了”？
     </h2>
     <h3 class="post-subtitle">
-      项目工程
+      区分可编码地址范围、分配区间和真实内存预算。
     </h3>
     <div class="post-content-preview">
-      关于我
-欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
-主要内容分类
+      系列目录 · 资源与调度 · R04 · Read in English
 
-项目工程：深入探讨技术的实现细节和理解。
-C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
-程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
+教学场景重构：本文使用虚构的容量、对齐单位和地址宽度。核实的是地址规划如何解除旧容量约束并强化溢出检查；没有据此判断任何实际设备能容纳多大的模型。
 
-想要了解更多具体内容，您可以访问文章分类页面。
-联系我
-如果您有任何问题......
+“我只是生成一个稍大的输出，编译器却说全局内存用完了。”
+“它知道运行时会给多少内存吗？”
+“它知道一个默认数字。”
+这段对话的危险之处在于，那个默认数字往往存在很久，......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Bruce Lee on
-    2024-08-08
+    2026-05-29
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#项目工程" title="项目工程">项目工程</a>
+    <a href="/cn/tags/#指令编码" title="指令编码">指令编码</a>
+    
+    <a href="/cn/tags/#整数运算" title="整数运算">整数运算</a>
+    
+    <a href="/cn/tags/#内存规划" title="内存规划">内存规划</a>
+    
+    <a href="/cn/tags/#资源与调度" title="资源与调度">资源与调度</a>
     
   </div>
   
@@ -516,35 +522,37 @@ C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
   <!-- top end -->
   
 
-  <a href="/cn/stdarg-sprintf-implementation/">
+  <a href="/cn/compiler-r03-view-liveness/">
     <h2 class="post-title">
-      sprintf的实现与stdarg的可能实现
+      R03｜视图没有搬数据，为什么内存仍然不能还？
     </h2>
     <h3 class="post-subtitle">
-      C/C++
+      跨过视图链追踪异步消费者，防止过早回收底层存储。
     </h3>
     <div class="post-content-preview">
-      关于我
-欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
-主要内容分类
+      系列目录 · 资源与调度 · R03 · Read in English
 
-项目工程：深入探讨技术的实现细节和理解。
-C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
-程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
+教学场景重构：调试对话与张量形状均为教学重构。已核实内容来自一次活性判断修复及其回归用例；文中时序是解释原理的假设，不是设备运行记录。
 
-想要了解更多具体内容，您可以访问文章分类页面。
-联系我
-如果您有任何问题......
+“这个张量的最后一个用户已经过去了，可以回收。”
+“最后一个用户只是换了个形状。真正读数据的算子，还在另一条队列里排队。”
+如果给内存分配器颁发“过度热心奖”，这类提前复用很有竞争......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Bruce Lee on
-    2024-07-13
+    2026-05-23
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#C/C++" title="C/C++">C/C++</a>
+    <a href="/cn/tags/#内存规划" title="内存规划">内存规划</a>
+    
+    <a href="/cn/tags/#资源与调度" title="资源与调度">资源与调度</a>
+    
+    <a href="/cn/tags/#同步" title="同步">同步</a>
+    
+    <a href="/cn/tags/#活跃性" title="活跃性">活跃性</a>
     
   </div>
   
@@ -559,35 +567,36 @@ C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
   <!-- top end -->
   
 
-  <a href="/cn/batch-mode-RTFSC-makefile/">
+  <a href="/cn/compiler-r02-dependency-pressure/">
     <h2 class="post-title">
-      Makefile工程代码以及batch模式
+      R02｜图里只是多了几个分叉，为什么同步寄存器先耗尽了？
     </h2>
     <h3 class="post-subtitle">
-      C/C++
+      分叉与依赖汇合如何形成同步资源压力。
     </h3>
     <div class="post-content-preview">
-      关于我
-欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
-主要内容分类
+      系列目录 · 资源与调度 · R02 · Read in English
 
-项目工程：深入探讨技术的实现细节和理解。
-C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
-程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
+教学场景重构：文中的任务编号、引擎名称和资源预算都是重新设计的教学例子。源码核实的是依赖分组、压力检查与测试意图；没有执行调度器，也没有测量加速比。
 
-想要了解更多具体内容，您可以访问文章分类页面。
-联系我
-如果您有任何问题......
+“算术量没有增加多少，怎么连代码都生成不出来？”
+白板上的图非常无辜：一个生产者，接着很多消费者。内存还有余量，计算单元也没增加，可依赖资源池先亮起红灯。把并行程序当......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Bruce Lee on
-    2024-07-13
+    2026-05-17
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#C/C++" title="C/C++">C/C++</a>
+    <a href="/cn/tags/#寄存器分配" title="寄存器分配">寄存器分配</a>
+    
+    <a href="/cn/tags/#资源与调度" title="资源与调度">资源与调度</a>
+    
+    <a href="/cn/tags/#调度" title="调度">调度</a>
+    
+    <a href="/cn/tags/#同步" title="同步">同步</a>
     
   </div>
   
@@ -602,35 +611,37 @@ C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
   <!-- top end -->
   
 
-  <a href="/cn/RTFSC_2/">
+  <a href="/cn/compiler-r01-register-raii/">
     <h2 class="post-title">
-      RTFSC_2
+      R01｜那只“临时”寄存器，为什么总被别人借走？
     </h2>
     <h3 class="post-subtitle">
-      C/C++
+      用作用域表达寄存器所有权，明确自动归还的边界。
     </h3>
     <div class="post-content-preview">
-      关于我
-欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
-主要内容分类
+      系列目录 · 资源与调度 · R01 · Read in English
 
-项目工程：深入探讨技术的实现细节和理解。
-C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
-程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
+教学场景重构：下面的对话是为解释问题重新设计的，不是历史现场实录。技术判断来自提交中的接口、内核迁移与测试设计；本文没有执行目标程序，也不提供性能实测结论。
 
-想要了解更多具体内容，您可以访问文章分类页面。
-联系我
-如果您有任何问题......
+“我只借一个寄存器，装一下地址，马上还。”
+“巧了，外面的循环计数器也只借了同一个。”
+这类争执不会出现在代码评审聊天里。它会出现在机器码里：循环次数突然变成......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Bruce Lee on
-    2024-07-13
+    2026-05-12
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#C/C++" title="C/C++">C/C++</a>
+    <a href="/cn/tags/#代码生成" title="代码生成">代码生成</a>
+    
+    <a href="/cn/tags/#寄存器分配" title="寄存器分配">寄存器分配</a>
+    
+    <a href="/cn/tags/#RAII" title="RAII">RAII</a>
+    
+    <a href="/cn/tags/#资源与调度" title="资源与调度">资源与调度</a>
     
   </div>
   
@@ -645,35 +656,36 @@ C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
   <!-- top end -->
   
 
-  <a href="/cn/debug/">
+  <a href="/cn/compiler-o12-static-left-matmul/">
     <h2 class="post-title">
-      工程debug经验
+      O12｜权重跑到左边以后：用一个转置恒等式，搬动整个编译链
     </h2>
     <h3 class="post-subtitle">
-      项目工程
+      转置恒等式只是起点，权重命名与量化轴还要一起移动。
     </h3>
     <div class="post-content-preview">
-      关于我
-欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
-主要内容分类
+      系列目录 · 算子与布局 · O12 · Read in English
 
-项目工程：深入探讨技术的实现细节和理解。
-C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
-程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
+教学场景重构：假设一个原本只接收右侧常量权重的后端突然遇到左侧权重。历史差异确实增加了受限制的静态左操作数路径，并调整量化信息导入。矩阵、数值和对话为重新设计；未执行原工程。
 
-想要了解更多具体内容，您可以访问文章分类页面。
-联系我
-如果您有任何问题......
+“都是矩阵乘法，权重放左边怎么就不能编译？”
+从线性代数看，这是个合理的疑问。从后端看，矩阵单元的数据流、权重打包、偏置参数与量化通道可能都......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Bruce Lee on
-    2024-05-31
+    2026-05-07
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#项目工程" title="项目工程">项目工程</a>
+    <a href="/cn/tags/#量化" title="量化">量化</a>
+    
+    <a href="/cn/tags/#图重写" title="图重写">图重写</a>
+    
+    <a href="/cn/tags/#算子与布局" title="算子与布局">算子与布局</a>
+    
+    <a href="/cn/tags/#MatMul" title="MatMul">MatMul</a>
     
   </div>
   
@@ -688,35 +700,36 @@ C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
   <!-- top end -->
   
 
-  <a href="/cn/Deep-understanding-of-variable-parameter-systems/">
+  <a href="/cn/compiler-o11-matmul-fusion-barriers/">
     <h2 class="post-title">
-      预编译变参系统与预编译器粘结运算符以及"回调宏"的应用
+      O11｜MatMul 后面有个 Sigmoid：为什么编译器偏偏不肯融合
     </h2>
     <h3 class="post-subtitle">
-      C/C++
+      多消费者、视图和依赖边界如何限制矩阵乘激活融合。
     </h3>
     <div class="post-content-preview">
-      关于我
-欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
-主要内容分类
+      系列目录 · 算子与布局 · O11 · Read in English
 
-项目工程：深入探讨技术的实现细节和理解。
-C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
-程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
+教学场景重构：一个虚构评审讨论用于解释融合的拒绝条件。已核实的历史提交增加 MatMul 与直接相连 Sigmoid 的融合，并测试中间 Requantize、Clip、多使用者和已融合节点等情况。所有性能讨论均为成本分析与未运行的实验建议。
 
-想要了解更多具体内容，您可以访问文章分类页面。
-联系我
-如果您有任何问题......
+“卷积都能融合，矩阵乘法后面这个 Sigmoid 总可以吧？”
+有时可以......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Bruce Lee on
-    2024-05-10
+    2026-05-01
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#C/C++" title="C/C++">C/C++</a>
+    <a href="/cn/tags/#量化" title="量化">量化</a>
+    
+    <a href="/cn/tags/#算子与布局" title="算子与布局">算子与布局</a>
+    
+    <a href="/cn/tags/#算子融合" title="算子融合">算子融合</a>
+    
+    <a href="/cn/tags/#MatMul" title="MatMul">MatMul</a>
     
   </div>
   
@@ -731,35 +744,37 @@ C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
   <!-- top end -->
   
 
-  <a href="/cn/Multi-Macro-with-Annotation/">
+  <a href="/cn/compiler-o10-convolution-activation-fusion/">
     <h2 class="post-title">
-      多行宏添加注释的错误(如果不想因为脑子局部性注意力而导致浪费一下午+一晚上时间,请好好看)
+      O10｜把激活函数塞进卷积：少一个节点之前，先保住那条量化边界
     </h2>
     <h3 class="post-subtitle">
-      C/C++
+      融合卷积与激活之前，保住中间量化与合法形状。
     </h3>
     <div class="post-content-preview">
-      关于我
-欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
-主要内容分类
+      系列目录 · 算子与布局 · O10 · Read in English
 
-项目工程：深入探讨技术的实现细节和理解。
-C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
-程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
+教学场景重构：以下评审对话为虚构。已核实的历史修改包括转置卷积与 GELU 融合、普通卷积与 GELU/Sigmoid 融合，以及转置卷积再扩展到 Sigmoid。没有在本次任务中运行设备或测量加速比。
 
-想要了解更多具体内容，您可以访问文章分类页面。
-联系我
-如果您有任何问题......
+“这两个节点挨着，融合以后应该会快吧？”
+“可能。先说清楚中间那个张量原来是什么。”
+融合最诱人的画面是删掉图上......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Bruce Lee on
-    2024-05-09
+    2026-04-25
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#C/C++" title="C/C++">C/C++</a>
+    <a href="/cn/tags/#量化" title="量化">量化</a>
+    
+    <a href="/cn/tags/#算子与布局" title="算子与布局">算子与布局</a>
+    
+    <a href="/cn/tags/#卷积" title="卷积">卷积</a>
+    
+    <a href="/cn/tags/#算子融合" title="算子融合">算子融合</a>
     
   </div>
   
@@ -774,35 +789,35 @@ C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
   <!-- top end -->
   
 
-  <a href="/cn/YEMU模拟器运行机制/">
+  <a href="/cn/compiler-o09-scratch-register-lifetimes/">
     <h2 class="post-title">
-      YEMU模拟器运行机制
+      O09｜谁动了我的临时寄存器：让发射器学会借东西、还东西
     </h2>
     <h3 class="post-subtitle">
-      项目工程
+      从手写临时寄存器到明确的借用、释放和嵌套约束。
     </h3>
     <div class="post-content-preview">
-      关于我
-欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
-主要内容分类
+      系列目录 · 算子与布局 · O09 · Read in English
 
-项目工程：深入探讨技术的实现细节和理解。
-C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
-程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
+教学场景重构：嵌套内核覆盖寄存器的故事是用于解释风险的虚构场景。已核实的历史改动引入按作用域管理的临时标量寄存器句柄、移动语义、耗尽诊断和生命周期测试，并在一个一元内核中采用；它不是完整的全程序寄存器分配器。
 
-想要了解更多具体内容，您可以访问文章分类页面。
-联系我
-如果您有任何问题......
+单独测试时，两个代码生成函数都很好。把它们组合起来，结果突然不对。第一个函数说：“我只是借个临时寄存器存基......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Bruce Lee on
-    2024-05-08
+    2026-04-20
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#项目工程" title="项目工程">项目工程</a>
+    <a href="/cn/tags/#代码生成" title="代码生成">代码生成</a>
+    
+    <a href="/cn/tags/#算子与布局" title="算子与布局">算子与布局</a>
+    
+    <a href="/cn/tags/#寄存器分配" title="寄存器分配">寄存器分配</a>
+    
+    <a href="/cn/tags/#RAII" title="RAII">RAII</a>
     
   </div>
   
@@ -817,35 +832,35 @@ C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
   <!-- top end -->
   
 
-  <a href="/cn/instruction/">
+  <a href="/cn/compiler-o08-unary-quantization-contract/">
     <h2 class="post-title">
-      instruction
+      O08｜Abs 和 Sign：算术只有一行，参数协议却不能复制粘贴
     </h2>
     <h3 class="post-subtitle">
-      项目工程
+      一元算子的数学定义，需要贯穿类型、量化和参数编码。
     </h3>
     <div class="post-content-preview">
-      关于我
-欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
-主要内容分类
+      系列目录 · 算子与布局 · O08 · Read in English
 
-项目工程：深入探讨技术的实现细节和理解。
-C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
-程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
+教学场景重构：把“简单一元算子也错了”的困惑展开为调试问题。已核实的历史修改包括一元算子后端接入、Abs 和 Sign 分别构建量化参数、Sign 输出元数据处理及 Abs 的物理步长支持。本次只读代码，没有运行数值测试。
 
-想要了解更多具体内容，您可以访问文章分类页面。
-联系我
-如果您有任何问题......
+如果让人选两个最容易实现的算子，Abs 和 Sign 很可能榜上有名。一个取绝对值，一个判断......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Bruce Lee on
-    2024-05-08
+    2026-04-15
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#项目工程" title="项目工程">项目工程</a>
+    <a href="/cn/tags/#代码生成" title="代码生成">代码生成</a>
+    
+    <a href="/cn/tags/#量化" title="量化">量化</a>
+    
+    <a href="/cn/tags/#整数运算" title="整数运算">整数运算</a>
+    
+    <a href="/cn/tags/#算子与布局" title="算子与布局">算子与布局</a>
     
   </div>
   
@@ -903,7 +918,7 @@ C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
     
     
     
-    <a href="/cn/tags/#C/C++" title="C/C++" rel="7">C/C++</a>
+    <a href="/cn/tags/#C/C++" title="C/C++" rel="8">C/C++</a>
     
     
     
@@ -916,6 +931,238 @@ C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
     
     
     <a href="/cn/tags/#x86" title="x86" rel="9">x86</a>
+    
+    
+    
+    <a href="/cn/tags/#工程与交付" title="工程与交付" rel="15">工程与交付</a>
+    
+    
+    
+    <a href="/cn/tags/#构建系统" title="构建系统" rel="2">构建系统</a>
+    
+    
+    
+    <a href="/cn/tags/#安装" title="安装" rel="1">安装</a>
+    
+    
+    
+    <a href="/cn/tags/#错误处理" title="错误处理" rel="4">错误处理</a>
+    
+    
+    
+    <a href="/cn/tags/#断言" title="断言" rel="1">断言</a>
+    
+    
+    
+    <a href="/cn/tags/#调试" title="调试" rel="2">调试</a>
+    
+    
+    
+    <a href="/cn/tags/#工具链" title="工具链" rel="1">工具链</a>
+    
+    
+    
+    <a href="/cn/tags/#可复现构建" title="可复现构建" rel="2">可复现构建</a>
+    
+    
+    
+    <a href="/cn/tags/#动态链接" title="动态链接" rel="1">动态链接</a>
+    
+    
+    
+    <a href="/cn/tags/#打包" title="打包" rel="3">打包</a>
+    
+    
+    
+    <a href="/cn/tags/#ELF" title="ELF" rel="1">ELF</a>
+    
+    
+    
+    <a href="/cn/tags/#二进制格式" title="二进制格式" rel="1">二进制格式</a>
+    
+    
+    
+    <a href="/cn/tags/#序列化" title="序列化" rel="1">序列化</a>
+    
+    
+    
+    <a href="/cn/tags/#输入校验" title="输入校验" rel="2">输入校验</a>
+    
+    
+    
+    <a href="/cn/tags/#CLI" title="CLI" rel="1">CLI</a>
+    
+    
+    
+    <a href="/cn/tags/#文件读写" title="文件读写" rel="1">文件读写</a>
+    
+    
+    
+    <a href="/cn/tags/#测试" title="测试" rel="7">测试</a>
+    
+    
+    
+    <a href="/cn/tags/#指令编码" title="指令编码" rel="4">指令编码</a>
+    
+    
+    
+    <a href="/cn/tags/#代码生成" title="代码生成" rel="8">代码生成</a>
+    
+    
+    
+    <a href="/cn/tags/#规范" title="规范" rel="2">规范</a>
+    
+    
+    
+    <a href="/cn/tags/#后端设计" title="后端设计" rel="4">后端设计</a>
+    
+    
+    
+    <a href="/cn/tags/#模型导入" title="模型导入" rel="2">模型导入</a>
+    
+    
+    
+    <a href="/cn/tags/#确定性" title="确定性" rel="2">确定性</a>
+    
+    
+    
+    <a href="/cn/tags/#运行资源" title="运行资源" rel="1">运行资源</a>
+    
+    
+    
+    <a href="/cn/tags/#池化" title="池化" rel="1">池化</a>
+    
+    
+    
+    <a href="/cn/tags/#插值" title="插值" rel="1">插值</a>
+    
+    
+    
+    <a href="/cn/tags/#归约" title="归约" rel="5">归约</a>
+    
+    
+    
+    <a href="/cn/tags/#张量形状" title="张量形状" rel="3">张量形状</a>
+    
+    
+    
+    <a href="/cn/tags/#内存布局" title="内存布局" rel="7">内存布局</a>
+    
+    
+    
+    <a href="/cn/tags/#量化" title="量化" rel="16">量化</a>
+    
+    
+    
+    <a href="/cn/tags/#归一化" title="归一化" rel="2">归一化</a>
+    
+    
+    
+    <a href="/cn/tags/#非线性函数" title="非线性函数" rel="1">非线性函数</a>
+    
+    
+    
+    <a href="/cn/tags/#数值精度" title="数值精度" rel="4">数值精度</a>
+    
+    
+    
+    <a href="/cn/tags/#系列导读" title="系列导读" rel="1">系列导读</a>
+    
+    
+    
+    <a href="/cn/tags/#数值与量化" title="数值与量化" rel="11">数值与量化</a>
+    
+    
+    
+    <a href="/cn/tags/#图重写" title="图重写" rel="7">图重写</a>
+    
+    
+    
+    <a href="/cn/tags/#重量化" title="重量化" rel="1">重量化</a>
+    
+    
+    
+    <a href="/cn/tags/#整数运算" title="整数运算" rel="5">整数运算</a>
+    
+    
+    
+    <a href="/cn/tags/#BatchNorm" title="BatchNorm" rel="1">BatchNorm</a>
+    
+    
+    
+    <a href="/cn/tags/#广播" title="广播" rel="2">广播</a>
+    
+    
+    
+    <a href="/cn/tags/#内存规划" title="内存规划" rel="4">内存规划</a>
+    
+    
+    
+    <a href="/cn/tags/#MLIR" title="MLIR" rel="1">MLIR</a>
+    
+    
+    
+    <a href="/cn/tags/#类型系统" title="类型系统" rel="1">类型系统</a>
+    
+    
+    
+    <a href="/cn/tags/#算子与布局" title="算子与布局" rel="12">算子与布局</a>
+    
+    
+    
+    <a href="/cn/tags/#卷积" title="卷积" rel="3">卷积</a>
+    
+    
+    
+    <a href="/cn/tags/#算子降级" title="算子降级" rel="3">算子降级</a>
+    
+    
+    
+    <a href="/cn/tags/#内存对齐" title="内存对齐" rel="1">内存对齐</a>
+    
+    
+    
+    <a href="/cn/tags/#常量" title="常量" rel="1">常量</a>
+    
+    
+    
+    <a href="/cn/tags/#常量折叠" title="常量折叠" rel="1">常量折叠</a>
+    
+    
+    
+    <a href="/cn/tags/#算子融合" title="算子融合" rel="2">算子融合</a>
+    
+    
+    
+    <a href="/cn/tags/#寄存器分配" title="寄存器分配" rel="3">寄存器分配</a>
+    
+    
+    
+    <a href="/cn/tags/#RAII" title="RAII" rel="2">RAII</a>
+    
+    
+    
+    <a href="/cn/tags/#MatMul" title="MatMul" rel="2">MatMul</a>
+    
+    
+    
+    <a href="/cn/tags/#资源与调度" title="资源与调度" rel="10">资源与调度</a>
+    
+    
+    
+    <a href="/cn/tags/#调度" title="调度" rel="3">调度</a>
+    
+    
+    
+    <a href="/cn/tags/#同步" title="同步" rel="3">同步</a>
+    
+    
+    
+    <a href="/cn/tags/#活跃性" title="活跃性" rel="1">活跃性</a>
+    
+    
+    
+    <a href="/cn/tags/#有状态计算" title="有状态计算" rel="2">有状态计算</a>
     
     
     
@@ -1056,24 +1303,24 @@ C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
 <div class="widget">
   <ul>
     
-    <a href="../../%E9%A1%B9%E7%9B%AE%E8%A7%A3%E6%9E%90ROS2%E5%A4%9A%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%BD%A6%E9%98%9F%E5%8D%8F%E8%B0%83%E5%99%A8V1_%E4%BB%8E%E4%BB%BB%E5%8A%A1%E6%8F%90%E4%BA%A4%E5%88%B0%E8%B7%AF%E5%BE%84%E5%88%86%E5%8F%91%E7%9A%84%E6%9C%80%E5%B0%8F%E9%97%AD%E7%8E%AF/">
-      <li>从任务提交到路径分发的最小闭环</li>
+    <a href="../../compiler-e15-names-are-not-numerical-contracts/">
+      <li>E15｜一个函数名，装不下它的数值契约：非线性与归一化的边界</li>
     </a>
     
-    <a href="../../%E9%A1%B9%E7%9B%AE%E4%B8%93%E9%A2%98%E8%A7%A3%E6%9E%90_%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BD%93%E5%89%8Dplanning%E7%94%A8service%E8%80%8Cstate%E5%92%8Cassignment%E7%94%A8topic/">
-      <li>为什么当前planning用service而state和assignment用topic</li>
+    <a href="../../compiler-e14-same-shape-different-answers/">
+      <li>E14｜相同的输出形状，完全不同的答案：池化、缩放与索引归约</li>
     </a>
     
-    <a href="../../%E9%A1%B9%E7%9B%AE%E4%B8%93%E9%A2%98%E8%A7%A3%E6%9E%90_%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BD%93%E5%89%8D%E9%98%B6%E6%AE%B5%E8%BF%98%E6%B2%A1%E6%9C%89%E9%80%89%E6%8B%A9Nav2-first_integration/">
-      <li>为什么当前阶段还没有选择Nav2-first integration</li>
+    <a href="../../compiler-e13-moving-data-moving-meaning/">
+      <li>E13｜它只是在搬数据，为什么还会算错：张量变换的隐藏契约</li>
     </a>
     
-    <a href="../../%E9%A1%B9%E7%9B%AE%E4%B8%93%E9%A2%98%E8%A7%A3%E6%9E%90_DDS_sandbox%E9%99%90%E5%88%B6%E4%B8%8EROS2%E8%BF%90%E8%A1%8C%E9%AA%8C%E8%AF%81%E8%BE%B9%E7%95%8C/">
-      <li>DDS sandbox限制与ROS2运行验证边界</li>
+    <a href="../../compiler-e12-four-identities-of-an-instruction/">
+      <li>E12｜一条指令的四种身份：代码生成为什么不能只靠字符串</li>
     </a>
     
-    <a href="../../%E9%A1%B9%E7%9B%AE%E4%B8%93%E9%A2%98%E8%A7%A3%E6%9E%90_%E5%86%B2%E7%AA%81%E6%A3%80%E6%B5%8B%E4%B8%8E%E9%A2%84%E7%BA%A6%E6%9C%BA%E5%88%B6%E4%B8%BA%E4%BD%95%E4%BC%9A%E6%88%90%E4%B8%BA%E4%B8%8B%E4%B8%80%E4%B8%AA%E5%A4%8D%E6%9D%82%E5%BA%A6%E8%B7%83%E8%BF%81%E7%82%B9/">
-      <li>冲突检测与预约机制为何会成为下一个复杂度跃迁点</li>
+    <a href="../../compiler-e11-what-does-supported-really-mean/">
+      <li>E11｜搜索到了算子名字，就可以写进“支持列表”吗？</li>
     </a>
     
   </ul>
@@ -1088,6 +1335,10 @@ C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
 <h5><a href="/cn/archives/">archives</a></h5>
 <div class="widget">
   <ul>
+    
+    <a href="/cn/archives/#2026">
+      <li>2026 (49)</li>
+    </a>
     
     <a href="/cn/archives/#2025">
       <li>2025 (9)</li>
@@ -1132,6 +1383,10 @@ C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
     
     <a href="/cn/categories/#x86">
       <li>x86</li>
+    </a>
+    
+    <a href="/cn/categories/#编译器工程">
+      <li>编译器工程</li>
     </a>
     
     <a href="/cn/categories/#数学哲学">

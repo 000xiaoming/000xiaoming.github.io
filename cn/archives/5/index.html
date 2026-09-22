@@ -430,35 +430,35 @@
   <!-- top end -->
   
 
-  <a href="/cn/RISCV指令设计和使用问题/">
+  <a href="/cn/compiler-n08-specialized-affine/">
     <h2 class="post-title">
-      RISCV减低边界检查的开销方法/硬连线为零的可能实现方式/大立即数的RISC-V编址和寻址问题/分支和跳转指令中立即数字段的PC相对偏移表示问题
+      N08｜写了专用算子，又把它拆掉：一次值得认真记录的设计转向
     </h2>
     <h3 class="post-subtitle">
-      RISC-V
+      专用仿射算子的引入与撤回，如何比较维护成本与表达力。
     </h3>
     <div class="post-content-preview">
-      关于我
-欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
-主要内容分类
+      系列目录 · 数值与量化 · N08 · Read in English
 
-项目工程：深入探讨技术的实现细节和理解。
-C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
-程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
+教学场景重构：对话是用于说明设计评审问题的虚构场景。历史中存在专用仿射后端的增加、通用乘加替换及专用实现删除；本文不把不同分支上的提交按日期拼成未经核实的连续发布史。
 
-想要了解更多具体内容，您可以访问文章分类页面。
-联系我
-如果您有任何问题......
+“上周还在补专用算子，这周怎么又删了？”在代码评审里，这句话容易带出一丝尴尬。可真正值得追问的不是“谁走了弯路”，而是：“我们发现哪条抽象边界放错了......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Bruce Lee on
-    2024-01-03
+    2026-02-13
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象">RISC-V问题和解决方案以及现象</a>
+    <a href="/cn/tags/#后端设计" title="后端设计">后端设计</a>
+    
+    <a href="/cn/tags/#量化" title="量化">量化</a>
+    
+    <a href="/cn/tags/#数值与量化" title="数值与量化">数值与量化</a>
+    
+    <a href="/cn/tags/#图重写" title="图重写">图重写</a>
     
   </div>
   
@@ -473,35 +473,35 @@ C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
   <!-- top end -->
   
 
-  <a href="/cn/RISCV设计中跳转和同步系列问题和x86/">
+  <a href="/cn/compiler-n07-broadcast-memory/">
     <h2 class="post-title">
-      RISCV超12位立即数字段的跳转问题/解决数据竞争问题的底层支持/数组索引访问与指针访问/常见优化/x86的复杂性缺陷
+      N07｜只有几个通道参数，为什么局部内存先满了？
     </h2>
     <h3 class="post-subtitle">
-      RISC-V
+      避免把通道向量铺满整张量，同时守住广播语义。
     </h3>
     <div class="post-content-preview">
-      关于我
-欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
-主要内容分类
+      系列目录 · 数值与量化 · N07 · Read in English
 
-项目工程：深入探讨技术的实现细节和理解。
-C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
-程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
+教学场景重构：这里的尺寸和对齐粒度是自设模型，不对应某个内部设备。历史变化涉及逐通道参数展开、局部工作区、布局步长与简化分支；性能数字只做公式计算，没有实测结果。
 
-想要了解更多具体内容，您可以访问文章分类页面。
-联系我
-如果您有任何问题......
+“模型里只有一小条 scale，一小条 bias。怎么会内存不够？”屏幕上的分配失败看起来像在跟常识争论。直到有人把编译后常量 shape展开：那两条小......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Bruce Lee on
-    2024-01-03
+    2026-02-09
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象">RISC-V问题和解决方案以及现象</a>
+    <a href="/cn/tags/#量化" title="量化">量化</a>
+    
+    <a href="/cn/tags/#数值与量化" title="数值与量化">数值与量化</a>
+    
+    <a href="/cn/tags/#广播" title="广播">广播</a>
+    
+    <a href="/cn/tags/#内存规划" title="内存规划">内存规划</a>
     
   </div>
   
@@ -516,35 +516,35 @@ C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
   <!-- top end -->
   
 
-  <a href="/cn/RISCV基本设计理念/">
+  <a href="/cn/compiler-n06-batchnorm-quantization/">
     <h2 class="post-title">
-      RISCV基本设计理念
+      N06｜BatchNorm 变成乘加之后，真正的数值工作才开始
     </h2>
     <h3 class="post-subtitle">
-      RISC-V
+      从固定统计量到通道乘加，再到乘数、移位和偏置。
     </h3>
     <div class="post-content-preview">
-      关于我
-欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
-主要内容分类
+      系列目录 · 数值与量化 · N06 · Read in English
 
-项目工程：深入探讨技术的实现细节和理解。
-C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
-程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
+教学场景重构：下面的讨论和算例是重新编写的讲解，不是历史会议记录。实现观察限于推理仿射路径及其量化演进；没有声称支持训练统计更新，也没有运行本文建议的实验。
 
-想要了解更多具体内容，您可以访问文章分类页面。
-联系我
-如果您有任何问题......
+“BatchNorm 已经融合成 y=ax+b了，剩下不就一个乘法一个加法？”大家点头。几分钟后，问题变成：“a 用多少位？b 的 scale 是谁的？乘完先......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Bruce Lee on
-    2024-01-01
+    2026-02-02
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#RISC-V问题和解决方案以及现象" title="RISC-V问题和解决方案以及现象">RISC-V问题和解决方案以及现象</a>
+    <a href="/cn/tags/#量化" title="量化">量化</a>
+    
+    <a href="/cn/tags/#数值与量化" title="数值与量化">数值与量化</a>
+    
+    <a href="/cn/tags/#整数运算" title="整数运算">整数运算</a>
+    
+    <a href="/cn/tags/#BatchNorm" title="BatchNorm">BatchNorm</a>
     
   </div>
   
@@ -559,35 +559,35 @@ C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
   <!-- top end -->
   
 
-  <a href="/cn/last/">
+  <a href="/cn/compiler-n05-integer-multiply/">
     <h2 class="post-title">
-      x86汇编搁置的地方
+      N05｜乘法没算错，尺度乘错了：整数内核的两张账单
     </h2>
     <h3 class="post-subtitle">
-      x86
+      逐项核对输入 scale、输出 scale 与中间乘积的范围。
     </h3>
     <div class="post-content-preview">
-      关于我
-欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
-主要内容分类
+      系列目录 · 数值与量化 · N05 · Read in English
 
-项目工程：深入探讨技术的实现细节和理解。
-C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
-程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
+教学场景重构：所有对话、系数和伪代码均为教学重设。历史差异表明乘法建立了专用尺度参数计算，并补充标量来源控制；本文的误差讨论与测试矩阵为推导和建议，未执行硬件测试。
 
-想要了解更多具体内容，您可以访问文章分类页面。
-联系我
-如果您有任何问题......
+“两个整数相乘，结果和计算器一致，模型还是不对。”这时候盯着乘号往往没有用。计算器只替你检查了一张账单：整数乘积。模型还在看另一张账单：这些整数分别代......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Bruce Lee on
-    2023-12-12
+    2026-01-28
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#x86" title="x86">x86</a>
+    <a href="/cn/tags/#量化" title="量化">量化</a>
+    
+    <a href="/cn/tags/#数值精度" title="数值精度">数值精度</a>
+    
+    <a href="/cn/tags/#数值与量化" title="数值与量化">数值与量化</a>
+    
+    <a href="/cn/tags/#整数运算" title="整数运算">整数运算</a>
     
   </div>
   
@@ -602,35 +602,36 @@ C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
   <!-- top end -->
   
 
-  <a href="/cn/x86_3/">
+  <a href="/cn/compiler-n04-identity-requantization/">
     <h2 class="post-title">
-      x86编程思考过程片段(3)关于编程技巧,注意事项,指令细节
+      N04｜这个归约什么也没做，为什么还不能删？
     </h2>
     <h3 class="post-subtitle">
-      x86
+      数学恒等不代表量化编码恒等，空轴和单位轴也有契约。
     </h3>
     <div class="post-content-preview">
-      关于我
-欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
-主要内容分类
+      系列目录 · 数值与量化 · N04 · Read in English
 
-项目工程：深入探讨技术的实现细节和理解。
-C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
-程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
+教学场景重构：输入、数值与对白是重设的教学例子。历史修复确实区分了同类型直接转发和异类型重量化；下文讨论的是这些差异揭示的通用契约，测试建议未执行。
 
-想要了解更多具体内容，您可以访问文章分类页面。
-联系我
-如果您有任何问题......
+“沿长度为一的轴求和，就是它自己。删掉，省一条指令。”这句话数学上很稳，工程上却差一个问题：“它自己”是同一个实数，还是同一串整数？
+有时删掉一个明明没有计算量的算子......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Bruce Lee on
-    2023-10-11
+    2026-01-22
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#x86" title="x86">x86</a>
+    <a href="/cn/tags/#归约" title="归约">归约</a>
+    
+    <a href="/cn/tags/#数值与量化" title="数值与量化">数值与量化</a>
+    
+    <a href="/cn/tags/#图重写" title="图重写">图重写</a>
+    
+    <a href="/cn/tags/#重量化" title="重量化">重量化</a>
     
   </div>
   
@@ -645,35 +646,36 @@ C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
   <!-- top end -->
   
 
-  <a href="/cn/x86_2/">
+  <a href="/cn/compiler-n03-reduction-family/">
     <h2 class="post-title">
-      x86编程思考过程片段(2)关于编程技巧,注意事项,指令细节
+      N03｜最大值、最小值和求和：长得像三兄弟，不能共用一份数学作业
     </h2>
     <h3 class="post-subtitle">
-      x86
+      归约框架可以共享，初始化、累加与重定标不能照搬。
     </h3>
     <div class="post-content-preview">
-      关于我
-欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
-主要内容分类
+      系列目录 · 数值与量化 · N03 · Read in English
 
-项目工程：深入探讨技术的实现细节和理解。
-C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
-程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
+教学场景重构：人物对白与算例为重新编写。历史证据来自归约家族接入、结构测试和指令实现合并；本文没有运行这些测试，也没有把代码复用写成已测性能提升。
 
-想要了解更多具体内容，您可以访问文章分类页面。
-联系我
-如果您有任何问题......
+“平均值已经有了，求和把除法删掉，最大最小换个符号，下午就收工？”
+如果算子支持清单是一张菜单，这个提议十分诱人。可编译器接一个算子，除了厨房会做，还要让点单系统识别它......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Bruce Lee on
-    2023-09-23
+    2026-01-18
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#x86" title="x86">x86</a>
+    <a href="/cn/tags/#归约" title="归约">归约</a>
+    
+    <a href="/cn/tags/#量化" title="量化">量化</a>
+    
+    <a href="/cn/tags/#数值精度" title="数值精度">数值精度</a>
+    
+    <a href="/cn/tags/#数值与量化" title="数值与量化">数值与量化</a>
     
   </div>
   
@@ -688,35 +690,36 @@ C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
   <!-- top end -->
   
 
-  <a href="/cn/本博客汇编代码的环境规范/">
+  <a href="/cn/compiler-n02-axis-identity/">
     <h2 class="post-title">
-      本博客的汇编代码的环境规范
+      N02｜消失的维度：keep_dims=false 为什么能把逆置换弄坏？
     </h2>
     <h3 class="post-subtitle">
-      大不了，从头来过...
+      被删掉的轴不再属于原来的坐标系，逆置换必须重建。
     </h3>
     <div class="post-content-preview">
-      关于我
-欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
-主要内容分类
+      系列目录 · 数值与量化 · N02 · Read in English
 
-项目工程：深入探讨技术的实现细节和理解。
-C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
-程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
+教学场景重构：故事、张量尺寸与伪代码均为重新设计的讲解材料。历史差异支持“先保留归约轴，再恢复输出形状”的修复；下文的诊断流程与扩展测试是方法建议，未声称已经运行。
 
-想要了解更多具体内容，您可以访问文章分类页面。
-联系我
-如果您有任何问题......
+“保持维度时全绿，去掉维度时全红。”这句话很像一个过于礼貌的报错：它几乎把答案告诉了你，却还是能让人对着屏幕坐很久。
+求平均本身可能没有算错。真正出问......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Bruce Lee on
-    2023-09-14
+    2026-01-11
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#x86" title="x86">x86</a>
+    <a href="/cn/tags/#归约" title="归约">归约</a>
+    
+    <a href="/cn/tags/#张量形状" title="张量形状">张量形状</a>
+    
+    <a href="/cn/tags/#数值与量化" title="数值与量化">数值与量化</a>
+    
+    <a href="/cn/tags/#图重写" title="图重写">图重写</a>
     
   </div>
   
@@ -731,35 +734,35 @@ C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
   <!-- top end -->
   
 
-  <a href="/cn/x86_1/">
+  <a href="/cn/compiler-n01-reduction-lowering/">
     <h2 class="post-title">
-      x86编程思考过程片段(1)关于编程技巧,注意事项,指令细节
+      N01｜求个平均值，为什么编译器先写起了循环？
     </h2>
     <h3 class="post-subtitle">
-      x86
+      把任意归约轴变成可执行的循环，追踪搬运和布局成本。
     </h3>
     <div class="post-content-preview">
-      关于我
-欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
-主要内容分类
+      系列目录 · 数值与量化 · N01 · Read in English
 
-项目工程：深入探讨技术的实现细节和理解。
-C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
-程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
+教学场景重构：下面的对话和输入都是为解释问题重新设计的，不是现场聊天记录。实现观察来自历史差异；公式推导、取舍分析与建议实验分别说明，未执行硬件测量。
 
-想要了解更多具体内容，您可以访问文章分类页面。
-联系我
-如果您有任何问题......
+“这个算子就一行：求平均。”同事把纸推过来。纸上确实只有一行。过了半小时，白板已经出现轴、步长、临时缓冲区和两个循环标签。有人笑：“平均值还没算，先把工作量平均分配......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Bruce Lee on
-    2023-09-11
+    2026-01-06
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#x86" title="x86">x86</a>
+    <a href="/cn/tags/#归约" title="归约">归约</a>
+    
+    <a href="/cn/tags/#内存布局" title="内存布局">内存布局</a>
+    
+    <a href="/cn/tags/#数值与量化" title="数值与量化">数值与量化</a>
+    
+    <a href="/cn/tags/#算子降级" title="算子降级">算子降级</a>
     
   </div>
   
@@ -774,35 +777,29 @@ C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
   <!-- top end -->
   
 
-  <a href="/cn/论持久战/">
+  <a href="/cn/compiler-engineering-notes/">
     <h2 class="post-title">
-      论持久战
+      编译器工程笔记：48 篇双语文章与阅读路线
     </h2>
     <h3 class="post-subtitle">
-      持久战斗，更好生活...
+      数值与量化、算子与布局、资源与调度、工程与交付
     </h3>
     <div class="post-content-preview">
-      关于我
-欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
-主要内容分类
+      Read this guide in English
 
-项目工程：深入探讨技术的实现细节和理解。
-C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
-程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
+日期说明：本系列的博客日期按阅读顺序编排在 2026 年 1 月至 9 月，约每 5～6 天一篇，不代表提交、故障或实验发生时间。中英文使用相同的编排日期。
 
-想要了解更多具体内容，您可以访问文章分类页面。
-联系我
-如果您有任何问题......
+48 篇关于编译器数值、布局、调度与交付的技术长文。故事常从一个不起眼的问题开始：求个平均值为什么要搬数据，文件明明在为什么找不到，视图没有复制为什么不能释放内存，Debug 正......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Bruce Lee on
-    2023-08-10
+    2026-01-02
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#IT" title="IT">IT</a>
+    <a href="/cn/tags/#系列导读" title="系列导读">系列导读</a>
     
   </div>
   
@@ -817,35 +814,33 @@ C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
   <!-- top end -->
   
 
-  <a href="/cn/中断概览/">
+  <a href="/cn/项目解析ROS2多机器人车队协调器V1_从任务提交到路径分发的最小闭环/">
     <h2 class="post-title">
-      x86-8086汇编：该架构的中断信息引发，中断向量表的配置，中断例程的执行
+      从任务提交到路径分发的最小闭环
     </h2>
     <h3 class="post-subtitle">
-      细剖x86-8086中断...
+      ROS2
     </h3>
     <div class="post-content-preview">
-      关于我
-欢迎来到我的博客！这里汇集了我对编程和技术的洞见和总结。本站内容分为几个主要类别，涵盖从具体技术实现到编程理念的广泛话题。
-主要内容分类
-
-项目工程：深入探讨技术的实现细节和理解。
-C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
-程序员哲学：分享程序员在职业生涯中应该具备的哲学理念和思考方式。
-
-想要了解更多具体内容，您可以访问文章分类页面。
-联系我
-如果您有任何问题......
+      从任务提交到路径分发的最小闭环
+ros2-fleet-coordinator本身并不是一开始就瞄准复杂调度,冲突消解,Nav2全栈集成. 相反,它先做了一件更基础,但也更关键的事情: 先把一个多机器人车队系统里面最小可运行闭环搭起来.
+这个闭环可以描述为:有机器人周期性上报自身状态/有任务入口可以提交取货点和放货点/有中心管理器选择空闲机器人/有路径规划器给出图上的waypoint路径/有机......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Bruce Lee on
-    2023-08-01
+    2025-04-20
   </p>
   <div class="tags">
     
-    <a href="/cn/tags/#x86" title="x86">x86</a>
+    <a href="/cn/tags/#多机器人系统" title="多机器人系统">多机器人系统</a>
+    
+    <a href="/cn/tags/#fleet_manager" title="fleet_manager">fleet_manager</a>
+    
+    <a href="/cn/tags/#path_planner" title="path_planner">path_planner</a>
+    
+    <a href="/cn/tags/#robot_agent" title="robot_agent">robot_agent</a>
     
   </div>
   
@@ -903,7 +898,7 @@ C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
     
     
     
-    <a href="/cn/tags/#C/C++" title="C/C++" rel="7">C/C++</a>
+    <a href="/cn/tags/#C/C++" title="C/C++" rel="8">C/C++</a>
     
     
     
@@ -916,6 +911,238 @@ C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
     
     
     <a href="/cn/tags/#x86" title="x86" rel="9">x86</a>
+    
+    
+    
+    <a href="/cn/tags/#工程与交付" title="工程与交付" rel="15">工程与交付</a>
+    
+    
+    
+    <a href="/cn/tags/#构建系统" title="构建系统" rel="2">构建系统</a>
+    
+    
+    
+    <a href="/cn/tags/#安装" title="安装" rel="1">安装</a>
+    
+    
+    
+    <a href="/cn/tags/#错误处理" title="错误处理" rel="4">错误处理</a>
+    
+    
+    
+    <a href="/cn/tags/#断言" title="断言" rel="1">断言</a>
+    
+    
+    
+    <a href="/cn/tags/#调试" title="调试" rel="2">调试</a>
+    
+    
+    
+    <a href="/cn/tags/#工具链" title="工具链" rel="1">工具链</a>
+    
+    
+    
+    <a href="/cn/tags/#可复现构建" title="可复现构建" rel="2">可复现构建</a>
+    
+    
+    
+    <a href="/cn/tags/#动态链接" title="动态链接" rel="1">动态链接</a>
+    
+    
+    
+    <a href="/cn/tags/#打包" title="打包" rel="3">打包</a>
+    
+    
+    
+    <a href="/cn/tags/#ELF" title="ELF" rel="1">ELF</a>
+    
+    
+    
+    <a href="/cn/tags/#二进制格式" title="二进制格式" rel="1">二进制格式</a>
+    
+    
+    
+    <a href="/cn/tags/#序列化" title="序列化" rel="1">序列化</a>
+    
+    
+    
+    <a href="/cn/tags/#输入校验" title="输入校验" rel="2">输入校验</a>
+    
+    
+    
+    <a href="/cn/tags/#CLI" title="CLI" rel="1">CLI</a>
+    
+    
+    
+    <a href="/cn/tags/#文件读写" title="文件读写" rel="1">文件读写</a>
+    
+    
+    
+    <a href="/cn/tags/#测试" title="测试" rel="7">测试</a>
+    
+    
+    
+    <a href="/cn/tags/#指令编码" title="指令编码" rel="4">指令编码</a>
+    
+    
+    
+    <a href="/cn/tags/#代码生成" title="代码生成" rel="8">代码生成</a>
+    
+    
+    
+    <a href="/cn/tags/#规范" title="规范" rel="2">规范</a>
+    
+    
+    
+    <a href="/cn/tags/#后端设计" title="后端设计" rel="4">后端设计</a>
+    
+    
+    
+    <a href="/cn/tags/#模型导入" title="模型导入" rel="2">模型导入</a>
+    
+    
+    
+    <a href="/cn/tags/#确定性" title="确定性" rel="2">确定性</a>
+    
+    
+    
+    <a href="/cn/tags/#运行资源" title="运行资源" rel="1">运行资源</a>
+    
+    
+    
+    <a href="/cn/tags/#池化" title="池化" rel="1">池化</a>
+    
+    
+    
+    <a href="/cn/tags/#插值" title="插值" rel="1">插值</a>
+    
+    
+    
+    <a href="/cn/tags/#归约" title="归约" rel="5">归约</a>
+    
+    
+    
+    <a href="/cn/tags/#张量形状" title="张量形状" rel="3">张量形状</a>
+    
+    
+    
+    <a href="/cn/tags/#内存布局" title="内存布局" rel="7">内存布局</a>
+    
+    
+    
+    <a href="/cn/tags/#量化" title="量化" rel="16">量化</a>
+    
+    
+    
+    <a href="/cn/tags/#归一化" title="归一化" rel="2">归一化</a>
+    
+    
+    
+    <a href="/cn/tags/#非线性函数" title="非线性函数" rel="1">非线性函数</a>
+    
+    
+    
+    <a href="/cn/tags/#数值精度" title="数值精度" rel="4">数值精度</a>
+    
+    
+    
+    <a href="/cn/tags/#系列导读" title="系列导读" rel="1">系列导读</a>
+    
+    
+    
+    <a href="/cn/tags/#数值与量化" title="数值与量化" rel="11">数值与量化</a>
+    
+    
+    
+    <a href="/cn/tags/#图重写" title="图重写" rel="7">图重写</a>
+    
+    
+    
+    <a href="/cn/tags/#重量化" title="重量化" rel="1">重量化</a>
+    
+    
+    
+    <a href="/cn/tags/#整数运算" title="整数运算" rel="5">整数运算</a>
+    
+    
+    
+    <a href="/cn/tags/#BatchNorm" title="BatchNorm" rel="1">BatchNorm</a>
+    
+    
+    
+    <a href="/cn/tags/#广播" title="广播" rel="2">广播</a>
+    
+    
+    
+    <a href="/cn/tags/#内存规划" title="内存规划" rel="4">内存规划</a>
+    
+    
+    
+    <a href="/cn/tags/#MLIR" title="MLIR" rel="1">MLIR</a>
+    
+    
+    
+    <a href="/cn/tags/#类型系统" title="类型系统" rel="1">类型系统</a>
+    
+    
+    
+    <a href="/cn/tags/#算子与布局" title="算子与布局" rel="12">算子与布局</a>
+    
+    
+    
+    <a href="/cn/tags/#卷积" title="卷积" rel="3">卷积</a>
+    
+    
+    
+    <a href="/cn/tags/#算子降级" title="算子降级" rel="3">算子降级</a>
+    
+    
+    
+    <a href="/cn/tags/#内存对齐" title="内存对齐" rel="1">内存对齐</a>
+    
+    
+    
+    <a href="/cn/tags/#常量" title="常量" rel="1">常量</a>
+    
+    
+    
+    <a href="/cn/tags/#常量折叠" title="常量折叠" rel="1">常量折叠</a>
+    
+    
+    
+    <a href="/cn/tags/#算子融合" title="算子融合" rel="2">算子融合</a>
+    
+    
+    
+    <a href="/cn/tags/#寄存器分配" title="寄存器分配" rel="3">寄存器分配</a>
+    
+    
+    
+    <a href="/cn/tags/#RAII" title="RAII" rel="2">RAII</a>
+    
+    
+    
+    <a href="/cn/tags/#MatMul" title="MatMul" rel="2">MatMul</a>
+    
+    
+    
+    <a href="/cn/tags/#资源与调度" title="资源与调度" rel="10">资源与调度</a>
+    
+    
+    
+    <a href="/cn/tags/#调度" title="调度" rel="3">调度</a>
+    
+    
+    
+    <a href="/cn/tags/#同步" title="同步" rel="3">同步</a>
+    
+    
+    
+    <a href="/cn/tags/#活跃性" title="活跃性" rel="1">活跃性</a>
+    
+    
+    
+    <a href="/cn/tags/#有状态计算" title="有状态计算" rel="2">有状态计算</a>
     
     
     
@@ -1056,24 +1283,24 @@ C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
 <div class="widget">
   <ul>
     
-    <a href="../../%E9%A1%B9%E7%9B%AE%E8%A7%A3%E6%9E%90ROS2%E5%A4%9A%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%BD%A6%E9%98%9F%E5%8D%8F%E8%B0%83%E5%99%A8V1_%E4%BB%8E%E4%BB%BB%E5%8A%A1%E6%8F%90%E4%BA%A4%E5%88%B0%E8%B7%AF%E5%BE%84%E5%88%86%E5%8F%91%E7%9A%84%E6%9C%80%E5%B0%8F%E9%97%AD%E7%8E%AF/">
-      <li>从任务提交到路径分发的最小闭环</li>
+    <a href="../../compiler-e15-names-are-not-numerical-contracts/">
+      <li>E15｜一个函数名，装不下它的数值契约：非线性与归一化的边界</li>
     </a>
     
-    <a href="../../%E9%A1%B9%E7%9B%AE%E4%B8%93%E9%A2%98%E8%A7%A3%E6%9E%90_%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BD%93%E5%89%8Dplanning%E7%94%A8service%E8%80%8Cstate%E5%92%8Cassignment%E7%94%A8topic/">
-      <li>为什么当前planning用service而state和assignment用topic</li>
+    <a href="../../compiler-e14-same-shape-different-answers/">
+      <li>E14｜相同的输出形状，完全不同的答案：池化、缩放与索引归约</li>
     </a>
     
-    <a href="../../%E9%A1%B9%E7%9B%AE%E4%B8%93%E9%A2%98%E8%A7%A3%E6%9E%90_%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BD%93%E5%89%8D%E9%98%B6%E6%AE%B5%E8%BF%98%E6%B2%A1%E6%9C%89%E9%80%89%E6%8B%A9Nav2-first_integration/">
-      <li>为什么当前阶段还没有选择Nav2-first integration</li>
+    <a href="../../compiler-e13-moving-data-moving-meaning/">
+      <li>E13｜它只是在搬数据，为什么还会算错：张量变换的隐藏契约</li>
     </a>
     
-    <a href="../../%E9%A1%B9%E7%9B%AE%E4%B8%93%E9%A2%98%E8%A7%A3%E6%9E%90_DDS_sandbox%E9%99%90%E5%88%B6%E4%B8%8EROS2%E8%BF%90%E8%A1%8C%E9%AA%8C%E8%AF%81%E8%BE%B9%E7%95%8C/">
-      <li>DDS sandbox限制与ROS2运行验证边界</li>
+    <a href="../../compiler-e12-four-identities-of-an-instruction/">
+      <li>E12｜一条指令的四种身份：代码生成为什么不能只靠字符串</li>
     </a>
     
-    <a href="../../%E9%A1%B9%E7%9B%AE%E4%B8%93%E9%A2%98%E8%A7%A3%E6%9E%90_%E5%86%B2%E7%AA%81%E6%A3%80%E6%B5%8B%E4%B8%8E%E9%A2%84%E7%BA%A6%E6%9C%BA%E5%88%B6%E4%B8%BA%E4%BD%95%E4%BC%9A%E6%88%90%E4%B8%BA%E4%B8%8B%E4%B8%80%E4%B8%AA%E5%A4%8D%E6%9D%82%E5%BA%A6%E8%B7%83%E8%BF%81%E7%82%B9/">
-      <li>冲突检测与预约机制为何会成为下一个复杂度跃迁点</li>
+    <a href="../../compiler-e11-what-does-supported-really-mean/">
+      <li>E11｜搜索到了算子名字，就可以写进“支持列表”吗？</li>
     </a>
     
   </ul>
@@ -1088,6 +1315,10 @@ C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
 <h5><a href="/cn/archives/">archives</a></h5>
 <div class="widget">
   <ul>
+    
+    <a href="/cn/archives/#2026">
+      <li>2026 (49)</li>
+    </a>
     
     <a href="/cn/archives/#2025">
       <li>2025 (9)</li>
@@ -1132,6 +1363,10 @@ C/C++：围绕C/C++语言的技术点和编程技巧进行详细总结。
     
     <a href="/cn/categories/#x86">
       <li>x86</li>
+    </a>
+    
+    <a href="/cn/categories/#编译器工程">
+      <li>编译器工程</li>
     </a>
     
     <a href="/cn/categories/#数学哲学">
