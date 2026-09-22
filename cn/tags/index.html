@@ -449,15 +449,15 @@
         
         <a href="#工程与交付" title="工程与交付" rel="15">工程与交付</a>
         
+        <a href="#断言" title="断言" rel="1">断言</a>
+        
+        <a href="#调试" title="调试" rel="2">调试</a>
+        
         <a href="#构建系统" title="构建系统" rel="2">构建系统</a>
         
         <a href="#安装" title="安装" rel="1">安装</a>
         
         <a href="#错误处理" title="错误处理" rel="4">错误处理</a>
-        
-        <a href="#断言" title="断言" rel="1">断言</a>
-        
-        <a href="#调试" title="调试" rel="2">调试</a>
         
         <a href="#工具链" title="工具链" rel="1">工具链</a>
         
@@ -469,6 +469,10 @@
         
         <a href="#ELF" title="ELF" rel="1">ELF</a>
         
+        <a href="#运行资源" title="运行资源" rel="1">运行资源</a>
+        
+        <a href="#测试" title="测试" rel="7">测试</a>
+        
         <a href="#二进制格式" title="二进制格式" rel="1">二进制格式</a>
         
         <a href="#序列化" title="序列化" rel="1">序列化</a>
@@ -479,7 +483,7 @@
         
         <a href="#文件读写" title="文件读写" rel="1">文件读写</a>
         
-        <a href="#测试" title="测试" rel="7">测试</a>
+        <a href="#确定性" title="确定性" rel="2">确定性</a>
         
         <a href="#指令编码" title="指令编码" rel="4">指令编码</a>
         
@@ -491,21 +495,17 @@
         
         <a href="#模型导入" title="模型导入" rel="2">模型导入</a>
         
-        <a href="#确定性" title="确定性" rel="2">确定性</a>
+        <a href="#张量形状" title="张量形状" rel="3">张量形状</a>
         
-        <a href="#运行资源" title="运行资源" rel="1">运行资源</a>
+        <a href="#内存布局" title="内存布局" rel="7">内存布局</a>
+        
+        <a href="#量化" title="量化" rel="16">量化</a>
         
         <a href="#池化" title="池化" rel="1">池化</a>
         
         <a href="#插值" title="插值" rel="1">插值</a>
         
         <a href="#归约" title="归约" rel="5">归约</a>
-        
-        <a href="#张量形状" title="张量形状" rel="3">张量形状</a>
-        
-        <a href="#内存布局" title="内存布局" rel="7">内存布局</a>
-        
-        <a href="#量化" title="量化" rel="16">量化</a>
         
         <a href="#归一化" title="归一化" rel="2">归一化</a>
         
@@ -516,6 +516,8 @@
         <a href="#系列导读" title="系列导读" rel="1">系列导读</a>
         
         <a href="#数值与量化" title="数值与量化" rel="11">数值与量化</a>
+        
+        <a href="#算子降级" title="算子降级" rel="3">算子降级</a>
         
         <a href="#图重写" title="图重写" rel="7">图重写</a>
         
@@ -537,19 +539,17 @@
         
         <a href="#卷积" title="卷积" rel="3">卷积</a>
         
-        <a href="#算子降级" title="算子降级" rel="3">算子降级</a>
-        
         <a href="#内存对齐" title="内存对齐" rel="1">内存对齐</a>
         
         <a href="#常量" title="常量" rel="1">常量</a>
         
         <a href="#常量折叠" title="常量折叠" rel="1">常量折叠</a>
         
-        <a href="#算子融合" title="算子融合" rel="2">算子融合</a>
-        
         <a href="#寄存器分配" title="寄存器分配" rel="3">寄存器分配</a>
         
         <a href="#RAII" title="RAII" rel="2">RAII</a>
+        
+        <a href="#算子融合" title="算子融合" rel="2">算子融合</a>
         
         <a href="#MatMul" title="MatMul" rel="2">MatMul</a>
         
@@ -1108,6 +1108,20 @@
         <hr>
         
         <div class="post-preview">
+          <a href="/cn/RISCV设计中跳转和同步系列问题和x86/">
+            <h2 class="post-title">
+              RISCV超12位立即数字段的跳转问题/解决数据竞争问题的底层支持/数组索引访问与指针访问/常见优化/x86的复杂性缺陷
+            </h2>
+            
+            <h3 class="post-subtitle">
+              RISC-V
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+        <div class="post-preview">
           <a href="/cn/RISCV运算中间结果系列问题/">
             <h2 class="post-title">
               RISCV舍入问题和中间结果存储问题/浮点并行加速的不稳定性问题以及传统并行算法研究步骤
@@ -1125,20 +1139,6 @@
           <a href="/cn/RISCV非规格化浮点系列问题/">
             <h2 class="post-title">
               RISCV乘法硬件加速算法原理/单精度规格化与非规格化最小正数问题/F/D标准扩展与I问题
-            </h2>
-            
-            <h3 class="post-subtitle">
-              RISC-V
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/cn/RISCV设计中跳转和同步系列问题和x86/">
-            <h2 class="post-title">
-              RISCV超12位立即数字段的跳转问题/解决数据竞争问题的底层支持/数组索引访问与指针访问/常见优化/x86的复杂性缺陷
             </h2>
             
             <h3 class="post-subtitle">
@@ -1290,20 +1290,6 @@
         </span>
         
         <div class="post-preview">
-          <a href="/cn/compiler-e02-three-stages-of-a-build/">
-            <h2 class="post-title">
-              E02｜“我只是重新编译”，为什么安装目录先消失了？
-            </h2>
-            
-            <h3 class="post-subtitle">
-              环境、构建和安装各自负责什么，失败后留下什么。
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
           <a href="/cn/compiler-e01-the-release-build-that-forgot-to-write/">
             <h2 class="post-title">
               E01｜Debug 一切正常，Release 却把写入操作“优化没了”
@@ -1311,6 +1297,20 @@
             
             <h3 class="post-subtitle">
               必要写入藏进断言后，关闭检查会改变程序语义。
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+        <div class="post-preview">
+          <a href="/cn/compiler-e02-three-stages-of-a-build/">
+            <h2 class="post-title">
+              E02｜“我只是重新编译”，为什么安装目录先消失了？
+            </h2>
+            
+            <h3 class="post-subtitle">
+              环境、构建和安装各自负责什么，失败后留下什么。
             </h3>
             
           </a>
@@ -1346,6 +1346,20 @@
         <hr>
         
         <div class="post-preview">
+          <a href="/cn/compiler-e05-a-compiler-that-can-move-house/">
+            <h2 class="post-title">
+              E05｜编译器搬了个家，查表模块就失联了
+            </h2>
+            
+            <h3 class="post-subtitle">
+              通过真实功能与缺件测试，验证运行资源能随包移动。
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+        <div class="post-preview">
           <a href="/cn/compiler-e06-a-model-file-is-a-protocol/">
             <h2 class="post-title">
               E06｜把一堆编译产物装成一个文件，到底难在哪里？
@@ -1367,6 +1381,20 @@
             
             <h3 class="post-subtitle">
               输出目录、临时产物和旧文件，让成功与失败可判断。
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+        <div class="post-preview">
+          <a href="/cn/compiler-e08-releases-and-their-two-clocks/">
+            <h2 class="post-title">
+              E08｜同一份发布包，为什么每次哈希都不同？
+            </h2>
+            
+            <h3 class="post-subtitle">
+              区分归档事件时间、包内时间和字节可复现性。
             </h3>
             
           </a>
@@ -1416,41 +1444,13 @@
         <hr>
         
         <div class="post-preview">
-          <a href="/cn/compiler-e08-releases-and-their-two-clocks/">
+          <a href="/cn/compiler-e12-four-identities-of-an-instruction/">
             <h2 class="post-title">
-              E08｜同一份发布包，为什么每次哈希都不同？
+              E12｜一条指令的四种身份：代码生成为什么不能只靠字符串
             </h2>
             
             <h3 class="post-subtitle">
-              区分归档事件时间、包内时间和字节可复现性。
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/cn/compiler-e05-a-compiler-that-can-move-house/">
-            <h2 class="post-title">
-              E05｜编译器搬了个家，查表模块就失联了
-            </h2>
-            
-            <h3 class="post-subtitle">
-              通过真实功能与缺件测试，验证运行资源能随包移动。
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/cn/compiler-e14-same-shape-different-answers/">
-            <h2 class="post-title">
-              E14｜相同的输出形状，完全不同的答案：池化、缩放与索引归约
-            </h2>
-            
-            <h3 class="post-subtitle">
-              窗口分母、插值坐标和最大值索引决定具体答案。
+              数学运算、内核、发射与编码的四层职责和错误归属。
             </h3>
             
           </a>
@@ -1472,6 +1472,20 @@
         <hr>
         
         <div class="post-preview">
+          <a href="/cn/compiler-e14-same-shape-different-answers/">
+            <h2 class="post-title">
+              E14｜相同的输出形状，完全不同的答案：池化、缩放与索引归约
+            </h2>
+            
+            <h3 class="post-subtitle">
+              窗口分母、插值坐标和最大值索引决定具体答案。
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+        <div class="post-preview">
           <a href="/cn/compiler-e15-names-are-not-numerical-contracts/">
             <h2 class="post-title">
               E15｜一个函数名，装不下它的数值契约：非线性与归一化的边界
@@ -1485,14 +1499,56 @@
         </div>
         <hr>
         
+      </div>
+      
+      <div class="one-tag-list">
+        <span class="fa fa-tag listing-seperator" id="断言">
+          <span class="tag-text">断言</span>
+        </span>
+        
         <div class="post-preview">
-          <a href="/cn/compiler-e12-four-identities-of-an-instruction/">
+          <a href="/cn/compiler-e01-the-release-build-that-forgot-to-write/">
             <h2 class="post-title">
-              E12｜一条指令的四种身份：代码生成为什么不能只靠字符串
+              E01｜Debug 一切正常，Release 却把写入操作“优化没了”
             </h2>
             
             <h3 class="post-subtitle">
-              数学运算、内核、发射与编码的四层职责和错误归属。
+              必要写入藏进断言后，关闭检查会改变程序语义。
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+      </div>
+      
+      <div class="one-tag-list">
+        <span class="fa fa-tag listing-seperator" id="调试">
+          <span class="tag-text">调试</span>
+        </span>
+        
+        <div class="post-preview">
+          <a href="/cn/compiler-e01-the-release-build-that-forgot-to-write/">
+            <h2 class="post-title">
+              E01｜Debug 一切正常，Release 却把写入操作“优化没了”
+            </h2>
+            
+            <h3 class="post-subtitle">
+              必要写入藏进断言后，关闭检查会改变程序语义。
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+        <div class="post-preview">
+          <a href="/cn/compiler-o04-dump-layout/">
+            <h2 class="post-title">
+              O04｜当调试器开始撒谎：一次 Permute，三种 Dump 修法
+            </h2>
+            
+            <h3 class="post-subtitle">
+              三条分支修法共同揭示观察路径也需要布局契约。
             </h3>
             
           </a>
@@ -1621,62 +1677,6 @@
       </div>
       
       <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="断言">
-          <span class="tag-text">断言</span>
-        </span>
-        
-        <div class="post-preview">
-          <a href="/cn/compiler-e01-the-release-build-that-forgot-to-write/">
-            <h2 class="post-title">
-              E01｜Debug 一切正常，Release 却把写入操作“优化没了”
-            </h2>
-            
-            <h3 class="post-subtitle">
-              必要写入藏进断言后，关闭检查会改变程序语义。
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="调试">
-          <span class="tag-text">调试</span>
-        </span>
-        
-        <div class="post-preview">
-          <a href="/cn/compiler-e01-the-release-build-that-forgot-to-write/">
-            <h2 class="post-title">
-              E01｜Debug 一切正常，Release 却把写入操作“优化没了”
-            </h2>
-            
-            <h3 class="post-subtitle">
-              必要写入藏进断言后，关闭检查会改变程序语义。
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/cn/compiler-o04-dump-layout/">
-            <h2 class="post-title">
-              O04｜当调试器开始撒谎：一次 Permute，三种 Dump 修法
-            </h2>
-            
-            <h3 class="post-subtitle">
-              三条分支修法共同揭示观察路径也需要布局契约。
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-      </div>
-      
-      <div class="one-tag-list">
         <span class="fa fa-tag listing-seperator" id="工具链">
           <span class="tag-text">工具链</span>
         </span>
@@ -1773,20 +1773,6 @@
         <hr>
         
         <div class="post-preview">
-          <a href="/cn/compiler-e08-releases-and-their-two-clocks/">
-            <h2 class="post-title">
-              E08｜同一份发布包，为什么每次哈希都不同？
-            </h2>
-            
-            <h3 class="post-subtitle">
-              区分归档事件时间、包内时间和字节可复现性。
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
           <a href="/cn/compiler-e05-a-compiler-that-can-move-house/">
             <h2 class="post-title">
               E05｜编译器搬了个家，查表模块就失联了
@@ -1794,6 +1780,20 @@
             
             <h3 class="post-subtitle">
               通过真实功能与缺件测试，验证运行资源能随包移动。
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+        <div class="post-preview">
+          <a href="/cn/compiler-e08-releases-and-their-two-clocks/">
+            <h2 class="post-title">
+              E08｜同一份发布包，为什么每次哈希都不同？
+            </h2>
+            
+            <h3 class="post-subtitle">
+              区分归档事件时间、包内时间和字节可复现性。
             </h3>
             
           </a>
@@ -1815,6 +1815,132 @@
             
             <h3 class="post-subtitle">
               真实库、SONAME、链接名与运行搜索路径如何连接。
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+      </div>
+      
+      <div class="one-tag-list">
+        <span class="fa fa-tag listing-seperator" id="运行资源">
+          <span class="tag-text">运行资源</span>
+        </span>
+        
+        <div class="post-preview">
+          <a href="/cn/compiler-e05-a-compiler-that-can-move-house/">
+            <h2 class="post-title">
+              E05｜编译器搬了个家，查表模块就失联了
+            </h2>
+            
+            <h3 class="post-subtitle">
+              通过真实功能与缺件测试，验证运行资源能随包移动。
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+      </div>
+      
+      <div class="one-tag-list">
+        <span class="fa fa-tag listing-seperator" id="测试">
+          <span class="tag-text">测试</span>
+        </span>
+        
+        <div class="post-preview">
+          <a href="/cn/compiler-e05-a-compiler-that-can-move-house/">
+            <h2 class="post-title">
+              E05｜编译器搬了个家，查表模块就失联了
+            </h2>
+            
+            <h3 class="post-subtitle">
+              通过真实功能与缺件测试，验证运行资源能随包移动。
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+        <div class="post-preview">
+          <a href="/cn/compiler-e09-golden-tests-that-can-disagree/">
+            <h2 class="post-title">
+              E09｜汇编看起来对了，机器码也会对吗？
+            </h2>
+            
+            <h3 class="post-subtitle">
+              伪汇编、汇编、机器码与数学参考各自证明什么。
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+        <div class="post-preview">
+          <a href="/cn/compiler-e10-specifications-that-admit-unknowns/">
+            <h2 class="post-title">
+              E10｜一份算子文档最有价值的词，可能是“尚未确认”
+            </h2>
+            
+            <h3 class="post-subtitle">
+              规范要保留未知项，避免把示例表格写成能力承诺。
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+        <div class="post-preview">
+          <a href="/cn/compiler-e11-what-does-supported-really-mean/">
+            <h2 class="post-title">
+              E11｜搜索到了算子名字，就可以写进“支持列表”吗？
+            </h2>
+            
+            <h3 class="post-subtitle">
+              从存在一个名字到完整编译路径，支持需要多层证据。
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+        <div class="post-preview">
+          <a href="/cn/compiler-o04-dump-layout/">
+            <h2 class="post-title">
+              O04｜当调试器开始撒谎：一次 Permute，三种 Dump 修法
+            </h2>
+            
+            <h3 class="post-subtitle">
+              三条分支修法共同揭示观察路径也需要布局契约。
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+        <div class="post-preview">
+          <a href="/cn/compiler-r07-error-boundaries/">
+            <h2 class="post-title">
+              R07｜catch 住异常之后，半份机器码怎么办？
+            </h2>
+            
+            <h3 class="post-subtitle">
+              错误被捕获之后，已产生的状态与输出仍需明确处理。
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+        <div class="post-preview">
+          <a href="/cn/compiler-r08-loops-determinism/">
+            <h2 class="post-title">
+              R08｜循环只多了一层，为什么二进制快照像换了一个程序？
+            </h2>
+            
+            <h3 class="post-subtitle">
+              循环、标签和独立发射实例如何影响二进制确定性。
             </h3>
             
           </a>
@@ -1943,88 +2069,18 @@
       </div>
       
       <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="测试">
-          <span class="tag-text">测试</span>
+        <span class="fa fa-tag listing-seperator" id="确定性">
+          <span class="tag-text">确定性</span>
         </span>
         
         <div class="post-preview">
-          <a href="/cn/compiler-e09-golden-tests-that-can-disagree/">
+          <a href="/cn/compiler-e08-releases-and-their-two-clocks/">
             <h2 class="post-title">
-              E09｜汇编看起来对了，机器码也会对吗？
+              E08｜同一份发布包，为什么每次哈希都不同？
             </h2>
             
             <h3 class="post-subtitle">
-              伪汇编、汇编、机器码与数学参考各自证明什么。
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/cn/compiler-e10-specifications-that-admit-unknowns/">
-            <h2 class="post-title">
-              E10｜一份算子文档最有价值的词，可能是“尚未确认”
-            </h2>
-            
-            <h3 class="post-subtitle">
-              规范要保留未知项，避免把示例表格写成能力承诺。
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/cn/compiler-e11-what-does-supported-really-mean/">
-            <h2 class="post-title">
-              E11｜搜索到了算子名字，就可以写进“支持列表”吗？
-            </h2>
-            
-            <h3 class="post-subtitle">
-              从存在一个名字到完整编译路径，支持需要多层证据。
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/cn/compiler-e05-a-compiler-that-can-move-house/">
-            <h2 class="post-title">
-              E05｜编译器搬了个家，查表模块就失联了
-            </h2>
-            
-            <h3 class="post-subtitle">
-              通过真实功能与缺件测试，验证运行资源能随包移动。
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/cn/compiler-o04-dump-layout/">
-            <h2 class="post-title">
-              O04｜当调试器开始撒谎：一次 Permute，三种 Dump 修法
-            </h2>
-            
-            <h3 class="post-subtitle">
-              三条分支修法共同揭示观察路径也需要布局契约。
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/cn/compiler-r07-error-boundaries/">
-            <h2 class="post-title">
-              R07｜catch 住异常之后，半份机器码怎么办？
-            </h2>
-            
-            <h3 class="post-subtitle">
-              错误被捕获之后，已产生的状态与输出仍需明确处理。
+              区分归档事件时间、包内时间和字节可复现性。
             </h3>
             
           </a>
@@ -2363,181 +2419,6 @@
       </div>
       
       <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="确定性">
-          <span class="tag-text">确定性</span>
-        </span>
-        
-        <div class="post-preview">
-          <a href="/cn/compiler-e08-releases-and-their-two-clocks/">
-            <h2 class="post-title">
-              E08｜同一份发布包，为什么每次哈希都不同？
-            </h2>
-            
-            <h3 class="post-subtitle">
-              区分归档事件时间、包内时间和字节可复现性。
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/cn/compiler-r08-loops-determinism/">
-            <h2 class="post-title">
-              R08｜循环只多了一层，为什么二进制快照像换了一个程序？
-            </h2>
-            
-            <h3 class="post-subtitle">
-              循环、标签和独立发射实例如何影响二进制确定性。
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="运行资源">
-          <span class="tag-text">运行资源</span>
-        </span>
-        
-        <div class="post-preview">
-          <a href="/cn/compiler-e05-a-compiler-that-can-move-house/">
-            <h2 class="post-title">
-              E05｜编译器搬了个家，查表模块就失联了
-            </h2>
-            
-            <h3 class="post-subtitle">
-              通过真实功能与缺件测试，验证运行资源能随包移动。
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="池化">
-          <span class="tag-text">池化</span>
-        </span>
-        
-        <div class="post-preview">
-          <a href="/cn/compiler-e14-same-shape-different-answers/">
-            <h2 class="post-title">
-              E14｜相同的输出形状，完全不同的答案：池化、缩放与索引归约
-            </h2>
-            
-            <h3 class="post-subtitle">
-              窗口分母、插值坐标和最大值索引决定具体答案。
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="插值">
-          <span class="tag-text">插值</span>
-        </span>
-        
-        <div class="post-preview">
-          <a href="/cn/compiler-e14-same-shape-different-answers/">
-            <h2 class="post-title">
-              E14｜相同的输出形状，完全不同的答案：池化、缩放与索引归约
-            </h2>
-            
-            <h3 class="post-subtitle">
-              窗口分母、插值坐标和最大值索引决定具体答案。
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="归约">
-          <span class="tag-text">归约</span>
-        </span>
-        
-        <div class="post-preview">
-          <a href="/cn/compiler-e14-same-shape-different-answers/">
-            <h2 class="post-title">
-              E14｜相同的输出形状，完全不同的答案：池化、缩放与索引归约
-            </h2>
-            
-            <h3 class="post-subtitle">
-              窗口分母、插值坐标和最大值索引决定具体答案。
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/cn/compiler-n02-axis-identity/">
-            <h2 class="post-title">
-              N02｜消失的维度：keep_dims=false 为什么能把逆置换弄坏？
-            </h2>
-            
-            <h3 class="post-subtitle">
-              被删掉的轴不再属于原来的坐标系，逆置换必须重建。
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/cn/compiler-n03-reduction-family/">
-            <h2 class="post-title">
-              N03｜最大值、最小值和求和：长得像三兄弟，不能共用一份数学作业
-            </h2>
-            
-            <h3 class="post-subtitle">
-              归约框架可以共享，初始化、累加与重定标不能照搬。
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/cn/compiler-n04-identity-requantization/">
-            <h2 class="post-title">
-              N04｜这个归约什么也没做，为什么还不能删？
-            </h2>
-            
-            <h3 class="post-subtitle">
-              数学恒等不代表量化编码恒等，空轴和单位轴也有契约。
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/cn/compiler-n01-reduction-lowering/">
-            <h2 class="post-title">
-              N01｜求个平均值，为什么编译器先写起了循环？
-            </h2>
-            
-            <h3 class="post-subtitle">
-              把任意归约轴变成可执行的循环，追踪搬运和布局成本。
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-      </div>
-      
-      <div class="one-tag-list">
         <span class="fa fa-tag listing-seperator" id="张量形状">
           <span class="tag-text">张量形状</span>
         </span>
@@ -2606,6 +2487,20 @@
         <hr>
         
         <div class="post-preview">
+          <a href="/cn/compiler-n01-reduction-lowering/">
+            <h2 class="post-title">
+              N01｜求个平均值，为什么编译器先写起了循环？
+            </h2>
+            
+            <h3 class="post-subtitle">
+              把任意归约轴变成可执行的循环，追踪搬运和布局成本。
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+        <div class="post-preview">
           <a href="/cn/compiler-o02-transposed-convolution-storage/">
             <h2 class="post-title">
               O02｜转置卷积的权重：形状很诚实，内存却说了另一种方言
@@ -2634,20 +2529,6 @@
         <hr>
         
         <div class="post-preview">
-          <a href="/cn/compiler-o05-broadcast-address-plans/">
-            <h2 class="post-title">
-              O05｜广播不负责喊话：它负责让地址有时前进、有时原地不动
-            </h2>
-            
-            <h3 class="post-subtitle">
-              按轴建立地址前进规则，覆盖标量、低秩和复杂广播。
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
           <a href="/cn/compiler-o04-dump-layout/">
             <h2 class="post-title">
               O04｜当调试器开始撒谎：一次 Permute，三种 Dump 修法
@@ -2662,13 +2543,13 @@
         <hr>
         
         <div class="post-preview">
-          <a href="/cn/compiler-o06-aligned-stride-constants/">
+          <a href="/cn/compiler-o05-broadcast-address-plans/">
             <h2 class="post-title">
-              O06｜第一行正确，第二行失踪：对齐、Stride 与常量填充的连环案
+              O05｜广播不负责喊话：它负责让地址有时前进、有时原地不动
             </h2>
             
             <h3 class="post-subtitle">
-              逻辑宽度、物理步长、对齐补齐与参数表必须一致。
+              按轴建立地址前进规则，覆盖标量、低秩和复杂广播。
             </h3>
             
           </a>
@@ -2676,13 +2557,13 @@
         <hr>
         
         <div class="post-preview">
-          <a href="/cn/compiler-n01-reduction-lowering/">
+          <a href="/cn/compiler-o06-aligned-stride-constants/">
             <h2 class="post-title">
-              N01｜求个平均值，为什么编译器先写起了循环？
+              O06｜第一行正确，第二行失踪：对齐、Stride 与常量填充的连环案
             </h2>
             
             <h3 class="post-subtitle">
-              把任意归约轴变成可执行的循环，追踪搬运和布局成本。
+              逻辑宽度、物理步长、对齐补齐与参数表必须一致。
             </h3>
             
           </a>
@@ -2753,20 +2634,6 @@
         <hr>
         
         <div class="post-preview">
-          <a href="/cn/compiler-n08-specialized-affine/">
-            <h2 class="post-title">
-              N08｜写了专用算子，又把它拆掉：一次值得认真记录的设计转向
-            </h2>
-            
-            <h3 class="post-subtitle">
-              专用仿射算子的引入与撤回，如何比较维护成本与表达力。
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
           <a href="/cn/compiler-n07-broadcast-memory/">
             <h2 class="post-title">
               N07｜只有几个通道参数，为什么局部内存先满了？
@@ -2774,6 +2641,20 @@
             
             <h3 class="post-subtitle">
               避免把通道向量铺满整张量，同时守住广播语义。
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+        <div class="post-preview">
+          <a href="/cn/compiler-n08-specialized-affine/">
+            <h2 class="post-title">
+              N08｜写了专用算子，又把它拆掉：一次值得认真记录的设计转向
+            </h2>
+            
+            <h3 class="post-subtitle">
+              专用仿射算子的引入与撤回，如何比较维护成本与表达力。
             </h3>
             
           </a>
@@ -2914,6 +2795,125 @@
             
             <h3 class="post-subtitle">
               优化停用也是设计决定：切片、量化与参数尺寸的契约。
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+      </div>
+      
+      <div class="one-tag-list">
+        <span class="fa fa-tag listing-seperator" id="池化">
+          <span class="tag-text">池化</span>
+        </span>
+        
+        <div class="post-preview">
+          <a href="/cn/compiler-e14-same-shape-different-answers/">
+            <h2 class="post-title">
+              E14｜相同的输出形状，完全不同的答案：池化、缩放与索引归约
+            </h2>
+            
+            <h3 class="post-subtitle">
+              窗口分母、插值坐标和最大值索引决定具体答案。
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+      </div>
+      
+      <div class="one-tag-list">
+        <span class="fa fa-tag listing-seperator" id="插值">
+          <span class="tag-text">插值</span>
+        </span>
+        
+        <div class="post-preview">
+          <a href="/cn/compiler-e14-same-shape-different-answers/">
+            <h2 class="post-title">
+              E14｜相同的输出形状，完全不同的答案：池化、缩放与索引归约
+            </h2>
+            
+            <h3 class="post-subtitle">
+              窗口分母、插值坐标和最大值索引决定具体答案。
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+      </div>
+      
+      <div class="one-tag-list">
+        <span class="fa fa-tag listing-seperator" id="归约">
+          <span class="tag-text">归约</span>
+        </span>
+        
+        <div class="post-preview">
+          <a href="/cn/compiler-e14-same-shape-different-answers/">
+            <h2 class="post-title">
+              E14｜相同的输出形状，完全不同的答案：池化、缩放与索引归约
+            </h2>
+            
+            <h3 class="post-subtitle">
+              窗口分母、插值坐标和最大值索引决定具体答案。
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+        <div class="post-preview">
+          <a href="/cn/compiler-n01-reduction-lowering/">
+            <h2 class="post-title">
+              N01｜求个平均值，为什么编译器先写起了循环？
+            </h2>
+            
+            <h3 class="post-subtitle">
+              把任意归约轴变成可执行的循环，追踪搬运和布局成本。
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+        <div class="post-preview">
+          <a href="/cn/compiler-n02-axis-identity/">
+            <h2 class="post-title">
+              N02｜消失的维度：keep_dims=false 为什么能把逆置换弄坏？
+            </h2>
+            
+            <h3 class="post-subtitle">
+              被删掉的轴不再属于原来的坐标系，逆置换必须重建。
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+        <div class="post-preview">
+          <a href="/cn/compiler-n03-reduction-family/">
+            <h2 class="post-title">
+              N03｜最大值、最小值和求和：长得像三兄弟，不能共用一份数学作业
+            </h2>
+            
+            <h3 class="post-subtitle">
+              归约框架可以共享，初始化、累加与重定标不能照搬。
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+        <div class="post-preview">
+          <a href="/cn/compiler-n04-identity-requantization/">
+            <h2 class="post-title">
+              N04｜这个归约什么也没做，为什么还不能删？
+            </h2>
+            
+            <h3 class="post-subtitle">
+              数学恒等不代表量化编码恒等，空轴和单位轴也有契约。
             </h3>
             
           </a>
@@ -3068,6 +3068,20 @@
         </span>
         
         <div class="post-preview">
+          <a href="/cn/compiler-n01-reduction-lowering/">
+            <h2 class="post-title">
+              N01｜求个平均值，为什么编译器先写起了循环？
+            </h2>
+            
+            <h3 class="post-subtitle">
+              把任意归约轴变成可执行的循环，追踪搬运和布局成本。
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+        <div class="post-preview">
           <a href="/cn/compiler-n02-axis-identity/">
             <h2 class="post-title">
               N02｜消失的维度：keep_dims=false 为什么能把逆置换弄坏？
@@ -3138,20 +3152,6 @@
         <hr>
         
         <div class="post-preview">
-          <a href="/cn/compiler-n08-specialized-affine/">
-            <h2 class="post-title">
-              N08｜写了专用算子，又把它拆掉：一次值得认真记录的设计转向
-            </h2>
-            
-            <h3 class="post-subtitle">
-              专用仿射算子的引入与撤回，如何比较维护成本与表达力。
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
           <a href="/cn/compiler-n07-broadcast-memory/">
             <h2 class="post-title">
               N07｜只有几个通道参数，为什么局部内存先满了？
@@ -3159,6 +3159,20 @@
             
             <h3 class="post-subtitle">
               避免把通道向量铺满整张量，同时守住广播语义。
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+        <div class="post-preview">
+          <a href="/cn/compiler-n08-specialized-affine/">
+            <h2 class="post-title">
+              N08｜写了专用算子，又把它拆掉：一次值得认真记录的设计转向
+            </h2>
+            
+            <h3 class="post-subtitle">
+              专用仿射算子的引入与撤回，如何比较维护成本与表达力。
             </h3>
             
           </a>
@@ -3180,20 +3194,6 @@
         <hr>
         
         <div class="post-preview">
-          <a href="/cn/compiler-n11-import-order-and-constants/">
-            <h2 class="post-title">
-              N11｜太早变聪明的导入器：当代数优化抢在量化信息前面
-            </h2>
-            
-            <h3 class="post-subtitle">
-              代数变换时机、量化元数据匹配和常量处理为何互相制约。
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
           <a href="/cn/compiler-n10-rewrite-result-types/">
             <h2 class="post-title">
               N10｜浮点全绿、量化全红：一次重写把输出的身份证换成了输入的
@@ -3208,6 +3208,27 @@
         <hr>
         
         <div class="post-preview">
+          <a href="/cn/compiler-n11-import-order-and-constants/">
+            <h2 class="post-title">
+              N11｜太早变聪明的导入器：当代数优化抢在量化信息前面
+            </h2>
+            
+            <h3 class="post-subtitle">
+              代数变换时机、量化元数据匹配和常量处理为何互相制约。
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+      </div>
+      
+      <div class="one-tag-list">
+        <span class="fa fa-tag listing-seperator" id="算子降级">
+          <span class="tag-text">算子降级</span>
+        </span>
+        
+        <div class="post-preview">
           <a href="/cn/compiler-n01-reduction-lowering/">
             <h2 class="post-title">
               N01｜求个平均值，为什么编译器先写起了循环？
@@ -3215,6 +3236,34 @@
             
             <h3 class="post-subtitle">
               把任意归约轴变成可执行的循环，追踪搬运和布局成本。
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+        <div class="post-preview">
+          <a href="/cn/compiler-o01-grouped-convolution/">
+            <h2 class="post-title">
+              O01｜分组卷积：切开蛋糕以后，盘子上的标签也得切
+            </h2>
+            
+            <h3 class="post-subtitle">
+              按组切分输入与权重时，连同量化信息一起维护。
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+        <div class="post-preview">
+          <a href="/cn/compiler-o03-reshape-proof/">
+            <h2 class="post-title">
+              O03｜Reshape 为什么还要写代码：元素没变，搬家路线变了
+            </h2>
+            
+            <h3 class="post-subtitle">
+              证明线性元素映射，区分形状变化与布局重排。
             </h3>
             
           </a>
@@ -3271,20 +3320,6 @@
         <hr>
         
         <div class="post-preview">
-          <a href="/cn/compiler-n11-import-order-and-constants/">
-            <h2 class="post-title">
-              N11｜太早变聪明的导入器：当代数优化抢在量化信息前面
-            </h2>
-            
-            <h3 class="post-subtitle">
-              代数变换时机、量化元数据匹配和常量处理为何互相制约。
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
           <a href="/cn/compiler-n10-rewrite-result-types/">
             <h2 class="post-title">
               N10｜浮点全绿、量化全红：一次重写把输出的身份证换成了输入的
@@ -3292,6 +3327,20 @@
             
             <h3 class="post-subtitle">
               重写结果类型既描述容器，也携带量化含义。
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+        <div class="post-preview">
+          <a href="/cn/compiler-n11-import-order-and-constants/">
+            <h2 class="post-title">
+              N11｜太早变聪明的导入器：当代数优化抢在量化信息前面
+            </h2>
+            
+            <h3 class="post-subtitle">
+              代数变换时机、量化元数据匹配和常量处理为何互相制约。
             </h3>
             
           </a>
@@ -3635,20 +3684,6 @@
         <hr>
         
         <div class="post-preview">
-          <a href="/cn/compiler-o05-broadcast-address-plans/">
-            <h2 class="post-title">
-              O05｜广播不负责喊话：它负责让地址有时前进、有时原地不动
-            </h2>
-            
-            <h3 class="post-subtitle">
-              按轴建立地址前进规则，覆盖标量、低秩和复杂广播。
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
           <a href="/cn/compiler-o04-dump-layout/">
             <h2 class="post-title">
               O04｜当调试器开始撒谎：一次 Permute，三种 Dump 修法
@@ -3656,6 +3691,20 @@
             
             <h3 class="post-subtitle">
               三条分支修法共同揭示观察路径也需要布局契约。
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+        <div class="post-preview">
+          <a href="/cn/compiler-o05-broadcast-address-plans/">
+            <h2 class="post-title">
+              O05｜广播不负责喊话：它负责让地址有时前进、有时原地不动
+            </h2>
+            
+            <h3 class="post-subtitle">
+              按轴建立地址前进规则，覆盖标量、低秩和复杂广播。
             </h3>
             
           </a>
@@ -3705,20 +3754,6 @@
         <hr>
         
         <div class="post-preview">
-          <a href="/cn/compiler-o10-convolution-activation-fusion/">
-            <h2 class="post-title">
-              O10｜把激活函数塞进卷积：少一个节点之前，先保住那条量化边界
-            </h2>
-            
-            <h3 class="post-subtitle">
-              融合卷积与激活之前，保住中间量化与合法形状。
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
           <a href="/cn/compiler-o09-scratch-register-lifetimes/">
             <h2 class="post-title">
               O09｜谁动了我的临时寄存器：让发射器学会借东西、还东西
@@ -3726,6 +3761,20 @@
             
             <h3 class="post-subtitle">
               从手写临时寄存器到明确的借用、释放和嵌套约束。
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+        <div class="post-preview">
+          <a href="/cn/compiler-o10-convolution-activation-fusion/">
+            <h2 class="post-title">
+              O10｜把激活函数塞进卷积：少一个节点之前，先保住那条量化边界
+            </h2>
+            
+            <h3 class="post-subtitle">
+              融合卷积与激活之前，保住中间量化与合法形状。
             </h3>
             
           </a>
@@ -3812,55 +3861,6 @@
       </div>
       
       <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="算子降级">
-          <span class="tag-text">算子降级</span>
-        </span>
-        
-        <div class="post-preview">
-          <a href="/cn/compiler-o01-grouped-convolution/">
-            <h2 class="post-title">
-              O01｜分组卷积：切开蛋糕以后，盘子上的标签也得切
-            </h2>
-            
-            <h3 class="post-subtitle">
-              按组切分输入与权重时，连同量化信息一起维护。
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/cn/compiler-o03-reshape-proof/">
-            <h2 class="post-title">
-              O03｜Reshape 为什么还要写代码：元素没变，搬家路线变了
-            </h2>
-            
-            <h3 class="post-subtitle">
-              证明线性元素映射，区分形状变化与布局重排。
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/cn/compiler-n01-reduction-lowering/">
-            <h2 class="post-title">
-              N01｜求个平均值，为什么编译器先写起了循环？
-            </h2>
-            
-            <h3 class="post-subtitle">
-              把任意归约轴变成可执行的循环，追踪搬运和布局成本。
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-      </div>
-      
-      <div class="one-tag-list">
         <span class="fa fa-tag listing-seperator" id="内存对齐">
           <span class="tag-text">内存对齐</span>
         </span>
@@ -3915,41 +3915,6 @@
             
             <h3 class="post-subtitle">
               常量折叠、交换律和操作数方向，不能混成一次简化。
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="算子融合">
-          <span class="tag-text">算子融合</span>
-        </span>
-        
-        <div class="post-preview">
-          <a href="/cn/compiler-o10-convolution-activation-fusion/">
-            <h2 class="post-title">
-              O10｜把激活函数塞进卷积：少一个节点之前，先保住那条量化边界
-            </h2>
-            
-            <h3 class="post-subtitle">
-              融合卷积与激活之前，保住中间量化与合法形状。
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/cn/compiler-o11-matmul-fusion-barriers/">
-            <h2 class="post-title">
-              O11｜MatMul 后面有个 Sigmoid：为什么编译器偏偏不肯融合
-            </h2>
-            
-            <h3 class="post-subtitle">
-              多消费者、视图和依赖边界如何限制矩阵乘激活融合。
             </h3>
             
           </a>
@@ -4034,6 +3999,41 @@
             
             <h3 class="post-subtitle">
               用作用域表达寄存器所有权，明确自动归还的边界。
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+      </div>
+      
+      <div class="one-tag-list">
+        <span class="fa fa-tag listing-seperator" id="算子融合">
+          <span class="tag-text">算子融合</span>
+        </span>
+        
+        <div class="post-preview">
+          <a href="/cn/compiler-o10-convolution-activation-fusion/">
+            <h2 class="post-title">
+              O10｜把激活函数塞进卷积：少一个节点之前，先保住那条量化边界
+            </h2>
+            
+            <h3 class="post-subtitle">
+              融合卷积与激活之前，保住中间量化与合法形状。
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+        <div class="post-preview">
+          <a href="/cn/compiler-o11-matmul-fusion-barriers/">
+            <h2 class="post-title">
+              O11｜MatMul 后面有个 Sigmoid：为什么编译器偏偏不肯融合
+            </h2>
+            
+            <h3 class="post-subtitle">
+              多消费者、视图和依赖边界如何限制矩阵乘激活融合。
             </h3>
             
           </a>
@@ -4181,6 +4181,20 @@
         <hr>
         
         <div class="post-preview">
+          <a href="/cn/compiler-r08-loops-determinism/">
+            <h2 class="post-title">
+              R08｜循环只多了一层，为什么二进制快照像换了一个程序？
+            </h2>
+            
+            <h3 class="post-subtitle">
+              循环、标签和独立发射实例如何影响二进制确定性。
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+        <div class="post-preview">
           <a href="/cn/compiler-r09-encoding-boundaries/">
             <h2 class="post-title">
               R09｜“数字已经读出来了”，并不代表输入合法
@@ -4202,20 +4216,6 @@
             
             <h3 class="post-subtitle">
               优化停用也是设计决定：切片、量化与参数尺寸的契约。
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/cn/compiler-r08-loops-determinism/">
-            <h2 class="post-title">
-              R08｜循环只多了一层，为什么二进制快照像换了一个程序？
-            </h2>
-            
-            <h3 class="post-subtitle">
-              循环、标签和独立发射实例如何影响二进制确定性。
             </h3>
             
           </a>
